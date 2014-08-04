@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SMT.SAAS.Platform</RootNamespace>
     <AssemblyName>SMT.SAAS.Loading</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>zh-Hans</SupportedCultures>
     <XapOutputs>true</XapOutputs>
@@ -40,8 +40,9 @@
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation />
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -143,27 +144,39 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Xamls\LoginPart\ChangePWDForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Xamls\LoginPart\ItemBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Xamls\LoginPart\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Xamls\LoginPart\LoginForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -193,9 +206,6 @@
     </None>
     <None Include="Service References\MainUIWS\MainUIServices32.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MainUIWS\SMT.SAAS.Platform.MainUIWS.V_UserLogin.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MainUIWS\configuration91.svcinfo" />
     <None Include="Service References\MainUIWS\configuration.svcinfo" />
@@ -251,90 +261,6 @@
     </None>
     <None Include="Service References\PermissionWS\PermissionService9.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.CustomerPermission.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.FlowUserInfo.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.T_SYS_COUNTRY.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.T_SYS_DICTIONARY.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.T_SYS_ENTITYMENU.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.T_SYS_ENTITYMENUCUSTOMPERM.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.T_SYS_FBADMIN.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.T_SYS_PERMISSION.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.T_SYS_ROLE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.T_SYS_ROLEENTITYMENU.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.T_SYS_ROLEMENUPERMISSION.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.T_SYS_USER.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.T_SYS_USERLOGINRECORD.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.T_SYS_USERROLE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.V_Dictionary.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.V_EntityMenu.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.V_FBAdmin.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.V_MenuSetRole.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.V_OnlineUser.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.V_Permission.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.V_ProvinceCity.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.V_RoleEntity.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.V_UserLoginRecord.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.V_UserLoginRecordHistory.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.V_UserMenuPermission.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.V_UserPermission.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.V_UserPermissionRoleID.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.SAAS.Platform.PermissionWS.V_UserPermissionUI.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

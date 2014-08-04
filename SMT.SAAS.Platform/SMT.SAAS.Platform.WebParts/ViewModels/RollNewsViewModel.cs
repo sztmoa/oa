@@ -37,6 +37,14 @@ namespace SMT.SAAS.Platform.WebParts.ViewModels
 
         void client_GetNewsListByEmployeeIDCompleted(object sender, GetNewsListByEmployeeIDCompletedEventArgs e)
         {
+            try
+            {
+            }
+            catch (Exception ex)
+            {
+                SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage(ex.ToString());
+                SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
+            }
             
         }
 

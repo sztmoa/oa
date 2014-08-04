@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{4E0A0483-5E87-40EC-84AB-AC04347BEBA7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{30EDE781-F534-4C0F-824D-1E52CCC30A4E}"
@@ -85,9 +87,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.SaaS.LocalData", "..\SMT.SaaS.FrameWorkUI\SMT.SaaS.LocalData\SMT.SaaS.LocalData.csproj", "{ABE30DE4-D5DF-49A0-A0FF-E0E518DD7E10}"
 EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = SMT.SAAS.Platform.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -430,5 +429,8 @@ Global
 		{A153BABA-D71D-49F0-A78A-B47A4B3F7F83} = {05B539DA-F9DC-4FCA-A8D9-C216DF76DEC0}
 		{7BE2BA69-C2B8-47C8-83EC-4FA0015E28CA} = {05B539DA-F9DC-4FCA-A8D9-C216DF76DEC0}
 		{CC777E34-3BE7-4161-8C8D-A099179D87B9} = {05B539DA-F9DC-4FCA-A8D9-C216DF76DEC0}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SMT.SAAS.Platform.vsmdi
 	EndGlobalSection
 EndGlobal

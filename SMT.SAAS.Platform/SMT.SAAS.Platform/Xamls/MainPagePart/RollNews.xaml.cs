@@ -97,18 +97,26 @@ namespace SMT.SAAS.Platform.Xamls.MainPagePart
         /// <param name="e"></param>
         void client_GetNewsListByEmployeeIDCompleted(object sender, GetNewsListByEmployeeIDCompletedEventArgs e)
         {
-            _listnews = new List<NewsModel>();
-            if (e.Result != null)
+            try
             {
-                foreach (var item in e.Result)
+                _listnews = new List<NewsModel>();
+                if (e.Result != null)
                 {
-                    _listnews.Add(new NewsModel()
+                    foreach (var item in e.Result)
                     {
-                        Titel = item.NEWSTITEL,
-                        DataContent = item
-                    });
+                        _listnews.Add(new NewsModel()
+                        {
+                            Titel = item.NEWSTITEL,
+                            DataContent = item
+                        });
+                    }
+                    InitNewInfo();
                 }
-                InitNewInfo();
+            }
+            catch (Exception ex)
+            {
+                SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage(ex.ToString());
+                SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
             }
         }
         void client_GetNewsListByParamsCompleted(object sender, GetNewsListByParamsCompletedEventArgs e)

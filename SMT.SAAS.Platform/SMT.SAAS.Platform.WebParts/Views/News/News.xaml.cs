@@ -85,21 +85,29 @@ namespace SMT.SAAS.Platform.WebParts.Views
 
             client.GetNewsListByEmployeeIDCompleted += (obj, args) =>
             {
-                loading.Stop();
-                if (args.Error == null)
+                try
                 {
-                    if (args.Result != null)
+                    loading.Stop();
+                    if (args.Error == null)
                     {
-                        if (args.Result.Count > 0)
+                        if (args.Result != null)
                         {
-                            if (args.Result.Count >= topCount)
-                                btnMore.Visibility = Visibility.Visible;
+                            if (args.Result.Count > 0)
+                            {
+                                if (args.Result.Count >= topCount)
+                                    btnMore.Visibility = Visibility.Visible;
 
-                            NewsList.ItemsSource = null;
-                            NewsList.ItemsSource = args.Result.ToList();
-                           
+                                NewsList.ItemsSource = null;
+                                NewsList.ItemsSource = args.Result.ToList();
+
+                            }
                         }
                     }
+                }
+                catch (Exception ex)
+                {
+                    SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage(ex.ToString());
+                    SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
                 }
             };
             loading.Start();

@@ -113,9 +113,17 @@ namespace SMT.SAAS.Platform.Core.Modularity
 
         void WcfClient_GetModuleFileStreamCompleted(object sender, GetModuleFileStreamCompletedEventArgs e)
         {
-            if (e.Error == null)
+            try
             {
-                this._downloadCompleted(this, ConvertArgs(e));
+                if (e.Error == null)
+                {
+                    this._downloadCompleted(this, ConvertArgs(e));
+                }
+            }
+            catch (Exception ex)
+            {
+                SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage(ex.ToString());
+                SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
             }
         }
     }

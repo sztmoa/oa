@@ -96,6 +96,21 @@
         }
 
 
+        function OpenCreateForm() {
+            //获取SilverLight插件中 以创建的对象
+            var plugin = document.getElementById("SMTPlatTravelform");
+            //执行SilverLight项目中已经注册的可被Javascript调用的方法
+            var strConfig = "<?xml version=\"1.0\" encoding=\"utf-8\"?><System><AssemblyName>SMT.SaaS.OA.UI</AssemblyName>	<PublicClass>SMT.SaaS.OA.UI.Utility</PublicClass><ProcessName>CreateFormFromMVC</ProcessName><PageParameter>SMT.SaaS.OA.UI.UserControls.BusinessApplicationsForm</PageParameter>	<ApplicationOrder>113a24a8-1125-4209-be64-ce21915930a7</ApplicationOrder><FormTypes>Edit</FormTypes></System>";
+            strConfig = "<?xml version=\"1.0\" encoding=\"utf-8\"?><System><AssemblyName>SMT.SaaS.OA.UI</AssemblyName>	<PublicClass>SMT.SaaS.OA.UI.Utility</PublicClass><ProcessName>CreateFormFromMVC</ProcessName><PageParameter>SMT.SaaS.OA.UI.UserControls.BusinessApplicationsForm</PageParameter>	<ApplicationOrder>113a24a8-1125-4209-be64-ce21915930a7</ApplicationOrder><FormTypes>Edit</FormTypes></System>";
+            //t_sys_user sysuserid
+            // strConfig = "";
+            //55623178-A187-421a-8556-067E6908207A 公司信息           
+            var  TaskType="SMT.FBAnalysis.UI.Form.BorrowAppForm,SMT.FBAnalysis.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
+            var strMessageid = TaskType;
+            plugin.content.MvcToSl.OpenModuleWithMVC(strMessageid, "CreateNewForm", strMessageid, strConfig);
+        }
+
+
         function OpenMessageBox(options) {
             var plugin = document.getElementById("SMTPlatform");
             plugin.content.MvcToSl.OpenHostMessage();
@@ -163,7 +178,7 @@
             if (isLoad) {
                 isLoad = false;
                 //slNavigationTra.Content.MvcToSl.OpenModuleWithMVC("709D9380-5405-4429-B047-20100401D237", "Module", "", "");
-                slNavigationTra.Content.MvcToSl.OpenModuleWithMVC(moduleid, strOptType, configXml, configXml);
+                //slNavigationTra.Content.MvcToSl.OpenModuleWithMVC(moduleid, strOptType, configXml, configXml);
             }
         }
 
@@ -171,17 +186,22 @@
 </head>
 <body onload="">
 
-<input type="button" onclick="InitSilverlight();" value="加载SL" />
+    <input type="button" onclick="InitSilverlight();" value="加载SL" />
+    <br /><br />
+    <input type="button" onclick="OpenCreateForm();" value="加载SL后打开新建单据" />
+      <br /><br />
+
     <input type="button" onclick="buttonClick();" value="调用SilverLight初始化方法打开出差" />
-    
+      <br /><br />
   <!--  <input type="button" onclick="openDoTaskForm();" value="调用silverlight打开待办任务方法" />-->
 
      <input type="button" onclick="openMyRecord();" value="MVC调用silverlight打开我的单据方法" />
+      <br /><br />
      <input type="button" onclick="OpenMessageBox();" value="显示silverlight系统输出框" />
-
+      <br />
 
     <div id="silverlightControlHost" style="width:100%;">
-        <!--<object id="SMTPlatform" data="data:application/x-silverlight-2," type="application/x-silverlight-2"
+        <object id="SMTPlatform" data="data:application/x-silverlight-2," type="application/x-silverlight-2"
             width="100%" height="100%" name="SilverlightHost">
             <param name="source" value="ClientBin/SMT.SAAS.Loading.xap?var=2011071403" />
             <param name="onerror" value="onSilverlightError" />
@@ -197,7 +217,7 @@
                 <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="获取 Microsoft Silverlight"
                     style="border-style: none" />
             </a>
-        </object>-->
+        </object>
         <iframe id="_sl_historyFrame" style='visibility: hidden; height: 0; width: 0; border: 0px' />
     </div>
 </body>
