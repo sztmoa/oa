@@ -636,16 +636,23 @@ namespace SMT.HRM.BLL
                 DateTime dtOffPunch = entOff.PUNCHDATE.Value;
 
                 //判断早退
-                if (dtAttCardStart < dtOffPunch && dtAttEnd >= dtOffPunch)
+                if (dtOffPunch <= dtAttEnd)//打卡时间小于等于下班时间5：30PM
                 {
-
-
-                    TimeSpan ts = dtAttEnd.Subtract(dtAttCardStart);//早退时常
+                    TimeSpan ts;
+                    if (dtAttEnd== dtOffPunch)
+                    {   //准时下班算早退1分钟.5:30打卡早退一分钟
+                        ts = dtAttEnd.AddMinutes(1).Subtract(dtOffPunch);//早退
+                    }
+                    else
+                    {
+                        ts = dtAttEnd.Subtract(dtOffPunch);//早退时常
+                    }
                     string strReasonCategory = string.Empty;
                     strAbnormCategory = (Convert.ToInt32(Common.AbnormCategory.LeaveEarly) + 1).ToString();
                     Tracer.Debug("检查异常考勤，员工姓名：" + entAttRd.EMPLOYEENAME 
                         + " 日期：" + entAttRd.ATTENDANCEDATE
-                        + " 考勤状态早退，打卡时间有效范围：" + dtAttCardStart + "-" + dtAttCardEnd 
+                        + " 考勤状态早退，打卡时间有效范围：" + dtAttCardStart + "-" + dtAttCardEnd
+                        + " 下班时间：" + dtAttEnd
                         + " 打卡时间：" + dtOffPunch
                         + " 早退分钟数：" + ts.Minutes);
                     CreateAbnormRecordByCheckClockInRd(entAttRd, ts, strAbnormCategory, strAttendPeriod, strReasonCategory);

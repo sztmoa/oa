@@ -44,6 +44,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                     }
                     isPageloadCompleted = true;
                     TravelReimbursement_Golbal = e.Result;
+                    TravelDetailList_Golbal = TravelReimbursement_Golbal.T_OA_REIMBURSEMENTDETAIL; 
                     this.businesstrID = TravelReimbursement_Golbal.T_OA_BUSINESSTRIP.BUSINESSTRIPID;
                     //ljx  2011-8-29  
                     if (formType == FormTypes.Edit)
@@ -199,6 +200,11 @@ namespace SMT.SaaS.OA.UI.UserControls
             {
                 Logger.Current.Log(ex.Message, Category.Debug, Priority.Low);
                 ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
+            }
+            finally
+            {
+                //计算一次出差天数并保存在明细表中，以解决出差申请自动生成出差报销未计算出差天数问题。
+                TravelTime();
             }
         }
 

@@ -12,15 +12,22 @@
     <RootNamespace>SMT.SAAS.Main.CurrentContextLoadData</RootNamespace>
     <AssemblyName>SMT.SAAS.Main.CurrentContextLoadData</AssemblyName>
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <SilverlightApplication>false</SilverlightApplication>
     <ValidateXaml>true</ValidateXaml>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>40</FileUpgradeFlags>
+    <UpgradeBackupLocation>F:\MyWorkSpace\OA\SMT.SaaS.OANew\Backup6\</UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
   </PropertyGroup>
   <!-- This property group is only here to support building this project using the 
        MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
@@ -70,14 +77,6 @@
     <Compile Include="UserLogin.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SMT.SaaS.LocalData\SMT.SaaS.LocalData.csproj">
-      <Project>{abe30de4-d5df-49a0-a0ff-e0e518dd7e10}</Project>
-      <Name>SMT.SaaS.LocalData</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SMT.SAAS.Main.CurrentContext\SMT.SAAS.Main.CurrentContext.csproj">
-      <Project>{4b5991d6-d3c6-4bcf-b788-95afc5323523}</Project>
-      <Name>SMT.SAAS.Main.CurrentContext</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SMT.Saas.Tools\SMT.Saas.Tools.csproj">
       <Project>{9484C541-B0A2-437A-8C6F-0BFD7E13934E}</Project>
       <Name>SMT.Saas.Tools</Name>

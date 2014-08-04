@@ -15,6 +15,8 @@ namespace SMT.HRM.Services
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            EmployeeBLL bll = new EmployeeBLL();
+            bll.GetEmployeeFunds("703dfb3c-d3dc-4b1d-9bf0-3507ba01b716", "24a358f9-8539-4faa-aee6-d5cbc8ea450d");
             //LogManager log = new LogManager();
             //Exception ex = new Exception("测试发送邮件");
             //ErrorLog msg = new ErrorLog(ex);

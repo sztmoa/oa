@@ -521,7 +521,7 @@ namespace SMT.HRM.BLL
                 //ents = ents.Where(filterString, paras.ToArray());
                 ents = ents.Where(filterString, queryParas.ToArray());
             }
-            ents = ents.OrderBy(sort);
+            //ents = ents.OrderBy(sort);
 
             int t = 0;
             if (starttime != dtNull && endtime != dtNull)
@@ -598,9 +598,7 @@ namespace SMT.HRM.BLL
                     t++;
                 }
             }
-            ents = ents.OrderBy(m => m.CREATEDATE);
-            ents = ents.OrderBy(m => m.SALARYYEAR);
-            ents = ents.OrderBy(m => m.SALARYMONTH);
+            ents = ents.ToList().OrderByDescending(m => m.CREATEDATE).AsQueryable();
 
             ents = Utility.Pager<T_HR_EMPLOYEESALARYRECORD>(ents, pageIndex, pageSize, ref pageCount);
 
@@ -1997,7 +1995,7 @@ namespace SMT.HRM.BLL
                         var tempSalaryItem = sItem.salaryItem;
                         DateTime st = System.DateTime.Now;
                         SMT.Foundation.Log.Tracer.Debug("姓名：" + empoloyee.EMPLOYEECNAME+" 薪资项："+tempSalaryItem.SALARYITEMNAME + ":");
-                        if (tempSalaryItem.SALARYITEMNAME == "航信31-代扣税额")
+                        if (tempSalaryItem.SALARYITEMNAME == "航信7-应发考核工资")
                         {
                         }                       
                         //"1、手工录入 ；2、薪资档案中输入；3、计算公式；"
@@ -2176,7 +2174,30 @@ namespace SMT.HRM.BLL
                             }
                             else
                             {
-                                SalaryItem.SUM = sItem.archiveItem.SUM;
+                                if (tempSalaryItem.CALCULATEFORMULA == "导入")
+                                {
+                                    var itemv = (from a in dal.GetObjects<T_HR_EMPLOYEESALARYRECORDITEM>()
+                                                 join b in dal.GetObjects<T_HR_EMPLOYEESALARYRECORD>()
+                                                 on a.T_HR_EMPLOYEESALARYRECORD.EMPLOYEESALARYRECORDID equals b.EMPLOYEESALARYRECORDID
+                                                 where b.EMPLOYEEID == employeeID
+                                                 && b.SALARYYEAR == year && b.SALARYMONTH == month
+                                                 && a.SALARYITEMID == tempSalaryItem.SALARYITEMID
+                                                 select a).FirstOrDefault();
+                                    if (itemv != null)
+                                    {
+                                        var sum = AES.AESDecrypt(itemv.SUM);
+                                        SalaryItem.SUM = AES.AESEncrypt(sum);
+                                        getCaches.Add(tempSalaryItem.SALARYITEMID, sum);
+                                    }
+                                    else
+                                    {
+                                        Tracer.Debug("未找到 需导入的薪资项目的金额,请先导入再结算，薪资项目名：" + tempSalaryItem.SALARYITEMNAME);
+                                    }
+                                }
+                                else
+                                {
+                                    SalaryItem.SUM = sItem.archiveItem.SUM;
+                                }
                                 if (string.IsNullOrWhiteSpace(sItem.archiveItem.SUM) && tempSalaryItem.GUERDONSUM != null)
                                 {
                                     SalaryItem.SUM = AES.AESEncrypt(tempSalaryItem.GUERDONSUM.Value.ToString());
@@ -2622,7 +2643,7 @@ namespace SMT.HRM.BLL
         /// <param name="employeeid"></param>
         /// <param name="companyid"></param>
         /// <returns></returns>
-        private bool checkEmployeeHaveMainPostInCompany(string employeeid,string companyid)
+        public bool checkEmployeeHaveMainPostInCompany(string employeeid,string companyid)
         {
             bool flag = false;
             var q = from ent in dal.GetObjects<T_HR_EMPLOYEEPOST>().Include("T_HR_EMPLOYEE").Include("T_HR_POST")
@@ -4903,11 +4924,12 @@ namespace SMT.HRM.BLL
         /// <returns>返回解析薪资项目后的值</returns>
         public string GetItemsValue(string itemid)
         {
-            foreach (var id in getCaches.Keys)
-            {
-                if (id == itemid) return getCaches[id].ToString();
-            }
-            return string.Empty;
+            var q = (from ent in getCaches
+                     where ent.Key.ToLower() == itemid.ToLower()
+                     select ent);
+
+            if (q.Count() > 0) return q.FirstOrDefault().Value;
+            else return string.Empty;
         }
 
         /// <summary>

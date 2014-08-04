@@ -138,14 +138,14 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                         }
                         else
                         {
-                            cmbSolution.ItemsSource = null;
+                           // cmbSolution.ItemsSource = null;
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw (ex);
+                Utility.SetLogAndShowLog(ex.ToString());
             }
         }
 

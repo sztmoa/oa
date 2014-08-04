@@ -83,6 +83,7 @@ namespace SMT.HRM.CustomModel
         public string PassWord { get; set; }//密码
         public string Email { get; set; }//邮箱
 
+        public string CreateUserID { get; set; }
         public string OwnerID { get; set; }
         public string OwnerPostID { get; set; }
         public string OwnerDepartmentID { get; set; }

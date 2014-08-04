@@ -219,26 +219,30 @@ namespace SMT.ImportClockInRdCustomServies
             }
             else
             {
-                if (dtCur.Hour != Convert.ToInt32(ConfigurationManager.AppSettings["ElapsedHour"]))
-                {
-                    Tracer.Debug(DateTime.Now.ToString() + "，导入打卡记录未在指定时间内");
-                    return;
-                }
-                Tracer.Debug(DateTime.Now.ToString() + "，开始导入打卡记录,设置的导入时间点为每天：" + strElapsedHour + " 点,导入的端口为："
-                    + iPort);
-                foreach (string str in ips)
-                {
-                    listImportIPs.Add(str);
-                    Tracer.Debug(DateTime.Now.ToString() + "，导入的打卡机ip包括：" + str);
-                }
-
-                foreach (string companyID in companyIDs)
-                {
-                    //strImportCompanys.Add(companyID);
-                    Tracer.Debug(DateTime.Now.ToString() + "，导入的公司ip包括：" + companyID);
-                }
-            }
             
+            }
+
+
+            if (dtCur.Hour != Convert.ToInt32(ConfigurationManager.AppSettings["ElapsedHour"]))
+            {
+                Tracer.Debug(DateTime.Now.ToString() + "，导入打卡记录未在指定时间内");
+                return;
+            }
+            Tracer.Debug(DateTime.Now.ToString() + "，开始导入打卡记录,设置的导入时间点为每天：" + strElapsedHour + " 点,导入的端口为："
+                + iPort);
+            foreach (string str in ips)
+            {
+                listImportIPs.Add(str);
+                Tracer.Debug(DateTime.Now.ToString() + "，导入的打卡机ip包括：" + str);
+            }
+
+            foreach (string companyID in companyIDs)
+            {
+                //strImportCompanys.Add(companyID);
+                Tracer.Debug(DateTime.Now.ToString() + "，导入的公司ip包括：" + companyID);
+            }
+
+
             try
             {
                 foreach (string strCurIP in listImportIPs)

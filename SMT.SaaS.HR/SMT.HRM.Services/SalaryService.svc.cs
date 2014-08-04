@@ -3595,7 +3595,7 @@ namespace SMT.HRM.Services
         {
             using (SalaryRecordBatchBLL bll = new SalaryRecordBatchBLL())
             {
-                bll.AssignPersonMoney(strCheckState, Companyid,ref strMsg);
+                bll.AssignPersonMoney(strCheckState, Companyid,"",ref strMsg);
             }
         }
 

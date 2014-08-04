@@ -207,7 +207,8 @@ namespace SMT.HRM.UI.Views.Salary
 
             string year = nuYear.Value.ToString();
             string month = nuStartmounth.Value.ToString();
-            MessageBoxResult mbr = MessageBox.Show("确认导入" + year + "年" + month + "月的员工薪资项目吗？请先确保导入前已生成过导入员工的月薪，确认继续，取消终止导入", "确认框", MessageBoxButton.OKCancel);
+            MessageBoxResult mbr = MessageBox.Show("确认导入发薪机构： "+Common.CurrentLoginUserInfo.UserPosts[0].CompanyName +" 结算岗位："+Common.CurrentLoginUserInfo.UserPosts[0].PostName
+                + " "+year + "年" + month + "月的员工薪资项目吗？", "确认框", MessageBoxButton.OKCancel);
             if (mbr == MessageBoxResult.OK)
             {
                 //点击了确定

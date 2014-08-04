@@ -110,6 +110,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             //2013/3/27停止加载所有组织架构，直接加载出差业务数据
             Travelmanagement.GetAccordingToBusinesstripIdCheckAsync(businesstrID);
             SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("获取出差报销，出差申请id：" + businesstrID);
+            //SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
         }
 
         void Travelmanagement_GetAccordingToBusinesstripIdCheckCompleted(object sender, GetAccordingToBusinesstripIdCheckCompletedEventArgs e)

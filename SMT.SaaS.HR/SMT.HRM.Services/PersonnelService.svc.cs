@@ -121,13 +121,14 @@ namespace SMT.HRM.Services
         /// <param name="companyID"></param>
         /// <returns></returns>
         [OperationContract]
-        public byte[] ExportEmployee(string companyID)
+        public byte[] ExportEmployee(string companyID, string filterString, string[] paras, string userId)
         {
             using (EmployeeBLL bll = new EmployeeBLL())
             {
-                return bll.ExportEmployee(companyID);
+                return bll.ExportEmployee(companyID, filterString, paras, userId);
             }
         }
+
         /// <summary>
         /// 根据身份证获取员工信息
         /// </summary>
@@ -371,6 +372,17 @@ namespace SMT.HRM.Services
                 return bll.GetDepartmentLeaders(departmentID);
             }
         }
+
+        
+        [OperationContract]
+        public string GetEmailNameIsExistNameAddOne(string userName,string employeeId)
+        {
+            using (EmployeeBLL bll = new EmployeeBLL())
+            {
+                return bll.GetEmailNameIsExistNameAddOne(userName,employeeId);
+            }
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -591,6 +603,49 @@ namespace SMT.HRM.Services
                 return q;
             }
         }
+
+        /// <summary>
+        /// 获取员工通讯录
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="sort"></param>
+        /// <param name="filterString"></param>
+        /// <param name="paras"></param>
+        /// <param name="pageCount"></param>
+        /// <param name="sType"></param>
+        /// <param name="sValue"></param>
+        /// <param name="userID"></param>
+        /// <returns></returns>
+        [OperationContract]
+        public List<V_EMPLOYEEVIEW> GetContactsListPaging(int pageIndex, int pageSize, string sort, string filterString, string[] paras, ref int pageCount, string sType, string sValue, string userID)
+        {
+            using (EmployeeBLL bll = new EmployeeBLL())
+            {
+                List<V_EMPLOYEEVIEW> q = bll.GetContactsListPaging(pageIndex, pageSize, sort, filterString, paras, ref  pageCount, sType, sValue, userID);
+                return q;
+            }
+        }
+
+        /// <summary>
+        /// 导出员工通讯录
+        /// </summary>
+        /// <param name="companyID"></param>
+        /// <param name="filterString"></param>
+        /// <param name="paras"></param>
+        /// <param name="sType"></param>
+        /// <param name="sValue"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        [OperationContract]
+        public byte[] ExportContactsList(string companyID, string filterString, string[] paras,string sType, string sValue, string userId)
+        {
+            using (EmployeeBLL bll = new EmployeeBLL())
+            {
+                return bll.ExportContactsList(companyID, filterString, paras, sType, sValue, userId);
+            }
+        }
+
         /// <summary>
         /// 获取员工信息 
         /// 供MVC使用公司简称
@@ -669,6 +724,24 @@ namespace SMT.HRM.Services
                 return q;
             }
         }
+
+        /// <summary>
+        /// 根据参数获取员工ID
+        /// </summary>
+        /// <param name="companyIDs"></param>
+        /// <param name="departmentIDs"></param>
+        /// <param name="postIDs"></param>
+        /// <returns></returns>
+        [OperationContract]
+        public List<string> GetEmployeeIDsByParasByBalancePost(IList<string> companyIDs, IList<string> departmentIDs, IList<string> postIDs)
+        {
+            using (EmployeeBLL bll = new EmployeeBLL())
+            {
+                List<string> q = bll.GetEmployeeIDsByParasByBalancePost(companyIDs, departmentIDs, postIDs);
+                return q;
+            }
+        }
+
 
         /// <summary>
         /// 获取员工
@@ -2647,6 +2720,20 @@ namespace SMT.HRM.Services
             using (EmployeePostBLL bll = new EmployeePostBLL())
             {
                 return bll.GetEmployeePostByPostID(postID);
+            }
+        }
+
+        /// <summary>
+        /// 获取员工主兼职岗位
+        /// </summary>
+        /// <param name="postID"></param>
+        /// <returns></returns>
+        [OperationContract]
+        public List<T_HR_EMPLOYEEPOST> GetEmployeePostByPostIDForWP(string postID)
+        {
+            using (EmployeePostBLL bll = new EmployeePostBLL())
+            {
+                return bll.GetEmployeePostByPostIDForWP(postID);
             }
         }
 

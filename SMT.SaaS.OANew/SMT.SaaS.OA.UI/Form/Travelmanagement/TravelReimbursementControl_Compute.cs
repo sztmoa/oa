@@ -29,7 +29,7 @@ namespace SMT.SaaS.OA.UI.UserControls
         /// </summary>
         public void TravelTime()
         {
-            if (TravelDetailList_Golbal == null || DaGrEdit.ItemsSource == null)
+            if (TravelDetailList_Golbal == null)
             {
                 return;
             }
@@ -59,6 +59,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                         {
                             myDaysTime = GetTraveDayTextBox(myDaysTime, i);
                             myDaysTime.Text = "1";
+                            TravelDetailList_Golbal[i].BUSINESSDAYS = "1";
                             //i = j - 1;
                             OneDayTrave = true;
                             break;
@@ -104,15 +105,23 @@ namespace SMT.SaaS.OA.UI.UserControls
                         myDaysTime.Text = TotalDays.ToString();
                         break;
                 }
+                //保存计算的出差天数
+                TravelDetailList_Golbal[i].BUSINESSDAYS = TotalDays.ToString();
             }
             #endregion
         }
 
         private TextBox GetTraveDayTextBox(TextBox myDaysTime, int i)
         {
-            if (DaGrEdit.Columns[4].GetCellContent(TravelDetailList_Golbal[i]) != null)
+            try
             {
-                myDaysTime = DaGrEdit.Columns[4].GetCellContent(TravelDetailList_Golbal[i]).FindName("txtTOTALDAYS") as TextBox;
+                if (DaGrEdit.Columns[4].GetCellContent(TravelDetailList_Golbal[i]) != null)
+                {
+                    myDaysTime = DaGrEdit.Columns[4].GetCellContent(TravelDetailList_Golbal[i]).FindName("txtTOTALDAYS") as TextBox;
+                }
+            }
+            catch (Exception ex)
+            {
             }
             return myDaysTime;
         }
@@ -1244,7 +1253,10 @@ namespace SMT.SaaS.OA.UI.UserControls
                     this.txtAccommodation.Visibility = Visibility.Collapsed;
                 }
                 txtSubTotal.Text = totall.ToString();//差旅费小计
-                fbCtr.TravelSubject.ApplyMoney =Convert.ToDecimal(totall);
+                if (OpenFrom != "FromMVC")
+                {
+                    fbCtr.TravelSubject.ApplyMoney = Convert.ToDecimal(totall);
+                }
                 if (fbCtr.totalMoney > 0)
                 {
                     totall = totall + Convert.ToDouble(fbCtr.totalMoney);

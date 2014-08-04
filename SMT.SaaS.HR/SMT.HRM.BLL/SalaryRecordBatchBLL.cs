@@ -1296,7 +1296,7 @@ namespace SMT.HRM.BLL
 
                 //当单据审核通过时，调用FB服务，生成一张对应公司的活动经费下拨单_____2012/8/10 9:50:24注释，暂停使用
                 string strMsg = string.Empty;
-                AssignPersonMoney(CheckState, recordBatch.OWNERCOMPANYID, ref strMsg);
+                AssignPersonMoney(CheckState, recordBatch.OWNERCOMPANYID, recordBatch.CREATEUSERID, ref strMsg);
 
                 return i;
             }
@@ -1313,7 +1313,7 @@ namespace SMT.HRM.BLL
         /// </summary>
         /// <param name="strCheckState"></param>
         /// <param name="strCompanyID"></param>
-        public void AssignPersonMoney(string strCheckState, string strCompanyID, ref string strMsg)
+        public void AssignPersonMoney(string strCheckState, string strCompanyID, string CreateUserid,ref string strMsg)
         {
             try
             {
@@ -1346,7 +1346,7 @@ namespace SMT.HRM.BLL
                     using (SMT.SaaS.BLLCommonServices.FBServiceWS.FBServiceClient clientFB = new SaaS.BLLCommonServices.FBServiceWS.FBServiceClient())
                     {
                         string strAssignOwnerID = System.Configuration.ConfigurationManager.AppSettings["PersonMoneyAssignOwner"];
-                        clientFB.CreatePersonMoneyAssignInfo(strCompanyID, strAssignOwnerID);
+                        clientFB.CreatePersonMoneyAssignInfo(strCompanyID, strAssignOwnerID, CreateUserid);
                         strMsg = "生成下拨公司(公司ID:" + strCompanyID + ")的活动经费下拨单成功";
                         SMT.Foundation.Log.Tracer.Debug(strMsg);
                     }

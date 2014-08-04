@@ -35,7 +35,7 @@
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="0.3*"/>
                 <ColumnDefinition Width="0.5*"/>
             </Grid.ColumnDefinitions>
@@ -54,6 +54,12 @@
                         </data:DataGridTemplateColumn.CellTemplate>
                     </data:DataGridTemplateColumn>
                     <data:DataGridTextColumn Header="TRAVELDIFFERENCEALLOWANCECATEGORY" Binding="{Binding AREACATEGORY}"  IsReadOnly="True" >
+                    </data:DataGridTextColumn>
+                    <data:DataGridTextColumn Header="修改人" Binding="{Binding UPDATEUSERNAME}"  IsReadOnly="True" >
+                    </data:DataGridTextColumn>
+                    <data:DataGridTextColumn Header="修改时间" 
+                                             Binding="{Binding UPDATEDATE,Converter={StaticResource CustomDateConverter},ConverterParameter=UPDATEDATE}" 
+                                             IsReadOnly="True" >
                     </data:DataGridTextColumn>
                 </data:DataGrid.Columns>
             </data:DataGrid>

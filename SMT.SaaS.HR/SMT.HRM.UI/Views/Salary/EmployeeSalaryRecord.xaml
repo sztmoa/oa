@@ -248,7 +248,7 @@
                     </data:DataGrid.Columns>
                 </data:DataGrid>
                 <!--<smt:GridPager Name="dataPagerStand" PageSize="20" Click="dataPagerStand_Click"  Grid.Row="1" Grid.Column="2"  ></smt:GridPager>-->
-                <smt:GridPager Name="dataPager" PageSize="20" Click="GridPager_Click" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" ></smt:GridPager>
+                <smt:GridPager Name="dataPager" PageSize="15" Click="GridPager_Click" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" ></smt:GridPager>
             </Grid>
 
 

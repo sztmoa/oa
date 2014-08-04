@@ -12,10 +12,14 @@
     <AssemblyName>CommonDll</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>%24/SMT.SaaS/SMT.SaaS.Portal/SMT.SaaS.OANew/CommonDll</SccProjectName>
-    <SccLocalPath>.</SccLocalPath>
-    <SccAuxPath>http://10.10.4.242:8080</SccAuxPath>
-    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>

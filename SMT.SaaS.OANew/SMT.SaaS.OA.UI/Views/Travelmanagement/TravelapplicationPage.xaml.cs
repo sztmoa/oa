@@ -319,6 +319,8 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         #region 新增出差申请
         void btnNew_Click(object sender, RoutedEventArgs e)
         {
+            //Utility.CreateFormFromMVC("113a24a8-1125-4209-be64-ce21915930a7"
+            //   , "SMT.SaaS.OA.UI.UserControls.BusinessApplicationsForm", "Edit");
 
             //Utility.CreateFormFromEngine("86dd2947-30e7-4a1e-b649-83ae194e32fb"
             //    , "SMT.SaaS.OA.UI.UserControls.BusinessApplicationsForm", "Edit");

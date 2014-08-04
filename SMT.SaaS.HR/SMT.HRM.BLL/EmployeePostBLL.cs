@@ -76,6 +76,22 @@ namespace SMT.HRM.BLL
             return ents.Count() > 0 ? ents.ToList() : null;
         }
 
+        /// <summary>
+        /// 获取员工主兼职岗位 给工作计划调用
+        /// </summary>
+        /// <param name="postID"></param>
+        /// <returns></returns>
+        public List<T_HR_EMPLOYEEPOST> GetEmployeePostByPostIDForWP(string postID)
+        {
+            var ents = from emp in dal.GetObjects().Include("T_HR_EMPLOYEE").Include("T_HR_POST.T_HR_POSTDICTIONARY")
+                       .Include("T_HR_POST.T_HR_DEPARTMENT")
+                       .Include("T_HR_POST.T_HR_DEPARTMENT.T_HR_DEPARTMENTDICTIONARY")
+                       .Include("T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY")
+                       where emp.T_HR_POST.POSTID == postID && emp.EDITSTATE == "1" && emp.CHECKSTATE=="2"
+                       select emp;
+
+            return ents.Count() > 0 ? ents.ToList() : null;
+        }
 
          /// <summary>
         /// 根据岗位id获取岗位下面员工(有权限控制),目前只组织架构用到，所以只传岗位id和当前员工id即可

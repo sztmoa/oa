@@ -13,10 +13,14 @@
     <RootNamespace>SMT.SaaS.OA.Web</RootNamespace>
     <AssemblyName>SMT.SaaS.OA.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
     <SilverlightApplicationList>{55F7A86F-8F9D-45EA-B717-B4DB332B71EE}|..\SMT.SaaS.OA.UI\SMT.SaaS.OA.UI.csproj|ClientBin|False</SilverlightApplicationList>
     <FileUpgradeFlags>
     </FileUpgradeFlags>

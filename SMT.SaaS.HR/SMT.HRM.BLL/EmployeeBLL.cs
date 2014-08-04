@@ -343,6 +343,390 @@ namespace SMT.HRM.BLL
 
         }
 
+        /// <summary>
+        /// 获取员工通讯录
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="sort"></param>
+        /// <param name="filterString"></param>
+        /// <param name="paras"></param>
+        /// <param name="pageCount"></param>
+        /// <param name="sType"></param>
+        /// <param name="sValue"></param>
+        /// <param name="userID"></param>
+        /// <returns></returns>
+        public List<V_EMPLOYEEVIEW> GetContactsListPaging(int pageIndex, int pageSize, string sort, string filterString, IList<object> paras, ref int pageCount, string sType, string sValue, string userID)
+        {
+            List<object> queryParas = new List<object>();
+            queryParas.AddRange(paras);
+
+            //SetOrganizationFilter(ref filterString, ref queryParas, userID, "T_HR_EMPLOYEE");
+
+
+            IQueryable<V_EMPLOYEEVIEW> ents = from o in dal.GetObjects()
+                                              join ep in dal.GetObjects<T_HR_EMPLOYEEPOST>() on o.EMPLOYEEID equals ep.T_HR_EMPLOYEE.EMPLOYEEID
+                                              join p in dal.GetObjects<T_HR_POST>() on ep.T_HR_POST.POSTID equals p.POSTID
+                                              join d in dal.GetObjects<T_HR_DEPARTMENT>() on p.T_HR_DEPARTMENT.DEPARTMENTID equals d.DEPARTMENTID
+                                              join c in dal.GetObjects<T_HR_COMPANY>() on d.T_HR_COMPANY.COMPANYID equals c.COMPANYID
+                                              where (o.EMPLOYEESTATE!="2" && ep.ISAGENCY=="0" && ep.CHECKSTATE=="2" && ep.EDITSTATE=="1")
+                                              select new V_EMPLOYEEVIEW
+                                              {
+                                                  EMPLOYEEID = o.EMPLOYEEID,
+                                                  EMPLOYEECNAME = o.EMPLOYEECNAME,
+                                                  EMPLOYEECODE = o.EMPLOYEECODE,
+                                                  EMPLOYEEENAME = o.EMPLOYEEENAME,
+                                                  COMPANYNAME = c.CNAME,
+                                                  DEPARTMENTNAME = d.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTNAME,
+                                                  POSTNAME = p.T_HR_POSTDICTIONARY.POSTNAME,
+                                                  SEX = o.SEX,
+                                                  EMAIL = o.EMAIL,
+                                                  IDNUMBER = o.IDNUMBER,
+                                                  FINGERPRINTID = o.FINGERPRINTID,
+                                                  MOBILE = o.MOBILE,
+                                                  OWNERID = o.EMPLOYEEID,
+                                                  OWNERPOSTID = p.POSTID,
+                                                  OWNERDEPARTMENTID = d.DEPARTMENTID,
+                                                  OWNERCOMPANYID = c.COMPANYID,
+                                                  CREATEUSERID = o.CREATEUSERID,
+                                                  EMPLOYEEPOSTID = ep.EMPLOYEEPOSTID,
+                                                  ISAGENCY = ep.ISAGENCY,
+                                                  POSTLEVEL = ep.POSTLEVEL,
+                                                  OFFICEPHONE = o.OFFICEPHONE
+                                              };
+            switch (sType)
+            {
+                case "Company":
+                    ents = from o in dal.GetObjects()
+                           join ep in dal.GetObjects<T_HR_EMPLOYEEPOST>() on o.EMPLOYEEID equals ep.T_HR_EMPLOYEE.EMPLOYEEID
+                           join p in dal.GetObjects<T_HR_POST>() on ep.T_HR_POST.POSTID equals p.POSTID
+                           join d in dal.GetObjects<T_HR_DEPARTMENT>() on p.T_HR_DEPARTMENT.DEPARTMENTID equals d.DEPARTMENTID
+                           join c in dal.GetObjects<T_HR_COMPANY>() on d.T_HR_COMPANY.COMPANYID equals c.COMPANYID
+                           where c.COMPANYID == sValue && (o.EMPLOYEESTATE != "2" && ep.ISAGENCY == "0" && ep.CHECKSTATE == "2" && ep.EDITSTATE == "1")
+                           select new V_EMPLOYEEVIEW
+                           {
+                               EMPLOYEEID = o.EMPLOYEEID,
+                               EMPLOYEECNAME = o.EMPLOYEECNAME,
+                               EMPLOYEECODE = o.EMPLOYEECODE,
+                               EMPLOYEEENAME = o.EMPLOYEEENAME,
+                               COMPANYNAME = c.CNAME,
+                               DEPARTMENTNAME = d.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTNAME,
+                               POSTNAME = p.T_HR_POSTDICTIONARY.POSTNAME,
+                               SEX = o.SEX,
+                               EMAIL = o.EMAIL,
+                               IDNUMBER = o.IDNUMBER,
+                               FINGERPRINTID = o.FINGERPRINTID,
+                               MOBILE = o.MOBILE,
+                               OWNERID = o.EMPLOYEEID,
+                               OWNERPOSTID = p.POSTID,
+                               OWNERDEPARTMENTID = d.DEPARTMENTID,
+                               OWNERCOMPANYID = c.COMPANYID,
+                               CREATEUSERID = o.CREATEUSERID,
+                               POSTLEVEL = ep.POSTLEVEL,
+                               ISAGENCY = ep.ISAGENCY,
+                               EMPLOYEEPOSTID = ep.EMPLOYEEPOSTID,
+                               OFFICEPHONE = o.OFFICEPHONE
+                           };
+                    break;
+                case "Department":
+                    ents = from o in dal.GetObjects()
+                           join ep in dal.GetObjects<T_HR_EMPLOYEEPOST>() on o.EMPLOYEEID equals ep.T_HR_EMPLOYEE.EMPLOYEEID
+                           join p in dal.GetObjects<T_HR_POST>() on ep.T_HR_POST.POSTID equals p.POSTID
+                           join d in dal.GetObjects<T_HR_DEPARTMENT>() on p.T_HR_DEPARTMENT.DEPARTMENTID equals d.DEPARTMENTID
+                           join c in dal.GetObjects<T_HR_COMPANY>() on d.T_HR_COMPANY.COMPANYID equals c.COMPANYID
+                           where d.DEPARTMENTID == sValue && (o.EMPLOYEESTATE != "2" && ep.CHECKSTATE == "2" && ep.EDITSTATE == "1")
+                           select new V_EMPLOYEEVIEW
+                           {
+                               EMPLOYEEID = o.EMPLOYEEID,
+                               EMPLOYEECNAME = o.EMPLOYEECNAME,
+                               EMPLOYEECODE = o.EMPLOYEECODE,
+                               EMPLOYEEENAME = o.EMPLOYEEENAME,
+                               COMPANYNAME = c.CNAME,
+                               DEPARTMENTNAME = d.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTNAME,
+                               POSTNAME = p.T_HR_POSTDICTIONARY.POSTNAME,
+                               SEX = o.SEX,
+                               EMAIL = o.EMAIL,
+                               IDNUMBER = o.IDNUMBER,
+                               FINGERPRINTID = o.FINGERPRINTID,
+                               MOBILE = o.MOBILE,
+                               OWNERID = o.EMPLOYEEID,
+                               OWNERPOSTID = p.POSTID,
+                               OWNERDEPARTMENTID = d.DEPARTMENTID,
+                               OWNERCOMPANYID = c.COMPANYID,
+                               CREATEUSERID = o.CREATEUSERID,
+                               POSTLEVEL = ep.POSTLEVEL,
+                               ISAGENCY = ep.ISAGENCY,
+                               EMPLOYEEPOSTID = ep.EMPLOYEEPOSTID,
+                               OFFICEPHONE = o.OFFICEPHONE
+                           };
+                    break;
+                case "Post":
+                    ents = from o in dal.GetObjects()
+                           join ep in dal.GetObjects<T_HR_EMPLOYEEPOST>() on o.EMPLOYEEID equals ep.T_HR_EMPLOYEE.EMPLOYEEID
+                           join p in dal.GetObjects<T_HR_POST>() on ep.T_HR_POST.POSTID equals p.POSTID
+                           join d in dal.GetObjects<T_HR_DEPARTMENT>() on p.T_HR_DEPARTMENT.DEPARTMENTID equals d.DEPARTMENTID
+                           join c in dal.GetObjects<T_HR_COMPANY>() on d.T_HR_COMPANY.COMPANYID equals c.COMPANYID
+                           where p.POSTID == sValue && (o.EMPLOYEESTATE != "2" && ep.CHECKSTATE == "2" && ep.EDITSTATE == "1")
+                           select new V_EMPLOYEEVIEW
+                           {
+                               EMPLOYEEID = o.EMPLOYEEID,
+                               EMPLOYEECNAME = o.EMPLOYEECNAME,
+                               EMPLOYEECODE = o.EMPLOYEECODE,
+                               EMPLOYEEENAME = o.EMPLOYEEENAME,
+                               COMPANYNAME = c.CNAME,
+                               DEPARTMENTNAME = d.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTNAME,
+                               POSTNAME = p.T_HR_POSTDICTIONARY.POSTNAME,
+                               SEX = o.SEX,
+                               EMAIL = o.EMAIL,
+                               IDNUMBER = o.IDNUMBER,
+                               FINGERPRINTID = o.FINGERPRINTID,
+                               MOBILE = o.MOBILE,
+                               OWNERID = o.EMPLOYEEID,
+                               OWNERPOSTID = p.POSTID,
+                               OWNERDEPARTMENTID = d.DEPARTMENTID,
+                               OWNERCOMPANYID = c.COMPANYID,
+                               CREATEUSERID = o.CREATEUSERID,
+                               EMPLOYEEPOSTID = ep.EMPLOYEEPOSTID,
+                               ISAGENCY = ep.ISAGENCY,
+                               POSTLEVEL = ep.POSTLEVEL,
+                               OFFICEPHONE = o.OFFICEPHONE
+                           };
+                    break;
+            }
+            if (!string.IsNullOrEmpty(filterString))
+            {
+                ents = ents.Where(filterString, queryParas.ToArray());
+            }
+            ents = ents.OrderBy(sort);
+
+            ents = Utility.Pager<V_EMPLOYEEVIEW>(ents, pageIndex, pageSize, ref pageCount);
+            return ents.Count() > 0 ? ents.ToList() : null;
+
+        }
+
+        /// <summary>
+        /// 导出员工通讯录
+        /// </summary>
+        /// <param name="companyID"></param>
+        /// <returns></returns>
+        public byte[] ExportContactsList(string companyID, string filterString, string[] paras, string sType, string sValue, string userId)
+        {
+            try
+            {
+                List<object> queryParas = new List<object>();
+                queryParas.AddRange(paras);
+
+
+                var company = (from e in dal.GetObjects<T_HR_COMPANY>()
+                               where e.COMPANYID == companyID
+                               select e).FirstOrDefault();
+                string companyName = company.CNAME;
+                #region 获取公司所有员工
+                IQueryable<V_EMPLOYEEVIEW> ents = from o in dal.GetObjects()
+                                                  join ep in dal.GetObjects<T_HR_EMPLOYEEPOST>() on o.EMPLOYEEID equals ep.T_HR_EMPLOYEE.EMPLOYEEID
+                                                  join p in dal.GetObjects<T_HR_POST>() on ep.T_HR_POST.POSTID equals p.POSTID
+                                                  join d in dal.GetObjects<T_HR_DEPARTMENT>() on p.T_HR_DEPARTMENT.DEPARTMENTID equals d.DEPARTMENTID
+                                                  join c in dal.GetObjects<T_HR_COMPANY>() on d.T_HR_COMPANY.COMPANYID equals c.COMPANYID
+                                                  where (o.EMPLOYEESTATE != "2" && ep.ISAGENCY == "0" && ep.CHECKSTATE == "2" && ep.EDITSTATE == "1")
+                                                  select new V_EMPLOYEEVIEW
+                                                  {
+                                                      EMPLOYEEID = o.EMPLOYEEID,
+                                                      EMPLOYEECNAME = o.EMPLOYEECNAME,
+                                                      EMPLOYEECODE = o.EMPLOYEECODE,
+                                                      EMPLOYEEENAME = o.EMPLOYEEENAME,
+                                                      COMPANYNAME = c.CNAME,
+                                                      DEPARTMENTNAME = d.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTNAME,
+                                                      POSTNAME = p.T_HR_POSTDICTIONARY.POSTNAME,
+                                                      SEX = o.SEX,
+                                                      EMAIL = o.EMAIL,
+                                                      IDNUMBER = o.IDNUMBER,
+                                                      FINGERPRINTID = o.FINGERPRINTID,
+                                                      MOBILE = o.MOBILE,
+                                                      OWNERID = o.EMPLOYEEID,
+                                                      OWNERPOSTID = p.POSTID,
+                                                      OWNERDEPARTMENTID = d.DEPARTMENTID,
+                                                      OWNERCOMPANYID = c.COMPANYID,
+                                                      CREATEUSERID = o.CREATEUSERID,
+                                                      EMPLOYEEPOSTID = ep.EMPLOYEEPOSTID,
+                                                      ISAGENCY = ep.ISAGENCY,
+                                                      POSTLEVEL = ep.POSTLEVEL,
+                                                      OFFICEPHONE = o.OFFICEPHONE
+                                                  };
+                switch (sType)
+                {
+                    case "Company":
+                        ents = from o in dal.GetObjects()
+                               join ep in dal.GetObjects<T_HR_EMPLOYEEPOST>() on o.EMPLOYEEID equals ep.T_HR_EMPLOYEE.EMPLOYEEID
+                               join p in dal.GetObjects<T_HR_POST>() on ep.T_HR_POST.POSTID equals p.POSTID
+                               join d in dal.GetObjects<T_HR_DEPARTMENT>() on p.T_HR_DEPARTMENT.DEPARTMENTID equals d.DEPARTMENTID
+                               join c in dal.GetObjects<T_HR_COMPANY>() on d.T_HR_COMPANY.COMPANYID equals c.COMPANYID
+                               where c.COMPANYID == sValue && (o.EMPLOYEESTATE != "2" && ep.ISAGENCY == "0" && ep.CHECKSTATE == "2" && ep.EDITSTATE == "1")
+                               select new V_EMPLOYEEVIEW
+                               {
+                                   EMPLOYEEID = o.EMPLOYEEID,
+                                   EMPLOYEECNAME = o.EMPLOYEECNAME,
+                                   EMPLOYEECODE = o.EMPLOYEECODE,
+                                   EMPLOYEEENAME = o.EMPLOYEEENAME,
+                                   COMPANYNAME = c.CNAME,
+                                   DEPARTMENTNAME = d.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTNAME,
+                                   POSTNAME = p.T_HR_POSTDICTIONARY.POSTNAME,
+                                   SEX = o.SEX,
+                                   EMAIL = o.EMAIL,
+                                   IDNUMBER = o.IDNUMBER,
+                                   FINGERPRINTID = o.FINGERPRINTID,
+                                   MOBILE = o.MOBILE,
+                                   OWNERID = o.EMPLOYEEID,
+                                   OWNERPOSTID = p.POSTID,
+                                   OWNERDEPARTMENTID = d.DEPARTMENTID,
+                                   OWNERCOMPANYID = c.COMPANYID,
+                                   CREATEUSERID = o.CREATEUSERID,
+                                   POSTLEVEL = ep.POSTLEVEL,
+                                   ISAGENCY = ep.ISAGENCY,
+                                   EMPLOYEEPOSTID = ep.EMPLOYEEPOSTID,
+                                   OFFICEPHONE = o.OFFICEPHONE
+                               };
+                        break;
+                    case "Department":
+                        ents = from o in dal.GetObjects()
+                               join ep in dal.GetObjects<T_HR_EMPLOYEEPOST>() on o.EMPLOYEEID equals ep.T_HR_EMPLOYEE.EMPLOYEEID
+                               join p in dal.GetObjects<T_HR_POST>() on ep.T_HR_POST.POSTID equals p.POSTID
+                               join d in dal.GetObjects<T_HR_DEPARTMENT>() on p.T_HR_DEPARTMENT.DEPARTMENTID equals d.DEPARTMENTID
+                               join c in dal.GetObjects<T_HR_COMPANY>() on d.T_HR_COMPANY.COMPANYID equals c.COMPANYID
+                               where d.DEPARTMENTID == sValue && (o.EMPLOYEESTATE != "2" && ep.CHECKSTATE == "2" && ep.EDITSTATE == "1")
+                               select new V_EMPLOYEEVIEW
+                               {
+                                   EMPLOYEEID = o.EMPLOYEEID,
+                                   EMPLOYEECNAME = o.EMPLOYEECNAME,
+                                   EMPLOYEECODE = o.EMPLOYEECODE,
+                                   EMPLOYEEENAME = o.EMPLOYEEENAME,
+                                   COMPANYNAME = c.CNAME,
+                                   DEPARTMENTNAME = d.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTNAME,
+                                   POSTNAME = p.T_HR_POSTDICTIONARY.POSTNAME,
+                                   SEX = o.SEX,
+                                   EMAIL = o.EMAIL,
+                                   IDNUMBER = o.IDNUMBER,
+                                   FINGERPRINTID = o.FINGERPRINTID,
+                                   MOBILE = o.MOBILE,
+                                   OWNERID = o.EMPLOYEEID,
+                                   OWNERPOSTID = p.POSTID,
+                                   OWNERDEPARTMENTID = d.DEPARTMENTID,
+                                   OWNERCOMPANYID = c.COMPANYID,
+                                   CREATEUSERID = o.CREATEUSERID,
+                                   POSTLEVEL = ep.POSTLEVEL,
+                                   ISAGENCY = ep.ISAGENCY,
+                                   EMPLOYEEPOSTID = ep.EMPLOYEEPOSTID,
+                                   OFFICEPHONE = o.OFFICEPHONE
+                               };
+                        break;
+                    case "Post":
+                        ents = from o in dal.GetObjects()
+                               join ep in dal.GetObjects<T_HR_EMPLOYEEPOST>() on o.EMPLOYEEID equals ep.T_HR_EMPLOYEE.EMPLOYEEID
+                               join p in dal.GetObjects<T_HR_POST>() on ep.T_HR_POST.POSTID equals p.POSTID
+                               join d in dal.GetObjects<T_HR_DEPARTMENT>() on p.T_HR_DEPARTMENT.DEPARTMENTID equals d.DEPARTMENTID
+                               join c in dal.GetObjects<T_HR_COMPANY>() on d.T_HR_COMPANY.COMPANYID equals c.COMPANYID
+                               where p.POSTID == sValue && (o.EMPLOYEESTATE != "2" && ep.CHECKSTATE == "2" && ep.EDITSTATE == "1")
+                               select new V_EMPLOYEEVIEW
+                               {
+                                   EMPLOYEEID = o.EMPLOYEEID,
+                                   EMPLOYEECNAME = o.EMPLOYEECNAME,
+                                   EMPLOYEECODE = o.EMPLOYEECODE,
+                                   EMPLOYEEENAME = o.EMPLOYEEENAME,
+                                   COMPANYNAME = c.CNAME,
+                                   DEPARTMENTNAME = d.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTNAME,
+                                   POSTNAME = p.T_HR_POSTDICTIONARY.POSTNAME,
+                                   SEX = o.SEX,
+                                   EMAIL = o.EMAIL,
+                                   IDNUMBER = o.IDNUMBER,
+                                   FINGERPRINTID = o.FINGERPRINTID,
+                                   MOBILE = o.MOBILE,
+                                   OWNERID = o.EMPLOYEEID,
+                                   OWNERPOSTID = p.POSTID,
+                                   OWNERDEPARTMENTID = d.DEPARTMENTID,
+                                   OWNERCOMPANYID = c.COMPANYID,
+                                   CREATEUSERID = o.CREATEUSERID,
+                                   EMPLOYEEPOSTID = ep.EMPLOYEEPOSTID,
+                                   ISAGENCY = ep.ISAGENCY,
+                                   POSTLEVEL = ep.POSTLEVEL,
+                                   OFFICEPHONE = o.OFFICEPHONE
+                               };
+                        break;
+                }
+                if (!string.IsNullOrEmpty(filterString))
+                {
+                    ents = ents.Where(filterString, queryParas.ToArray());
+                }
+                #endregion
+
+                byte[] result;
+                
+                #region 定义表头名称
+                DataTable dt = new DataTable();
+                DataColumn colComp = new DataColumn();
+                colComp.ColumnName = "公司";
+                colComp.DataType = typeof(string);
+                dt.Columns.Add(colComp);
+
+                DataColumn colDept = new DataColumn();
+                colDept.ColumnName = "部门";
+                colDept.DataType = typeof(string);
+                dt.Columns.Add(colDept);
+
+                DataColumn colPost = new DataColumn();
+                colPost.ColumnName = "岗位";
+                colPost.DataType = typeof(string);
+                dt.Columns.Add(colPost);
+
+                DataColumn colCordSD = new DataColumn();
+                colCordSD.ColumnName = "姓名";
+                colCordSD.DataType = typeof(string);
+                dt.Columns.Add(colCordSD);
+
+
+                DataColumn col13 = new DataColumn();
+                col13.ColumnName = Utility.GetResourceStr("办公电话");
+                col13.DataType = typeof(string);
+                dt.Columns.Add(col13);
+
+                DataColumn col3 = new DataColumn();
+                col3.ColumnName = Utility.GetResourceStr("手机");
+                col3.DataType = typeof(string);
+                dt.Columns.Add(col3);
+
+                DataColumn col7 = new DataColumn();
+                col7.ColumnName = Utility.GetResourceStr("电子邮箱");
+                col7.DataType = typeof(string);
+                dt.Columns.Add(col7);
+
+                #endregion
+
+                if (ents != null && ents.Any())
+                {
+                    foreach (var item in ents.ToList())
+                    {
+                        DataRow row = dt.NewRow();
+                        row[0] = item.COMPANYNAME;
+                        row[1] = item.DEPARTMENTNAME;
+                        row[2] = item.POSTNAME;
+                        row[3] = item.EMPLOYEECNAME;
+                        row[4] = item.OFFICEPHONE;
+                        row[5] = item.MOBILE;
+                        row[6] = item.EMAIL;
+                        dt.Rows.Add(row);
+                    }
+                    result = Utility.OutFileStream(companyName + Utility.GetResourceStr(" 员工通讯录"), dt);
+                    return result;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                SMT.Foundation.Log.Tracer.Debug("ExportEmployee导出员工通讯录:" + ex.Message);
+                return null;
+            }
+        }
 
         /// <summary>
         /// 员工档案视图分页
@@ -1865,6 +2249,63 @@ namespace SMT.HRM.BLL
 
             return temp;
         }
+
+
+        /// <summary>
+        /// 根据参数获取员工ID集合
+        /// </summary>
+        /// <param name="companyIDs"></param>
+        /// <param name="departmentIDs"></param>
+        /// <param name="postIDs"></param>
+        /// <param name="employeeIDs"></param>
+        /// <returns></returns>
+        public List<string> GetEmployeeIDsByParasByBalancePost(IList<string> companyIDs, IList<string> departmentIDs, IList<string> postIDs)
+        {
+            //TODO: 分页
+            List<string> temp = new List<string>();
+            List<string> employeetmp = new List<string>();
+            if (companyIDs.Count > 0)
+            {
+                foreach (string cid in companyIDs)
+                {
+                    employeetmp = (from a in dal.GetObjects<T_HR_EMPLOYEEPOST>().Include("T_HR_EMPLOYEE").Include("T_HR_POST")
+                                   join b in dal.GetObjects<T_HR_POST>().Include("T_HR_DEPARTMENT") on a.T_HR_POST.POSTID equals b.POSTID
+                                   where b.T_HR_DEPARTMENT.T_HR_COMPANY.COMPANYID == cid && a.T_HR_EMPLOYEE.EMPLOYEESTATE != "2" && a.T_HR_EMPLOYEE.EDITSTATE == "1"
+                                   && a.EDITSTATE == "1"
+                                   && a.ISAGENCY == "0"
+                                   select a.T_HR_EMPLOYEE.EMPLOYEEID).ToList();
+                    temp.AddRange(employeetmp);
+                }
+            }
+            if (departmentIDs.Count > 0)
+            {
+                foreach (string did in departmentIDs)
+                {
+                    employeetmp = (from a in dal.GetObjects<T_HR_EMPLOYEEPOST>().Include("T_HR_EMPLOYEE").Include("T_HR_POST")
+                                   join b in dal.GetObjects<T_HR_POST>().Include("T_HR_DEPARTMENT") on a.T_HR_POST.POSTID equals b.POSTID
+                                   where b.T_HR_DEPARTMENT.DEPARTMENTID == did && a.T_HR_EMPLOYEE.EMPLOYEESTATE != "2" && a.T_HR_EMPLOYEE.EDITSTATE == "1"
+                                   && a.EDITSTATE == "1"
+                                   && a.ISAGENCY == "0"
+                                   select a.T_HR_EMPLOYEE.EMPLOYEEID).ToList();
+                    temp.AddRange(employeetmp);
+                }
+            }
+            if (postIDs.Count > 0)
+            {
+                foreach (string pid in postIDs)
+                {
+                    employeetmp = (from a in dal.GetObjects<T_HR_EMPLOYEEPOST>().Include("T_HR_EMPLOYEE")
+                                   where a.T_HR_POST.POSTID == pid && a.T_HR_EMPLOYEE.EMPLOYEESTATE != "2" && a.T_HR_EMPLOYEE.EDITSTATE == "1"
+                                   && a.EDITSTATE == "1"
+                                   && a.ISAGENCY == "0"
+                                   select a.T_HR_EMPLOYEE.EMPLOYEEID).ToList();
+                    temp.AddRange(employeetmp);
+                }
+            }
+
+
+            return temp;
+        }
         /// <summary>
         /// 查找公司id，
         /// </summary>
@@ -2854,10 +3295,15 @@ namespace SMT.HRM.BLL
         /// </summary>
         /// <param name="companyID"></param>
         /// <returns></returns>
-        public byte[] ExportEmployee(string companyID)
+        public byte[] ExportEmployee(string companyID, string filterString, string[] paras, string userId)
         {
             try
             {
+                List<object> queryParas = new List<object>();
+                queryParas.AddRange(paras);
+
+                SetOrganizationFilter(ref filterString, ref queryParas, userId, "T_HR_EMPLOYEE");
+
                 var company = (from e in dal.GetObjects<T_HR_COMPANY>()
                                where e.COMPANYID == companyID
                                select e).FirstOrDefault();
@@ -2884,12 +3330,13 @@ namespace SMT.HRM.BLL
 
                                   join p in dal.GetObjects<T_HR_PENSIONMASTER>() on e.EMPLOYEEID equals p.T_HR_EMPLOYEE.EMPLOYEEID into Pensiontemp
                                   from t4 in Pensiontemp.DefaultIfEmpty()//左连接
-                                  where e.OWNERCOMPANYID == companyID && e.EMPLOYEESTATE != "4"//4为未提交
+                                  where e.OWNERCOMPANYID == companyID //&& e.EMPLOYEESTATE != "4"//4为未提交
                                   select new V_EmployeeEntryInfo
                                   {
                                       EmployeeID = e.EMPLOYEEID,
                                       EmployeeName = e.EMPLOYEECNAME,
                                       CompanyName = c.CNAME,
+                                      EmployeeCode = e.EMPLOYEECODE,
                                       DepartmentName = dic.DEPARTMENTNAME,
                                       PostName = pic.POSTNAME,
                                       EmployeeState = e.EMPLOYEESTATE,
@@ -2918,11 +3365,23 @@ namespace SMT.HRM.BLL
                                       Education = e.TOPEDUCATION,
                                       GraduateSchool = t1.SCHOONAME,
                                       Specialty = t1.SPECIALTY,
-                                      Remark = e.REMARK
+                                      Remark = e.REMARK,
+                                      CreateUserID = e.CREATEUSERID,
+                                      OwnerID = e.OWNERID,
+                                      OwnerPostID = e.OWNERPOSTID,
+                                      OwnerDepartmentID = e.OWNERDEPARTMENTID,
+                                      OwnerCompanyID = e.OWNERCOMPANYID
                                   };
-                var temp = entEmployee.GroupBy(t => t.EmployeeID);
+                var temp = entEmployee.Where(filterString, queryParas.ToArray());
+                var source = temp.GroupBy(t => t.EmployeeID);
+                //temp = entEmployee.GroupBy(t => t.EmployeeID);
+                //if (!string.IsNullOrEmpty(filterString))
+                //{
+                //    temp = temp.Where(filterString, queryParas.ToArray());
+                //}
+
                 List<V_EmployeeEntryInfo> list = new List<V_EmployeeEntryInfo>();
-                foreach (var item in temp)
+                foreach (var item in source)
                 {
                     var info = item.Where(t => t.PensionCheckState == "2").FirstOrDefault();//审核通过的社保信息
                     if (info != null)
@@ -3383,6 +3842,46 @@ namespace SMT.HRM.BLL
         }
         #endregion
 
+        public string GetEmailNameIsExistNameAddOne(string userName,string employeeId)
+        {
+            SMT.SaaS.BLLCommonServices.PermissionWS.PermissionServiceClient client =
+                new SaaS.BLLCommonServices.PermissionWS.PermissionServiceClient();
+            
+
+            string StrReturn = "";
+            try
+            {
+                bool hasReption = true;
+                int i = 1;
+                while (hasReption)
+                {
+                    var q = from ent in dal.GetTable()
+                            where ent.EMAIL == userName + "@sinomaster.com" && ent.EMPLOYEEID != employeeId
+                            select ent;
+
+                    string refUserName = client.GetUserNameIsExistNameAddOne(userName, employeeId);
+
+                    if (q.Count() <= 0 && refUserName == userName)
+                    {
+                        hasReption = false;
+                        StrReturn = userName;
+                    }
+                    else
+                    {
+                        StrReturn = userName + i.ToString();
+                        userName = StrReturn;
+                    }
+                    i = i + 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                Tracer.Debug("GetEmailNameIsExistNameAddOne" + System.DateTime.Now.ToString() + " " + ex.ToString());
+
+            }
+            return StrReturn;
+        }
+
         #region  预算所需的员工岗位情况的接口
         /// <summary>
         /// 个人费用报销离职入职提示接口
@@ -3528,6 +4027,7 @@ namespace SMT.HRM.BLL
             }
             return list;
         }
+
         /// <summary>
         /// 获取员工个人活动经费(根据公司生成)
         /// </summary>
@@ -3539,37 +4039,102 @@ namespace SMT.HRM.BLL
             try
             {
                 //定义返回的集合
-                List<V_EMPLOYEEFUNDS> list = new List<V_EMPLOYEEFUNDS>();
+                List<V_EMPLOYEEFUNDS> list = new List<V_EMPLOYEEFUNDS>();              
+                string employeeids = string.Empty;
+
+                #region 根据发薪公司获取员工
+                EmployeeSalaryRecordBLL esBll = new EmployeeSalaryRecordBLL();
+                string strmsg = "通过发薪结构结算薪资：";
+                  var company = dal.GetObjects<T_HR_COMPANY>().Where(c => c.COMPANYID == strCompantID).FirstOrDefault();
+                
+            //查询在职的结算岗位为指定岗位的员工及员工薪资档案
+            //List<T_HR_EMPLOYEE> list = new List<T_HR_EMPLOYEE>();
+            var allemp = from employee in dal.GetObjects<T_HR_EMPLOYEE>().Include("T_HR_SALARYARCHIVE")
+                    join salaryAhive in dal.GetTable<T_HR_SALARYARCHIVE>()
+                    on employee.EMPLOYEEID equals salaryAhive.EMPLOYEEID
+                    where salaryAhive.PAYCOMPANY == strCompantID//指定的发薪机构的薪资档案
+                    && salaryAhive.CHECKSTATE == "2"//薪资档案审核通过的
+                    && employee.EMPLOYEESTATE != "2"//在职员工
+                    && (salaryAhive.OTHERSUBJOIN < DateTime.Now.Month
+                    ||(salaryAhive.OTHERSUBJOIN == DateTime.Now.Year
+                    && salaryAhive.OTHERADDDEDUCT <= DateTime.Now.Month-1))
+                    select salaryAhive;
+
+            int isalaryAchiveCount = allemp.Count();
+            if (isalaryAchiveCount > 0)
+            {
+                List<T_HR_SALARYARCHIVE> SalaryArchivelist = allemp.ToList();
+
+                Tracer.Debug(strmsg + "活动经费下拨：获取到所有发薪机构 " + company.CNAME + " 上的员工薪资档案，共 " + isalaryAchiveCount.ToString() + "条");
+                var employees = (from ent in SalaryArchivelist
+                                 select new { ent.EMPLOYEEID, ent.EMPLOYEENAME,ent.ATTENDANCEORGID }).Distinct().ToList();
+                int i = 1;
+
+                foreach (var employee in employees)
+                {
+                    try
+                    {
+                        if (!esBll.checkEmployeeHaveMainPostInCompany(employee.EMPLOYEEID, employee.ATTENDANCEORGID))
+                        {
+                            Tracer.Debug("活动经费下拨：该员工被跳过，因为该员工在考勤机构已经没有生效的主岗位,"
+                                + "员工姓名：" + employee.EMPLOYEENAME + ",员工id：" + employee.EMPLOYEEID
+                                + " 发薪结构：" + company.CNAME + " 发薪机构id" + strCompantID);
+                            continue;
+                        }
+                        //获取员工最新生效的一条薪资档案
+                        if (employeeids.Contains(employee.EMPLOYEEID)) continue;
+                        employeeids = employeeids + "," + employee.EMPLOYEEID;
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+                }
+            }
+            else
+            {
+                Tracer.Debug("活动经费下拨：通过发薪结构获取的员工薪资档案为空，发薪机构：" + company.CNAME);
+                return list;
+            }
+                #endregion
+
                 #region 获取该公司员工信息
                 //获取员工的基本信息
                 var ents = from o in dal.GetObjects()
-                           join ep in dal.GetObjects<T_HR_EMPLOYEEPOST>() on o.EMPLOYEEID equals ep.T_HR_EMPLOYEE.EMPLOYEEID
-                           join p in dal.GetObjects<T_HR_POST>() on ep.T_HR_POST.POSTID equals p.POSTID
-                           join pd in dal.GetObjects<T_HR_POSTDICTIONARY>() on p.T_HR_POSTDICTIONARY.POSTDICTIONARYID equals pd.POSTDICTIONARYID
-                           join d in dal.GetObjects<T_HR_DEPARTMENT>() on p.T_HR_DEPARTMENT.DEPARTMENTID equals d.DEPARTMENTID
-                           join cd in dal.GetObjects<T_HR_DEPARTMENTDICTIONARY>() on
-                               d.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTDICTIONARYID equals cd.DEPARTMENTDICTIONARYID
-                           join cm in dal.GetObjects<T_HR_COMPANY>() on d.T_HR_COMPANY.COMPANYID equals cm.COMPANYID
-                           where o.EDITSTATE == "1" && (o.EMPLOYEESTATE == "0" || o.EMPLOYEESTATE == "1" || o.EMPLOYEESTATE == "3") && ep.CHECKSTATE == "2"
-                           && ep.EDITSTATE == "1" && o.OWNERCOMPANYID == strCompantID && ep.ISAGENCY == "0"//主岗位
-                           orderby ep.POSTLEVEL
-                           select new V_EMPLOYEEFUNDS
-                           {
-                               EMPLOYEEID = o.EMPLOYEEID,
-                               EMPLOYECNAME = o.EMPLOYEECNAME,
-                               EMPLOYEESTATE = o.EMPLOYEESTATE,
-                               ISAGENCY = ep.ISAGENCY,
-                               COMPANYID = cm.COMPANYID,
-                               COMPANYNAME = cm.CNAME,
-                               DEPARTMENTID = d.DEPARTMENTID,
-                               DEPARTMENTNAME = cd.DEPARTMENTNAME,
-                               POSTID = p.POSTID,
-                               POSTNAME = pd.POSTNAME
-                           };
+                            join ep in dal.GetObjects<T_HR_EMPLOYEEPOST>() on o.EMPLOYEEID equals ep.T_HR_EMPLOYEE.EMPLOYEEID
+                            join p in dal.GetObjects<T_HR_POST>() on ep.T_HR_POST.POSTID equals p.POSTID
+                            join pd in dal.GetObjects<T_HR_POSTDICTIONARY>() on p.T_HR_POSTDICTIONARY.POSTDICTIONARYID equals pd.POSTDICTIONARYID
+                            join d in dal.GetObjects<T_HR_DEPARTMENT>() on p.T_HR_DEPARTMENT.DEPARTMENTID equals d.DEPARTMENTID
+                            join cd in dal.GetObjects<T_HR_DEPARTMENTDICTIONARY>() on
+                                d.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTDICTIONARYID equals cd.DEPARTMENTDICTIONARYID
+                            join cm in dal.GetObjects<T_HR_COMPANY>() on d.T_HR_COMPANY.COMPANYID equals cm.COMPANYID
+                            where o.EDITSTATE == "1" && (o.EMPLOYEESTATE == "0" || o.EMPLOYEESTATE == "1" || o.EMPLOYEESTATE == "3") && ep.CHECKSTATE == "2"
+                            && ep.EDITSTATE == "1" && ep.ISAGENCY == "0"//主岗位
+                            && o.EMPLOYEEID.Contains(employeeids)
+                            orderby ep.POSTLEVEL
+                            select new V_EMPLOYEEFUNDS
+                            {
+                                EMPLOYEEID = o.EMPLOYEEID,
+                                EMPLOYECNAME = o.EMPLOYEECNAME,
+                                EMPLOYEESTATE = o.EMPLOYEESTATE,
+                                ISAGENCY = ep.ISAGENCY,
+                                COMPANYID = cm.COMPANYID,
+                                COMPANYNAME = cm.CNAME,
+                                DEPARTMENTID = d.DEPARTMENTID,
+                                DEPARTMENTNAME = cd.DEPARTMENTNAME,
+                                POSTID = p.POSTID,
+                                POSTNAME = pd.POSTNAME
+                            };
 
                 if (ents == null || ents.Count() == 0)
                 {
                     return list;
+                }
+                else
+                {
+                    foreach (var item in ents)
+                    {
+                        Tracer.Debug(item.COMPANYNAME+item.DEPARTMENTNAME+item.POSTNAME+item.EMPLOYECNAME+System.Environment.NewLine);
+                    }
                 }
                 #endregion
 
@@ -3589,7 +4154,7 @@ namespace SMT.HRM.BLL
 
                 foreach (var item in ents)
                 {
-                    if (item.EMPLOYECNAME == "王磊")
+                    if (item.EMPLOYECNAME == "张德阔")
                     {
                         string str = "";
                     }
@@ -3602,10 +4167,18 @@ namespace SMT.HRM.BLL
                         item.EMPLOYEESTATE = "10";
                     }
                     #region 查询员工活动经费
+
+                    string strFullDeptName = string.Empty;
+                    bllDept.GetFullDepartmentNameByID(item.DEPARTMENTID, ref strFullDeptName);
+                    item.DEPARTMENTNAME = strFullDeptName;
+
                     //查询该员工是否有个人活动经费
                     T_HR_SALARYARCHIVE archive = bllSalary.GetSalaryArchiveApprovedByEmployeeID(item.EMPLOYEEID, int.Parse(dYear.ToString()), int.Parse(dMonth.ToString()), strCompantID);
                     if (archive == null)
                     {
+                        string msg =" 活动经费下拨："+item.EMPLOYECNAME+ " 未获取到该员工有效的薪资档案";
+                        item.ATTENDREMARK = "未找到该员工有效的薪资档案";
+                        Tracer.Debug(msg);
                         continue;
                     }
 
@@ -3614,18 +4187,19 @@ namespace SMT.HRM.BLL
                                  && cs.ASSIGNERID == OwnerId
                                  select cs;
 
-                    string strFullDeptName = string.Empty;
-                    bllDept.GetFullDepartmentNameByID(item.DEPARTMENTID, ref strFullDeptName);
-                    item.DEPARTMENTNAME = strFullDeptName;
-
                     if (custom == null || custom.Count() == 0)
                     {
+                        string msg = " 活动经费下拨：" + item.EMPLOYECNAME + " 该员工的薪资档案未设置活动经费";
+                        item.ATTENDREMARK = "该员工在薪资档案中未设置活动经费";
+                        Tracer.Debug(msg);
                         continue;
                     }
 
                     T_HR_CUSTOMGUERDONARCHIVE entCustomArchive = custom.ToList().FirstOrDefault();
                     if (entCustomArchive == null || entCustomArchive.SUM == null || entCustomArchive.SUM == 0)
                     {
+                        string msg = " 活动经费下拨：" + item.EMPLOYECNAME + " 该员工的薪资档案未设置活动经费";
+                        item.ATTENDREMARK = "该员工在薪资档案中未设置活动经费";
                         continue;
                     }
                     #endregion
@@ -3718,6 +4292,7 @@ namespace SMT.HRM.BLL
                                     item.REALSUM = Math.Round(total);
                                 }
                                 list.Add(item);
+                                #endregion
                             }
                             else
                             {
@@ -3743,12 +4318,13 @@ namespace SMT.HRM.BLL
                             continue;
                         }
                     }
-                                #endregion
                     else
                     {
                         item.NEEDATTENDDAYS = 0;
                         item.REALATTENDDAYS = 0;
-                        item.ATTENDREMARK = GetIsAgency(item.ISAGENCY) + "；" + GetEmployeeDicration(item.EMPLOYEESTATE, item.EMPLOYEEID) + "；";
+                        item.ATTENDREMARK = GetIsAgency(item.ISAGENCY) + "；"
+                            + GetEmployeeDicration(item.EMPLOYEESTATE, item.EMPLOYEEID)
+                            + "；" + "未获取到员工当月考勤结算记录，活动经费无法计算，请手工录入。";
                         item.NEEDSUM = custom.ToList().FirstOrDefault().SUM;
                         item.REALSUM = 0;
                         list.Add(item);
@@ -3756,7 +4332,7 @@ namespace SMT.HRM.BLL
                 }
 
 
-                list = list.Where(c => c.COMPANYID == strCompantID && c.ISAGENCY == "0").ToList();
+                //list = list.Where(c => c.COMPANYID == strCompantID && c.ISAGENCY == "0").ToList();
                 List<V_EMPLOYEEFUNDS> entResList = new List<V_EMPLOYEEFUNDS>();
 
                 foreach (V_EMPLOYEEFUNDS item in list)
@@ -3834,235 +4410,259 @@ namespace SMT.HRM.BLL
         /// <returns>返回自定义员工信息集合</returns>
         public List<V_EMPLOYEEFUNDS> GetEmployeeFundsList(List<V_EMPLOYEEFUNDS> list)
         {
-            if (list.Count != 0)
+            try
             {
-                DepartmentBLL bllDept = new DepartmentBLL();
-                SalaryArchiveBLL bllSalary = new SalaryArchiveBLL();
-                AttendanceSolutionAsignBLL bllAttendanceSolutionAsign = new AttendanceSolutionAsignBLL();
-                AttendMonthlyBalanceBLL bllAttendBalance = new AttendMonthlyBalanceBLL();
-                decimal dYear = 0, dMonth = 0;
-                dYear = DateTime.Now.AddMonths(-1).Year;     //取年份
-                dMonth = DateTime.Now.AddMonths(-1).Month;   //取月份
-
-                //计算应出勤天数使用
-                DateTime dtStart = new DateTime();
-                DateTime dtEnd = new DateTime();
-                dtStart = DateTime.Parse(DateTime.Now.AddMonths(-1).ToString("yyyy-MM") + "-1");
-                dtEnd = dtStart.AddMonths(1).AddSeconds(-1);
-
-                foreach (V_EMPLOYEEFUNDS item in list)
+                if (list.Count != 0)
                 {
-                    IQueryable<V_EMPLOYEEFUNDS> ents;
-                    //用员工ID和岗位ID进行查询
-                    ents = from v in dal.GetObjects()
-                           join ep in dal.GetObjects<T_HR_EMPLOYEEPOST>() on v.EMPLOYEEID equals ep.T_HR_EMPLOYEE.EMPLOYEEID
-                           where v.EMPLOYEEID == item.EMPLOYEEID && v.OWNERPOSTID == item.POSTID
-                           select new V_EMPLOYEEFUNDS
-                           {
-                               EMPLOYEEID = item.EMPLOYEEID,
-                               POSTID = item.POSTID,
-                               EMPLOYEESTATE = v.EMPLOYEESTATE,
-                               ISAGENCY = ep.ISAGENCY
-                           };
+                    DepartmentBLL bllDept = new DepartmentBLL();
+                    SalaryArchiveBLL bllSalary = new SalaryArchiveBLL();
+                    AttendanceSolutionAsignBLL bllAttendanceSolutionAsign = new AttendanceSolutionAsignBLL();
+                    AttendMonthlyBalanceBLL bllAttendBalance = new AttendMonthlyBalanceBLL();
+                    decimal dYear = 0, dMonth = 0;
+                    dYear = DateTime.Now.AddMonths(-1).Year;     //取年份
+                    dMonth = DateTime.Now.AddMonths(-1).Month;   //取月份
 
-                    if (ents.Count() == 0)
+                    //计算应出勤天数使用
+                    DateTime dtStart = new DateTime();
+                    DateTime dtEnd = new DateTime();
+                    dtStart = DateTime.Parse(DateTime.Now.AddMonths(-1).ToString("yyyy-MM") + "-1");
+                    dtEnd = dtStart.AddMonths(1).AddSeconds(-1);
+
+                    foreach (V_EMPLOYEEFUNDS item in list)
                     {
-                        ents = from ep in dal.GetObjects<T_HR_EMPLOYEEPOST>().Include("T_HR_EMPLOYEE").Include("T_HR_POST")
-                               where ep.T_HR_EMPLOYEE.EMPLOYEEID == item.EMPLOYEEID && ep.T_HR_POST.POSTID == item.POSTID
+                        
+                        IQueryable<V_EMPLOYEEFUNDS> ents;
+                        //用员工ID和岗位ID进行查询
+                        ents = from v in dal.GetObjects()
+                               join ep in dal.GetObjects<T_HR_EMPLOYEEPOST>() on v.EMPLOYEEID equals ep.T_HR_EMPLOYEE.EMPLOYEEID
+                               where v.EMPLOYEEID == item.EMPLOYEEID
+                               && v.OWNERPOSTID == item.POSTID
+                               && ep.EDITSTATE == "1"    
                                select new V_EMPLOYEEFUNDS
                                {
-                                   EMPLOYEEID = ep.T_HR_EMPLOYEE.EMPLOYEEID,
-                                   POSTID = ep.T_HR_POST.POSTID,
-                                   EMPLOYEESTATE = ep.T_HR_EMPLOYEE.EMPLOYEESTATE,
+                                   EMPLOYEEID = item.EMPLOYEEID,
+                                   POSTID = item.POSTID,
+                                   EMPLOYEESTATE = v.EMPLOYEESTATE,
                                    ISAGENCY = ep.ISAGENCY
                                };
-                    }
-                    //如果查询有结果，则去检查此岗位是否在异动中
-                    if (ents != null && ents.Count() > 0)
-                    {
-                        var change = from pg in dal.GetObjects<T_HR_EMPLOYEEPOSTCHANGE>()
-                                     where pg.T_HR_EMPLOYEE.EMPLOYEEID == item.EMPLOYEEID && pg.FROMPOSTID == item.POSTID
-                                     && pg.CHECKSTATE == "1"
-                                     select pg;
-                        if (change != null && change.Count() > 0)
+
+                        if (ents.Count() == 0)
                         {
-                            item.EMPLOYEESTATE = "10";
+                            ents = from ep in dal.GetObjects<T_HR_EMPLOYEEPOST>().Include("T_HR_EMPLOYEE").Include("T_HR_POST")
+                                   where ep.T_HR_EMPLOYEE.EMPLOYEEID == item.EMPLOYEEID && ep.T_HR_POST.POSTID == item.POSTID
+                                   select new V_EMPLOYEEFUNDS
+                                   {
+                                       EMPLOYEEID = ep.T_HR_EMPLOYEE.EMPLOYEEID,
+                                       POSTID = ep.T_HR_POST.POSTID,
+                                       EMPLOYEESTATE = ep.T_HR_EMPLOYEE.EMPLOYEESTATE,
+                                       ISAGENCY = ep.ISAGENCY
+                                   };
                         }
-                        else
+                        //如果查询有结果，则去检查此岗位是否在异动中
+                        if (ents != null && ents.Count() > 0)
                         {
-                            item.EMPLOYEESTATE = ents.FirstOrDefault().EMPLOYEESTATE;
-                        }
-                        item.ISAGENCY = ents.FirstOrDefault().ISAGENCY;
-                        //查询该员工是否有个人活动经费
-                        T_HR_SALARYARCHIVE archive = bllSalary.GetSalaryArchiveApprovedByEmployeeID(item.EMPLOYEEID, int.Parse(dYear.ToString()), int.Parse(dMonth.ToString()), item.COMPANYID);
-                        if (archive == null)
-                        {
-                            continue;
-                        }
-
-                        var custom = from cs in dal.GetObjects<T_HR_CUSTOMGUERDONARCHIVE>().Include("T_HR_SALARYARCHIVE")
-                                     where cs.T_HR_SALARYARCHIVE.SALARYARCHIVEID == archive.SALARYARCHIVEID
-                                     select cs;
-
-
-                        if (custom == null)
-                        {
-                            continue;
-                        }
-
-                        if (custom.Count() == 0)
-                        {
-                            continue;
-                        }
-
-                        T_HR_CUSTOMGUERDONARCHIVE entCustomArchive = custom.ToList().FirstOrDefault();
-                        if (entCustomArchive == null)
-                        {
-                            continue;
-                        }
-
-                        if (entCustomArchive.SUM == null)
-                        {
-                            continue;
-                        }
-
-                        if (entCustomArchive.SUM == 0)
-                        {
-                            continue;
-                        }
-
-
-                        //查询员工的出勤情况
-                        var attend = from at in dal.GetObjects<T_HR_ATTENDMONTHLYBALANCE>()
-                                     where at.EMPLOYEEID == item.EMPLOYEEID && at.CHECKSTATE == "2" && at.EDITSTATE == "1"
-                                     && at.BALANCEYEAR == DateTime.Now.Year && at.BALANCEMONTH == DateTime.Now.Month
-                                     orderby at.CREATEDATE descending
-                                     select at;
-                        if (attend != null && attend.Count() > 0)
-                        {
-                            T_HR_ATTENDMONTHLYBALANCE entCurMonth = attend.FirstOrDefault();
-
-                            item.NEEDATTENDDAYS = entCurMonth.NEEDATTENDDAYS;
-                            if (entCurMonth.NEEDATTENDDAYS == null)
+                            var change = from pg in dal.GetObjects<T_HR_EMPLOYEEPOSTCHANGE>()
+                                         where pg.T_HR_EMPLOYEE.EMPLOYEEID == item.EMPLOYEEID && pg.FROMPOSTID == item.POSTID
+                                         && pg.CHECKSTATE == "1"
+                                         select pg;
+                            if (change != null && change.Count() > 0)
                             {
-                                T_HR_ATTENDANCESOLUTIONASIGN entAttSolAsign = bllAttendanceSolutionAsign.GetAttSolAsignByEmployeeIDAndDate(item.EMPLOYEEID, dtStart, dtEnd);
-
-                                if (entAttSolAsign.T_HR_ATTENDANCESOLUTION != null)
-                                {
-                                    decimal? dNeedDays = bllAttendBalance.GetNeedAttendDays(dtStart, dtEnd, item.COMPANYID, entAttSolAsign.T_HR_ATTENDANCESOLUTION);
-                                    if (dNeedDays.Value > 0)
-                                    {
-                                        item.NEEDATTENDDAYS = dNeedDays;
-                                    }
-                                }
+                                item.EMPLOYEESTATE = "10";
+                            }
+                            else
+                            {
+                                item.EMPLOYEESTATE = ents.FirstOrDefault().EMPLOYEESTATE;
+                            }
+                            item.ISAGENCY = ents.FirstOrDefault().ISAGENCY;
+                            if (item.ISAGENCY == "1")
+                            {
+                                item.ATTENDREMARK = "系统不支持兼职员工下拨活动经费，请确认。";
+                                continue;
+                            }
+                            //查询该员工是否有个人活动经费
+                            T_HR_SALARYARCHIVE archive = bllSalary.GetSalaryArchiveApprovedByEmployeeID(item.EMPLOYEEID, int.Parse(dYear.ToString()), int.Parse(dMonth.ToString()), item.COMPANYID);
+                            if (archive == null)
+                            {
+                                item.ATTENDREMARK = "未找到该员工有效的薪资档案";
+                                continue;
                             }
 
-                            item.REALATTENDDAYS = entCurMonth.REALATTENDDAYS;
-                            if (entCurMonth.REALNEEDATTENDDAYS != entCurMonth.REALATTENDDAYS)
+                            var custom = from cs in dal.GetObjects<T_HR_CUSTOMGUERDONARCHIVE>().Include("T_HR_SALARYARCHIVE")
+                                         where cs.T_HR_SALARYARCHIVE.SALARYARCHIVEID == archive.SALARYARCHIVEID
+                                         select cs;
+
+
+                            if (custom == null)
                             {
-                                item.REALATTENDDAYS = entCurMonth.REALNEEDATTENDDAYS - entCurMonth.AFFAIRLEAVEDAYS;
-                                //病假单独算
-                                //if (entCurMonth.SICKLEAVEDAYS != null)
-                                //{
-                                //    decimal dSickleavedays = entCurMonth.SICKLEAVEDAYS.Value - 1;
-                                //    if (dSickleavedays > 0)
-                                //    {
-                                //        item.REALATTENDDAYS = item.REALATTENDDAYS - dSickleavedays;
-                                //    }
-                                //}
+                                item.ATTENDREMARK = "该员工在薪资档案中未设置活动经费";
+                                continue;
                             }
-                            try
+
+                            if (custom.Count() == 0)
                             {
-                                if (item.COMPANYID == "bac05c76-0f5b-40ae-b73b-8be541ed35ed")//只有在线公司迟到会扣活动经费。。。
+                                item.ATTENDREMARK = "该员工在薪资档案中未设置活动经费";
+                                continue;
+                            }
+
+                            T_HR_CUSTOMGUERDONARCHIVE entCustomArchive = custom.ToList().FirstOrDefault();
+                            if (entCustomArchive == null)
+                            {
+                                item.ATTENDREMARK = "该员工在薪资档案中未设置活动经费";
+                                continue;
+                            }
+
+                            if (entCustomArchive.SUM == null)
+                            {
+                                item.ATTENDREMARK = "该员工在薪资档案中未设置活动经费";
+                                continue;
+                            }
+
+                            if (entCustomArchive.SUM == 0)
+                            {
+                                item.ATTENDREMARK = "该员工在薪资档案中设置的活动经费为0";
+                                continue;
+                            }
+
+
+                            //查询员工的出勤情况
+                            var attend = from at in dal.GetObjects<T_HR_ATTENDMONTHLYBALANCE>()
+                                         where at.EMPLOYEEID == item.EMPLOYEEID && at.CHECKSTATE == "2" && at.EDITSTATE == "1"
+                                         && at.BALANCEYEAR == DateTime.Now.Year && at.BALANCEMONTH == DateTime.Now.Month
+                                         orderby at.CREATEDATE descending
+                                         select at;
+                            if (attend != null && attend.Count() > 0)
+                            {
+                                T_HR_ATTENDMONTHLYBALANCE entCurMonth = attend.FirstOrDefault();
+
+                                item.NEEDATTENDDAYS = entCurMonth.NEEDATTENDDAYS;
+                                if (entCurMonth.NEEDATTENDDAYS == null)
                                 {
-                                    #region 在线公司
-                                    decimal? realDays = item.REALATTENDDAYS - entCurMonth.SICKLEAVEDAYS;
-                                    string reMart = GetIsAgency(item.ISAGENCY) + "；" + GetEmployeeDicration(item.EMPLOYEESTATE, item.EMPLOYEEID) +
-                               "；应出勤" + item.NEEDATTENDDAYS.ToString() + "天，实际出勤" + realDays.ToString() + "天";
-                                    if (entCurMonth.LATEMINUTES != null)
+                                    T_HR_ATTENDANCESOLUTIONASIGN entAttSolAsign = bllAttendanceSolutionAsign.GetAttSolAsignByEmployeeIDAndDate(item.EMPLOYEEID, dtStart, dtEnd);
+
+                                    if (entAttSolAsign.T_HR_ATTENDANCESOLUTION != null)
                                     {
-                                        if (entCurMonth.LATEMINUTES.Value > 0)
+                                        decimal? dNeedDays = bllAttendBalance.GetNeedAttendDays(dtStart, dtEnd, item.COMPANYID, entAttSolAsign.T_HR_ATTENDANCESOLUTION);
+                                        if (dNeedDays.Value > 0)
                                         {
-                                            reMart = reMart + "，迟到" + entCurMonth.LATEMINUTES + "分钟：";
+                                            item.NEEDATTENDDAYS = dNeedDays;
                                         }
                                     }
-                                    item.ATTENDREMARK = reMart;
-                                    item.NEEDSUM = custom.ToList().FirstOrDefault().SUM;
-                                    //实际下拨金额=（实际出勤天数/应出勤天数*应下拨金额）-迟到扣款（总额/应出勤时间/每天工作小时数/60分*迟到分钟数）
-                                    decimal total = Convert.ToDecimal((item.REALATTENDDAYS / item.NEEDATTENDDAYS) * item.NEEDSUM);
-                                    if (entCurMonth.LATEMINUTES != null)
-                                    {
-                                        if (entCurMonth.LATEMINUTES.Value > 0)
-                                        {
-                                            decimal d = 0;
-                                            AttendanceSolutionAsignBLL bll = new AttendanceSolutionAsignBLL();
-                                            T_HR_ATTENDANCESOLUTIONASIGN entAttSolAsign
-                                                = bll.GetAttendanceSolutionAsignByEmployeeIDAndDate(item.EMPLOYEEID, DateTime.Now);
-                                            if (entAttSolAsign != null)
-                                            {
-                                                d = entAttSolAsign.T_HR_ATTENDANCESOLUTION.WORKTIMEPERDAY.Value;
+                                }
 
-                                                if (d > 0)
+                                item.REALATTENDDAYS = entCurMonth.REALATTENDDAYS;
+                                if (entCurMonth.REALNEEDATTENDDAYS != entCurMonth.REALATTENDDAYS)
+                                {
+                                    item.REALATTENDDAYS = entCurMonth.REALNEEDATTENDDAYS - entCurMonth.AFFAIRLEAVEDAYS;
+                                    //病假单独算
+                                    //if (entCurMonth.SICKLEAVEDAYS != null)
+                                    //{
+                                    //    decimal dSickleavedays = entCurMonth.SICKLEAVEDAYS.Value - 1;
+                                    //    if (dSickleavedays > 0)
+                                    //    {
+                                    //        item.REALATTENDDAYS = item.REALATTENDDAYS - dSickleavedays;
+                                    //    }
+                                    //}
+                                }
+                                try
+                                {
+                                    if (item.COMPANYID == "bac05c76-0f5b-40ae-b73b-8be541ed35ed")//只有在线公司迟到会扣活动经费。。。
+                                    {
+                                        #region 在线公司
+                                        decimal? realDays = item.REALATTENDDAYS - entCurMonth.SICKLEAVEDAYS;
+                                        string reMart = GetIsAgency(item.ISAGENCY) + "；" + GetEmployeeDicration(item.EMPLOYEESTATE, item.EMPLOYEEID) +
+                                   "；应出勤" + item.NEEDATTENDDAYS.ToString() + "天，实际出勤" + realDays.ToString() + "天";
+                                        if (entCurMonth.LATEMINUTES != null)
+                                        {
+                                            if (entCurMonth.LATEMINUTES.Value > 0)
+                                            {
+                                                reMart = reMart + "，迟到" + entCurMonth.LATEMINUTES + "分钟：";
+                                            }
+                                        }
+                                        item.ATTENDREMARK = reMart;
+                                        item.NEEDSUM = custom.ToList().FirstOrDefault().SUM;
+                                        //实际下拨金额=（实际出勤天数/应出勤天数*应下拨金额）-迟到扣款（总额/应出勤时间/每天工作小时数/60分*迟到分钟数）
+                                        decimal total = Convert.ToDecimal((item.REALATTENDDAYS / item.NEEDATTENDDAYS) * item.NEEDSUM);
+                                        if (entCurMonth.LATEMINUTES != null)
+                                        {
+                                            if (entCurMonth.LATEMINUTES.Value > 0)
+                                            {
+                                                decimal d = 0;
+                                                AttendanceSolutionAsignBLL bll = new AttendanceSolutionAsignBLL();
+                                                T_HR_ATTENDANCESOLUTIONASIGN entAttSolAsign
+                                                    = bll.GetAttendanceSolutionAsignByEmployeeIDAndDate(item.EMPLOYEEID, DateTime.Now);
+                                                if (entAttSolAsign != null)
                                                 {
-                                                    double LaterValue = (double)((item.NEEDSUM / item.NEEDATTENDDAYS).Value)
-                                                        / (double)d / 60 * (double)entCurMonth.LATEMINUTES.Value;
-                                                    total = total - Convert.ToDecimal(LaterValue);
+                                                    d = entAttSolAsign.T_HR_ATTENDANCESOLUTION.WORKTIMEPERDAY.Value;
+
+                                                    if (d > 0)
+                                                    {
+                                                        double LaterValue = (double)((item.NEEDSUM / item.NEEDATTENDDAYS).Value)
+                                                            / (double)d / 60 * (double)entCurMonth.LATEMINUTES.Value;
+                                                        total = total - Convert.ToDecimal(LaterValue);
+                                                    }
                                                 }
                                             }
                                         }
-                                    }
-                                    item.REALSUM = Math.Round(total);
-                                    //如果有病假情况，一个月可以带薪一天病假
-                                    if (entCurMonth.SICKLEAVEDAYS != null && entCurMonth.SICKLEAVEDAYS > 1)
-                                    {
-                                        total = CalculateSickSum(entCurMonth, item.EMPLOYEEID, total);//扣除病假
                                         item.REALSUM = Math.Round(total);
+                                        //如果有病假情况，一个月可以带薪一天病假
+                                        if (entCurMonth.SICKLEAVEDAYS != null && entCurMonth.SICKLEAVEDAYS > 1)
+                                        {
+                                            total = CalculateSickSum(entCurMonth, item.EMPLOYEEID, total);//扣除病假
+                                            item.REALSUM = Math.Round(total);
+                                        }
+                                        //list.Add(item);
                                     }
-                                    list.Add(item);
+                                        #endregion
+                                    else
+                                    {
+                                        decimal? realDays = item.REALATTENDDAYS - entCurMonth.SICKLEAVEDAYS;
+                                        item.ATTENDREMARK = GetIsAgency(item.ISAGENCY) + "；" + GetEmployeeDicration(item.EMPLOYEESTATE, item.EMPLOYEEID) +
+                                            "；应出勤" + item.NEEDATTENDDAYS.ToString() + "天，实际出勤" + realDays.ToString() + "天";
+                                        item.NEEDSUM = custom.ToList().FirstOrDefault().SUM;
+                                        decimal total = Convert.ToDecimal((item.REALATTENDDAYS / item.NEEDATTENDDAYS) * item.NEEDSUM); //实际下拨金额=（实际出勤天数/应出勤天数*应下拨金额）
+                                        item.REALSUM = Math.Round(total);
+                                        //如果有病假情况，一个月可以带薪一天病假
+                                        if (entCurMonth.SICKLEAVEDAYS != null && entCurMonth.SICKLEAVEDAYS > 1)
+                                        {
+                                            total = CalculateSickSum(entCurMonth, item.EMPLOYEEID, total);//扣除病假
+                                            item.REALSUM = Math.Round(total);
+                                        }
+                                    }
                                 }
-                                    #endregion
-                                else
+                                catch (Exception ex)
                                 {
-                                    decimal? realDays = item.REALATTENDDAYS - entCurMonth.SICKLEAVEDAYS;
-                                    item.ATTENDREMARK = GetIsAgency(item.ISAGENCY) + "；" + GetEmployeeDicration(item.EMPLOYEESTATE, item.EMPLOYEEID) +
-                                        "；应出勤" + item.NEEDATTENDDAYS.ToString() + "天，实际出勤" + realDays.ToString() + "天";
-                                    item.NEEDSUM = custom.ToList().FirstOrDefault().SUM;
-                                    decimal total = Convert.ToDecimal((item.REALATTENDDAYS / item.NEEDATTENDDAYS) * item.NEEDSUM); //实际下拨金额=（实际出勤天数/应出勤天数*应下拨金额）
-                                    item.REALSUM = Math.Round(total);
-                                    //如果有病假情况，一个月可以带薪一天病假
-                                    if (entCurMonth.SICKLEAVEDAYS != null && entCurMonth.SICKLEAVEDAYS > 1)
-                                    {
-                                        total = CalculateSickSum(entCurMonth, item.EMPLOYEEID, total);//扣除病假
-                                        item.REALSUM = Math.Round(total);
-                                    }
+                                    Utility.SaveLog("GetEmployeeFunds算取在线公司经费时出错，错误信息：" + ex.ToString() + "员工ID姓名为" + item.EMPLOYEEID + item.EMPLOYECNAME);
+                                    continue;
                                 }
                             }
-                            catch (Exception ex)
-                            {
-                                Utility.SaveLog("GetEmployeeFunds算取在线公司经费时出错，错误信息：" + ex.ToString() + "员工ID姓名为" + item.EMPLOYEEID + item.EMPLOYECNAME);
-                                continue;
-                            }
-                        }
                         #endregion
-                        else
-                        {
-                            item.NEEDATTENDDAYS = 0;
-                            item.REALATTENDDAYS = 0;
-                            item.ATTENDREMARK = GetIsAgency(item.ISAGENCY) + "；" + GetEmployeeDicration(item.EMPLOYEESTATE, item.EMPLOYEEID) + "；";
-                            item.NEEDSUM = entCustomArchive.SUM;
-                            item.REALSUM = 0;
-                        }
+                            else
+                            {
+                                item.NEEDATTENDDAYS = 0;
+                                item.REALATTENDDAYS = 0;
+                                item.ATTENDREMARK = GetIsAgency(item.ISAGENCY) + "；"
+                                + GetEmployeeDicration(item.EMPLOYEESTATE, item.EMPLOYEEID)
+                                + "；" + "未获取到员工当月考勤结算记录，活动经费无法计算，请手工录入。";
+                                item.NEEDSUM = entCustomArchive.SUM;
+                                item.REALSUM = 0;
+                            }
 
+                        }
                     }
                 }
-            }
 
-            if (list != null)
+                //if (list != null)
+                //{
+                //    list = list.Where(c => c.ISAGENCY == "0").ToList();
+                //}
+
+                return list;
+            }
+            catch (Exception ex)
             {
-                list = list.Where(c => c.ISAGENCY == "0").ToList();
+                Tracer.Debug(ex.ToString());
+                return list;
             }
-
-            return list;
         }
 
         /// <summary>

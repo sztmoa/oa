@@ -136,82 +136,83 @@ namespace SMT.HRM.BLL
 
         #region 操作
 
-        public string OutApplySetValue(string msg, T_HR_OUTAPPLYRECORD entity)
+        public string OutApplySetValue(T_HR_OUTAPPLYRECORD entity)
         {
-            if (entity.ISSAMEDAYRETURN == "0")//非当天往返，设置外出结束时间为当天下班时间
+            string msg = string.Empty;
+            //if (entity.ISSAMEDAYRETURN == "0")//非当天往返，设置外出结束时间为当天下班时间
+            //{
+            if (GetAttendanceSolution(entity.EMPLOYEEID, entity.STARTDATE) == null)
             {
-                if (GetAttendanceSolution(entity.EMPLOYEEID, entity.STARTDATE) == null)
+                return "未获取到用户的考勤方案。";
+            }
+
+            AttendanceSolutionAsignBLL bllAttendSolAsign = new AttendanceSolutionAsignBLL();
+            T_HR_ATTENDANCESOLUTIONASIGN entAttendSolAsign = bllAttendSolAsign.GetAttendanceSolutionAsignByEmployeeIDAndDate(entity.EMPLOYEEID, entity.STARTDATE.Value);
+
+            if (entAttendSolAsign.T_HR_ATTENDANCESOLUTION == null)
+            {
+                //当前员工没有分配考勤方案，无法提交外出申请
+                msg = msg + "当前员工没有分配考勤方案，无法提交外出申请。";
+                Tracer.Debug(msg);
+                return msg;
+            }
+            else
+            {
+                var entAttendSol = entAttendSolAsign.T_HR_ATTENDANCESOLUTION;
+
+                var tempMaster = from ent in dal.GetObjects<T_HR_SCHEDULINGTEMPLATEMASTER>()
+                                 where ent.TEMPLATEMASTERID == entAttendSol.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATEMASTERID
+                                 select ent;
+
+                if (!entAttendSol.T_HR_SCHEDULINGTEMPLATEMASTERReference.IsLoaded)
                 {
-                    return "未获取到用户的考勤方案，保存失败";
+                    entAttendSol.T_HR_SCHEDULINGTEMPLATEMASTERReference.Load();
                 }
 
-                AttendanceSolutionAsignBLL bllAttendSolAsign = new AttendanceSolutionAsignBLL();
-                T_HR_ATTENDANCESOLUTIONASIGN entAttendSolAsign = bllAttendSolAsign.GetAttendanceSolutionAsignByEmployeeIDAndDate(entity.EMPLOYEEID, entity.STARTDATE.Value);
-
-                if (entAttendSolAsign.T_HR_ATTENDANCESOLUTION == null)
+                var entsched = from a in dal.GetObjects<T_HR_SCHEDULINGTEMPLATEMASTER>()
+                               join b in dal.GetObjects<T_HR_SCHEDULINGTEMPLATEDETAIL>()
+                               on a.TEMPLATEMASTERID equals b.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATEMASTERID
+                               join c in dal.GetObjects<T_HR_SHIFTDEFINE>()
+                               on b.T_HR_SHIFTDEFINE.SHIFTDEFINEID equals c.SHIFTDEFINEID
+                               where a.TEMPLATEMASTERID == entAttendSol.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATEMASTERID
+                               select c;
+                if (entsched.Count() > 0)
                 {
-                    //当前员工没有分配考勤方案，无法提交外出申请
-                    msg = msg + "当前员工没有分配考勤方案，无法提交外出申请";
-                    Tracer.Debug(msg);
-                    return msg;
-                }
-                else
-                {
-                    var entAttendSol = entAttendSolAsign.T_HR_ATTENDANCESOLUTION;
-
-                    var tempMaster = from ent in dal.GetObjects<T_HR_SCHEDULINGTEMPLATEMASTER>()
-                                     where ent.TEMPLATEMASTERID == entAttendSol.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATEMASTERID
-                                     select ent;
-
-                    if (!entAttendSol.T_HR_SCHEDULINGTEMPLATEMASTERReference.IsLoaded)
+                    var defineTime = entsched.FirstOrDefault();
+                    DateTime ShiftFirstStartTime = new DateTime();
+                    if (defineTime.NEEDTHIRDOFFCARD == "2" && !string.IsNullOrEmpty(defineTime.THIRDENDTIME))
                     {
-                        entAttendSol.T_HR_SCHEDULINGTEMPLATEMASTERReference.Load();
+                        ShiftFirstStartTime = DateTime.Parse(defineTime.THIRDENDTIME);//设置3段打卡,第2段下班打卡时间：一般为17:50
                     }
-
-                    var entsched = from a in dal.GetObjects<T_HR_SCHEDULINGTEMPLATEMASTER>()
-                                   join b in dal.GetObjects<T_HR_SCHEDULINGTEMPLATEDETAIL>()
-                                   on a.TEMPLATEMASTERID equals b.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATEMASTERID
-                                   join c in dal.GetObjects<T_HR_SHIFTDEFINE>()
-                                   on b.T_HR_SHIFTDEFINE.SHIFTDEFINEID equals c.SHIFTDEFINEID
-                                   where a.TEMPLATEMASTERID == entAttendSol.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATEMASTERID
-                                   select c;
-                    if (entsched.Count() > 0)
+                    else if (defineTime.NEEDSECONDOFFCARD == "2" && !string.IsNullOrEmpty(defineTime.SECONDENDTIME))
                     {
-                        var defineTime = entsched.FirstOrDefault();
-                        DateTime ShiftFirstStartTime = new DateTime();
-                        if (defineTime.NEEDTHIRDOFFCARD == "2" && !string.IsNullOrEmpty(defineTime.THIRDENDTIME))
-                        {
-                            ShiftFirstStartTime = DateTime.Parse(defineTime.THIRDENDTIME);//设置3段打卡,第2段下班打卡时间：一般为17:50
-                        }
-                        else if (defineTime.NEEDSECONDOFFCARD == "2" && !string.IsNullOrEmpty(defineTime.SECONDENDTIME))
-                        {
-                            ShiftFirstStartTime = DateTime.Parse(defineTime.SECONDENDTIME);//设置2段打卡,第2段下班打卡时间：一般为17:50
-                        }
-                        else
-                        {
-                            msg = msg + "外出申请班次定义设置错误，没有找到下班时间定义" + " 考勤方案名：" + entAttendSolAsign.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONNAME;
-                            Tracer.Debug(msg);
-                            return msg;
-                        }
-                        DateTime ShiftstartDateAndTime = new DateTime(entity.STARTDATE.Value.Year, entity.STARTDATE.Value.Month, entity.STARTDATE.Value.Day
-                            , ShiftFirstStartTime.Hour, ShiftFirstStartTime.Minute, ShiftFirstStartTime.Second);
-                        entity.ENDDATE = ShiftstartDateAndTime;
+                        ShiftFirstStartTime = DateTime.Parse(defineTime.SECONDENDTIME);//设置2段打卡,第2段下班打卡时间：一般为17:50
                     }
                     else
                     {
-                        msg = msg + "外出申请班次定义未找到" + " 考勤方案名：" + entAttendSolAsign.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONNAME;
+                        msg = msg + "外出申请班次定义设置错误，没有找到下班时间定义" + " 考勤方案名：" + entAttendSolAsign.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONNAME;
                         Tracer.Debug(msg);
                         return msg;
                     }
+                    DateTime ShiftstartDateAndTime = new DateTime(entity.STARTDATE.Value.Year, entity.STARTDATE.Value.Month, entity.STARTDATE.Value.Day
+                        , ShiftFirstStartTime.Hour, ShiftFirstStartTime.Minute, ShiftFirstStartTime.Second);
+                    entity.ENDDATE = ShiftstartDateAndTime;
                 }
-
-                if (entity.ENDDATE == null)
+                else
                 {
-                    msg = msg + "外出申请为非当天往返，但是结束时间未找到，请检查考勤方案排版设置是否正确。" + " 考勤方案名：" + entAttendSolAsign.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONNAME;
+                    msg = msg + "外出申请班次定义未找到" + " 考勤方案名：" + entAttendSolAsign.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONNAME;
                     Tracer.Debug(msg);
                     return msg;
                 }
             }
+
+            if (entity.ENDDATE == null)
+            {
+                msg = msg + "外出申请为非当天往返，但是结束时间未找到，请检查考勤方案排版设置是否正确。" + " 考勤方案名：" + entAttendSolAsign.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONNAME;
+                Tracer.Debug(msg);
+                return msg;
+            }
+            //}
             //计算外出时长
             string dTotalHours = string.Empty;
             string strMsg = CalculateOverTimeHours(entity.EMPLOYEEID, entity.STARTDATE.Value, entity.ENDDATE.Value, ref dTotalHours);
@@ -233,7 +234,7 @@ namespace SMT.HRM.BLL
             try
             {
                 string strMsg = string.Empty;
-                strMsg=OutApplySetValue(msg, entity);
+                strMsg=OutApplySetValue(entity);
                 if (!string.IsNullOrWhiteSpace(strMsg))
                 {
                     msg = msg + strMsg;
@@ -272,18 +273,56 @@ namespace SMT.HRM.BLL
                 ent.REASON = entity.REASON;
                 ent.CHECKSTATE = entity.CHECKSTATE;
                 ent.UPDATEDATE = DateTime.Now;
-                string strMsg = OutApplySetValue(msg, ent);
+                string strMsg = OutApplySetValue(ent);
 
                 //Utility.CloneEntity(entity, ent);
                 if (!string.IsNullOrWhiteSpace(strMsg))
                 {
-                    Tracer.Debug(strMsg);
+                    Tracer.Debug(msg+strMsg);
                     return 0;
                 }
                 return dal.Update(ent);
             }
             else
                 return 0;
+        }
+
+        public string UpdateOutApply(T_HR_OUTAPPLYRECORD entity, string flag)
+        {
+            var ent = GetOutApplyByID(entity.OUTAPPLYID);
+            if (ent != null)
+            {
+                string msg = "修改外出申请单:" + entity.EMPLOYEENAME + " 外出时间：" + entity.STARTDATE
+              + " 外出结束时间：" + entity.ENDDATE + " 外出原因：" + entity.REASON
+              + " 是否当天往返：0为否:" + entity.ISSAMEDAYRETURN;
+                //计算外出时长
+                ent.ISSAMEDAYRETURN = entity.ISSAMEDAYRETURN;
+                ent.STARTDATE = entity.STARTDATE;
+                ent.ENDDATE = entity.ENDDATE;
+                ent.REASON = entity.REASON;
+                ent.CHECKSTATE = entity.CHECKSTATE;
+                ent.UPDATEDATE = DateTime.Now;
+                string strMsg = OutApplySetValue(ent);
+
+                if (!string.IsNullOrWhiteSpace(strMsg))
+                {
+                    msg = msg + strMsg;
+                    Tracer.Debug(msg);
+                    return strMsg;
+                }
+                int i = 0;
+                i = dal.Update(ent);
+                if (i != 0)
+                {
+                    return "ok";
+                }
+                else
+                {
+                    return "外出更新失败";
+                }
+            }
+            else
+                return "未找到需要更新的外出申请单";
         }
 
         /// <summary>

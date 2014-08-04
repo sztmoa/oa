@@ -30,9 +30,16 @@ namespace SMT.SaaS.OA.UI.UserControls
         #region InitFBControl
         private void InitFBControl(T_OA_TRAVELREIMBURSEMENT Travel)
         {
-            if(OpenFrom=="FromMVC")return;//从mvc打卡，不使用预算科目
-           
+            if (OpenFrom == "FromMVC")
+            {
+                this.InitFB = true;
+                return;//从mvc打卡，不使用预算科目
+            }
             fbCtr.submitFBFormTypes = formType;//将FormType赋给FB
+            if (formType == FormTypes.Resubmit)
+            {
+                fbCtr.submitFBFormTypes = FormTypes.Edit;
+            }
             //fbCtr.SetRemarkVisiblity(Visibility.Collapsed);//隐藏预算控件中的备注
             fbCtr.SetApplyTypeVisiblity(Visibility.Collapsed);//隐藏支付类型
             fbCtr.TravelSubject = new FrameworkUI.FBControls.TravelSubject();
@@ -713,6 +720,12 @@ namespace SMT.SaaS.OA.UI.UserControls
             {
                 string cityend = TravelDetailList_Golbal[0].DESTCITY.Replace(",", "");//目标城市值
                 entareaallowance = this.GetAllowanceByCityValue(cityend);
+                if (entareaallowance == null)
+                {
+                    textStandards.Text = textStandards.Text + "出差城市：" + SMT.SaaS.FrameworkUI.Common.Utility.GetCityName(cityend)
+                            + "出差报销标准未获取到。"; 
+                    return null;
+                }
                 if (EmployeePostLevel.ToInt32() <= noAllowancePostLevel)//当前用户的岗位级别小于副部长及以上级别的补贴标准
                 {
                     textStandards.Text = textStandards.Text + "出差城市：" + SMT.SaaS.FrameworkUI.Common.Utility.GetCityName(cityend)
