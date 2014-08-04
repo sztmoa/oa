@@ -111,6 +111,12 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             {
                 string cityend = TraveDetailList_Golbal[0].DESTCITY.Replace(",", "");//目标城市值
                 entareaallowance = this.GetAllowanceByCityValue(cityend);
+                if (entareaallowance == null)
+                {
+                    textStandards.Text = textStandards.Text + "出差城市：" + SMT.SaaS.FrameworkUI.Common.Utility.GetCityName(cityend)
+                            + "出差报销标准未获取到。";
+                    return null;
+                }
                 if (Master_Golbal.POSTLEVEL.ToInt32() <= noAllowancePostLevel)//当前用户的岗位级别小于副部长及以上级别的补贴标准
                 {
                     textStandards.Text = textStandards.Text + "出差城市：" + SMT.SaaS.FrameworkUI.Common.Utility.GetCityName(cityend)
