@@ -219,7 +219,8 @@ namespace System.Windows.Controls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage(ex.ToString());
+                SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
             }
             finally
             {

@@ -19,7 +19,7 @@ using SMT.SaaS.LocalData;
 
 namespace SMT.SAAS.Main.CurrentContextLoadData
 {
-    public class UserLogin
+    public partial class UserLogin
     {
         private PermissionServiceClient client = new PermissionServiceClient();
         private OrganizationServiceClient organClient = new OrganizationServiceClient();
@@ -55,6 +55,11 @@ namespace SMT.SAAS.Main.CurrentContextLoadData
         {
 
         }
+        /// <summary>
+        /// 通过用户名密码开始登录，登录完成读取组织架构信息，并触发OnGetOrgCompleted事件
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="userPwd"></param>
         public UserLogin(string userName, string userPwd)
         {
 
@@ -62,13 +67,30 @@ namespace SMT.SAAS.Main.CurrentContextLoadData
             this.UserPwd = userPwd;
             client.UserLoginCompleted += new EventHandler<UserLoginCompletedEventArgs>(client_UserLoginCompleted);
             client.GetUserPermissionByUserToUICompleted += new EventHandler<GetUserPermissionByUserToUICompletedEventArgs>(client_GetUserPermissionByUserToUICompleted);
-
             personelClient.GetEmployeeDetailViewByIDCompleted += new EventHandler<GetEmployeeDetailViewByIDCompletedEventArgs>(personelClient_GetEmployeeDetailViewByIDCompleted);
-            //client.UserLoginAsync(userName,UserPwd);
-            client.UserLoginAsync(UserName, Encrypt(UserPwd));
             Permission = new List<SMT.Saas.Tools.PermissionWS.V_UserPermissionUI>();
+            client.UserLoginAsync(UserName, Encrypt(UserPwd));
         }
 
+        void client_UserLoginCompleted(object sender, UserLoginCompletedEventArgs e)
+        {
+            if (e.Result == null)
+            {
+                LoginResult = false;
+                if (this.LoginedClick != null)
+                {
+                    this.LoginedClick(this, null);
+                }
+            }
+            else
+            {
+                LoginResult = true;
+
+                User = new T_SYS_USER();
+                User = e.Result;
+                client.GetUserPermissionByUserToUIAsync(User.SYSUSERID);
+            }
+        }
         void client_GetUserPermissionByUserToUICompleted(object sender, GetUserPermissionByUserToUICompletedEventArgs e)
         {
             if (e.Result != null)
@@ -77,6 +99,7 @@ namespace SMT.SAAS.Main.CurrentContextLoadData
                 personelClient.GetEmployeeDetailViewByIDAsync(User.EMPLOYEEID);
             }
         }
+        
         void personelClient_GetEmployeeDetailViewByIDCompleted(object sender, GetEmployeeDetailViewByIDCompletedEventArgs e)
         {
             if (e.Result != null)
@@ -108,7 +131,6 @@ namespace SMT.SAAS.Main.CurrentContextLoadData
                 {
                     IsManager = true;
                 }
-                //CurrentLoginUserInfo = Common.GetLoginUserInfo(epDetail.EMPLOYEEID, epDetail.EMPLOYEENAME, epDetail.EMPLOYEECODE, epDetail.EMPLOYEESTATE, User.SYSUSERID, epDetail.OFFICEPHONE, epDetail.SEX, epDetail.EMPLOYEEPOSTS.ToList(), epDetail.WORKAGE, epDetail.PHOTO, IsManager,User.USERNAME,User.PASSWORD);
                 if (epDetail.EMPLOYEEPOSTS != null)
                 {
                     var postlist
@@ -131,78 +153,23 @@ namespace SMT.SAAS.Main.CurrentContextLoadData
                 {
                     Common.CurrentLoginUserInfo = Common.GetLoginUserInfo(epDetail.EMPLOYEEID, epDetail.EMPLOYEENAME, epDetail.EMPLOYEECODE, epDetail.EMPLOYEESTATE, User.SYSUSERID, epDetail.MOBILE, epDetail.OFFICEPHONE, epDetail.SEX, null, epDetail.WORKAGE, epDetail.PHOTO, IsManager);
                 }
-                 //var q= from ent in Permission
-                 //       select new SMT.SaaS.LocalData.V_UserPermissionUI
-                 //       {
-                 //           DataRange=ent.DataRange,
-                 //           PermissionValue=ent.PermissionValue,  
-                 //           EntityMenuID=ent.EntityMenuID,
-                 //           MenuCode=ent.MenuCode
-                 //       };
-
-                 //List<SMT.SaaS.LocalData.V_UserPermissionUI> perlist = new List<SMT.SaaS.LocalData.V_UserPermissionUI>();
                 Common.CurrentLoginUserInfo.PermissionInfoUI = new List<SMT.SaaS.LocalData.V_UserPermissionUI>();                     
                  foreach (var fent in Permission)
                  {
                      SMT.SaaS.LocalData.V_UserPermissionUI tps= new SMT.SaaS.LocalData.V_UserPermissionUI();
                      tps=Common.CloneObject<SMT.Saas.Tools.PermissionWS.V_UserPermissionUI, SMT.SaaS.LocalData.V_UserPermissionUI>(fent, tps);
                      Common.CurrentLoginUserInfo.PermissionInfoUI.Add(tps);
-                 //    tps.DataRange = fent.DataRange;
-                 //    tps.PermissionValue = fent.PermissionValue;
-                 //    tps.EntityMenuID = fent.EntityMenuID;
-                 //    tps.MenuCode = fent.MenuCode;
-                 //    tps.CustomerPermission.EntityMenuId = fent.CustomerPermission.EntityMenuId;
-
-                 //           foreach (var fq in fent.CustomerPermission.PermissionValue)
-                 //           {
-                 //               SMT.SaaS.LocalData.PermissionValue pv 
-                 //                   =new  SMT.SaaS.LocalData.PermissionValue();
-
-                 //               tps.Permission=fq.Permission;
-
-                 //               List<SMT.SaaS.LocalData.OrgObject> orglist = new List<SMT.SaaS.LocalData.OrgObject>();
-                 //               foreach (var org in fq.OrgObjects)
-                 //               {
-                 //                   SMT.SaaS.LocalData.OrgObject og = new SMT.SaaS.LocalData.OrgObject();
-                 //                   og.OrgID = org.OrgID;
-                 //                   og.OrgType = org.OrgType;
-                 //               }
-                 //               pv.OrgObjects=fq.OrgObjects;
-                 //               tps.CustomerPermission.PermissionValue.Add(pv);
-                 //           }
 
                  }
-                //LoadCompanyInfo();
 
-            }
-            if (this.LoginedClick != null)
-            {
-                this.LoginedClick(this, null);
+
+                 if (this.LoginedClick != null)
+                 {
+                     this.LoginedClick(this, null);
+                 }
             }
         }
-        void client_UserLoginCompleted(object sender, UserLoginCompletedEventArgs e)
-        {
-            if (e.Result == null)
-            {
-                LoginResult = false;
-                if (this.LoginedClick != null)
-                {
-                    this.LoginedClick(this, null);
-                }
-            }
-            else
-            {
-                LoginResult = true;
-
-                User = new T_SYS_USER();
-                User = e.Result;
-                client.GetUserPermissionByUserToUIAsync(User.SYSUSERID);
-            }
-            //if (this.LoginedClick != null)
-            //{
-            //    this.LoginedClick(this,null);
-            //}
-        }
+        
         public T_SYS_USER GetUserInfo()
         {
             return User;

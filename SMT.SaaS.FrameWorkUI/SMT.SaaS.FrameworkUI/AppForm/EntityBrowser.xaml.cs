@@ -36,6 +36,10 @@ namespace SMT.SaaS.FrameworkUI
 
         public ToolBar EntityToolbar { get { return toolBar1; } set { toolBar1 = value; } }
         public Grid AuduitPanel{ get { return PnlAudit; } set { PnlAudit = value; } }
+        /// <summary>
+        /// 设置entityContainer是否支持水平滚动
+        /// </summary>
+        public ScrollViewer EntityScrollViewer { get { return SVShowContent; } set { SVShowContent = value; } }
 
         /// <summary>
         /// 保存并提交
@@ -1143,7 +1147,7 @@ namespace SMT.SaaS.FrameworkUI
             {
             }
             ComfirmWindow.ConfirmationBox("审核异常：" + Utility.GetResourceStr("ERROR"), strErrorMessage, Utility.GetResourceStr("CONFIRMBUTTON"));
-
+            SumbitCompleted();
             CloseProgressBar();
             //MessageBox.Show();
         }

@@ -12,14 +12,10 @@
     <AssemblyName>SMT.SaaS.BLLCommonServices</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -554,7 +550,10 @@
     <None Include="Service References\FBServiceWS\service8.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBServiceWS\SMT.FB.BLL4.xsd">
+    <None Include="Service References\FBServiceWS\SMT.EntityFlowSys.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBServiceWS\SMT.FB.BLL.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FBServiceWS\SMT.FB.Services1.xsd">

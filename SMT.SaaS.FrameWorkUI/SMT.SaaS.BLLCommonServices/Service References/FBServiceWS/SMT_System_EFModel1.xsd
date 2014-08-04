@@ -186,18 +186,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="T_SYS_ROLEENTITYMENU" nillable="true" type="tns:T_SYS_ROLEENTITYMENU" />
-  <xs:complexType name="ArrayOfT_SYS_ROLEENTITYMENU">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_ROLEENTITYMENU" nillable="true" type="tns:T_SYS_ROLEENTITYMENU" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfT_SYS_ROLEENTITYMENU" nillable="true" type="tns:ArrayOfT_SYS_ROLEENTITYMENU" />
-  <xs:complexType name="ArrayOfT_SYS_USERROLE">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_USERROLE" nillable="true" type="tns:T_SYS_USERROLE" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfT_SYS_USERROLE" nillable="true" type="tns:ArrayOfT_SYS_USERROLE" />
   <xs:complexType name="T_SYS_USERROLE">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q7:EntityObject">
@@ -248,4 +236,16 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="T_SYS_USER" nillable="true" type="tns:T_SYS_USER" />
+  <xs:complexType name="ArrayOfT_SYS_USERROLE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_USERROLE" nillable="true" type="tns:T_SYS_USERROLE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_SYS_USERROLE" nillable="true" type="tns:ArrayOfT_SYS_USERROLE" />
+  <xs:complexType name="ArrayOfT_SYS_ROLEENTITYMENU">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_ROLEENTITYMENU" nillable="true" type="tns:T_SYS_ROLEENTITYMENU" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_SYS_ROLEENTITYMENU" nillable="true" type="tns:ArrayOfT_SYS_ROLEENTITYMENU" />
 </xs:schema>

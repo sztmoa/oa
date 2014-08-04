@@ -11,6 +11,7 @@ using System.Windows.Shapes;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reflection;
+using SMT.SAAS.Main;
 
 namespace SMT.SAAS.Controls.Toolkit.Windows
 {
@@ -110,8 +111,14 @@ namespace SMT.SAAS.Controls.Toolkit.Windows
                     window = new Windows.Window(false, isResizeable);
                 else
                     window = new Windows.Window(false, isResizeable);
-
-                window.scrollcontent.Content = content;
+                try
+                {
+                    window.scrollcontent.Content = content;
+                }
+                catch (Exception ex)
+                {
+                    SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage(ex.ToString());
+                }
                 window.Content = content;
                 bool prload = true;
                 //应用程序标题

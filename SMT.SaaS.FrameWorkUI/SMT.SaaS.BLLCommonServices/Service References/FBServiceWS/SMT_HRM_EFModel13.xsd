@@ -294,6 +294,7 @@
           <xs:element minOccurs="0" name="SECONDLANGUAGE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SECONDLANGUAGEDEGREE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SEX" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SOCIALSERVICEYEAR" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="TOPEDUCATION" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEECHANGEHISTORY" nillable="true" type="tns:ArrayOfT_HR_EMPLOYEECHANGEHISTORY" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEECHECK" nillable="true" type="tns:ArrayOfT_HR_EMPLOYEECHECK" />
@@ -666,6 +667,7 @@
           <xs:element minOccurs="0" name="EDITSTATE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="FATHERID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="FATHERTYPE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ISBACKGROUND" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="OWNERCOMPANYID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OWNERDEPARTMENTID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OWNERID" nillable="true" type="xs:string" />
@@ -1045,6 +1047,9 @@
           <xs:element minOccurs="0" name="PENSIONCITY" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PENSIONMASTERID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SOCIALSERVICE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SOCIALSERVICEMONTH" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SOCIALSERVICEYEAR" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="STARTDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEE" nillable="true" type="tns:T_HR_EMPLOYEE" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q26:EntityReferenceOfT_HR_EMPLOYEELmi1kWPo" />

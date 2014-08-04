@@ -75,6 +75,10 @@ namespace SMT.SAAS.Controls.Toolkit.Windows
         private static int countItem = 0;
         #endregion
         #region Window处理方法、激活窗口、获取最大Zindex、添加任务栏项
+        public static void ClearAllWindows()
+        {
+            desktop.Children.Clear();
+        }
         /// <summary>
         /// 根据应用程序窗口信息添加对于的人物栏按钮
         /// </summary>

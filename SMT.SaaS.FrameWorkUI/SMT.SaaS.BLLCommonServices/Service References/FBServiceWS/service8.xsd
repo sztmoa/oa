@@ -197,7 +197,8 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="ASSIGNCOMPANYID" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="OWNERID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SubmitUserID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CreateUserid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

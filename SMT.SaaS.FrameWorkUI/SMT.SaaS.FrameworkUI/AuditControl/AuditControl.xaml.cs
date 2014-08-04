@@ -442,11 +442,13 @@ namespace SMT.SaaS.FrameworkUI.AuditControl
             tb.Text = "不能确定下一审核人, 请重新选择一个审核人，并按确认提交";
             tb.SetValue(Grid.RowProperty, 0);
 
-            StackPanel sp = new StackPanel();
+            ScrollViewer scrollp = new ScrollViewer();
+            scrollp.SetValue(Grid.RowProperty, 1);
 
+            StackPanel sp = new StackPanel();            
             sp.Margin = new Thickness(15, 5, 0, 0);
             sp.Orientation = Orientation.Vertical;
-            sp.SetValue(Grid.RowProperty, 1);
+          
 
             for (int i = 0; i < result.UserInfo.Count; i++)
             {
@@ -458,6 +460,7 @@ namespace SMT.SaaS.FrameworkUI.AuditControl
                 rbtn.GroupName = "User";
                 sp.Children.Add(rbtn);
             }
+            scrollp.Content = sp;
 
             Button btnOK = new Button();
             btnOK.Height = 26;
@@ -501,7 +504,7 @@ namespace SMT.SaaS.FrameworkUI.AuditControl
 
             winSelector.Content = parent;
             gridSelector.Children.Add(tb);
-            gridSelector.Children.Add(sp);
+            gridSelector.Children.Add(scrollp);
             gridSelector.Children.Add(btnOK);
             FrameworkElement fe = SMT.SAAS.Main.CurrentContext.Common.ParentLayoutRoot;
 
