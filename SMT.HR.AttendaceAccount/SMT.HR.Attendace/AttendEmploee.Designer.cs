@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttendEmploee));
             this.btnStart = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
@@ -89,6 +90,11 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnDeleEmployeeClockin = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnSynchOATravel = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.dtOATravelRecord = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
@@ -127,6 +133,8 @@
             this.dtGridPermission = new System.Windows.Forms.DataGridView();
             this.btnSelectPermission = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.txtOaConnect = new System.Windows.Forms.TextBox();
+            this.btnGetOaConnect = new System.Windows.Forms.Button();
             this.txtSql = new System.Windows.Forms.TextBox();
             this.btnExcute = new System.Windows.Forms.Button();
             this.tabPage10 = new System.Windows.Forms.TabPage();
@@ -136,8 +144,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnPreviousMonth = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnGetOaConnect = new System.Windows.Forms.Button();
-            this.txtOaConnect = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGClockRecord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGEmployeeLeaveRecord)).BeginInit();
@@ -151,6 +157,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtVacationDay)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtOATravelRecord)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtOverTime)).BeginInit();
@@ -380,7 +387,7 @@
             this.dtGEmployeeLeaveRecord.Location = new System.Drawing.Point(8, 18);
             this.dtGEmployeeLeaveRecord.Name = "dtGEmployeeLeaveRecord";
             this.dtGEmployeeLeaveRecord.RowTemplate.Height = 23;
-            this.dtGEmployeeLeaveRecord.Size = new System.Drawing.Size(404, 383);
+            this.dtGEmployeeLeaveRecord.Size = new System.Drawing.Size(452, 383);
             this.dtGEmployeeLeaveRecord.TabIndex = 13;
             // 
             // dataGridViewCheckBoxColumn2
@@ -397,7 +404,7 @@
             this.dtGEmployeeEvectionRecord.Location = new System.Drawing.Point(479, 18);
             this.dtGEmployeeEvectionRecord.Name = "dtGEmployeeEvectionRecord";
             this.dtGEmployeeEvectionRecord.RowTemplate.Height = 23;
-            this.dtGEmployeeEvectionRecord.Size = new System.Drawing.Size(415, 383);
+            this.dtGEmployeeEvectionRecord.Size = new System.Drawing.Size(453, 158);
             this.dtGEmployeeEvectionRecord.TabIndex = 13;
             this.dtGEmployeeEvectionRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGEmployeeEvectionRecord_CellClick);
             // 
@@ -454,9 +461,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(477, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.Size = new System.Drawing.Size(65, 12);
             this.label3.TabIndex = 17;
-            this.label3.Text = "出差记录";
+            this.label3.Text = "HR出差记录";
             // 
             // label4
             // 
@@ -653,8 +660,11 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dtGEmployeeLeaveRecord);
+            this.tabPage2.Controls.Add(this.btnSynchOATravel);
+            this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.dtOATravelRecord);
             this.tabPage2.Controls.Add(this.dtGEmployeeEvectionRecord);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -663,6 +673,50 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "请假及出差";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnSynchOATravel
+            // 
+            this.btnSynchOATravel.Location = new System.Drawing.Point(584, 172);
+            this.btnSynchOATravel.Name = "btnSynchOATravel";
+            this.btnSynchOATravel.Size = new System.Drawing.Size(110, 22);
+            this.btnSynchOATravel.TabIndex = 20;
+            this.btnSynchOATravel.Text = "同步至HR";
+            this.btnSynchOATravel.UseVisualStyleBackColor = true;
+            this.btnSynchOATravel.Click += new System.EventHandler(this.btnSynchOATravel_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(477, 179);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(65, 12);
+            this.label19.TabIndex = 17;
+            this.label19.Text = "OA出差记录";
+            // 
+            // dtOATravelRecord
+            // 
+            this.dtOATravelRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtOATravelRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn3,
+            this.dataGridViewButtonColumn1});
+            this.dtOATravelRecord.Location = new System.Drawing.Point(482, 194);
+            this.dtOATravelRecord.Name = "dtOATravelRecord";
+            this.dtOATravelRecord.RowTemplate.Height = 23;
+            this.dtOATravelRecord.Size = new System.Drawing.Size(453, 196);
+            this.dtOATravelRecord.TabIndex = 13;
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.HeaderText = "选择";
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = "删除";
+            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewButtonColumn1.HeaderText = "删除";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
             // 
             // tabPage3
             // 
@@ -780,9 +834,9 @@
             // 
             // ColumnDel
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.NullValue = "删除";
-            this.ColumnDel.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = "删除";
+            this.ColumnDel.DefaultCellStyle = dataGridViewCellStyle7;
             this.ColumnDel.HeaderText = "删除";
             this.ColumnDel.Name = "ColumnDel";
             // 
@@ -939,9 +993,9 @@
             // 
             // dtcolumDotaskDelete
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.NullValue = "强制删除";
-            this.dtcolumDotaskDelete.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = "强制删除";
+            this.dtcolumDotaskDelete.DefaultCellStyle = dataGridViewCellStyle8;
             this.dtcolumDotaskDelete.HeaderText = "强制删除";
             this.dtcolumDotaskDelete.Name = "dtcolumDotaskDelete";
             // 
@@ -1037,6 +1091,25 @@
             this.tabPage6.Text = "工具";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // txtOaConnect
+            // 
+            this.txtOaConnect.Location = new System.Drawing.Point(26, 355);
+            this.txtOaConnect.Multiline = true;
+            this.txtOaConnect.Name = "txtOaConnect";
+            this.txtOaConnect.Size = new System.Drawing.Size(535, 22);
+            this.txtOaConnect.TabIndex = 1;
+            this.txtOaConnect.Text = "ConnectionString";
+            // 
+            // btnGetOaConnect
+            // 
+            this.btnGetOaConnect.Location = new System.Drawing.Point(585, 355);
+            this.btnGetOaConnect.Name = "btnGetOaConnect";
+            this.btnGetOaConnect.Size = new System.Drawing.Size(109, 22);
+            this.btnGetOaConnect.TabIndex = 0;
+            this.btnGetOaConnect.Text = "OA";
+            this.btnGetOaConnect.UseVisualStyleBackColor = true;
+            this.btnGetOaConnect.Click += new System.EventHandler(this.btnGetOaConnect_Click);
+            // 
             // txtSql
             // 
             this.txtSql.Location = new System.Drawing.Point(17, 13);
@@ -1123,25 +1196,6 @@
             this.label9.TabIndex = 21;
             this.label9.Text = "如果检查不出异常，请先清空考勤初始化记录状态后再检查异常";
             // 
-            // btnGetOaConnect
-            // 
-            this.btnGetOaConnect.Location = new System.Drawing.Point(585, 355);
-            this.btnGetOaConnect.Name = "btnGetOaConnect";
-            this.btnGetOaConnect.Size = new System.Drawing.Size(109, 22);
-            this.btnGetOaConnect.TabIndex = 0;
-            this.btnGetOaConnect.Text = "OA";
-            this.btnGetOaConnect.UseVisualStyleBackColor = true;
-            this.btnGetOaConnect.Click += new System.EventHandler(this.btnGetOaConnect_Click);
-            // 
-            // txtOaConnect
-            // 
-            this.txtOaConnect.Location = new System.Drawing.Point(26, 355);
-            this.txtOaConnect.Multiline = true;
-            this.txtOaConnect.Name = "txtOaConnect";
-            this.txtOaConnect.Size = new System.Drawing.Size(535, 22);
-            this.txtOaConnect.TabIndex = 1;
-            this.txtOaConnect.Text = "ConnectionString";
-            // 
             // AttendEmploee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1194,6 +1248,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtOATravelRecord)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage8.ResumeLayout(false);
@@ -1322,6 +1377,11 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtOaConnect;
         private System.Windows.Forms.Button btnGetOaConnect;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.DataGridView dtOATravelRecord;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.Button btnSynchOATravel;
     }
 }
 

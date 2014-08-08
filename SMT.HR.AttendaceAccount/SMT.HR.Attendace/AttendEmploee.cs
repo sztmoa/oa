@@ -379,6 +379,7 @@ namespace SmtPortalSetUp
 
             #region 出差记录
             GetEmployeeEvection();
+            GetEmployeeOATravelRecord();
             #endregion
 
             #region 异常考勤记录
@@ -1369,6 +1370,54 @@ namespace SmtPortalSetUp
                 txtMessagebox.Text = "查询员工出差记录完成，共：0条数据" + System.Environment.NewLine + txtMessagebox.Text;
             }
         }
+        /// <summary>
+        /// 获取OA出差记录
+        /// </summary>
+        private void GetEmployeeOATravelRecord()
+        {
+            string sql = @"select t.* from 
+                        (select
+                                a1.ownername, 
+                                a.startdate,
+                                a.startcityname,
+                                a.enddate,
+                                a.businessdays,
+                                a.endcityname,
+                                a1.ownerid,
+                                a1.content,
+                                '出差申请' as aa
+                            from smtoa.t_oa_businesstripdetail a
+                            inner join smtoa.t_oa_businesstrip a1
+                            on a1.businesstripid = a.businesstripid
+                        union
+                        select b1.ownername,
+                                b.startdate,
+                                b.startcityname,
+                                b.enddate,
+                                b.businessdays,
+                                b.endcityname,
+                                b1.ownerid,
+                                b1.content,
+                                '出差报销' as aa
+                            from smtoa.t_oa_reimbursementdetail b
+                            inner join smtoa.t_oa_travelreimbursement b1
+                            on b1.travelreimbursementid = b.travelreimbursementid
+                            )  t
+                        where t.ownerid='" + GlobalParameters.employeeid + @"'
+                        and t.startdate>=to_date('" + GlobalParameters.StartDate + @"','yyyy-mm-dd')
+                        and t.enddate<=to_date('" + GlobalParameters.EndDate + @"','yyyy-mm-dd')    ";
+            DataTable dt = OracleHelp.getTable(sql);
+            if (dt != null)
+            {
+                this.dtOATravelRecord.DataSource = dt;
+                OracleHelp.close();
+                txtMessagebox.Text = "查询员工OA出差记录完成，共：" + dt.Rows.Count.ToString() + "条数据" + System.Environment.NewLine + txtMessagebox.Text;
+            }
+            else
+            {
+                txtMessagebox.Text = "查询员工OA出差记录完成，共：0条数据" + System.Environment.NewLine + txtMessagebox.Text;
+            }
+        }
         #endregion
 
 
@@ -1703,6 +1752,58 @@ namespace SmtPortalSetUp
             txtOaConnect.Text=oaClient.GetAppConfigByName(txtOaConnect.Text);
 
         }
+
+        #region 同步oa出差至HR
+        private void btnSynchOATravel_Click(object sender, EventArgs e)
+        {
+            OracleHelp.Connect();
+            for (int i = 0; i < dtOATravelRecord.Rows.Count; i++)
+            {
+                string employeeid = dtOATravelRecord.Rows[i].Cells["ownerid"].EditedFormattedValue.ToString();
+                string ownername = dtOATravelRecord.Rows[i].Cells["ownername"].EditedFormattedValue.ToString();
+                string startdate = dtOATravelRecord.Rows[i].Cells["startdate"].EditedFormattedValue.ToString();
+                string enddate = dtOATravelRecord.Rows[i].Cells["enddate"].EditedFormattedValue.ToString();
+                string businessdays = dtOATravelRecord.Rows[i].Cells["businessdays"].EditedFormattedValue.ToString();
+                string endcityname = dtOATravelRecord.Rows[i].Cells["endcityname"].EditedFormattedValue.ToString();
+                string content = dtOATravelRecord.Rows[i].Cells["content"].EditedFormattedValue.ToString();
+
+                string sqlget = @"select * from t_hr_employeeevectionrecord t
+                               where t.employeeid='" + GlobalParameters.employeeid + @"'
+                                and t.startdate>=to_date('" + startdate + @"','yyyy-MM-dd  hh24:mi:ss')
+                                and t.enddate<=to_date('" + enddate + @"','yyyy-MM-dd  hh24:mi:ss')    ";
+                DataTable dt = OracleHelp.getTable(sqlget);
+                if (dt != null)
+                {
+                    if (dt.Rows.Count > 0)
+                    {
+                        continue;
+                    }
+                }
+
+                string sql = @"insert into t_hr_employeeevectionrecord(evectionrecordid,
+                                   employeeid,
+                                   employeename,
+                                   startdate,
+                                   enddate,
+                                   totaldays,
+                                   destination,
+                                   evectionreason,
+                                   checkstate,
+                                   ownerid,
+                                   createdate,
+                                   updatedate,updateuserid) 
+                                   values(sys_guid(), '" + employeeid + "', '" + ownername
+                                                         + "', to_date('" + startdate + "','yyyy-MM-dd  hh24:mi:ss'), to_date('" + enddate + "','yyyy-MM-dd  hh24:mi:ss'), '"
+                                                         + businessdays + "', '" + endcityname + "', '" + content + "', '2', '" + employeeid + "', sysdate, sysdate,'系统插入')";
+
+
+               // int j = OracleHelp.Excute(sql);
+                //SetLog("插入了" + j + "条数据");
+                SetLog(sql);
+            }
+            OracleHelp.close();
+        }
+        #endregion
 
     }
 
