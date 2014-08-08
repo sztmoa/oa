@@ -1,6 +1,7 @@
-﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="SMT.FileUpLoad" EntryPointType="SMT.FileUpLoad.App" RuntimeVersion="4.0.50826.0">
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="SMT.FileUpLoad" EntryPointType="SMT.FileUpLoad.App" RuntimeVersion="5.0.61118.0">
   <Deployment.Parts>
     <AssemblyPart x:Name="SMT.FileUpLoad" Source="SMT.FileUpLoad.dll" />
+    <AssemblyPart x:Name="SMT.SaaS.LocalData" Source="SMT.SaaS.LocalData.dll" />
     <AssemblyPart x:Name="SMT.SAAS.Main.CurrentContext" Source="SMT.SAAS.Main.CurrentContext.dll" />
     <AssemblyPart x:Name="SMT.Saas.Tools" Source="SMT.Saas.Tools.dll" />
     <AssemblyPart x:Name="System.ComponentModel.DataAnnotations" Source="System.ComponentModel.DataAnnotations.dll" />

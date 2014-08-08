@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="SMT.LM.FileUpLoad.Test.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="400" d:DesignWidth="630" xmlns:my="clr-namespace:SMT.FileUpLoad;assembly=SMT.FileUpLoad">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <my:SMTFileUpload HorizontalAlignment="Left" Margin="5,5,5,5" Name="sMTFileUpload1" VerticalAlignment="Top" Height="347" />
+    </Grid>
+</UserControl>

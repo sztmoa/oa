@@ -1,0 +1,116 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+<edmx:Runtime>
+<edmx:StorageModels>
+<Schema Namespace="SMT_FILEUPLOAD_EFModel.Store" Alias="Self" Provider="EFOracleProvider" ProviderManifestToken="11g" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityContainer Name="SMT_FILEUPLOAD_EFModelStoreContainer">
+    <EntitySet Name="SMT_FILELIST" EntityType="SMT_FILEUPLOAD_EFModel.Store.SMT_FILELIST" store:Type="Tables" />
+  </EntityContainer>
+  <EntityType Name="SMT_FILELIST">
+    <Key>
+      <PropertyRef Name="SMTFILELISTID" />
+    </Key>
+    <Property Name="SMTFILELISTID" Type="nvarchar2" Nullable="false" MaxLength="200" />
+    <Property Name="FILENAME" Type="nvarchar2" Nullable="false" MaxLength="2000" />
+    <Property Name="FILETYPE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="FILEURL" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="FILESIZE" Type="number" />
+    <Property Name="COMPANYCODE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="COMPANYNAME" Type="nvarchar2" MaxLength="400" />
+    <Property Name="SYSTEMCODE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="MODELCODE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="APPLICATIONID" Type="nvarchar2" MaxLength="200" />
+    <Property Name="THUMBNAILURL" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="INDEXL" Type="number" />
+    <Property Name="REMARK" Type="nvarchar2" MaxLength="1000" />
+    <Property Name="CREATETIME" Type="date" />
+    <Property Name="CREATENAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="UPDATETIME" Type="date" />
+    <Property Name="UPDATENAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="PASSWORD" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="OWNERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERCOMPANYID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERPOSTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="FORMID" Type="nvarchar2" MaxLength="100" />
+  </EntityType>
+</Schema>
+</edmx:StorageModels>
+<edmx:ConceptualModels>
+<Schema Namespace="SMT_FILEUPLOAD_EFModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+  <EntityContainer Name="SMT_FILEUPLOAD_EFModelContext">
+    <EntitySet Name="SMT_FILELIST" EntityType="SMT_FILEUPLOAD_EFModel.SMT_FILELIST" />
+  </EntityContainer>
+  <EntityType Name="SMT_FILELIST">
+    <Key>
+      <PropertyRef Name="SMTFILELISTID" />
+    </Key>
+    <Property Name="SMTFILELISTID" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="FILENAME" Type="String" Nullable="false" MaxLength="2000" Unicode="true" FixedLength="false" />
+    <Property Name="FILETYPE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="FILEURL" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+    <Property Name="FILESIZE" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="COMPANYCODE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="COMPANYNAME" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="SYSTEMCODE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="MODELCODE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="APPLICATIONID" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="THUMBNAILURL" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+    <Property Name="INDEXL" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="REMARK" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="CREATETIME" Type="DateTime" />
+    <Property Name="CREATENAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UPDATETIME" Type="DateTime" />
+    <Property Name="UPDATENAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERCOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="FORMID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>
+</edmx:ConceptualModels>
+<edmx:Mappings>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="SMT_FILEUPLOAD_EFModelStoreContainer" CdmEntityContainer="SMT_FILEUPLOAD_EFModelContext">
+    <EntitySetMapping Name="SMT_FILELIST">
+      <EntityTypeMapping TypeName="SMT_FILEUPLOAD_EFModel.SMT_FILELIST">
+        <MappingFragment StoreEntitySet="SMT_FILELIST">
+          <ScalarProperty Name="SMTFILELISTID" ColumnName="SMTFILELISTID" />
+          <ScalarProperty Name="FILENAME" ColumnName="FILENAME" />
+          <ScalarProperty Name="FILETYPE" ColumnName="FILETYPE" />
+          <ScalarProperty Name="FILEURL" ColumnName="FILEURL" />
+          <ScalarProperty Name="FILESIZE" ColumnName="FILESIZE" />
+          <ScalarProperty Name="COMPANYCODE" ColumnName="COMPANYCODE" />
+          <ScalarProperty Name="COMPANYNAME" ColumnName="COMPANYNAME" />
+          <ScalarProperty Name="SYSTEMCODE" ColumnName="SYSTEMCODE" />
+          <ScalarProperty Name="MODELCODE" ColumnName="MODELCODE" />
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+          <ScalarProperty Name="THUMBNAILURL" ColumnName="THUMBNAILURL" />
+          <ScalarProperty Name="INDEXL" ColumnName="INDEXL" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="CREATENAME" ColumnName="CREATENAME" />
+          <ScalarProperty Name="UPDATETIME" ColumnName="UPDATETIME" />
+          <ScalarProperty Name="UPDATENAME" ColumnName="UPDATENAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+          <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+          <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+          <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+          <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+          <ScalarProperty Name="FORMID" ColumnName="FORMID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
+</edmx:Mappings>
+</edmx:Runtime>
+<edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+<Connection><DesignerInfoPropertySet><DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" /></DesignerInfoPropertySet></Connection>
+<edmx:Options />
+<edmx:Diagrams />
+</edmx:Designer></edmx:Edmx>

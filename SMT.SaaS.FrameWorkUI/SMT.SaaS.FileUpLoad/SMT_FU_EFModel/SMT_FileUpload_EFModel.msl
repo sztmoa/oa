@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="SMT_FileUpload_EFModelStoreContainer" CdmEntityContainer="SMT_FileUpload_EFModelContext">
+    <EntitySetMapping Name="SMT_FILELIST" StoreEntitySet="SMT_FILELIST" TypeName="SMT_FileUpload_EFModel.SMT_FILELIST">
+      <ScalarProperty Name="SMTFILELISTID" ColumnName="SMTFILELISTID" />
+      <ScalarProperty Name="FILENAME" ColumnName="FILENAME" />
+      <ScalarProperty Name="FILETYPE" ColumnName="FILETYPE" />
+      <ScalarProperty Name="FILEURL" ColumnName="FILEURL" />
+      <ScalarProperty Name="COMPANYCODE" ColumnName="COMPANYCODE" />
+      <ScalarProperty Name="COMPANYNAME" ColumnName="COMPANYNAME" />
+      <ScalarProperty Name="SYSTEMCODE" ColumnName="SYSTEMCODE" />
+      <ScalarProperty Name="MODELCODE" ColumnName="MODELCODE" />
+      <ScalarProperty Name="THUMBNAILURL" ColumnName="THUMBNAILURL" />
+      <ScalarProperty Name="INDEXL" ColumnName="INDEXL" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+      <ScalarProperty Name="CREATENAME" ColumnName="CREATENAME" />
+      <ScalarProperty Name="UPDATETIME" ColumnName="UPDATETIME" />
+      <ScalarProperty Name="UPDATENAME" ColumnName="UPDATENAME" />
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
