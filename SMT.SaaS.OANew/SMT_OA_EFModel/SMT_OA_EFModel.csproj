@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SMT_OA_EFModel</RootNamespace>
     <AssemblyName>SMT_OA_EFModel</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
     </SccProjectName>
@@ -82,6 +82,10 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SMT.Foundation.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Core.dll</HintPath>
+    </Reference>
     <Reference Include="SMT.Foundation.Log">
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Log.dll</HintPath>
     </Reference>

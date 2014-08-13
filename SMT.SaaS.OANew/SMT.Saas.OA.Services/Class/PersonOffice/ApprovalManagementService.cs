@@ -150,6 +150,35 @@ namespace SMT.SaaS.OA.Services
             }
             //}
         }
+
+
+        /// <summary>
+        /// 费用报销查看个人事项审批单数据
+        /// </summary>
+        /// <param name="pageIndex">当前页</param>
+        /// <param name="pageSize">每页数量</param>        
+        /// <param name="filterString">字符串</param>
+        /// <param name="paras">参数</param>
+        /// <param name="pageCount">页数</param>
+        /// <param name="userID">用户ID</param>
+        /// <param name="approvalCode">事项编号</param>        
+        /// <returns></returns>
+        //public List<T_OA_APPROVALINFO> GetApporvalListforMVCForReimbursement(int pageIndex, int pageSize, string filterString, object[] paras, ref int pageCount, string userID, string approvalCode)
+        //{            
+        //    using (ApprovalManagementBll approvalBll = new ApprovalManagementBll())
+        //    {            
+        //        var ents = approvalBll.GetApporvalListforMVCForReimbursement(pageIndex,pageSize,  filterString, paras, ref pageCount, userID, approvalCode, "2");
+        //        if (ents == null)
+        //        {
+        //            return null;
+        //        }
+        //        else
+        //        {
+        //            return ents.ToList();
+        //        }
+
+        //    }
+        //}
         /// <summary>
         /// 添加事项审批类型
         /// </summary>

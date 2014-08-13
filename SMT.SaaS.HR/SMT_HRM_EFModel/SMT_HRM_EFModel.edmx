@@ -1,4 +1,4 @@
-<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
 <edmx:Runtime>
 <edmx:StorageModels>
 <Schema Namespace="SMT_HRM_EFModel.Store" Alias="Self" Provider="EFOracleProvider" ProviderManifestToken="11g" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
@@ -46,6 +46,7 @@ FROM "dbo"."TEMP_SIGNINDETAIL" "TEMP_SIGNINDETAIL"</DefiningQuery>
     <EntitySet Name="T_HR_ATTENDMONTHLYBATCHBALANCE" EntityType="SMT_HRM_EFModel.Store.T_HR_ATTENDMONTHLYBATCHBALANCE" store:Type="Tables" />
     <EntitySet Name="T_HR_ATTENDMONTHLYLEAVE" EntityType="SMT_HRM_EFModel.Store.T_HR_ATTENDMONTHLYLEAVE" store:Type="Tables" />
     <EntitySet Name="T_HR_ATTENDYEARLYBALANCE" EntityType="SMT_HRM_EFModel.Store.T_HR_ATTENDYEARLYBALANCE" store:Type="Tables" />
+    <EntitySet Name="T_HR_BALANCEPOSTDETAIL" EntityType="SMT_HRM_EFModel.Store.T_HR_BALANCEPOSTDETAIL" store:Type="Tables" />
     <EntitySet Name="T_HR_BLACKLIST" EntityType="SMT_HRM_EFModel.Store.T_HR_BLACKLIST" store:Type="Tables" />
     <EntitySet Name="T_HR_CHECKPOINTLEVELSET" EntityType="SMT_HRM_EFModel.Store.T_HR_CHECKPOINTLEVELSET" store:Type="Tables" />
     <EntitySet Name="T_HR_CHECKPOINTSET" EntityType="SMT_HRM_EFModel.Store.T_HR_CHECKPOINTSET" store:Type="Tables" />
@@ -84,10 +85,110 @@ FROM "dbo"."TEMP_SIGNINDETAIL" "TEMP_SIGNINDETAIL"</DefiningQuery>
     <EntitySet Name="T_HR_EMPLOYEEPOST" EntityType="SMT_HRM_EFModel.Store.T_HR_EMPLOYEEPOST" store:Type="Tables" />
     <EntitySet Name="T_HR_EMPLOYEEPOSTCHANGE" EntityType="SMT_HRM_EFModel.Store.T_HR_EMPLOYEEPOSTCHANGE" store:Type="Tables" />
     <EntitySet Name="T_HR_EMPLOYEEPOSTHISTORY" EntityType="SMT_HRM_EFModel.Store.T_HR_EMPLOYEEPOSTHISTORY" store:Type="Tables" />
+    <EntitySet Name="T_HR_EMPLOYEESALARYPOSTASIGN" EntityType="SMT_HRM_EFModel.Store.T_HR_EMPLOYEESALARYPOSTASIGN" store:Type="Tables" />
     <EntitySet Name="T_HR_EMPLOYEESALARYRECORD" EntityType="SMT_HRM_EFModel.Store.T_HR_EMPLOYEESALARYRECORD" store:Type="Tables" />
     <EntitySet Name="T_HR_EMPLOYEESALARYRECORDITEM" EntityType="SMT_HRM_EFModel.Store.T_HR_EMPLOYEESALARYRECORDITEM" store:Type="Tables" />
     <EntitySet Name="T_HR_EMPLOYEESIGNINDETAIL" EntityType="SMT_HRM_EFModel.Store.T_HR_EMPLOYEESIGNINDETAIL" store:Type="Tables" />
     <EntitySet Name="T_HR_EMPLOYEESIGNINRECORD" EntityType="SMT_HRM_EFModel.Store.T_HR_EMPLOYEESIGNINRECORD" store:Type="Tables" />
+    <EntitySet Name="T_HR_EMPLOYEEVACATION" EntityType="SMT_HRM_EFModel.Store.T_HR_EMPLOYEEVACATION" store:Type="Tables" store:Name="T_HR_EMPLOYEEVACATION">
+      <DefiningQuery>SELECT 
+"T_HR_EMPLOYEEVACATION"."EMPLOYEEID" AS "EMPLOYEEID", 
+"T_HR_EMPLOYEEVACATION"."EMPLOYEECODE" AS "EMPLOYEECODE", 
+"T_HR_EMPLOYEEVACATION"."EMPLOYEENAME" AS "EMPLOYEENAME", 
+"T_HR_EMPLOYEEVACATION"."YEAR_PERIOD" AS "YEAR_PERIOD", 
+"T_HR_EMPLOYEEVACATION"."ACCOMPANY_CARE_LEAVE" AS "ACCOMPANY_CARE_LEAVE", 
+"T_HR_EMPLOYEEVACATION"."AFFAIR_LEAVE_HOURS" AS "AFFAIR_LEAVE_HOURS", 
+"T_HR_EMPLOYEEVACATION"."ANNUAL_HOURS" AS "ANNUAL_HOURS", 
+"T_HR_EMPLOYEEVACATION"."ANNUALDAY" AS "ANNUALDAY", 
+"T_HR_EMPLOYEEVACATION"."ANNUALDAY_EFFECT_DAY" AS "ANNUALDAY_EFFECT_DAY", 
+"T_HR_EMPLOYEEVACATION"."ANNUALDAY_USED" AS "ANNUALDAY_USED", 
+"T_HR_EMPLOYEEVACATION"."ANNUALHOURS_USED" AS "ANNUALHOURS_USED", 
+"T_HR_EMPLOYEEVACATION"."BREAST_FEEDING_LEAVE" AS "BREAST_FEEDING_LEAVE", 
+"T_HR_EMPLOYEEVACATION"."FUNERAL_LEAVE" AS "FUNERAL_LEAVE", 
+"T_HR_EMPLOYEEVACATION"."INJURY_LEAVE" AS "INJURY_LEAVE", 
+"T_HR_EMPLOYEEVACATION"."MARRIAGE_LEAVE" AS "MARRIAGE_LEAVE", 
+"T_HR_EMPLOYEEVACATION"."MATERNITY_LEAVE" AS "MATERNITY_LEAVE", 
+"T_HR_EMPLOYEEVACATION"."OT_LEAVE_HOURS" AS "OT_LEAVE_HOURS", 
+"T_HR_EMPLOYEEVACATION"."OT_TOTAL_HOURS" AS "OT_TOTAL_HOURS", 
+"T_HR_EMPLOYEEVACATION"."PRENATAL_EXAM_LEAVE" AS "PRENATAL_EXAM_LEAVE", 
+"T_HR_EMPLOYEEVACATION"."ROADING_LEAVE" AS "ROADING_LEAVE", 
+"T_HR_EMPLOYEEVACATION"."SICK_HOURS" AS "SICK_HOURS", 
+"T_HR_EMPLOYEEVACATION"."SICK_LEAVE_HOURS" AS "SICK_LEAVE_HOURS", 
+"T_HR_EMPLOYEEVACATION"."WOMEN_DAY" AS "WOMEN_DAY", 
+"T_HR_EMPLOYEEVACATION"."YOUTH_DAY" AS "YOUTH_DAY", 
+"T_HR_EMPLOYEEVACATION"."CREATE_USERID" AS "CREATE_USERID", 
+"T_HR_EMPLOYEEVACATION"."CREATE_DATE" AS "CREATE_DATE", 
+"T_HR_EMPLOYEEVACATION"."CREATE_COMPANYID" AS "CREATE_COMPANYID", 
+"T_HR_EMPLOYEEVACATION"."CREATE_DEPARTMENTID" AS "CREATE_DEPARTMENTID", 
+"T_HR_EMPLOYEEVACATION"."CREATE_POSTID" AS "CREATE_POSTID", 
+"T_HR_EMPLOYEEVACATION"."OWNER_COMPANYID" AS "OWNER_COMPANYID", 
+"T_HR_EMPLOYEEVACATION"."OWNER_DEPARTMENTID" AS "OWNER_DEPARTMENTID", 
+"T_HR_EMPLOYEEVACATION"."OWNER_POSTID" AS "OWNER_POSTID", 
+"T_HR_EMPLOYEEVACATION"."OWNERID" AS "OWNERID", 
+"T_HR_EMPLOYEEVACATION"."UPDATE_USERID" AS "UPDATE_USERID", 
+"T_HR_EMPLOYEEVACATION"."UPDATE_DATE" AS "UPDATE_DATE"
+FROM "dbo"."T_HR_EMPLOYEEVACATION" "T_HR_EMPLOYEEVACATION"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="T_HR_EMPLOYEE_LIUHH" EntityType="SMT_HRM_EFModel.Store.T_HR_EMPLOYEE_LIUHH" store:Type="Tables" store:Name="T_HR_EMPLOYEE_LIUHH">
+      <DefiningQuery>SELECT 
+"T_HR_EMPLOYEE_LIUHH"."EMPLOYEEID" AS "EMPLOYEEID", 
+"T_HR_EMPLOYEE_LIUHH"."EMPLOYEECODE" AS "EMPLOYEECODE", 
+"T_HR_EMPLOYEE_LIUHH"."EMPLOYEECNAME" AS "EMPLOYEECNAME", 
+"T_HR_EMPLOYEE_LIUHH"."EMPLOYEEENAME" AS "EMPLOYEEENAME", 
+"T_HR_EMPLOYEE_LIUHH"."EMPLOYEELEVEL" AS "EMPLOYEELEVEL", 
+"T_HR_EMPLOYEE_LIUHH"."SEX" AS "SEX", 
+"T_HR_EMPLOYEE_LIUHH"."PROFESSIONALTITLE" AS "PROFESSIONALTITLE", 
+"T_HR_EMPLOYEE_LIUHH"."IDTYPE" AS "IDTYPE", 
+"T_HR_EMPLOYEE_LIUHH"."IDNUMBER" AS "IDNUMBER", 
+"T_HR_EMPLOYEE_LIUHH"."NATION" AS "NATION", 
+"T_HR_EMPLOYEE_LIUHH"."HEIGHT" AS "HEIGHT", 
+"T_HR_EMPLOYEE_LIUHH"."BANKID" AS "BANKID", 
+"T_HR_EMPLOYEE_LIUHH"."BANKCARDNUMBER" AS "BANKCARDNUMBER", 
+"T_HR_EMPLOYEE_LIUHH"."RESUMEID" AS "RESUMEID", 
+"T_HR_EMPLOYEE_LIUHH"."PROVINCE" AS "PROVINCE", 
+"T_HR_EMPLOYEE_LIUHH"."BLOODTYPE" AS "BLOODTYPE", 
+"T_HR_EMPLOYEE_LIUHH"."MARRIAGE" AS "MARRIAGE", 
+"T_HR_EMPLOYEE_LIUHH"."HASCHILDREN" AS "HASCHILDREN", 
+"T_HR_EMPLOYEE_LIUHH"."POLITICS" AS "POLITICS", 
+"T_HR_EMPLOYEE_LIUHH"."REGRESIDENCE" AS "REGRESIDENCE", 
+"T_HR_EMPLOYEE_LIUHH"."REGRESIDENCETYPE" AS "REGRESIDENCETYPE", 
+"T_HR_EMPLOYEE_LIUHH"."RESIDENCETYPE" AS "RESIDENCETYPE", 
+"T_HR_EMPLOYEE_LIUHH"."EMAIL" AS "EMAIL", 
+"T_HR_EMPLOYEE_LIUHH"."MOBILE" AS "MOBILE", 
+"T_HR_EMPLOYEE_LIUHH"."SECONDLANGUAGE" AS "SECONDLANGUAGE", 
+"T_HR_EMPLOYEE_LIUHH"."SECONDLANGUAGEDEGREE" AS "SECONDLANGUAGEDEGREE", 
+"T_HR_EMPLOYEE_LIUHH"."OFFICEPHONE" AS "OFFICEPHONE", 
+"T_HR_EMPLOYEE_LIUHH"."CURRENTADDRESS" AS "CURRENTADDRESS", 
+"T_HR_EMPLOYEE_LIUHH"."URGENCYPERSON" AS "URGENCYPERSON", 
+"T_HR_EMPLOYEE_LIUHH"."URGENCYCONTACT" AS "URGENCYCONTACT", 
+"T_HR_EMPLOYEE_LIUHH"."FAMILYADDRESS" AS "FAMILYADDRESS", 
+"T_HR_EMPLOYEE_LIUHH"."FAMILYZIPCODE" AS "FAMILYZIPCODE", 
+"T_HR_EMPLOYEE_LIUHH"."FAMILYPHONE" AS "FAMILYPHONE", 
+"T_HR_EMPLOYEE_LIUHH"."FINGERPRINTID" AS "FINGERPRINTID", 
+"T_HR_EMPLOYEE_LIUHH"."PHOTO" AS "PHOTO", 
+"T_HR_EMPLOYEE_LIUHH"."TOPEDUCATION" AS "TOPEDUCATION", 
+"T_HR_EMPLOYEE_LIUHH"."BIRTHDAY" AS "BIRTHDAY", 
+"T_HR_EMPLOYEE_LIUHH"."EMPLOYEESTATE" AS "EMPLOYEESTATE", 
+"T_HR_EMPLOYEE_LIUHH"."WORKINGAGE" AS "WORKINGAGE", 
+"T_HR_EMPLOYEE_LIUHH"."EDITSTATE" AS "EDITSTATE", 
+"T_HR_EMPLOYEE_LIUHH"."REMARK" AS "REMARK", 
+"T_HR_EMPLOYEE_LIUHH"."OWNERID" AS "OWNERID", 
+"T_HR_EMPLOYEE_LIUHH"."OWNERPOSTID" AS "OWNERPOSTID", 
+"T_HR_EMPLOYEE_LIUHH"."OWNERDEPARTMENTID" AS "OWNERDEPARTMENTID", 
+"T_HR_EMPLOYEE_LIUHH"."OWNERCOMPANYID" AS "OWNERCOMPANYID", 
+"T_HR_EMPLOYEE_LIUHH"."CREATEPOSTID" AS "CREATEPOSTID", 
+"T_HR_EMPLOYEE_LIUHH"."CREATEDEPARTMENTID" AS "CREATEDEPARTMENTID", 
+"T_HR_EMPLOYEE_LIUHH"."CREATECOMPANYID" AS "CREATECOMPANYID", 
+"T_HR_EMPLOYEE_LIUHH"."CREATEUSERID" AS "CREATEUSERID", 
+"T_HR_EMPLOYEE_LIUHH"."CREATEDATE" AS "CREATEDATE", 
+"T_HR_EMPLOYEE_LIUHH"."UPDATEUSERID" AS "UPDATEUSERID", 
+"T_HR_EMPLOYEE_LIUHH"."UPDATEDATE" AS "UPDATEDATE", 
+"T_HR_EMPLOYEE_LIUHH"."EMPLOYEETYPE" AS "EMPLOYEETYPE", 
+"T_HR_EMPLOYEE_LIUHH"."OTHERCOMMUNICATE" AS "OTHERCOMMUNICATE", 
+"T_HR_EMPLOYEE_LIUHH"."INTERESTCONTENT" AS "INTERESTCONTENT", 
+"T_HR_EMPLOYEE_LIUHH"."SOCIALSERVICEYEAR" AS "SOCIALSERVICEYEAR"
+FROM "dbo"."T_HR_EMPLOYEE_LIUHH" "T_HR_EMPLOYEE_LIUHH"</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="T_HR_EXPERIENCE" EntityType="SMT_HRM_EFModel.Store.T_HR_EXPERIENCE" store:Type="Tables" />
     <EntitySet Name="T_HR_FAMILYMEMBER" EntityType="SMT_HRM_EFModel.Store.T_HR_FAMILYMEMBER" store:Type="Tables" />
     <EntitySet Name="T_HR_FREELEAVEDAYSET" EntityType="SMT_HRM_EFModel.Store.T_HR_FREELEAVEDAYSET" store:Type="Tables" />
@@ -98,6 +199,7 @@ FROM "dbo"."TEMP_SIGNINDETAIL" "TEMP_SIGNINDETAIL"</DefiningQuery>
     <EntitySet Name="T_HR_KPIRECORDCOMPLAIN" EntityType="SMT_HRM_EFModel.Store.T_HR_KPIRECORDCOMPLAIN" store:Type="Tables" />
     <EntitySet Name="T_HR_KPIREMIND" EntityType="SMT_HRM_EFModel.Store.T_HR_KPIREMIND" store:Type="Tables" />
     <EntitySet Name="T_HR_KPITYPE" EntityType="SMT_HRM_EFModel.Store.T_HR_KPITYPE" store:Type="Tables" />
+    <EntitySet Name="T_HR_LEAVEREFEROT" EntityType="SMT_HRM_EFModel.Store.T_HR_LEAVEREFEROT" store:Type="Tables" />
     <EntitySet Name="T_HR_LEAVETYPESET" EntityType="SMT_HRM_EFModel.Store.T_HR_LEAVETYPESET" store:Type="Tables" />
     <EntitySet Name="T_HR_LEFTOFFICE" EntityType="SMT_HRM_EFModel.Store.T_HR_LEFTOFFICE" store:Type="Tables" />
     <EntitySet Name="T_HR_LEFTOFFICECONFIRM" EntityType="SMT_HRM_EFModel.Store.T_HR_LEFTOFFICECONFIRM" store:Type="Tables" />
@@ -129,7 +231,6 @@ FROM "dbo"."TEMP_SIGNINDETAIL" "TEMP_SIGNINDETAIL"</DefiningQuery>
     <EntitySet Name="T_HR_SALARYARCHIVEITEM" EntityType="SMT_HRM_EFModel.Store.T_HR_SALARYARCHIVEITEM" store:Type="Tables" />
     <EntitySet Name="T_HR_SALARYITEM" EntityType="SMT_HRM_EFModel.Store.T_HR_SALARYITEM" store:Type="Tables" />
     <EntitySet Name="T_HR_SALARYLEVEL" EntityType="SMT_HRM_EFModel.Store.T_HR_SALARYLEVEL" store:Type="Tables" />
-    <EntitySet Name="T_HR_SALARYPAYPOST" EntityType="SMT_HRM_EFModel.Store.T_HR_SALARYPAYPOST" store:Type="Tables" />
     <EntitySet Name="T_HR_SALARYRECORDBATCH" EntityType="SMT_HRM_EFModel.Store.T_HR_SALARYRECORDBATCH" store:Type="Tables" />
     <EntitySet Name="T_HR_SALARYSOLUTION" EntityType="SMT_HRM_EFModel.Store.T_HR_SALARYSOLUTION" store:Type="Tables" />
     <EntitySet Name="T_HR_SALARYSOLUTIONASSIGN" EntityType="SMT_HRM_EFModel.Store.T_HR_SALARYSOLUTIONASSIGN" store:Type="Tables" />
@@ -303,6 +404,18 @@ FROM "dbo"."V_EMPLOYEEPOSTCHANGEHIS" "V_EMPLOYEEPOSTCHANGEHIS"</DefiningQuery>
 "V_EMPLOYEESALARYCHANGEHIS"."OWNERDEPARTMENTID" AS "OWNERDEPARTMENTID", 
 "V_EMPLOYEESALARYCHANGEHIS"."OWNERCOMPANYID" AS "OWNERCOMPANYID"
 FROM "dbo"."V_EMPLOYEESALARYCHANGEHIS" "V_EMPLOYEESALARYCHANGEHIS"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_HR_SMTGRPEMPLOYEE" EntityType="SMT_HRM_EFModel.Store.V_HR_SMTGRPEMPLOYEE" store:Type="Views" store:Name="V_HR_SMTGRPEMPLOYEE">
+      <DefiningQuery>SELECT 
+"V_HR_SMTGRPEMPLOYEE"."COMPANYID" AS "COMPANYID", 
+"V_HR_SMTGRPEMPLOYEE"."DEPARTMENTID" AS "DEPARTMENTID", 
+"V_HR_SMTGRPEMPLOYEE"."POSTID" AS "POSTID", 
+"V_HR_SMTGRPEMPLOYEE"."EMPLOYEEID" AS "EMPLOYEEID", 
+"V_HR_SMTGRPEMPLOYEE"."CNAME" AS "CNAME", 
+"V_HR_SMTGRPEMPLOYEE"."DEPARTMENTNAME" AS "DEPARTMENTNAME", 
+"V_HR_SMTGRPEMPLOYEE"."POSTNAME" AS "POSTNAME", 
+"V_HR_SMTGRPEMPLOYEE"."EMPLOYEECNAME" AS "EMPLOYEECNAME"
+FROM "dbo"."V_HR_SMTGRPEMPLOYEE" "V_HR_SMTGRPEMPLOYEE"</DefiningQuery>
     </EntitySet>
     <EntitySet Name="V_ORAGNIZATION" EntityType="SMT_HRM_EFModel.Store.V_ORAGNIZATION" store:Type="Views" store:Name="V_ORAGNIZATION">
       <DefiningQuery>SELECT 
@@ -1231,6 +1344,26 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="UPDATEDATE" Type="date" />
     <Property Name="EVECTIONTIME" Type="number" />
   </EntityType>
+  <EntityType Name="T_HR_BALANCEPOSTDETAIL">
+    <Key>
+      <PropertyRef Name="BALANCEPOSTDETAIL" />
+    </Key>
+    <Property Name="BALANCEPOSTDETAIL" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="BALANCEPOSTASIGNID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EMPLOYEEID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EMPLOYEENAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EMPLOYEEPOSTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EMPLOYEEPOSTNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EMPLOYEEDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EMPLOYEEDEPARTMENTNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EMPLOYEECOMPANYID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EMPLOYEECOMPANYNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEDATE" Type="date" />
+    <Property Name="CREATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="UPDATEDATE" Type="date" />
+    <Property Name="UPDATEDATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EDITSTATE" Type="nvarchar2" MaxLength="2" />
+  </EntityType>
   <EntityType Name="T_HR_BLACKLIST">
     <Key>
       <PropertyRef Name="BLACKLISTID" />
@@ -2054,6 +2187,10 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="CREATEDATE" Type="date" />
     <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
     <Property Name="UPDATEDATE" Type="date" />
+    <Property Name="FINEDAYS" Type="number" />
+    <Property Name="FINEHOURS" Type="number" />
+    <Property Name="USEABLEHOURS" Type="number" />
+    <Property Name="USEABLEDAYS" Type="number" />
   </EntityType>
   <EntityType Name="T_HR_EMPLOYEELEVELDAYCOUNT">
     <Key>
@@ -2080,6 +2217,9 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
     <Property Name="UPDATEDATE" Type="date" />
     <Property Name="LEAVETYPESETID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="STATUS" Type="number" />
+    <Property Name="LEFTHOURS" Type="number" />
+    <Property Name="HOURS" Type="number" />
   </EntityType>
   <EntityType Name="T_HR_EMPLOYEELEVELDAYDETAILS">
     <Key>
@@ -2205,6 +2345,10 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="CREATEDATE" Type="date" />
     <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
     <Property Name="UPDATEDATE" Type="date" />
+    <Property Name="STATUS" Type="number" />
+    <Property Name="EFFECTIVEDATE" Type="date" />
+    <Property Name="EXPIREDATE" Type="date" />
+    <Property Name="LEFTHOURS" Type="number" Precision="8" Scale="2" />
   </EntityType>
   <EntityType Name="T_HR_EMPLOYEEPOST">
     <Key>
@@ -2222,6 +2366,8 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
     <Property Name="UPDATEDATE" Type="date" />
     <Property Name="POSTLEVEL" Type="number" />
+    <Property Name="REPORTEMP" Type="nvarchar2" />
+    <Property Name="REPORTEMPNAME" Type="nvarchar2" />
   </EntityType>
   <EntityType Name="T_HR_EMPLOYEEPOSTCHANGE">
     <Key>
@@ -2285,6 +2431,32 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="OWNERCOMPANYID" Type="nvarchar2" MaxLength="100" />
     <Property Name="SALARYLEVEL" Type="number" />
     <Property Name="REASON" Type="nvarchar2" />
+  </EntityType>
+  <EntityType Name="T_HR_EMPLOYEESALARYPOSTASIGN">
+    <Key>
+      <PropertyRef Name="EMPLOYEESALARYPOSTASIGNID" />
+    </Key>
+    <Property Name="EMPLOYEESALARYPOSTASIGNID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="BALANCEPOSTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="BALANCEPOSTNAME" Type="nvarchar2" MaxLength="400" />
+    <Property Name="CHECKSTATE" Type="nvarchar2" MaxLength="2" />
+    <Property Name="EDITSTATE" Type="nvarchar2" MaxLength="2" />
+    <Property Name="CREATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEUSERNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEDATE" Type="date" />
+    <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="UPDATEUSERNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="UPDATEDATE" Type="date" />
+    <Property Name="CREATEPOSTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATECOMPANYID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERPOSTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERCOMPANYID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="REMARK" Type="nvarchar2" />
+    <Property Name="EMPLOYEECOUNT" Type="number" />
+    <Property Name="NOTESCONTENT" Type="nvarchar2" />
   </EntityType>
   <EntityType Name="T_HR_EMPLOYEESALARYRECORD">
     <Key>
@@ -2424,6 +2596,125 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="CREATEDATE" Type="date" />
     <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
     <Property Name="UPDATEDATE" Type="date" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“dbo.T_HR_EMPLOYEEVACATION”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+-->
+  <EntityType Name="T_HR_EMPLOYEEVACATION">
+    <Key>
+      <PropertyRef Name="EMPLOYEEID" />
+      <PropertyRef Name="EMPLOYEECODE" />
+      <PropertyRef Name="EMPLOYEENAME" />
+      <PropertyRef Name="YEAR_PERIOD" />
+      <PropertyRef Name="CREATE_USERID" />
+      <PropertyRef Name="CREATE_COMPANYID" />
+      <PropertyRef Name="CREATE_DEPARTMENTID" />
+      <PropertyRef Name="CREATE_POSTID" />
+      <PropertyRef Name="OWNER_COMPANYID" />
+      <PropertyRef Name="OWNER_DEPARTMENTID" />
+      <PropertyRef Name="OWNER_POSTID" />
+      <PropertyRef Name="OWNERID" />
+      <PropertyRef Name="UPDATE_USERID" />
+    </Key>
+    <Property Name="EMPLOYEEID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="EMPLOYEECODE" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="EMPLOYEENAME" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="YEAR_PERIOD" Type="nvarchar2" Nullable="false" MaxLength="20" />
+    <Property Name="ACCOMPANY_CARE_LEAVE" Type="number" Precision="8" Scale="2" />
+    <Property Name="AFFAIR_LEAVE_HOURS" Type="number" Precision="8" Scale="2" />
+    <Property Name="ANNUAL_HOURS" Type="number" Precision="8" Scale="2" />
+    <Property Name="ANNUALDAY" Type="number" Precision="8" Scale="2" />
+    <Property Name="ANNUALDAY_EFFECT_DAY" Type="number" Precision="8" Scale="2" />
+    <Property Name="ANNUALDAY_USED" Type="number" Precision="8" Scale="2" />
+    <Property Name="ANNUALHOURS_USED" Type="number" Precision="8" Scale="2" />
+    <Property Name="BREAST_FEEDING_LEAVE" Type="number" Precision="8" Scale="2" />
+    <Property Name="FUNERAL_LEAVE" Type="number" Precision="8" Scale="2" />
+    <Property Name="INJURY_LEAVE" Type="number" Precision="8" Scale="2" />
+    <Property Name="MARRIAGE_LEAVE" Type="number" Precision="8" Scale="2" />
+    <Property Name="MATERNITY_LEAVE" Type="number" Precision="8" Scale="2" />
+    <Property Name="OT_LEAVE_HOURS" Type="number" Precision="8" Scale="2" />
+    <Property Name="OT_TOTAL_HOURS" Type="number" Precision="8" Scale="2" />
+    <Property Name="PRENATAL_EXAM_LEAVE" Type="number" Precision="8" Scale="2" />
+    <Property Name="ROADING_LEAVE" Type="number" Precision="8" Scale="2" />
+    <Property Name="SICK_HOURS" Type="number" Precision="8" Scale="2" />
+    <Property Name="SICK_LEAVE_HOURS" Type="number" Precision="8" Scale="2" />
+    <Property Name="WOMEN_DAY" Type="number" Precision="8" Scale="2" />
+    <Property Name="YOUTH_DAY" Type="number" Precision="8" Scale="2" />
+    <Property Name="CREATE_USERID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="CREATE_DATE" Type="date" />
+    <Property Name="CREATE_COMPANYID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="CREATE_DEPARTMENTID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="CREATE_POSTID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="OWNER_COMPANYID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="OWNER_DEPARTMENTID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="OWNER_POSTID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="OWNERID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="UPDATE_USERID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="date" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“dbo.T_HR_EMPLOYEE_LIUHH”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+-->
+  <EntityType Name="T_HR_EMPLOYEE_LIUHH">
+    <Key>
+      <PropertyRef Name="EMPLOYEEID" />
+    </Key>
+    <Property Name="EMPLOYEEID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="EMPLOYEECODE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EMPLOYEECNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EMPLOYEEENAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EMPLOYEELEVEL" Type="nvarchar2" MaxLength="100" />
+    <Property Name="SEX" Type="nvarchar2" MaxLength="2" />
+    <Property Name="PROFESSIONALTITLE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="IDTYPE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="IDNUMBER" Type="nvarchar2" MaxLength="100" />
+    <Property Name="NATION" Type="nvarchar2" MaxLength="100" />
+    <Property Name="HEIGHT" Type="nvarchar2" MaxLength="100" />
+    <Property Name="BANKID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="BANKCARDNUMBER" Type="nvarchar2" MaxLength="100" />
+    <Property Name="RESUMEID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="PROVINCE" Type="nvarchar2" MaxLength="200" />
+    <Property Name="BLOODTYPE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="MARRIAGE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="HASCHILDREN" Type="nvarchar2" MaxLength="100" />
+    <Property Name="POLITICS" Type="nvarchar2" MaxLength="200" />
+    <Property Name="REGRESIDENCE" Type="nvarchar2" MaxLength="400" />
+    <Property Name="REGRESIDENCETYPE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="RESIDENCETYPE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EMAIL" Type="nvarchar2" MaxLength="100" />
+    <Property Name="MOBILE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="SECONDLANGUAGE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="SECONDLANGUAGEDEGREE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OFFICEPHONE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CURRENTADDRESS" Type="nvarchar2" MaxLength="200" />
+    <Property Name="URGENCYPERSON" Type="nvarchar2" MaxLength="100" />
+    <Property Name="URGENCYCONTACT" Type="nvarchar2" MaxLength="100" />
+    <Property Name="FAMILYADDRESS" Type="nvarchar2" MaxLength="200" />
+    <Property Name="FAMILYZIPCODE" Type="nvarchar2" MaxLength="200" />
+    <Property Name="FAMILYPHONE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="FINGERPRINTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="PHOTO" Type="blob" />
+    <Property Name="TOPEDUCATION" Type="nvarchar2" MaxLength="200" />
+    <Property Name="BIRTHDAY" Type="date" />
+    <Property Name="EMPLOYEESTATE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="WORKINGAGE" Type="number" />
+    <Property Name="EDITSTATE" Type="nvarchar2" MaxLength="2" />
+    <Property Name="REMARK" Type="nvarchar2" />
+    <Property Name="OWNERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERPOSTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERCOMPANYID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEPOSTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATECOMPANYID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEDATE" Type="date" />
+    <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="UPDATEDATE" Type="date" />
+    <Property Name="EMPLOYEETYPE" Type="nvarchar2" MaxLength="2" />
+    <Property Name="OTHERCOMMUNICATE" Type="nvarchar2" MaxLength="1000" />
+    <Property Name="INTERESTCONTENT" Type="nvarchar2" MaxLength="1000" />
+    <Property Name="SOCIALSERVICEYEAR" Type="nvarchar2" MaxLength="100" />
   </EntityType>
   <EntityType Name="T_HR_EXPERIENCE">
     <Key>
@@ -2640,6 +2931,24 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="CREATEDATE" Type="date" />
     <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
     <Property Name="UPDATEDATE" Type="date" />
+  </EntityType>
+  <EntityType Name="T_HR_LEAVEREFEROT">
+    <Key>
+      <PropertyRef Name="RECORDID" />
+    </Key>
+    <Property Name="RECORDID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="LEAVE_TYPE_SETID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="LEAVE_RECORDID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OVERTIME_RECORDID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="LEAVE_APPLY_DATE" Type="date" />
+    <Property Name="LEAVE_TOTAL_DAYS" Type="number" Precision="8" Scale="2" />
+    <Property Name="LEAVE_TOTAL_HOURS" Type="number" Precision="8" Scale="2" />
+    <Property Name="ACTION" Type="number" />
+    <Property Name="EMPLOYEEID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EFFECTDATE" Type="date" />
+    <Property Name="EXPIREDATE" Type="date" />
+    <Property Name="STATUS" Type="number" />
+    <Property Name="LEAVE_CANCEL_RECORDID" Type="nvarchar2" MaxLength="100" />
   </EntityType>
   <EntityType Name="T_HR_LEAVETYPESET">
     <Key>
@@ -3465,31 +3774,6 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
     <Property Name="UPDATEDATE" Type="date" />
   </EntityType>
-  <EntityType Name="T_HR_SALARYPAYPOST">
-    <Key>
-      <PropertyRef Name="SALARYPAYPOSTID" />
-    </Key>
-    <Property Name="SALARYPAYPOSTID" Type="nvarchar2" Nullable="false" MaxLength="100" />
-    <Property Name="RECEIVECOMPANYID" Type="nvarchar2" MaxLength="100" />
-    <Property Name="RECEIVEDEPTID" Type="nvarchar2" MaxLength="100" />
-    <Property Name="RECEIVEPOSTID" Type="nvarchar2" MaxLength="100" />
-    <Property Name="RECEIVERID" Type="nvarchar2" MaxLength="100" />
-    <Property Name="OWNERID" Type="nvarchar2" MaxLength="100" />
-    <Property Name="OWNERPOSTID" Type="nvarchar2" MaxLength="100" />
-    <Property Name="OWNERDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
-    <Property Name="OWNERCOMPANYID" Type="nvarchar2" MaxLength="100" />
-    <Property Name="CREATECOMPANYID" Type="nvarchar2" MaxLength="100" />
-    <Property Name="CREATEDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
-    <Property Name="CREATEPOSTID" Type="nvarchar2" MaxLength="100" />
-    <Property Name="CREATEUSERID" Type="nvarchar2" MaxLength="100" />
-    <Property Name="CREATEDATE" Type="date" />
-    <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
-    <Property Name="UPDATEDATE" Type="date" />
-    <Property Name="RECEIVECOMPANYNAME" Type="nvarchar2" MaxLength="100" />
-    <Property Name="RECEIVEDEPTNAME" Type="nvarchar2" MaxLength="100" />
-    <Property Name="RECEIVEPOSTNAME" Type="nvarchar2" MaxLength="100" />
-    <Property Name="RECEIVER" Type="nvarchar2" MaxLength="100" />
-  </EntityType>
   <EntityType Name="T_HR_SALARYRECORDBATCH">
     <Key>
       <PropertyRef Name="MONTHLYBATCHID" />
@@ -4206,6 +4490,25 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="OWNERPOSTID" Type="nvarchar2" MaxLength="100" />
     <Property Name="OWNERDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
     <Property Name="OWNERCOMPANYID" Type="nvarchar2" MaxLength="100" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“dbo.V_HR_SMTGRPEMPLOYEE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+-->
+  <EntityType Name="V_HR_SMTGRPEMPLOYEE">
+    <Key>
+      <PropertyRef Name="COMPANYID" />
+      <PropertyRef Name="DEPARTMENTID" />
+      <PropertyRef Name="POSTID" />
+      <PropertyRef Name="EMPLOYEEID" />
+    </Key>
+    <Property Name="COMPANYID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="DEPARTMENTID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="POSTID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="EMPLOYEEID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="CNAME" Type="nvarchar2" MaxLength="200" />
+    <Property Name="DEPARTMENTNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="POSTNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="EMPLOYEECNAME" Type="nvarchar2" MaxLength="100" />
   </EntityType>
   <!--生成过程中发现错误:
 警告 6002: 表/视图“dbo.V_ORAGNIZATION”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
@@ -5449,6 +5752,7 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <EntitySet Name="T_HR_ATTENDMONTHLYBATCHBALANCE" EntityType="SMT_HRM_EFModel.T_HR_ATTENDMONTHLYBATCHBALANCE" />
     <EntitySet Name="T_HR_ATTENDMONTHLYLEAVE" EntityType="SMT_HRM_EFModel.T_HR_ATTENDMONTHLYLEAVE" />
     <EntitySet Name="T_HR_ATTENDYEARLYBALANCE" EntityType="SMT_HRM_EFModel.T_HR_ATTENDYEARLYBALANCE" />
+    <EntitySet Name="T_HR_BALANCEPOSTDETAIL" EntityType="SMT_HRM_EFModel.T_HR_BALANCEPOSTDETAIL" />
     <EntitySet Name="T_HR_BLACKLIST" EntityType="SMT_HRM_EFModel.T_HR_BLACKLIST" />
     <EntitySet Name="T_HR_CHECKPOINTLEVELSET" EntityType="SMT_HRM_EFModel.T_HR_CHECKPOINTLEVELSET" />
     <EntitySet Name="T_HR_CHECKPOINTSET" EntityType="SMT_HRM_EFModel.T_HR_CHECKPOINTSET" />
@@ -5487,10 +5791,13 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <EntitySet Name="T_HR_EMPLOYEEPOST" EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEPOST" />
     <EntitySet Name="T_HR_EMPLOYEEPOSTCHANGE" EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEPOSTCHANGE" />
     <EntitySet Name="T_HR_EMPLOYEEPOSTHISTORY" EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEPOSTHISTORY" />
+    <EntitySet Name="T_HR_EMPLOYEESALARYPOSTASIGN" EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEESALARYPOSTASIGN" />
     <EntitySet Name="T_HR_EMPLOYEESALARYRECORD" EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEESALARYRECORD" />
     <EntitySet Name="T_HR_EMPLOYEESALARYRECORDITEM" EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEESALARYRECORDITEM" />
     <EntitySet Name="T_HR_EMPLOYEESIGNINDETAIL" EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEESIGNINDETAIL" />
     <EntitySet Name="T_HR_EMPLOYEESIGNINRECORD" EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEESIGNINRECORD" />
+    <EntitySet Name="T_HR_EMPLOYEEVACATION" EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEVACATION" />
+    <EntitySet Name="T_HR_EMPLOYEE_LIUHH" EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEE_LIUHH" />
     <EntitySet Name="T_HR_EXPERIENCE" EntityType="SMT_HRM_EFModel.T_HR_EXPERIENCE" />
     <EntitySet Name="T_HR_FAMILYMEMBER" EntityType="SMT_HRM_EFModel.T_HR_FAMILYMEMBER" />
     <EntitySet Name="T_HR_FREELEAVEDAYSET" EntityType="SMT_HRM_EFModel.T_HR_FREELEAVEDAYSET" />
@@ -5501,6 +5808,7 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <EntitySet Name="T_HR_KPIRECORDCOMPLAIN" EntityType="SMT_HRM_EFModel.T_HR_KPIRECORDCOMPLAIN" />
     <EntitySet Name="T_HR_KPIREMIND" EntityType="SMT_HRM_EFModel.T_HR_KPIREMIND" />
     <EntitySet Name="T_HR_KPITYPE" EntityType="SMT_HRM_EFModel.T_HR_KPITYPE" />
+    <EntitySet Name="T_HR_LEAVEREFEROT" EntityType="SMT_HRM_EFModel.T_HR_LEAVEREFEROT" />
     <EntitySet Name="T_HR_LEAVETYPESET" EntityType="SMT_HRM_EFModel.T_HR_LEAVETYPESET" />
     <EntitySet Name="T_HR_LEFTOFFICE" EntityType="SMT_HRM_EFModel.T_HR_LEFTOFFICE" />
     <EntitySet Name="T_HR_LEFTOFFICECONFIRM" EntityType="SMT_HRM_EFModel.T_HR_LEFTOFFICECONFIRM" />
@@ -5532,7 +5840,6 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <EntitySet Name="T_HR_SALARYARCHIVEITEM" EntityType="SMT_HRM_EFModel.T_HR_SALARYARCHIVEITEM" />
     <EntitySet Name="T_HR_SALARYITEM" EntityType="SMT_HRM_EFModel.T_HR_SALARYITEM" />
     <EntitySet Name="T_HR_SALARYLEVEL" EntityType="SMT_HRM_EFModel.T_HR_SALARYLEVEL" />
-    <EntitySet Name="T_HR_SALARYPAYPOST" EntityType="SMT_HRM_EFModel.T_HR_SALARYPAYPOST" />
     <EntitySet Name="T_HR_SALARYRECORDBATCH" EntityType="SMT_HRM_EFModel.T_HR_SALARYRECORDBATCH" />
     <EntitySet Name="T_HR_SALARYSOLUTION" EntityType="SMT_HRM_EFModel.T_HR_SALARYSOLUTION" />
     <EntitySet Name="T_HR_SALARYSOLUTIONASSIGN" EntityType="SMT_HRM_EFModel.T_HR_SALARYSOLUTIONASSIGN" />
@@ -5560,6 +5867,7 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <EntitySet Name="V_EMPLOYEELEFTHIS" EntityType="SMT_HRM_EFModel.V_EMPLOYEELEFTHIS" />
     <EntitySet Name="V_EMPLOYEEPOSTCHANGEHIS" EntityType="SMT_HRM_EFModel.V_EMPLOYEEPOSTCHANGEHIS" />
     <EntitySet Name="V_EMPLOYEESALARYCHANGEHIS" EntityType="SMT_HRM_EFModel.V_EMPLOYEESALARYCHANGEHIS" />
+    <EntitySet Name="V_HR_SMTGRPEMPLOYEE" EntityType="SMT_HRM_EFModel.V_HR_SMTGRPEMPLOYEE" />
     <EntitySet Name="V_ORAGNIZATION" EntityType="SMT_HRM_EFModel.V_ORAGNIZATION" />
     <EntitySet Name="V_POST" EntityType="SMT_HRM_EFModel.V_POST" />
     <AssociationSet Name="FK_T_HR_ADJ_REFERENCE_T_HR_EMP" Association="SMT_HRM_EFModel.FK_T_HR_ADJ_REFERENCE_T_HR_EMP">
@@ -6474,6 +6782,26 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="UPDATEDATE" Type="DateTime" />
     <Property Name="EVECTIONTIME" Type="Decimal" Precision="18" Scale="0" />
   </EntityType>
+  <EntityType Name="T_HR_BALANCEPOSTDETAIL">
+    <Key>
+      <PropertyRef Name="BALANCEPOSTDETAIL" />
+    </Key>
+    <Property Name="BALANCEPOSTDETAIL" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="BALANCEPOSTASIGNID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEEID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEENAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEEPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEEPOSTNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEEDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEEDEPARTMENTNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEECOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEECOMPANYNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEDATE" Type="DateTime" />
+    <Property Name="CREATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UPDATEDATE" Type="DateTime" />
+    <Property Name="UPDATEDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EDITSTATE" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+  </EntityType>
   <EntityType Name="T_HR_BLACKLIST">
     <Key>
       <PropertyRef Name="BLACKLISTID" />
@@ -7321,6 +7649,10 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="CREATEDATE" Type="DateTime" />
     <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="UPDATEDATE" Type="DateTime" />
+    <Property Name="FINEDAYS" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="FINEHOURS" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="USEABLEHOURS" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="USEABLEDAYS" Type="Decimal" Precision="18" Scale="0" />
     <NavigationProperty Name="T_HR_ADJUSTLEAVE" Relationship="SMT_HRM_EFModel.FK_T_HR_ADJ_REFERENCE_T_HR_EMP" FromRole="T_HR_EMPLOYEELEAVERECORD" ToRole="T_HR_ADJUSTLEAVE" />
     <NavigationProperty Name="T_HR_EMPLOYEECANCELLEAVE" Relationship="SMT_HRM_EFModel.FK_T_HR_EMP_REFERENCE_T_HR_EMP" FromRole="T_HR_EMPLOYEELEAVERECORD" ToRole="T_HR_EMPLOYEECANCELLEAVE" />
     <NavigationProperty Name="T_HR_LEAVETYPESET" Relationship="SMT_HRM_EFModel.FK_T_HR_EMP_REFERENCE_T_HR_LEA" FromRole="T_HR_EMPLOYEELEAVERECORD" ToRole="T_HR_LEAVETYPESET" />
@@ -7350,6 +7682,9 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="UPDATEDATE" Type="DateTime" />
     <Property Name="LEAVETYPESETID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="STATUS" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LEFTHOURS" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="HOURS" Type="Decimal" Precision="18" Scale="0" />
     <NavigationProperty Name="T_HR_EMPLOYEELEVELDAYDETAILS" Relationship="SMT_HRM_EFModel.FK_LEVELDAYCOUNT_DETAILS" FromRole="T_HR_EMPLOYEELEVELDAYCOUNT" ToRole="T_HR_EMPLOYEELEVELDAYDETAILS" />
   </EntityType>
   <EntityType Name="T_HR_EMPLOYEELEVELDAYDETAILS">
@@ -7476,6 +7811,10 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="CREATEDATE" Type="DateTime" />
     <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="UPDATEDATE" Type="DateTime" />
+    <Property Name="STATUS" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="EFFECTIVEDATE" Type="DateTime" />
+    <Property Name="EXPIREDATE" Type="DateTime" />
+    <Property Name="LEFTHOURS" Type="Decimal" Precision="8" Scale="2" />
     <NavigationProperty Name="T_HR_EMPLOYEEOVERTIMEDETAILRD" Relationship="SMT_HRM_EFModel.FK_T_HR_EMPORD_T_HR_EMPODRD" FromRole="T_HR_EMPLOYEEOVERTIMERECORD" ToRole="T_HR_EMPLOYEEOVERTIMEDETAILRD" />
   </EntityType>
   <EntityType Name="T_HR_EMPLOYEEPOST">
@@ -7492,6 +7831,8 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="UPDATEDATE" Type="DateTime" />
     <Property Name="POSTLEVEL" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="REPORTEMP" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="REPORTEMPNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="T_HR_EMPLOYEE" Relationship="SMT_HRM_EFModel.FK_T_HR_EMPPOST_T_HR_EMP" FromRole="T_HR_EMPLOYEEPOST" ToRole="T_HR_EMPLOYEE" />
     <NavigationProperty Name="T_HR_POST" Relationship="SMT_HRM_EFModel.FK_T_HR_EMP_REFERENCE_T_HR_POS" FromRole="T_HR_EMPLOYEEPOST" ToRole="T_HR_POST" />
     <NavigationProperty Name="T_HR_LEFTOFFICE" Relationship="SMT_HRM_EFModel.FK_T_HR_LEF_REFERENCE_T_HR_EMP" FromRole="T_HR_EMPLOYEEPOST" ToRole="T_HR_LEFTOFFICE" />
@@ -7559,6 +7900,32 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="OWNERCOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="SALARYLEVEL" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="REASON" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="T_HR_EMPLOYEESALARYPOSTASIGN">
+    <Key>
+      <PropertyRef Name="EMPLOYEESALARYPOSTASIGNID" />
+    </Key>
+    <Property Name="EMPLOYEESALARYPOSTASIGNID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="BALANCEPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="BALANCEPOSTNAME" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="CHECKSTATE" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="EDITSTATE" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEUSERNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEDATE" Type="DateTime" />
+    <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UPDATEUSERNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UPDATEDATE" Type="DateTime" />
+    <Property Name="CREATEPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATECOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERCOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="REMARK" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEECOUNT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NOTESCONTENT" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="T_HR_EMPLOYEESALARYRECORD">
     <Key>
@@ -7700,6 +8067,119 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="UPDATEDATE" Type="DateTime" />
     <NavigationProperty Name="T_HR_EMPLOYEESIGNINDETAIL" Relationship="SMT_HRM_EFModel.FK_SIGNINDETAIL_SIGNINRECORD" FromRole="T_HR_EMPLOYEESIGNINRECORD" ToRole="T_HR_EMPLOYEESIGNINDETAIL" />
+  </EntityType>
+  <EntityType Name="T_HR_EMPLOYEEVACATION">
+    <Key>
+      <PropertyRef Name="EMPLOYEEID" />
+      <PropertyRef Name="EMPLOYEECODE" />
+      <PropertyRef Name="EMPLOYEENAME" />
+      <PropertyRef Name="YEAR_PERIOD" />
+      <PropertyRef Name="CREATE_USERID" />
+      <PropertyRef Name="CREATE_COMPANYID" />
+      <PropertyRef Name="CREATE_DEPARTMENTID" />
+      <PropertyRef Name="CREATE_POSTID" />
+      <PropertyRef Name="OWNER_COMPANYID" />
+      <PropertyRef Name="OWNER_DEPARTMENTID" />
+      <PropertyRef Name="OWNER_POSTID" />
+      <PropertyRef Name="OWNERID" />
+      <PropertyRef Name="UPDATE_USERID" />
+    </Key>
+    <Property Name="EMPLOYEEID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEECODE" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEENAME" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="YEAR_PERIOD" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="ACCOMPANY_CARE_LEAVE" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="AFFAIR_LEAVE_HOURS" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="ANNUAL_HOURS" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="ANNUALDAY" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="ANNUALDAY_EFFECT_DAY" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="ANNUALDAY_USED" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="ANNUALHOURS_USED" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="BREAST_FEEDING_LEAVE" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="FUNERAL_LEAVE" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="INJURY_LEAVE" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="MARRIAGE_LEAVE" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="MATERNITY_LEAVE" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="OT_LEAVE_HOURS" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="OT_TOTAL_HOURS" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="PRENATAL_EXAM_LEAVE" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="ROADING_LEAVE" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="SICK_HOURS" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="SICK_LEAVE_HOURS" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="WOMEN_DAY" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="YOUTH_DAY" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="CREATE_USERID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATE_DATE" Type="DateTime" />
+    <Property Name="CREATE_COMPANYID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATE_DEPARTMENTID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATE_POSTID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNER_COMPANYID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNER_DEPARTMENTID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNER_POSTID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UPDATE_USERID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UPDATE_DATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="T_HR_EMPLOYEE_LIUHH">
+    <Key>
+      <PropertyRef Name="EMPLOYEEID" />
+    </Key>
+    <Property Name="EMPLOYEEID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEECODE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEECNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEEENAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEELEVEL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="SEX" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="PROFESSIONALTITLE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="IDTYPE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="IDNUMBER" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="NATION" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="HEIGHT" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="BANKID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="BANKCARDNUMBER" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="RESUMEID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="PROVINCE" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="BLOODTYPE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="MARRIAGE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="HASCHILDREN" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="POLITICS" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="REGRESIDENCE" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="REGRESIDENCETYPE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="RESIDENCETYPE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="MOBILE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="SECONDLANGUAGE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="SECONDLANGUAGEDEGREE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OFFICEPHONE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CURRENTADDRESS" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="URGENCYPERSON" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="URGENCYCONTACT" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="FAMILYADDRESS" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="FAMILYZIPCODE" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="FAMILYPHONE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="FINGERPRINTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="TOPEDUCATION" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="BIRTHDAY" Type="DateTime" />
+    <Property Name="EMPLOYEESTATE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="WORKINGAGE" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="EDITSTATE" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="REMARK" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERCOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATECOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEDATE" Type="DateTime" />
+    <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UPDATEDATE" Type="DateTime" />
+    <Property Name="EMPLOYEETYPE" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="OTHERCOMMUNICATE" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="INTERESTCONTENT" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="SOCIALSERVICEYEAR" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="T_HR_EXPERIENCE">
     <Key>
@@ -7920,6 +8400,24 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="UPDATEDATE" Type="DateTime" />
     <NavigationProperty Name="T_HR_SCORETYPE" Relationship="SMT_HRM_EFModel.FK_KPITYPE_T_HR_SCORETYPE" FromRole="T_HR_KPITYPE" ToRole="T_HR_SCORETYPE" />
+  </EntityType>
+  <EntityType Name="T_HR_LEAVEREFEROT">
+    <Key>
+      <PropertyRef Name="RECORDID" />
+    </Key>
+    <Property Name="RECORDID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="LEAVE_TYPE_SETID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="LEAVE_RECORDID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OVERTIME_RECORDID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="LEAVE_APPLY_DATE" Type="DateTime" />
+    <Property Name="LEAVE_TOTAL_DAYS" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="LEAVE_TOTAL_HOURS" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="ACTION" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="EMPLOYEEID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EFFECTDATE" Type="DateTime" />
+    <Property Name="EXPIREDATE" Type="DateTime" />
+    <Property Name="STATUS" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LEAVE_CANCEL_RECORDID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="T_HR_LEAVETYPESET">
     <Key>
@@ -8773,31 +9271,6 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <NavigationProperty Name="T_HR_POSTLEVELDISTINCTION" Relationship="SMT_HRM_EFModel.FK_T_HR_SAL_REFERENCE_T_HR_POS" FromRole="T_HR_SALARYLEVEL" ToRole="T_HR_POSTLEVELDISTINCTION" />
     <NavigationProperty Name="T_HR_SALARYSTANDARD" Relationship="SMT_HRM_EFModel.FK_SALARYSTANDARD_SALARYLEVEL" FromRole="T_HR_SALARYLEVEL" ToRole="T_HR_SALARYSTANDARD" />
   </EntityType>
-  <EntityType Name="T_HR_SALARYPAYPOST">
-    <Key>
-      <PropertyRef Name="SALARYPAYPOSTID" />
-    </Key>
-    <Property Name="SALARYPAYPOSTID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="RECEIVECOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="RECEIVEDEPTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="RECEIVEPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="RECEIVERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="OWNERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="OWNERPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="OWNERCOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="CREATECOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="CREATEDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="CREATEPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="CREATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="CREATEDATE" Type="DateTime" />
-    <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="UPDATEDATE" Type="DateTime" />
-    <Property Name="RECEIVECOMPANYNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="RECEIVEDEPTNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="RECEIVEPOSTNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="RECEIVER" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-  </EntityType>
   <EntityType Name="T_HR_SALARYRECORDBATCH">
     <Key>
       <PropertyRef Name="MONTHLYBATCHID" />
@@ -9489,6 +9962,22 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
     <Property Name="OWNERPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="OWNERCOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="V_HR_SMTGRPEMPLOYEE">
+    <Key>
+      <PropertyRef Name="COMPANYID" />
+      <PropertyRef Name="DEPARTMENTID" />
+      <PropertyRef Name="POSTID" />
+      <PropertyRef Name="EMPLOYEEID" />
+    </Key>
+    <Property Name="COMPANYID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="DEPARTMENTID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="POSTID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEEID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CNAME" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="DEPARTMENTNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="POSTNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EMPLOYEECNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="V_ORAGNIZATION">
     <Key>
@@ -10427,6 +10916,27 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="T_HR_BALANCEPOSTDETAIL">
+      <EntityTypeMapping TypeName="SMT_HRM_EFModel.T_HR_BALANCEPOSTDETAIL">
+        <MappingFragment StoreEntitySet="T_HR_BALANCEPOSTDETAIL">
+          <ScalarProperty Name="BALANCEPOSTDETAIL" ColumnName="BALANCEPOSTDETAIL" />
+          <ScalarProperty Name="BALANCEPOSTASIGNID" ColumnName="BALANCEPOSTASIGNID" />
+          <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+          <ScalarProperty Name="EMPLOYEENAME" ColumnName="EMPLOYEENAME" />
+          <ScalarProperty Name="EMPLOYEEPOSTID" ColumnName="EMPLOYEEPOSTID" />
+          <ScalarProperty Name="EMPLOYEEPOSTNAME" ColumnName="EMPLOYEEPOSTNAME" />
+          <ScalarProperty Name="EMPLOYEEDEPARTMENTID" ColumnName="EMPLOYEEDEPARTMENTID" />
+          <ScalarProperty Name="EMPLOYEEDEPARTMENTNAME" ColumnName="EMPLOYEEDEPARTMENTNAME" />
+          <ScalarProperty Name="EMPLOYEECOMPANYID" ColumnName="EMPLOYEECOMPANYID" />
+          <ScalarProperty Name="EMPLOYEECOMPANYNAME" ColumnName="EMPLOYEECOMPANYNAME" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+          <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+          <ScalarProperty Name="UPDATEDATEUSERID" ColumnName="UPDATEDATEUSERID" />
+          <ScalarProperty Name="EDITSTATE" ColumnName="EDITSTATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="T_HR_BLACKLIST">
       <EntityTypeMapping TypeName="SMT_HRM_EFModel.T_HR_BLACKLIST">
         <MappingFragment StoreEntitySet="T_HR_BLACKLIST">
@@ -11254,6 +11764,10 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
           <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
           <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
           <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+          <ScalarProperty Name="FINEDAYS" ColumnName="FINEDAYS" />
+          <ScalarProperty Name="FINEHOURS" ColumnName="FINEHOURS" />
+          <ScalarProperty Name="USEABLEHOURS" ColumnName="USEABLEHOURS" />
+          <ScalarProperty Name="USEABLEDAYS" ColumnName="USEABLEDAYS" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -11281,6 +11795,9 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
           <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
           <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
           <ScalarProperty Name="LEAVETYPESETID" ColumnName="LEAVETYPESETID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="LEFTHOURS" ColumnName="LEFTHOURS" />
+          <ScalarProperty Name="HOURS" ColumnName="HOURS" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -11409,6 +11926,10 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
           <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
           <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
           <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="EFFECTIVEDATE" ColumnName="EFFECTIVEDATE" />
+          <ScalarProperty Name="EXPIREDATE" ColumnName="EXPIREDATE" />
+          <ScalarProperty Name="LEFTHOURS" ColumnName="LEFTHOURS" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -11425,6 +11946,8 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
           <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
           <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
           <ScalarProperty Name="POSTLEVEL" ColumnName="POSTLEVEL" />
+          <ScalarProperty Name="REPORTEMP" ColumnName="REPORTEMP" />
+          <ScalarProperty Name="REPORTEMPNAME" ColumnName="REPORTEMPNAME" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -11489,6 +12012,33 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
           <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
           <ScalarProperty Name="SALARYLEVEL" ColumnName="SALARYLEVEL" />
           <ScalarProperty Name="REASON" ColumnName="REASON" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_HR_EMPLOYEESALARYPOSTASIGN">
+      <EntityTypeMapping TypeName="SMT_HRM_EFModel.T_HR_EMPLOYEESALARYPOSTASIGN">
+        <MappingFragment StoreEntitySet="T_HR_EMPLOYEESALARYPOSTASIGN">
+          <ScalarProperty Name="EMPLOYEESALARYPOSTASIGNID" ColumnName="EMPLOYEESALARYPOSTASIGNID" />
+          <ScalarProperty Name="BALANCEPOSTID" ColumnName="BALANCEPOSTID" />
+          <ScalarProperty Name="BALANCEPOSTNAME" ColumnName="BALANCEPOSTNAME" />
+          <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+          <ScalarProperty Name="EDITSTATE" ColumnName="EDITSTATE" />
+          <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+          <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+          <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+          <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+          <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+          <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+          <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+          <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+          <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+          <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+          <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="EMPLOYEECOUNT" ColumnName="EMPLOYEECOUNT" />
+          <ScalarProperty Name="NOTESCONTENT" ColumnName="NOTESCONTENT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -11628,6 +12178,109 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
           <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
           <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
           <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_HR_EMPLOYEEVACATION">
+      <EntityTypeMapping TypeName="SMT_HRM_EFModel.T_HR_EMPLOYEEVACATION">
+        <MappingFragment StoreEntitySet="T_HR_EMPLOYEEVACATION">
+          <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+          <ScalarProperty Name="EMPLOYEECODE" ColumnName="EMPLOYEECODE" />
+          <ScalarProperty Name="EMPLOYEENAME" ColumnName="EMPLOYEENAME" />
+          <ScalarProperty Name="YEAR_PERIOD" ColumnName="YEAR_PERIOD" />
+          <ScalarProperty Name="ACCOMPANY_CARE_LEAVE" ColumnName="ACCOMPANY_CARE_LEAVE" />
+          <ScalarProperty Name="AFFAIR_LEAVE_HOURS" ColumnName="AFFAIR_LEAVE_HOURS" />
+          <ScalarProperty Name="ANNUAL_HOURS" ColumnName="ANNUAL_HOURS" />
+          <ScalarProperty Name="ANNUALDAY" ColumnName="ANNUALDAY" />
+          <ScalarProperty Name="ANNUALDAY_EFFECT_DAY" ColumnName="ANNUALDAY_EFFECT_DAY" />
+          <ScalarProperty Name="ANNUALDAY_USED" ColumnName="ANNUALDAY_USED" />
+          <ScalarProperty Name="ANNUALHOURS_USED" ColumnName="ANNUALHOURS_USED" />
+          <ScalarProperty Name="BREAST_FEEDING_LEAVE" ColumnName="BREAST_FEEDING_LEAVE" />
+          <ScalarProperty Name="FUNERAL_LEAVE" ColumnName="FUNERAL_LEAVE" />
+          <ScalarProperty Name="INJURY_LEAVE" ColumnName="INJURY_LEAVE" />
+          <ScalarProperty Name="MARRIAGE_LEAVE" ColumnName="MARRIAGE_LEAVE" />
+          <ScalarProperty Name="MATERNITY_LEAVE" ColumnName="MATERNITY_LEAVE" />
+          <ScalarProperty Name="OT_LEAVE_HOURS" ColumnName="OT_LEAVE_HOURS" />
+          <ScalarProperty Name="OT_TOTAL_HOURS" ColumnName="OT_TOTAL_HOURS" />
+          <ScalarProperty Name="PRENATAL_EXAM_LEAVE" ColumnName="PRENATAL_EXAM_LEAVE" />
+          <ScalarProperty Name="ROADING_LEAVE" ColumnName="ROADING_LEAVE" />
+          <ScalarProperty Name="SICK_HOURS" ColumnName="SICK_HOURS" />
+          <ScalarProperty Name="SICK_LEAVE_HOURS" ColumnName="SICK_LEAVE_HOURS" />
+          <ScalarProperty Name="WOMEN_DAY" ColumnName="WOMEN_DAY" />
+          <ScalarProperty Name="YOUTH_DAY" ColumnName="YOUTH_DAY" />
+          <ScalarProperty Name="CREATE_USERID" ColumnName="CREATE_USERID" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_COMPANYID" ColumnName="CREATE_COMPANYID" />
+          <ScalarProperty Name="CREATE_DEPARTMENTID" ColumnName="CREATE_DEPARTMENTID" />
+          <ScalarProperty Name="CREATE_POSTID" ColumnName="CREATE_POSTID" />
+          <ScalarProperty Name="OWNER_COMPANYID" ColumnName="OWNER_COMPANYID" />
+          <ScalarProperty Name="OWNER_DEPARTMENTID" ColumnName="OWNER_DEPARTMENTID" />
+          <ScalarProperty Name="OWNER_POSTID" ColumnName="OWNER_POSTID" />
+          <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+          <ScalarProperty Name="UPDATE_USERID" ColumnName="UPDATE_USERID" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_HR_EMPLOYEE_LIUHH">
+      <EntityTypeMapping TypeName="SMT_HRM_EFModel.T_HR_EMPLOYEE_LIUHH">
+        <MappingFragment StoreEntitySet="T_HR_EMPLOYEE_LIUHH">
+          <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+          <ScalarProperty Name="EMPLOYEECODE" ColumnName="EMPLOYEECODE" />
+          <ScalarProperty Name="EMPLOYEECNAME" ColumnName="EMPLOYEECNAME" />
+          <ScalarProperty Name="EMPLOYEEENAME" ColumnName="EMPLOYEEENAME" />
+          <ScalarProperty Name="EMPLOYEELEVEL" ColumnName="EMPLOYEELEVEL" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="PROFESSIONALTITLE" ColumnName="PROFESSIONALTITLE" />
+          <ScalarProperty Name="IDTYPE" ColumnName="IDTYPE" />
+          <ScalarProperty Name="IDNUMBER" ColumnName="IDNUMBER" />
+          <ScalarProperty Name="NATION" ColumnName="NATION" />
+          <ScalarProperty Name="HEIGHT" ColumnName="HEIGHT" />
+          <ScalarProperty Name="BANKID" ColumnName="BANKID" />
+          <ScalarProperty Name="BANKCARDNUMBER" ColumnName="BANKCARDNUMBER" />
+          <ScalarProperty Name="RESUMEID" ColumnName="RESUMEID" />
+          <ScalarProperty Name="PROVINCE" ColumnName="PROVINCE" />
+          <ScalarProperty Name="BLOODTYPE" ColumnName="BLOODTYPE" />
+          <ScalarProperty Name="MARRIAGE" ColumnName="MARRIAGE" />
+          <ScalarProperty Name="HASCHILDREN" ColumnName="HASCHILDREN" />
+          <ScalarProperty Name="POLITICS" ColumnName="POLITICS" />
+          <ScalarProperty Name="REGRESIDENCE" ColumnName="REGRESIDENCE" />
+          <ScalarProperty Name="REGRESIDENCETYPE" ColumnName="REGRESIDENCETYPE" />
+          <ScalarProperty Name="RESIDENCETYPE" ColumnName="RESIDENCETYPE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="SECONDLANGUAGE" ColumnName="SECONDLANGUAGE" />
+          <ScalarProperty Name="SECONDLANGUAGEDEGREE" ColumnName="SECONDLANGUAGEDEGREE" />
+          <ScalarProperty Name="OFFICEPHONE" ColumnName="OFFICEPHONE" />
+          <ScalarProperty Name="CURRENTADDRESS" ColumnName="CURRENTADDRESS" />
+          <ScalarProperty Name="URGENCYPERSON" ColumnName="URGENCYPERSON" />
+          <ScalarProperty Name="URGENCYCONTACT" ColumnName="URGENCYCONTACT" />
+          <ScalarProperty Name="FAMILYADDRESS" ColumnName="FAMILYADDRESS" />
+          <ScalarProperty Name="FAMILYZIPCODE" ColumnName="FAMILYZIPCODE" />
+          <ScalarProperty Name="FAMILYPHONE" ColumnName="FAMILYPHONE" />
+          <ScalarProperty Name="FINGERPRINTID" ColumnName="FINGERPRINTID" />
+          <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+          <ScalarProperty Name="TOPEDUCATION" ColumnName="TOPEDUCATION" />
+          <ScalarProperty Name="BIRTHDAY" ColumnName="BIRTHDAY" />
+          <ScalarProperty Name="EMPLOYEESTATE" ColumnName="EMPLOYEESTATE" />
+          <ScalarProperty Name="WORKINGAGE" ColumnName="WORKINGAGE" />
+          <ScalarProperty Name="EDITSTATE" ColumnName="EDITSTATE" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+          <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+          <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+          <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+          <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+          <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+          <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+          <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+          <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+          <ScalarProperty Name="EMPLOYEETYPE" ColumnName="EMPLOYEETYPE" />
+          <ScalarProperty Name="OTHERCOMMUNICATE" ColumnName="OTHERCOMMUNICATE" />
+          <ScalarProperty Name="INTERESTCONTENT" ColumnName="INTERESTCONTENT" />
+          <ScalarProperty Name="SOCIALSERVICEYEAR" ColumnName="SOCIALSERVICEYEAR" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -11845,6 +12498,25 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
           <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
           <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
           <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_HR_LEAVEREFEROT">
+      <EntityTypeMapping TypeName="SMT_HRM_EFModel.T_HR_LEAVEREFEROT">
+        <MappingFragment StoreEntitySet="T_HR_LEAVEREFEROT">
+          <ScalarProperty Name="RECORDID" ColumnName="RECORDID" />
+          <ScalarProperty Name="LEAVE_TYPE_SETID" ColumnName="LEAVE_TYPE_SETID" />
+          <ScalarProperty Name="LEAVE_RECORDID" ColumnName="LEAVE_RECORDID" />
+          <ScalarProperty Name="OVERTIME_RECORDID" ColumnName="OVERTIME_RECORDID" />
+          <ScalarProperty Name="LEAVE_APPLY_DATE" ColumnName="LEAVE_APPLY_DATE" />
+          <ScalarProperty Name="LEAVE_TOTAL_DAYS" ColumnName="LEAVE_TOTAL_DAYS" />
+          <ScalarProperty Name="LEAVE_TOTAL_HOURS" ColumnName="LEAVE_TOTAL_HOURS" />
+          <ScalarProperty Name="ACTION" ColumnName="ACTION" />
+          <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+          <ScalarProperty Name="EFFECTDATE" ColumnName="EFFECTDATE" />
+          <ScalarProperty Name="EXPIREDATE" ColumnName="EXPIREDATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="LEAVE_CANCEL_RECORDID" ColumnName="LEAVE_CANCEL_RECORDID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -12682,32 +13354,6 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="T_HR_SALARYPAYPOST">
-      <EntityTypeMapping TypeName="SMT_HRM_EFModel.T_HR_SALARYPAYPOST">
-        <MappingFragment StoreEntitySet="T_HR_SALARYPAYPOST">
-          <ScalarProperty Name="SALARYPAYPOSTID" ColumnName="SALARYPAYPOSTID" />
-          <ScalarProperty Name="RECEIVECOMPANYID" ColumnName="RECEIVECOMPANYID" />
-          <ScalarProperty Name="RECEIVEDEPTID" ColumnName="RECEIVEDEPTID" />
-          <ScalarProperty Name="RECEIVEPOSTID" ColumnName="RECEIVEPOSTID" />
-          <ScalarProperty Name="RECEIVERID" ColumnName="RECEIVERID" />
-          <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
-          <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
-          <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
-          <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
-          <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
-          <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
-          <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
-          <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
-          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
-          <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
-          <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
-          <ScalarProperty Name="RECEIVECOMPANYNAME" ColumnName="RECEIVECOMPANYNAME" />
-          <ScalarProperty Name="RECEIVEDEPTNAME" ColumnName="RECEIVEDEPTNAME" />
-          <ScalarProperty Name="RECEIVEPOSTNAME" ColumnName="RECEIVEPOSTNAME" />
-          <ScalarProperty Name="RECEIVER" ColumnName="RECEIVER" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="T_HR_SALARYRECORDBATCH">
       <EntityTypeMapping TypeName="SMT_HRM_EFModel.T_HR_SALARYRECORDBATCH">
         <MappingFragment StoreEntitySet="T_HR_SALARYRECORDBATCH">
@@ -13363,6 +14009,20 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
           <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
           <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
           <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_HR_SMTGRPEMPLOYEE">
+      <EntityTypeMapping TypeName="SMT_HRM_EFModel.V_HR_SMTGRPEMPLOYEE">
+        <MappingFragment StoreEntitySet="V_HR_SMTGRPEMPLOYEE">
+          <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+          <ScalarProperty Name="DEPARTMENTID" ColumnName="DEPARTMENTID" />
+          <ScalarProperty Name="POSTID" ColumnName="POSTID" />
+          <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+          <ScalarProperty Name="CNAME" ColumnName="CNAME" />
+          <ScalarProperty Name="DEPARTMENTNAME" ColumnName="DEPARTMENTNAME" />
+          <ScalarProperty Name="POSTNAME" ColumnName="POSTNAME" />
+          <ScalarProperty Name="EMPLOYEECNAME" ColumnName="EMPLOYEECNAME" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -14272,5 +14932,242 @@ FROM "dbo"."V_POST" "V_POST"</DefiningQuery>
 <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
 <Connection><DesignerInfoPropertySet><DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" /></DesignerInfoPropertySet></Connection>
 <edmx:Options />
-<edmx:Diagrams />
+<edmx:Diagrams >
+      <Diagram DiagramId="2a4e31a5f7134fd2a53573992ed15172" Name="Diagram1">
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.TEMP_SIGNINDETAIL" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ADJUSTLEAVE" Width="1.5" PointX="14.5" PointY="47.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_AREAALLOWANCE" Width="1.5" PointX="20" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_AREACITY" Width="1.5" PointX="20" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_AREADIFFERENCE" Width="1.5" PointX="17.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ASSESSMENTFORMDETAIL" Width="1.5" PointX="12.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ASSESSMENTFORMMASTER" Width="1.5" PointX="10.5" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ATTENDANCEDEDUCTDETAIL" Width="1.5" PointX="15.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ATTENDANCEDEDUCTMASTER" Width="1.5" PointX="13" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ATTENDANCERECORD" Width="1.5" PointX="13" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ATTENDANCESOLUTION" Width="1.5" PointX="10" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ATTENDANCESOLUTIONASIGN" Width="1.5" PointX="12.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ATTENDANCESOLUTIONDEDUCT" Width="1.5" PointX="15.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ATTENDFREELEAVE" Width="1.5" PointX="12.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ATTENDMACHINESET" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ATTENDMONTHLYBALANCE" Width="1.5" PointX="44" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ATTENDMONTHLYBATCHBALANCE" Width="1.5" PointX="41.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ATTENDMONTHLYLEAVE" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_ATTENDYEARLYBALANCE" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_BALANCEPOSTDETAIL" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_BLACKLIST" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_CHECKPOINTLEVELSET" Width="1.5" PointX="12.75" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_CHECKPOINTSET" Width="1.5" PointX="10.5" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_CHECKPROJECTSET" Width="1.5" PointX="8.25" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_COMPANY" Width="1.5" PointX="1.5" PointY="85" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_COMPANYHISTORY" Width="1.5" PointX="3.75" PointY="106.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_CUSTOMGUERDON" Width="1.5" PointX="26.75" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_CUSTOMGUERDONARCHIVE" Width="1.5" PointX="29" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_CUSTOMGUERDONARCHIVEHIS" Width="1.5" PointX="34" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_CUSTOMGUERDONRECORD" Width="1.5" PointX="7.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_CUSTOMGUERDONSET" Width="1.5" PointX="24.5" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_DEPARTMENT" Width="1.5" PointX="3.75" PointY="89.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_DEPARTMENTDICTIONARY" Width="1.5" PointX="1.5" PointY="94.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_DEPARTMENTHISTORY" Width="1.5" PointX="3.75" PointY="82.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EDUCATEHISTORY" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEE" Width="1.5" PointX="3" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEABNORMRECORD" Width="1.5" PointX="15.25" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEADDSUM" Width="1.5" PointX="39" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEADDSUMBATCH" Width="1.5" PointX="36.75" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEECANCELLEAVE" Width="1.5" PointX="14.5" PointY="53.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEECHANGEHISTORY" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEECHECK" Width="1.5" PointX="5.25" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEECLOCKINRECORD" Width="1.5" PointX="0.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEECONTRACT" Width="1.5" PointX="5.25" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEENTRY" Width="1.5" PointX="5.25" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEEVECTIONRECORD" Width="1.5" PointX="36.75" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEEVECTIONREPORT" Width="1.5" PointX="39" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEINSURANCE" Width="1.5" PointX="5.25" PointY="41.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEELEAVERECORD" Width="1.5" PointX="12.25" PointY="49.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEELEVELDAYCOUNT" Width="1.5" PointX="27.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEELEVELDAYDETAILS" Width="1.5" PointX="30" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEELOGINRECORD" Width="1.5" PointX="26.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEOUTAPPLIECRECORD" Width="1.5" PointX="0.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEOVERTIMEDETAILRD" Width="1.5" PointX="36" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEOVERTIMERECORD" Width="1.5" PointX="33.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEPOST" Width="1.5" PointX="8.25" PointY="42" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEPOSTCHANGE" Width="1.5" PointX="5.25" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEPOSTHISTORY" Width="1.5" PointX="7.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEESALARYPOSTASIGN" Width="1.5" PointX="22.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEESALARYRECORD" Width="1.5" PointX="20" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEESALARYRECORDITEM" Width="1.5" PointX="22.25" PointY="40.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEESIGNINDETAIL" Width="1.5" PointX="17.5" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEESIGNINRECORD" Width="1.5" PointX="15.25" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEEVACATION" Width="1.5" PointX="24.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EMPLOYEE_LIUHH" Width="1.5" PointX="26.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_EXPERIENCE" Width="1.5" PointX="3" PointY="73.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_FAMILYMEMBER" Width="1.5" PointX="5.25" PointY="60.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_FREELEAVEDAYSET" Width="1.5" PointX="12.25" PointY="57.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_IMPORTSETDETAIL" Width="1.5" PointX="27" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_IMPORTSETMASTER" Width="1.5" PointX="24.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_KPIPOINT" Width="1.5" PointX="36.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_KPIRECORD" Width="1.5" PointX="38.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_KPIRECORDCOMPLAIN" Width="1.5" PointX="40.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_KPIREMIND" Width="1.5" PointX="36.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_KPITYPE" Width="1.5" PointX="36.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_LEAVEREFEROT" Width="1.5" PointX="16.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_LEAVETYPESET" Width="1.5" PointX="10" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_LEFTOFFICE" Width="1.5" PointX="13.5" PointY="41.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_LEFTOFFICECONFIRM" Width="1.5" PointX="15.75" PointY="41.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_NOATTENDCARDEMPLOYEES" Width="1.5" PointX="28.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_OUTAPPLYCONFIRM" Width="1.5" PointX="25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_OUTAPPLYRECORD" Width="1.5" PointX="22.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_OUTPLANDAYS" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_OVERTIMEREWARD" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_PENSIONALARMSET" Width="1.5" PointX="31.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_PENSIONDETAIL" Width="1.5" PointX="7.5" PointY="71.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_PENSIONMASTER" Width="1.5" PointX="5.25" PointY="74.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_PERFORMANCEDETAIL" Width="1.5" PointX="43.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_PERFORMANCERECORD" Width="1.5" PointX="41.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_PERFORMANCEREWARDRECORD" Width="1.5" PointX="38.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_PERFORMANCEREWARDSET" Width="1.5" PointX="29.5" PointY="38.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_PERSONASSIGNSET" Width="1.5" PointX="7.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_POST" Width="1.5" PointX="6" PointY="91.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_POSTDICTIONARY" Width="1.5" PointX="3.75" PointY="100" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_POSTHISTORY" Width="1.5" PointX="6" PointY="100" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_POSTLEVELDISTINCTION" Width="1.5" PointX="20" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_RAMDONGROUPPERSON" Width="1.5" PointX="34" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_RANDOMGROUP" Width="1.5" PointX="31.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_RELATIONPOST" Width="1.5" PointX="8.25" PointY="93.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_RESUME" Width="1.5" PointX="0.75" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYANDREWARDSUMMARYRD" Width="1.5" PointX="41.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYARCHIVE" Width="1.5" PointX="26.75" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYARCHIVEHIS" Width="1.5" PointX="31.75" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYARCHIVEHISITEM" Width="1.5" PointX="34" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYARCHIVEITEM" Width="1.5" PointX="29" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYITEM" Width="1.5" PointX="20" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYLEVEL" Width="1.5" PointX="22.25" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYRECORDBATCH" Width="1.5" PointX="17.75" PointY="39.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYSOLUTION" Width="1.5" PointX="20" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYSOLUTIONASSIGN" Width="1.5" PointX="22.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYSOLUTIONITEM" Width="1.5" PointX="22.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYSOLUTIONSTANDARD" Width="1.5" PointX="31.75" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYSTANDARD" Width="1.5" PointX="24.5" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYSTANDARDITEM" Width="1.5" PointX="29.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYSYSTEM" Width="1.5" PointX="17.75" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SALARYTAXES" Width="1.5" PointX="22.25" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SAMPLETABLE" Width="1.5" PointX="40.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SAMPLETABLE2" Width="1.5" PointX="41.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SCHEDULINGTEMPLATEDETAIL" Width="1.5" PointX="13" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SCHEDULINGTEMPLATEMASTER" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SCORETYPE" Width="1.5" PointX="34" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SHIFTDEFINE" Width="1.5" PointX="10.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_STANDARDPERFORMANCEREWARD" Width="1.5" PointX="31.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_STANDREWARDARCHIVE" Width="1.5" PointX="29" PointY="32.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_STANDREWARDARCHIVEHIS" Width="1.5" PointX="34" PointY="41.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SUMPERFORMANCERECORD" Width="1.5" PointX="39.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_SYSTEMSETTING" Width="1.5" PointX="36.75" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.T_HR_VACATIONSET" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.V_DEPARTMENT" Width="1.5" PointX="33.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.V_EMPLOYEE" Width="1.5" PointX="38.75" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.V_EMPLOYEEENTRYHIS" Width="1.5" PointX="40.75" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.V_EMPLOYEELEFTHIS" Width="1.5" PointX="42.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.V_EMPLOYEEPOSTCHANGEHIS" Width="1.5" PointX="42.75" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.V_EMPLOYEESALARYCHANGEHIS" Width="1.5" PointX="43.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.V_HR_SMTGRPEMPLOYEE" Width="1.5" PointX="35.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.V_ORAGNIZATION" Width="1.5" PointX="36.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMT_HRM_EFModel.V_POST" Width="1.5" PointX="5.75" PointY="11.75" IsExpanded="true" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_ADJ_REFERENCE_T_HR_EMP" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_AREADIFFERENCE_T_HR_ARE" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_ARE_AREACITY" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SALARYSOLUTION_T_HR_ARE" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_ASSEDETAIL_HR_ASS" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_ASS_REFERENCE_T_HR_CHE" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_ASS_EMPLOYEECHECK" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_FORMMASTER_T_HR_EMP" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_ATT_T_HR_DEDUCTMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_MASTER_T_HR_DETAIL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SIGNINDETAIL_T_HR_ATT" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_ATT_REFERENCE_T_HR_SHI" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_ATT_REFERENCE_T_HR_ATT" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_ATT_REFERENCE_T_HR_OVE" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_ATT_REFERENCE_T_HR_SCH" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_SOLUTIONAPL_T_HR_ATT" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_SOLUTION_T_HR_ATT" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_ATTENDFREELEAVE_T_HR_LEA" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_ATT_BATCH_ATT" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_CHE_POINTLEVEL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_CHE_REFERENCE_T_HR_CHE" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_COMHIS_T_HR_COM" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_COM_T_HR_COM" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_DEP_REFERENCE_T_HR_COM" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_CUSTOMGUERDON_T_HR_SAL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_CUS_GUERDONSET" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_GUERDONARCHIVE_SAL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_ARCHIVEHIS_T_HR_SAL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_DEP_T_HR_DEPDIC" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_POS_REFERENCE_T_HR_DEP" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_POSTDICTIONARY_T_HR_DEP" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_DEPHIS_T_HR_DEPDIC" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EDU_REFERENCE_T_HR_RES" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMPBASE_T_HR_RES" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMPCHANGE_T_HR_EMP" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMPCHANGE_T_HR_EMPBASE" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMPCONTRACT_T_HR_EMP" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMPENTRY_T_HR_EMPBASE" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMPLOYEECHECK_T_HR_EMP" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMPPOST_T_HR_EMP" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMPSIRECORD_T_HR_EMP" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMPSI_T_HR_EMPBASE" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMP_REFERENCE_T_HR_PC" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_FAM_REFERENCE_T_HR_EMP" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SIGNINDETAIL_ABNORMRECORD" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_EMPLOYEEADDSUMBATCH_EMP" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMP_REFERENCE_T_HR_EMP" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMP_EVECTIONREPORT" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMP_REFERENCE_T_HR_LEA" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_LEVELDAYCOUNT_DETAILS" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMPORD_T_HR_EMPODRD" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMP_REFERENCE_T_HR_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_LEF_REFERENCE_T_HR_EMP" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SALARYRECORDBATCH_T_HR_SAL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SALARYRECORDITEM_T_HR_EMP" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SIGNINDETAIL_SIGNINRECORD" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_EMPCAREER_T_HR_RES" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_FRE_REFERENCE_T_HR_LEA" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_IMPORTSETMASTER_DETAIL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_KPIPOINT_REFERENCE_T_HR_SCO" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_KPI_REFERENCE_T_HR_KPI" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_KPIRECORD_T_HR_KPI" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_PER_REFERENCE_T_HR_KPI" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_KPI_REFERENCE_T_HR_SCO" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_KPITYPE_T_HR_SCORETYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_LEF_LEFTOFFICECONFIRM" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_OUT_T_HR_OUTA_T_HR_OUT" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_OUT_REFERENCE_T_HR_VAC" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_PEN_REFERENCE_T_HR_PEN" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_PER_REFERENCE_T_HR_PER" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_PER_REFERENCE_T_HR_SUM" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_STA_REFERENCE_T_HR_PER" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_POS_T_HR_POSDIC" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_REL_REFERENCE_T_HR_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_POSHIS_T_HR_POSDIC" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_POS_REFERENCE_T_HR_SAL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_SAL_REFERENCE_T_HR_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_RAM_REFERENCE_T_HR_RAN" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_SCO_REFERENCE_T_HR_RAN" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SALARYARCHIVEITEM_HR_SAL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SALARYARCHIVE_T_HR_SAL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_ARCHIVE_T_HR_SAL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_REWARDARCHIVE_T_HR_SAL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SALARYARCHIVEHIS_HISITEM" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SALARYSOLUTIONITEM_ITEM" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SALARYSTANDARD_SALARYITEM" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SALARYSTANDARD_SALARYLEVEL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SALARYSOLUTIONITEM_SOLUTION" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SALARYSOLUTION_SALARYSYSTEM" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SALARYTAXES_SALARYSOLUTION" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SOLUTIONSTANDARD_SOLUTION" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_SAL_REFERENCE_T_HR_SAL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_SOLUTIONSTANDARD_STANDARD" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_SAL_SALARYSTANDARDITEM" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_STAREWARD_T_HR_SAL" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_SCH_REFERENCE_T_HR_SCH" ManuallyRouted="false" />
+        <AssociationConnector Association="SMT_HRM_EFModel.FK_T_HR_SCH_REFERENCE_T_HR_SHI" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
 </edmx:Designer></edmx:Edmx>

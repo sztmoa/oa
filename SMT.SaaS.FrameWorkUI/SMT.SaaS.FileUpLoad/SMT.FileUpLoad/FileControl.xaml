@@ -24,7 +24,7 @@
             <Setter Property="Foreground" Value="#FF000000" />
         </Style>
     </UserControl.Resources>
-    <Grid x:Name="LayoutRoot" Background="#f2f3f4">
+    <Grid x:Name="LayoutRoot" Background="#f2f3f4" Loaded="LayoutRoot_Loaded">
         <Grid.Resources>
             <local:ByteConverter x:Key="ByteConverter"/>        
             <local:DateConverter   x:Key="DateConverter"/>

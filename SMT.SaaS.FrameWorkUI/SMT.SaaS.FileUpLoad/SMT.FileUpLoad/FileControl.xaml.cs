@@ -15,34 +15,97 @@ using SMT.FileUpLoad.Classes;
 using System.Collections.ObjectModel;
 using System.Windows.Browser;
 using SMT.Saas.Tools.NewFileUploadWS;
+using System.ComponentModel;
 namespace SMT.FileUpLoad
 {
-    public partial class FileControl : UserControl
+    public partial class FileControl : UserControl, INotifyPropertyChanged
     {
+        public event EventHandler GetFileComplete;
+
         ObservableCollection<SMT_FILELIST> itemSource;
+        private string systemCode;
         /// <summary>
         /// 系统代号
         /// </summary>
+        [Category("SystemCode")]
+        [Description("系统编码")]
+        [Bindable(true)]
         public string SystemCode
         {
-            get;
-            set;
+            get { return systemCode; }
+            set { systemCode = value; }
         }
+        private string modeCode;
         /// <summary>
         /// 模块代号
         /// </summary>
+        [Category("ModelCode")]
+        [Description("模块编码")]
+        [Bindable(true)]
         public string ModelCode
         {
-            get;
-            set;
+            get { return modeCode; }
+            set { modeCode = value; }
         }
+        private string applicationid;
         /// <summary>
         /// 业务系统ID
         /// </summary>
+        [Category("ApplicationID")]
+        [Description("上传控件对应的表单Id")]
+        [Bindable(true)]
         public string ApplicationID
         {
-            get;
-            set;
+            get{return applicationid;}
+            set { applicationid=value;
+
+            if (PropertyChanged != null)
+            {
+                this.PropertyChanged.Invoke(this, new PropertyChangedEventArgs("applicationid"));
+            }
+            }
+        }
+
+        private bool autoInit;
+        /// <summary>
+        /// 业务系统ID
+        /// </summary>
+        [Category("AutoInit")]
+        [Description("自动初始化")]
+        [Bindable(true)]
+        public bool AutoInitReadOnlyControl
+        {
+            get { return autoInit; }
+            set { autoInit = value;}
+        }
+
+       
+
+        //Create the binding description
+        public static readonly DependencyProperty ApplictionIDProperty =
+           DependencyProperty.Register("applicationid", typeof(string), typeof(FileControl),null);
+        public string FormId
+        {
+            get { return (string)GetValue(ApplictionIDProperty); }
+            set { SetValue(ApplictionIDProperty, value); }
+        }
+        /// <summary>
+        /// 用户ID
+        /// </summary>
+        public Binding ApplicationIdBinding
+        {
+            get { return null; }
+            set
+            {             
+                //txtAppliction = value;
+
+                //Binding bind = new Binding();
+                //bind.Source = scroll;
+                //bind.Path = new PropertyPath(ScrollBar.ValueProperty);
+                SetBinding(ApplictionIDProperty, value);
+                //txtAppliction.Source = this.applicationid;
+                //ApplicationID = txtAppliction.Text;
+            }
         }
         /// <summary>
         /// 用户ID
@@ -60,6 +123,20 @@ namespace SMT.FileUpLoad
             get;
             set;
         }
+
+        //private bool isfileReadOnly = false;
+        //[Category("ReadOnly")]
+        //[Description("设置上传控件只读模式并初始化")]
+        //[Bindable(true)]
+        //public bool isFileReadOnly
+        //{
+        //    get { return isfileReadOnly; }
+        //    set
+        //    {
+        //        isfileReadOnly = value;
+        //    }
+        //}
+
         /// <summary>
         /// 是否把公司代号作为限制查询条件
         /// </summary>
@@ -69,6 +146,7 @@ namespace SMT.FileUpLoad
        public FileControl()
         {
             InitializeComponent();
+
             try
             {
                 btnUp.Click += new RoutedEventHandler(btnUp_Click);
@@ -96,7 +174,7 @@ namespace SMT.FileUpLoad
             {
                 string a = ex.ToString();
             }
-            #endregion
+            #endregion          
         }
 
        void Client_DeleteFileByApplicationIDAndFileNameCompleted(object sender, SMT.Saas.Tools.NewFileUploadWS.DeleteFileByApplicationIDAndFileNameCompletedEventArgs e)
@@ -285,36 +363,51 @@ namespace SMT.FileUpLoad
        }
        void Client_GetFileListByOnlyApplicationIDCompleted(object sender, GetFileListByOnlyApplicationIDCompletedEventArgs e)
        {
-           if (e.Error == null)
+           try
            {
-               if (e.Result != null)
+               if (e.Error == null)
                {
+                   if (e.Result != null)
+                   {
 
-                   if (e.Result.FileList != null)
-                   {
-                       HasAccessory = true;
-                       foreach (SMT_FILELIST file in e.Result.FileList)
+                       if (e.Result.FileList != null)
                        {
-                           string path = file.FILEURL;
-                           string filename = path.Substring(path.LastIndexOf('\\') + 1);
-                           string filepath = HttpUtility.UrlEncode(file.FILEURL + "\\" + file.FILENAME);
-                           file.FILEURL = e.Result.DownloadUrl + "?filename=" + filepath;//文件地址
-                           //string filepath = HttpUtility.UrlEncode(file.THUMBNAILURL + "\\" + file.FILENAME);
-                           //file.FILEURL = e.Result.DownloadUrl + "?flag=1&filename=" + filepath;
-                           file.FORMID = path;
+                           HasAccessory = true;
+                           foreach (SMT_FILELIST file in e.Result.FileList)
+                           {
+                               string path = file.FILEURL;
+                               string filename = path.Substring(path.LastIndexOf('\\') + 1);
+                               string filepath = HttpUtility.UrlEncode(file.FILEURL + "\\" + file.FILENAME);
+                               file.FILEURL = e.Result.DownloadUrl + "?filename=" + filepath;//文件地址
+                               //string filepath = HttpUtility.UrlEncode(file.THUMBNAILURL + "\\" + file.FILENAME);
+                               //file.FILEURL = e.Result.DownloadUrl + "?flag=1&filename=" + filepath;
+                               file.FORMID = path;
+                           }
+                           itemSource = e.Result.FileList;
+                           BindDataGrid(itemSource);
                        }
-                       itemSource = e.Result.FileList;
-                       BindDataGrid(itemSource);
-                   }
-                   else
-                   {
-                       HasAccessory = false;
+                       else
+                       {
+                           HasAccessory = false;
+                       }
                    }
                }
+               else
+               {
+                   MessageBox.Show("网络出现错误请联系管理员");
+               }
            }
-           else
+           catch (Exception ex)
            {
-               MessageBox.Show("网络出现错误请联系管理员");
+               SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage(ex.ToString());
+               SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
+           }
+           finally
+           {
+               if (GetFileComplete != null)
+               {
+                   this.GetFileComplete(this, EventArgs.Empty);
+               }
            }
        }
        /// <summary>
@@ -574,6 +667,8 @@ namespace SMT.FileUpLoad
                 //Client.GetFileListAsync();  //获取文件列表
             }
         }
+
+
         ////全选
         //private void checkAll_Click(object sender, RoutedEventArgs e)
         //{
@@ -604,5 +699,35 @@ namespace SMT.FileUpLoad
         //        }
         //    }
         //}
+
+        private void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (AutoInitReadOnlyControl)
+            {
+                UserConfig uc = new SMT.FileUpLoad.Classes.UserConfig();
+                uc.CompanyCode = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
+                uc.SystemCode = SystemCode;
+                uc.ModelCode = ModelCode;
+                uc.UserID = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID;
+                uc.ApplicationID = FormId;
+                uc.NotShowThumbailChckBox = true;
+
+                uc.NotShowUploadButton = true;
+                uc.NotShowDeleteButton = true;
+                uc.NotAllowDelete = true;
+                uc.NotShowDeleteButton = true;
+
+                uc.Multiselect = true;
+                uc.Filter = "所有文件 (*.*)|*.*";
+                //uc.Filter = "图片文件(*.jpg,*.gif,*.bmp)|*.jpg;*.gif;*.bmp";
+                uc.MaxConcurrentUploads = 5;
+                uc.MaxSize = "20.MB";
+                uc.CreateName = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeName;
+                uc.PageSize = 20;
+                Init(uc);
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

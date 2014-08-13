@@ -740,7 +740,7 @@ namespace SMT.SaaS.FrameworkUI.FBControls
             listBar.Add(tbItem);
             // listBar.Add(ToolBarItems.Delete);
             deatilGridBar.InitToolBarItem(listBar);
-            deatilGridBar.ShowItem(deatilGridBar.TitleImageName, false);
+            deatilGridBar.ShowItem("deatilGridBar.TitleImageName", false);
             deatilGridBar.ShowItem(deatilGridBar.HelpButtonName, false);
             deatilGridBar.ItemClicked += new EventHandler<ToolBar.ToolBarItemClickArgs>(deatilGridBar_ItemClicked);
         }

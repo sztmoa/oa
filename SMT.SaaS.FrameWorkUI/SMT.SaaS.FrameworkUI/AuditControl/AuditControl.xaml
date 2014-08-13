@@ -9,6 +9,7 @@
              xmlns:controls="clr-namespace:SMT.SaaS.FrameworkUI"
              xmlns:System="clr-namespace:System;assembly=mscorlib"
              x:Class="SMT.SaaS.FrameworkUI.AuditControl.AuditControl"
+             xmlns:my="clr-namespace:SMT.FileUpLoad;assembly=SMT.FileUpLoad"
              mc:Ignorable="d" d:DesignWidth="800">
     <UserControl.Resources>
         <Color x:Key="ShallowBlueColor">#edf4fc</Color>
@@ -27,6 +28,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="24" />
                     <RowDefinition MinHeight="24" />
+                    <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60" />
@@ -127,7 +129,24 @@
                                VerticalAlignment="Center"
                                Margin="17,0,6,0" />
                 </Border>
-                
+                <!--上传控件-->
+                <Border BorderBrush="Black"
+                        BorderThickness="0.5 0.5 0.5 0.5"
+                        Grid.Column="1"
+                        Grid.Row="2">
+                    <TextBlock Text="审批附件"
+                             VerticalAlignment="Center"
+                             Margin="17,0,6,0"/>
+                </Border>
+                <Border BorderBrush="Black"
+                        BorderThickness="0.5 0.5 0.5 0.5"
+                        Grid.Column="2"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="5">
+                    <my:FileControl SystemCode="WF" ModelCode="FLOW_FLOWRECORDDETAIL_T"  ApplicationIdBinding="{Binding FLOWRECORDDETAILID}" AutoInitReadOnlyControl="True" />
+                </Border>
+
+
             </Grid>
         </DataTemplate>
 
@@ -993,7 +1012,7 @@
                              Margin="3" />
                 </StackPanel>
             </Grid>
-                <ItemsControl x:Name="AuditListPnl" Grid.Row="1" Visibility="Collapsed"
+                <ItemsControl x:Name="AuditListPnl" Grid.Row="1"
                  ItemTemplate="{StaticResource AuditInfoListTemplate}"
                  HorizontalContentAlignment="Stretch"
                  VerticalAlignment="Top">
@@ -1010,8 +1029,8 @@
               Grid.Row="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="15"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                </Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="75" />
                     <ColumnDefinition Width="*" />
@@ -1040,6 +1059,7 @@
                      Grid.Row="1"
                      MaxLength="1000"
                      TextWrapping="Wrap" />
+                        <my:FileControl x:Name="uploadFile"/>
                     </StackPanel>
                 </Grid>
             <!--选择是否为终审-->

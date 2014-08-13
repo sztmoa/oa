@@ -171,7 +171,7 @@ namespace SMT.SaaS.OA.BLL
             {
                 //
                 var q = from ent in dal.GetObjects<T_OA_APPROVALINFO>()
-                        where (ent.ISSHOW == "1" || (ent.ISSHOW == null || ent.ISSHOW == "")  )&& ent.CHECKSTATE == "2"
+                        where (ent.ISSHOW == "1" || ent.ISSHOW == null || ent.ISSHOW == ""  )&& ent.CHECKSTATE == "2"
                         &&  ent.OWNERID == userID
                         select ent;
                 if (!string.IsNullOrEmpty(approvalCode))

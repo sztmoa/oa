@@ -179,6 +179,12 @@
                                   Data="M0,0 L11,0 L11,9 L0,9 Z M3,3 L8,3 L8,6 L3,6 Z" 
                                   StrokeThickness="0.5" Width="13" Height="10" />
                         </Button>
+                        <Button x:Name="maxButton2" Background="{StaticResource WindowButtonMin}"
+                    Template="{StaticResource BarButton}" Height="20" Width="20" Margin="4,0,4,0">
+                            <Path Fill="White" Stroke="#FF535666" Stretch="None" 
+                                  Data="M0,0 L11,0 L11,9 L0,9 Z M3,3 L8,3 L8,6 L3,6 Z" 
+                                  StrokeThickness="0.5" Width="13" Height="10" />
+                        </Button>
                         <Button x:Name="closeButton" Background="{StaticResource WindowButtonClose}"
                     Template="{StaticResource BarButton}" Height="20" Width="20">
                             <Path Fill="White" Stroke="#FF535666" 
@@ -194,10 +200,10 @@
                     <Border BorderBrush="#FFE4E6E8" BorderThickness="1" Margin="1 0 1 1" Grid.Row="2">
                         <Border BorderThickness="1" Background="{StaticResource WindowContentBackground}" 
                          BorderBrush="{StaticResource WindowBorderColor3}">
-                                 <ContentPresenter  x:Name="scrollcontent" 
-                                                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
-			                                        ScrollViewer.VerticalScrollBarVisibility="Auto">
-                                </ContentPresenter> 
+                            <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled">
+                                 <ContentPresenter  x:Name="scrollcontent">
+                                </ContentPresenter>
+                            </ScrollViewer>
                         </Border>
                     </Border>
                 </Grid>

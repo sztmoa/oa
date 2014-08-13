@@ -1757,7 +1757,7 @@ namespace SmtPortalSetUp
         private void btnSynchOATravel_Click(object sender, EventArgs e)
         {
             OracleHelp.Connect();
-            for (int i = 0; i < dtOATravelRecord.Rows.Count; i++)
+            for (int i = 0; i < dtOATravelRecord.Rows.Count-1; i++)
             {
                 string employeeid = dtOATravelRecord.Rows[i].Cells["ownerid"].EditedFormattedValue.ToString();
                 string ownername = dtOATravelRecord.Rows[i].Cells["ownername"].EditedFormattedValue.ToString();
@@ -1776,10 +1776,15 @@ namespace SmtPortalSetUp
                 {
                     if (dt.Rows.Count > 0)
                     {
+                        SetLog("已存在的出差记录，跳过插入。");
                         continue;
                     }
                 }
-
+                if (string.IsNullOrEmpty(startdate) || string.IsNullOrEmpty(enddate))
+                {
+                    MessageBox.Show("未获取到OA出差开始结束日期！");
+                    break;
+                }
                 string sql = @"insert into t_hr_employeeevectionrecord(evectionrecordid,
                                    employeeid,
                                    employeename,

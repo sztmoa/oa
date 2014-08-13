@@ -13,14 +13,10 @@
     <RootNamespace>SMT.SaaS.OA.Services</RootNamespace>
     <AssemblyName>SMT.SaaS.OA.Services</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -68,7 +64,7 @@
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Log.dll</HintPath>
     </Reference>
     <Reference Include="Smt.Global.IContract">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\Smt.Global.IContract.dll</HintPath>
+      <HintPath>..\..\..\SMT.SaaS.CommonDll\Lib\SMTLib1.1V\Lib\SMT\Server\Smt.Global.IContract.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SaaS.BLLCommonServices, Version=1.0.0.1222, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -225,12 +221,16 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\源码\SMT.Foundation.NewCore\SMT.Foundation.Core.csproj">
+      <Project>{9d2f51e2-9710-4c91-a66b-823eb72437fd}</Project>
+      <Name>SMT.Foundation.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SMT.SaaS.OA.BLL\SMT.SaaS.OA.BLL.csproj">
-      <Project>{b35234a0-7bf1-49b6-bdf2-4041d0763d9b}</Project>
+      <Project>{B35234A0-7BF1-49B6-BDF2-4041D0763D9B}</Project>
       <Name>SMT.SaaS.OA.BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\SMT.SaaS.OA.DAL\SMT.SaaS.OA.DAL.csproj">
-      <Project>{4b906a26-7f19-4707-a3da-61482fe72ba4}</Project>
+      <Project>{4B906A26-7F19-4707-A3DA-61482FE72BA4}</Project>
       <Name>SMT.SaaS.OA.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\SMT_OA_EFModel\SMT_OA_EFModel.csproj">

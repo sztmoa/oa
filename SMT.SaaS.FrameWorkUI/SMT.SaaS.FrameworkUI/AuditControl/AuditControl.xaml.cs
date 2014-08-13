@@ -1,21 +1,13 @@
-﻿/// <summary>
-/// Log No.： 1
-/// Modify Desc： 记录业务ID和流程模块关联ID（表单提交），引擎发起消息
-/// Modifier： 冉龙军
-/// Modify Date： 2010-08-10
-/// </summary>
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-
 using SMT.SaaS.FrameworkUI.Common;
 using System.Windows.Data;
 using SMT.Saas.Tools.FlowWFService;
 using SMT.SaaS.FrameworkUI.KPIControl;
 using SMT.SaaS.FrameworkUI.ChildWidow;
-// 1s 冉龙军
 using System.Text;
 using SMT.Saas.Tools;
 using System.Reflection;
@@ -24,8 +16,6 @@ using System.IO;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
-// 1e
-
 namespace SMT.SaaS.FrameworkUI.AuditControl
 {
     /// <summary>
@@ -86,7 +76,8 @@ namespace SMT.SaaS.FrameworkUI.AuditControl
             RdbAuditFree.Checked += new RoutedEventHandler(RdbAuditFree_Checked);
             ckbIsEndAudit.Click += new RoutedEventHandler(ckbIsEndAudit_Click);
             btnLookUpDepartment.Click += new RoutedEventHandler(btnLookUpDepartment_Click);
-            //this.AuditListPnl
+            this.AuditListPnl.Visibility = Visibility.Collapsed;//默认隐藏审核列表
+            //this.AuditListPnl.Height ="0";
             AuditEntity = new Flow_FlowRecord_T();
             InitParameter();
 
@@ -1412,6 +1403,7 @@ namespace SMT.SaaS.FrameworkUI.AuditControl
                         AuditEntity.ModelCode = currentFlow.FLOW_FLOWRECORDMASTER_T.MODELCODE;
                         AuditEntity.GUID = currentFlow.FLOWRECORDDETAILID;
                         currentFLOWRECORDDETAIL = currentFlow;
+                        InitFileLoad(currentFlow.FLOWRECORDDETAILID, FormTypes.New, this.uploadFile, true);
                     }
                     else
                     {

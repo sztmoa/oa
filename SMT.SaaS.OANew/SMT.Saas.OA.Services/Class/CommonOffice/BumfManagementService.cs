@@ -522,6 +522,27 @@ namespace SMT.SaaS.OA.Services
             }
         }
 
+        /// <summary>
+        /// 取消公司发文发布
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="StrResult"></param>
+        [OperationContract]        
+        public void CancelSendDocPublish(T_OA_SENDDOC obj, ref string StrResult)
+        {
+            using (BumfCompanySendDocManagementBll SendDocBll = new BumfCompanySendDocManagementBll())
+            {
+                bool isReturn =SendDocBll.CancelSendDocPublish(obj, ref StrResult);
+                if (!isReturn)
+                {
+                    if (obj != null)
+                    {
+                        StrResult = "取消公司发文:" + obj.SENDDOCTITLE + "的发布失败！";
+                    }
+                }
+            }
+        }
+
         [OperationContract]
         //查单
         public T_OA_SENDDOC GetSendDocSingleInfoById(string StrSendDocId)
@@ -630,6 +651,19 @@ namespace SMT.SaaS.OA.Services
             {
                 using (BumfCompanySendDocManagementBll SendDocBll = new BumfCompanySendDocManagementBll())
                 {
+                    //HouseInfoManagerBll bll = new HouseInfoManagerBll();
+                    //List<string> postIDs = new List<string>();
+                    //postIDs.Add("0c7a189f-fdbe-4632-a092-52c3463e0c7b");
+                    //postIDs.Add("6dbed528-5d9f-42f9-8278-178c4e5d8b1c");
+                    //postIDs.Add("9e0bf63a-023f-4b6a-a18e-fa5dbe057d8b");
+                    //List<string> postID1s = new List<string>();
+                    //postID1s.Add("c1f72286-eee5-45bd-bded-5993e8a317c9");
+                    //postID1s.Add("06aa0d8b-b32e-4eee-9d3c-db08b6a3b1fd");
+                    //List<string> postID2s = new List<string>();
+                    //postID2s.Add("cafdca8a-c630-4475-a65d-490d052dca36");
+                    //postID2s.Add("bac05c76-0f5b-40ae-b73b-8be541ed35ed");
+                    //int aa = 99999;
+                    //bll.GetHouseAndNoticeInfoToMobile(pageIndex, pageSize, ref pageCount, ref aa, "6ba49ec8-feb0-4f78-b801-2b8ea5387ab3", postID1s, postID2s, postID1s, string.Empty, null,string.Empty);
                     List<V_BumfCompanySendDoc> CompanyDocList = null;
                     if (checkState != ((int)CheckStates.WaittingApproval).ToString())  //获取用户的公司文档信息
                     {
@@ -781,6 +815,7 @@ namespace SMT.SaaS.OA.Services
             using (BumfCompanyDocDistrbuteManagementBll SendDocBll = new BumfCompanyDocDistrbuteManagementBll())
             {
                 bool isReturn = true;
+
                 isReturn = SendDocBll.BatchAddDocDistrbuteInfoOnlyDocForMVC(DistrbuteList, LstCompanyIDs, LstDepartmentIDs, LstPostIDs, employeeids, doc);
                 return isReturn;
             }
