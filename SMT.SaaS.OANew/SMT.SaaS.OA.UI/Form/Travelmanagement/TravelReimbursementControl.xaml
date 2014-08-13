@@ -372,7 +372,8 @@
                                     </DataTemplate>
                                 </data:DataGridTemplateColumn.CellTemplate>
                             </data:DataGridTemplateColumn>
-                            <data:DataGridTemplateColumn Header="OPERATION" x:Name="Operation" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
+                            <!--行程修改-不允许修改出差-->
+                            <!--<data:DataGridTemplateColumn Header="OPERATION" x:Name="Operation" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
                                 <data:DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
@@ -380,7 +381,7 @@
                                         </StackPanel>
                                     </DataTemplate>
                                 </data:DataGridTemplateColumn.CellTemplate>
-                            </data:DataGridTemplateColumn>
+                            </data:DataGridTemplateColumn>-->
                         </data:DataGrid.Columns>
                     </data:DataGrid>
                 </StackPanel>

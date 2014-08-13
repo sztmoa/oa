@@ -311,11 +311,11 @@ namespace SMT.SaaS.OA.UI.UserControls
                 //出发时间
                 DateTimePicker dpStartTime = DaGrEdit.Columns[0].GetCellContent(e.Row).FindName("StartTime") as DateTimePicker;
                 //出发城市
-                SearchCity myCity = DaGrEdit.Columns[1].GetCellContent(e.Row).FindName("txtDEPARTURECITY") as SearchCity;
+                SearchCity myCityFrom = DaGrEdit.Columns[1].GetCellContent(e.Row).FindName("txtDEPARTURECITY") as SearchCity;
                 //到达时间
                 DateTimePicker dpEndTime = DaGrEdit.Columns[2].GetCellContent(e.Row).FindName("EndTime") as DateTimePicker;
                 //到达城市
-                SearchCity myCitys = DaGrEdit.Columns[3].GetCellContent(e.Row).FindName("txtTARGETCITIES") as SearchCity;
+                SearchCity myCityTo = DaGrEdit.Columns[3].GetCellContent(e.Row).FindName("txtTARGETCITIES") as SearchCity;
                 //交通费
                 TextBox txtTranSportcosts = DaGrEdit.Columns[8].GetCellContent(e.Row).FindName("txtTRANSPORTCOSTS") as TextBox;
                 //住宿费
@@ -331,9 +331,17 @@ namespace SMT.SaaS.OA.UI.UserControls
                 CheckBox IsCheck = DaGrEdit.Columns[13].GetCellContent(e.Row).FindName("myChkBox") as CheckBox;
                 CheckBox IsCheckMeet = DaGrEdit.Columns[14].GetCellContent(e.Row).FindName("myChkBoxMeet") as CheckBox;
                 CheckBox IsCheckCar = DaGrEdit.Columns[15].GetCellContent(e.Row).FindName("myChkBoxCar") as CheckBox;
-                ImageButton MyButton_Delbaodao = DaGrEdit.Columns[16].GetCellContent(e.Row).FindName("myDelete") as ImageButton;
-
-                //对默认控件的颜色进行赋值
+                //ImageButton MyButton_Delbaodao = DaGrEdit.Columns[16].GetCellContent(e.Row).FindName("myDelete") as ImageButton;
+                //行程修改-不允许修改出差
+                dpStartTime.IsEnabled = false;
+                myCityFrom.IsEnabled = false;
+                dpEndTime.IsEnabled = false;
+                myCityTo.IsEnabled = false;
+                ((DataGridCell)((StackPanel)dpStartTime.Parent).Parent).IsEnabled = false;
+                ((DataGridCell)((StackPanel)myCityFrom.Parent).Parent).IsEnabled = false;
+                ((DataGridCell)((StackPanel)dpEndTime.Parent).Parent).IsEnabled = false;
+                ((DataGridCell)((StackPanel)myCityTo.Parent).Parent).IsEnabled = false;
+                //对默认控件的颜色进行赋值                
                 tempcomTypeBorderBrush = ComVechile.BorderBrush;
                 tempcomTypeForeBrush = ComVechile.Foreground;
                 tempcomLevelBorderBrush = ComLevel.BorderBrush;
@@ -344,18 +352,18 @@ namespace SMT.SaaS.OA.UI.UserControls
 
                 if (BtnNewButton == true)
                 {
-                    myCitys.TxtSelectedCity.Text = string.Empty;
+                    myCityTo.TxtSelectedCity.Text = string.Empty;
                 }
                 else
                 {
                     BtnNewButton = false;
                 }
 
-                MyButton_Delbaodao.Margin = new Thickness(0);
-                MyButton_Delbaodao.AddButtonAction("/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/ico_16_delete.png", Utility.GetResourceStr("DELETE"));
-                MyButton_Delbaodao.Tag = tmp;
-                myCity.Tag = tmp;
-                myCitys.Tag = tmp;
+                //MyButton_Delbaodao.Margin = new Thickness(0);
+                //MyButton_Delbaodao.AddButtonAction("/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/ico_16_delete.png", Utility.GetResourceStr("DELETE"));
+                //MyButton_Delbaodao.Tag = tmp;
+                myCityFrom.Tag = tmp;
+                myCityTo.Tag = tmp;
 
                 //查询出发城市&目标城市&&将ID转换为Name
                 if (DaGrEdit.ItemsSource != null)
@@ -378,27 +386,27 @@ namespace SMT.SaaS.OA.UI.UserControls
 
                             if (formType != FormTypes.New)
                             {
-                                if (myCity != null)//出发城市
+                                if (myCityFrom != null)//出发城市
                                 {
                                     if (obje.DEPCITY != null)
                                     {
                                         //注释原因：obje.depcity仍然是中文而不是数字
-                                        myCity.TxtSelectedCity.Text = GetCityName(tmp.DEPCITY);
+                                        myCityFrom.TxtSelectedCity.Text = GetCityName(tmp.DEPCITY);
                                         if (TravelDetailList_Golbal.Count() > 1)
                                         {
                                             if (i > 1)
                                             {
-                                                myCity.IsEnabled = false;
-                                                ((DataGridCell)((StackPanel)myCity.Parent).Parent).IsEnabled = false;
+                                                myCityFrom.IsEnabled = false;
+                                                ((DataGridCell)((StackPanel)myCityFrom.Parent).Parent).IsEnabled = false;
                                             }
                                         }
                                     }
                                 }
-                                if (myCitys != null)//目标城市
+                                if (myCityTo != null)//目标城市
                                 {
                                     if (obje.DESTCITY != null)
                                     {
-                                        myCitys.TxtSelectedCity.Text = GetCityName(obje.DESTCITY);
+                                        myCityTo.TxtSelectedCity.Text = GetCityName(obje.DESTCITY);
                                     }
                                 }
                                 if (obje.PRIVATEAFFAIR == "1")//私事
