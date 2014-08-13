@@ -3274,13 +3274,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice.disco" />
-    <None Include="Service References\SmtOAPersonOfficeService\configuration91.svcinfo" />
-    <None Include="Service References\SmtOAPersonOfficeService\configuration.svcinfo" />
-    <None Include="Service References\SmtOAPersonOfficeService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Service References\TravelExpApplyMaster\configuration91.svcinfo" />
     <None Include="Service References\TravelExpApplyMaster\configuration.svcinfo" />
     <None Include="Service References\TravelExpApplyMaster\Reference.svcmap">
@@ -3288,6 +3281,13 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\TravelExpApplyMaster\OaInterface1.disco" />
+    <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice.disco" />
+    <None Include="Service References\SmtOAPersonOfficeService\configuration91.svcinfo" />
+    <None Include="Service References\SmtOAPersonOfficeService\configuration.svcinfo" />
+    <None Include="Service References\SmtOAPersonOfficeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceReferences.ClientConfig">
       <SubType>Designer</SubType>
     </Content>

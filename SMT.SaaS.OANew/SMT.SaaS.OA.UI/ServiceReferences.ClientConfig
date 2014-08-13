@@ -13,14 +13,11 @@
         <binding name="BasicHttpBinding_FileUploadManager" closeTimeout="00:01:00"
           openTimeout="00:01:00" sendTimeout="00:01:00" maxBufferSize="2147483647"
           maxReceivedMessageSize="2147483647" textEncoding="utf-8" />
-
         <binding name="BasicHttpBinding_SmtOAPersonOffice" closeTimeout="01:00:00"
           openTimeout="01:00:00" sendTimeout="01:00:00" maxBufferSize="2147483647"
           maxReceivedMessageSize="2147483647">
           <security mode="None" />
         </binding>
-
-        <binding name="BasicHttpBinding_SmtOAPersonOffice1" maxReceivedMessageSize="2147483647" />
         <binding name="BasicHttpBinding_OaInterface" maxBufferSize="2147483647"
           maxReceivedMessageSize="2147483647">
           <security mode="None" />
@@ -97,10 +94,10 @@
           <binaryMessageEncoding />
           <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
         </binding>
-      <binding name="WSHttpBinding_IEngineWcfGlobalFunction">
-					<textMessageEncoding messageVersion="Default" writeEncoding="utf-8" />
-					<httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
-				</binding>
+        <binding name="WSHttpBinding_IEngineWcfGlobalFunction">
+          <textMessageEncoding messageVersion="Default" writeEncoding="utf-8" />
+          <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+        </binding>
       </customBinding>
     </bindings>
     <client>
@@ -113,10 +110,7 @@
       <endpoint address="http://10.10.0.93:8080/New/Services/System/FileUploadManager.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_FileUploadManager"
         contract="FileUploadWS.FileUploadManager" name="BasicHttpBinding_FileUploadManager" />
-      <!--<endpoint address="http://10.10.0.93:8080/New/Services/fb/FBService.svc"
-        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_FBService"
-        contract="FBServiceWS.FBService" name="BasicHttpBinding_FBService" />-->
-        <endpoint address="http://10.10.0.93:8080/New/Services/FB/FBService.svc"
+      <endpoint address="http://10.10.0.93:8080/New/Services/FB/FBService.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_FBService"
         contract="FBServiceWS.FBService" name="BasicHttpBinding_FBService" />
       <endpoint address="http://10.10.0.93:8080/New/Services/SMTFlow/SMT.FlowWFService.Service.svc"
@@ -155,32 +149,21 @@
       <endpoint address="http://10.10.0.93:8080/New/Services/PublicInterface/PublicService.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPublicService"
         contract="PublicInterfaceWS.IPublicService" name="BasicHttpBinding_IPublicService" />
-      
       <endpoint address="http://localhost:3938/SmtOACommonAdmin.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_SmtOACommonAdmin"
         contract="SmtOACommonAdminService.SmtOACommonAdmin" name="CustomBinding_SmtOACommonAdmin" />
-      
       <endpoint address="http://10.10.0.93:8080/New/Services/OA/SmtOADocumentAdmin.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_SmtOADocumentAdmin"
         contract="SmtOADocumentAdminService.SmtOADocumentAdmin" name="CustomBinding_SmtOADocumentAdmin" />
-      
-      <!--<endpoint address="http://localhost:3938/SmtOACommonOffice.svc"
-        binding="customBinding" bindingConfiguration="CustomBinding_SmtOACommonOffice"
-        contract="SmtOACommonOfficeService.SmtOACommonOffice" name="CustomBinding_SmtOACommonOffice" />-->
       <endpoint address="http://10.10.0.93:8080/new/services/OA/SmtOACommonOffice.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_SmtOACommonOffice"
         contract="SmtOACommonOfficeService.SmtOACommonOffice" name="CustomBinding_SmtOACommonOffice" />
-      
       <endpoint address="http://localhost:3938/AgentServices.svc" binding="customBinding"
         bindingConfiguration="CustomBinding_AgentServices1" contract="AgentChannel.AgentServices"
         name="CustomBinding_AgentServices" />
-      <!--<endpoint address="http://localhost:3938/SmtOAPersonOffice.svc"
-        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_SmtOAPersonOffice"
-        contract="SmtOAPersonOfficeService.SmtOAPersonOffice" name="BasicHttpBinding_SmtOAPersonOffice" />-->
-     <endpoint address="http://10.10.0.93:8080/New/Services/OA/SmtOAPersonOffice.svc"
-        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_SmtOAPersonOffice"
-        contract="SmtOAPersonOfficeService.SmtOAPersonOffice" name="BasicHttpBinding_SmtOAPersonOffice" />
-   	<endpoint address="http://10.10.0.93:8080/New/Services/SMTEngine/EngineWcfGlobalFunction.svc" binding="customBinding" bindingConfiguration="WSHttpBinding_IEngineWcfGlobalFunction" contract="EngineWS.IEngineWcfGlobalFunction" name="WSHttpBinding_IEngineWcfGlobalFunction" />
+      <endpoint address="http://10.10.0.93:8080/New/Services/SMTEngine/EngineWcfGlobalFunction.svc"
+        binding="customBinding" bindingConfiguration="WSHttpBinding_IEngineWcfGlobalFunction"
+        contract="EngineWS.IEngineWcfGlobalFunction" name="WSHttpBinding_IEngineWcfGlobalFunction" />
     </client>
   </system.serviceModel>
 </configuration>

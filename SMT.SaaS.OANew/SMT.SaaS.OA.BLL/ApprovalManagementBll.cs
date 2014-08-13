@@ -886,133 +886,133 @@ namespace SMT.SaaS.OA.BLL
  
     }
 
-    public class ApprovalFlowUserBll : BaseBll<T_OA_APPROVALFLOWUSERS>
-    {
-        #region 添加事项审批自定义流程审核人
-        //
-        //批量添加公文发布
-        /// <summary>
-        /// 添加事项审批自定义流程人员
-        /// add ljx  2014-2-17
-        /// </summary>
-        /// <param name="FlowUsers">流程审核人员列表</param>
-        /// <returns></returns>
-        //public bool BatchAddFlowUsers(List<T_OA_APPROVALFLOWUSERS> listFlowUsers, string formID)
-        //{
-        //    try
-        //    {
-        //        bool needSave = false;
-        //        if (listFlowUsers.Count() > 0)
-        //        {
-        //            var ents = from ent in dal.GetObjects<T_OA_APPROVALFLOWUSERS>()
-        //                       where ent.APPROVALINFOID == formID
-        //                       select ent;
-        //            foreach (T_OA_APPROVALFLOWUSERS obj in listFlowUsers)
-        //            {
-        //                //根据审核人ID、表单ID、审核人顺序过滤
-        //                //如果只有一个则flowuserorder默认为1
-        //                var tempEnt = ents.FirstOrDefault(s => s.APPROVALINFOID == obj.APPROVALINFOID && s.MODELCODE == obj.MODELCODE
-        //                               && s.FLOWUSERID == obj.FLOWUSERID && s.FLOWUSERORDER == obj.FLOWUSERORDER);
-        //                if (tempEnt != null)
-        //                {
-        //                    continue;
-        //                }
-        //                else
-        //                {
-        //                    dal.AddToContext(obj);
-        //                    needSave = true;
-        //                }
-        //            }
-        //            if (needSave)
-        //            {
-        //                int i = dal.SaveContextChanges();
-        //                if (i > 0)
-        //                {
-        //                    return true;
-        //                }
-        //            }
-        //            else
-        //            {
-        //                return true;
-        //            }
-        //        }
-        //        return false;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Tracer.Debug("事项审批添加自定义流程失败ApprovalFlowUserBll-BatchAddFlowUsers" + System.DateTime.Now.ToString() + " " + ex.ToString());
-        //        return false;
-        //    }
-        //}
-        /// <summary>
-        /// 删除单条自定义流程记录
-        /// </summary>
-        /// <param name="approvalFlowUserID"></param>
-        /// <returns></returns>
-        //public bool DeleteApprovalFlowUser(string approvalFlowUserID)
-        //{
-        //    try
-        //    {
-        //        var users = (from ent in dal.GetObjects<T_OA_APPROVALFLOWUSERS>()
-        //                     where ent.APPROVALFLOWUSERID == approvalFlowUserID
-        //                     select ent);
-        //        if (users.Count() > 0)
-        //        {
-        //            var user = users.FirstOrDefault();
+    //public class ApprovalFlowUserBll : BaseBll<T_OA_APPROVALFLOWUSERS>
+    //{
+    //    #region 添加事项审批自定义流程审核人
+    //    //
+    //    //批量添加公文发布
+    //    /// <summary>
+    //    /// 添加事项审批自定义流程人员
+    //    /// add ljx  2014-2-17
+    //    /// </summary>
+    //    /// <param name="FlowUsers">流程审核人员列表</param>
+    //    /// <returns></returns>
+    //    //public bool BatchAddFlowUsers(List<T_OA_APPROVALFLOWUSERS> listFlowUsers, string formID)
+    //    //{
+    //    //    try
+    //    //    {
+    //    //        bool needSave = false;
+    //    //        if (listFlowUsers.Count() > 0)
+    //    //        {
+    //    //            var ents = from ent in dal.GetObjects<T_OA_APPROVALFLOWUSERS>()
+    //    //                       where ent.APPROVALINFOID == formID
+    //    //                       select ent;
+    //    //            foreach (T_OA_APPROVALFLOWUSERS obj in listFlowUsers)
+    //    //            {
+    //    //                //根据审核人ID、表单ID、审核人顺序过滤
+    //    //                //如果只有一个则flowuserorder默认为1
+    //    //                var tempEnt = ents.FirstOrDefault(s => s.APPROVALINFOID == obj.APPROVALINFOID && s.MODELCODE == obj.MODELCODE
+    //    //                               && s.FLOWUSERID == obj.FLOWUSERID && s.FLOWUSERORDER == obj.FLOWUSERORDER);
+    //    //                if (tempEnt != null)
+    //    //                {
+    //    //                    continue;
+    //    //                }
+    //    //                else
+    //    //                {
+    //    //                    dal.AddToContext(obj);
+    //    //                    needSave = true;
+    //    //                }
+    //    //            }
+    //    //            if (needSave)
+    //    //            {
+    //    //                int i = dal.SaveContextChanges();
+    //    //                if (i > 0)
+    //    //                {
+    //    //                    return true;
+    //    //                }
+    //    //            }
+    //    //            else
+    //    //            {
+    //    //                return true;
+    //    //            }
+    //    //        }
+    //    //        return false;
+    //    //    }
+    //    //    catch (Exception ex)
+    //    //    {
+    //    //        Tracer.Debug("事项审批添加自定义流程失败ApprovalFlowUserBll-BatchAddFlowUsers" + System.DateTime.Now.ToString() + " " + ex.ToString());
+    //    //        return false;
+    //    //    }
+    //    //}
+    //    /// <summary>
+    //    /// 删除单条自定义流程记录
+    //    /// </summary>
+    //    /// <param name="approvalFlowUserID"></param>
+    //    /// <returns></returns>
+    //    //public bool DeleteApprovalFlowUser(string approvalFlowUserID)
+    //    //{
+    //    //    try
+    //    //    {
+    //    //        var users = (from ent in dal.GetObjects<T_OA_APPROVALFLOWUSERS>()
+    //    //                     where ent.APPROVALFLOWUSERID == approvalFlowUserID
+    //    //                     select ent);
+    //    //        if (users.Count() > 0)
+    //    //        {
+    //    //            var user = users.FirstOrDefault();
 
-        //            if (dal.Delete(user) > 0)
-        //            {
-        //                return true;
-        //            }
-        //            else
-        //            {
-        //                return false;
-        //            }
-        //        }
-        //        return false;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        dal.RollbackTransaction();
-        //        Tracer.Debug("事项审批删除单个审核人出错ApprovalFlowUserBll-DeleteApprovalFlowUser" + System.DateTime.Now.ToString() + " " + ex.ToString());
-        //        return false;
-        //    }
-        //}
+    //    //            if (dal.Delete(user) > 0)
+    //    //            {
+    //    //                return true;
+    //    //            }
+    //    //            else
+    //    //            {
+    //    //                return false;
+    //    //            }
+    //    //        }
+    //    //        return false;
+    //    //    }
+    //    //    catch (Exception ex)
+    //    //    {
+    //    //        dal.RollbackTransaction();
+    //    //        Tracer.Debug("事项审批删除单个审核人出错ApprovalFlowUserBll-DeleteApprovalFlowUser" + System.DateTime.Now.ToString() + " " + ex.ToString());
+    //    //        return false;
+    //    //    }
+    //    //}
 
-        /// <summary>
-        /// 删除某个事项审批的自定义流程信息
-        /// </summary>
-        /// <param name="formID">表单ID</param>
-        /// <returns></returns>
-        //public bool DeleteAllApprovalFlowUserByFormID(string formID)
-        //{
-        //    try
-        //    {
-        //        var users = (from ent in dal.GetObjects<T_OA_APPROVALFLOWUSERS>()
-        //                     where ent.APPROVALINFOID == formID
-        //                     select ent);
-        //        if (users.Count() > 0)
-        //        {
-        //            foreach (var obj in users)
-        //            {
-        //                if (!(dal.Delete(obj) > 0)) ;
-        //                {
-        //                    string aa = "事项审批删除单个审核人出错,人为：" + obj.FLOWUSERNAME + ";岗位：" + obj.FLOWUSERPOSTNAME;
+    //    /// <summary>
+    //    /// 删除某个事项审批的自定义流程信息
+    //    /// </summary>
+    //    /// <param name="formID">表单ID</param>
+    //    /// <returns></returns>
+    //    //public bool DeleteAllApprovalFlowUserByFormID(string formID)
+    //    //{
+    //    //    try
+    //    //    {
+    //    //        var users = (from ent in dal.GetObjects<T_OA_APPROVALFLOWUSERS>()
+    //    //                     where ent.APPROVALINFOID == formID
+    //    //                     select ent);
+    //    //        if (users.Count() > 0)
+    //    //        {
+    //    //            foreach (var obj in users)
+    //    //            {
+    //    //                if (!(dal.Delete(obj) > 0)) ;
+    //    //                {
+    //    //                    string aa = "事项审批删除单个审核人出错,人为：" + obj.FLOWUSERNAME + ";岗位：" + obj.FLOWUSERPOSTNAME;
 
-        //                    Tracer.Debug(aa + System.DateTime.Now.ToString() + " " + obj.FLOWUSERID.ToString());
-        //                }
-        //            }
-        //            return true;
-        //        }
-        //        return false;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Tracer.Debug("事项审批删除单个审核人出错ApprovalFlowUserBll-DeleteAllApprovalFlowUserByFormID：" + System.DateTime.Now.ToString() + " " + ex.ToString());
-        //        return false;
-        //    }
-        //}
-        #endregion
+    //    //                    Tracer.Debug(aa + System.DateTime.Now.ToString() + " " + obj.FLOWUSERID.ToString());
+    //    //                }
+    //    //            }
+    //    //            return true;
+    //    //        }
+    //    //        return false;
+    //    //    }
+    //    //    catch (Exception ex)
+    //    //    {
+    //    //        Tracer.Debug("事项审批删除单个审核人出错ApprovalFlowUserBll-DeleteAllApprovalFlowUserByFormID：" + System.DateTime.Now.ToString() + " " + ex.ToString());
+    //    //        return false;
+    //    //    }
+    //    //}
+    //    #endregion
  
-    }
+    //}
 }

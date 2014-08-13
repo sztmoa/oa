@@ -59,6 +59,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SMT.SaaS.CommonDll\MemCache\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="SMT.Foundation.Core, Version=1.1.0.1218, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Core.dll</HintPath>
+    </Reference>
     <Reference Include="SMT.Foundation.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Log.dll</HintPath>
@@ -221,10 +225,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\源码\SMT.Foundation.NewCore\SMT.Foundation.Core.csproj">
-      <Project>{9d2f51e2-9710-4c91-a66b-823eb72437fd}</Project>
-      <Name>SMT.Foundation.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SMT.SaaS.OA.BLL\SMT.SaaS.OA.BLL.csproj">
       <Project>{B35234A0-7BF1-49B6-BDF2-4041D0763D9B}</Project>
       <Name>SMT.SaaS.OA.BLL</Name>

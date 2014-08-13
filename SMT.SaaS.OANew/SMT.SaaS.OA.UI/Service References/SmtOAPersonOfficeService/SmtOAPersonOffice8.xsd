@@ -49,6 +49,9 @@
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q2:EntityObject">
         <xs:sequence>
+          <xs:element minOccurs="0" name="ALTERDETAILATFER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ALTERDETAILBASE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ALTERDETAILBEFORE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="BUSINESSTRIPID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CHARGEMONEY" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="CHECKSTATE" nillable="true" type="xs:string" />
