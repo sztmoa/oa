@@ -524,7 +524,6 @@ namespace SMT.HRM.BLL
             {
                 var q = from d in dal.GetObjects<T_HR_EMPLOYEESIGNINDETAIL>().Include("T_HR_EMPLOYEESIGNINRECORD").Include("T_HR_EMPLOYEEABNORMRECORD")
                         where d.T_HR_EMPLOYEEABNORMRECORD.ABNORMRECORDID == entAbnormRecord.ABNORMRECORDID
-                        && d.T_HR_EMPLOYEESIGNINRECORD.CHECKSTATE == "0"
                         select d;
 
                 if (q.Count() == 0)
@@ -539,8 +538,23 @@ namespace SMT.HRM.BLL
                     {
                         strSignInIds.Add(strSignInId);
                     }
+                    if(!entDetail.T_HR_EMPLOYEESIGNINRECORDReference.IsLoaded)
+                    {
+                        entDetail.T_HR_EMPLOYEESIGNINRECORDReference.Load();
+                    }
+                    string msg="员工id："+entDetail.OWNERID
+                        +"员工姓名："+entDetail.T_HR_EMPLOYEESIGNINRECORD.EMPLOYEENAME
+                        +"签卡主表备注："+entDetail.T_HR_EMPLOYEESIGNINRECORD.REMARK
+                        +"异常日期："+entDetail.ABNORMALDATE
+                        +"异常类型："+entDetail.ABNORMCATEGORY
+                        +"异常原因："+entDetail.DETAILREASON
+                        +"审核状态："+entDetail.T_HR_EMPLOYEESIGNINRECORD.CHECKSTATE;
 
-                    dal.Delete(entDetail);
+                    int i= dal.Delete(entDetail);
+                    if(i==1)
+                    {
+                        Tracer.Debug("ClearNoSignInRecord 删除多余的异常签卡记录：" + msg);
+                    }
                 }
             }
 

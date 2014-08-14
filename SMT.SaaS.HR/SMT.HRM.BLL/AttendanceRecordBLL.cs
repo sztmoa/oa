@@ -432,13 +432,17 @@ namespace SMT.HRM.BLL
 
                 var evs = from e in dal.GetObjects<T_HR_EMPLOYEEEVECTIONRECORD>()
                           where e.OWNERCOMPANYID == strCompanyID && e.ENDDATE >= dtStart && e.CHECKSTATE == "2"
-                          select e.EMPLOYEEID;
+                          select new { e.EMPLOYEENAME,e.EMPLOYEEID};
 
                 if (evs.Count() > 0)
                 {
-                    foreach (string strEmployeeID in evs)
+                    foreach (var Employee in evs)
                     {
-                        UpdateAttendRecordByEmployeeIdWithEvectionRecord(strEmployeeID, strCurMonth);
+                        Tracer.Debug("检查考勤出差开始,员工姓名："+Employee.EMPLOYEENAME);
+                        if (Employee.EMPLOYEENAME == "焦燕旻")
+                        {
+                        }
+                        UpdateAttendRecordByEmployeeIdWithEvectionRecord(Employee.EMPLOYEEID, strCurMonth);
                     }
                 }
 
@@ -648,7 +652,22 @@ namespace SMT.HRM.BLL
 
                     foreach (T_HR_EMPLOYEEABNORMRECORD entAbnormRecord in entAbnormRecords)
                     {
-                        bllAbnormRd.Delete(entAbnormRecord);
+                        if (!entAbnormRecord.T_HR_ATTENDANCERECORDReference.IsLoaded)
+                        {
+                            entAbnormRecord.T_HR_ATTENDANCERECORDReference.Load();
+                        }
+                        string msg = "员工id：" + entAbnormRecord.OWNERID
+                            +"员工姓名："+entAbnormRecord.T_HR_ATTENDANCERECORD.EMPLOYEENAME
+                            + "异常签卡状态" + entAbnormRecord.SINGINSTATE
+                            + "异常日期：" + entAbnormRecord.ABNORMALDATE
+                            + "异常类型：" + entAbnormRecord.ABNORMCATEGORY
+                            + "异常时间段：" + entAbnormRecord.ATTENDPERIOD
+                            + "异常时长：" + entAbnormRecord.ABNORMALTIME
+                            +"考勤初始化记录id："+entAbnormRecord.T_HR_ATTENDANCERECORD.ATTENDANCERECORDID;
+                        bool bdel=bllAbnormRd.Delete(entAbnormRecord);
+                        if (bdel) {
+                            Tracer.Debug("RemoveWrongSignRds 处理错误的异常考勤记录，直接删除："+msg);
+                        }
                     }
                 }
             }
