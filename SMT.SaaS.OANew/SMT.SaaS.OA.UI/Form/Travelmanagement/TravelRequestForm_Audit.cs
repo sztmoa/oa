@@ -317,6 +317,19 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             }
             AutoList.Add(basedata("T_OA_BUSINESSTRIP", "CONTENT", Master_Golbal.CONTENT, Master_Golbal.CONTENT));//出差事由
 
+            //添加出差行程修改相关逻辑
+            if (string.IsNullOrEmpty(Info.ISALTERTRAVE))
+            {
+                string msg = "新提交的出差申请。";
+                AutoList.Add(basedata("T_OA_BUSINESSTRIP", "AlterTraveDetailBefore", msg, msg));//出差事由
+            }else
+            {
+                if(Info.ISALTERTRAVE=="1")
+                {
+                    AutoList.Add(basedata("T_OA_BUSINESSTRIP", "AlterTraveDetailBefore", Master_Golbal.ALTERDETAILBEFORE, Master_Golbal.ALTERDETAILBEFORE));//出差事由
+                }
+            }
+
             foreach (T_OA_BUSINESSTRIPDETAIL objDetail in TraveDetailList_Golbal)//填充子表
             {
                 if (objDetail.DEPCITY != null)

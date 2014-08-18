@@ -466,7 +466,7 @@ namespace SMT.SaaS.OA.BLL
                     dal.CommitTransaction();
                     Tracer.Debug("引擎更新出差报销状态成功：出差报销id：" + BorrowID + " 审核状态：" + StrCheckState);
                     if (Master.CHECKSTATE == Convert.ToInt32(CheckStates.Approved).ToString())
-                    {                                               
+                    {
                         #region 开始调用HR中考勤的数据
                         Tracer.Debug("出差申请开始调用HR中考勤的接口");
                         try
@@ -476,6 +476,64 @@ namespace SMT.SaaS.OA.BLL
                         catch (Exception ex)
                         {
                             Tracer.Debug("出差申请调用HR中考勤的接口出现错误");
+                        }
+                        #endregion
+                        #region 保存原始出差申请信息以便记录行程修改变化
+                        if (string.IsNullOrEmpty(Master.ALTERDETAILBEFORE))
+                        {
+                            string strALTERDETAILBEFORE = "出差申请行程修改，原始出差申请信息：";
+                            string newLine = System.Environment.NewLine;
+                            foreach (var item in Master.T_OA_BUSINESSTRIPDETAIL)
+                            {
+                                string startDate = item.STARTDATE.Value.ToString("yyyy-MM-dd HH:mm");
+                                string startCity = item.STARTCITYNAME;
+                                string endDate = item.ENDDATE.Value.ToString("yyyy-MM-dd HH:mm");
+                                string endCity = item.ENDCITYNAME;
+                                string privateaffair;//是否私事
+                                if (item.PRIVATEAFFAIR == "0")
+                                {
+                                    privateaffair = "否";
+                                }
+                                else
+                                {
+                                    privateaffair = "是";
+                                }
+                                string goouttomeet;//内部会议\培训
+                                if (item.GOOUTTOMEET == "0")//内部会议\培训
+                                {
+                                    goouttomeet = "否";
+                                }
+                                else
+                                {
+                                    goouttomeet = "是";
+                                }
+                                string companycar;////是否是公司派车
+
+                                if (item.COMPANYCAR == "0")
+                                {
+                                    companycar = "否";
+                                }
+                                else
+                                {
+                                    companycar = "是";
+                                }
+                                string tralveInfo = startDate + " 至 " + endDate + " 从 " + startCity + " 到 " + endCity
+                                    + " 交通工具：" + getTravelTool(item.TYPEOFTRAVELTOOLS) + "-"
+                                    + getTravelToolLevel(item.TAKETHETOOLLEVEL, item.TYPEOFTRAVELTOOLS)
+                                    + " 私事：" + privateaffair
+                                    + " 内部会议/培训：" + goouttomeet
+                                    + " 公司派车：" + companycar;
+                                strALTERDETAILBEFORE += newLine + tralveInfo;
+
+                            }
+                            strALTERDETAILBEFORE += newLine + "出差事由：" + Master.CONTENT;
+                            Master.ALTERDETAILBEFORE = strALTERDETAILBEFORE;
+                            int iu = Update(Master);
+                            if (iu > 0)
+                            {
+                                Tracer.Debug("保存原始出差申请信息成功：" + System.Environment.NewLine
+                                    + Master.ALTERDETAILBEFORE);
+                            }
                         }
                         #endregion
                     }
@@ -494,6 +552,54 @@ namespace SMT.SaaS.OA.BLL
                 throw ex;
             }
             return 1;
+        }
+
+        private string getTravelTool(string strValue)
+        {
+          return  GetDicNamebyValueType("VICHILESTANDARD", strValue);
+        }
+        public string getTravelToolLevel(string toollevelValue, string TravelToolValue)
+        {
+            try
+            {
+                return GetLevelName(decimal.Parse(toollevelValue), decimal.Parse(TravelToolValue));
+            }
+            catch (Exception ex)
+            {
+                Tracer.Debug(ex.ToString());
+            }
+            return "";
+        }
+        /// <summary>
+        /// 交通工具级别值转换
+        /// </summary>
+        /// <param name="typevalue"></param>
+        /// <returns></returns>
+        public string GetLevelName(decimal toollevelValue, decimal TravelToolValue)
+        {
+            try
+            {
+                var dicall=PermClient.GetAllSysDictionary();
+                var toolType = dicall.Where(p=>p.DICTIONCATEGORY=="VICHILESTANDARD"
+                    &&p.DICTIONARYVALUE == TravelToolValue).FirstOrDefault();
+                var ents = from a in dicall
+                           where a.DICTIONCATEGORY == "VICHILELEVEL" && (a.T_SYS_DICTIONARY2 != null && a.T_SYS_DICTIONARY2.DICTIONARYID == toolType.DICTIONARYID) && a.DICTIONARYVALUE == toollevelValue
+                           select new
+                           {
+                               DICTIONARYNAME = a.DICTIONARYNAME
+                           };
+                return ents.Count() > 0 ? ents.FirstOrDefault().DICTIONARYNAME : string.Empty;
+            }
+            catch(Exception  ex)
+            {
+                Tracer.Debug(ex.ToString());
+                return string.Empty;
+            }
+        }
+        private string GetDicNamebyValueType(string TypeName,string strDicValue)
+        {
+            decimal dicValue = decimal.Parse(strDicValue);
+            return BLLCommonServices.Utility.GetDictionaryNameByValue(TypeName, dicValue);
         }
 
         public void InsertAttenceRecord(T_OA_BUSINESSTRIP travel)

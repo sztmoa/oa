@@ -375,6 +375,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             {
                 if (isAlterTrave)
                 {   //修改行程
+                    Master_Golbal.ISALTERTRAVE = "1";
                     OaPersonOfficeClient.UpdateTravelmanagementAsync(Master_Golbal, TraveDetailList_Golbal, "isAlterTrave");
                 }
                 else

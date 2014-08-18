@@ -101,6 +101,9 @@
       </customBinding>
     </bindings>
     <client>
+      <endpoint address="http://10.10.0.93:8080/New/Services/OA/SmtOAPersonOffice.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_SmtOAPersonOffice"
+        contract="SmtOAPersonOfficeService.SmtOAPersonOffice" name="BasicHttpBinding_SmtOAPersonOffice" />
       <endpoint address="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_IUploadService"
         contract="NewFileUploadWS.IUploadService" name="CustomBinding_IUploadService" />
