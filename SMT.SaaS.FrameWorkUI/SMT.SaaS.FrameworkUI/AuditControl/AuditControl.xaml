@@ -33,10 +33,11 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60" />
                     <ColumnDefinition Width="80" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="150" />
                     <ColumnDefinition Width="80" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="150" />
                     <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="100" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
@@ -124,26 +125,27 @@
                         BorderThickness="0.5 0.5 0.5 0"
                         Grid.Column="6"
                         Grid.Row="0"
-                        Grid.ColumnSpan="3">
+                        Grid.ColumnSpan="1">
                     <TextBlock Text="{Binding CHECKSTATE, Converter={StaticResource StateConverters}}"
                                VerticalAlignment="Center"
                                Margin="17,0,6,0" />
                 </Border>
                 <!--上传控件-->
                 <Border BorderBrush="Black"
-                        BorderThickness="0.5 0.5 0.5 0.5"
-                        Grid.Column="1"
-                        Grid.Row="2">
+                        BorderThickness="0 0.5 0.5 0"
+                        Grid.Column="7"
+                        Grid.Row="0">
                     <TextBlock Text="审批附件"
                              VerticalAlignment="Center"
                              Margin="17,0,6,0"/>
                 </Border>
                 <Border BorderBrush="Black"
-                        BorderThickness="0.5 0.5 0.5 0.5"
-                        Grid.Column="2"
-                        Grid.Row="2"
-                        Grid.ColumnSpan="5">
-                    <my:FileControl SystemCode="WF" ModelCode="FLOW_FLOWRECORDDETAIL_T"  ApplicationIdBinding="{Binding FLOWRECORDDETAILID}" AutoInitReadOnlyControl="True" />
+                        BorderThickness="0 0.5 0.5 0.5"
+                        Grid.Column="7"
+                        Grid.Row="1">
+                    <my:FileControl SystemCode="WF" ModelCode="FLOW_FLOWRECORDDETAIL_T"  ApplicationIdBinding="{Binding FLOWRECORDDETAILID}" AutoInitReadOnlyControl="True" 
+                      VerticalAlignment="Center"
+                      Margin="2,2,2,2"/>
                 </Border>
 
 
