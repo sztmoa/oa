@@ -1147,7 +1147,7 @@ namespace SMT.SaaS.FrameworkUI
             {
             }
             ComfirmWindow.ConfirmationBox("审核异常：" + Utility.GetResourceStr("ERROR"), strErrorMessage, Utility.GetResourceStr("CONFIRMBUTTON"));
-            SumbitCompleted();
+            //SumbitCompleted();审核控件弹出后直接关闭导致业务系统审核状态为空，因为业务系统未给checkstate赋值导致，所以暂时屏蔽。
             CloseProgressBar();
             //MessageBox.Show();
         }
