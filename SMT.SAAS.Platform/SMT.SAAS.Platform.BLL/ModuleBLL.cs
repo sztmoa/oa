@@ -19,7 +19,7 @@ namespace SMT.SAAS.Platform.BLL
     /// <summary>
     /// 应用系统业务操作接口，提供了对数据库、第三方服务、文件系统的访问提供支持。
     /// </summary>
-    public class ModuleBLL
+    public class ModuleBLL:IDisposable
     {
         private static readonly IModuleInfoDAL dal = DataAccess.CreateModuleInfo();
 
@@ -209,6 +209,11 @@ namespace SMT.SAAS.Platform.BLL
                 return null;
             }
             
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }

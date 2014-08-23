@@ -43,7 +43,9 @@ namespace SMT.SAAS.Platform.Services
         /// <returns>结果，详细信息</returns>
         public System.Collections.Generic.List<Model.ModuleInfo> GetModuleByCodes(string[] moduleCodes)
         {
+
             return moduleBll.GetModuleByCodes(moduleCodes);
+            
         }
 
         /// <summary>

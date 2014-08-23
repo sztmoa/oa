@@ -642,10 +642,17 @@ namespace System.Windows.Controls
 
             opactytykeyframes.KeyFrames = new SMT.SAAS.AnimationEngine.Model.KeyFrames<Double>[] 
                 { 
-                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 0,Value=1},
-                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 0.4,Value=1},
-                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 0.6,Value=1},
-                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 1.0,Value=0}
+                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 1.0,Value=1},                    
+                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 2.0,Value=0.9},
+                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 3.0,Value=0.8},
+                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 4.0,Value=0.7},
+                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 5.0,Value=0.6},
+                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 6.0,Value=0.5},
+                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 7.0,Value=0.4},
+                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 8.0,Value=0.3},
+                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 9.0,Value=0.2},
+                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 10.0,Value=0.1},
+                    new Model.KeyFrames<Double>(){Type=KeyFramesType.Linear, KeyTime = 11.0,Value=0}
                 };
             List<IModel> _models = new List<IModel>()
                 {

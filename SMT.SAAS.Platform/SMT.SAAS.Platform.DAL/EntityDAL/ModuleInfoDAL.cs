@@ -10,6 +10,7 @@ using System.Text;
 using System.Diagnostics;
 using System.Xml.Linq;
 using System.Collections.ObjectModel;
+using SMT.Foundation.Log;
 
 //------------------------------------------------------------------------------
 // 版权所有: 版权所有(C)2011 SMT-Online
@@ -48,7 +49,7 @@ namespace SMT.SAAS.Platform.OracleDAL
                 throw new ArgumentNullException("key");
 
 
-            var ents = from ent in _commonDAL.GetObjects()
+            var ents = from ent in Modules
                        where ent.MODULEID == key
                        select ent;
             T_PF_MODULEINFO application = ents.Count() > 0 ? ents.FirstOrDefault() : null;
@@ -62,7 +63,7 @@ namespace SMT.SAAS.Platform.OracleDAL
                 throw new ArgumentNullException("key");
 
 
-            var ents = from ent in _commonDAL.GetObjects()
+            var ents = from ent in Modules
                        where ent.MODULEID == key
                        select ent;
             return ents.Count() > 0 ? true : false;
@@ -99,79 +100,108 @@ namespace SMT.SAAS.Platform.OracleDAL
 
         public List<ModuleInfo> GetModuleListByCodes(string[] appCodes)
         {
-            if (appCodes == null)
-                throw new ArgumentNullException("appCodes");
+          
+                if (appCodes == null)
+                    throw new ArgumentNullException("appCodes");
 
 
-            var ents = from ent in _commonDAL.GetObjects()
-                       where appCodes.Contains(ent.MODULECODE)
-                       select ent;
-            List<ModuleInfo> result = new List<ModuleInfo>();
-            if (ents.Count() > 0)
-            {
-                foreach (var item in ents)
+                var ents = from ent in Modules
+                           where appCodes.Contains(ent.MODULECODE)
+                           select ent;
+                List<ModuleInfo> result = new List<ModuleInfo>();
+                if (ents.Count() > 0)
                 {
-                    result.Add(item.CloneObject<ModuleInfo>(new ModuleInfo()));
+                    foreach (var item in ents)
+                    {
+                        result.Add(item.CloneObject<ModuleInfo>(new ModuleInfo()));
+                    }
                 }
+                return result;
+            
+        }
+        private static List<T_PF_MODULEINFO> modules;
+        
+
+        public List<T_PF_MODULEINFO> Modules
+        {
+            get { 
+                if(modules==null)
+                {
+                    using (CommonDAL<T_PF_MODULEINFO> dal = new CommonDAL<T_PF_MODULEINFO>())
+                    {
+                        modules = (from ent in dal.GetObjects()
+                                   select ent).ToList();
+                        return modules;
+                    }
+
+                }else
+                return modules; 
             }
-            return result;
+            set { modules = value; }
         }
 
         public List<ModuleInfo> GetModulesBySystemCode(string[] appCodes)
         {
-            if (appCodes == null)
-                throw new ArgumentNullException("appCodes");
+          
+                if (appCodes == null)
+                    throw new ArgumentNullException("appCodes");
 
 
-            var ents = from ent in _commonDAL.GetObjects()
-                       where appCodes.Contains(ent.PARENTMODULEID)
-                       select ent;
-            List<ModuleInfo> result = new List<ModuleInfo>();
-            if (ents.Count() > 0)
-            {
-                foreach (var item in ents)
+                var ents = from ent in Modules
+                           where appCodes.Contains(ent.PARENTMODULEID)
+                           select ent;
+                List<ModuleInfo> result = new List<ModuleInfo>();
+                if (ents.Count() > 0)
                 {
-                    result.Add(item.CloneObject<ModuleInfo>(new ModuleInfo()));
+                    foreach (var item in ents)
+                    {
+                        result.Add(item.CloneObject<ModuleInfo>(new ModuleInfo()));
+                    }
                 }
-            }
-            return result;
+                return result;
+            
         }
 
         public List<ModuleInfo> GetModulesBySystemCodeAsNew(string[] appCodes)
         {
-            if (appCodes == null)
-                throw new ArgumentNullException("appCodes");
+         
+                if (appCodes == null)
+                    throw new ArgumentNullException("appCodes");
 
 
-            var ents = from ent in _commonDAL.GetObjects()
-                       where appCodes.Contains(ent.PARENTMODULEID)
-                       select new ModuleInfo {
-                           ModuleID = ent.MODULEID,
-                           ModuleCode = ent.MODULECODE,
-                           ModuleName = ent.MODULENAME,
-                           ModuleType = ent.MODULETYPE,
-                           ModuleIcon = ent.MODULEICON,
-                           ParentModuleID = ent.PARENTMODULEID,
-                           ClientID = ent.CLIENTID,
-                           ServerID = ent.SERVERID,
-                           Version = ent.VERSION,
-                           FileName = ent.FILENAME,
-                           FilePath = ent.FILEPATH,
-                           EnterAssembly = ent.ENTERASSEMBLY,
-                           HostAddress = ent.HOSTADDRESS,
-                           Description = ent.DESCRIPTION,
-                           UseState = "0"
-                       };
-            List<ModuleInfo> result = new List<ModuleInfo>();
-            if (ents.Count() > 0)
-            {
-                result = ents.ToList();
-            }
-            return result;
+                var ents = from ent in Modules
+                           where appCodes.Contains(ent.PARENTMODULEID)
+                           select new ModuleInfo
+                           {
+                               ModuleID = ent.MODULEID,
+                               ModuleCode = ent.MODULECODE,
+                               ModuleName = ent.MODULENAME,
+                               ModuleType = ent.MODULETYPE,
+                               ModuleIcon = ent.MODULEICON,
+                               ParentModuleID = ent.PARENTMODULEID,
+                               ClientID = ent.CLIENTID,
+                               ServerID = ent.SERVERID,
+                               Version = ent.VERSION,
+                               FileName = ent.FILENAME,
+                               FilePath = ent.FILEPATH,
+                               EnterAssembly = ent.ENTERASSEMBLY,
+                               HostAddress = ent.HOSTADDRESS,
+                               Description = ent.DESCRIPTION,
+                               UseState = "0"
+                           };
+                List<ModuleInfo> result = new List<ModuleInfo>();
+                if (ents.Count() > 0)
+                {
+                    result = ents.ToList();
+                }
+                return result;
+            
         }
 
         public List<ModuleInfo> GetModuleCatalogByUser(string userSysID)
         {
+            Tracer.Debug("GetModuleCatalogByUser Start,! userSysID:" + userSysID);
+            DateTime dtstart = DateTime.Now;
             try
             {
                 string result = string.Empty;
@@ -250,6 +280,11 @@ namespace SMT.SAAS.Platform.OracleDAL
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                TimeSpan ts = DateTime.Now.Subtract(dtstart);
+                Tracer.Debug("GetModuleCatalogByUser completed !耗时："+ts.TotalSeconds+"s userSysID:" + userSysID);
             }
         }
 
