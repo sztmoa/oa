@@ -9,32 +9,41 @@
            xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"                          
            Loaded="FloatableWindow_Loaded"
            >
-    <Grid x:Name="PARENT2">
-        <Grid x:Name="LayoutRoot" Background="White">
+    <Grid >
+        <Grid x:Name="LayoutRoot">
             <Grid.RowDefinitions>
-                <RowDefinition x:Name="ToolBarRow"  Height="40"/>
+                <RowDefinition x:Name="ToolBarRow"  Height="40"/>               
                 <RowDefinition Height="*"/>
+                <RowDefinition x:Name="ToolButtom"  Height="0"/>
                 <RowDefinition Height="0"/>
             </Grid.RowDefinitions>
-            <smt:ToolBar x:Name="toolBar1"  HorizontalAlignment="Stretch" Grid.Row="0"/>
-
-            <controlsToolkit:DockPanel LastChildFill="True" HorizontalAlignment="Stretch" 
-                                     Grid.Row="1" VerticalAlignment="Stretch" Background="Transparent">
-                <smt:ViewLeftMenu x:Name="ViewLeftMenus" Margin="0"  
-                              HorizontalAlignment="Left" controlsToolkit:DockPanel.Dock="Left">
-                </smt:ViewLeftMenu>
-
-                <ScrollViewer Style="{StaticResource ScrollViewerStyle}" Padding="0" Margin="0"
+            <!--顶部菜单栏挪到底部-->
+            <smt:ToolBar x:Name="toolBarTop" Grid.Row="0" HorizontalAlignment="Stretch" />
+            <!--表单显示面板-->
+            <controlsToolkit:DockPanel Grid.Row="1" >
+                <controlsToolkit:DockPanel  controlsToolkit:DockPanel.Dock="Top"
+                LastChildFill="True" HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" Background="Transparent">
+                    <!--左边树形菜单-->
+                    <smt:ViewLeftMenu x:Name="ViewLeftMenus" 
+                             controlsToolkit:DockPanel.Dock="Left">
+                    </smt:ViewLeftMenu>
+                    <ScrollViewer Style="{StaticResource ScrollViewerStyle}"
                               HorizontalScrollBarVisibility="Disabled"
-                              VerticalScrollBarVisibility="Auto" x:Name="SVShowContent" BorderThickness="0">
-                    <Grid Margin="0" x:Name="Container" Background="Transparent">
-                        <Border x:Name="EntityContainer" Background="Transparent">
-                            <Grid HorizontalAlignment="Stretch"  Background="Transparent" x:Name="EntityBrowserContent">
+                              VerticalScrollBarVisibility="Auto" x:Name="SVShowContent">
+                        <StackPanel Margin="0" x:Name="Container" Background="Transparent">
+                            <!--业务表单及审核信息显示区-->
+
+                            <Grid HorizontalAlignment="Stretch"  
+                                  Background="Transparent" x:Name="EntityContainer">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
-                                <Grid HorizontalAlignment="Stretch" x:Name="pnlContainer" VerticalAlignment="Top"></Grid>
+                                <!--业务表单显示区开始-->
+                                <Grid HorizontalAlignment="Stretch" Grid.Row="0" x:Name="pnlContainer" VerticalAlignment="Top"/>
+                                <!--业务表单显示区结束-->
+                                <!--审核控件开始-->
                                 <Grid x:Name="PnlAudit" Grid.Row="1" VerticalAlignment="Top">
                                     <controlsToolkit:Expander Style="{StaticResource ExpanderStyle}"  
                                                               x:Name="expander"
@@ -43,12 +52,11 @@
                                                               IsExpanded="True" 
                                                               Padding="0,0,2,8">
                                     </controlsToolkit:Expander>
-
                                 </Grid>
+                                <!--审核控件结束-->
                             </Grid>
-                        </Border>
-                        <Border x:Name="ViewContainer" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" >
-                            <navigation:Frame x:Name="ContentFrame" JournalOwnership="OwnsJournal"
+                            <!--左边树形菜单导航区，无用-->
+                            <navigation:Frame x:Name="ViewContainer" JournalOwnership="OwnsJournal"
                                               HorizontalAlignment="Stretch" 
                                               VerticalAlignment="Stretch" >
                                 <navigation:Frame.RenderTransform>
@@ -65,17 +73,20 @@
                                     </uriMapper:UriMapper>
                                 </navigation:Frame.UriMapper>
                             </navigation:Frame>
-                        </Border>
-                    </Grid>
-                </ScrollViewer>
-            </controlsToolkit:DockPanel>
 
-            <smt:FormTitle x:Name="FormTitleState"  Grid.Row="2" VerticalAlignment="Bottom" FontSize="12"/>
-            <Canvas x:Name="SmtProgressBar" Grid.Row="2" Visibility="Collapsed"></Canvas>
-            <smt:SMTProgressBar x:Name="UploadBar" Grid.Row="2" HorizontalAlignment="Right" Visibility="Collapsed"/>
+                            <!--左边树形菜单导航区结束-->
+                        </StackPanel>
+                    </ScrollViewer>
+                </controlsToolkit:DockPanel>
+            </controlsToolkit:DockPanel>
+            <!--底部菜单栏-->
+            <smt:ToolBar x:Name="toolBarBottom" Grid.Row="2" Visibility="Collapsed" HorizontalAlignment="Stretch" />
         </Grid>
-        <Grid x:Name="PARENT" Background="White" Opacity="0.5" Visibility="Collapsed">
+        <Grid x:Name="PARENT" Opacity="0.5" Visibility="Collapsed" Grid.Row="3" >
             <smt:SMTLoading x:Name="SmtLoading"></smt:SMTLoading>
         </Grid>
+        <!--<Canvas x:Name="SmtProgressBar" Visibility="Collapsed" Grid.Row="3" ></Canvas>-->
+        <!--<smt:SMTProgressBar x:Name="UploadBar" HorizontalAlignment="Right" Grid.Row="3" 
+                            Visibility="Collapsed"/>-->
     </Grid>
 </swc:Window>

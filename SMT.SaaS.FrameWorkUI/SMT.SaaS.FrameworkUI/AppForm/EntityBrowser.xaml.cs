@@ -34,7 +34,7 @@ namespace SMT.SaaS.FrameworkUI
         private Saas.Tools.HrCommonServiceWS.HrCommonServiceClient HrCommws;
         public RowDefinition EntityBrowseToolBar;
 
-        public ToolBar EntityToolbar { get { return toolBar1; } set { toolBar1 = value; } }
+        public ToolBar EntityToolbar { get { return toolBarTop; } set { toolBarTop = value; } }
         public Grid AuduitPanel{ get { return PnlAudit; } set { PnlAudit = value; } }
         /// <summary>
         /// 设置entityContainer是否支持水平滚动
@@ -138,9 +138,9 @@ namespace SMT.SaaS.FrameworkUI
             //beyond 隐藏kpi
             AddKPIControl();
             //帮助注释掉
-            //if (toolBar1 != null)
+            //if (toolBarTop != null)
             //{
-            //    toolBar1.ButtonHelp.Click += new RoutedEventHandler(ButtonHelp_Click);
+            //    toolBarTop.ButtonHelp.Click += new RoutedEventHandler(ButtonHelp_Click);
             //}
             //设置entitybrowser内部显示区域高度，以显示垂直进度条
             try
@@ -148,7 +148,8 @@ namespace SMT.SaaS.FrameworkUI
                 if (ParentWindow != null)
                 {
                     SVShowContent.Width = ParentWindow.ActualWidth;
-                    SVShowContent.Height = ParentWindow.ActualHeight - toolBar1.ActualHeight - AuditCtrl.ActualHeight;
+                    SVShowContent.Height = ParentWindow.ActualHeight - toolBarTop.ActualHeight
+                        - toolBarBottom.ActualHeight - AuditCtrl.ActualHeight;
                 }
             }
             catch (Exception ex)
@@ -332,9 +333,9 @@ namespace SMT.SaaS.FrameworkUI
                     case RefreshedTypes.HideProgressBar:
                         HideProgressBars();
                         break;
-                    case RefreshedTypes.UploadBar:
-                        ShowUploadBar();
-                        break;
+                    //case RefreshedTypes.UploadBar:
+                    //    ShowUploadBar();
+                    //    break;
                     case RefreshedTypes.HideAudit://隐藏审核控件
                         BindPnlAudit();
                         break;
@@ -345,36 +346,41 @@ namespace SMT.SaaS.FrameworkUI
                 }
             }
         }
-
+        #region "进度条显示控制"
+        private static int ProgressBarNumber=0;
         //显示保存数据滚动条
         void ShowProgressBar()
         {
-            if (SmtProgressBar.Visibility == Visibility.Visible)
+            if (PARENT.Visibility == Visibility.Visible)
             {
+                if (ProgressBarNumber > 0) ProgressBarNumber += -1;
                 SmtLoading.Stop();
                 PARENT.Visibility = Visibility.Collapsed;
-                SmtProgressBar.Visibility = Visibility.Collapsed;
+                //SmtProgressBar.Visibility = Visibility.Collapsed;
             }
             else
             {
-                SmtProgressBar.Visibility = Visibility.Visible;
+                if (ProgressBarNumber > 0) return;//大于0说明有进度条正在显示，不在显示。
+                ProgressBarNumber += 1;
+                //SmtProgressBar.Visibility = Visibility.Visible;
                 PARENT.Visibility = Visibility.Visible;
                 SmtLoading.Start();
             }
         }
-
-        #region 操作当前界面中的加载动画
         void ShowProgressBars()
         {
+            if (ProgressBarNumber > 0) return;//大于0说明有进度条正在显示，不在显示。
+            ProgressBarNumber += 1;
             PARENT.Visibility = Visibility.Visible;
-            SmtProgressBar.Visibility = Visibility.Visible;
+            //SmtProgressBar.Visibility = Visibility.Visible;
             SmtLoading.Start();
         }
 
         public void HideProgressBars()
         {
+            if (ProgressBarNumber > 0) ProgressBarNumber += -1;
             PARENT.Visibility = Visibility.Collapsed;
-            SmtProgressBar.Visibility = Visibility.Collapsed;
+            //SmtProgressBar.Visibility = Visibility.Collapsed;
             SmtLoading.Stop();
         }
         #endregion
@@ -383,30 +389,31 @@ namespace SMT.SaaS.FrameworkUI
         //显示保存数据滚动条
         void CloseProgressBar()
         {
+            if (ProgressBarNumber > 0)ProgressBarNumber += -1;
             SmtLoading.Stop();
             PARENT.Visibility = Visibility.Collapsed;
-            SmtProgressBar.Visibility = Visibility.Collapsed;
+            //SmtProgressBar.Visibility = Visibility.Collapsed;
         }
 
         //显示上传数据的进度条
-        void ShowUploadBar()
-        {
-            SmtLoading.Visibility = Visibility.Collapsed;
-            if (UploadBar.Visibility == Visibility.Visible)
-            {
-                UploadBar.Stop();
-                PARENT.Visibility = Visibility.Collapsed;
-                SmtProgressBar.Visibility = Visibility.Collapsed;
-                UploadBar.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                UploadBar.Visibility = Visibility.Visible;
-                PARENT.Visibility = Visibility.Visible;
-                UploadBar.Start();
-                UploadBar.Visibility = Visibility.Visible;
-            }
-        }
+        //void ShowUploadBar()
+        //{
+        //    SmtLoading.Visibility = Visibility.Collapsed;
+        //    if (UploadBar.Visibility == Visibility.Visible)
+        //    {
+        //        UploadBar.Stop();
+        //        PARENT.Visibility = Visibility.Collapsed;
+        //        SmtProgressBar.Visibility = Visibility.Collapsed;
+        //        UploadBar.Visibility = Visibility.Collapsed;
+        //    }
+        //    else
+        //    {
+        //        UploadBar.Visibility = Visibility.Visible;
+        //        PARENT.Visibility = Visibility.Visible;
+        //        UploadBar.Start();
+        //        UploadBar.Visibility = Visibility.Visible;
+        //    }
+        //}
 
         private void ShowEntityContainer()
         {
@@ -445,7 +452,7 @@ namespace SMT.SaaS.FrameworkUI
             }
             else
             {
-                ContentFrame.Navigate(new Uri(itm.Url, UriKind.Relative));
+                ViewContainer.Navigate(new Uri(itm.Url, UriKind.Relative));
                 ShowViewContainer();
             }
         }
@@ -478,8 +485,8 @@ namespace SMT.SaaS.FrameworkUI
         private void GenerateToolBar()
         {
             //初始化菜单按钮
-            toolBar1.ButtonContainer.Children.Clear();
-
+            toolBarTop.ButtonContainer.Children.Clear();
+            toolBarBottom.buttonContainer.Children.Clear();
             // string state = "";
             //添加权限按钮
             if (EntityEditor is IAudit)
@@ -498,7 +505,7 @@ namespace SMT.SaaS.FrameworkUI
                 //    BtnDelete.Image.Source = new BitmapImage(new Uri(img, UriKind.Relative));
                 //    BtnDelete.Style = (Style)Application.Current.Resources["ButtonToolBarStyle"];
                 //    //BtnDelete.Click += BtnDelete_Click;
-                //    toolBar1.ButtonContainer.Children.Add(BtnDelete);
+                //    toolBarTop.ButtonContainer.Children.Add(BtnDelete);
                 //    //BtnDelete.Visibility = Visibility.Collapsed;//默认不显示
                 //}
 
@@ -519,7 +526,17 @@ namespace SMT.SaaS.FrameworkUI
                         Manubtn.Style = (Style)Application.Current.Resources["ButtonToolBarStyle"];
                         Manubtn.Click += new RoutedEventHandler(btnManualAudit_Click);
                         Manubtn.Visibility = Visibility.Collapsed;
-                        toolBar1.ButtonContainer.Children.Add(Manubtn);
+                        toolBarTop.ButtonContainer.Children.Add(Manubtn);
+
+                        ImageButton btnima =new ImageButton();
+                        btnima = new ImageButton();
+                        btnima.TextBlock.Text = UIHelper.GetResourceStr("MANUALAUDIT");
+                        btnima.Image.Source = new BitmapImage(new Uri(img, UriKind.Relative));
+                        btnima.Style = (Style)Application.Current.Resources["ButtonToolBarStyle"];
+                        btnima.Click += new RoutedEventHandler(btnManualAudit_Click);
+                        btnima.Visibility = Visibility.Collapsed;
+                        toolBarBottom.ButtonContainer.Children.Add(btnima);
+
                         HrCommws.GetAppConfigByNameAsync("CanManuAudit");
 
                         //审核通过
@@ -530,7 +547,7 @@ namespace SMT.SaaS.FrameworkUI
                         //btn.Image.Source = new BitmapImage(new Uri(img, UriKind.Relative));
                         //btn.Style = (Style)Application.Current.Resources["ButtonToolBarStyle"];
                         //btn.Click += new RoutedEventHandler(btnAudit_Click);
-                        //toolBar1.ButtonContainer.Children.Add(btn);
+                        //toolBarTop.ButtonContainer.Children.Add(btn);
 
 
                         //审核不通过
@@ -541,7 +558,7 @@ namespace SMT.SaaS.FrameworkUI
                         //btn.Image.Source = new BitmapImage(new Uri(img, UriKind.Relative));
                         //btn.Style = (Style)Application.Current.Resources["ButtonToolBarStyle"];
                         //btn.Click += new RoutedEventHandler(btnAuditNoPass_Click);
-                        //toolBar1.ButtonContainer.Children.Add(btn);
+                        //toolBarTop.ButtonContainer.Children.Add(btn);
                     }
 
                     //if (state == Convert.ToInt32(CheckStates.UnSubmit).ToString())
@@ -552,11 +569,15 @@ namespace SMT.SaaS.FrameworkUI
                         //BtnSaveSubmit = new ImageButton();
                         BtnSaveSubmit.TextBlock.Text = UIHelper.GetResourceStr("SUBMITAUDIT");
                         img = "/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/18_audit.png";
-
                         BtnSaveSubmit.Image.Source = new BitmapImage(new Uri(img, UriKind.Relative));
-                        BtnSaveSubmit.Style = (Style)Application.Current.Resources["ButtonToolBarStyle"];
-                        
-                        toolBar1.ButtonContainer.Children.Add(BtnSaveSubmit);
+                        BtnSaveSubmit.Style = (Style)Application.Current.Resources["ButtonToolBarStyle"]; 
+                        toolBarTop.ButtonContainer.Children.Add(BtnSaveSubmit);
+
+                        ImageButton BtnSave = new ImageButton();
+                        BtnSave.TextBlock.Text = UIHelper.GetResourceStr("SUBMITAUDIT");
+                        BtnSave.Image.Source = new BitmapImage(new Uri(img, UriKind.Relative));
+                        BtnSave.Style = (Style)Application.Current.Resources["ButtonToolBarStyle"];
+                        toolBarBottom.ButtonContainer.Children.Add(BtnSave);
                     }
                 }
 
@@ -573,7 +594,14 @@ namespace SMT.SaaS.FrameworkUI
                     btn.Image.Source = new BitmapImage(new Uri(img, UriKind.Relative));
                     btn.Style = (Style)Application.Current.Resources["ButtonToolBarStyle"];
                     btn.Click += new RoutedEventHandler(btnForward_Click);
-                    toolBar1.ButtonContainer.Children.Add(btn);
+                    toolBarTop.ButtonContainer.Children.Add(btn);
+
+                    ImageButton btnButtom = new ImageButton();
+                    btnButtom.TextBlock.Text = UIHelper.GetResourceStr("FORWARDRECORD");
+                    btnButtom.Image.Source = new BitmapImage(new Uri(img, UriKind.Relative));
+                    btnButtom.Style = (Style)Application.Current.Resources["ButtonToolBarStyle"];
+                    btnButtom.Click += new RoutedEventHandler(btnForward_Click);
+                    toolBarBottom.ButtonContainer.Children.Add(btnButtom);
                 }
             }
 
@@ -603,7 +631,15 @@ namespace SMT.SaaS.FrameworkUI
                             btn.Image.Source = new BitmapImage(new Uri(bar.ImageUrl, UriKind.Relative));
                             btn.Style = (Style)Application.Current.Resources["ButtonToolBarStyle"];
                             btn.Click += new RoutedEventHandler(btn_Click);
-                            toolBar1.ButtonContainer.Children.Insert(0, btn);
+                            toolBarTop.ButtonContainer.Children.Insert(0, btn);
+
+                            ImageButton btnButtom = new ImageButton();
+                            btnButtom.TextBlock.Text = bar.Title;
+                            btnButtom.Tag = bar.Key;
+                            btnButtom.Image.Source = new BitmapImage(new Uri(bar.ImageUrl, UriKind.Relative));
+                            btnButtom.Style = (Style)Application.Current.Resources["ButtonToolBarStyle"];
+                            btnButtom.Click += new RoutedEventHandler(btn_Click);
+                            toolBarBottom.ButtonContainer.Children.Insert(0, btnButtom);
                         }
                     }
                 }
@@ -970,7 +1006,7 @@ namespace SMT.SaaS.FrameworkUI
             if (EntityEditor is IEntityEditor)
             {
                 this.TitleContent = ((IEntityEditor)EntityEditor).GetTitle();
-                FormTitleState.titlename.Text = ((IEntityEditor)EntityEditor).GetStatus();
+                //FormTitleState.titlename.Text = ((IEntityEditor)EntityEditor).GetStatus();
             }
         }
         private void FloatableWindow_Loaded(object sender, RoutedEventArgs e)
