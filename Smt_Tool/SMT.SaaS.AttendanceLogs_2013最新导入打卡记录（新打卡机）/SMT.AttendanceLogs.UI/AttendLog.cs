@@ -20,7 +20,6 @@ namespace SMT.AttendanceLogs.UI
         private bool bIsConnected = false;  //检测是否连接
         private int iMachineNumber = 1;     //默认指纹机编号
         List<T_HR_EMPLOYEECLOCKINRECORD> entTempList = new List<T_HR_EMPLOYEECLOCKINRECORD>();
-        private string strCompanyId = string.Empty;
         List<string> strImportIPs = new List<string>();
         List<string> strImportCompanys = new List<string>();
         bool bIsNewDevice = false;           
@@ -326,32 +325,45 @@ namespace SMT.AttendanceLogs.UI
                 string strMsg = string.Empty;
                 string strClientIP = string.Empty;
                 strClientIP = txtIP.Text.Trim() + ",本次导入的客户机IP如下：" + GetClientLocalIPAddress() + GetClientInternetIPAddress();
-                GetCompanyID(txtIP.Text.Trim(), ref strCompanyId);
 
-                if (string.IsNullOrWhiteSpace(strCompanyId))
+                List<string> companyIds = new List<string>();
+
+                companyIds = GetCompanyID(strClientIP);
+                foreach (var CompanyId in companyIds)
                 {
-                    MessageBox.Show("当前打卡机IP无对应的导入机构，无法上传，请检查配置文件！", "Error");
-                    return;
-                }
 
-                clientAtt.ImportClockInRdListByWSRealTime(strCompanyId, entTempList.ToArray(), dtFrom, dtTo, strClientIP, ref strMsg);
+                    if (string.IsNullOrWhiteSpace(CompanyId))
+                    {
+                        MessageBox.Show("当前打卡机IP无对应的导入机构，无法上传，请检查配置文件！", "Error");
+                        return;
+                    }
 
-                DialogResult dr =  MessageBox.Show("打卡记录上传完毕，是否需要检查"+dtFrom.ToString("yyyy-MM-dd").Substring(0, 7)+" 请假出差及外出?", "确认",MessageBoxButtons.YesNo);
-                    if (dr == DialogResult.Yes)
-                    { 
-                        string msg=string.Empty;
+                    DialogResult dr = MessageBox.Show("是否需要上传" +dtFrom.ToString("yyyy-MM-dd")
+                                + "至" + dtTo.ToString("yyyy-MM-dd") + " 的打卡记录?公司id：" + CompanyId, "确认", MessageBoxButtons.YesNo);
+                     if (dr == DialogResult.Yes)
+                     {
+                         clientAtt.ImportClockInRdListByWSRealTime(CompanyId, entTempList.ToArray(), dtFrom, dtTo, strClientIP, ref strMsg);
 
-                        clientAtt.UpdateAttendRecordByEvectionAndLeaveRd(strCompanyId, dtFrom.ToString("yyyy-MM-dd").Substring(0, 7));
-
-                        dr = MessageBox.Show("检查请假出差外出完毕，是否需要检查" + dtFrom.ToString("yyyy-MM-dd")
-                            + "至" + dtTo.ToString("yyyy-MM-dd") + "考勤异常?", "确认", MessageBoxButtons.YesNo);
+                         dr = MessageBox.Show("打卡记录上传完毕，是否需要检查" + dtFrom.ToString("yyyy-MM-dd").Substring(0, 7) + " 请假出差及外出?公司id：" + CompanyId, "确认", MessageBoxButtons.YesNo);
                          if (dr == DialogResult.Yes)
                          {
-                             clientAtt.CheckAbnormRdForCompanyByDate(strCompanyId, dtFrom, dtTo, ref msg);
-                         }
+                             string msg = string.Empty;
+                             clientAtt.UpdateAttendRecordByEvectionAndLeaveRd(CompanyId, dtFrom.ToString("yyyy-MM-dd").Substring(0, 7));
 
-                        MessageBox.Show("处理所有考勤完毕！");
-                    }
+                             dr = MessageBox.Show("检查请假出差外出完毕，是否需要检查" + dtFrom.ToString("yyyy-MM-dd")
+                                 + "至" + dtTo.ToString("yyyy-MM-dd") + "考勤异常? 公司id：" + CompanyId, "确认", MessageBoxButtons.YesNo);
+                             if (dr == DialogResult.Yes)
+                             {
+                                 clientAtt.CheckAbnormRdForCompanyByDate(CompanyId, dtFrom, dtTo, ref msg);
+                             }
+
+                             MessageBox.Show("处理所有考勤完毕！" + msg);
+                         }
+                     }
+
+                }
+
+            
             }
             catch (Exception ex)
             {
@@ -442,21 +454,31 @@ namespace SMT.AttendanceLogs.UI
         /// </summary>
         /// <param name="strCurIP">打开机IP地址</param>
         /// <param name="strCompanyId">公司ID</param>
-        private void GetCompanyID(string strCurIP, ref string strCompanyId)
+        private List<string> GetCompanyID(string strCurIP)
         {
-            if (strImportCompanys.Count() == 0)
+            List<string> companyIds = new List<string>();
+            try
             {
-                return;
-            }
-
-            foreach (string companyID in strImportCompanys)
-            {
-                if (companyID.Contains(strCurIP))
+                if (strImportCompanys.Count() == 0)
                 {
-                    strCompanyId = companyID.Replace("(" + strCurIP + ")", string.Empty);
-                    break;
+                    MessageBox.Show(DateTime.Now.ToString() + "，当前打卡机IP为：" + strCurIP + "无对应的公司，请检查配置项(Key = companyID)是否存在");
+                    return companyIds;
+                }
+
+                foreach (string companyID in strImportCompanys)
+                {
+                    if (companyID.Contains(strCurIP))
+                    {
+                        string strCompanyId = companyID.Replace("(" + strCurIP + ")", string.Empty);
+                        companyIds.Add(strCompanyId);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return companyIds;
         }
 
 
