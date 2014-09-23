@@ -105,7 +105,7 @@ namespace SMT.SaaS.OA.UI.UserControls
         /// <param name="e"></param>
         void BusinessApplicationsForm_Loaded(object sender, RoutedEventArgs e)
         {
-            RefreshUI(RefreshedTypes.ShowProgressBar);//打开进度圈
+            //RefreshUI(RefreshedTypes.ShowProgressBar);//打开进度圈
             //organClient.GetALLCompanyViewAsync("");
             //2013/3/27停止加载所有组织架构，直接加载出差业务数据
             Travelmanagement.GetAccordingToBusinesstripIdCheckAsync(businesstrID);
@@ -155,7 +155,7 @@ namespace SMT.SaaS.OA.UI.UserControls
 
                 if (actions == FormTypes.New)//新增
                 {
-                    RefreshUI(RefreshedTypes.HideProgressBar);//停止进度圈
+                    //RefreshUI(RefreshedTypes.HideProgressBar);//停止进度圈
 
                     TravelRequestForm TravelapplicationForm = new TravelRequestForm(FormTypes.New, "");
                     TravelapplicationForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
@@ -168,7 +168,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                 }
                 else if (actions == FormTypes.Edit)
                 {
-                    RefreshUI(RefreshedTypes.HideProgressBar);//停止进度圈
+                    //RefreshUI(RefreshedTypes.HideProgressBar);//停止进度圈
 
                     //TravelRequestForm TravelapplicationForm = new TravelRequestForm(FormTypes.Edit, businesstrID);
                     //2012-9-21 ljx 
@@ -199,7 +199,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                 }
                 else if (actions == FormTypes.Browse)
                 {
-                    RefreshUI(RefreshedTypes.HideProgressBar);//停止进度圈
+                    //RefreshUI(RefreshedTypes.HideProgressBar);//停止进度圈
 
                     TravelRequestForm TravelapplicationForm = new TravelRequestForm(FormTypes.Browse, businesstrID);
                     TravelapplicationForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
@@ -225,7 +225,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                 }
                 else if (actions == FormTypes.Audit)
                 {
-                    RefreshUI(RefreshedTypes.HideProgressBar);//停止进度圈
+                    //RefreshUI(RefreshedTypes.HideProgressBar);//停止进度圈
 
                     TravelRequestForm TravelapplicationForm = new TravelRequestForm(FormTypes.Audit, businesstrID);
                     TravelapplicationForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
@@ -251,7 +251,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                 }
                 else
                 {
-                    RefreshUI(RefreshedTypes.HideProgressBar);//停止进度圈
+                    //RefreshUI(RefreshedTypes.HideProgressBar);//停止进度圈
 
                     if (traverlCheck != "3"&& !isAlterTrave)
                     {
@@ -298,6 +298,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             }
             catch (Exception ex)
             {
+                RefreshUI(RefreshedTypes.HideProgressBar);
                 SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("打开出差form，获取出差异常：" + ex.ToString());
             }
         }

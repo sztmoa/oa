@@ -25,7 +25,7 @@ namespace SMT.SaaS.OA.Services
         {
             // 在此处添加操作实现
             //Type  bb = strEntityName
-            Tracer.Debug("OAUpdateCheckServices服务调用了UpdateCheckState，调用了：" + strEntityName +"单据号：" + EntityKeyValue +System.DateTime.Now.ToString() + "\n");
+            Tracer.Debug("OAUpdateCheckServices服务调用了UpdateCheckState，调用了：" + strEntityName + "单据号：" + EntityKeyValue + " CheckState:" + CheckState + "\n");
             CommBll<T_OA_AGENTSET> Combll = new CommBll<T_OA_AGENTSET>();
             return Combll.UpdateCheckState(strEntityName, EntityKeyName, EntityKeyValue, CheckState);
             

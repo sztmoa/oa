@@ -140,6 +140,10 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                         {
                            // cmbSolution.ItemsSource = null;
                         }
+                    }else
+                    {
+                        DtGridArea.ItemsSource = null;
+                        DtGridCity.ItemsSource = null;
                     }
                 }
             }
@@ -147,13 +151,27 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             {
                 Utility.SetLogAndShowLog(ex.ToString());
             }
+            finally
+            {
+                this.RefreshUI(RefreshedTypes.HideProgressBar);
+            }
         }
-
+        public event UIRefreshedHandler OnUIRefreshed;
+        public void RefreshUI(RefreshedTypes type)
+        {
+            if (OnUIRefreshed != null)
+            {
+                UIRefreshedEventArgs args = new UIRefreshedEventArgs();
+                args.RefreshedType = type;
+                OnUIRefreshed(this, args);
+            }
+        }
         void client_GetTravelSolutionFlowCompleted(object sender, GetTravelSolutionFlowCompletedEventArgs e)
         {
 
             try
             {
+                this.RefreshUI(RefreshedTypes.ShowProgressBar);
                 if (e.Result != null)
                 {
                     travelObj = e.Result.ToList();
@@ -541,32 +559,6 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-
-            //if (DtGrid.SelectedItems.Count > 0)
-            //{
-            //    T_OA_AREAALLOWANCE temp = DtGrid.SelectedItem as T_OA_AREAALLOWANCE;
-            //    temp.T_OA_AREADIFFERENCE = new T_OA_AREADIFFERENCE();
-            //    temp.T_OA_AREADIFFERENCE.AREADIFFERENCEID = currentArea.AREADIFFERENCEID;
-
-
-            //    client.GetAreaAllowanceByIDAsync(temp.AREAALLOWANCEID);
-            //    if (allowance == null)
-            //    {
-            //        if (temp.AREAALLOWANCEID == null)
-            //        {
-            //            temp.AREAALLOWANCEID = Guid.NewGuid().ToString();
-            //        }
-            //        temp.CREATEUSERID = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID;
-            //        temp.CREATEDATE = System.DateTime.Now;
-            //        client.AreaAllowanceADDAsync(temp);
-            //    }
-            //    else
-            //    {
-            //        temp.UPDATEUSERID = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID;
-            //        temp.UPDATEDATE = System.DateTime.Now;
-            //        client.AreaAllowanceUpdateAsync(temp);
-            //    }
-            //}
             client.AreaAllowanceAsync(allowanceList, solutionsObj.TRAVELSOLUTIONSID);
 
         }

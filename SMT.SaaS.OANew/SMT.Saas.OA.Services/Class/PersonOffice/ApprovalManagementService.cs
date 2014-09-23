@@ -377,6 +377,21 @@ namespace SMT.SaaS.OA.Services
                 return approvalBll.GetApprovalTypesByCompanyIDs(companies);
             }
         }
+
+        /// <summary>
+        /// 根据员工ID获取对应的事项审批类型
+        /// 包括兼职的情况
+        /// </summary>
+        /// <param name="employeeID"></param>
+        /// <returns></returns>
+        [OperationContract]
+        public List<V_ApprovalType> GetApprovalTypesByUserID(string employeeID)
+        {
+            using (ApprovalManagementBll approvalBll = new ApprovalManagementBll())
+            {
+                return approvalBll.GetApprovalTypesByUserID(employeeID);
+            }
+        }
         #endregion
 
        

@@ -1138,5 +1138,65 @@ namespace SMT.SaaS.OA.Services
                 }
             }
         }
+
+        #region 公司发文查看管理
+        /// <summary>
+        /// 查看公司发文功能
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="sort"></param>
+        /// <param name="filterString"></param>
+        /// <param name="paras"></param>
+        /// <param name="pageCount"></param>
+        /// <param name="checkState"></param>
+        /// <param name="loginUserInfo"></param>
+        /// <param name="recordsTotal"></param>
+        /// <returns></returns>
+         [OperationContract]
+         public List<V_BrowseSendDoc> GetSendDocInfosListToBrowse(int pageIndex, int pageSize, string sort, string filterString, object[] paras, ref int pageCount, string checkState, LoginUserInfo loginUserInfo, ref int recordsTotal)
+         {
+             List<V_BrowseSendDoc> CompanyDocList = new List<V_BrowseSendDoc>();
+             try
+             {
+                 using (BumfCompanySendDocManagementBll SendDocBll = new BumfCompanySendDocManagementBll())
+                 {                     
+                     CompanyDocList = SendDocBll.GetSendDocInfosListToBrowse(pageIndex, pageSize, sort, filterString, paras, ref  pageCount, checkState, loginUserInfo.userID, ref recordsTotal);                    
+                     return CompanyDocList ;
+                 }
+             }
+             catch (Exception ex)
+             {
+                 Tracer.Debug("GetSendDocInfosListToBrowse:" + System.DateTime.Now.ToString("d") + " " + ex.ToString());                 
+             }
+             return CompanyDocList;
+         }
+
+        /// <summary>
+        /// 获取某条公司发文的人员
+        /// </summary>
+        /// <param name="sendDocID"></param>
+        /// <param name="employeeName"></param>
+        /// <returns></returns>
+        [OperationContract]
+         public List<V_BrowseSendDocEmployee> GetViewEmployees(string sendDocID, string employeeName)
+         {
+             List<V_BrowseSendDocEmployee> listEmployees = new List<V_BrowseSendDocEmployee>();
+             try
+             {
+                 using (ViewSendDocBLL SendDocBll = new ViewSendDocBLL())
+                 {
+                     listEmployees = SendDocBll.GetViewEmployees(sendDocID, employeeName);
+                     return listEmployees;
+                 }
+             }
+             catch (Exception ex)
+             {
+                 Tracer.Debug("GetViewEmployees:" + System.DateTime.Now.ToString("d") + " " + ex.ToString());
+             }
+             return listEmployees;
+         }
+        #endregion
+
     }
 }

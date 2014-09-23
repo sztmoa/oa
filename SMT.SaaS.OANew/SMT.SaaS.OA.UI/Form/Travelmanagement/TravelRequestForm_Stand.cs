@@ -64,8 +64,6 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             }
             finally
             {
-                RefreshUI(RefreshedTypes.HideProgressBar);
-
                 if (formType != FormTypes.New && Master_Golbal.T_OA_BUSINESSTRIPDETAIL.Count > 0)
                 {
                     BindDataGrid(Master_Golbal.T_OA_BUSINESSTRIPDETAIL);
@@ -74,6 +72,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                 {
                     RefreshUI(RefreshedTypes.All);
                 }
+                RefreshUI(RefreshedTypes.HideProgressBar);
             }
         }
 
@@ -301,6 +300,31 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         private T_OA_AREAALLOWANCE GetAllowanceByCityValue(string CityValue)
         {
             CityValue = CityValue.Replace(",", "");
+            if (areaallowance == null || areacitys == null) return null;
+            foreach(var qa in areaallowance)
+            {
+                if (string.IsNullOrEmpty(qa.T_OA_AREADIFFERENCE.AREADIFFERENCEID))
+                {
+
+                }
+                if (string.IsNullOrEmpty(qa.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID))
+                {
+
+                }
+            }
+
+            foreach(var qb in areacitys )
+            {
+                if(string.IsNullOrEmpty(qb.T_OA_AREADIFFERENCE.AREADIFFERENCEID))
+                {
+
+                }
+                if(string.IsNullOrEmpty(qb.CITY))
+                {
+
+                }
+            }
+
             var q = from ent in areaallowance
                     join ac in areacitys on ent.T_OA_AREADIFFERENCE.AREADIFFERENCEID equals ac.T_OA_AREADIFFERENCE.AREADIFFERENCEID
                     where ac.CITY == CityValue && ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == travelsolutions_Golbal.TRAVELSOLUTIONSID

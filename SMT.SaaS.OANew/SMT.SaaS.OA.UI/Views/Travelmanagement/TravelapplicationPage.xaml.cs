@@ -322,7 +322,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             //Utility.CreateFormFromMVC("113a24a8-1125-4209-be64-ce21915930a7"
             //   , "SMT.SaaS.OA.UI.UserControls.BusinessApplicationsForm", "Edit");
 
-            //Utility.CreateFormFromEngine("86dd2947-30e7-4a1e-b649-83ae194e32fb"
+            //Utility.CreateFormFromEngine("1f49fd17-3f1c-442b-9cb1-aecddb82a62c"
             //    , "SMT.SaaS.OA.UI.UserControls.BusinessApplicationsForm", "Edit");
             //return;
             //Utility.CreateFormFromEngine("a7eb1928-c4a9-442d-82a0-2d57ee4cd87a", "SMT.SaaS.OA.UI.UserControls.BusinessApplicationsForm", "VIEW"); return;
@@ -332,7 +332,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             AddWin.ParentEntityBrowser = browser;
             browser.RemoveSMTLoading();
             browser.MinWidth = 980;
-            browser.MinHeight = 380;
+            browser.MinHeight = 445;
             browser.TitleContent = "出差申请";
             browser.ReloadDataEvent += new EntityBrowser.refreshGridView(browser_ReloadDataEvent);
             browser.Show<string>(DialogMode.Default, Common.ParentLayoutRoot, "", (result) => { }, true);

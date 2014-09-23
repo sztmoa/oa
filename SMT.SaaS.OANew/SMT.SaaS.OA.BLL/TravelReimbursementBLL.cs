@@ -278,12 +278,15 @@ namespace SMT.SaaS.OA.BLL
         public bool UpdateTravelReimbursement(T_OA_TRAVELREIMBURSEMENT TravelReimbursementUpdate, List<T_OA_REIMBURSEMENTDETAIL> portDetail, string FormType)
         {
             bool returnStr = true;
+            Tracer.Debug("UpdateTravelReimbursement formid:" + TravelReimbursementUpdate .TRAVELREIMBURSEMENTID
+                + " CheckState:"+TravelReimbursementUpdate.CHECKSTATE
+                + " 单号：" + TravelReimbursementUpdate.NOBUDGETCLAIMS);
             dal.BeginTransaction();
             try
             {
                 trdal = new TravelReimbursementDAL();
                 var entity = dal.GetObjects<T_OA_TRAVELREIMBURSEMENT>().Where(s => s.TRAVELREIMBURSEMENTID == TravelReimbursementUpdate.TRAVELREIMBURSEMENTID).FirstOrDefault();//出差报销主表
-
+                Tracer.Debug("UpdateTravelReimbursement11 CheckState:" + entity.CHECKSTATE);
                 if (entity == null)
                 {
                     return false;
@@ -343,6 +346,7 @@ namespace SMT.SaaS.OA.BLL
                     //只更新状态
                     //entity.CHECKSTATE = TravelReimbursementUpdate.CHECKSTATE;
                     entity.UPDATEDATE = DateTime.Now;
+                    Tracer.Debug("UpdateTravelReimbursement11 entity.CHECKSTATE == CheckStates.Approving CheckState:" + entity.CHECKSTATE);
                     int i = Update(entity);
                     if (i > 0)
                     {
@@ -361,6 +365,11 @@ namespace SMT.SaaS.OA.BLL
                 dal.RollbackTransaction();
                 Tracer.Debug("出差报销TravelReimbursementBLL-UpdateTravelReimbursement" + System.DateTime.Now.ToString() + " " + ex.ToString());
                 return false;
+            }
+            finally
+            {
+                var entity = dal.GetObjects<T_OA_TRAVELREIMBURSEMENT>().Where(s => s.TRAVELREIMBURSEMENTID == TravelReimbursementUpdate.TRAVELREIMBURSEMENTID).FirstOrDefault();//出差报销主表
+                Tracer.Debug("UpdateTravelReimbursement11 完成 CheckState:" + entity.CHECKSTATE);
             }
             return returnStr;
         }
@@ -420,20 +429,23 @@ namespace SMT.SaaS.OA.BLL
                     int i = Update(Master);
                     if (i > 0)
                     {
-                        Tracer.Debug("事务中 引擎更新出差报销状态成功：出差报销id：" + BorrowID + " 审核状态：" + StrCheckState);
+                        var strCHECKSTATE = (from ent in dal.GetObjects<T_OA_TRAVELREIMBURSEMENT>()
+                                             where ent.TRAVELREIMBURSEMENTID == BorrowID
+                                             select ent.CHECKSTATE).FirstOrDefault();
+                        Tracer.Debug("事务中 引擎更新出差报销状态成功：出差报销id：" + BorrowID + " 流程传过来的审核状态：" + StrCheckState + " 更新后出差报销状态" + strCHECKSTATE);
 
                         if (Master.CHECKSTATE == Convert.ToInt32(CheckStates.Approved).ToString())
                         {
                             #region 开始调用HR中考勤的数据
-                            Tracer.Debug("事务中 引擎开始更新出差报销状态：出差报销id：" + BorrowID + " 审核状态：" + StrCheckState);
+                            Tracer.Debug("事务中 引擎开始同步HR考勤记录：出差报销id：" + BorrowID);
                             try
                             {
                                 InsertAttenceRecord(Master);
                             }
                             catch (Exception ex)
                             {
-                                Tracer.Debug("事务回滚 调用HR中考勤的接口出现错误:" + ex.ToString());
-                                throw new Exception("事务回滚 调用HR中考勤的接口出现错误:" + ex.ToString());
+                                Tracer.Debug("调用HR中考勤的接口出现错误:" + ex.ToString());
+                                //throw new Exception("调用HR中考勤的接口出现错误:" + ex.ToString());
                             }
                             #endregion
                         }
@@ -454,14 +466,7 @@ namespace SMT.SaaS.OA.BLL
                 }
                 Tracer.Debug("事务确认成功：引擎更新出差报销，同步预算单，考勤记录成功！");
                 dal.CommitTransaction();
-                //更新元数据单号
-                //var BUSINESSTRIPID = (from ent in dal.GetObjects<T_OA_TRAVELREIMBURSEMENT>().Include("T_OA_BUSINESSTRIP")
-                //                      where ent.TRAVELREIMBURSEMENTID == Master.TRAVELREIMBURSEMENTID
-                //                      select ent).First().T_OA_BUSINESSTRIP.BUSINESSTRIPID;
-                Tracer.Debug("88888888888888888888888888888888");
-
-                //UpdateEntityXMLNumber(Master.TRAVELREIMBURSEMENTID
-                //    , "自动生成", Master.NOBUDGETCLAIMS);
+                //更新元数据单号已改为UI 调用ZgentService 方法。
             }
             catch (Exception ex)
             {
@@ -469,6 +474,13 @@ namespace SMT.SaaS.OA.BLL
                 //科目：业务差旅费,费用类型：公共部门费用，可用额度:-34863.50,您报销的额度超出此科目预算可用额度，请联系公司财务增加额度。
                 dal.RollbackTransaction();
                 throw ex;
+            }
+            finally
+            {
+                var strCHECKSTATE = (from ent in dal.GetObjects<T_OA_TRAVELREIMBURSEMENT>()
+                              where ent.TRAVELREIMBURSEMENTID == BorrowID
+                              select ent.CHECKSTATE).FirstOrDefault();
+                Tracer.Debug("UpdateTravelReimbursementFromEngine完成 出差报销表最终审核状态：" + strCHECKSTATE);
             }
             return 1;
         }

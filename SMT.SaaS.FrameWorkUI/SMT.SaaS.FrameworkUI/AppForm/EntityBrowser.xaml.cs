@@ -378,10 +378,10 @@ namespace SMT.SaaS.FrameworkUI
 
         public void HideProgressBars()
         {
-            if (ProgressBarNumber > 0) ProgressBarNumber += -1;
-            PARENT.Visibility = Visibility.Collapsed;
-            //SmtProgressBar.Visibility = Visibility.Collapsed;
-            SmtLoading.Stop();
+            //if (ProgressBarNumber > 0) ProgressBarNumber += -1;
+            //PARENT.Visibility = Visibility.Collapsed;
+            ////SmtProgressBar.Visibility = Visibility.Collapsed;
+            //SmtLoading.Stop();
         }
         #endregion
 

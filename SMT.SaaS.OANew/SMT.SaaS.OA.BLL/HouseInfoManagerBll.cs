@@ -306,7 +306,7 @@ namespace SMT.SaaS.OA.BLL
                                      Formtype = c.T_OA_SENDDOCTYPE.SENDDOCTYPE,
                                      FormDate = (DateTime)c.PUBLISHDATE
                                  };
-
+                companydoc = companydoc.Where(s => !"爱施德".Contains(s.FormTitle));
                 var entity = notice.Union(house).Union(companydoc);
                 entity = entity.OrderByDescending(c => c.FormDate);
 
@@ -451,9 +451,22 @@ namespace SMT.SaaS.OA.BLL
                 List<V_SystemNotice> newNotices = new List<V_SystemNotice>();
                 var entity = Utility.PagerMobile<V_SystemNotice>(Compaydoc, pageIndex, pageSize, ref pageCount, ref DataCount);
                 //entity = entity.OrderByDescending(c => c.FormDate);
-                newNotices = entity.ToList();
+                List<V_SystemNotice> listReturns = new List<V_SystemNotice>();
+                Compaydoc.ToList().ForEach(s =>
+                {
+                    var entExist = from ent in listReturns
+                                   where ent.FormId == s.FormId
+                                   select ent;
+                    if (entExist.Count() == 0)
+                    {
+                        listReturns.Add(s);
+                    }
+                });
+                listReturns = listReturns.OrderByDescending(s=>s.FormDate).ToList();
+                //newNotices = entity.ToList();
                 if (topDocs.Count() > 0)
                 {
+                    
                     var CompayTopdoc = (from ent in topDocs
                                      select new V_SystemNotice
                                      {
@@ -466,15 +479,27 @@ namespace SMT.SaaS.OA.BLL
                                      }).ToList().Distinct().AsQueryable().OrderByDescending(c => c.FormDate);
                     int intCount = 0;
                     foreach (var singledoc in CompayTopdoc)
-                    {                        
-                        newNotices.Insert(intCount, singledoc);
-                        intCount++;
+                    {
+                        var entExist = from ent in listReturns
+                                       where ent.FormId == singledoc.FormId
+                                       select ent;
+                        if (entExist.Count() == 0)
+                        {
+                            listReturns.Insert(intCount, singledoc);
+                            intCount++;
+                        }
                     }
                 }
-
+                Tracer.Debug("newNotices记录1"+ newNotices.Count().ToString());
+                newNotices = newNotices.Where(s => !"爱施德".Contains(s.FormTitle)).ToList();
+                Tracer.Debug("newNotices记录2" + newNotices.Count().ToString());
+                newNotices = newNotices.Where(s => !s.FormTitle.Contains("爱施德")).ToList();
+                Tracer.Debug("newNotices记录3" + newNotices.Count().ToString());
                 //Tracer.Debug("公司发文中查询的内容-结果：" + entity.Count().ToString());
                 //return entity;
-                return newNotices.AsQueryable();
+                
+                //listReturns = listReturns.OrderByDescending
+                return listReturns.AsQueryable();
             }
             catch (Exception ex)
             {
@@ -546,6 +571,7 @@ namespace SMT.SaaS.OA.BLL
                         Tracer.Debug("房源管理HouseInfoManagerBll-GetHouseAndNoticeInfoToMobileNew结束时间转换出错：" + strEnd + " " + ex.ToString());
                     } 
                 }
+                Publishdoc = Publishdoc.Where(s => !"爱施德".Contains(s.doc.SENDDOCTITLE));
                 var Compaydoc = (from ent in Publishdoc
                                  select new V_SystemNotice
                                  {
@@ -568,7 +594,7 @@ namespace SMT.SaaS.OA.BLL
                     Compaydoc = Compaydoc.Where(s => s.FormDate >= dtStart && s.FormDate <= dtEnd).ToList().AsQueryable().OrderByDescending(c => c.FormDate);
                 }
                 //var entity = notice.Union(house).Union(companydoc);
-
+                
                 var entity = Utility.PagerMobile<V_SystemNotice>(Compaydoc, pageIndex, pageSize, ref pageCount, ref DataCount);
                 //entity = entity.OrderByDescending(c => c.FormDate);
 
@@ -647,6 +673,7 @@ namespace SMT.SaaS.OA.BLL
                                  };
 
                 //var entity = notice.Union(house).Union(companydoc);
+                companydoc = companydoc.Where(s => !"爱施德".Contains(s.FormTitle));
                 if (companydoc.Count() > 0)
                 {
                     var entity = companydoc.OrderByDescending(c => c.FormDate);

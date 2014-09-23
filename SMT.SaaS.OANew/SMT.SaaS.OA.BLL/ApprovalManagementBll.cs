@@ -176,7 +176,8 @@ namespace SMT.SaaS.OA.BLL
                         select ent;
                 if (!string.IsNullOrEmpty(approvalCode))
                 {
-                    q = q.Where(s=>s.APPROVALCODE.Contains(approvalCode));
+                    //q = q.Where(s=>s.APPROVALCODE.Contains(approvalCode));
+                    q = q.Where(s=>approvalCode.Contains(s.APPROVALCODE));
                 }
                 List<object> queryParas = new List<object>();
                 if (paras != null)
@@ -629,6 +630,156 @@ namespace SMT.SaaS.OA.BLL
                 Tracer.Debug("事项审批ApprovalManagementBll-GetApprovalTypeByCompanyandDepartmentid" + System.DateTime.Now.ToString() + " " + ex.ToString());
                 return null;
             }
+        }
+
+        /// <summary>
+        /// 根据员工ID获取对应的事项审批类型
+        /// 包括了兼职的情况
+        /// </summary>
+        /// <param name="employeeID"></param>
+        /// <returns></returns>
+        public List<V_ApprovalType> GetApprovalTypesByUserID(string employeeID)
+        {
+            List<V_ApprovalType> listTypes = new List<V_ApprovalType>();
+            try
+            {
+                //人事服务
+                SMT.SaaS.BLLCommonServices.PersonnelWS.PersonnelServiceClient employeeClient = new BLLCommonServices.PersonnelWS.PersonnelServiceClient();
+                //权限服务
+                SMT.SaaS.BLLCommonServices.PermissionWS.PermissionServiceClient permClient = new BLLCommonServices.PermissionWS.PermissionServiceClient();
+                SMT.SaaS.BLLCommonServices.PersonnelWS.V_EMPLOYEEDETAIL employeePost = new BLLCommonServices.PersonnelWS.V_EMPLOYEEDETAIL();
+                List<SMT.SaaS.BLLCommonServices.PermissionWS.V_Dictionary> listDicts = new List<BLLCommonServices.PermissionWS.V_Dictionary>();
+                List<string> listStrs = new List<string>();
+                //添加事项审批类型
+                listStrs.Add("TYPEAPPROVAL");
+                //获取事项审批类型集合
+                listDicts = permClient.GetDictionaryByCategoryArray(listStrs.ToArray()).ToList();
+                //获取员工岗位信息
+                employeePost = employeeClient.GetEmployeeDetailViewByID(employeeID);
+                //公司ID集合
+                List<string> companyIDs = new List<string>();
+                //公司字典
+                Dictionary<string,string> dictCompanys = new Dictionary<string,string>();
+                //部门字典
+                Dictionary<string, string> dictDeparts = new Dictionary<string,string>();
+                //部门ID集合
+                List<string> departIDs = new List<string>();
+                if (employeePost == null)
+                {
+                    V_ApprovalType approval = new V_ApprovalType();
+                    approval.APPROVALTYPENAME = "获取员工信息失败";
+                }
+                #region 设置公司ID、部门ID、公司字典、部门字典
+                employeePost.EMPLOYEEPOSTS.ToList().ForEach(s =>
+                {
+                    var entComs = from ent in companyIDs
+                                    where ent == s.CompanyID
+                                    select ent;
+                    if (entComs.Count() == 0)
+                    {
+                        companyIDs.Add(s.CompanyID);                        
+                        dictCompanys.Add(s.CompanyID,s.CompanyName);                        
+                    }
+                    var entDeparts = from ent in departIDs
+                                    where ent == s.DepartmentID
+                                    select ent;
+                    if (entDeparts.Count() == 0)
+                    {
+                        departIDs.Add(s.DepartmentID);
+                        dictDeparts.Add(s.DepartmentID,s.DepartmentName);
+                    }
+                });
+                #endregion
+                //员工所在公司或部门设置中包含的事项审批类型值集合(包括了父节点)
+                List<string> oldApprovals = new List<string>();
+                var ents = from ent in dal.GetObjects<T_OA_APPROVALTYPESET>()
+                           where (companyIDs.Contains(ent.ORGANIZATIONID) && ent.ORGANIZATIONTYPE == "0")
+                           || (departIDs.Contains(ent.ORGANIZATIONID) && ent.ORGANIZATIONTYPE == "1")
+                           select ent;
+                if (ents.Count() > 0)
+                {
+                    ents.ToList().ForEach(s => {
+                        var entExist = from ent in oldApprovals
+                                       where ent == s.TYPEAPPROVAL
+                                       select ent;
+                        if (entExist.Count() == 0)
+                        {
+                            oldApprovals.Add(s.TYPEAPPROVAL);
+                        }
+                    });
+                }
+                List<SMT.SaaS.BLLCommonServices.PermissionWS.V_Dictionary> listDictSeconds = new List<BLLCommonServices.PermissionWS.V_Dictionary>();
+                listDictSeconds = listDicts.Where(s=>oldApprovals.Contains(s.DICTIONARYVALUE.ToString())).ToList();
+                listDictSeconds.ForEach(s => {
+                    //过滤叶节点
+                    var entFather = from ent in listDictSeconds
+                                    where ent.FATHERID == s.DICTIONARYID
+                                    select ent;
+                    if (entFather.Count() == 0)
+                    {                        
+                        string dictValue = s.DICTIONARYVALUE.ToString();
+                        var entRange = from ent in ents
+                                       where ent.TYPEAPPROVAL == dictValue
+                                       select ent;
+                        if (entRange.Count() > 0)
+                        {
+                            entRange.ToList().ForEach(m => {
+                                V_ApprovalType approvalDict = new V_ApprovalType();
+                                approvalDict.APPROVALTYPE = s.DICTIONARYVALUE;
+                                approvalDict.APPROVALTYPENAME = s.DICTIONARYNAME;
+                                approvalDict.FATHERAPPROVALID = s.FATHERID;
+                                var entFathers = listDictSeconds.Where(n => n.DICTIONARYID == s.FATHERID).FirstOrDefault();
+                                if (entFathers != null)
+                                {
+                                    if (entFathers.DICTIONARYVALUE != null)
+                                    {
+                                        approvalDict.FATHERVALUE = entFathers.DICTIONARYVALUE.ToString();
+                                    }
+                                }
+                                if (m.ORGANIZATIONTYPE == "0")
+                                {
+                                    approvalDict.COMPANYID = m.ORGANIZATIONID;
+                                    var entDicts = from ent in dictCompanys
+                                                   where ent.Key == m.ORGANIZATIONID
+                                                   select ent;
+                                    if (entDicts.Count() > 0)
+                                    {
+                                        approvalDict.COMPANYNAME = entDicts.FirstOrDefault().Value;
+                                    }
+                                }
+                                else
+                                {
+                                    //如果是部门则给公司部门都赋值
+                                    //approvalDict.COMPANYID = m.ORGANIZATIONID;
+                                    var entComInfo = from ent in employeePost.EMPLOYEEPOSTS
+                                                     where ent.DepartmentID == m.ORGANIZATIONID
+                                                     select ent;
+                                    if (entComInfo.Count() > 0)
+                                    {
+                                        approvalDict.COMPANYID = entComInfo.FirstOrDefault().CompanyID;
+                                        approvalDict.COMPANYNAME = entComInfo.FirstOrDefault().CompanyName;
+                                    }
+                                    approvalDict.DEPARTMENTID = m.ORGANIZATIONID;
+                                    var entDicts = from ent in dictDeparts
+                                                   where ent.Key == m.ORGANIZATIONID
+                                                   select ent;
+                                    if (entDicts.Count() > 0)
+                                    {
+                                        approvalDict.DEPARTMENTNAME = entDicts.FirstOrDefault().Value;
+                                    }
+                                }
+                                listTypes.Add(approvalDict);
+                            });
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                Tracer.Debug("事项审批ApprovalManagementBll-GetApprovalTypesByUserID" + System.DateTime.Now.ToString() + " " + ex.ToString());                
+            }
+            listTypes = listTypes.OrderBy(s=>s.COMPANYID).OrderBy(s=>s.DEPARTMENTID).ToList();
+            return listTypes;
         }
 
 

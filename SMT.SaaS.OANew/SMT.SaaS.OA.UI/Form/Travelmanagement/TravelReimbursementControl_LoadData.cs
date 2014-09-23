@@ -31,14 +31,17 @@ namespace SMT.SaaS.OA.UI.UserControls
         {
             try
             {
+                
                 if (e.Error != null && !string.IsNullOrEmpty(e.Error.Message))
                 {
+                    RefreshUI(RefreshedTypes.HideProgressBar);
                     ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
                 }
                 else
                 {
                     if (e.Result == null)
                     {
+                        RefreshUI(RefreshedTypes.HideProgressBar);
                         ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
                         return;
                     }
@@ -137,15 +140,9 @@ namespace SMT.SaaS.OA.UI.UserControls
             }
             catch (Exception ex)
             {
+                RefreshUI(RefreshedTypes.HideProgressBar);
                 Logger.Current.Log(ex.Message, Category.Debug, Priority.Low);
                 ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
-            }
-            finally
-            {
-                if (InitFB == true)
-                {
-                    RefreshUI(RefreshedTypes.HideProgressBar);
-                }
             }
         }
         #endregion
@@ -160,9 +157,9 @@ namespace SMT.SaaS.OA.UI.UserControls
         {
             try
             {
-                RefreshUI(RefreshedTypes.HideProgressBar);
                 if (e.Error != null && !string.IsNullOrEmpty(e.Error.Message))
                 {
+                    RefreshUI(RefreshedTypes.HideProgressBar);
                     Utility.ShowCustomMessage(MessageTypes.Error, Utility.GetResourceStr("ERROR"), e.Error.Message);
                 }
                 if (e.Result != null)
@@ -172,6 +169,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                 }
                 else
                 {
+                    RefreshUI(RefreshedTypes.HideProgressBar);
                     ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), "您公司没有关联出差方案，请关联一套出差方案以便报销", Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
                 }
                 if (e.PlaneObj != null)
@@ -198,6 +196,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             }
             catch (Exception ex)
             {
+                RefreshUI(RefreshedTypes.HideProgressBar);
                 Logger.Current.Log(ex.Message, Category.Debug, Priority.Low);
                 ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
             }
@@ -224,6 +223,7 @@ namespace SMT.SaaS.OA.UI.UserControls
 
                 if (e.Error != null && !string.IsNullOrEmpty(e.Error.Message))
                 {
+                    RefreshUI(RefreshedTypes.HideProgressBar);
                     Utility.ShowCustomMessage(MessageTypes.Error, Utility.GetResourceStr("ERROR"), e.Error.Message);
 
                 }
@@ -252,6 +252,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             }
             catch (Exception ex)
             {
+                RefreshUI(RefreshedTypes.HideProgressBar);
                 Logger.Current.Log(ex.Message, Category.Debug, Priority.Low);
                 ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
             }

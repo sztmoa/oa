@@ -44,7 +44,7 @@
         </StackPanel>
         <data:DataGrid x:Name="List" Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="False"  
                        HeadersVisibility="None" BorderThickness="0"
-                           ItemsSource="{Binding Collection}"  IsReadOnly="True" VerticalAlignment="Stretch"  ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyleUP}" >
+                           ItemsSource="{Binding Collection,Mode=TwoWay}"  IsReadOnly="True" VerticalAlignment="Stretch"  ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyleUP}" >
             <data:DataGrid.Columns>
                 <data:DataGridTemplateColumn x:Name="filedown"    Header="文件名称"  Width="*" >
                     <data:DataGridTemplateColumn.CellTemplate>

@@ -29,8 +29,15 @@ namespace SMT.SaaS.OA.BLL
         protected static BllCommonPermissionServicesClient BllPermClient;
         protected static PersonnelServiceClient personClient;
         protected static MemcachedClient MemCacheClient;
+        public bool isForHuNanHangXing = false;
         public BaseBll()
         {
+             string isForHuNanHangXingSalary 
+                 = ConfigurationManager.AppSettings["isForHuNanHangXingSalary"];
+              if (isForHuNanHangXingSalary == "true")//试用期
+              {
+                  isForHuNanHangXing = true;
+              }
             //if (!string.IsNullOrEmpty(CommonUserInfo.EmployeeID))
             //{
             //    //dal.CurrentUserID = CommonUserInfo.EmployeeID;

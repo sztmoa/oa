@@ -424,23 +424,8 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                         #endregion
 
                         #region 获取出差方案，工具标准用来报销，及显示控件颜色
-                        //if (formType == FormTypes.Resubmit || formType == FormTypes.New || formType == FormTypes.Edit)
-                        //{
                             //重新提交获取出差方案
                             OaPersonOfficeClient.GetTravelSolutionByCompanyIDAsync(Master_Golbal.OWNERCOMPANYID, null, null);
-                        //}
-                        //else
-                        //{
-                        //    if (formType != FormTypes.New && Master_Golbal.T_OA_BUSINESSTRIPDETAIL.Count > 0)
-                        //    {
-                        //        BindDataGrid(Master_Golbal.T_OA_BUSINESSTRIPDETAIL);
-                        //    }
-                        //    RefreshUI(RefreshedTypes.HideProgressBar);
-                        //    if (Master_Golbal.CHECKSTATE != ((int)CheckStates.UnSubmit).ToString())
-                        //    {
-                        //        HideControl();
-                        //    }
-                        //}
                         #endregion
                     }
                     else
@@ -477,9 +462,12 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         {
             try
             {
+                
+              
                 travelsolutions_Golbal = new T_OA_TRAVELSOLUTIONS();
                 if (e.Error != null && !string.IsNullOrEmpty(e.Error.Message))
                 {
+                    RefreshUI(RefreshedTypes.HideProgressBar);
                     ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr(e.Error.Message), Utility.GetResourceStr("CONFIRM"), MessageIcon.Information);
                 }
                 if (e.Result != null)
@@ -505,13 +493,10 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             }
             catch (Exception ex)
             {
+                RefreshUI(RefreshedTypes.HideProgressBar);
                 Logger.Current.Log(ex.Message, Category.Debug, Priority.Low);
                 ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
             }
-            finally
-            {
-                RefreshUI(RefreshedTypes.HideProgressBar);
-              }
         }
 
         #endregion

@@ -140,7 +140,7 @@ namespace SMT.SaaS.OA.BLL
                 //    }
                 //}
                 var ents = from ent in dal.GetObjects()
-                           //where ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == strSoluid
+                           where ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == strSoluid
                            select ent;
 
                 if (!string.IsNullOrEmpty(filterString))

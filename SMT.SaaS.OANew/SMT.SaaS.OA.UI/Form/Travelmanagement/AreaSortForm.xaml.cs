@@ -52,6 +52,7 @@ namespace SMT.SaaS.OA.UI.UserControls
         {
             InitializeComponent();
             solutionsObj = travelObj;
+            txtTravelSolutionName.Text = travelObj.PROGRAMMENAME;
             this.Loaded += (o, e) =>
             {
                 #region 原来的

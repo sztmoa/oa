@@ -26,6 +26,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <validator:ValidatorManager x:Name="Group1"></validator:ValidatorManager>
@@ -63,6 +64,11 @@
         <TextBlock  Grid.Row="1" Grid.Column="0" Text="{Binding Converter={StaticResource ResourceConveter}, Source=CITY}" />
         <smt:SearchCity Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" 
             				 SelectClick="scSearchCity_SelectClick"  x:Name="scSearchCity"></smt:SearchCity>
+
+        <TextBlock   Grid.Column="0" Grid.Row="2" 
+            					Text="出差方案名：" Height="22" />
+
+        <TextBox x:Name="txtTravelSolutionName" Text="" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" IsReadOnly="True"/>
 
     </Grid>
 </smtLocal:BaseForm>

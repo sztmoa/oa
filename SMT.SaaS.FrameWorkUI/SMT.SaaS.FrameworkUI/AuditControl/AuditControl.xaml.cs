@@ -1058,7 +1058,7 @@ namespace SMT.SaaS.FrameworkUI.AuditControl
             {
                 EntityBrowser dt = this.Parent as EntityBrowser;
                 ComfirmWindow.ConfirmationBox("警告", strExceptionMsg, Utility.GetResourceStr("CONFIRMBUTTON"));
-                if (dt != null) dt.SmtProgressBar.Visibility = Visibility.Collapsed;
+                //if (dt != null) dt.SmtProgressBar.Visibility = Visibility.Collapsed;
                 return false;
                 //throw new Exception(strExceptionMsg);
             }

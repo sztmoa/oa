@@ -61,13 +61,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SMT.Foundation.Core">
-      <HintPath>..\..\..\SMT.SaaS.CommonDll\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Core.dll</HintPath>
+      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Core.dll</HintPath>
     </Reference>
     <Reference Include="SMT.Foundation.Log">
-      <HintPath>..\..\..\SMT.SaaS.CommonDll\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Log.dll</HintPath>
+      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Log.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SaaS.BLLCommonServices">
-      <HintPath>..\..\..\SMT.SaaS.CommonDll\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
+      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT_OA_EFModel">
+      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT_OA_EFModel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -125,7 +128,10 @@
     <Compile Include="LicenseManagementDal.cs" />
     <Compile Include="VehicleUseAppManageDal.cs" />
     <Compile Include="Views\V_AgentDataSet.cs" />
+    <Compile Include="Views\V_ApprovalType.cs" />
     <Compile Include="Views\V_ArchivesLending.cs" />
+    <Compile Include="Views\V_BrowseSendDoc.cs" />
+    <Compile Include="Views\V_BrowseSendDocEmployee.cs" />
     <Compile Include="Views\V_BumfCompanySendDoc.cs" />
     <Compile Include="Views\V_CityAllowance.cs" />
     <Compile Include="Views\V_CompanyDocNum.cs" />
@@ -212,12 +218,6 @@
     <None Include="Properties\DataSources\SMT_OA_EFModel.T_OA_SENDDOC.datasource" />
     <None Include="Properties\DataSources\SMT_OA_EFModel.T_OA_SENDDOCTEMPLATE.datasource" />
     <None Include="Properties\DataSources\SMT_OA_EFModel.T_OA_SENDDOCTYPE.datasource" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SMT_OA_EFModel\SMT_OA_EFModel.csproj">
-      <Project>{30D6706D-A200-4ED0-BBAA-3574E09F54D1}</Project>
-      <Name>SMT_OA_EFModel</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -23,7 +23,7 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <smt:ViewTitle x:Name="ViewTitles" Width="auto" VerticalAlignment="Top" Grid.Row="0"></smt:ViewTitle>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="Collapsed">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" >
             <TextBlock Text="选择方案" Margin="2,8,2,8"></TextBlock>
             <ComboBox Grid.Row="0" MinWidth="120" x:Name="cmbSolution" SelectionChanged="cmbSolution_SelectionChanged" Style="{StaticResource ComboBoxStyle}"/>
         </StackPanel>

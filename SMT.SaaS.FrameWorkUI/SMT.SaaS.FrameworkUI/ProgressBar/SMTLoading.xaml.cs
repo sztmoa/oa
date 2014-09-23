@@ -15,6 +15,7 @@ namespace SMT.SaaS.FrameworkUI
         /// </summary>
         public void Start()
         {
+            spinStBoard.Stop();
             spinStBoard.Begin();
             
             LayoutRoot.Visibility = Visibility.Visible;

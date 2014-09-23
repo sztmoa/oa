@@ -178,5 +178,19 @@ namespace SMT.SaaS.OA.Services
             return 1;
             //}
         }
+
+        /// <summary>
+        /// 删除事项审批模板
+        /// </summary>
+        /// <param name="IDs"></param>
+        /// <returns></returns>
+        [OperationContract]
+        public bool DeleteApporvalTempletsByIDs(List<string> IDs)
+        {            
+            using (ApprovalTempletManagementBll approvalBll = new ApprovalTempletManagementBll())
+            {
+                return approvalBll.DeleteApporvalTempletsByIDs(IDs);                
+            }
+        }
     }
 }

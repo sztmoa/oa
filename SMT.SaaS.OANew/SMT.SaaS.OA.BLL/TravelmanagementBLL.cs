@@ -237,7 +237,7 @@ namespace SMT.SaaS.OA.BLL
         public bool UpdateTravelmanagement(T_OA_BUSINESSTRIP TravelmanagementUpdate, List<T_OA_BUSINESSTRIPDETAIL> TraveDetail, string FormType,ref string message)
         {
             bool returnStr = true;
-            if (FormType == "isAlterTrave")//修改行程
+            if (FormType == "isAlterTrave" && !isForHuNanHangXing)//修改行程
             {
                 var ents = (from item in dal.GetObjects<T_OA_BUSINESSTRIPDETAIL>().Include("T_OA_BUSINESSTRIP")
                            where item.T_OA_BUSINESSTRIP.BUSINESSTRIPID == TravelmanagementUpdate.BUSINESSTRIPID

@@ -668,26 +668,78 @@ namespace SMT.SaaS.OA.BLL
         {
             try
             {
-                var differences = from ent in dal.GetObjects<T_OA_AREAALLOWANCE>().Include("T_OA_TRAVELSOLUTIONS")
-                                  where ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == solutionId
-                                  select ent;
+                //var differences = from ent in dal.GetObjects<T_OA_AREAALLOWANCE>().Include("T_OA_TRAVELSOLUTIONS")
+                //                  where ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == solutionId
+                //                  select ent;
 
-                if (differences.Count() > 0)
+                //if (differences.Count() > 0)
+                //{
+                //    var ents = from ent in dal.GetObjects<T_OA_AREACITY>().Include("T_OA_AREADIFFERENCE")
+                //               select ent;
+                //    if (ents.Count() > 0)
+                //    {
+                //        citys = ents.ToList();
+                //    }
+                //    if (citys.Count() > 0)
+                //    {
+                //        var allowances = from ent in dal.GetObjects<T_OA_AREAALLOWANCE>().Include("T_OA_AREADIFFERENCE").Include("T_OA_TRAVELSOLUTIONS")
+                //                         where ent.POSTLEVEL == postvalue
+                //                         select ent;
+
+                //        return allowances == null ? null : allowances.ToList();
+                //    }
+                //}
+                //return null;
+                //var cityAll2 = from ent in dal.GetObjects<T_OA_AREACITY>().Include("T_OA_AREADIFFERENCE")
+                //              where ent.T_OA_AREADIFFERENCE.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == solutionId
+                //              select ent;
+                //if (cityAll2.Count() > 0)
+                //{
+                //    citys = cityAll2.ToList();
+                //}
+                List<T_OA_AREAALLOWANCE> allowanceAll = new List<T_OA_AREAALLOWANCE>();
+
+                var cityAll = from ent in dal.GetObjects<T_OA_AREACITY>().Include("T_OA_AREADIFFERENCE")
+                              join b in dal.GetObjects<T_OA_AREAALLOWANCE>() on ent.T_OA_AREADIFFERENCE.AREADIFFERENCEID equals
+                              b.T_OA_AREADIFFERENCE.AREADIFFERENCEID
+                              where ent.T_OA_AREADIFFERENCE.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == solutionId
+                              && b.POSTLEVEL == postvalue
+                              select ent;
+                if(cityAll.Count()>0)
                 {
-                    var ents = from ent in dal.GetObjects<T_OA_AREACITY>().Include("T_OA_AREADIFFERENCE")
-                               select ent;
-                    if (ents.Count() > 0)
+                    citys = new List<T_OA_AREACITY>();
+                    foreach(var city in cityAll)
                     {
-                        citys = ents.ToList();
+                        if(!city.T_OA_AREADIFFERENCEReference.IsLoaded)
+                        {
+                            city.T_OA_AREADIFFERENCEReference.Load();
+                        }
+                        citys.Add(city);
                     }
-                    if (citys.Count() > 0)
-                    {
-                        var allowances = from ent in dal.GetObjects<T_OA_AREAALLOWANCE>().Include("T_OA_AREADIFFERENCE").Include("T_OA_TRAVELSOLUTIONS")
-                                         where ent.POSTLEVEL == postvalue
-                                         select ent;
+                }
 
-                        return allowances == null ? null : allowances.ToList();
-                    }
+                var allowances = from ent in dal.GetObjects<T_OA_AREAALLOWANCE>().Include("T_OA_AREADIFFERENCE").Include("T_OA_TRAVELSOLUTIONS")
+                                 join b in dal.GetObjects<T_OA_AREACITY>() on ent.T_OA_AREADIFFERENCE.AREADIFFERENCEID equals b.T_OA_AREADIFFERENCE.AREADIFFERENCEID
+                                 where ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == solutionId
+                                 && ent.POSTLEVEL == postvalue
+                                 select ent;
+
+                if (allowances.Count() > 0)
+                {
+                  foreach(var item in allowances)
+                  {
+                      if (!item.T_OA_AREADIFFERENCEReference.IsLoaded)
+                      {
+                          item.T_OA_AREADIFFERENCEReference.Load();
+                      }
+                      if (!item.T_OA_TRAVELSOLUTIONSReference.IsLoaded)
+                      {
+                          item.T_OA_TRAVELSOLUTIONSReference.Load();
+                      }
+                      allowanceAll.Add(item);
+                  }
+                  return allowanceAll;
+
                 }
                 return null;
             }

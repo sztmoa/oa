@@ -268,6 +268,63 @@ namespace SMT.SaaS.OA.BLL
             }
         }
 
+        /// <summary>
+        /// 根据模板ID集合删除模板信息
+        /// </summary>
+        /// <param name="Ids"></param>
+        /// <returns></returns>
+        public bool DeleteApporvalTempletsByIDs(List<string> Ids)
+        {
+            try
+            {
+                var entitys = (from ent in dal.GetTable()
+                               where  Ids.Contains(ent.APPROVALID)
+                               select ent);
+                if (entitys.Count() > 0)
+                {
+                    dal.BeginTransaction();
+                    foreach (var entity in entitys)
+                    {
+                        try
+                        {
+                            Utility.RefreshEntity(entity as System.Data.Objects.DataClasses.EntityObject);
+                            int i = dal.Delete(entity);
+                            if (i > 0)
+                            {
+                                PublicInterfaceWS.PublicServiceClient publicClient = new PublicInterfaceWS.PublicServiceClient();
+                                if (!publicClient.DeleteContent(entity.APPROVALID))
+                                {
+                                    dal.RollbackTransaction();
+                                    return false;
+                                } 
+                            }
+                            else
+                            {
+                                dal.RollbackTransaction();
+                                return false;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            dal.RollbackTransaction();
+                            return false;
+                            throw (ex);
+                        }
+                    }
+                    dal.CommitTransaction();
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                dal.RollbackTransaction();
+                Tracer.Debug("删除事项审批模板ApprovalTempletManagementBll-DeleteApprovalTemplet" + System.DateTime.Now.ToString() + " " + ex.ToString());
+                return false;
+            }
+        }
+
         public int UpdateApprovalTemplet(T_OA_APPROVALINFOTEMPLET ApprovalInfo)
         {
             int nRet = -1;
@@ -291,7 +348,9 @@ namespace SMT.SaaS.OA.BLL
                         user.TYPEAPPROVALONE = ApprovalInfo.TYPEAPPROVALONE;
                         user.TYPEAPPROVALTWO = ApprovalInfo.TYPEAPPROVALTWO;
                         user.TYPEAPPROVALTHREE = ApprovalInfo.TYPEAPPROVALTHREE;
+                        user.TEL = ApprovalInfo.TEL;
                     }
+
                     
                     user.UPDATEUSERID = ApprovalInfo.UPDATEUSERID;                    
                     user.CHECKSTATE = ApprovalInfo.CHECKSTATE;                    
