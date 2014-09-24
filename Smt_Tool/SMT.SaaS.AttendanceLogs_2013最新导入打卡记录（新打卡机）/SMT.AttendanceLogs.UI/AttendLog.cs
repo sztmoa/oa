@@ -61,7 +61,7 @@ namespace SMT.AttendanceLogs.UI
         private void btnConnect_Click(object sender, EventArgs e)
         {
             string strNewDevices = ConfigurationManager.AppSettings["newDevice"].ToString();
-            if (string.IsNullOrWhiteSpace(txtIP.Text) || string.IsNullOrWhiteSpace(txtPort.Text))
+            if (string.IsNullOrEmpty(txtIP.Text) || string.IsNullOrEmpty(txtPort.Text))
             {
                 MessageBox.Show("必须输入IP地址及其端口!", "Error");
                 return;
@@ -95,7 +95,7 @@ namespace SMT.AttendanceLogs.UI
                 iMachineNumber = 1;//In fact,when you are using the tcp/ip communication,this parameter will be ignored,that is any integer will all right.Here we use 1.
                 axCZKEM1.RegEvent(iMachineNumber, 65535);//Here you can register the realtime events that you want to be triggered(the parameters 65535 means registering all)
 
-                if (!string.IsNullOrWhiteSpace(strNewDevices))
+                if (!string.IsNullOrEmpty(strNewDevices))
                 {
                     if (strNewDevices.Contains(txtIP.Text))
                     {
@@ -175,7 +175,7 @@ namespace SMT.AttendanceLogs.UI
                         }
 
                         //根据员工指纹编号，取指定员工的打卡记录
-                        if (!string.IsNullOrWhiteSpace(txtFingerPrintID.Text))
+                        if (!string.IsNullOrEmpty(txtFingerPrintID.Text))
                         {
                             if (!txtFingerPrintID.Text.Contains(sdwEnrollNumber))
                             {
@@ -231,7 +231,7 @@ namespace SMT.AttendanceLogs.UI
                         }
 
                         //根据员工指纹编号，取指定员工的打卡记录
-                        if (!string.IsNullOrWhiteSpace(txtFingerPrintID.Text))
+                        if (!string.IsNullOrEmpty(txtFingerPrintID.Text))
                         {
                             if (!txtFingerPrintID.Text.Contains(idwEnrollNumber.ToString()))
                             {
@@ -297,7 +297,7 @@ namespace SMT.AttendanceLogs.UI
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtIP.Text.Trim()))
+                if (string.IsNullOrEmpty(txtIP.Text.Trim()))
                 {
                     MessageBox.Show("打卡机IP未输入，无法上传，请联系管理员！", "Error");
                     return;
@@ -328,11 +328,11 @@ namespace SMT.AttendanceLogs.UI
 
                 List<string> companyIds = new List<string>();
 
-                companyIds = GetCompanyID(strClientIP);
+                companyIds = GetCompanyID(txtIP.Text.Trim());
                 foreach (var CompanyId in companyIds)
                 {
 
-                    if (string.IsNullOrWhiteSpace(CompanyId))
+                    if (string.IsNullOrEmpty(CompanyId))
                     {
                         MessageBox.Show("当前打卡机IP无对应的导入机构，无法上传，请检查配置文件！", "Error");
                         return;
@@ -526,6 +526,12 @@ namespace SMT.AttendanceLogs.UI
             {
                 return "外网IP地址：unknown";
             }
+        }
+
+        private void btnEditOATravel_Click(object sender, EventArgs e)
+        {
+            TravelEditForm from = new TravelEditForm();
+            from.Show();
         }
     }
 }

@@ -32,6 +32,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtFingerPrintID = new System.Windows.Forms.TextBox();
+            this.lblState = new System.Windows.Forms.Label();
             this.lblFingerPrintID = new System.Windows.Forms.Label();
             this.lblDateTo = new System.Windows.Forms.Label();
             this.dpDateTo = new System.Windows.Forms.DateTimePicker();
@@ -42,13 +43,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnConnect = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblState = new System.Windows.Forms.Label();
+            this.btnGetGeneralLogData = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExport = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnUploadGeneralLogData = new System.Windows.Forms.Button();
-            this.btnGetGeneralLogData = new System.Windows.Forms.Button();
             this.lvLogs = new System.Windows.Forms.ListView();
             this.lvLogsch1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvLogsch2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -56,6 +56,7 @@
             this.lvLogsch4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEditOATravel = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -115,6 +116,16 @@
             this.txtFingerPrintID.Name = "txtFingerPrintID";
             this.txtFingerPrintID.Size = new System.Drawing.Size(296, 21);
             this.txtFingerPrintID.TabIndex = 17;
+            // 
+            // lblState
+            // 
+            this.lblState.AutoSize = true;
+            this.lblState.ForeColor = System.Drawing.Color.Crimson;
+            this.lblState.Location = new System.Drawing.Point(200, 97);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(95, 12);
+            this.lblState.TabIndex = 2;
+            this.lblState.Text = "连接状态:未连接";
             // 
             // lblFingerPrintID
             // 
@@ -201,18 +212,29 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "IP地址：";
             // 
-            // lblState
+            // btnGetGeneralLogData
             // 
-            this.lblState.AutoSize = true;
-            this.lblState.ForeColor = System.Drawing.Color.Crimson;
-            this.lblState.Location = new System.Drawing.Point(200, 97);
-            this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(95, 12);
-            this.lblState.TabIndex = 2;
-            this.lblState.Text = "连接状态:未连接";
+            this.btnGetGeneralLogData.Location = new System.Drawing.Point(166, 179);
+            this.btnGetGeneralLogData.Name = "btnGetGeneralLogData";
+            this.btnGetGeneralLogData.Size = new System.Drawing.Size(137, 23);
+            this.btnGetGeneralLogData.TabIndex = 1;
+            this.btnGetGeneralLogData.Text = "下载记录";
+            this.btnGetGeneralLogData.UseVisualStyleBackColor = true;
+            this.btnGetGeneralLogData.Click += new System.EventHandler(this.btnGetGeneralLogData_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(314, 184);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 12);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "从考勤机获取打卡记录。";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEditOATravel);
             this.groupBox1.Controls.Add(this.btnExport);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.btnUploadGeneralLogData);
@@ -246,16 +268,6 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "导出为Excel文件。";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(314, 184);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 12);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "从考勤机获取打卡记录。";
-            // 
             // btnUploadGeneralLogData
             // 
             this.btnUploadGeneralLogData.Location = new System.Drawing.Point(168, 261);
@@ -265,16 +277,6 @@
             this.btnUploadGeneralLogData.Text = "上传记录";
             this.btnUploadGeneralLogData.UseVisualStyleBackColor = true;
             this.btnUploadGeneralLogData.Click += new System.EventHandler(this.btnUploadGeneralLogData_Click);
-            // 
-            // btnGetGeneralLogData
-            // 
-            this.btnGetGeneralLogData.Location = new System.Drawing.Point(166, 179);
-            this.btnGetGeneralLogData.Name = "btnGetGeneralLogData";
-            this.btnGetGeneralLogData.Size = new System.Drawing.Size(137, 23);
-            this.btnGetGeneralLogData.TabIndex = 1;
-            this.btnGetGeneralLogData.Text = "下载记录";
-            this.btnGetGeneralLogData.UseVisualStyleBackColor = true;
-            this.btnGetGeneralLogData.Click += new System.EventHandler(this.btnGetGeneralLogData_Click);
             // 
             // lvLogs
             // 
@@ -330,6 +332,16 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // btnEditOATravel
+            // 
+            this.btnEditOATravel.Location = new System.Drawing.Point(23, 261);
+            this.btnEditOATravel.Name = "btnEditOATravel";
+            this.btnEditOATravel.Size = new System.Drawing.Size(93, 23);
+            this.btnEditOATravel.TabIndex = 9;
+            this.btnEditOATravel.Text = "修改出差";
+            this.btnEditOATravel.UseVisualStyleBackColor = true;
+            this.btnEditOATravel.Click += new System.EventHandler(this.btnEditOATravel_Click);
+            // 
             // AttendLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -384,6 +396,7 @@
         private System.Windows.Forms.Label lblFingerPrintID;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnEditOATravel;
     }
 }
 

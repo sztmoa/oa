@@ -1,18 +1,34 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.AttendanceLogs.UI", "SMT.AttendanceLogs.UI\SMT.AttendanceLogs.UI.csproj", "{F2B6990A-7A68-46CC-974A-50E7789A2564}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT_OA_EFModel", "..\..\SMT.SaaS.OANew\SMT_OA_EFModel\SMT_OA_EFModel.csproj", "{30D6706D-A200-4ED0-BBAA-3574E09F54D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2B6990A-7A68-46CC-974A-50E7789A2564}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{F2B6990A-7A68-46CC-974A-50E7789A2564}.Debug|x86.ActiveCfg = Debug|x86
 		{F2B6990A-7A68-46CC-974A-50E7789A2564}.Debug|x86.Build.0 = Debug|x86
+		{F2B6990A-7A68-46CC-974A-50E7789A2564}.Release|Any CPU.ActiveCfg = Release|x86
 		{F2B6990A-7A68-46CC-974A-50E7789A2564}.Release|x86.ActiveCfg = Release|x86
 		{F2B6990A-7A68-46CC-974A-50E7789A2564}.Release|x86.Build.0 = Release|x86
+		{30D6706D-A200-4ED0-BBAA-3574E09F54D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30D6706D-A200-4ED0-BBAA-3574E09F54D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30D6706D-A200-4ED0-BBAA-3574E09F54D1}.Debug|x86.ActiveCfg = Debug|x86
+		{30D6706D-A200-4ED0-BBAA-3574E09F54D1}.Debug|x86.Build.0 = Debug|x86
+		{30D6706D-A200-4ED0-BBAA-3574E09F54D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30D6706D-A200-4ED0-BBAA-3574E09F54D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30D6706D-A200-4ED0-BBAA-3574E09F54D1}.Release|x86.ActiveCfg = Release|x86
+		{30D6706D-A200-4ED0-BBAA-3574E09F54D1}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

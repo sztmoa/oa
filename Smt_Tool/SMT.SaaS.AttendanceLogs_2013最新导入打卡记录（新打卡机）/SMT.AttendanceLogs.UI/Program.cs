@@ -15,7 +15,7 @@ namespace SMT.AttendanceLogs.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AttendLog());
+            Application.Run(new FormTravelSolution());
         }
     }
 }
