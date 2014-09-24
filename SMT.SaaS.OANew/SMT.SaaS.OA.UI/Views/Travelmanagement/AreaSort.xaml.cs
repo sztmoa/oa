@@ -95,6 +95,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
 
         void client_GetAreaCityByCategoryCompleted(object sender, GetAreaCityByCategoryCompletedEventArgs e)
         {
+            this.HideProgressBasePage();
             if (e.Error != null)
             {
                 Utility.ShowCustomMessage(MessageTypes.Error, Utility.GetResourceStr("ERROR"), Utility.GetResourceStr(e.Error.Message));
@@ -112,10 +113,22 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         {
             try
             {
+                allowQueryAreaCity = true;
+                this.RefreshUI(RefreshedTypes.HideProgressBar);
                 if (!e.Cancelled)
                 {
                     if (e.Result != null)
                     {
+                        if (e.ListAREADIFFERENCE.Count() > 0)
+                        {
+                            DtGridArea.ItemsSource = e.ListAREADIFFERENCE;
+                            ShowProgressBasePage();
+                            client.GetAreaCityByCategoryAsync(e.ListAREADIFFERENCE.FirstOrDefault().AREADIFFERENCEID);
+                        }else
+                        {
+                            DtGridArea.ItemsSource = null;
+                            DtGridCity.ItemsSource = null;
+                        }
                         if (e.Result.Count() > 0)
                         {
                             e.Result.ToList().ForEach(item =>
@@ -130,15 +143,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                                 Sport.UPDATEUSERID = item.UPDATEUSERID;
                                 Sport.EntityKey = item.EntityKey;
                             });
-                            if (e.ListAREADIFFERENCE.Count() > 0)
-                            {
-                                if(DtGridArea.ItemsSource==null) DtGridArea.ItemsSource = e.ListAREADIFFERENCE;
-                                client.GetAreaCityByCategoryAsync(e.ListAREADIFFERENCE.FirstOrDefault().AREADIFFERENCEID);
-                            }
-                        }
-                        else
-                        {
-                           // cmbSolution.ItemsSource = null;
+                           
                         }
                     }else
                     {
@@ -150,10 +155,6 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             catch (Exception ex)
             {
                 Utility.SetLogAndShowLog(ex.ToString());
-            }
-            finally
-            {
-                this.RefreshUI(RefreshedTypes.HideProgressBar);
             }
         }
         public event UIRefreshedHandler OnUIRefreshed;
@@ -171,16 +172,16 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
 
             try
             {
-                this.RefreshUI(RefreshedTypes.ShowProgressBar);
+                HideProgressBasePage();
                 if (e.Result != null)
                 {
                     travelObj = e.Result.ToList();
-                    BindDataGrid(e.Result.ToList(), e.pageCount);
-                    client.GetQueryPlanCityAsync(solutionsObj.TRAVELSOLUTIONSID, null);
+                    //绑定会触发change事件，会查城市分类数据
+                    BindcmbSolution(e.Result.ToList(), e.pageCount);
                 }
                 else
                 {
-                    BindDataGrid(null, 0);
+                    BindcmbSolution(null, 0);
                 }
             }
             catch (Exception ex)
@@ -190,7 +191,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             }
         }
 
-        private void BindDataGrid(List<T_OA_TRAVELSOLUTIONS> obj, int pageCount)
+        private void BindcmbSolution(List<T_OA_TRAVELSOLUTIONS> obj, int pageCount)
         {
 
             if (obj == null || obj.Count < 1)
@@ -202,6 +203,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             cmbSolution.DisplayMemberPath = "PROGRAMMENAME";
             foreach (T_OA_TRAVELSOLUTIONS Region in cmbSolution.Items)
             {
+                if (cmbSolution.SelectedItem != null) break;
                 if (Region.OWNERCOMPANYID == Common.CurrentLoginUserInfo.UserPosts[0].CompanyID)
                 {
                     cmbSolution.SelectedItem = Region;
@@ -302,6 +304,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         /// <param name="e"></param>
         void client_GetAreaCityWithPagingCompleted(object sender, GetAreaCityWithPagingCompletedEventArgs e)
         {
+            HideProgressBasePage();
             List<T_OA_AREACITY> list = new List<T_OA_AREACITY>();
             if (e.Error != null)
             {
@@ -420,6 +423,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                 filter += " && T_OA_AREADIFFERENCE.AREADIFFERENCEID==@" + paras.Count().ToString();
                 paras.Add(currentArea.AREADIFFERENCEID);
             }
+            ShowProgressBasePage();
             client.GetAreaCityWithPagingAsync(1, 100, "AREACITYID", filter, paras, pageCount);
 
         }
@@ -473,34 +477,6 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             }
 
         }
-
-        //private void btnCityDel_Click(object sender, RoutedEventArgs e)
-        //{
-        //    string Result = "";
-        //    if (DtGridCity.SelectedItems.Count > 0)
-        //    {
-        //        ObservableCollection<string> ids = new ObservableCollection<string>();
-
-        //        foreach (T_OA_AREACITY tmp in DtGridCity.SelectedItems)
-        //        {
-        //            ids.Add(tmp.AREACITYID);
-        //        }
-        //        ComfirmWindow com = new ComfirmWindow();
-        //        com.OnSelectionBoxClosed += (obj, result) =>
-        //        {
-        //            client.AreaCityDeleteAsync(ids);
-        //        };
-        //        com.SelectionBox(Utility.GetResourceStr("DELETECONFIRM"), Utility.GetResourceStr("DELETEALTER"), ComfirmWindow.titlename, Result);
-
-        //    }
-        //    else
-        //    {
-        //        Utility.ShowCustomMessage(MessageTypes.Error, Utility.GetResourceStr("ERROR"), Utility.GetResourceStr("SELECTERROR", "DELETE"));
-        //        return;
-        //    }
-
-
-        //}
 
 
         #endregion
@@ -624,16 +600,19 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo = new SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo();
             loginUserInfo.companyID = Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
             loginUserInfo.userID = Common.CurrentLoginUserInfo.EmployeeID;
+            this.ShowProgressBasePage();
             client.GetTravelSolutionFlowAsync(0, 100, "CREATEDATE descending", filter, paras, pageCount, loginUserInfo);
         }
         #endregion
 
         #region 出差方案选择
+        public bool allowQueryAreaCity = true;
         private void cmbSolution_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             solutionsObj = cmbSolution.SelectedItem as T_OA_TRAVELSOLUTIONS;
-            if (travelObj != null)
+            if (allowQueryAreaCity)
             {
+                allowQueryAreaCity = false;
                 client.GetQueryPlanCityAsync(solutionsObj.TRAVELSOLUTIONSID, null);
             }
         }

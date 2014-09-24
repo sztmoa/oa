@@ -29,6 +29,8 @@ using SMT.SaaS.OA.UI.Views.PersonalOffice;
 using SMT.SaaS.OA.UI.Views.Travelmanagement;
 using SMT.SaaS.OA.UI.Views.VehicleManagement;
 using SMT.SAAS.ClientUtility;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace SMT.SaaS.OA.UI
 {
@@ -109,6 +111,8 @@ namespace SMT.SaaS.OA.UI
 
     public partial class BasePage
     {
+        SMTLoading loadbar = new SMTLoading();//全局定义loading控件
+        
         public BasePage()
         {
             SMT.SaaS.FrameworkUI.Validator.ValidatorService.ResourceMgr = SMT.SaaS.Globalization.Localization.ResourceMgr;
@@ -135,6 +139,13 @@ namespace SMT.SaaS.OA.UI
                 }
             };
             dm.LoadDictionary(UIDictionary.DictOfDict[this.GetType()]);
+
+            Grid PARENT = SMT.SaaS.FrameworkUI.Common.Utility.FindChildControl<Grid>(this, "PARENT") as Grid;
+            if (PARENT != null)
+            {
+                loadbar.Stop();
+                PARENT.Children.Add(loadbar);//在父面板中加载loading控件
+            }
         }
 
         public new event RoutedEventHandler Loaded;

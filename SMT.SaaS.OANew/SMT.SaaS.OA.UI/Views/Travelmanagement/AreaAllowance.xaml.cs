@@ -140,6 +140,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             cmbSolution.DisplayMemberPath = "PROGRAMMENAME";
             foreach (T_OA_TRAVELSOLUTIONS Region in cmbSolution.Items)
             {
+                if (cmbSolution.SelectedItem != null) break;
                 if (Region.OWNERCOMPANYID == Common.CurrentLoginUserInfo.UserPosts[0].CompanyID)
                 {
                     cmbSolution.SelectedItem = Region;
@@ -543,17 +544,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         }
         #endregion
 
-        #region IClient
-        public event UIRefreshedHandler OnUIRefreshed;
-        public void RefreshUI(RefreshedTypes type)
-        {
-            if (OnUIRefreshed != null)
-            {
-                UIRefreshedEventArgs args = new UIRefreshedEventArgs();
-                args.RefreshedType = type;
-                OnUIRefreshed(this, args);
-            }
-        }
+        #region IClient      
         public void ClosedWCFClient()
         {
             client.DoClose();

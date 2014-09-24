@@ -11,12 +11,14 @@ using System.Windows.Shapes;
 using System.Runtime.InteropServices;
 //using SMT.Saas.Tools.PermissionWS;
 using SMT.Saas.Tools.PermissionWS;
+using SMT.SaaS.FrameworkUI;
 //using SMT.Saas.Tools.PersonnelWS;
 
 namespace SMT.SaaS.OA.UI
 {
     public partial class BasePage : Page
     {
+
         #region 检查资源是否加载
         /// <summary>
         /// 检查转换器资源是否加载
@@ -70,26 +72,24 @@ namespace SMT.SaaS.OA.UI
         public string EntityLogo { get; set; }
 
         #region "显示和隐藏进度条"
-        protected MainPage CurrentMainPage
+        public void RefreshUI(RefreshedTypes type)
         {
-            get
+            if (type == RefreshedTypes.ShowProgressBar)
             {
-                Grid grid = Application.Current.RootVisual as Grid;
-                if (grid != null && grid.Children.Count > 0)
-                {
-                    return grid.Children[0] as MainPage;
-                }
-                else
-                    return null;
+                ShowProgressBasePage();
+            }
+            if (type == RefreshedTypes.HideProgressBar)
+            {
+                HideProgressBasePage();
             }
         }
-        public void ShowPageStyle()
+        public void ShowProgressBasePage()
         {
-            //  CurrentMainPage.ShowWaitingControl();
+            loadbar.Start();
         }
-        public void HidePageStyle()
+        public void HideProgressBasePage()
         {
-            // CurrentMainPage.HideWaitingControl();
+            loadbar.Stop();
         }
         #endregion
 
