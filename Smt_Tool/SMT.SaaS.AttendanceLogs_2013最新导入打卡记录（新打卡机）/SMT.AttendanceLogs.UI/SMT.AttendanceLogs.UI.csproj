@@ -10,10 +10,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SMT.AttendanceLogs.UI</RootNamespace>
     <AssemblyName>SMT.AttendanceLogs.UI</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -50,13 +50,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Enyim.Caching">
+      <HintPath>..\..\..\..\SmtWorkSpace\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\Enyim.Caching.dll</HintPath>
+    </Reference>
     <Reference Include="SMT.Foundation.Core">
       <HintPath>..\..\..\..\SmtWorkSpace\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Core.dll</HintPath>
     </Reference>
     <Reference Include="SMT.Foundation.Log">
       <HintPath>..\..\..\..\SmtWorkSpace\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Log.dll</HintPath>
     </Reference>
+    <Reference Include="Smt.Global.IContract">
+      <HintPath>..\..\..\..\SmtWorkSpace\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\Smt.Global.IContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.HRM.IMServices">
+      <HintPath>..\..\..\..\SmtWorkSpace\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.HRM.IMServices.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SaaS.BLLCommonServices">
+      <HintPath>..\..\..\..\SmtWorkSpace\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
@@ -81,15 +97,47 @@
     <Compile Include="AttendLog.Designer.cs">
       <DependentUpon>AttendLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employees.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="FormTravelSolution.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTravelSolution.Designer.cs">
       <DependentUpon>FormTravelSolution.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalaryStandGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalaryStandGenerator.Designer.cs">
+      <DependentUpon>SalaryStandGenerator.cs</DependentUpon>
+    </Compile>
     <Compile Include="Service References\AttendanceWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PermissionWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -100,7 +148,40 @@
     <Compile Include="TravelEditForm.Designer.cs">
       <DependentUpon>TravelEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="t_flow_definedetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_flow_definedetailcondition.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_flow_definemaser.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_flow_definemsg.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_flow_definemsgfunction.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_flow_dotask.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_flow_recorddetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_flow_recordmaster.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_sys_entitymenu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Utility.cs" />
+    <Compile Include="WorkFlowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkFlowForm.Designer.cs">
+      <DependentUpon>WorkFlowForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AttendLog.resx">
       <DependentUpon>AttendLog.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,12 +198,46 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SalaryStandGenerator.resx">
+      <DependentUpon>SalaryStandGenerator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TravelEditForm.resx">
       <DependentUpon>TravelEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkFlowForm.resx">
+      <DependentUpon>WorkFlowForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\SMT.HRM.CustomModel.Reports.AbnormalAttendanceeEntity.datasource" />
+    <None Include="Properties\DataSources\SMT.HRM.CustomModel.V_ADJUSTLEAVE.datasource" />
+    <None Include="Properties\DataSources\SMT.HRM.CustomModel.V_ATTENDANCERECORD.datasource" />
+    <None Include="Properties\DataSources\SMT.HRM.CustomModel.V_ATTENDANCESOLUTIONASIGN.datasource" />
+    <None Include="Properties\DataSources\SMT.HRM.CustomModel.V_EmpLeaveRdInfo.datasource" />
+    <None Include="Properties\DataSources\SMT.HRM.CustomModel.V_EMPLOYEELEAVE.datasource" />
+    <None Include="Properties\DataSources\SMT.HRM.CustomModel.V_EMPLOYEELEAVERECORD.datasource" />
+    <None Include="Properties\DataSources\SMT.HRM.CustomModel.V_EMPLOYEESIGNINRECORD.datasource" />
+    <None Include="Properties\DataSources\SMT.HRM.CustomModel.V_LandDetail.datasource" />
+    <None Include="Properties\DataSources\SMT.HRM.CustomModel.V_LandStatistic.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -132,36 +247,51 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\AttendanceWS\AttendanceService.wsdl" />
-    <None Include="Service References\AttendanceWS\AttendanceService.xsd">
+    <None Include="Service References\AttendanceWS\AttendanceService2.wsdl" />
+    <None Include="Service References\AttendanceWS\AttendanceService21.wsdl" />
+    <None Include="Service References\AttendanceWS\AttendanceService9.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttendanceWS\AttendanceService1.wsdl" />
-    <None Include="Service References\AttendanceWS\AttendanceService1.xsd">
+    <None Include="Service References\AttendanceWS\AttendanceService91.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttendanceWS\AttendanceService2.xsd">
+    <None Include="Service References\AttendanceWS\AttendanceService910.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttendanceWS\AttendanceService3.xsd">
+    <None Include="Service References\AttendanceWS\AttendanceService92.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttendanceWS\AttendanceService4.xsd">
+    <None Include="Service References\AttendanceWS\AttendanceService93.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttendanceWS\AttendanceService5.xsd">
+    <None Include="Service References\AttendanceWS\AttendanceService94.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttendanceWS\AttendanceService6.xsd">
+    <None Include="Service References\AttendanceWS\AttendanceService95.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttendanceWS\AttendanceService7.xsd">
+    <None Include="Service References\AttendanceWS\AttendanceService96.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttendanceWS\AttendanceService8.xsd">
+    <None Include="Service References\AttendanceWS\AttendanceService97.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.AbnormalAttendanceeEntity.datasource">
+    <None Include="Service References\AttendanceWS\AttendanceService98.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendanceWS\AttendanceService99.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.CaculateLeaveHoursResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.CalculateLeaveCancelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.CalculateOTHoursResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.EmployeeAlreadyLeave.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.T_HR_ATTENDANCEDEDUCTDETAIL.datasource">
@@ -230,7 +360,13 @@
     <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.T_HR_EMPLOYEESIGNINRECORD.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.T_HR_EMPLOYEEVACATION.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.T_HR_FREELEAVEDAYSET.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.T_HR_LEAVEREFEROT.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.T_HR_LEAVETYPESET.datasource">
@@ -254,31 +390,153 @@
     <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.T_HR_VACATIONSET.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.V_ADJUSTLEAVE.datasource">
+    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.V_EMPLOYEEATTENDANCESOLUTIONASIGN.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.V_ATTENDANCERECORD.datasource">
+    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.V_LeaveReferOvertime.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.V_EmpLeaveRdInfo.datasource">
+    <None Include="Service References\PermissionWS\PermissionService.wsdl" />
+    <None Include="Service References\PermissionWS\PermissionService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PermissionWS\PermissionService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PermissionWS\PermissionService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PermissionWS\PermissionService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PermissionWS\PermissionService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PermissionWS\PermissionService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PermissionWS\PermissionService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PermissionWS\PermissionService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PermissionWS\PermissionService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PermissionWS\PermissionService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PermissionWS\PermissionService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PermissionWS\PermissionService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.CustomerPermission.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.V_EMPLOYEELEAVE.datasource">
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.FbMenuPermission.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.V_EMPLOYEELEAVERECORD.datasource">
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.FlowUserInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.V_LandDetail.datasource">
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.T_SYS_COUNTRY.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AttendanceWS\SMT.AttendanceLogs.UI.AttendanceWS.V_LandStatistic.datasource">
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.T_SYS_DICTIONARY.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.T_SYS_ENTITYMENU.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.T_SYS_ENTITYMENUCUSTOMPERM.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.T_SYS_FBADMIN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.T_SYS_PERMISSION.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.T_SYS_ROLE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.T_SYS_ROLEENTITYMENU.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.T_SYS_ROLEMENUPERMISSION.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.T_SYS_ROLE_V.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.T_SYS_USER.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.T_SYS_USERLOGINRECORD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.T_SYS_USERROLE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_Dictionary.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_EntityMenu.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_FBAdmin.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_MenuSetRole.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_OnlineUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_Permission.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_PermissionUpdateState.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_ProvinceCity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_RoleEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_UserLoginRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_UserLoginRecordHistory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_UserMenuPermission.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_UserPermission.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_UserPermissionRoleID.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.AttendanceLogs.UI.PermissionWS.V_UserPermissionUI.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\top550.jpg" />
-    <None Include="Service References\AttendanceWS\AttendanceService.disco" />
+    <None Include="Service References\AttendanceWS\AttendanceService1.disco" />
+    <None Include="Service References\PermissionWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PermissionWS\configuration.svcinfo" />
+    <None Include="Service References\PermissionWS\configuration91.svcinfo" />
+    <None Include="Service References\PermissionWS\PermissionService.disco" />
     <None Include="Service References\AttendanceWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -302,6 +560,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AttendanceWS\" />
+    <WCFMetadataStorage Include="Service References\PermissionWS\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
@@ -326,10 +585,29 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\SMT.SaaS.HR\SMT.HRM.BLL\SMT.HRM.BLL.csproj">
+      <Project>{b35234a0-7bf1-49b6-bdf2-4041d0763d9b}</Project>
+      <Name>SMT.HRM.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SMT.SaaS.HR\SMT.HRM.CustomModel\SMT.HRM.CustomModel.csproj">
+      <Project>{0e45b937-670f-49e1-8ef1-a4bd312b94da}</Project>
+      <Name>SMT.HRM.CustomModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SMT.SaaS.HR\SMT.HRM.DAL\SMT.HRM.DAL.csproj">
+      <Project>{d7d1b61b-cd35-46ea-8575-3cf42d8f4f9d}</Project>
+      <Name>SMT.HRM.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SMT.SaaS.HR\SMT_HRM_EFModel\SMT_HRM_EFModel.csproj">
+      <Project>{c07a351d-305d-4a97-958d-e6449b022f30}</Project>
+      <Name>SMT_HRM_EFModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\SMT.SaaS.OANew\SMT_OA_EFModel\SMT_OA_EFModel.csproj">
       <Project>{30d6706d-a200-4ed0-bbaa-3574e09f54d1}</Project>
       <Name>SMT_OA_EFModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -77,7 +77,7 @@ namespace SMT.AttendanceLogs.UI
 
 
             var ents = from ent in dal.T_OA_BUSINESSTRIP.Include("T_OA_BUSINESSTRIPDETAIL")
-                       where ent.OWNERNAME.Contains(txtName.Text)
+                       where txtName.Text.Contains(ent.OWNERNAME)
                        && ent.STARTDATE >= dtStart
                        select new
                        {
@@ -90,7 +90,11 @@ namespace SMT.AttendanceLogs.UI
                            ent.CHECKSTATE,
                            ent.CONTENT
                        };
-            if (ents.Count() < 1) return;
+            if (ents.Count() < 1) 
+            {
+                MessageBox.Show("没查到数据："+txtName.Text);
+                return;
+            }
             dtBussnissTrip.DataSource = ents.ToList();
             strBusneessTripid = ents.FirstOrDefault().BUSINESSTRIPID;
         }
