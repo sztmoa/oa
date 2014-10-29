@@ -384,28 +384,14 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             System.Collections.ObjectModel.ObservableCollection<string> paras = new System.Collections.ObjectModel.ObservableCollection<string>();
 
             filter = null;
-            //if (currentArea != null && isRefresh == false)
-            //{
-            //    filter += " && T_OA_AREADIFFERENCE.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID==@" + paras.Count().ToString();
-            //    paras.Add(solutionsObj.TRAVELSOLUTIONSID);
-            //}
-            //else
-            //{
-            //    isRefresh = false;
-            //    currentArea = null;
-            //}
 
-            if (cmbSolution.SelectedIndex > 0)
+            if (cmbSolution.SelectedItem != null)
             {
                 T_OA_TRAVELSOLUTIONS travelObjs = cmbSolution.SelectedItem as T_OA_TRAVELSOLUTIONS;
                 if (travelObjs != null)
                 {
                     client.GetAreaWithPagingAsync(1, 100, "AREAINDEX", filter, paras, pageCount, loginUserInfo.companyID, travelObjs.TRAVELSOLUTIONSID);
                 }
-            }
-            else
-            {
-                client.GetAreaWithPagingAsync(1, 100, "AREAINDEX", filter, paras, pageCount, loginUserInfo.companyID, null);
             }
         }
 

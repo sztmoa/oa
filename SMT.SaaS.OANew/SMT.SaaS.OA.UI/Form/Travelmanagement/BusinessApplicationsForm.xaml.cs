@@ -158,7 +158,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                     //RefreshUI(RefreshedTypes.HideProgressBar);//停止进度圈
 
                     TravelRequestForm TravelapplicationForm = new TravelRequestForm(FormTypes.New, "");
-                    TravelapplicationForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
+                    //TravelapplicationForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
                     TravelapplicationForm.ParentEntityBrowser = this.ParentEntityBrowser;
                     EntityBrowser TravelBrowser = new EntityBrowser(TravelapplicationForm);
                     TravelBrowser.FormType = FormTypes.New;                    
@@ -173,7 +173,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                     //TravelRequestForm TravelapplicationForm = new TravelRequestForm(FormTypes.Edit, businesstrID);
                     //2012-9-21 ljx 
                     TravelRequestForm TravelapplicationForm = new TravelRequestForm(FormTypes.Edit, TraveView.Travelmanagement.BUSINESSTRIPID);
-                    TravelapplicationForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
+                    //TravelapplicationForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
                     TravelapplicationForm.ParentEntityBrowser = this.ParentEntityBrowser;
                     EntityBrowser TravelBrowser = new EntityBrowser(TravelapplicationForm);
                     TravelBrowser.FormType = FormTypes.Edit;
@@ -186,7 +186,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                     {
                         //出差报销
                         TravelReimbursementControl TravelReimbursementForm = new TravelReimbursementControl(FrameworkUI.FormTypes.Edit, travelReimbursementID, businesstrID);
-                        TravelReimbursementForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
+                        //TravelReimbursementForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
                         TravelReimbursementForm.ParentEntityBrowser = this.ParentEntityBrowser;
                         TravelReimbursementForm.OpenFrom = OpenFrom;
                         EntityBrowser TravelReimbursementBrowser = new EntityBrowser(TravelReimbursementForm);
@@ -202,7 +202,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                     //RefreshUI(RefreshedTypes.HideProgressBar);//停止进度圈
 
                     TravelRequestForm TravelapplicationForm = new TravelRequestForm(FormTypes.Browse, businesstrID);
-                    TravelapplicationForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
+                    //TravelapplicationForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
                     EntityBrowser TravelBrowser = new EntityBrowser(TravelapplicationForm);
                     TravelBrowser.FormType = FormTypes.Browse;
                     TravelBrowser.MinWidth = 728;
@@ -214,7 +214,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                     {
                         //出差报销
                         TravelReimbursementControl TravelReimbursementForm = new TravelReimbursementControl(FrameworkUI.FormTypes.Browse, travelReimbursementID, businesstrID);
-                        TravelReimbursementForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
+                        //TravelReimbursementForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
                         EntityBrowser TravelReimbursementBrowser = new EntityBrowser(TravelReimbursementForm);
                         TravelReimbursementBrowser.FormType = FormTypes.Browse;
                         //Canvas can = new Canvas();
@@ -228,7 +228,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                     //RefreshUI(RefreshedTypes.HideProgressBar);//停止进度圈
 
                     TravelRequestForm TravelapplicationForm = new TravelRequestForm(FormTypes.Audit, businesstrID);
-                    TravelapplicationForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
+                    //TravelapplicationForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
                     EntityBrowser TravelBrowser = new EntityBrowser(TravelapplicationForm);
                     TravelBrowser.FormType = FormTypes.Audit;
                     TravelBrowser.MinWidth = 728;
@@ -240,7 +240,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                     {
                         //出差报销
                         TravelReimbursementControl TravelReimbursementForm = new TravelReimbursementControl(FrameworkUI.FormTypes.Audit, travelReimbursementID, businesstrID);
-                        TravelReimbursementForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
+                        //TravelReimbursementForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
                         EntityBrowser TravelReimbursementBrowser = new EntityBrowser(TravelReimbursementForm);
                         TravelReimbursementBrowser.FormType = FormTypes.Audit;
                         //Canvas can = new Canvas();
@@ -260,7 +260,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                     else
                     {   //重新提交（或修改行程）
                         TravelRequestForm TravelapplicationForm = new TravelRequestForm(FormTypes.Resubmit, businesstrID);
-                        TravelapplicationForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
+                        //TravelapplicationForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
                         EntityBrowser TravelBrowser = new EntityBrowser(TravelapplicationForm);
                         TravelBrowser.FormType = FormTypes.Resubmit;
                         TravelBrowser.MinWidth = 980;
@@ -286,7 +286,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                         {
                             //出差报销
                             TravelReimbursementControl TravelReimbursementForm = new TravelReimbursementControl(FrameworkUI.FormTypes.Resubmit, travelReimbursementID, businesstrID);
-                            TravelReimbursementForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
+                            //TravelReimbursementForm.OnUIRefreshed += TravelapplicationForm_OnUIRefreshed;
                             EntityBrowser TravelReimbursementBrowser = new EntityBrowser(TravelReimbursementForm);
                             TravelReimbursementBrowser.FormType = FormTypes.Resubmit;
                             TravelReimbursementBrowser.MinWidth = 980;

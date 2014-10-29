@@ -122,7 +122,7 @@ namespace SMT.SaaS.OA.UI.Views.Login
                         UserInfo = login.GetUserInfo();
 
                         Common.CurrentLoginUserInfo.UserName = UserInfo.USERNAME;
-                        Common.CurrentLoginUserInfo.UserPwd = UserInfo.PASSWORD;                        
+                        Common.CurrentLoginUserInfo.UserPwd = UserInfo.PASSWORD;
                         if (App.Current.Resources["CurrentUserID"] == null)
                         {
                             App.Current.Resources.Add("CurrentUserID", UserInfo.EMPLOYEEID);
@@ -130,22 +130,7 @@ namespace SMT.SaaS.OA.UI.Views.Login
                         //organClient.GetCompanyActivedAsync(UserInfo.EMPLOYEEID);
                         LoadStart();
                         LoadCompanyInfo();
-                        if (!IsolatedStorageSettings.ApplicationSettings.Contains("usName"))
-                        {
-                            IsolatedStorageSettings.ApplicationSettings.Add("usName",this.UserName.Text);
-                        }
-                        else
-                        {
-                            IsolatedStorageSettings.ApplicationSettings["usName"] = this.UserName.Text;
-                        }
-                        if (!IsolatedStorageSettings.ApplicationSettings.Contains("Password"))
-                        {
-                            IsolatedStorageSettings.ApplicationSettings.Add("Password",paw.Password);
-                        }
-                        else
-                        {
-                            IsolatedStorageSettings.ApplicationSettings["Password"] = paw.Password;
-                        }
+                      
                     }
                     else
                     {
@@ -158,6 +143,26 @@ namespace SMT.SaaS.OA.UI.Views.Login
             catch (Exception ex)
             {
                 ComfirmWindow.ConfirmationBox(Utility.GetResourceStr("CONFIRMINFO"), ex.ToString(), Utility.GetResourceStr("CONFIRMBUTTON"));
+            }
+            finally
+            {
+              
+                if (!IsolatedStorageSettings.ApplicationSettings.Contains("usName"))
+                {
+                    IsolatedStorageSettings.ApplicationSettings.Add("usName", this.UserName.Text);
+                }
+                else
+                {
+                    IsolatedStorageSettings.ApplicationSettings["usName"] = this.UserName.Text;
+                }
+                if (!IsolatedStorageSettings.ApplicationSettings.Contains("Password"))
+                {
+                    IsolatedStorageSettings.ApplicationSettings.Add("Password", paw.Password);
+                }
+                else
+                {
+                    IsolatedStorageSettings.ApplicationSettings["Password"] = paw.Password;
+                }
             }
 
 

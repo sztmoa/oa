@@ -21,6 +21,7 @@ using System.Windows.Media;
 using SMT.SaaS.FrameworkUI.ChildWidow;
 using SMT.SAAS.Platform.Logging;
 using SMT.SaaS.MobileXml;
+using SMT.SaaS.OA.UI.UserControls;
 
 namespace SMT.SaaS.OA.UI.Views.Travelmanagement
 {
@@ -77,7 +78,6 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         }
 
         #endregion
-
         #region 根据城市设置出差报销标准并显示
         /// <summary>
         /// 获取出差报销补助
@@ -106,6 +106,14 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
 
             T_OA_AREAALLOWANCE entareaallowance = new T_OA_AREAALLOWANCE();
             textStandards.Text = string.Empty;
+            if (travelsolutions_Golbal != null && !string.IsNullOrEmpty(travelsolutions_Golbal.PROGRAMMENAME))
+            {
+                textStandards.Text = "使用的出差方案：" + travelsolutions_Golbal.PROGRAMMENAME + "\n";
+            }
+            else
+            {
+                textStandards.Text = "未获取到有效的出差方案，请联系管理员：";
+            }
             if (TraveDetailList_Golbal.Count() == 1)   //只有一条记录的情况
             {
                 string cityend = TraveDetailList_Golbal[0].DESTCITY.Replace(",", "");//目标城市值
@@ -301,33 +309,11 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         {
             CityValue = CityValue.Replace(",", "");
             if (areaallowance == null || areacitys == null) return null;
-            foreach(var qa in areaallowance)
-            {
-                if (string.IsNullOrEmpty(qa.T_OA_AREADIFFERENCE.AREADIFFERENCEID))
-                {
-
-                }
-                if (string.IsNullOrEmpty(qa.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID))
-                {
-
-                }
-            }
-
-            foreach(var qb in areacitys )
-            {
-                if(string.IsNullOrEmpty(qb.T_OA_AREADIFFERENCE.AREADIFFERENCEID))
-                {
-
-                }
-                if(string.IsNullOrEmpty(qb.CITY))
-                {
-
-                }
-            }
+           
 
             var q = from ent in areaallowance
-                    join ac in areacitys on ent.T_OA_AREADIFFERENCE.AREADIFFERENCEID equals ac.T_OA_AREADIFFERENCE.AREADIFFERENCEID
-                    where ac.CITY == CityValue && ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == travelsolutions_Golbal.TRAVELSOLUTIONSID
+                    join ac in areacitys on ent.T_OA_AREADIFFERENCEReference equals ac.T_OA_AREADIFFERENCEReference
+                    where ac.CITY == CityValue 
                     select ent;
 
             if (q.Count() > 0)

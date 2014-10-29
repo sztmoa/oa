@@ -33,18 +33,23 @@ namespace SMT.SaaS.OA.UI.UserControls
             {
                 return;
             }
-            #region 存在多条的处理
+            #region 时间计算
             TextBox myDaysTime = new TextBox();
             bool OneDayTrave = false;
+            DateTime dtTempStart=new DateTime(2014,1,1);
+            int tempStart = 0;
             for (int i = 0; i < TravelDetailList_Golbal.Count; i++)
             {
-                GetTraveDayTextBox(myDaysTime, i).Text = string.Empty;
-                OneDayTrave = false;
+                tempStart = i;
                 //记录本条记录以便处理
-                DateTime FirstStartTime = Convert.ToDateTime(TravelDetailList_Golbal[i].STARTDATE);
-                DateTime FirstEndTime = Convert.ToDateTime(TravelDetailList_Golbal[i].ENDDATE);
-                string FirstTraveFrom = TravelDetailList_Golbal[i].DEPCITY;
-                string FirstTraveTo = TravelDetailList_Golbal[i].DESTCITY;
+                DateTime StartTime = Convert.ToDateTime(TravelDetailList_Golbal[i].STARTDATE);
+                DateTime EndTime = Convert.ToDateTime(TravelDetailList_Golbal[i].ENDDATE);
+                string StartCity = TravelDetailList_Golbal[i].DEPCITY;
+                string EndCity = TravelDetailList_Golbal[i].DESTCITY;
+                GetTraveDayTextBox(myDaysTime, i).Text = string.Empty;
+
+                #region 判断是否当他往返
+                OneDayTrave = false;
                 //遍历剩余的记录
                 for (int j = i + 1; j < TravelDetailList_Golbal.Count; j++)
                 {
@@ -52,10 +57,12 @@ namespace SMT.SaaS.OA.UI.UserControls
                     DateTime NextEndTime = Convert.ToDateTime(TravelDetailList_Golbal[j].ENDDATE);
                     string NextTraveFrom = TravelDetailList_Golbal[j].DEPCITY;
                     string NextTraveTo = TravelDetailList_Golbal[j].DESTCITY;
+                   
+
                     GetTraveDayTextBox(myDaysTime, j).Text = string.Empty;
-                    if (NextEndTime.Date == FirstStartTime.Date)
+                    if (NextEndTime.Date == StartTime.Date)
                     {
-                        if (NextTraveTo == FirstTraveFrom && (TravelDetailList_Golbal.Count == 2 || TravelDetailList_Golbal.Count == 1))
+                        if (NextTraveTo == StartCity && (TravelDetailList_Golbal.Count == 2 || TravelDetailList_Golbal.Count == 1))
                         {
                             myDaysTime = GetTraveDayTextBox(myDaysTime, i);
                             myDaysTime.Text = "1";
@@ -67,46 +74,81 @@ namespace SMT.SaaS.OA.UI.UserControls
                         else continue;
                     }
                     else
-                    {
+                    { 
                         break;
                     }
                 }
                 if (OneDayTrave == true) continue;
+                #endregion
+
                 //非当天往返
                 decimal TotalDays = 0;
                 switch (TravelDetailList_Golbal.Count())
                 {
                     case 1:
-                        TotalDays = CaculateTravDays(FirstStartTime, FirstEndTime);
-                        myDaysTime = GetTraveDayTextBox(myDaysTime, i);
-                        myDaysTime.Text = TotalDays.ToString();
+                        TotalDays = CaculateTravDays(StartTime, EndTime);
                         break;
                     case 2:
                         if (i == 1) break;
                         DateTime NextEndTime = Convert.ToDateTime(TravelDetailList_Golbal[i + 1].ENDDATE);
-                        TotalDays = CaculateTravDays(FirstStartTime, NextEndTime);
-                        myDaysTime = GetTraveDayTextBox(myDaysTime, i);
-                        myDaysTime.Text = TotalDays.ToString();
+                        TotalDays = CaculateTravDays(StartTime, NextEndTime);
                         break;
                     default:
-                        if (i == TravelDetailList_Golbal.Count() - 1) break;//最后一条记录不处理
-                        if (i == TravelDetailList_Golbal.Count() - 2)//倒数第二条记录=最后一条结束时间-上一条开始时间
-                        {
-                            DateTime NextENDDATETime = Convert.ToDateTime(TravelDetailList_Golbal[i + 1].ENDDATE);
-                            TotalDays = CaculateTravDays(FirstStartTime, NextENDDATETime);
-                            myDaysTime = GetTraveDayTextBox(myDaysTime, i);
-                            myDaysTime.Text = TotalDays.ToString();
-                            break;
-                        }
+                         if (i == TravelDetailList_Golbal.Count() - 1) break;//最后一条记录不处理
+                        
+                            for (int j =i+1; j < TravelDetailList_Golbal.Count() ;j++ )
+                            {
+                                //如果下一条记录的到达日期==上条记录的开始日期,不计算出差天数
+                                if (TravelDetailList_Golbal[j].ENDDATE.Value.Date
+                                    == TravelDetailList_Golbal[i].STARTDATE.Value.Date)
+                                {
+                                    TravelDetailList_Golbal[i].BUSINESSDAYS = "0";
+                                    if(dtTempStart==new DateTime(2014,1,1))
+                                    { 
+                                        dtTempStart = TravelDetailList_Golbal[i].STARTDATE.Value;
+                                    }
+                                    if (j == TravelDetailList_Golbal.Count()-1)//轮询到最后一条记录了
+                                    {
+                                        DateTime dtEndTime = Convert.ToDateTime(TravelDetailList_Golbal[j].ENDDATE);
+                                        TotalDays = CaculateTravDays(dtTempStart, dtEndTime);
+                                        i = j;
+                                    }
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (dtTempStart == new DateTime(2014, 1, 1))
+                                    {
+                                        dtTempStart = dtTempStart = TravelDetailList_Golbal[i].STARTDATE.Value;
+                                    }
+                                    DateTime dtEndTime = Convert.ToDateTime(TravelDetailList_Golbal[j].STARTDATE);
+                                    if (i == TravelDetailList_Golbal.Count() - 2)//倒数第二条记录=最后一条结束时间-上一条开始时间
+                                    {
+                                        dtEndTime = Convert.ToDateTime(TravelDetailList_Golbal[j].ENDDATE);
+                                    }
+                                    TotalDays = CaculateTravDays(dtTempStart, dtEndTime);
+                                    i = j;
+                                    break;
+                                }
+                            }
+                        
                         //否则出差时间=下一条开始时间-上一条开始时间
-                        DateTime NextStartTime = Convert.ToDateTime(TravelDetailList_Golbal[i + 1].STARTDATE);
-                        TotalDays = CaculateTravDays(FirstStartTime, NextStartTime);
-                        myDaysTime = GetTraveDayTextBox(myDaysTime, i);
-                        myDaysTime.Text = TotalDays.ToString();
+                        //DateTime NextStartTime = Convert.ToDateTime(TravelDetailList_Golbal[i + 1].STARTDATE);
+                        //TotalDays = CaculateTravDays(StartTime, NextStartTime);
                         break;
                 }
                 //保存计算的出差天数
-                TravelDetailList_Golbal[i].BUSINESSDAYS = TotalDays.ToString();
+                TravelDetailList_Golbal[tempStart].BUSINESSDAYS = TotalDays.ToString();
+                //设置显示值
+                try
+                {
+                    myDaysTime = GetTraveDayTextBox(myDaysTime, tempStart);
+                    myDaysTime.Text = TotalDays.ToString();
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
             #endregion
         }
@@ -128,13 +170,13 @@ namespace SMT.SaaS.OA.UI.UserControls
         /// <summary>
         /// 计算出差时长结算-开始时间NextStartTime-FirstStartTime
         /// </summary>
-        /// <param name="FirstStartTime">开始时间</param>
-        /// <param name="NextStartTime">结束时间</param>
+        /// <param name="StartTime">开始时间</param>
+        /// <param name="EndTime">结束时间</param>
         /// <returns></returns>
-        private decimal CaculateTravDays(DateTime FirstStartTime, DateTime NextStartTime)
+        private decimal CaculateTravDays(DateTime StartTime, DateTime EndTime)
         {
             //计算出差时间（天数）
-            TimeSpan TraveDays = NextStartTime.Subtract(FirstStartTime);
+            TimeSpan TraveDays = EndTime.Subtract(StartTime);
             decimal TotalDays = 0;//出差天数
             decimal TotalHours = 0;//出差小时
             TotalDays = TraveDays.Days;
