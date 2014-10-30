@@ -378,10 +378,10 @@ namespace SMT.SaaS.FrameworkUI
 
         public void HideProgressBars()
         {
-            //if (ProgressBarNumber > 0) ProgressBarNumber += -1;
-            //PARENT.Visibility = Visibility.Collapsed;
-            ////SmtProgressBar.Visibility = Visibility.Collapsed;
-            //SmtLoading.Stop();
+            if (ProgressBarNumber > 0) ProgressBarNumber += -1;
+            PARENT.Visibility = Visibility.Collapsed;
+            //SmtProgressBar.Visibility = Visibility.Collapsed;
+            SmtLoading.Stop();
         }
         #endregion
 
@@ -518,7 +518,7 @@ namespace SMT.SaaS.FrameworkUI
                         || state == Convert.ToInt32(CheckStates.WaittingApproval).ToString()
                         || state == Convert.ToInt32(CheckStates.UnSubmit).ToString())
                     {
-                        //手动审核
+                        //手动审核已隐藏
                         Manubtn = new ImageButton();
                         Manubtn.TextBlock.Text = UIHelper.GetResourceStr("MANUALAUDIT");
                         img = "/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/mnu_actions.png";
@@ -527,7 +527,7 @@ namespace SMT.SaaS.FrameworkUI
                         Manubtn.Click += new RoutedEventHandler(btnManualAudit_Click);
                         Manubtn.Visibility = Visibility.Collapsed;
                         toolBarTop.ButtonContainer.Children.Add(Manubtn);
-
+                        //已隐藏
                         ImageButton btnima =new ImageButton();
                         btnima = new ImageButton();
                         btnima.TextBlock.Text = UIHelper.GetResourceStr("MANUALAUDIT");
@@ -1254,6 +1254,7 @@ namespace SMT.SaaS.FrameworkUI
                 entityForm.ClosedWCFClient();
                 //}
             }
+            ProgressBarNumber = 0;
 
             //this.ParentWindow.IsClose = false;
             //string Result = "";
