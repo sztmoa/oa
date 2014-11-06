@@ -7,6 +7,7 @@ using SMT.SaaS.BLLCommonServices.PersonnelWS;
 using SMT.SaaS.OA.BLL;
 using SMT_OA_EFModel;
 using SMT.Foundation.Log;
+using System.Configuration;
 
 namespace SMT.SaaS.OA.Services
 {
@@ -53,6 +54,20 @@ namespace SMT.SaaS.OA.Services
                 return employee;
             }
             return null;
+        }
+       [OperationContract]
+        public string GetAppConfigByName(string AppConfigName)
+        {
+            string strConfigValue = string.Empty;
+            try
+            {
+                strConfigValue = ConfigurationManager.AppSettings[AppConfigName].ToString();
+            }
+            catch (Exception ex)
+            {
+                return string.Empty;
+            }
+            return strConfigValue;
         }
 
         [OperationContract]

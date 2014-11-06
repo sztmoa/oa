@@ -307,20 +307,59 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         /// <param name="CityValue"></param>
         private T_OA_AREAALLOWANCE GetAllowanceByCityValue(string CityValue)
         {
-            CityValue = CityValue.Replace(",", "");
-            if (areaallowance == null || areacitys == null) return null;
-           
-
-            var q = from ent in areaallowance
-                    join ac in areacitys on ent.T_OA_AREADIFFERENCEReference equals ac.T_OA_AREADIFFERENCEReference
-                    where ac.CITY == CityValue 
-                    select ent;
-
-            if (q.Count() > 0)
+            SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
+            try
             {
-                return q.FirstOrDefault();
+                CityValue = CityValue.Replace(",", "");
+                SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("city=" + CityValue);
+                if (areaallowance == null)
+                {
+                    SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("出差报销为空");
+                    return null;
+                }
+                if (areacitys == null)
+                {
+                    SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("获取的城市分类为空");
+                    return null;
+                }
+
+                foreach (var item in areaallowance)
+                {
+                    //SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("AREACATEGORY:" + item.T_OA_AREADIFFERENCE.AREACATEGORY + "AREADIFFERENCEID=" + item.T_OA_AREADIFFERENCE.AREADIFFERENCEID);
+                    foreach (var cityItem in areacitys)
+                    {
+                        //SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("cityItem AREADIFFERENCEID=" + cityItem.T_OA_AREADIFFERENCE.AREADIFFERENCEID + "City:" + cityItem.CITY);
+
+                        if (item.T_OA_AREADIFFERENCE.AREADIFFERENCEID == cityItem.T_OA_AREADIFFERENCE.AREADIFFERENCEID)
+                        {
+                            if (cityItem.CITY == CityValue)
+                            {
+                                return item;
+                            }
+                        }
+                    }
+                }
+
+                var q = from ent in areaallowance
+                        join ac in areacitys on ent.T_OA_AREADIFFERENCE.AREADIFFERENCEID
+                        equals ac.T_OA_AREADIFFERENCE.AREADIFFERENCEID
+                        where ac.CITY == CityValue
+                        select ent;
+                if (q.Count() > 0)
+                {
+                    return q.FirstOrDefault();
+                }
+                SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("经过数据过滤未获取到任何数据 city=" + CityValue);
+
+                return null;
             }
-            return null;
+            catch (Exception ex)
+            {
+                SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage(ex.ToString());
+                SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
+                return null;
+
+            }
         }
 
         #endregion  

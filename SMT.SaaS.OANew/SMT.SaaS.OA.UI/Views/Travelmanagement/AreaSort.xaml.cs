@@ -408,9 +408,12 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             {
                 filter += " && T_OA_AREADIFFERENCE.AREADIFFERENCEID==@" + paras.Count().ToString();
                 paras.Add(currentArea.AREADIFFERENCEID);
+            }else
+            {
+                return;
             }
             ShowProgressBasePage();
-            client.GetAreaCityWithPagingAsync(1, 100, "AREACITYID", filter, paras, pageCount);
+            client.GetAreaCityWithPagingAsync(1, 10000, "AREACITYID", filter, paras, pageCount);
 
         }
 

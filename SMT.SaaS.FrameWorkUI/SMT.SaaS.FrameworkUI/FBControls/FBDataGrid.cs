@@ -26,13 +26,11 @@ namespace SMT.SaaS.FrameworkUI.FBControls
             writtableStyle = new Style();
             SolidColorBrush sbEdit = (SolidColorBrush)Application.Current.Resources["Datagridbg_edit"];
             writtableStyle.Setters.Add(new Setter() { Property = BackgroundProperty, Value = sbEdit });
-
             writtableStyle.TargetType = typeof(DataGridCell);
             this.HorizontalAlignment = HorizontalAlignment.Stretch;
             this.VerticalAlignment = VerticalAlignment.Stretch;
 
             this.AutoGenerateColumns = false;
-
             this.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
             this.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
         }

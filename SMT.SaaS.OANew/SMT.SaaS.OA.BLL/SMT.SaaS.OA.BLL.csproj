@@ -59,23 +59,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Enyim.Caching">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\Enyim.Caching.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\log4net.dll</HintPath>
+      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\Memcached\Enyim.Caching.dll</HintPath>
     </Reference>
     <Reference Include="SMT.Foundation.Core">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Core.dll</HintPath>
+      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Core.dll</HintPath>
     </Reference>
     <Reference Include="SMT.Foundation.Log">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Log.dll</HintPath>
+      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Log.dll</HintPath>
     </Reference>
-    <Reference Include="SMT.SaaS.BLLCommonServices, Version=1.0.0.1222, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
+    <Reference Include="SMT.SaaS.BLLCommonServices">
+      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
     </Reference>
     <Reference Include="SMT_OA_EFModel">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT_OA_EFModel.dll</HintPath>
+      <HintPath>..\SMT_OA_EFModel\bin\Debug\SMT_OA_EFModel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />

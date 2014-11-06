@@ -3329,10 +3329,6 @@
       <Project>{9A42135A-11F2-4210-A41B-3AC06AC0D835}</Project>
       <Name>SMT.SAAS.FrameworkUI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SMT.SaaS.FrameWorkUI\SMT.Saas.Tools\SMT.Saas.Tools.csproj">
-      <Project>{9484c541-b0a2-437a-8c6f-0bfd7e13934e}</Project>
-      <Name>SMT.Saas.Tools</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\SMT.SaaS.FrameWorkUI\SMT.SaaS.Window\SMT.SaaS.Window.csproj">
       <Project>{15406e6e-a265-4be9-afb3-e45433e7252c}</Project>
       <Name>SMT.SaaS.Window</Name>
