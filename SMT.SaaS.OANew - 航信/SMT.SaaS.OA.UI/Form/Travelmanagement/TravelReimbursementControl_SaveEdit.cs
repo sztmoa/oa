@@ -423,11 +423,17 @@ namespace SMT.SaaS.OA.UI.UserControls
                     }
                     else
                     {
-
-                        if (TravelReimbursement_Golbal.CHECKSTATE == "0"
+                        if (TravelReimbursement_Golbal.CHECKSTATE == "3"
                             && TravelReimbursement_Golbal.REIMBURSEMENTOFCOSTS > 0)
                         {
                             fbCtr.Order.ORDERID = TravelReimbursement_Golbal.TRAVELREIMBURSEMENTID;
+                            fbCtr.Save(SMT.SaaS.FrameworkUI.CheckStates.UnApproved);//提交费用 
+                        }
+                        else if (TravelReimbursement_Golbal.CHECKSTATE == "0"
+                             && TravelReimbursement_Golbal.REIMBURSEMENTOFCOSTS > 0)
+                        {
+                            fbCtr.Order.ORDERID = TravelReimbursement_Golbal.TRAVELREIMBURSEMENTID;
+                            //if (fbCtr.ListDetail == null) fbCtr.ListDetail = new ObservableCollection<FBEntity>();
                             fbCtr.Save(SMT.SaaS.FrameworkUI.CheckStates.UnSubmit);//提交费用 
                         }
                         else
@@ -625,12 +631,20 @@ namespace SMT.SaaS.OA.UI.UserControls
                         }
                         else if (e.UserState.ToString() == "Submit")//提交成功
                         {
-                            Utility.ShowCustomMessage(MessageTypes.Message, Utility.GetResourceStr("SUCCESSED"), Utility.GetResourceStr("UPDATESUCCESSED", "TRAVELREIMBURSEMENTPAGE"));
+                            //提交保存不需提示
+                            //Utility.ShowCustomMessage(MessageTypes.Message, Utility.GetResourceStr("SUCCESSED"), Utility.GetResourceStr("UPDATESUCCESSED", "TRAVELREIMBURSEMENTPAGE"));
 
                         }
                         else//更新成功
                         {
-                            Utility.ShowCustomMessage(MessageTypes.Message, Utility.GetResourceStr("SUCCESSED"), Utility.GetResourceStr("UPDATESUCCESSED", "TRAVELREIMBURSEMENTPAGE"));
+                            if (needsubmit == true)
+                            {
+
+                            }
+                            else
+                            {
+                                Utility.ShowCustomMessage(MessageTypes.Message, Utility.GetResourceStr("SUCCESSED"), Utility.GetResourceStr("UPDATESUCCESSED", "TRAVELREIMBURSEMENTPAGE"));
+                            }
                         }
 
                         if (GlobalFunction.IsSaveAndClose(refreshType))

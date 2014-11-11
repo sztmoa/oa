@@ -192,7 +192,7 @@ namespace SMT.FB.BLL
                 Type type = entity.GetType();
                 entity.SetValue(FieldName.UpdateDate, DateTime.Now);
                 int i = baseDal.Update(entity);
-                SaveMyRecord(entity);
+                //SaveMyRecord(entity);
                 return i > 0;
             }
             catch (Exception ex)
@@ -335,7 +335,7 @@ namespace SMT.FB.BLL
                         Delete(entity);
                         break;
                     case FBEntityState.Detached:
-                        Remove(entity);
+                        Remove(entity); //不知道为啥删除了相同的ＩＤ
                         break;
                 }
                 
@@ -427,6 +427,15 @@ namespace SMT.FB.BLL
                 if (!entityTypeList.Contains(entity.GetType().Name))
                 {
                     return strTemp;
+                }
+
+                if (entity.GetType().Name == typeof(T_FB_PERSONMONEYASSIGNMASTER).Name)
+                {
+                    T_FB_PERSONMONEYASSIGNMASTER tempEntity = entity as T_FB_PERSONMONEYASSIGNMASTER;
+                    if (tempEntity.APPLIEDTYPE.Equal(1) && tempEntity.APPLIEDTYPE.Equal(2) && tempEntity.APPLIEDTYPE.Equal(3))
+                    {
+                        return strTemp;
+                    }
                 }
 
                 if (entity.GetType().Name == typeof(T_FB_CHARGEAPPLYMASTER).Name)

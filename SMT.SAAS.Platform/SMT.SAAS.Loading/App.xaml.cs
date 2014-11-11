@@ -60,15 +60,16 @@ namespace SMT.SAAS.Platform
                     SMT.SAAS.Main.CurrentContext.Common.HostAddress = hostAddress;
                     Application.Current.Resources.Add("PlatformWShost", hostAddress);
                 }
-
                 if (HtmlPage.Document.QueryString.Count > 0)
-                {
+                {                   
                     IDictionary paras = HtmlPage.Document.QueryString as IDictionary;
+                    if (paras["loginaccount"]!=null) { 
                     string username = paras["loginaccount"].ToString();
                     string userpwd = paras["password"].ToString();
                     Application.Current.Resources.Add("username", username);
                     Application.Current.Resources.Add("userpwd", userpwd);
                     HtmlPage.Window.Invoke("SetPortalUrl", "Invoke");
+                    }
                 }
                 //创建外壳容器Host。
                 Host host = new Host();
@@ -82,7 +83,7 @@ namespace SMT.SAAS.Platform
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                AppContext.logAndShow(ex.ToString());
             }
         }
      

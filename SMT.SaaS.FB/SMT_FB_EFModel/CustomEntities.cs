@@ -124,6 +124,7 @@ namespace SMT_FB_EFModel
 
     }
 
+
     public partial class T_FB_TRAVELEXPAPPLYDETAIL
     {
         [DataMember]
@@ -132,5 +133,19 @@ namespace SMT_FB_EFModel
         public decimal? DeptUsableMoney { get; set; }
 
     }
-    
+
+    /// <summary>
+    /// 预算设置
+    /// </summary>
+    public partial class T_FB_SYSTEMSETTINGS
+    {
+        [DataMember]
+        public Dictionary<string, string> Settings { get; set; }
+    }
+
+    [DataContract]
+    [Serializable]
+    public partial class PersonMoneyAssignAA : T_FB_PERSONMONEYASSIGNMASTER
+    {
+    }
 }

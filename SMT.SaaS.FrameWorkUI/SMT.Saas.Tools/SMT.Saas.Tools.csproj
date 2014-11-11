@@ -485,6 +485,12 @@
     <None Include="Service References\NewFileUploadWS\FileUpLoad5.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\NewFileUploadWS\SMT.Saas.Tools.NewFileUploadWS.CallBackResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NewFileUploadWS\SMT.Saas.Tools.NewFileUploadWS.UserFile1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\NewFileUploadWS\UploadService.wsdl" />
     <None Include="Service References\OACommonAdminWS\SmtOACommonAdmin.wsdl" />
     <None Include="Service References\OACommonAdminWS\SmtOACommonAdmin.xsd">

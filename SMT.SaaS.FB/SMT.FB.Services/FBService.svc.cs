@@ -107,47 +107,50 @@ namespace SMT.FB.Services
         [OperationContract]
         public bool UpdateSalaryBudget(string xml)
         {
+            // 经HR确认, 目前不执行HR的调用。 2014-3-26.
+
+            return true;
 
             //string path = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
             //XElement xe = XElement.Load(path + "\\SalaryBudget.xml");
             //xml = xe.ToString();
 
-            XElement doc = XElement.Parse(xml);
-            int payYear = int.Parse(doc.Attribute("Year").Value);
-            int payMonth = int.Parse(doc.Attribute("Month").Value);
-            var comX = doc.Elements("Company");
-            List<T_FB_SALARYPAYLIST> listSave = new List<T_FB_SALARYPAYLIST>();
-            foreach (var com in comX)
-            {
-                string comID = com.Attribute("CompanyID").Value;
-                var deptPayList = from item in com.Elements("Department")
-                                  select new T_FB_SALARYPAYLIST
-                                  {
-                                      PAYYEAR = payYear,
-                                      PAYMONTH = payMonth,
-                                      SALARYPAYLISTID = Guid.NewGuid().ToString(),
-                                      OWNERCOMPANYID = comID,
-                                      OWNERDEPARTMENTID = item.Attribute("DepartmentID").Value,
-                                      PAYMONEY = decimal.Parse(item.Attribute("Salary").Value),
-                                      CREATECOMPANYID = "001",
-                                      CREATEDEPARTMENTID = "001",
-                                      CREATEPOSTID = "001",
-                                      CREATEUSERID = "001",
-                                      UPDATEUSERID = "001",
-                                      CREATEDATE = System.DateTime.Now,
-                                      UPDATEDATE = System.DateTime.Now
-                                  };
-                listSave.AddRange(deptPayList);
-            }
-            List<FBEntity> listResult = listSave.ToFBEntityList();
-            listResult.ForEach(item =>
-                {
-                    item.FBEntityState = FBEntityState.Added;
+            //XElement doc = XElement.Parse(xml);
+            //int payYear = int.Parse(doc.Attribute("Year").Value);
+            //int payMonth = int.Parse(doc.Attribute("Month").Value);
+            //var comX = doc.Elements("Company");
+            //List<T_FB_SALARYPAYLIST> listSave = new List<T_FB_SALARYPAYLIST>();
+            //foreach (var com in comX)
+            //{
+            //    string comID = com.Attribute("CompanyID").Value;
+            //    var deptPayList = from item in com.Elements("Department")
+            //                      select new T_FB_SALARYPAYLIST
+            //                      {
+            //                          PAYYEAR = payYear,
+            //                          PAYMONTH = payMonth,
+            //                          SALARYPAYLISTID = Guid.NewGuid().ToString(),
+            //                          OWNERCOMPANYID = comID,
+            //                          OWNERDEPARTMENTID = item.Attribute("DepartmentID").Value,
+            //                          PAYMONEY = decimal.Parse(item.Attribute("Salary").Value),
+            //                          CREATECOMPANYID = "001",
+            //                          CREATEDEPARTMENTID = "001",
+            //                          CREATEPOSTID = "001",
+            //                          CREATEUSERID = "001",
+            //                          UPDATEUSERID = "001",
+            //                          CREATEDATE = System.DateTime.Now,
+            //                          UPDATEDATE = System.DateTime.Now
+            //                      };
+            //    listSave.AddRange(deptPayList);
+            //}
+            //List<FBEntity> listResult = listSave.ToFBEntityList();
+            //listResult.ForEach(item =>
+            //    {
+            //        item.FBEntityState = FBEntityState.Added;
 
-                });
-            BudgetAccountBLL bll = new BudgetAccountBLL();
+            //    });
+            //BudgetAccountBLL bll = new BudgetAccountBLL();
 
-            return bll.UpdateSalaryBudget(listResult);
+            //return bll.UpdateSalaryBudget(listResult);
         }
 
         /// <summary>
@@ -596,12 +599,12 @@ namespace SMT.FB.Services
 
         #region 5.      系统生成活动经费并生成下拨活动经费的待办任务
         [OperationContract]
-        public void CreatePersonMoneyAssignInfo(string ASSIGNCOMPANYID, string OWNERID)
+        public void CreatePersonMoneyAssignInfo(string ASSIGNCOMPANYID, string SubmitUserID,string CreateUserid)
         {
             using (BudgetAccountBLL obll = new BudgetAccountBLL())
             {
-                obll.CreatePersonMoneyAssignInfo(ASSIGNCOMPANYID, OWNERID);
-                Tracer.Warn(string.Format("在{0} 系统生成活动经费：公司ID{1},个人ID{2}", System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), ASSIGNCOMPANYID, OWNERID));
+                obll.CreatePersonMoneyAssignInfo(ASSIGNCOMPANYID, SubmitUserID, CreateUserid);
+                Tracer.Debug(string.Format("在{0} 系统生成活动经费：公司ID{1},SubmitUserID:{2}, CreateUserid:{3}", System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), ASSIGNCOMPANYID, SubmitUserID, CreateUserid));
             }
         }
         #endregion

@@ -5,6 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <script language="javascript" type="text/javascript">
+// <![CDATA[
+
+        function xmlConent_onclick() {
+
+        }
+
+// ]]>
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -40,6 +49,20 @@
     <div>
     <asp:Label ID="lbMsg" runat="server" />
     </div>
+    </div>
+    <div style="margin-top:20px;">
+        <div>查单据生成的元数据</div>
+        <div><span> 实体类型：</span><asp:DropDownList style="margin-left:20px;width:300px" ID="ddlOrderType" runat="server" /></div>
+        
+        <div><span>单据编号或ＩＤ：</span><span style="margin-left:20px;"><asp:TextBox type="text" runat="server"  id="orderIDForXmlQuery" style="width:607px" />
+        </span><span style="margin-left:20px;">
+            <asp:Button ID="btnGenXml" runat="server" 
+                Text="生成元数据xml" Height="21px" onclick="btnGenXml_Click"  /></span>
+                <div>
+                    <textarea id="xmlConent" name="xmlConent" runat="server" 
+                        style="overflow:scroll; height: 579px; width: 89%;"></textarea></div>
+                </div>
+                <textarea id="TextArea1" cols="20" name="S1" rows="2"></textarea>
     </div>
     </form>
 </body>

@@ -10,10 +10,26 @@
            xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
            xmlns:smtx="clr-namespace:SMT.SaaS.FrameworkUI;assembly=SMT.SaaS.FrameworkUI"
            xmlns:localViews="clr-namespace:SMT.FB.UI.Views"
+           xmlns:dataprimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls.Data"
            xmlns:local="clr-namespace:SMT.FB.UI.Common"
            d:DesignWidth="640" d:DesignHeight="480"
            Title="SubjectDepartment Page">
-
+    <localViews:FBBasePage.Resources>
+        <Style x:Name="activeStyle" TargetType="dataprimitives:DataGridColumnHeader" BasedOn="{StaticResource DataGridColumnHeaderStyle}">
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox IsThreeState="False" Click="cbActiveS_Click" x:Name="cbActiveS"></CheckBox>
+                            <TextBlock Margin="3 2 0 2"  Text="{Binding  Converter={StaticResource GridHeaderConverter}, RelativeSource={RelativeSource TemplatedParent}}" 
+                               Foreground="{StaticResource HeaderBackgroundfontColor1}" x:Name="ContentFontColor">
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </localViews:FBBasePage.Resources>
     <Grid x:Name="LayoutRoot" Background="{StaticResource BlueShine2}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>

@@ -38,32 +38,32 @@ namespace SMT.SAAS.Platform.Xamls.MainPagePart
         public RollNews()
         {
             InitializeComponent();
-            _SHOW = ShowStoryBoard(tblRollnews);
+            //_SHOW = ShowStoryBoard(tblRollnews);
 
-            _timer = new DispatcherTimer();
-            _timer.Interval = new TimeSpan(0, 0, 8);
-            _timer.Tick += new System.EventHandler(_timer_Tick);
-            this.Loaded += new RoutedEventHandler(RollNews_Loaded);
+            //_timer = new DispatcherTimer();
+            //_timer.Interval = new TimeSpan(0, 0, 8);
+            //_timer.Tick += new System.EventHandler(_timer_Tick);
+            //this.Loaded += new RoutedEventHandler(RollNews_Loaded);
 
-            ContentPanel.MouseEnter += new System.Windows.Input.MouseEventHandler(ContentPanel_MouseEnter);
-            ContentPanel.MouseLeave += new System.Windows.Input.MouseEventHandler(ContentPanel_MouseLeave);
-            tblRollnews.MouseLeftButtonUp += new System.Windows.Input.MouseButtonEventHandler(tblRollnews_MouseLeftButtonUp);
-            if (_SHOW != null)
-            {
-                _SHOW.Completed += new EventHandler(_SHOW_Completed);
-            }
+            //ContentPanel.MouseEnter += new System.Windows.Input.MouseEventHandler(ContentPanel_MouseEnter);
+            //ContentPanel.MouseLeave += new System.Windows.Input.MouseEventHandler(ContentPanel_MouseLeave);
+            //tblRollnews.MouseLeftButtonUp += new System.Windows.Input.MouseButtonEventHandler(tblRollnews_MouseLeftButtonUp);
+            //if (_SHOW != null)
+            //{
+            //    _SHOW.Completed += new EventHandler(_SHOW_Completed);
+            //}
 
-            if (services == null)
-                services = new BasicServices();
+            //if (services == null)
+            //    services = new BasicServices();
 
-            client = services.PlatformClient;
-            if (client != null)
-            {
-                //client.GetNewsListByParamsCompleted += new EventHandler<GetNewsListByParamsCompletedEventArgs>(client_GetNewsListByParamsCompleted);
-                //client.GetNewsListByParamsAsync("0|1", 10, "1");
-                client.GetNewsListByEmployeeIDCompleted += new EventHandler<GetNewsListByEmployeeIDCompletedEventArgs>(client_GetNewsListByEmployeeIDCompleted);
-                client.GetNewsListByEmployeeIDAsync("0|1", 10, "1", SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID);
-            }
+            //client = services.PlatformClient;
+            //if (client != null)
+            //{
+            //    //client.GetNewsListByParamsCompleted += new EventHandler<GetNewsListByParamsCompletedEventArgs>(client_GetNewsListByParamsCompleted);
+            //    //client.GetNewsListByParamsAsync("0|1", 10, "1");
+            //    client.GetNewsListByEmployeeIDCompleted += new EventHandler<GetNewsListByEmployeeIDCompletedEventArgs>(client_GetNewsListByEmployeeIDCompleted);
+            //    //client.GetNewsListByEmployeeIDAsync("0|1", 10, "1", SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID);
+            //}
         }
 
       

@@ -600,7 +600,6 @@ namespace SMT.FB.UI.Common
                 qeEndDate.RelatedType = QueryExpression.RelationType.And;
                 qe.RelatedExpression = qeEndDate;
                 qe = qe.RelatedExpression;
-                
             }
 
             // 查询对象选择范围
@@ -804,6 +803,7 @@ namespace SMT.FB.UI.Common
             page.EditForm.OperationType = operationType;
             FrameworkElement plRoot = CommonFunction.ParentLayoutRoot;
             EntityBrowser eb = new EntityBrowser(page);
+            eb.EntityScrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
             eb.Show<string>(DialogMode.Default, plRoot, "", (result) => { });
 
 

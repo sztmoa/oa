@@ -25,7 +25,7 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
         /// <summary>
         /// 本地缓存的文件夹名称
         /// </summary>
-        private string strApplicationPath = "SmtPortal";
+        private string strApplicationPath =SMT.SAAS.Main.CurrentContext.Common.HostIP.Replace(":", "").Replace(".","");
 
         /// <summary>
         /// 登录验证接口
@@ -165,117 +165,71 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
         [ScriptableMember]
         public void StartSilverlight(string strmoduleid, string stropttype, string strmessageid, string strconfig, string strUid, string strUserName)
         {
-            ibLogin.Visibility = System.Windows.Visibility.Collapsed;
-            spAddSpace.Visibility = System.Windows.Visibility.Visible;
-            btnAddSpace.IsEnabled = true;
-            if (string.IsNullOrWhiteSpace(strUid) || string.IsNullOrWhiteSpace(stropttype) || string.IsNullOrWhiteSpace(strUserName))
+            try
             {
-                txtUserMsg.Text = "关键信息未获取到，操作被阻止！";
-                return;
+                ibLogin.Visibility = System.Windows.Visibility.Collapsed;
+                spAddSpace.Visibility = System.Windows.Visibility.Visible;
+                btnAddSpace.IsEnabled = true;
+                if (string.IsNullOrWhiteSpace(strUid) || string.IsNullOrWhiteSpace(stropttype) || string.IsNullOrWhiteSpace(strUserName))
+                {
+                    txtUserMsg.Text = "关键信息未获取到，操作被阻止！";
+                    return;
+                }
+
+
+                //txtUserMsg.Text += "[" + strUid + ";" + stropttype + ";" + strUserName + "]";
+
+                if (Application.Current.Resources["CurrentSysUserID"] != null)
+                {
+                    Application.Current.Resources.Remove("CurrentSysUserID");
+                }
+
+                Application.Current.Resources.Add("CurrentSysUserID", strUid);
+
+                if (Application.Current.Resources["username"] != null)
+                {
+                    Application.Current.Resources.Remove("username");
+                }
+                Application.Current.Resources.Add("username", strUserName);
+
+                //标明第一次打开
+                if (Application.Current.Resources["isFirstOpen"] != null)
+                {
+                    Application.Current.Resources.Remove("isFirstOpen");
+                }
+                Application.Current.Resources.Add("isFirstOpen", true);
+
+                List<string> MvcSourcelist = new List<string>();
+                MvcSourcelist.Add(strmoduleid);
+                MvcSourcelist.Add(stropttype);
+                MvcSourcelist.Add(strmessageid);
+                MvcSourcelist.Add(strconfig);
+                AppContext.SystemMessage("StartSilverlight-------------"
+                + "strModuleid:" + strmoduleid + System.Environment.NewLine
+                 + "strOptType:" + stropttype + System.Environment.NewLine
+                    + "strMessageid:" + strmessageid + System.Environment.NewLine
+                       + "strConfig:" + strconfig + System.Environment.NewLine
+                       + "strUid:" + strUid + System.Environment.NewLine
+                       + "strUserName:" + strUserName + System.Environment.NewLine);
+
+                if (Application.Current.Resources["MvcOpenRecordSource"] != null)
+                {
+                    Application.Current.Resources.Remove("MvcOpenRecordSource");
+                }
+
+                Application.Current.Resources.Add("MvcOpenRecordSource", MvcSourcelist);
+
+                //SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
+                if (IosManager.CheckeSpace())
+                {
+                    CheckLoginUser();
+                }
             }
-
-
-            //txtUserMsg.Text += "[" + strUid + ";" + stropttype + ";" + strUserName + "]";
-
-            if (Application.Current.Resources["CurrentSysUserID"] != null)
+            catch (Exception ex)
             {
-                Application.Current.Resources.Remove("CurrentSysUserID");
-            }
-
-            Application.Current.Resources.Add("CurrentSysUserID", strUid);
-
-            if (Application.Current.Resources["username"] != null)
-            {
-                Application.Current.Resources.Remove("username");
-            }
-            Application.Current.Resources.Add("username", strUserName);
-
-            //标明第一次打开
-            if (Application.Current.Resources["isFirstOpen"] != null)
-            {
-                Application.Current.Resources.Remove("isFirstOpen");
-            }
-            Application.Current.Resources.Add("isFirstOpen", true);
-
-            List<string> MvcSourcelist = new List<string>();
-            MvcSourcelist.Add(strmoduleid);
-            MvcSourcelist.Add(stropttype);
-            MvcSourcelist.Add(strmessageid);
-            MvcSourcelist.Add(strconfig);
-            AppContext.SystemMessage("StartSilverlight-------------"
-            +"strModuleid:" + strmoduleid+System.Environment.NewLine
-             + "strOptType:" + stropttype + System.Environment.NewLine
-                + "strMessageid:" + strmessageid + System.Environment.NewLine
-                   + "strConfig:" + strconfig + System.Environment.NewLine
-                   + "strUid:" + strUid + System.Environment.NewLine
-                   + "strUserName:" + strUserName + System.Environment.NewLine);
-
-            if (Application.Current.Resources["MvcOpenRecordSource"] != null)
-            {
-                Application.Current.Resources.Remove("MvcOpenRecordSource");
-            }
-
-            Application.Current.Resources.Add("MvcOpenRecordSource", MvcSourcelist);
-           
-            //SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
-            if (IosManager.CheckeSpace())
-            {
-                CheckLoginUser();
+                AppContext.logAndShow("StartSilverlight 异常：" + ex.ToString());
             }
         }
-
-        ///// <summary>
-        ///// mvc打开指定的菜单，待办任务，新闻或我的单据记录
-        ///// </summary>
-        ///// <param name="strModuleid">模块ID</param>
-        ///// <param name="strOptType">单据类型</param>
-        ///// <param name="strMessageid">单据ID</param>
-        ///// <param name="strConfig">单据配置信息</param>
-        //[ScriptableMember]
-        //public void ExchangeModule(string strModuleid, string strOptType, string strMessageid, string strConfig)
-        //{
-        //    try
-        //    {
-        //        SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("strModuleid:" + strModuleid
-        //            +System.Environment.NewLine+ "strOptType:" + strOptType
-        //             + System.Environment.NewLine + "strMessageid:" + strMessageid
-        //              + System.Environment.NewLine + "strConfig:" + strConfig);
-              
-        //        SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
-
-        //        if (!IosManager.CheckeSpace())
-        //        {
-        //            MessageBox.Show("未增加独立存储空间，请关闭当前页面，重新登录！");
-        //            ibLogin.Visibility = System.Windows.Visibility.Collapsed;
-        //            spAddSpace.Visibility = System.Windows.Visibility.Visible;
-        //            return;
-        //        }
-
-        //        if (Application.Current.Resources["CurrentSysUserID"] == null)
-        //        {
-        //            MessageBox.Show("用户登录信息异常，不能执行当前操作！");
-        //            return;
-        //        }
-
-        //        if (!SMT.SAAS.Main.CurrentContext.AppContext.IsLoadingCompleted)
-        //        {
-        //            MessageBox.Show("系统加载未完成，不能执行当前操作！");
-        //            return;
-        //        }
-
-        //        Type t = uMainPage.GetType();
-
-        //        MethodInfo m = t.GetMethod("OpenModuleWithMVC");
-        //        SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("开始调用："+t.Name+" OpenModuleWithMVC:");
-              
-        //        m.Invoke(uMainPage, new object[4] { strModuleid, strOptType, strMessageid, strConfig });
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("系统错误，请联系管理员：" + ex.ToString());
-        //        SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
-        //    }
-        //}
 
         /// <summary>
         ///  检查登录
@@ -486,7 +440,7 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
         /// </summary>
         private void dllVersionUpdataCheck()
         {
-            string path = @"http://" + SMT.SAAS.Main.CurrentContext.Common.HostIP.ToString() + @"/ClientBin/DllVersion.xml?dt=" + DateTime.Now.Millisecond;
+            string path = @"http://" + SMT.SAAS.Main.CurrentContext.Common.HostIP + @"/ClientBin/DllVersion.xml?dt=" + DateTime.Now.Millisecond;
             webcDllVersion.OpenReadAsync(new Uri(path, UriKind.Absolute));
         }
 
@@ -608,7 +562,7 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
             }
             downloadDllName = dllXElements.FirstOrDefault();
             //txtUserMsg.Text = "正在获取更新,请稍等......";
-            string path = @"http://" + SMT.SAAS.Main.CurrentContext.Common.HostIP.ToString() + @"/ClientBin/" + downloadDllName + "?dt=" + DateTime.Now.Millisecond;
+            string path = @"http://" + SMT.SAAS.Main.CurrentContext.Common.HostIP + @"/ClientBin/" + downloadDllName + "?dt=" + DateTime.Now.Millisecond;
             wDownloadDllClinet.OpenReadAsync(new Uri(path, UriKind.Absolute));
         }
 

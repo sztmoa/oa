@@ -12,6 +12,7 @@ using SMT.SaaS.BLLCommonServices.FlowWFService;
 
 using SMT.SaaS.OA.DAL.Views;
 using SMT.SaaS.OA.DAL;
+using SMT.Foundation.Log;
 
 
 
@@ -717,7 +718,7 @@ namespace SMT.SaaS.OA.Services
         }
 
         /// <summary>
-        /// 获取刚发布的公文
+        /// 获取刚发布的公文，给张秉福的新平台公司发文调用
         /// </summary>
         /// <returns></returns>
         [OperationContract]        
@@ -729,6 +730,8 @@ namespace SMT.SaaS.OA.Services
         {
             using (HouseInfoManagerBll houseBll = new HouseInfoManagerBll())
             {
+                //Tracer.Debug("服务-RefreshSendDocData-公司发文中查询的内容：" + Doctitle);
+                //Tracer.Debug("服务-RefreshSendDocData-公司发文中查询的filterString：" + filterString);
                 List<V_SystemNotice> ent = houseBll.RefreshSendDocData(employeeid,pageIndex, pageSize, ref pageCount
                     , ref DataCount, postIDs, companyIDs, departmentIDs, ref NeedGetNewData, NeedAllData
                     , filterString, paras, Doctitle);

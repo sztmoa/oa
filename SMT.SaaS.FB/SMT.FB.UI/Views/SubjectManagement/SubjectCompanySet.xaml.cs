@@ -27,6 +27,8 @@ namespace SMT.FB.UI.Views.SubjectManagement
     {
         PermissionServiceClient permClient = new PermissionServiceClient();
         private int IsFbAdmin = 0;
+        private string companyId = string.Empty;//保存公司ID，在查询是使用
+        bool isLoadTree = true;//只加载左边树
         public SubjectCompanySet()
         {
             InitializeComponent();
@@ -34,7 +36,7 @@ namespace SMT.FB.UI.Views.SubjectManagement
             permClient.getFbAdminByEmployeeIDCompleted += new EventHandler<getFbAdminByEmployeeIDCompletedEventArgs>(permClient_getFbAdminByEmployeeIDCompleted);
             permClient.getFbAdminByEmployeeIDAsync(SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID);
         }
-
+     
         void permClient_getFbAdminByEmployeeIDCompleted(object sender, getFbAdminByEmployeeIDCompletedEventArgs e)
         {
             
@@ -95,6 +97,7 @@ namespace SMT.FB.UI.Views.SubjectManagement
         #region 获取数据
         protected void InitData()
         {
+            isLoadTree = true;//赋值
             EntityList.Clear();
 
             dictTreeViewItem.Clear();
@@ -115,15 +118,25 @@ namespace SMT.FB.UI.Views.SubjectManagement
 
             List<OrderEntity> listCompany = e.Result.ToEntityAdapterList<OrderEntity>().ToList();
             //List<TreeViewItem> items = TreeView.Items.AddObjectList(listCompany, "Entity.Name");
-            if (listCompany != null && listCompany.Count == 1)
+            if (isLoadTree)
             {
-                this.CurrentOrderEntity = listCompany.FirstOrDefault();
+                 this.TreeView.Items.Clear();
+                List<TreeViewItem> items = TreeView.Items.AddObjectList(listCompany, "Entity.Name");
+                isLoadTree = false;
             }
             else
             {
-                this.TreeView.Items.Clear();
-                List<TreeViewItem> items = TreeView.Items.AddObjectList(listCompany, "Entity.Name");
+                this.CurrentOrderEntity = listCompany.FirstOrDefault();
             }
+            //if (listCompany != null && listCompany.Count == 1)
+            //{
+            //    this.CurrentOrderEntity = listCompany.FirstOrDefault();
+            //}
+            //else
+            //{
+            //    this.TreeView.Items.Clear();
+            //    List<TreeViewItem> items = TreeView.Items.AddObjectList(listCompany, "Entity.Name");
+            //}
             EntityList = listCompany;
             this.CloseProcess();
             //TreeViewItem tvi = this.TreeView.Items.FirstOrDefault() as TreeViewItem;
@@ -183,20 +196,31 @@ namespace SMT.FB.UI.Views.SubjectManagement
             DetailGrid grid = editForm.FindChildControl<DetailGrid>("OrderGrid");
             if (grid != null)
             {
+                grid.SetGridFix();
+                grid.ADGrid.Columns.ForEach(item =>
+                {
+                    item.CanUserSort = false;
+                });
+                  grid.ADGrid.Columns[2].HeaderStyle = null;
+                grid.ADGrid.Columns[2].HeaderStyle = Resources["activeStyle"] as Style;  
+
                 //如果是公司预算管理员：则自己的公司不可以修改
                 if (IsFbAdmin == 1)
                 {
-                    OrderEntity entity = currentTreeViewItem.DataContext as OrderEntity;
+                    if (currentTreeViewItem != null)
+                    {
+                        OrderEntity entity = currentTreeViewItem.DataContext as OrderEntity;
 
-                    string StrCompany = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
-                    string SelectCompany = (entity.Entity as VirtualCompany).ID;
-                    if (StrCompany == SelectCompany)
-                    {
-                        grid.ADGrid.Columns[2].IsReadOnly = true;
-                    }
-                    else
-                    {
-                        grid.ADGrid.Columns[2].IsReadOnly = false;
+                        string StrCompany = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
+                        string SelectCompany = (entity.Entity as VirtualCompany).ID;
+                        if (StrCompany == SelectCompany)
+                        {
+                            grid.ADGrid.Columns[2].IsReadOnly = true;
+                        }
+                        else
+                        {
+                            grid.ADGrid.Columns[2].IsReadOnly = false;
+                        }
                     }
                 }
                 
@@ -250,7 +274,8 @@ namespace SMT.FB.UI.Views.SubjectManagement
                 QuerySubjectCompanyData(treeViewItem);
                 this.currentTreeViewItem = treeViewItem;
                 OrderEntity entity = currentTreeViewItem.DataContext as OrderEntity;
-                this.CurrentOrderEntity = entity;// new OrderEntity(typeof(VirtualCompany));               
+
+                //this.CurrentOrderEntity = entity;// new OrderEntity(typeof(VirtualCompany));               
             }
             //PermissionHelper.GetPermissionValue(orderEntityService.ModelCode, Permissions.Edit);
             //tooBarTop.ShowItem("Save", 
@@ -275,6 +300,7 @@ namespace SMT.FB.UI.Views.SubjectManagement
                     company.PropertyValue = com.ID;
                     qe.RelatedExpression = company;
                     orderEntityService.QueryFBEntities(qe);
+                    companyId = com.ID;
                 }
             }
             catch (Exception ex)
@@ -408,5 +434,102 @@ namespace SMT.FB.UI.Views.SubjectManagement
        
         }
 
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnFind_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(companyId))
+                {
+                    CommonFunction.ShowMessage("请选择公司");
+                    return;
+                }
+                string tbText = this.tbSubjectName.Text.Trim();
+                if (string.IsNullOrWhiteSpace(tbText))
+                {
+                    CommonFunction.ShowMessage("请输入查询条件");
+                    return;
+                }
+                QueryExpression qe = new QueryExpression();
+                qe.QueryType = "T_FB_SUBJECTCOMPANYSET";
+
+                QueryExpression qeCompany = new QueryExpression();
+                qeCompany.PropertyName = "COMPANYID";
+                qeCompany.PropertyValue = companyId;
+
+                QueryExpression qeFilterString = new QueryExpression();
+                qeFilterString.PropertyName = "filterString";
+                qeFilterString.PropertyValue = tbText;
+
+                qeCompany.RelatedExpression = qeFilterString;
+                qe.RelatedExpression = qeCompany;
+                this.ShowProcess();
+                orderEntityService.QueryFBEntities(qe);
+            }
+            catch (Exception ex)
+            {
+                CommonFunction.ShowErrorMessage(ex.Message);
+                CloseProcess();
+            }
+        }
+
+        /// <summary>
+        /// 重置刷新
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            this.tbSubjectName.Text = "";
+            try
+            {
+                if (string.IsNullOrWhiteSpace(companyId))
+                {
+                    return;
+                }
+                QueryExpression qe = new QueryExpression();
+                qe.QueryType = "T_FB_SUBJECTCOMPANYSET";
+
+                QueryExpression qeCompany = new QueryExpression();
+                qeCompany.PropertyName = "COMPANYID";
+                qeCompany.PropertyValue = companyId;
+                qe.RelatedExpression = qeCompany;
+                this.ShowProcess();
+                orderEntityService.QueryFBEntities(qe);
+            }
+            catch (Exception ex)
+            {
+                CommonFunction.ShowErrorMessage(ex.Message);
+                CloseProcess();
+            }
+        }
+
+        private void cbActiveS_Click(object sender, RoutedEventArgs e)
+        {
+            var isCheck = ((CheckBox)sender).IsChecked.Value;
+            var msg = isCheck ? "是否确认全部分配？" : "是否确认全部不分配？";
+            var active = isCheck ? 1 : 0;
+            Action action = () =>
+            {
+                ((CheckBox)sender).IsChecked = isCheck;
+                var oEntity = editForm.OrderEntity;
+
+                var list = oEntity.GetRelationFBEntities(typeof(T_FB_SUBJECTCOMPANY).Name).ToEntityList<T_FB_SUBJECTCOMPANY>();
+                list.ForEach(item =>
+                    {
+                        if (item.T_FB_SUBJECT.SUBJECTID != DataCore.SystemSetting.MONEYASSIGNSUBJECTID)
+                        {
+                            item.EDITSTATES = active;
+                        }
+
+                    });
+            };
+            ((CheckBox)sender).IsChecked = !isCheck;
+            CommonFunction.DialogOKCanel("确认", msg, action, null);
+        }
     }
 }

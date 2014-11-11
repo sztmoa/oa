@@ -18,6 +18,8 @@ namespace SMT.FB.BLL
         //static FBEntityBLL bllOrder = null;
         static List<T_FB_ORDERCODE> listOrderCode;
         static T_FB_SYSTEMSETTINGS etityT_FB_SYSTEMSETTINGS = null; // 不可直接调用，可访问GetSetting()方式获取
+        
+        
         static SystemBLL()
         {
             //bll = new FBEntityBLL(true);
@@ -53,7 +55,7 @@ namespace SMT.FB.BLL
                         etityT_FB_SYSTEMSETTINGS = bll.GetTable<T_FB_SYSTEMSETTINGS>().FirstOrDefault();
                     }
                 }
-
+                etityT_FB_SYSTEMSETTINGS.Settings = Settings;
 
                 return etityT_FB_SYSTEMSETTINGS;
             }
@@ -64,6 +66,16 @@ namespace SMT.FB.BLL
             }
         }
 
+        public static string GetFBSetting(string key)
+        {
+            var result = "";
+            if (Settings.ContainsKey(key))
+            {
+                result = Settings[key];
+            }
+            return result;
+
+        }
         public static void SaveSetting()
         {
             using (FBEntityBLL bll = new FBEntityBLL())
@@ -220,6 +232,22 @@ namespace SMT.FB.BLL
         }
         #endregion
 
+
+        #region 4. Setting 预算的默认设置
+        private static Dictionary<string, string> static_Settings;
+        public static Dictionary<string, string> Settings
+        {
+            get
+            {
+                if (static_Settings == null)
+                {
+                    static_Settings = new Dictionary<string, string>();
+                }
+                return static_Settings;
+            }
+
+        }
+        #endregion
 
         #region DebugMode
         public static bool DebugMode { get; set; }

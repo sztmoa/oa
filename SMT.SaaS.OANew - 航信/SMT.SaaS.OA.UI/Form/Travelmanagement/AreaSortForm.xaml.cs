@@ -349,11 +349,21 @@ namespace SMT.SaaS.OA.UI.UserControls
                     if (FormType == FormTypes.Edit)
                     {
                         area.UPDATEDATE = System.DateTime.Now;
-                        area.UPDATEUSERID = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID;
+                        area.UPDATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
+                        area.UPDATEUSERNAME = Common.CurrentLoginUserInfo.UserPosts[0].CompanyName+"-"+
+                            Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName + "-" +
+                            Common.CurrentLoginUserInfo.UserPosts[0].PostName + "-" +
+                            Common.CurrentLoginUserInfo.EmployeeName;
                         client.AreaCategoryUpdateAsync(area);
                     }
                     else
                     {
+                        area.UPDATEDATE = System.DateTime.Now;
+                        area.UPDATEUSERID = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID;
+                        area.UPDATEUSERNAME = area.UPDATEUSERNAME = Common.CurrentLoginUserInfo.UserPosts[0].CompanyName + "-" +
+                            Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName + "-" +
+                            Common.CurrentLoginUserInfo.UserPosts[0].PostName + "-" +
+                            Common.CurrentLoginUserInfo.EmployeeName;                      
                         client.AreaCategoryADDAsync(area, solutionsObj.TRAVELSOLUTIONSID, Common.CurrentLoginUserInfo.UserPosts[0].CompanyID);
                     }
                 }

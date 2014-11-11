@@ -92,8 +92,10 @@ namespace SmtPortalSetUp
             int year=int.Parse(txtStartDate.Text.Substring(0, 4));
             int month = int.Parse(txtStartDate.Text.Substring(5, 2));
             AttendanceServiceClient AttRdSvc = new AttendanceServiceClient();
-            AttRdSvc.CalculateEmployeeAttendanceMonthlyByEmployeeID(year + "-" + month, GlobalParameters.employeeid);
-            txtMessagebox.Text = "结算完成！"+ System.Environment.NewLine +txtMessagebox.Text;
+            string msg=string.Empty;
+            string strResult=AttRdSvc.CalculateAttendanceMonthly(year + "-" + month, "3", GlobalParameters.employeeMasterPostid, null, GlobalParameters.employeeid, ref msg);
+            txtMessagebox.Text = "结算完成！strResult=" + strResult + System.Environment.NewLine
+                + "msg=" + msg + System.Environment.NewLine + txtMessagebox.Text;
             GetEmployeeBlance();
         }
 

@@ -130,31 +130,79 @@ namespace SMT.SAAS.Platform.WebParts.Views
                             Titel = e.Result.MODELNAME;
                         }                       
                         _currentEngineTask = e.Result;
+                        if (_currentEngineTask==null)
+                        {
+                            string msg = "待办元数据错误，获取的值为空，根据历史经验，是没有配置默认消息导致，请配置后在模块打回此单据，重新提交。" ;
+                            MessageBox.Show(msg);
+                            return;
+                        }
+                        if (string.IsNullOrEmpty(Titel))
+                        {
+                            string msg = "待办元数据错误，获取的模块名为空，根据历史经验，是没有配置默认消息导致，请配置后在模块打回此单据，重新提交。MODELNAME=" + _currentEngineTask.MODELNAME;
+                            SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage(msg);
+                        }
+                        if (checkXmlFail(_currentEngineTask.APPLICATIONURL))
+                        {
+                            string msg = "待办元数据错误，元数据解析错误，根据历史经验，是没有配置默认消息导致，请配置后在模块打回此单据，重新提交。applicationUrl=" + _currentEngineTask.APPLICATIONURL;
+                            MessageBox.Show(msg);
+                            return;
+                        }
 
                         applicationUrl = _currentEngineTask.APPLICATIONURL.Trim();
 
                         OpenFromXML(Titel, applicationUrl);
                     }
 
+                }else
+                {
+                    SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("client_PendingDetailTasksCompleted error:" + e.Error.ToString());
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("待办任务打开异常,请查看系统日志！");
+                MessageBox.Show("待办任务打开异常,请查看系统日志！");               
                 Logging.Logger.Current.Log("10000", "Platform", "待办任务", "待办任务打开异常", ex, Logging.Category.Exception, Logging.Priority.High);
             }
         }
 
-        private void OpenFromXML(string titel,string applicationUrl)
+        public bool checkXmlFail(string xmlUrl)
         {
-
-            ViewModel.Context.MainPanel.SetTitel(titel);
-
-            using (XmlReader reader = XmlReader.Create(new StringReader(applicationUrl)))
+            if (string.IsNullOrEmpty(xmlUrl)) return true;
+            using (XmlReader reader = XmlReader.Create(new StringReader(xmlUrl)))
             {
                 XElement xmlClient = XElement.Load(reader);
                 var temp = from c in xmlClient.DescendantsAndSelf("System")
                            select c;
+
+                if (temp == null)
+                {
+                    return true;
+                }
+                else
+                {
+                    if (temp.Elements("AssemblyName") == null
+                    || temp.Elements("PageParameter") == null
+                    || temp.Elements("ApplicationOrder") == null)
+                    {
+                        return true;
+                    }
+
+                }
+            }
+            return false;
+        }
+
+        private void OpenFromXML(string titel,string applicationUrl)
+        {
+            SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("OpenFromXML:titel="
+                + titel + " applicationUrl=" + applicationUrl);
+            ViewModel.Context.MainPanel.SetTitel(titel);
+          
+            using (XmlReader reader = XmlReader.Create(new StringReader(applicationUrl)))
+            {
+                XElement xmlClient = XElement.Load(reader);
+                var temp = from c in xmlClient.DescendantsAndSelf("System")
+                           select c;               
                 string AssemblyName = temp.Elements("AssemblyName").SingleOrDefault().Value.Trim();
                 string strUrl = temp.Elements("PageParameter").SingleOrDefault().Value.Trim();
                 string strOid = temp.Elements("ApplicationOrder").SingleOrDefault().Value.Trim();
@@ -192,8 +240,9 @@ namespace SMT.SAAS.Platform.WebParts.Views
                         string strWindow = System.DateTime.Now.ToString("yyMMddHHmsssfff");
                         wd.Navigate(uri, strWindow, "directories=no,fullscreen=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no");
                     }
-                    catch
+                    catch(Exception ex)
                     {
+                        SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage(ex.ToString());
                         MessageBox.Show("模块链接异常：" + strUrl);
                     }
                 }
@@ -209,47 +258,53 @@ namespace SMT.SAAS.Platform.WebParts.Views
         EventHandler<ViewModel.LoadModuleEventArgs> LoadTaskHandler = null;
         private void CheckeDepends(string moduleName)
         {
-            var module = ViewModel.Context.Managed.Catalog.FirstOrDefault(item => item.ModuleName == moduleName);
-            if (module != null)
+            try
             {
-                ViewModel.Context.Managed.OnSystemLoadModuleCompleted += LoadTaskHandler = (o, e) =>
+                var module = ViewModel.Context.Managed.Catalog.FirstOrDefault(item => item.ModuleName == moduleName);
+                if (module != null)
                 {
-                    ViewModel.Context.Managed.OnSystemLoadModuleCompleted -= LoadTaskHandler;
-                    if (e.Error == null)
+                    ViewModel.Context.Managed.OnSystemLoadModuleCompleted += LoadTaskHandler = (o, e) =>
                     {
-                        ResolverTask();
-                    }
-                };
-
-                ViewModel.Context.Managed.LoadModule(moduleName);
-            }
-            else
-            {
-                string msg = "打开模块：" + moduleName + " 失败:MVCPendingTaskManager.CheckeDepends中module未找到。";
-                SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage(msg);
-                SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
-                loading.Stop();
-                try
-                {
-                    if (moduleName == "SMT.Workflow.Platform.Designer")
-                    {
-                        ViewModel.Context.Managed.OnSystemLoadModuleCompleted += LoadTaskHandler = (o, e) =>
+                        ViewModel.Context.Managed.OnSystemLoadModuleCompleted -= LoadTaskHandler;
+                        if (e.Error == null)
                         {
-                            ViewModel.Context.Managed.OnSystemLoadModuleCompleted -= LoadTaskHandler;
-                            if (e.Error == null)
-                            {
-                                ResolverTask();
-                            }
-                        };
+                            ResolverTask();
+                        }
+                    };
 
-                        ViewModel.Context.Managed.LoadModule(moduleName);
+                    ViewModel.Context.Managed.LoadModule(moduleName);
+                }
+                else
+                {
+                    string msg = "打开模块：" + moduleName + " 失败:MVCPendingTaskManager.CheckeDepends中module未找到。";
+                    SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage(msg);
+                    SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
+                    loading.Stop();
+                    try
+                    {
+                        if (moduleName == "SMT.Workflow.Platform.Designer")
+                        {
+                            ViewModel.Context.Managed.OnSystemLoadModuleCompleted += LoadTaskHandler = (o, e) =>
+                            {
+                                ViewModel.Context.Managed.OnSystemLoadModuleCompleted -= LoadTaskHandler;
+                                if (e.Error == null)
+                                {
+                                    ResolverTask();
+                                }
+                            };
+
+                            ViewModel.Context.Managed.LoadModule(moduleName);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("尝试加载流程模块失败：" + ex.ToString());
+                        SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
                     }
                 }
-                catch (Exception ex)
-                {
-                    SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("尝试加载流程模块失败："+ex.ToString());
-                    SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
-                }
+            }catch(Exception ex)
+            {
+                SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("CheckeDepends err moduleName:" + moduleName+ " ex="+ex.ToString());
             }
         }
 
@@ -328,7 +383,7 @@ namespace SMT.SAAS.Platform.WebParts.Views
                             borTaskContent.Child = null;
 
                             Type[] types = new Type[] { typeof(string), typeof(string), typeof(string), typeof(Border) };
-                            if (PageParameter == "SMT.SaaS.OA.UI.UserControls.BusinessApplicationsForm")
+                            if (PageParameter == "SMT.SaaS.OA.UI.UserControls.BusinessApplicationsFormxxx")
                             {
                                 types = new Type[] { typeof(string), typeof(string), typeof(string) };
                             }
@@ -339,7 +394,8 @@ namespace SMT.SAAS.Platform.WebParts.Views
                             SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("开始调用业务系统打开单据方法,typeString:"
                             + typeString + "ProcessName:" + ProcessName+ "types:" + types);
                             //SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
-                            if (PageParameter == "SMT.SaaS.OA.UI.UserControls.BusinessApplicationsForm")
+                            //MessageBox.Show(PageParameter);
+                            if (PageParameter == "SMT.SaaS.OA.UI.UserControls.BusinessApplicationsFormxxx")
                             {
                                 method.Invoke(null, BindingFlags.Static | BindingFlags.InvokeMethod, null, new object[] { ApplicationOrder, PageParameter, FormType}, null);
                             }

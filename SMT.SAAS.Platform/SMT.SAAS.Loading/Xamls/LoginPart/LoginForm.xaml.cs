@@ -36,12 +36,12 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
         /// <summary>
         /// 本地xap保存的文件夹名称
         /// </summary>
-        private  string ApplicationPath = "SmtPortal";
+        private static string ApplicationPath = SMT.SAAS.Main.CurrentContext.Common.HostIP.Replace(":", "").Replace(".", "");
 
         /// <summary>
         /// 本地版本文件路径
         /// </summary>
-        private string dllVersionFilePath =@"SmtPortal/DllVersion.xml";
+        private string dllVersionFilePath =ApplicationPath+@"/DllVersion.xml";
         /// <summary>
         /// 检测是否已开始登录
         /// </summary>

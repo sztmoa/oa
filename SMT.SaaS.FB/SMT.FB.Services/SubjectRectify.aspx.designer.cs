@@ -166,22 +166,22 @@ namespace SMT.FB.Services {
         protected global::System.Web.UI.WebControls.Button BtnBrowrry;
         
         /// <summary>
-        /// total 控件。
+        /// GridViewAcount 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView total;
+        protected global::System.Web.UI.WebControls.GridView GridViewAcount;
         
         /// <summary>
-        /// TextBox6 控件。
+        /// TxtUsableMoney 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox TxtUsableMoney;
         
         /// <summary>
         /// Button3 控件。
@@ -202,13 +202,13 @@ namespace SMT.FB.Services {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// TextBox7 控件。
+        /// TxtActualMoney 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox TxtActualMoney;
         
         /// <summary>
         /// Button4 控件。

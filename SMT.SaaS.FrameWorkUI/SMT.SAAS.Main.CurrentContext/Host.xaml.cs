@@ -22,6 +22,7 @@ namespace SMT.SAAS.Main.CurrentContext
         public Host()
         {
             InitializeComponent();
+            systemMessageArea.Visibility = Visibility.Collapsed;
             //初始化系统继承引导程序
             //ViewModel.Context.Host = this;
             //if (ViewModel.Context.Managed == null)
@@ -107,6 +108,11 @@ namespace SMT.SAAS.Main.CurrentContext
             txtSystemMessage.Visibility = System.Windows.Visibility.Visible;
             systemMessageArea.Height = 100;
             systemMessageArea.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

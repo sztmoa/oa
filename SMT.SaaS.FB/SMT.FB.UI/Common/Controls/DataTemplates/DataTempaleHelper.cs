@@ -24,6 +24,7 @@ namespace SMT.FB.UI.Common.Controls.DataTemplates
            new XElementString("DataTemplate",
                new XAttributeString("xmlns", "http://schemas.microsoft.com/winfx/2006/xaml/presentation"),
                new XAttributeString("xmlns:x", "http://schemas.microsoft.com/winfx/2006/xaml"),
+               new XAttributeString("xmlns:smtx", "clr-namespace:SMT.SaaS.FrameworkUI;assembly=SMT.SaaS.FrameworkUI"),
                new XAttributeString("xmlns:data", "clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data")
                );
 

@@ -30,7 +30,7 @@ namespace SMT.FB.UI.Common
         }
 
         public event EventHandler FBBasePageLoaded;
-
+        bool IsLock = true;
         SMTLoading loadbar = null;
         private void InitProcess()
         {
@@ -45,16 +45,21 @@ namespace SMT.FB.UI.Common
                 g.Children.Add(loadbar);
             }
         }
-        public void ShowProcess()
+        public int showProcessFlag=0;//防止开启进度条逻辑里面有关闭进度条的方法导致此进度条也被关闭。
+        public void ShowProcess(bool isLock = false)
         {
+            showProcessFlag++;
             if (loadbar != null)
             {
                 loadbar.Start();//调用服务时写
             }
+            this.IsLock = isLock;
         }
-        public void CloseProcess()
+        public void CloseProcess(bool keepLock  = true)
         {
-            if (loadbar != null)
+            showProcessFlag--;
+            if(showProcessFlag>0)return;
+            if ((loadbar != null) && !( IsLock && keepLock))
             {
                 loadbar.Stop();
             }

@@ -67,13 +67,18 @@ namespace SMT.SaaS.OA.Services
         protected void btnGetRefreshDocData_Click(object sender, EventArgs e)
         {
             SmtOACommonAdmin sv = new SmtOACommonAdmin();
+            SmtOAPersonOffice office = new SmtOAPersonOffice();
+            List<string>  ddddd = office.GetApprovalTypeByCompanyid("703dfb3c-d3dc-4b1d-9bf0-3507ba01b716");
+            //List<string> ddddd = office.GetApprovalTypeByCompanyid("cafdca8a-c630-4475-a65d-490d052dca36");
             bool needreFreshData = false;
             int pagecont=0,contdata = 0;
-            List<string> postid = new List<string>() { "d798ead2-559b-488c-ae76-b7640afff8e7" };
-            List<string> departmentid = new List<string>() { "c18d20e3-9f94-4b4c-ac24-b8256132e7d2" };
-            List<string> companyid = new List<string>() { "cea137a0-3706-4267-8baa-a847536f1f48" };
-            var q = sv.RefreshSendDocData("8f4df3c7-1e41-488d-acb7-42c3dd773200", 1, 15, ref pagecont, ref contdata,
-                postid, departmentid, companyid, ref needreFreshData, true, string.Empty, null, "请");
+            //List<string> postid = new List<string>() { "d798ead2-559b-488c-ae76-b7640afff8e7" };
+            //List<string> departmentid = new List<string>() { "c18d20e3-9f94-4b4c-ac24-b8256132e7d2" };
+            List<string> postid = new List<string>() ;
+            List<string> departmentid = new List<string>();
+            List<string> companyid = new List<string>() { "bac05c76-0f5b-40ae-b73b-8be541ed35ed" };
+            var q = sv.RefreshSendDocData("ca356aeb-ea37-41a4-a09d-0d4491b6acf2", 1, 15, ref pagecont, ref contdata,
+                postid, departmentid, companyid, ref needreFreshData, true, string.Empty, null, "2013年");
             if (q == null)
             {
                 Tracer.Debug("获取到公文为空");

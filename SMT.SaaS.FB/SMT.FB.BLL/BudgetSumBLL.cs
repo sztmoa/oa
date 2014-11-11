@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using SMT_FB_EFModel;
 using System.Data;
+using System.Data.Objects;
 
 namespace SMT.FB.BLL
 {
@@ -16,6 +17,10 @@ namespace SMT.FB.BLL
         #region 1.	创建年度预算汇总主表和明细
         public void CreateCompanyBudgetSumDetail(T_FB_COMPANYBUDGETAPPLYMASTER entity)
         {
+            if (UpdateOldDetail(entity))
+            {
+                return;
+            }
             T_FB_COMPANYBUDGETSUMDETAIL detail = new T_FB_COMPANYBUDGETSUMDETAIL();
 
             detail.COMPANYBUDGETSUMDETAILID = Guid.NewGuid().ToString();
@@ -208,6 +213,11 @@ namespace SMT.FB.BLL
         #region 2.	创建月度预算汇总主表和明细
         public void CreateDeptBudgetSumDetail(T_FB_DEPTBUDGETAPPLYMASTER entity)
         {
+            if (UpdateOldDetail(entity))
+            {
+                return;
+            }
+
             T_FB_DEPTBUDGETSUMDETAIL detail = new T_FB_DEPTBUDGETSUMDETAIL();
 
             detail.DEPTBUDGETSUMDETAILID = Guid.NewGuid().ToString();
@@ -406,6 +416,36 @@ namespace SMT.FB.BLL
         #endregion
 
 
+        private bool UpdateOldDetail(T_FB_COMPANYBUDGETAPPLYMASTER master)
+        {
+            var details = this.GetTable<T_FB_COMPANYBUDGETSUMDETAIL>();
+            (details as ObjectQuery<T_FB_COMPANYBUDGETSUMDETAIL>).MergeOption = MergeOption.NoTracking;
+            var find = details.Where(item => item.T_FB_COMPANYBUDGETAPPLYMASTER.COMPANYBUDGETAPPLYMASTERID == master.COMPANYBUDGETAPPLYMASTERID
+                && item.CHECKSTATES == 4).FirstOrDefault();
+            if (find != null)
+            {
+                find.CHECKSTATES = null;
+                this.Update(find);
+                return true;
+            }
+            return false;
+            
+        }
 
+        private bool UpdateOldDetail(T_FB_DEPTBUDGETAPPLYMASTER master)
+        {
+            var details = this.GetTable<T_FB_DEPTBUDGETSUMDETAIL>();
+            (details as ObjectQuery<T_FB_DEPTBUDGETSUMDETAIL>).MergeOption = MergeOption.NoTracking;
+            var find = details.Where(item => item.T_FB_DEPTBUDGETAPPLYMASTER.DEPTBUDGETAPPLYMASTERID == master.DEPTBUDGETAPPLYMASTERID
+                && item.CHECKSTATES == 4).FirstOrDefault();
+            if (find != null)
+            {
+                find.CHECKSTATES = null;
+                this.Update(find);
+                return true;
+            }
+            return false;
+
+        }
     }
 }

@@ -658,6 +658,7 @@ namespace SMT.FB.BLL
     #region BLL异常
     public class FBBLLException : Exception
     {
+        public string ErrorCode { get; private set; }
         public FBBLLException(string message)
             : base(message)
         {
@@ -665,6 +666,11 @@ namespace SMT.FB.BLL
         public FBBLLException(string message, Exception innerException)
             : base(message, innerException)
         {
+        }
+        public FBBLLException(string message, string errorCode)
+            : base(message)
+        {
+            this.ErrorCode = errorCode;
         }
     }
 
@@ -674,12 +680,38 @@ namespace SMT.FB.BLL
     /// <summary>
     /// 审核结果类
     /// </summary>
-    [global::System.Runtime.Serialization.DataContractAttribute(IsReference = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "AuditResult", Namespace = "SMT.FB.BLL", IsReference = true)]
     [global::System.Serializable()]
     public class AuditResult : SaveResult
     {
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public FlowWFService.DataResult DataResult { get; set; }
+    }
+
+    [System.Runtime.Serialization.DataContractAttribute(Name = "VirtualAudit", Namespace = "SMT.FB.BLL", IsReference = true)]
+    [global::System.Serializable()]
+    public class VirtualAudit : VirtualEntityObject
+    {
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int Result { get; set; }
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Content { get; set; }
+
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModelCode { get; set; }
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string FormID { get; set; }
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string GUID { get; set; }
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string NextStateCode { get; set; }
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Op { get; set; }
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int FlowSelectType { get; set; }
+
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.BLLCommonServices.FlowWFService.SubmitData SubmitData { get; set; } 
     }
 
     /// <summary>

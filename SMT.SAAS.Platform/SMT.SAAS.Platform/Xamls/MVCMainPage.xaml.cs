@@ -414,6 +414,7 @@ namespace SMT.SAAS.Platform.Xamls
                     return;
                 }
                 OpenType = strOptType.ToUpper();
+                //MessageBox.Show(OpenType);
                 switch (OpenType)
                 {
                     case "MODULE":

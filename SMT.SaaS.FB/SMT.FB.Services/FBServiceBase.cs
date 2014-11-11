@@ -70,9 +70,15 @@ namespace SMT.FB.Services
                 }
                 FBCommonBLL.FBCommonEntityList = listResult;
 
+                // 预算设置
+                list = doc.SelectNodes("FB/Settings/Setting");
+                foreach (XmlNode node in list)
+                {
+                    SystemBLL.Settings.Add(node.Attributes["Key"].Value, node.Attributes["Value"].Value);
+                }
                 FBCommonBLL.FBServiceUrl = ConfigurationManager.AppSettings["FBServiceUrl"];
                 SystemBLL.DebugMode = ConfigurationManager.AppSettings["FBDebugMode"] == "True" ? true : false;
-                #region beyond
+                #region beyond, 元数据模版
                 Dictionary<string, XElement> dictXE = new Dictionary<string, XElement>();
                 System.IO.DirectoryInfo dirInfo = new System.IO.DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"xml\");
                 dirInfo.GetFiles().ToList().ForEach(item =>

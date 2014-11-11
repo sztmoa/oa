@@ -111,7 +111,7 @@ namespace SMT.SAAS.Platform.WebParts.Views
                 }
             };
             loading.Start();
-            client.GetNewsListByEmployeeIDAsync(NewsType, topCount, "1",SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID);
+            //client.GetNewsListByEmployeeIDAsync(NewsType, topCount, "1",SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID);
         }
 
         private void CheckServices()

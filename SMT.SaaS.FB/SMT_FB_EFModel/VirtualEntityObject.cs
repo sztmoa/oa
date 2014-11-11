@@ -20,7 +20,6 @@ namespace SMT_FB_EFModel
     [KnownType(typeof(VirtualDepartment))]
     [KnownType(typeof(VirtualPost))]
     [KnownType(typeof(VirtualUser))]
-    [KnownType(typeof(VirtualAudit))]
     public class VirtualEntityObject : EntityObject
     {
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -84,32 +83,6 @@ namespace SMT_FB_EFModel
 
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public decimal EDITSTATES { get; set; }
-
-    }
-
-    [global::System.Runtime.Serialization.DataContractAttribute(IsReference = true)]
-    [global::System.Serializable()]
-    public class VirtualAudit : VirtualEntityObject
-    {
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public int Result { get; set; }
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string Content { get; set; }
-
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string ModelCode { get; set; }
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string FormID { get; set; }
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string GUID { get; set; }
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string NextStateCode { get; set; }
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string Op { get; set; }
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public int FlowSelectType { get; set; }
-
-        
 
     }
 

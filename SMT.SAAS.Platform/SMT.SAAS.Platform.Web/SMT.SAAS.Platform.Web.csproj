@@ -24,7 +24,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <TargetFrameworkProfile />
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -103,14 +103,11 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ClientBin\SMT.SAAS.Loading.xap" />
-    <Content Include="index.bak.html" />
     <Content Include="index.html" />
     <Content Include="Silverlight.js" />
-    <Content Include="SMT.SAAS.LoadingTestPage.aspx" />
-    <Content Include="SMT.SAAS.LoadingTestPage.html" />
-    <Content Include="SMT.SAAS.Platform.MainTestPage.aspx" />
-    <Content Include="SMT.SAAS.Platform.MainTestPage.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -283,12 +280,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>11111</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost:11111/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

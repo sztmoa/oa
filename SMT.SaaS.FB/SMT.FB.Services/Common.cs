@@ -37,8 +37,8 @@ namespace SMT.FB.Services
 
             knownTypes.Add(typeof(AuditResult));
             knownTypes.Add(typeof(SaveResult));
-
-
+            knownTypes.Add(typeof(VirtualAudit));
+            knownTypes.Add(typeof(SMT.SaaS.BLLCommonServices.FlowWFService.SubmitData));
 
             return knownTypes;
         }

@@ -124,7 +124,7 @@
                 <td>
                     总账记录:</td>
                 <td colspan="2">
-                    <asp:GridView ID="total" runat="server" BackColor="White" BorderColor="#3366CC" 
+                    <asp:GridView ID="GridViewAcount" runat="server" BackColor="White" BorderColor="#3366CC" 
                         BorderStyle="None" BorderWidth="1px" CellPadding="4">
                         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
                         <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
@@ -142,7 +142,7 @@
                 <td>
                     &nbsp;</td>
                 <td>
-                    可用结余：<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                    可用结余：<asp:TextBox ID="TxtUsableMoney" runat="server"></asp:TextBox>
                     <asp:Button ID="Button3" runat="server" onclick="Button3_Click" Text="修改可用结余" 
                         Height="25px" />
                     <asp:Label ID="Label3" runat="server" ForeColor="Red"></asp:Label>
@@ -154,7 +154,7 @@
                 <td>
                     &nbsp;</td>
                 <td>
-                    实际结余：<asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                    实际结余：<asp:TextBox ID="TxtActualMoney" runat="server"></asp:TextBox>
                     <asp:Button ID="Button4" runat="server" Height="25px" onclick="Button4_Click" 
                         Text="修改实际结余" />
                     <asp:Label ID="Label4" runat="server" ForeColor="Red"></asp:Label>

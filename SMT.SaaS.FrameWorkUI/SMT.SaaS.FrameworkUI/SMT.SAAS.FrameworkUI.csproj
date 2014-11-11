@@ -190,6 +190,9 @@
       <DependentUpon>ChargeApplyControl.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FBControls\ChargeApply_FB.cs" />
+    <Compile Include="FBControls\ChargeApply_Switch.cs" />
+    <Compile Include="FBControls\ChargeApply_WP.cs" />
     <Compile Include="FBControls\FBDataGrid.cs">
       <SubType>Code</SubType>
     </Compile>

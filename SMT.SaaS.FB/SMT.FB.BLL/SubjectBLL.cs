@@ -8,7 +8,8 @@ using System.Data.Objects.DataClasses;
 using System.Reflection;
 using System.Xml.Linq;
 using SMT.Foundation.Log;
-
+using EngineWS = SMT.SaaS.BLLCommonServices.EngineConfigWS;
+using System.Data.Objects;
 namespace SMT.FB.BLL
 {
     public class SubjectBLL : BudgetSumBLL
@@ -400,6 +401,75 @@ namespace SMT.FB.BLL
             return listResult.ToFBEntityList();
         }
 
+        public List<FBEntity> GetSubjectCompanySet(VirtualCompany virtualCompany, List<T_FB_SUBJECT> listSubject, string filterString)
+        {
+
+            string companyID = virtualCompany.ID;
+            QueryExpression qeSubjectCompany = new QueryExpression();
+            qeSubjectCompany.QueryType = typeof(T_FB_SUBJECTCOMPANY).Name;
+            qeSubjectCompany.PropertyName = "OWNERCOMPANYID";
+            qeSubjectCompany.PropertyValue = companyID;
+            qeSubjectCompany.Operation = QueryExpression.Operations.Equal;
+
+            if (!string.IsNullOrWhiteSpace(filterString))
+            {
+                QueryExpression qeFilterString = QueryExpression.Equal("T_FB_SUBJECT.SUBJECTNAME", filterString);
+                qeFilterString.Operation = QueryExpression.Operations.Like;
+                qeFilterString.RelatedType = QueryExpression.RelationType.And;
+                qeSubjectCompany.RelatedExpression = qeFilterString;
+                listSubject = listSubject.FindAll(item => item.SUBJECTNAME.Contains(filterString));
+            }
+
+            List<T_FB_SUBJECTCOMPANY> listSubjectCompany = this.GetEntities<T_FB_SUBJECTCOMPANY>(qeSubjectCompany);
+
+            // 去除subject 的父subject.否则会出现异常.
+            listSubject.ForEach(item =>
+            {
+                item.T_FB_SUBJECT2 = null;
+            });
+            List<T_FB_SUBJECTCOMPANY> listResult = new List<T_FB_SUBJECTCOMPANY>();
+
+            listSubject.ForEach(subject =>
+            {
+
+                T_FB_SUBJECTCOMPANY curSC = listSubjectCompany.FirstOrDefault(sc =>
+                {
+                    if (sc.T_FB_SUBJECT != null)
+                    {
+                        return sc.T_FB_SUBJECT.SUBJECTID == subject.SUBJECTID;
+                    }
+                    return false;
+                });
+                if (curSC == null)
+                {
+                    curSC = new T_FB_SUBJECTCOMPANY();
+                    curSC.T_FB_SUBJECT = subject;
+                    curSC.SUBJECTCOMPANYID = Guid.NewGuid().ToString();
+                    curSC.ACTIVED = 0;
+                    curSC.ISMONTHADJUST = 0;
+                    curSC.ISMONTHLIMIT = 1;
+                    curSC.ISPERSON = 0;
+                    curSC.ISYEARBUDGET = 1;
+                    curSC.CONTROLTYPE = 1;
+
+                    curSC.OWNERCOMPANYID = companyID;
+                    curSC.OWNERDEPARTMENTID = QueryEntityBLL.SYSTEM_USER_ID;
+                    curSC.OWNERPOSTID = QueryEntityBLL.SYSTEM_USER_ID;
+                    curSC.OWNERID = QueryEntityBLL.SYSTEM_USER_ID;
+                    curSC.EDITSTATES = 0;
+
+                    if (subject.SUBJECTID == SystemBLL.GetSetting(null).MONEYASSIGNSUBJECTID)
+                    {
+                        //curSC.ACTIVED = 1;
+                        curSC.ISPERSON = 1;
+                        curSC.CONTROLTYPE = 3;
+                    }
+                }
+                listResult.Add(curSC);
+            });
+
+            return listResult.ToFBEntityList();
+        }
         /// <summary>
         ///  主查公司科目设置表 与公司科目分配表查询分开
         /// </summary>
@@ -424,7 +494,13 @@ namespace SMT.FB.BLL
             }
 
             List<T_FB_SUBJECTCOMPANY> listSubjectCompany = this.GetEntities<T_FB_SUBJECTCOMPANY>(qeSubjectCompany);
-
+            listSubjectCompany.ForEach(item =>
+                {
+                    if (!item.T_FB_SUBJECTReference.IsLoaded)
+                    {
+                        item.T_FB_SUBJECTReference.Load();
+                    }
+                });
             return listSubjectCompany.ToFBEntityList();
         }
 
@@ -447,7 +523,11 @@ namespace SMT.FB.BLL
                 FBEntity curFB = listOfSubjectDeparttment.FirstOrDefault(sd =>
                 {
                     T_FB_SUBJECTDEPTMENT tempsd = sd.Entity as T_FB_SUBJECTDEPTMENT;
-                    return tempsd.T_FB_SUBJECTCOMPANY.SUBJECTCOMPANYID == subjectCompany.SUBJECTCOMPANYID;
+                    if (tempsd.T_FB_SUBJECTCOMPANY!=null)
+                    {
+                        return tempsd.T_FB_SUBJECTCOMPANY.SUBJECTCOMPANYID == subjectCompany.SUBJECTCOMPANYID;
+                    }
+                    return false;
                 });
                 if (curFB == null)
                 {
@@ -485,10 +565,17 @@ namespace SMT.FB.BLL
 
         public FBEntity GetFBEntityByEntityKey(System.Data.EntityKey entityKey)
         {
+            return GetFBEntityByEntityKey(entityKey, false);
+        }
+
+        public FBEntity GetFBEntityByEntityKey(System.Data.EntityKey entityKey, bool isNoTracking = false)
+        {
             QueryExpression qe = QueryExpression.Equal(entityKey.EntityKeyValues[0].Key, entityKey.EntityKeyValues[0].Value.ToString());
             qe.QueryType = entityKey.EntitySetName;
+            qe.IsNoTracking = isNoTracking;
             return GetFBEntityByExpression(qe);
         }
+        
 
         /// <summary>
         /// 入口方法
@@ -1234,28 +1321,29 @@ namespace SMT.FB.BLL
 
             string moneyAssignSubjectID = SystemBLL.GetSetting(null).MONEYASSIGNSUBJECTID;
 
-            var tableT_FB_SUBJECTPOST = GetTable<T_FB_SUBJECTPOST>();
-            var tableT_FB_SUBJECTDEPTMENT = GetTable<T_FB_SUBJECTDEPTMENT>();
+            var tableT_FB_SUBJECTPOST = GetTable<T_FB_SUBJECTPOST>().Where(item =>
+                item.OWNERDEPARTMENTID == ownerDepartmentID && item.ACTIVED == 1 && item.ISPERSON == 1
+                && item.T_FB_SUBJECT.SUBJECTID != moneyAssignSubjectID);
+            var tableT_FB_SUBJECTDEPTMENT = GetTable<T_FB_SUBJECTDEPTMENT>().Where(item =>
+                item.OWNERDEPARTMENTID == ownerDepartmentID && item.ACTIVED == 1
+                && item.T_FB_SUBJECT.SUBJECTID != moneyAssignSubjectID);
             var tableT_FB_BUDGETACCOUNT = GetTable<T_FB_BUDGETACCOUNT>();
             var tableT_FB_SUBJECT = GetTable<T_FB_SUBJECT>();
 
             var ListSubjectPost = from itemSPost in tableT_FB_SUBJECTPOST
                                   from itemSDept in tableT_FB_SUBJECTDEPTMENT
                                   where itemSDept.SUBJECTDEPTMENTID == itemSPost.T_FB_SUBJECTDEPTMENT.SUBJECTDEPTMENTID
-                                  && itemSDept.ISPERSON.Value == 1
-                                  && itemSPost.ISPERSON.Value == 1
-                                  && itemSDept.OWNERDEPARTMENTID == ownerDepartmentID
-                                  && itemSDept.T_FB_SUBJECT.SUBJECTID != moneyAssignSubjectID
+                                  && itemSDept.ISPERSON == 1
                                   select new { itemSPost.T_FB_SUBJECT.SUBJECTID, itemSPost.OWNERPOSTID };
 
 
             var ListAccount = from itemAccount in tableT_FB_BUDGETACCOUNT
                               from itemSubject in tableT_FB_SUBJECT
+                              from itemSubjectDept in tableT_FB_SUBJECTDEPTMENT
                               where itemAccount.T_FB_SUBJECT.SUBJECTID == itemSubject.SUBJECTID
-                              && itemSubject.T_FB_SUBJECTDEPTMENT.Any(itemD => itemD.OWNERDEPARTMENTID == ownerDepartmentID && itemD.ISPERSON.Value == 1)
                               && itemAccount.OWNERDEPARTMENTID == ownerDepartmentID
                               && (itemAccount.ACCOUNTOBJECTTYPE.Value == 2 || itemAccount.ACCOUNTOBJECTTYPE.Value == 3)
-                              && itemAccount.T_FB_SUBJECT.SUBJECTID != moneyAssignSubjectID
+                              && itemAccount.T_FB_SUBJECT.SUBJECTID == itemSubjectDept.T_FB_SUBJECT.SUBJECTID
                               select new { itemAccount, itemSubject };
 
             var accountList = ListAccount.ToList();
@@ -1498,7 +1586,19 @@ namespace SMT.FB.BLL
                 result2.ToList().ForEach(item => { departs = departs.Trim() + "、" + item.OWNERDEPARTMENTNAME; });
                 throw new FBBLLException("该月度还有以下部门的月度预算处于审核中: " + departs.Substring(1));
             }
+            
             #endregion
+
+            var details = this.GetTable<T_FB_DEPTBUDGETSUMDETAIL>();
+            (details as ObjectQuery<T_FB_DEPTBUDGETSUMDETAIL>).MergeOption = MergeOption.NoTracking;
+            var finds = details.Where(item => item.T_FB_DEPTBUDGETSUMMASTER.DEPTBUDGETSUMMASTERID == entity.DEPTBUDGETSUMMASTERID
+                && item.CHECKSTATES == 4).ToList();
+            if (finds.Count > 0)
+            {
+                var delList = finds.ToFBEntityList();
+                delList.ForEach(item => item.FBEntityState = FBEntityState.Detached);
+                fbEntity.AddFBEntities<T_FB_DEPTBUDGETSUMDETAIL>(delList);
+            }
             return SaveFBEntityDefault(fbEntity);
         }
 
@@ -1602,12 +1702,11 @@ namespace SMT.FB.BLL
             var result2 = InnerGetEntities<T_FB_DEPTBUDGETSUMMASTER>(qeCompany);
             if (result2.Count() > 0 && entity.CHECKSTATES != (int)CheckStates.UnApproved)
             {
-                throw new FBBLLException("该月度已做过月度汇总或正在审核中");
+                throw new FBBLLException("该月度已做过月度汇总或正在审核中", "HaveSumData");
             }
             #endregion
 
-
-
+           
             return SaveFBEntityDefault(fbEntity);
         }
 
@@ -1616,10 +1715,17 @@ namespace SMT.FB.BLL
 
             T_FB_DEPTBUDGETADDMASTER entity = fbEntity.Entity as T_FB_DEPTBUDGETADDMASTER;
             entity.BUDGETARYMONTH = new DateTime(entity.BUDGETARYMONTH.Year, entity.BUDGETARYMONTH.Month, 1);
-            if (entity.BUDGETCHARGE <= 0)
-            {
-                throw new Exception("费用总预算必须大于0");
-            }
+            //if (SystemBLL.GetFBSetting("CanAddLessThanZero") == "1")
+            //{
+
+            //}
+            //else
+            //{
+            //    if (entity.BUDGETCHARGE <= 0)
+            //    {
+            //        throw new Exception("费用总预算必须大于0");
+            //    }
+            //}
             //DateTime bDate = entity.BUDGETARYMONTH;
 
             //QueryExpression qeDept = QueryExpression.Equal(FieldName.OwnerDepartmentID, entity.OWNERDEPARTMENTID);
@@ -1806,8 +1912,6 @@ namespace SMT.FB.BLL
                 });
             }
 
-
-
             var listDetail = fbEntity.GetRelationFBEntities(typeof(T_FB_PERSONMONEYASSIGNDETAIL).Name);
             listDetail.ForEach(item =>
             {
@@ -1817,8 +1921,71 @@ namespace SMT.FB.BLL
                     entdetail.T_FB_SUBJECT = subject;
                 }
             });
+            if (master.APPLIEDTYPE.Equal(2))
+            {
+                string strCustomMsgBody = "您收到了[" + master.ASSIGNCOMPANYNAME + "]的活动经费下拨申请单，请及时处理！";
+                EngineWS.EngineWcfGlobalFunctionClient Client = new EngineWS.EngineWcfGlobalFunctionClient();
+                EngineWS.CustomUserMsg userMsg = new EngineWS.CustomUserMsg();
+                userMsg.FormID = master.PERSONMONEYASSIGNMASTERID;
+                userMsg.UserID = master.OWNERID;
+                EngineWS.CustomUserMsg[] List = new EngineWS.CustomUserMsg[1];
+                List[0] = userMsg;
+                string submitName = master.OWNERNAME;
+                Client.ApplicationMsgTriggerCustom(List, "FB", "T_FB_PERSONMONEYASSIGNMASTER", BudgetAccountBLL.ObjListToXml(master, "FB", submitName), EngineWS.MsgType.Task, strCustomMsgBody);
+                master.APPLIEDTYPE = 3;
+            }
             return this.SaveFBEntityDefault(fbEntity);
 
+        }
+
+        public FBEntity SaveT_FB_COMPANYBUDGETSUMDETAIL(FBEntity fbEntity)
+        {
+            var detail = fbEntity.Entity as T_FB_COMPANYBUDGETSUMDETAIL;
+            if (detail.CHECKSTATES.Equal(4))
+            {
+                var id = detail.T_FB_COMPANYBUDGETAPPLYMASTER.COMPANYBUDGETAPPLYMASTERID;
+                var com = this.InnerGetEntities<T_FB_COMPANYBUDGETAPPLYMASTER>(new QueryExpression()
+                {
+                    QueryType = typeof(T_FB_COMPANYBUDGETAPPLYMASTER).Name,
+                    PropertyName = "COMPANYBUDGETAPPLYMASTERID",
+                    PropertyValue = id,
+                    IsNoTracking = true,
+                    IsUnCheckRight = true
+                }).FirstOrDefault();
+                if (com != null)
+                {
+                    com.ISVALID = "2"; // 未生效;
+                }
+                var tempFBEntity = com.ToFBEntity();
+                tempFBEntity.FBEntityState = FBEntityState.Modified;
+                SaveFBEntityDefault(tempFBEntity);
+            }
+            return this.SaveFBEntityDefault(fbEntity);
+        }
+
+        public FBEntity SaveT_FB_DEPTBUDGETSUMDETAIL(FBEntity fbEntity)
+        {
+            var detail = fbEntity.Entity as T_FB_DEPTBUDGETSUMDETAIL;
+            if (detail.CHECKSTATES.Equal(4))
+            {
+                var id = detail.T_FB_DEPTBUDGETAPPLYMASTER.DEPTBUDGETAPPLYMASTERID;
+                var com = this.InnerGetEntities<T_FB_DEPTBUDGETAPPLYMASTER>(new QueryExpression()
+                {
+                    QueryType = typeof(T_FB_DEPTBUDGETAPPLYMASTER).Name,
+                    PropertyName = "DEPTBUDGETAPPLYMASTERID",
+                    PropertyValue = id,
+                    IsNoTracking = true,
+                    IsUnCheckRight = true
+                }).FirstOrDefault();
+                if (com != null)
+                {
+                    com.ISVALID = "2"; // 未生效;
+                }
+                var tempFBEntity = com.ToFBEntity();
+                tempFBEntity.FBEntityState = FBEntityState.Modified;
+                SaveFBEntityDefault(tempFBEntity);
+            }
+            return this.SaveFBEntityDefault(fbEntity);
         }
         #endregion
 

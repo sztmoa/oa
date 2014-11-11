@@ -71,25 +71,25 @@ namespace SMT.FB.Services
            if (order.Rows.Count < 1)
            {
                Response.Write("<script language=javascript>alert('没有查到你要的数据！');</script>");
-               total.DataSource = null;
-               total.DataBind();
+               GridViewAcount.DataSource = null;
+               GridViewAcount.DataBind();
                return;
            }
-             string strtotal = "";
+             string strGridViewAcount = "";
              if (DropDownList1.SelectedValue == "1")
-                 strtotal = "select t.subjectname as 科目名称,t.accountobjecttype as 预算类型,t.budgetyear as 年份,t.budgetmonth as 月份,t.budgetmoney as 预算额度,t.usablemoney as 可用结余,t.actualmoney as 实际结余,t.paiedmoney as 费用,t.updatedate as 更新时间  from budgetaccount t where t.ownerdepartmentid='" + dtOrder.Rows[0][10].ToString() + "' and t.ownercompanyid='" + dtOrder.Rows[0][11].ToString() + "' and t.SUBJECTNAME = '" + TextBox1.Text + "' and t.accountobjecttype=" + DropDownList1.SelectedValue;
+                 strGridViewAcount = "select t.subjectname as 科目名称,t.accountobjecttype as 预算类型,t.budgetyear as 年份,t.budgetmonth as 月份,t.budgetmoney as 预算额度,t.usablemoney as 可用结余,t.actualmoney as 实际结余,t.paiedmoney as 费用,t.updatedate as 更新时间  from budgetaccount t where t.ownerdepartmentid='" + dtOrder.Rows[0][10].ToString() + "' and t.ownercompanyid='" + dtOrder.Rows[0][11].ToString() + "' and t.SUBJECTNAME = '" + TextBox1.Text + "' and t.accountobjecttype=" + DropDownList1.SelectedValue;
              else if (DropDownList1.SelectedValue == "2")
-                 strtotal = "select t.subjectname as 科目名称,t.accountobjecttype as 预算类型,t.budgetyear as 年份,t.budgetmonth as 月份,t.budgetmoney as 预算额度,t.usablemoney as 可用结余,t.actualmoney as 实际结余,t.paiedmoney as 费用,t.updatedate as 更新时间  from budgetaccount t where t.ownerdepartmentid='" + dtOrder.Rows[0][10].ToString() + "' and t.ownercompanyid='" + dtOrder.Rows[0][11].ToString() + "' and t.SUBJECTNAME = '" + TextBox1.Text + "' and t.accountobjecttype=" + DropDownList1.SelectedValue;
+                 strGridViewAcount = "select t.subjectname as 科目名称,t.accountobjecttype as 预算类型,t.budgetyear as 年份,t.budgetmonth as 月份,t.budgetmoney as 预算额度,t.usablemoney as 可用结余,t.actualmoney as 实际结余,t.paiedmoney as 费用,t.updatedate as 更新时间  from budgetaccount t where t.ownerdepartmentid='" + dtOrder.Rows[0][10].ToString() + "' and t.ownercompanyid='" + dtOrder.Rows[0][11].ToString() + "' and t.SUBJECTNAME = '" + TextBox1.Text + "' and t.accountobjecttype=" + DropDownList1.SelectedValue;
              else if (DropDownList1.SelectedValue == "3")
-                 strtotal = "select t.subjectname as 科目名称,t.accountobjecttype as 预算类型,t.budgetyear as 年份,t.budgetmonth as 月份,t.budgetmoney as 预算额度,t.usablemoney as 可用结余,t.actualmoney as 实际结余,t.paiedmoney as 费用,t.updatedate as 更新时间  from budgetaccount t where t.ownerid='" + dtOrder.Rows[0][10].ToString()+"' ";
-             strtotal += "and t.ownercompanyid='" + dtOrder.Rows[0][11].ToString() + "' ";
-                strtotal     +="and t.SUBJECTNAME = '" + TextBox1.Text + "' and t.accountobjecttype=" + DropDownList1.SelectedValue;
+                 strGridViewAcount = "select t.subjectname as 科目名称,t.accountobjecttype as 预算类型,t.budgetyear as 年份,t.budgetmonth as 月份,t.budgetmoney as 预算额度,t.usablemoney as 可用结余,t.actualmoney as 实际结余,t.paiedmoney as 费用,t.updatedate as 更新时间  from budgetaccount t where t.ownerid='" + dtOrder.Rows[0][10].ToString()+"' ";
+             strGridViewAcount += "and t.ownercompanyid='" + dtOrder.Rows[0][11].ToString() + "' ";
+                strGridViewAcount     +="and t.SUBJECTNAME = '" + TextBox1.Text + "' and t.accountobjecttype=" + DropDownList1.SelectedValue;
                        
-           //ada = dbc.ExecuteAdapter(strtotal);
-           DataTable dsTotal = new DataTable();
-           dsTotal = this.GetDataTable(strtotal,dao);
-           total.DataSource = dsTotal;
-           total.DataBind();
+           //ada = dbc.ExecuteAdapter(strGridViewAcount);
+           DataTable dsGridViewAcount = new DataTable();
+           dsGridViewAcount = this.GetDataTable(strGridViewAcount,dao);
+           GridViewAcount.DataSource = dsGridViewAcount;
+           GridViewAcount.DataBind();
 
            Decimal um = 0;
            Decimal am = 0;
@@ -112,8 +112,8 @@ namespace SMT.FB.Services
                    }
                }
            }
-           TextBox6.Text = um.ToString ();
-           TextBox7.Text = am.ToString();
+           TxtUsableMoney.Text = um.ToString ();
+           TxtActualMoney.Text = am.ToString();
            Label1.Text = um.ToString();
            Label2.Text = am.ToString();
         }
@@ -127,9 +127,9 @@ namespace SMT.FB.Services
         {
             OracleDAO dao = new OracleDAO(conn);
            Decimal um=0;
-           if (Decimal.TryParse(TextBox6.Text.Trim(), out um))
+           if (Decimal.TryParse(TxtUsableMoney.Text.Trim(), out um))
            {
-               if (total.Rows.Count != 1)
+               if (GridViewAcount.Rows.Count != 1)
                {
                    if (TextBox1.Text == "活动经费")
                    {
@@ -186,9 +186,9 @@ namespace SMT.FB.Services
         {
             OracleDAO dao = new OracleDAO(conn);
             Decimal am = 0;
-            if (Decimal.TryParse(TextBox7.Text.Trim(), out am))
+            if (Decimal.TryParse(TxtActualMoney.Text.Trim(), out am))
             {
-                if (total.Rows.Count > 1)
+                if (GridViewAcount.Rows.Count > 1)
                 {
                     Response.Write("<script language=javascript>alert('汇总记录大于一条,不能修改实际额度！');</script>");
                     return;
@@ -764,10 +764,10 @@ namespace SMT.FB.Services
                                             s.subjectname='活动经费'
                                             group by t.ownerid
                                             having count(t.ownerid)>1";
-            DataTable dsTotal = new DataTable();
-            dsTotal = this.GetDataTable(strAll,dao);
+            DataTable dsGridViewAcount = new DataTable();
+            dsGridViewAcount = this.GetDataTable(strAll,dao);
             //循环处理查出的员工记录
-            foreach (DataRow dr in dsTotal.Rows)
+            foreach (DataRow dr in dsGridViewAcount.Rows)
             {
                 string ownid = dr["ownerid"].ToString();
                 if(ownid=="24ccad45-b49b-4499-9012-40f356e9811a")

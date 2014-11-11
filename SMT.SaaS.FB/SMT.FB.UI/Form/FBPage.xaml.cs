@@ -18,6 +18,7 @@ using SMT.FB.UI.Form.DailyManagement;
 using SMT.FB.UI.Form.BudgetApply;
 using SMT.SaaS.FrameworkUI.AuditControl;
 using SMT.SaaS.FrameworkUI.Common;
+using System.Windows.Browser;
 
 namespace SMT.FB.UI.Form
 {
@@ -39,6 +40,7 @@ namespace SMT.FB.UI.Form
     [FBPageEditor(typeof(T_FB_DEPTBUDGETSUMMASTER), typeof(DeptBudgetSumForm))]
     [FBPageEditor(typeof(T_FB_PERSONMONEYASSIGNMASTER), typeof(PersonMoneyAssignForm))]
     [FBPageEditor(typeof(T_FB_SUMSETTINGSMASTER), typeof(SumSettingsForm))]
+    //[FBPageEditor(typeof(PersonMoneyAssignAA), typeof(PersonMoneyAssignAAForm))]
     //[FBPageEditor(typeof(T_FB_PERSONBUDGETAPPLYMASTER), typeof(PersonBudgetApplyForm))]
     //[FBPageEditor(typeof(T_FB_PERSONBUDGETADDMASTER), typeof(PersonBudgetAddForm))]
 
@@ -82,6 +84,7 @@ namespace SMT.FB.UI.Form
         #endregion
 
         private bool IsClose = false;
+        private bool isDataOK = false;
 
         public FBPage()
         {
@@ -119,6 +122,10 @@ namespace SMT.FB.UI.Form
             catch (Exception ex)
             {
                 CommonFunction.ShowErrorMessage(ex.ToString());
+                CloseProcess();
+            }
+            finally
+            {
                 CloseProcess();
             }
         }
@@ -220,8 +227,9 @@ namespace SMT.FB.UI.Form
             }
 
             //  OnDetaiGridDelete(); // 临时处理方法
-            OnLoadControlComplete();
             CloseProcess();
+            OnLoadControlComplete();
+            
         }
 
         private void EditForm_LoadDataComplete(object sender, EventArgs e)
@@ -231,8 +239,11 @@ namespace SMT.FB.UI.Form
                 string code = "<自动生成>";
                 this.OrderEntity.SetObjValue("Entity." + this.OrderEntity.CodeName, code);
             }
-            this.InitAudit();
+            isDataOK = true;
             OnLoadDataComplete();
+            RefreshUI(RefreshedTypes.ToolBar);
+            this.InitAudit();
+            
         }
 
         private void EditForm_SaveCompleted(object sender, SavingEventArgs e)
@@ -242,6 +253,8 @@ namespace SMT.FB.UI.Form
             if (e.Action == Actions.Save)
             {
                 CommonFunction.ShowMessage("保存成功!");
+                OnRefreshData();
+                
             }
 
             if (e.Action != Actions.Cancel)
@@ -249,10 +262,7 @@ namespace SMT.FB.UI.Form
                 CommonFunction.ShowMessage("保存成功!");
                 OnClose();
             }
-
-
-
-
+            
         }
 
 
@@ -310,13 +320,24 @@ namespace SMT.FB.UI.Form
                     Action action = () =>
                     {
                         ShowProcess();
-                        this.OrderEntity.FBEntityState = FBEntityState.Deleted;
-                        IsNeedToRefresh |= this.EditForm.Save();
-                        this.IsClose = true;
-
+                        this.OrderEntity.FBEntityState = FBEntityState.Detached;
+                        OrderEntityService orderSource = new OrderEntityService();
+                        orderSource.SaveListCompleted += (o, e) =>
+                            {
+                                this.IsClose = true;
+                                IsNeedToRefresh = true;
+                                OnClose();
+                            };
+                        orderSource.SaveList(new List<OrderEntity>() { this.OrderEntity });
                     };
-
-                    CommonFunction.AskDelete(string.Empty, action);
+                    string msg = string.Empty;
+                    try
+                    {
+                        msg = "你确定要删除 " + this.OrderEntity.OrderInfo.Name + " 吗?";
+                    }catch(Exception ex){
+                        
+                    }
+                    CommonFunction.AskDelete(msg, action);
                     break;
                 case "Submit":
                     //IsClose = true;
@@ -378,6 +399,11 @@ namespace SMT.FB.UI.Form
 
         public List<ToolbarItem> GetToolBarItems()
         {
+            if (!isDataOK)
+            {
+                return new List<ToolbarItem>();
+            }
+            
             bool canSave = true;
             bool canSubmit = true;
             List<ToolbarItem> items = new List<ToolbarItem>();
@@ -395,6 +421,10 @@ namespace SMT.FB.UI.Form
                     canSave = false;
                     canSubmit = true;
                     break;
+                case OperationTypes.Add :
+                    canSubmit = false;
+                    canSave = true;
+                    break;
             }
             if (!IsUnSubmit)
             {
@@ -407,7 +437,7 @@ namespace SMT.FB.UI.Form
                 canSave &= false;
             }
 
-            if (this.EditForm.OperationType == OperationTypes.ReSubmit)
+            if (this.OrderEntity.IsReSubmit)
             {
                 object states = this.OrderEntity.GetObjValue(EntityFieldName.CheckStates);
                 SMT.FB.UI.FBCommonWS.CheckStates currentStates = CommonFunction.TryConvertValue<SMT.FB.UI.FBCommonWS.CheckStates>(states);
@@ -434,6 +464,18 @@ namespace SMT.FB.UI.Form
             {
                 // items.Add(ToolBarItems.SaveAndClose);
                 items.Add(ToolBarItems.Save);
+                if (this.EditForm.OperationType != OperationTypes.Add)
+                {
+                    ToolbarItem item = new ToolbarItem
+                    {
+                        DisplayType = ToolbarItemDisplayTypes.Image,
+                        Key = "Delete",
+                        Title = "删除单据",
+                        ImageUrl = "/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/ico_16_delete.png"
+                    };
+
+                    items.Add(item);
+                }
             }
 
             //预算汇总设置不需要提交
@@ -457,6 +499,7 @@ namespace SMT.FB.UI.Form
             if (IsNeedToRefresh && RefreshData != null)
             {
                 RefreshData(this, null);
+                IsNeedToRefresh = false;
             }
         }
 
@@ -466,7 +509,19 @@ namespace SMT.FB.UI.Form
             {
                 OnRefreshData();
                 PageClosing(this, null);
+                if (RefreshData == null)
+                {
+                    try
+                    {
+                        HtmlPage.Window.Invoke("SLCloseCurrentPage");
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
             }
+            
         }
 
         #region 审核
@@ -496,6 +551,17 @@ namespace SMT.FB.UI.Form
         }
 
         private bool SubmitAudit()
+        {
+            if (!AuditCheck())
+            {
+                CloseProcess();
+                return false;
+            }
+            return InnerSubmit();
+           
+        }
+
+        protected bool InnerSubmit()
         {
             FBEntity saveFBEntity = this.OrderEntity.GetModifiedFBEntity();
             string ownerID = Convert.ToString(this.OrderEntity.GetObjValue(EntityFieldName.OwnerID));
@@ -552,7 +618,9 @@ namespace SMT.FB.UI.Form
             //            IsClose = true;
             RefreshUI(RefreshedTypes.AuditInfo);
             RefreshUI(RefreshedTypes.All);
+            OnRefreshData();
             OnClose();
+            
 
         }
 
@@ -652,6 +720,11 @@ namespace SMT.FB.UI.Form
 
         protected virtual void OnOwnerIsNotReady()
         {
+        }
+
+        protected virtual bool AuditCheck()
+        {
+            return true;
         }
 
     }

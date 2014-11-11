@@ -51,6 +51,14 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Enyim.Caching, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SMT.SaaS.CommonDll\MemCache\Enyim.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SMT.SaaS.CommonDll\MemCache\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="SMT.Foundation.Core, Version=1.1.0.1218, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Core.dll</HintPath>
@@ -59,13 +67,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Log.dll</HintPath>
     </Reference>
-    <Reference Include="Smt.Global.IContract, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\Smt.Global.IContract.dll</HintPath>
+    <Reference Include="Smt.Global.IContract">
+      <HintPath>..\..\..\SMT.SaaS.CommonDll\Lib\SMTLib1.1V\Lib\SMT\Server\Smt.Global.IContract.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SaaS.BLLCommonServices, Version=1.0.0.1222, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
+      <HintPath>..\..\..\SMT.SaaS.CommonDll\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -106,11 +113,68 @@
     <Content Include="clientaccesspolicy.xml" />
     <Content Include="EngineEventServices.svc" />
     <Content Include="EngineServices.svc" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="OABO\archivesLending.xml" />
+    <Content Include="OABO\BOList.xml" />
+    <Content Include="OABO\houseHireApp.xml" />
+    <Content Include="OABO\housingIssuance.xml" />
+    <Content Include="OABO\licenseBorrow.xml" />
+    <Content Include="OABO\Organization.xml" />
+    <Content Include="OABO\T_FAM_ASSETPURREQUIRE.xml" />
+    <Content Include="OABO\T_FAM_ASSETSADJUSTMENT.xml" />
+    <Content Include="OABO\T_FAM_ASSETSMAINTAIN.xml" />
+    <Content Include="OABO\T_FAM_ASSETSSALES.xml" />
+    <Content Include="OABO\T_FAM_ASSETSWASTAGE.xml" />
+    <Content Include="OABO\T_FAM_SUPPLIESHANDLE.xml" />
+    <Content Include="OABO\T_FB_BORROWAPPLYMASTER.xml" />
+    <Content Include="OABO\T_FB_CHARGEAPPLYMASTER.xml" />
+    <Content Include="OABO\T_FB_COMPANYBUDGETMODMASTER.xml" />
+    <Content Include="OABO\T_FB_DEPTBUDGETADDMASTER.xml" />
+    <Content Include="OABO\T_FB_DEPTBUDGETAPPLYMASTER.xml" />
+    <Content Include="OABO\T_FB_DEPTBUDGETSUMMASTER.XML" />
+    <Content Include="OABO\T_FB_REPAYAPPLYMASTER.xml" />
+    <Content Include="OABO\T_OA_APPROVALINFO.xml" />
+    <Content Include="OABO\T_OA_BUSINESSREPORT.xml" />
+    <Content Include="OABO\T_OA_BUSINESSTRIP.xml" />
+    <Content Include="OABO\T_OA_CONSERVATION.xml" />
+    <Content Include="OABO\T_OA_CONSERVATIONRECORD.xml" />
+    <Content Include="OABO\T_OA_CONTRACTAPP.xml" />
+    <Content Include="OABO\T_OA_CONTRACTVIEW.xml" />
+    <Content Include="OABO\T_OA_DISTRIBUTEUSER.xml" />
+    <Content Include="OABO\T_OA_GIFTAPPLYMASTER.xml" />
+    <Content Include="OABO\T_OA_HIREAPP.xml" />
+    <Content Include="OABO\T_OA_HOUSEINFOISSUANCE.xml" />
+    <Content Include="OABO\T_OA_LENDARCHIVES.xml" />
+    <Content Include="OABO\T_OA_LICENSEUSER.xml" />
+    <Content Include="OABO\T_OA_MAINTENANCEAPP.xml" />
+    <Content Include="OABO\T_OA_MAINTENANCERECORD.xml" />
+    <Content Include="OABO\T_OA_MEETINGINFO.xml" />
+    <Content Include="OABO\T_OA_MEETINGROOMAPP.xml" />
+    <Content Include="OABO\T_OA_ORGANIZATION.xml" />
+    <Content Include="OABO\T_OA_REIMBURSEMENTDETAIL.xml" />
+    <Content Include="OABO\T_OA_REQUIRE.xml" />
+    <Content Include="OABO\T_OA_REQUIREDISTRIBUTE.xml" />
+    <Content Include="OABO\T_OA_REQUIREMASTER.xml" />
+    <Content Include="OABO\T_OA_SATISFACTIONDISTRIBUTE.xml" />
+    <Content Include="OABO\T_OA_SATISFACTIONMASTER.xml" />
+    <Content Include="OABO\T_OA_SATISFACTIONREQUIRE.xml" />
+    <Content Include="OABO\T_OA_SENDDOC.xml" />
+    <Content Include="OABO\T_OA_SENDDOCPUBLISH.xml" />
+    <Content Include="OABO\T_OA_TRAVELREIMBURSEMENT.xml" />
+    <Content Include="OABO\T_OA_VEHICLEDISPATCH.xml" />
+    <Content Include="OABO\T_OA_VEHICLEDISPATCHRECORD.xml" />
+    <Content Include="OABO\T_OA_VEHICLEUSEAPP.xml" />
+    <Content Include="OABO\T_OA_VIEWSENDDOC.xml" />
+    <Content Include="OABO\T_OA_WELFAREDISTRIBUTEMASTER.xml" />
+    <Content Include="OABO\T_OA_WELFAREDISTRIBUTEUNDO.xml" />
+    <Content Include="OABO\T_OA_WELFAREMASERT.xml" />
+    <Content Include="OABO\T_SYS_ROLEAPP.xml" />
     <Content Include="OAUpdateCheckServices.svc" />
     <Content Include="SmtOACommonAdmin.svc" />
     <Content Include="SmtOACommonOffice.svc" />
     <Content Include="SmtOADocumentAdmin.svc" />
     <Content Include="SmtOAPersonOffice.svc" />
+    <Content Include="test.aspx" />
     <Content Include="TestEngineUpdateCheckState.aspx" />
     <Content Include="TravrlPrintServices.svc" />
     <Content Include="Web.config">
@@ -140,6 +204,7 @@
     <Compile Include="Class\Enums.cs" />
     <Compile Include="Class\LoginUserInfo.cs" />
     <Compile Include="Class\PersonOffice\ApprovalManagementService.cs" />
+    <Compile Include="Class\PersonOffice\ApprovalTempletManagementService.cs" />
     <Compile Include="Class\PersonOffice\AreaAllowanceServices.cs" />
     <Compile Include="Class\PersonOffice\CalendarManagementService.cs" />
     <Compile Include="Class\PersonOffice\EmployeeSurveyControlServices.cs" />
@@ -159,7 +224,6 @@
     <Compile Include="Class\PersonOffice\TravelReimbursementService.cs" />
     <Compile Include="Class\PersonOffice\WorkerCordManagementService.cs" />
     <Compile Include="Class\PersonOffice\SatisfactionService.cs" />
-    <Compile Include="Class\PersonOffice\ApprovalTempletManagementService.cs" />
     <Compile Include="EngineEventServices.svc.cs">
       <DependentUpon>EngineEventServices.svc</DependentUpon>
     </Compile>
@@ -188,6 +252,13 @@
     </Compile>
     <Compile Include="SmtOAPersonOffice.svc.cs">
       <DependentUpon>SmtOAPersonOffice.svc</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="TestEngineUpdateCheckState.aspx.cs">
       <DependentUpon>TestEngineUpdateCheckState.aspx</DependentUpon>
@@ -226,7 +297,7 @@
       <Name>SMT.SaaS.OA.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\SMT_OA_EFModel\SMT_OA_EFModel.csproj">
-      <Project>{30D6706D-A200-4ED0-BBAA-3574E09F54D1}</Project>
+      <Project>{30d6706d-a200-4ed0-bbaa-3574e09f54d1}</Project>
       <Name>SMT_OA_EFModel</Name>
     </ProjectReference>
   </ItemGroup>

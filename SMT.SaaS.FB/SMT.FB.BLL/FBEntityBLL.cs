@@ -187,11 +187,11 @@ namespace SMT.FB.BLL
         {
             try
             {
-                //BeginTransaction();
+               // BeginTransaction();
 
                 InnerSave(fbEntity);
 
-                //CommitTransaction();
+              //  CommitTransaction();
             }
             catch (Exception ex)
             {

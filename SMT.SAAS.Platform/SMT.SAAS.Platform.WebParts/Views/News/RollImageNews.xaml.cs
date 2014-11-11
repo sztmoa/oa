@@ -64,18 +64,25 @@ namespace SMT.SAAS.Platform.WebParts.Views
         private int listIndex = 0;
         private void GetNewsList()
         {
-            client.GetImageNewsListAsync(6, "1");
-            client.GetImageNewsListCompleted += (obj, args) =>
+            try
             {
-                if (args.Error.IsNull())
+                client.GetImageNewsListAsync(6, "1");
+                client.GetImageNewsListCompleted += (obj, args) =>
                 {
-                    if (args.Result.IsNotNull())
+                    if (args.Error.IsNull())
                     {
-                        ImageNews = args.Result.ToList();
-                        DownLoadNews(ImageNews[listIndex]);
+                        if (args.Result.IsNotNull())
+                        {
+                            ImageNews = args.Result.ToList();
+                            DownLoadNews(ImageNews[listIndex]);
+                        }
                     }
-                }
-            };
+                };
+            }catch(Exception ex)
+            {
+                SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage(ex.ToString());
+                SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
+            }
         }
         private byte[] StreamToBytes(Stream stream)
         {

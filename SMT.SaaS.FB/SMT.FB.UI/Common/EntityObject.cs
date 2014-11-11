@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using SMT.FB.UI.Common;
 using System.ComponentModel;
+using System.Runtime.Serialization;
 
 namespace SMT.FB.UI.FBCommonWS
 {
@@ -873,4 +874,91 @@ namespace SMT.FB.UI.FBCommonWS
     }
     #endregion
 
+    /// <summary>
+    /// 预算设置
+    /// </summary>
+    public partial class T_FB_SYSTEMSETTINGS
+    {
+        //[DataMember]
+        //public Dictionary<string, string> Settings { get; set; }
+    }
+    //[KnownType(typeof(VirtualAudit))]
+    ////[KnownType(typeof(Saas.Tools.FlowWFService.SubmitData))]
+    ////[KnownType(typeof(Saas.Tools.FlowWFService.Role_UserType))]
+    ////[KnownType(typeof(Saas.Tools.FlowWFService.UserInfo))]
+    ////[KnownType(typeof(Saas.Tools.FlowWFService.SubmitFlag))]
+    ////[KnownType(typeof(Saas.Tools.FlowWFService.ApprovalResult))]
+    ////[KnownType(typeof(Saas.Tools.FlowWFService.FlowSelectType))]
+    ////[KnownType(typeof(Saas.Tools.FlowWFService.FlowType))]
+    //public partial class EntityObject
+    //{
+    //}
+    //[KnownType(typeof(VirtualAudit))]
+    ////[KnownType(typeof(Saas.Tools.FlowWFService.SubmitData))]
+    ////[KnownType(typeof(Saas.Tools.FlowWFService.Role_UserType))]
+    ////[KnownType(typeof(Saas.Tools.FlowWFService.UserInfo))]
+    ////[KnownType(typeof(Saas.Tools.FlowWFService.SubmitFlag))]
+    ////[KnownType(typeof(Saas.Tools.FlowWFService.ApprovalResult))]
+    ////[KnownType(typeof(Saas.Tools.FlowWFService.FlowSelectType))]
+    ////[KnownType(typeof(Saas.Tools.FlowWFService.FlowType))]
+    //public partial class QueryExpression
+    //{
+    //}
+
+    //public partial class VirtualAudit
+    //{
+    //    //[global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public Saas.Tools.FlowWFService.SubmitData AuditSubmitData { get; set; }
+    //    //public System.Collections.Generic.Dictionary<SMT.FB.UI.FBCommonWS.Role_UserType, System.Collections.ObjectModel.ObservableCollection<SMT.FB.UI.FBCommonWS.UserInfo>> DictCounterUser { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public Saas.Tools.FlowWFService.SubmitFlag A { get; set; }
+    //}
+
+    [KnownType(typeof(AuditResult))]
+    [KnownType(typeof(VirtualAudit))]
+    [KnownType(typeof(SMT.Saas.Tools.FlowWFService.SubmitData))]
+    public partial class EntityObject
+    {
+    }
+    
+    /// <summary>
+    /// 审核结果类
+    /// </summary>
+    public partial class AuditResult : SaveResult
+    {
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.Saas.Tools.FlowWFService.DataResult DataResult { get; set; }
+    }
+
+    [System.Runtime.Serialization.DataContractAttribute(Name = "VirtualAudit", Namespace = "SMT.FB.BLL", IsReference = true)]
+    
+    public partial class VirtualAudit : VirtualEntityObject
+    {
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int Result { get; set; }
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Content { get; set; }
+
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModelCode { get; set; }
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string FormID { get; set; }
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string GUID { get; set; }
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string NextStateCode { get; set; }
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Op { get; set; }
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int FlowSelectType { get; set; }
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.Saas.Tools.FlowWFService.SubmitData SubmitData { get; set; } 
+    }
+
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "PersonMoneyAssignAA", Namespace = "http://schemas.datacontract.org/2004/07/SMT_FB_EFModel", IsReference = true)]
+    public partial class PersonMoneyAssignAA : T_FB_PERSONMONEYASSIGNMASTER
+    {
+    }
 }

@@ -209,7 +209,7 @@ namespace SMT.FB.UI.Common
     public class FBEntityService
     {
         private FBCommonServiceClient fbService;
-        protected FBCommonServiceClient FBService
+        internal FBCommonServiceClient FBService
         {
             get
             {
@@ -286,6 +286,11 @@ namespace SMT.FB.UI.Common
             {
                 try
                 {
+                    if (DataCore.CurrentUser==null)//为空加载一次
+                    {
+                        string strMsg = string.Empty;
+                        DataCore.GetLoginUserInfo(ref strMsg);
+                    }
                     v.VisitUserID = DataCore.CurrentUser.Value.ToString();
                     v.VisitModuleCode = ModelCode;
                     if (string.IsNullOrEmpty(v.VisitAction))

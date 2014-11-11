@@ -25,7 +25,6 @@ namespace SMT.FB.UI.Views
         public FBBasePage()
         {
             this.Loaded += new RoutedEventHandler(FBBasePage_Loaded);
-
         }
 
         void FBBasePage_Loaded(object sender, RoutedEventArgs e)
@@ -35,7 +34,7 @@ namespace SMT.FB.UI.Views
                 if (!this.CheckPermisstion())
                 {
 
-                    this.CloseParent(CommonFunction.GetString("NOPERMISSION"));
+                    this.CloseParent("无有效的权限");
                     return;
                 }
 

@@ -466,7 +466,7 @@ namespace SmtPortalSetUp
             int year = int.Parse(GlobalParameters.StartDate.Substring(0, 4));
             int month = int.Parse(GlobalParameters.StartDate.Substring(5, 2));
             AttendanceServiceClient AttRdSvc = new AttendanceServiceClient();
-            AttRdSvc.CalculateEmployeeAttendanceMonthlyByCompanyID(year + "-" + month, GlobalParameters.employeeMasterCompanyid);
+            //AttRdSvc.CalculateEmployeeAttendanceMonthlyByCompanyID(year + "-" + month, GlobalParameters.employeeMasterCompanyid);
             ShowMessageAsny("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$结算公司月度考勤完毕！");
         }
 

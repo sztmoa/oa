@@ -90,8 +90,11 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnDeleEmployeeClockin = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dtOutApply = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnSynchOATravel = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.dtOATravelRecord = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -157,6 +160,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtVacationDay)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtOutApply)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtOATravelRecord)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage8.SuspendLayout();
@@ -387,7 +391,7 @@
             this.dtGEmployeeLeaveRecord.Location = new System.Drawing.Point(8, 18);
             this.dtGEmployeeLeaveRecord.Name = "dtGEmployeeLeaveRecord";
             this.dtGEmployeeLeaveRecord.RowTemplate.Height = 23;
-            this.dtGEmployeeLeaveRecord.Size = new System.Drawing.Size(452, 383);
+            this.dtGEmployeeLeaveRecord.Size = new System.Drawing.Size(452, 158);
             this.dtGEmployeeLeaveRecord.TabIndex = 13;
             // 
             // dataGridViewCheckBoxColumn2
@@ -659,9 +663,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dtOutApply);
             this.tabPage2.Controls.Add(this.dtGEmployeeLeaveRecord);
             this.tabPage2.Controls.Add(this.btnSynchOATravel);
             this.tabPage2.Controls.Add(this.label19);
+            this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.dtOATravelRecord);
@@ -673,6 +679,22 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "请假及出差";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dtOutApply
+            // 
+            this.dtOutApply.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtOutApply.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn7});
+            this.dtOutApply.Location = new System.Drawing.Point(8, 194);
+            this.dtOutApply.Name = "dtOutApply";
+            this.dtOutApply.RowTemplate.Height = 23;
+            this.dtOutApply.Size = new System.Drawing.Size(452, 196);
+            this.dtOutApply.TabIndex = 13;
+            // 
+            // dataGridViewCheckBoxColumn7
+            // 
+            this.dataGridViewCheckBoxColumn7.HeaderText = "选择";
+            this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
             // 
             // btnSynchOATravel
             // 
@@ -692,6 +714,15 @@
             this.label19.Size = new System.Drawing.Size(65, 12);
             this.label19.TabIndex = 17;
             this.label19.Text = "OA出差记录";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 179);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(53, 12);
+            this.label20.TabIndex = 17;
+            this.label20.Text = "外出记录";
             // 
             // dtOATravelRecord
             // 
@@ -1248,6 +1279,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtOutApply)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtOATravelRecord)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
@@ -1382,6 +1414,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
         private System.Windows.Forms.Button btnSynchOATravel;
+        private System.Windows.Forms.DataGridView dtOutApply;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn7;
+        private System.Windows.Forms.Label label20;
     }
 }
 

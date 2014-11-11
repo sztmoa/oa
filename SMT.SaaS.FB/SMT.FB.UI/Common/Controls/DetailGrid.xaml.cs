@@ -37,6 +37,12 @@ namespace SMT.FB.UI.Common.Controls
 
         }
 
+        public void SetGridFix()
+        {
+            gridRowDefinition.Height = new GridLength(1, GridUnitType.Star);
+            ADGrid.HorizontalAlignment = HorizontalAlignment.Stretch;
+            ADGrid.VerticalAlignment = VerticalAlignment.Stretch;
+        }
         public OperationTypes operationType;
         private OrderDetailGridInfo orderDetailGridInfo;
         public OrderDetailGridInfo OrderDetailGridInfo
@@ -170,6 +176,7 @@ namespace SMT.FB.UI.Common.Controls
         {
             this.operationType = operationType;
             this.ADGrid.InitControl(operationType);
+   
             InitToolBar();
             SetDataChangeEvent();
 

@@ -28,6 +28,7 @@ using System.IO;
 using System.Text;
 using System.Runtime.Serialization;
 using System.Xml.Linq;
+using SMT.SAAS.Controls.Toolkit.Windows;
 
 namespace SMT.FB.UI.Common
 {
@@ -204,7 +205,7 @@ namespace SMT.FB.UI.Common
             string defaultTitle = "确认删除";
             message = string.IsNullOrEmpty(message) ? defaultMsg : message;
 
-            DialogOKCanel(defaultTitle, defaultMsg, action, null);
+            DialogOKCanel(defaultTitle, message, action, null);
         }
 
 
@@ -279,25 +280,42 @@ namespace SMT.FB.UI.Common
         public static bool DialogOKCanel(string title, string msg, Action actionOK, Action actionCancel)
         {
             ComfirmWindow cw = new ComfirmWindow();
-            cw.OnSelectionBoxClosed += (o, e) =>
-            {
-                if (e.Result == ComfirmWindow.titlename[0])
-                {
-                    if (actionOK != null)
-                    {
-                        actionOK();
-                    }
-                }
-                else if (e.Result == ComfirmWindow.titlename[1])
-                {
-                    if (actionCancel != null)
-                    {
-                        actionCancel();
-                    }
-                }
+            //cw.OnSelectionBoxClosed += (o, e) =>
+            //{
+            //    if (e.Result == ComfirmWindow.titlename[0])
+            //    {
+            //        if (actionOK != null)
+            //        {
+            //            actionOK();
+            //        }
+            //    }
+            //    else if (e.Result == ComfirmWindow.titlename[1])
+            //    {
+            //        if (actionCancel != null)
+            //        {
+            //            actionCancel();
+            //        }
+            //    }
 
-            };
-            cw.SelectionBox(title, msg, ComfirmWindow.titlename, string.Empty);
+            //};
+            //cw.SelectionBox(title, msg, ComfirmWindow.titlename, string.Empty);
+            MessageWindow.Show<string>(title, msg, MessageIcon.Question, (result) =>
+                {
+                    if (result == ComfirmWindow.titlename[0])
+                    {
+                        if (actionOK != null)
+                        {
+                            actionOK();
+                        }
+                    }
+                    else if (result == ComfirmWindow.titlename[1])
+                    {
+                        if (actionCancel != null)
+                        {
+                            actionCancel();
+                        }
+                    }
+                }, ComfirmWindow.titlename[0],AutoDisappear.Normal ,ComfirmWindow.titlename);
             return true;
         }
         public static bool ShowMessage(string msg)
@@ -549,6 +567,7 @@ namespace SMT.FB.UI.Common
                 om.InitCompleted += (o, e) =>
                 {
                     EntityBrowser eb = GetEditPage(modelCode, orderID, formType) as EntityBrowser;
+                    eb.EntityScrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
                     FrameworkElement plRoot = CommonFunction.ParentLayoutRoot;
                     eb.MinHeight = 400;
                     eb.ShowMvcPlat<string>(DialogMode.Default, plRoot, "", (result) => { });
@@ -574,6 +593,7 @@ namespace SMT.FB.UI.Common
                 om.InitCompleted += (o, e) =>
                 {
                     EntityBrowser eb = GetEditPage(modelCode, orderID, formType) as EntityBrowser;
+                    eb.EntityScrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
                     FrameworkElement plRoot = CommonFunction.ParentLayoutRoot;
                     eb.MinHeight = 400;
                     eb.Show<string>(DialogMode.Default, plRoot, "", (result) => { }, true, orderID);
@@ -657,9 +677,13 @@ namespace SMT.FB.UI.Common
                 om.InitCompleted += (o, e) =>
                 {
                     EntityBrowser eb = GetEditPage(modelCode, orderID, formType) as EntityBrowser;
-                    FrameworkElement plRoot = CommonFunction.ParentLayoutRoot;
+                    eb.EntityScrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
+                    eb.Show<string>(DialogMode.Default, SMT.SAAS.Main.CurrentContext.Common.ParentLayoutRoot, "", (result) => { }, true, orderID);
+                    if (eb.ParentWindow != null)
+                    {
+                        WindowsManager.MaxWindow(eb.ParentWindow);
+                    }
                     eb.MinHeight = 400;
-                    parent.Child = eb;
                 };
                 om.Init();
             }

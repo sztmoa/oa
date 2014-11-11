@@ -18,21 +18,23 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://portal.smt-online.net/New/Services/HR/AttendanceService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AttendanceService.xsd" MetadataType="Schema" ID="d566d953-c544-4f11-9214-58a2a17d33b3" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/HR/AttendanceService.svc?xsd=xsd7" />
-    <MetadataFile FileName="AttendanceService1.xsd" MetadataType="Schema" ID="bf6fba17-02e5-48d3-813e-92be55d13c93" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/HR/AttendanceService.svc?xsd=xsd5" />
-    <MetadataFile FileName="AttendanceService2.xsd" MetadataType="Schema" ID="011de9a3-d766-45a0-a27c-a67adc0e297c" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/HR/AttendanceService.svc?xsd=xsd3" />
-    <MetadataFile FileName="AttendanceService.wsdl" MetadataType="Wsdl" ID="88801424-0ff1-4026-87e3-71d6c3086e02" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/HR/AttendanceService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="AttendanceService3.xsd" MetadataType="Schema" ID="f1fc49d3-f76b-4062-83bc-ede71e5c3922" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/HR/AttendanceService.svc?xsd=xsd8" />
-    <MetadataFile FileName="AttendanceService4.xsd" MetadataType="Schema" ID="9648121c-4723-41f1-ba89-94ecb6916815" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/HR/AttendanceService.svc?xsd=xsd4" />
-    <MetadataFile FileName="AttendanceService5.xsd" MetadataType="Schema" ID="e55973a9-af3a-49f1-9bbc-5120c9289378" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/HR/AttendanceService.svc?xsd=xsd6" />
-    <MetadataFile FileName="AttendanceService6.xsd" MetadataType="Schema" ID="4642e815-3f56-4d3f-9be6-f647edb0aed1" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/HR/AttendanceService.svc?xsd=xsd0" />
-    <MetadataFile FileName="AttendanceService7.xsd" MetadataType="Schema" ID="7ea5f62a-ecdc-4e86-8407-8771ccb9d599" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/HR/AttendanceService.svc?xsd=xsd1" />
-    <MetadataFile FileName="AttendanceService1.wsdl" MetadataType="Wsdl" ID="98d2e8b4-63aa-4d32-945e-7087318a0319" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/HR/AttendanceService.svc?wsdl" />
-    <MetadataFile FileName="AttendanceService.disco" MetadataType="Disco" ID="738c1db8-425b-490d-bfc5-8ee15b2d25f8" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/HR/AttendanceService.svc?disco" />
-    <MetadataFile FileName="AttendanceService8.xsd" MetadataType="Schema" ID="1fcdc037-3f3f-4340-b7d5-0366d831fce7" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/HR/AttendanceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AttendanceService9.xsd" MetadataType="Schema" ID="0e7e1baa-a941-4d2a-8aaf-980622145451" SourceId="1" SourceUrl="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AttendanceService91.xsd" MetadataType="Schema" ID="9cfde57c-8dbd-4a70-b5ad-c786a10ed18b" SourceId="1" SourceUrl="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AttendanceService92.xsd" MetadataType="Schema" ID="2f11214b-267e-4b93-a8e8-194f3ba2757b" SourceId="1" SourceUrl="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AttendanceService93.xsd" MetadataType="Schema" ID="f2e81970-ace3-42a0-95ec-a6cb4a906015" SourceId="1" SourceUrl="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AttendanceService94.xsd" MetadataType="Schema" ID="e21e2e5b-eb16-4578-b146-2c04f3c57a61" SourceId="1" SourceUrl="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc?xsd=xsd8" />
+    <MetadataFile FileName="AttendanceService95.xsd" MetadataType="Schema" ID="19adc6f7-af7c-4f73-a7d2-de5e09eb0b85" SourceId="1" SourceUrl="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc?xsd=xsd9" />
+    <MetadataFile FileName="AttendanceService2.wsdl" MetadataType="Wsdl" ID="7d94bde7-6d24-475a-adb3-e3514197f8d3" SourceId="1" SourceUrl="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="AttendanceService96.xsd" MetadataType="Schema" ID="711fdf7d-b5a8-4167-a50a-525a4a2067dd" SourceId="1" SourceUrl="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc?xsd=xsd4" />
+    <MetadataFile FileName="AttendanceService21.wsdl" MetadataType="Wsdl" ID="ff9841e4-72ee-464b-9bb3-d3c23e1be572" SourceId="1" SourceUrl="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc?wsdl" />
+    <MetadataFile FileName="AttendanceService97.xsd" MetadataType="Schema" ID="244328de-577d-4d7e-b432-a545e7d1596e" SourceId="1" SourceUrl="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc?xsd=xsd10" />
+    <MetadataFile FileName="AttendanceService1.disco" MetadataType="Disco" ID="e51ddc1e-1173-4a85-8f2f-ebb6a6f1dd09" SourceId="1" SourceUrl="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc?disco" />
+    <MetadataFile FileName="AttendanceService98.xsd" MetadataType="Schema" ID="a158763e-9253-46a0-bf3a-b6b93254da9d" SourceId="1" SourceUrl="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc?xsd=xsd5" />
+    <MetadataFile FileName="AttendanceService99.xsd" MetadataType="Schema" ID="c1eb7afb-e7ea-4cf2-ba41-ab682ead1e8f" SourceId="1" SourceUrl="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc?xsd=xsd6" />
+    <MetadataFile FileName="AttendanceService910.xsd" MetadataType="Schema" ID="aed2aeab-72cb-45ab-88cd-42dfd8a06f4e" SourceId="1" SourceUrl="http://222.240.218.88:8080/New/Services/HR/AttendanceService.svc?xsd=xsd7" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

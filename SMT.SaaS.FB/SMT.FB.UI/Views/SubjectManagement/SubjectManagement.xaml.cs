@@ -509,10 +509,11 @@ namespace SMT.FB.UI.Views.SubjectManagement
 
         public override bool CheckPermisstion()
         {
-            int perm = PermissionHelper.GetPermissionValue(typeof(T_FB_SUBJECTTYPE).Name, Permissions.Browse);
+            //int perm = PermissionHelper.GetPermissionValue(typeof(T_FB_SUBJECTTYPE).Name, Permissions.Browse);
 
-            // 需要大于等公司的范围权限
-            return !(perm > (int)PermissionRange.Employee || perm < 0);
+            //// 需要大于等公司的范围权限
+            //return !(perm > (int)PermissionRange.Employee || perm < 0);
+            return true;
 
         }
 
@@ -643,8 +644,10 @@ namespace SMT.FB.UI.Views.SubjectManagement
         private List<string> CheckSubject(T_FB_SUBJECT entitySubject)
         {
             #region 处理 Subject
+          
+            
             List<string> errMsg = new List<string>();
-
+            var subjectTypeID = entitySubject.T_FB_SUBJECTTYPE.SUBJECTTYPEID;
             string code = entitySubject.SUBJECTCODE;
             if (string.IsNullOrEmpty(code))
             {
@@ -666,20 +669,29 @@ namespace SMT.FB.UI.Views.SubjectManagement
                 var subjects = orderEntity.GetRelationFBEntities(typeof(T_FB_SUBJECT).Name);
 
                 #region 科目名称
-                var subjectFind = subjects.FirstOrDefault(fbEntity =>
+                // 相同的科目名称在不同的科目类别中，是否可以保存
+                var canSameSubjectName = DataCore.GetSetting("CanSameSubjectName") == "1";
+                if (!canSameSubjectName)
                 {
-                    T_FB_SUBJECT entity = fbEntity.Entity as T_FB_SUBJECT;
-                    bool isRightType = entity.GetType().Name == "T_FB_SUBJECT";
-                    bool isNotItselft = !object.Equals(entity, entitySubject);
-                    bool isSameName = name == entity.SUBJECTNAME;
+                    var subjectFind = subjects.FirstOrDefault(fbEntity =>
+                    {
+                        T_FB_SUBJECT entity = fbEntity.Entity as T_FB_SUBJECT;
+                        if (entity == null)
+                        {
+                            return false;
+                        }
+                        bool isRightType = entity.GetType().Name == "T_FB_SUBJECT";
+                        bool isNotItselft = !object.Equals(entity, entitySubject);
+                        bool isSameName = name == entity.SUBJECTNAME;
+                        return isRightType && isNotItselft && isSameName;
+                    });
 
-                    return isRightType && isNotItselft && isSameName;
-                });
-
-                if ( subjectFind != null)
-                {
-                    errMsg.Add("科目名称已存在，不可重复");
+                    if (subjectFind != null)
+                    {
+                        errMsg.Add("科目名称已存在，不可重复");
+                    }
                 }
+                
                 #endregion
 
                 #region 科目编号

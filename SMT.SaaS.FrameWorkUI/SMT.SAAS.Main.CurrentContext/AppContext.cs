@@ -34,10 +34,17 @@ namespace SMT.SAAS.Main.CurrentContext
 
         public static void SystemMessage(string message)
         {
-            string strTime=DateTime.Now.Hour.ToString()+":"+DateTime.Now.Minute.ToString()+":"
-                +DateTime.Now.Second.ToString()+":"+DateTime.Now.Millisecond.ToString();
-            if (AppHost == null) return;
-            AppHost.txtSystemMessage.Text += System.Environment.NewLine + message +" 记录时间："+ strTime;
+            try
+            {
+                string strTime = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":"
+                    + DateTime.Now.Second.ToString() + ":" + DateTime.Now.Millisecond.ToString();
+                if (AppHost == null) return;
+                AppHost.txtSystemMessage.Text += System.Environment.NewLine + message + " 记录时间：" + strTime;
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
 
@@ -46,12 +53,23 @@ namespace SMT.SAAS.Main.CurrentContext
         /// </summary>
         public static void ShowSystemMessageText()
         {
-            if (AppHost == null) return;
-            AppHost.txtSystemMessage.Height = 20;
-            AppHost.systemMessageArea.Height = 25;
-            AppHost.systemMessageArea.Visibility = System.Windows.Visibility.Visible;
+            try
+            {
+                if (AppHost == null) return;
+                AppHost.txtSystemMessage.Height = 20;
+                AppHost.systemMessageArea.Height = 25;
+                AppHost.systemMessageArea.Visibility = System.Windows.Visibility.Visible;
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
-
+        public static void logAndShow(string msg)
+        {
+            SystemMessage(msg);
+            ShowSystemMessageText();
+        }
     }
 }

@@ -348,7 +348,7 @@ namespace SMT.SaaS.OA.BLL
                     }
                     else
                     {
-                        Tracer.Debug("从MemCached获取到新的公司发文数据，Key" + employeeid + "SendDocMent");
+                        //Tracer.Debug("从MemCached获取到新的公司发文数据，Key" + employeeid + "SendDocMent");
                         NeedGetNewData = true;
                         MemCacheClient.Remove(employeeid + "SendDocMent");
                     }

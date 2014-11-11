@@ -13,6 +13,8 @@ using SMT.FB.UI.FBCommonWS;
 using System.Collections.ObjectModel;
 using System.Linq;
 using SMT.Saas.Tools;
+using System.Collections.Generic;
+
 namespace SMT.FB.UI.Common.Controls
 {
 
@@ -175,29 +177,16 @@ namespace SMT.FB.UI.Common.Controls
             string op = submitData.SubmitFlag == Saas.Tools.FlowWFService.SubmitFlag.New ? "ADD" : "UPDATE";
 
             string nextStateCode = submitData.NextStateCode;
-
+            
             VirtualAudit va = new VirtualAudit()
             {
                 FormID = submitData.FormID,
-
                 ModelCode = submitData.ModelCode,
-                CREATECOMPANYID = submitData.ApprovalUser.CompanyID,
-                CREATEDEPARTMENTID = submitData.ApprovalUser.DepartmentID,
-                CREATEPOSTID = submitData.ApprovalUser.PostID,
-                CREATEUSERID = submitData.ApprovalUser.UserID,
-                CREATEUSERNAME = submitData.ApprovalUser.UserName,
                 NextStateCode = nextStateCode,
-                OWNERCOMPANYID = submitData.NextApprovalUser.CompanyID,
-                OWNERDEPARTMENTID = submitData.NextApprovalUser.DepartmentID,
-                OWNERID = submitData.NextApprovalUser.UserID,
-                OWNERNAME = submitData.NextApprovalUser.UserName,
-                OWNERPOSTID = submitData.NextApprovalUser.PostID,
-                UPDATEUSERID = submitData.NextApprovalUser.UserID,
-                UPDATEUSERNAME = submitData.NextApprovalUser.UserName,
-                Content = submitData.ApprovalContent,
                 Op = op,
                 Result = (int)submitData.ApprovalResult,
-                FlowSelectType = (int)submitData.FlowSelectType
+                FlowSelectType = (int)submitData.FlowSelectType,
+                SubmitData = submitData
             };
             return va;
         }
@@ -205,46 +194,85 @@ namespace SMT.FB.UI.Common.Controls
         private Saas.Tools.FlowWFService.SubimtFlowCompletedEventArgs GetFlowCompletedArgs(AuditFBEntityCompletedEventArgs e)
         {
             var dr = e.Result.DataResult;
-            Saas.Tools.FlowWFService.DataResult newDr = null;
-            if (dr == null)
-            {
-                dr = new DataResult();
-                dr.FlowResult = FlowResult.FAIL;
+            Saas.Tools.FlowWFService.DataResult newDr = dr;
+            //if (dr == null)
+            //{
+            //    dr = new DataResult();
+            //    dr.FlowResult = FlowResult.FAIL;
 
-            }
-            newDr = new Saas.Tools.FlowWFService.DataResult
-            {
-                //  AgentUserInfo = dr.AgentUserInfo,
-                AppState = dr.AppState,
-                CheckState = dr.CheckState,
-                Err = dr.Err,
-                ErrNum = dr.ErrNum,
-                FlowResult = (Saas.Tools.FlowWFService.FlowResult)((int)dr.FlowResult),
-                ModelFlowRelationID = dr.ModelFlowRelationID,
-                RunTime = dr.RunTime,
-                SubModelCode = dr.SubModelCode,
-                UserInfo = new ObservableCollection<Saas.Tools.FlowWFService.UserInfo>(),
+            //}
+            //newDr = new Saas.Tools.FlowWFService.DataResult
+            //{
+            //    //AgentUserInfo = dr.AgentUserInfo,
+            //    AppState = dr.AppState,
+            //    CheckState = dr.CheckState,
+            //    CountersignType = dr.CountersignType,
+            //    //DictAgentUserInfo = dr.DictAgentUserInfo,
+            //    DictCounterUser = new Dictionary<Saas.Tools.FlowWFService.Role_UserType,ObservableCollection<Saas.Tools.FlowWFService.UserInfo>>(),
+            //    Err = dr.Err,
+            //    ErrNum = dr.ErrNum,
+            //    FlowResult = (Saas.Tools.FlowWFService.FlowResult)((int)dr.FlowResult),
+            //    IsCountersign = dr.IsCountersign,
+            //    IsCountersignComplete = dr.IsCountersignComplete,
+            //    ModelFlowRelationID = dr.ModelFlowRelationID,
+            //    RunTime = dr.RunTime,
+            //    SubmitFlag = (Saas.Tools.FlowWFService.SubmitFlag)((int)dr.SubmitFlag),
+            //    SubModelCode = dr.SubModelCode,
+            //    UserInfo = new ObservableCollection<Saas.Tools.FlowWFService.UserInfo>(),
+            //};
 
-            };
 
-            if (dr.UserInfo != null)
-            {
-                dr.UserInfo.ToList().ForEach(item =>
-                {
-                    Saas.Tools.FlowWFService.UserInfo ui = new Saas.Tools.FlowWFService.UserInfo
-                    {
-                        UserID = item.UserID,
-                        UserName = item.UserName,
-                        CompanyID = item.CompanyID,                        
-                        CompanyName = item.CompanyName,
-                        DepartmentID = item.DepartmentID,
-                        DepartmentName = item.DepartmentName,
-                        PostID = item.PostID,
-                        PostName = item.PostName
-                    };
-                    newDr.UserInfo.Add(ui);
-                });
-            }
+            //if (dr.UserInfo != null)
+            //{
+            //    dr.UserInfo.ToList().ForEach(item =>
+            //    {
+            //        Saas.Tools.FlowWFService.UserInfo ui = new Saas.Tools.FlowWFService.UserInfo
+            //        {
+            //            UserID = item.UserID,
+            //            UserName = item.UserName,
+            //            CompanyID = item.CompanyID,                        
+            //            CompanyName = item.CompanyName,
+            //            DepartmentID = item.DepartmentID,
+            //            DepartmentName = item.DepartmentName,
+            //            PostID = item.PostID,
+            //            PostName = item.PostName
+            //        };
+            //        newDr.UserInfo.Add(ui);
+            //    });
+            //}
+            //if (dr.DictCounterUser != null)
+            //{
+            //    dr.DictCounterUser.ToList().ForEach(item =>
+            //    {
+            //        var key = new SMT.Saas.Tools.FlowWFService.Role_UserType()
+            //        {
+            //            IsOtherCompany = item.Key.IsOtherCompany,
+            //            Name = item.Key.Name,
+            //            OtherCompanyID = item.Key.OtherCompanyID,
+            //            Remark = item.Key.Remark,
+            //            RoleName = item.Key.RoleName,
+            //            UserType = item.Key.UserType
+            //        };
+            //        var value = new ObservableCollection<Saas.Tools.FlowWFService.UserInfo>();
+            //        item.Value.ForEach(itemU =>
+            //            {
+            //                var ui = new Saas.Tools.FlowWFService.UserInfo
+            //                {
+            //                    UserID = itemU.UserID,
+            //                    UserName = itemU.UserName,
+            //                    CompanyID = itemU.CompanyID,
+            //                    CompanyName = itemU.CompanyName,
+            //                    DepartmentID = itemU.DepartmentID,
+            //                    DepartmentName = itemU.DepartmentName,
+            //                    PostID = itemU.PostID,
+            //                    PostName = itemU.PostName
+            //                };
+            //                value.Add(ui);
+            //            });
+
+            //        newDr.DictCounterUser.Add(key, value);
+            //    });
+            //}
 
             Saas.Tools.FlowWFService.SubimtFlowCompletedEventArgs args = new Saas.Tools.FlowWFService.SubimtFlowCompletedEventArgs(new object[] { newDr },
                 null, e.Cancelled, e.UserState);
@@ -333,7 +361,7 @@ namespace SMT.FB.UI.Common.Controls
         {
             try
             {
-                DataResult dataResult = result.DataResult;
+                var dataResult = result.DataResult;
                 curAuditEventArgs = null;
                 if (result.FBEntity != null)
                 {
@@ -345,7 +373,8 @@ namespace SMT.FB.UI.Common.Controls
                     }
                     else
                     {
-                        if (!(result.DataResult.FlowResult == FlowResult.SUCCESS || result.DataResult.FlowResult == FlowResult.END))
+                        if (!(result.DataResult.FlowResult == SMT.Saas.Tools.FlowWFService.FlowResult.SUCCESS 
+                            || result.DataResult.FlowResult == SMT.Saas.Tools.FlowWFService.FlowResult.END))
                         {
                             newOrderEntity.IsReSubmit = this.OrderEntity.IsReSubmit;
                         }
@@ -366,7 +395,7 @@ namespace SMT.FB.UI.Common.Controls
                     CommonFunction.ShowErrorMessage(result.Exception);
 
                 }
-                else if (dataResult.FlowResult == FlowResult.FAIL)
+                else if (dataResult.FlowResult == SMT.Saas.Tools.FlowWFService.FlowResult.FAIL)
                 {
                     curAuditEventArgs = new AuditEventArgs(AuditEventArgs.AuditResult.Error, null);
                     CommonFunction.ShowErrorMessage(dataResult.Err);
@@ -438,4 +467,5 @@ namespace SMT.FB.UI.Common.Controls
 
 
     }
+
 }

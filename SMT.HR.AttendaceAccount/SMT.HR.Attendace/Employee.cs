@@ -26,6 +26,7 @@ namespace AttendaceAccount
         public static SalaryBalanceForm salaryBalanceForm;
         public static AttendLogForm attendLogForm;
         public static SendDocForm sendDocForm;
+        public static SearchFBAccount SearchFBAccountFrom;
     }
      
 }

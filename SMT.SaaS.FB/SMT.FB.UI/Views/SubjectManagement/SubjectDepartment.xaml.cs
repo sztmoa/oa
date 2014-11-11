@@ -237,6 +237,15 @@ namespace SMT.FB.UI.Views.SubjectManagement
             DetailGrid grid = editForm.FindChildControl<DetailGrid>("OrderGrid");
             if (grid != null)
             {
+                grid.SetGridFix();
+                grid.ADGrid.Columns.ForEach(item =>
+                {
+                    item.CanUserSort = false;
+                });
+                
+                grid.ADGrid.Columns[2].HeaderStyle = null;
+                grid.ADGrid.Columns[2].HeaderStyle = Resources["activeStyle"] as Style;
+                
                 List<string> groups = new List<string> { "Entity.T_FB_SUBJECT.T_FB_SUBJECTTYPE.SUBJECTTYPENAME" };
                 grid.Groups = groups;
             }
@@ -859,6 +868,46 @@ namespace SMT.FB.UI.Views.SubjectManagement
             }
 
             return oe;
+        }
+
+        private void cbActiveS_Click(object sender, RoutedEventArgs e)
+        {
+            var isCheck = ((CheckBox)sender).IsChecked.Value;
+            var msg = isCheck ? "是否确认全部启用？" : "是否确认全部不启用？";
+            var active = isCheck ? 1 : 0;
+            Action action = () =>
+            {
+                ((CheckBox)sender).IsChecked = isCheck;
+                var oEntity = CurrentEditForm.OrderEntity;
+                var eType = oEntity.Entity.GetType();
+                if (eType == typeof(VirtualDepartment))
+                {
+                    var list = oEntity.GetRelationFBEntities(typeof(T_FB_SUBJECTDEPTMENT).Name).ToEntityList<T_FB_SUBJECTDEPTMENT>();
+                    list.ForEach(item =>
+                    {
+                        if (item.T_FB_SUBJECT.SUBJECTID != DataCore.SystemSetting.MONEYASSIGNSUBJECTID)
+                        {
+                            item.ACTIVED = active;
+                        }
+
+                    });
+                }
+                else if (eType == typeof(VirtualPost))
+                {
+                    var list = oEntity.GetRelationFBEntities(typeof(T_FB_SUBJECTPOST).Name).ToEntityList<T_FB_SUBJECTPOST>();
+                    list.ForEach(item =>
+                    {
+                        if (item.T_FB_SUBJECT.SUBJECTID != DataCore.SystemSetting.MONEYASSIGNSUBJECTID)
+                        {
+                            item.ACTIVED = active;
+                        }
+
+                    });
+                }
+                
+            };
+            ((CheckBox)sender).IsChecked = !isCheck;
+            CommonFunction.DialogOKCanel("确认", msg, action, null);
         }
     }
 }

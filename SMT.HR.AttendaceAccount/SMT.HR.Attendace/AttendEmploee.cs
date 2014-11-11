@@ -379,6 +379,7 @@ namespace SmtPortalSetUp
 
             #region 出差记录
             GetEmployeeEvection();
+            GetEmployeeOutApply();
             GetEmployeeOATravelRecord();
             #endregion
 
@@ -1370,6 +1371,27 @@ namespace SmtPortalSetUp
                 txtMessagebox.Text = "查询员工出差记录完成，共：0条数据" + System.Environment.NewLine + txtMessagebox.Text;
             }
         }
+
+        private void GetEmployeeOutApply()
+        {
+            string sql = @"select t.employeename,t.startdate,t.enddate,t.outapplyid,t.checkstate,t.reason
+                        ,t.outapplyid,t.createdate,t.updatedate
+                        from smthrm.t_hr_outapplyrecord t
+                        where t.employeeid='" + GlobalParameters.employeeid + @"'
+                        and t.startdate>=to_date('" + GlobalParameters.StartDate + @"','yyyy-mm-dd')
+                        and t.enddate<=to_date('" + GlobalParameters.EndDate + @"','yyyy-mm-dd')    ";
+            DataTable dt = OracleHelp.getTable(sql);
+            if (dt != null)
+            {
+                this.dtOutApply.DataSource = dt;
+                OracleHelp.close();
+                txtMessagebox.Text = "查询员工外出记录完成，共：" + dt.Rows.Count.ToString() + "条数据" + System.Environment.NewLine + txtMessagebox.Text;
+            }
+            else
+            {
+                txtMessagebox.Text = "查询员工外出记录完成，共：0条数据" + System.Environment.NewLine + txtMessagebox.Text;
+            }
+        }
         /// <summary>
         /// 获取OA出差记录
         /// </summary>
@@ -1378,26 +1400,26 @@ namespace SmtPortalSetUp
             string sql = @"select t.* from 
                         (select
                                 a1.ownername, 
-                                a.startdate,
-                                a.startcityname,
-                                a.enddate,
-                                a.businessdays,
-                                a.endcityname,
+                                a1.startdate,
+                                a1.startcityname,
+                                a1.enddate,
+                                a1.endcityname,
                                 a1.ownerid,
                                 a1.content,
+                                a1.ownercompanyid,
+                                a1.businesstripid as id,
                                 '出差申请' as aa
-                            from smtoa.t_oa_businesstripdetail a
-                            inner join smtoa.t_oa_businesstrip a1
-                            on a1.businesstripid = a.businesstripid
+                            from  smtoa.t_oa_businesstrip a1
                         union
                         select b1.ownername,
                                 b.startdate,
                                 b.startcityname,
                                 b.enddate,
-                                b.businessdays,
                                 b.endcityname,
                                 b1.ownerid,
                                 b1.content,
+                                b1.ownercompanyid,
+                                b1.travelreimbursementid as id,
                                 '出差报销' as aa
                             from smtoa.t_oa_reimbursementdetail b
                             inner join smtoa.t_oa_travelreimbursement b1
@@ -1763,9 +1785,11 @@ namespace SmtPortalSetUp
                 string ownername = dtOATravelRecord.Rows[i].Cells["ownername"].EditedFormattedValue.ToString();
                 string startdate = dtOATravelRecord.Rows[i].Cells["startdate"].EditedFormattedValue.ToString();
                 string enddate = dtOATravelRecord.Rows[i].Cells["enddate"].EditedFormattedValue.ToString();
-                string businessdays = dtOATravelRecord.Rows[i].Cells["businessdays"].EditedFormattedValue.ToString();
+                string businessdays = "";
                 string endcityname = dtOATravelRecord.Rows[i].Cells["endcityname"].EditedFormattedValue.ToString();
                 string content = dtOATravelRecord.Rows[i].Cells["content"].EditedFormattedValue.ToString();
+
+                string ownercompanyid = dtOATravelRecord.Rows[i].Cells["ownercompanyid"].EditedFormattedValue.ToString();
 
                 string sqlget = @"select * from t_hr_employeeevectionrecord t
                                where t.employeeid='" + GlobalParameters.employeeid + @"'
@@ -1795,11 +1819,12 @@ namespace SmtPortalSetUp
                                    evectionreason,
                                    checkstate,
                                    ownerid,
+                                   ownercompanyid,
                                    createdate,
                                    updatedate,updateuserid) 
                                    values(sys_guid(), '" + employeeid + "', '" + ownername
                                                          + "', to_date('" + startdate + "','yyyy-MM-dd  hh24:mi:ss'), to_date('" + enddate + "','yyyy-MM-dd  hh24:mi:ss'), '"
-                                                         + businessdays + "', '" + endcityname + "', '" + content + "', '2', '" + employeeid + "', sysdate, sysdate,'系统插入')";
+                                                         + businessdays + "', '" + endcityname + "', '" + content + "', '2', '" + employeeid + "','" + ownercompanyid + "', sysdate, sysdate,'系统插入')";
 
 
                // int j = OracleHelp.Excute(sql);

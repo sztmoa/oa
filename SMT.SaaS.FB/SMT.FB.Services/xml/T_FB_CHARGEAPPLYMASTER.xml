@@ -24,7 +24,7 @@
     <ApplicationOrder>{CHARGEAPPLYMASTERID}</ApplicationOrder>
     <FormTypes>Audit</FormTypes>
   </MsgOpen>
-  <Object Name="T_FB_CHARGEAPPLYMASTER" Description="个人费用报销" Key="CHARGEAPPLYMASTERID" id="">
+  <Object Name="T_FB_CHARGEAPPLYMASTER" Description="费用报销" Key="CHARGEAPPLYMASTERID" id="">
     <Attribute Name="CURRENTEMPLOYEENAME" LableResourceID="CURRENTEMPLOYEENAME" Description="提交者" DataType="string" DataValue="" DataText=""></Attribute>
     <Attribute Name="POSTLEVEL" LableResourceID="POSTLEVEL" Description="岗位级别" DataType="string" DataValue="" DataText=""></Attribute>
     <Attribute Name="CHARGEAPPLYMASTERID" LableResourceID="CHARGEAPPLYMASTERID" Description="费用申请单ID" DataType="string" DataValue="" DataText=""></Attribute>
@@ -63,8 +63,8 @@
     <Attribute Name="PAYMENTINFO" LableResourceID="PAYMENTINFO" Description="支付信息" DataType="string" DataValue="" DataText=""></Attribute>
     <Attribute Name="BORROWAPPLYMASTERID" LableResourceID="LOANINVOICES" Description="借款单" DataType="string" DataValue="" DataText=""></Attribute>
     <Attribute Name="AttachMent"  LableResourceID="ATTACHMENT" Description="附件" DataType="attachmentlist" DataText="" DataValue="" />
-    <ObjectList Name="T_FB_CHARGEAPPLYDETAILList" LableResourceID="T_FB_CHARGEAPPLYDETAILList" Description="个人费用报销明细" DataText="" >
-      <Object Name="T_FB_CHARGEAPPLYDETAIL" Description="个人费用报销明细" Key="CHARGEAPPLYDETAILID" id="">
+    <ObjectList Name="T_FB_CHARGEAPPLYDETAILList" LableResourceID="T_FB_CHARGEAPPLYDETAILList" Description="报销明细" DataText="" >
+      <Object Name="T_FB_CHARGEAPPLYDETAIL" Description="报销明细" Key="CHARGEAPPLYDETAILID" id="">
         <Attribute Name="CURRENTEMPLOYEENAME" LableResourceID="CURRENTEMPLOYEENAME" Description="提交者" DataType="string" DataValue="" DataText=""></Attribute>
         <Attribute Name="CHARGEAPPLYDETAILID" LableResourceID="CHARGEAPPLYDETAILID" Description="费用申请单明细ID" DataType="string" DataValue="" DataText=""></Attribute>
         <Attribute Name="SERIALNUMBER" LableResourceID="SERIALNUMBER" Description="编号" DataType="decimal" DataValue="" DataText=""></Attribute>
@@ -83,12 +83,12 @@
         <Attribute Name="SUBJECTNAME" LableResourceID="SUBJECTNAME" Description="科目名称" DataType="string" DataValue="" DataText=""></Attribute>
       </Object>
     </ObjectList>
-    <ObjectList Name="T_FB_CHARGEAPPLYREPAYDETAILList" LableResourceID="T_FB_CHARGEAPPLYREPAYDETAILList" Description="个人费用报销冲借款明细" DataText="" >
-      <Object Name="T_FB_CHARGEAPPLYREPAYDETAIL" Description="个人费用报销冲借款明细" Key="CHARGEAPPLYDETAILID" id="">
+    <ObjectList Name="T_FB_CHARGEAPPLYREPAYDETAILList" LableResourceID="T_FB_CHARGEAPPLYREPAYDETAILList" Description="冲借款明细" DataText="" >
+      <Object Name="T_FB_CHARGEAPPLYREPAYDETAIL" Description="冲借款明细" Key="CHARGEAPPLYREPAYDETAILID" id="">
         <Attribute Name="CURRENTEMPLOYEENAME" LableResourceID="CURRENTEMPLOYEENAME" Description="提交者" DataType="string" DataValue="" DataText=""></Attribute>
         <Attribute Name="CHARGEAPPLYREPAYDETAILID" LableResourceID="CHARGEAPPLYREPAYDETAILID" Description="冲借款费用申请单明细ID" DataType="string" DataValue="" DataText=""></Attribute>
-        <Attribute Name="REPAYTYPE" LableResourceID="BORRTYPE" Description="借款项目" DataType="decimal" DataValue="" DataText=""></Attribute>
-        <Attribute Name="REMARK" LableResourceID="BORROWREMARK" Description="摘要" DataType="string" DataValue="" DataText=""></Attribute>
+        <Attribute Name="REPAYTYPE" LableResourceID="REPAYTYPE" Description="借款项目" DataType="decimal" DataValue="" DataText=""></Attribute>
+        <Attribute Name="REMARK" LableResourceID="REMARK" Description="摘要" DataType="string" DataValue="" DataText=""></Attribute>
         <Attribute Name="BORROWMONEY" LableResourceID="BORRBALAN" Description="借款余额" DataType="decimal" DataValue="" DataText=""></Attribute>
         <Attribute Name="REPAYMONEY" LableResourceID="REPAYMONEY" Description="冲借款金额" DataType="decimal" DataValue="" DataText=""></Attribute>
         <Attribute Name="CREATEUSERID" LableResourceID="CREATEUSERID" Description="创建人" DataType="string" DataValue="" DataText=""></Attribute>

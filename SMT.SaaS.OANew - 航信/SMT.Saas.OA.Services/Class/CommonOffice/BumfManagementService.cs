@@ -14,6 +14,7 @@ using System.Web.Security;
 using System.Web;
 using System.Security.Principal;
 using SMT.Foundation.Log;
+using SMT.SaaS.OA.DAL;
 
 namespace SMT.SaaS.OA.Services
 {
@@ -21,7 +22,7 @@ namespace SMT.SaaS.OA.Services
     //public partial class SmtOACommonOffice:IUserAuthenticate
     public partial class SmtOACommonOffice 
     {
-
+        BLLCommonServices.BllCommonUserPermissionWS.BllCommonPermissionServicesClient permissionClient = new BLLCommonServices.BllCommonUserPermissionWS.BllCommonPermissionServicesClient();
         #region 初始化变量
         //公文类型
         
@@ -143,6 +144,22 @@ namespace SMT.SaaS.OA.Services
             }
             
             
+        }
+
+        /// <summary>
+        /// 获取公文的级别或缓急程度
+        /// 供MVC调用 2013-12-10
+        /// </summary>
+        /// <param name="category">类型</param>
+        /// <returns>返回字符串集合</returns>
+         [OperationContract]
+        public List<string> GetDocGradeOrPriority(string category)
+        {
+            using (BumfDocTypeManagementBll TypeBll = new BumfDocTypeManagementBll())
+            {
+                List<string> DocTypeList = TypeBll.GetDocGradeOrPriority(category);
+                return DocTypeList;
+            }
         }
 
         
@@ -505,6 +522,27 @@ namespace SMT.SaaS.OA.Services
             }
         }
 
+        /// <summary>
+        /// 取消公司发文发布
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="StrResult"></param>
+        [OperationContract]        
+        public void CancelSendDocPublish(T_OA_SENDDOC obj, ref string StrResult)
+        {
+            using (BumfCompanySendDocManagementBll SendDocBll = new BumfCompanySendDocManagementBll())
+            {
+                bool isReturn =SendDocBll.CancelSendDocPublish(obj, ref StrResult);
+                if (!isReturn)
+                {
+                    if (obj != null)
+                    {
+                        StrResult = "取消公司发文:" + obj.SENDDOCTITLE + "的发布失败！";
+                    }
+                }
+            }
+        }
+
         [OperationContract]
         //查单
         public T_OA_SENDDOC GetSendDocSingleInfoById(string StrSendDocId)
@@ -607,6 +645,76 @@ namespace SMT.SaaS.OA.Services
 
         [OperationContract]
         //[AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+        public List<V_BumfCompanySendDoc> GetSendDocInfosListByWorkFlowForMVC(int pageIndex, int pageSize, string sort, string filterString, object[] paras, ref int pageCount, string checkState, LoginUserInfo loginUserInfo,ref int recordsTotal)
+        {
+            try
+            {
+                using (BumfCompanySendDocManagementBll SendDocBll = new BumfCompanySendDocManagementBll())
+                {
+                    //HouseInfoManagerBll bll = new HouseInfoManagerBll();
+                    //List<string> postIDs = new List<string>();
+                    //postIDs.Add("0c7a189f-fdbe-4632-a092-52c3463e0c7b");
+                    //postIDs.Add("6dbed528-5d9f-42f9-8278-178c4e5d8b1c");
+                    //postIDs.Add("9e0bf63a-023f-4b6a-a18e-fa5dbe057d8b");
+                    //List<string> postID1s = new List<string>();
+                    //postID1s.Add("c1f72286-eee5-45bd-bded-5993e8a317c9");
+                    //postID1s.Add("06aa0d8b-b32e-4eee-9d3c-db08b6a3b1fd");
+                    //List<string> postID2s = new List<string>();
+                    //postID2s.Add("cafdca8a-c630-4475-a65d-490d052dca36");
+                    //postID2s.Add("bac05c76-0f5b-40ae-b73b-8be541ed35ed");
+                    //int aa = 99999;
+                    //bll.GetHouseAndNoticeInfoToMobile(pageIndex, pageSize, ref pageCount, ref aa, "6ba49ec8-feb0-4f78-b801-2b8ea5387ab3", postID1s, postID2s, postID1s, string.Empty, null,string.Empty);
+                    List<V_BumfCompanySendDoc> CompanyDocList = null;
+                    if (checkState != ((int)CheckStates.WaittingApproval).ToString())  //获取用户的公司文档信息
+                    {
+                        //List<V_ArchivesLending> CompanyDocList = archivesLendingBll.GetArchivesLendingInfo(userID, searchObj, null, checkState);
+                        if (checkState != ((int)CheckStates.ALL).ToString())
+                        {
+                            CompanyDocList = SendDocBll.GetSendDocInfosListByTypeCompanyDepartmentSearchForMVC(pageIndex, pageSize, sort, filterString, paras, ref  pageCount, null, checkState, loginUserInfo.userID, ref recordsTotal);
+                        }
+                        else
+                        {
+                            CompanyDocList = SendDocBll.GetSendDocInfosListByTypeCompanyDepartmentSearchForMVC(pageIndex, pageSize, sort, filterString, paras, ref  pageCount, null, "", loginUserInfo.userID, ref recordsTotal);
+                        }
+
+                    }
+                    else                    //通过工作流获取公司文档信息
+                    {
+                        ServiceClient workFlowWS = new ServiceClient();
+                        V_BumfCompanySendDoc a = new V_BumfCompanySendDoc();
+                        FLOW_FLOWRECORDDETAIL_T flowInfo = new FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
+                        FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "T_OA_SENDDOC", loginUserInfo.companyID, loginUserInfo.userID);
+                        if (flowList == null)
+                        {
+                            return null;
+                        }
+                        List<V_FlowAPP> flowAppList = new List<V_FlowAPP>();
+                        for (int i = 0; i < flowList.Length; i++)
+                        {
+
+                            V_FlowAPP App = new V_FlowAPP();
+                            App.Guid = flowList[i].FLOWRECORDDETAILID;
+                            App.FormID = flowList[i].FLOW_FLOWRECORDMASTER_T.FORMID;
+                            App.EditUserID = flowList[i].EDITUSERID;
+                            App.EditUserName = flowList[i].EDITUSERNAME;
+                            flowAppList.Add(App);
+                        }
+                        checkState = ((int)CheckStates.Approving).ToString();
+                        CompanyDocList = SendDocBll.GetSendDocInfosListByTypeCompanyDepartmentSearchForMVC(pageIndex, pageSize, sort, filterString, paras, ref  pageCount, flowAppList, checkState, loginUserInfo.userID, ref recordsTotal);
+                    }
+                    return CompanyDocList != null ? CompanyDocList : null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Tracer.Debug("CompanySendDoc:"+System.DateTime.Now.ToString("d")+" "+ex.ToString());
+                return null;
+            }
+        }
+
+
+        [OperationContract]
+        //[AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
         public List<V_BumfCompanySendDoc> GetSendDocInfosListByWorkFlow(int pageIndex, int pageSize, string sort, string filterString, object[] paras, ref int pageCount, string checkState, LoginUserInfo loginUserInfo)
         {
             try
@@ -656,10 +764,12 @@ namespace SMT.SaaS.OA.Services
             }
             catch (Exception ex)
             {
-                Tracer.Debug("CompanySendDoc:"+System.DateTime.Now.ToString("d")+" "+ex.ToString());
+                Tracer.Debug("CompanySendDoc:" + System.DateTime.Now.ToString("d") + " " + ex.ToString());
                 return null;
             }
         }
+
+
         [OperationContract]
         public V_BumfCompanySendDoc GetBumfDocInfo(string docId)
         {
@@ -684,6 +794,32 @@ namespace SMT.SaaS.OA.Services
             }
         }
 
+
+        [OperationContract]
+        //获取我的公文
+        public List<V_BumfCompanySendDoc> GetMYSendDocInfosListForMVC(int pageIndex, int pageSize, string sort, string filterString, object[] paras, ref int pageCount, string checkState, LoginUserInfo loginUserInfo,ref int recordsTotal)
+        {
+            using (BumfCompanySendDocManagementBll SendDocBll = new BumfCompanySendDocManagementBll())
+            {
+                IQueryable<V_BumfCompanySendDoc> CompanyDocList = null;
+
+                CompanyDocList = SendDocBll.GetMySendDocInfosListForMVC(pageIndex, pageSize, sort, filterString, paras, ref  pageCount, null, checkState, loginUserInfo.userID, loginUserInfo.postID, loginUserInfo.companyID, loginUserInfo.departmentID,ref recordsTotal);
+
+
+                return CompanyDocList != null ? CompanyDocList.ToList() : null;
+            }
+        }
+        [OperationContract]
+        public bool BatchAddDocDistrbuteInfoOnlyDocForMVC(List<T_OA_DISTRIBUTEUSER> DistrbuteList, List<string> LstCompanyIDs, List<string> LstDepartmentIDs, List<string> LstPostIDs, List<string> employeeids, T_OA_SENDDOC doc)
+        {
+            using (BumfCompanyDocDistrbuteManagementBll SendDocBll = new BumfCompanyDocDistrbuteManagementBll())
+            {
+                bool isReturn = true;
+
+                isReturn = SendDocBll.BatchAddDocDistrbuteInfoOnlyDocForMVC(DistrbuteList, LstCompanyIDs, LstDepartmentIDs, LstPostIDs, employeeids, doc);
+                return isReturn;
+            }
+        }
         #region 流程
 
         [OperationContract]
@@ -888,8 +1024,49 @@ namespace SMT.SaaS.OA.Services
         }
         
         #endregion
+        [OperationContract]
+        public List<V_SystemNotice> RefreshSendDocData1(string employeeid, int pageIndex
+            , int pageSize, ref int pageCount, ref int DataCount, List<string> postIDs
+            , List<string> companyIDs, List<string> departmentIDs
+            , ref bool NeedGetNewData, bool NeedAllData
+            , string filterString, List<object> paras, string Doctitle)
+        {
+            using (HouseInfoManagerBll houseBll = new HouseInfoManagerBll())
+            {                
+                List<V_SystemNotice> ent = houseBll.RefreshSendDocData(employeeid, pageIndex, pageSize, ref pageCount
+                    , ref DataCount, postIDs, companyIDs, departmentIDs, ref NeedGetNewData, NeedAllData
+                    , filterString, paras, Doctitle);
+                return ent != null ? ent : null;
+            }
+        }
 
-
+        /// <summary>
+        /// 修改公司发文查看信息
+        /// </summary>
+        /// <param name="viewDoc"></param>
+        /// <returns></returns>
+        [OperationContract]        
+        public bool UpdateViewSenddoc(T_OA_VIEWSENDDOC viewDoc)
+        {
+            using (ViewSendDocBLL bll = new ViewSendDocBLL())
+            {
+                return bll.UpdateViewSenddoc(viewDoc);
+            }
+        }
+        /// <summary>
+        /// 获取员工查看公司发文信息
+        /// </summary>
+        /// <param name="docId"></param>
+        /// <param name="employeeID"></param>
+        /// <returns></returns>
+        [OperationContract]
+        public T_OA_VIEWSENDDOC GetViewSendDoc(string docId, string employeeID)
+        {
+            using (ViewSendDocBLL bll = new ViewSendDocBLL())
+            {
+                return bll.GetViewSendDoc(docId,employeeID);
+            }
+        }
         #region IUserAuthenticate 成员
 
         public string VerifyUser(string username, string password, string appcode)
@@ -933,5 +1110,33 @@ namespace SMT.SaaS.OA.Services
         }
 
         #endregion
+
+        /// <summary>
+        /// 费用报销查看个人事项审批单数据
+        /// </summary>
+        /// <param name="pageIndex">当前页</param>
+        /// <param name="pageSize">每页数量</param>        
+        /// <param name="filterString">字符串</param>
+        /// <param name="paras">参数</param>
+        /// <param name="pageCount">页数</param>
+        /// <param name="userID">用户ID</param>
+        /// <param name="approvalCode">事项编号</param>        
+        /// <returns></returns>
+         [OperationContract]
+        public List<T_OA_APPROVALINFO> GetApporvalListforMVCForReimbursement(int pageIndex, int pageSize, string filterString, object[] paras, ref int pageCount, string userID, string approvalCode)
+        {
+            using (ApprovalManagementBll approvalBll = new ApprovalManagementBll())
+            {
+                var ents = approvalBll.GetApporvalListforMVCForReimbursement(pageIndex, pageSize, filterString, paras, ref pageCount, userID, approvalCode, "2");
+                if (ents == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return ents.ToList();
+                }
+            }
+        }
     }
 }

@@ -44,68 +44,40 @@ namespace SMT.FB.BLL
                 auditEntity.GUID = "";
             }
 
+            FlowWFService.SubmitData auditSubmitData = auditEntity.SubmitData;
             //string xml = GetAuditXml(fbEntity);
-            string xml = GetAuditXmlForMobile(fbEntity);
-            //Tracer.Debug(xml);
-
-            FlowWFService.SubmitData AuditSubmitData = new FlowWFService.SubmitData();
-            AuditSubmitData.FormID = auditEntity.FormID;
-            AuditSubmitData.ModelCode = auditEntity.ModelCode;
-            AuditSubmitData.ApprovalUser = new FlowWFService.UserInfo
+            if (auditSubmitData.SubmitFlag == FlowWFService.SubmitFlag.New)
             {
-                CompanyID = auditEntity.CREATECOMPANYID,
-                CompanyName = auditEntity.CREATECOMPANYNAME,
-                DepartmentID = auditEntity.CREATEDEPARTMENTID,
-                DepartmentName = auditEntity.CREATEDEPARTMENTNAME,
-                PostID = auditEntity.CREATEPOSTID,
-                PostName = auditEntity.CREATEPOSTNAME,
-                UserID = auditEntity.CREATEUSERID,
-                UserName = auditEntity.CREATEUSERNAME
-            };
-            AuditSubmitData.ApprovalContent = auditEntity.Content;
-            AuditSubmitData.NextStateCode = auditEntity.NextStateCode;
-            AuditSubmitData.NextApprovalUser = new FlowWFService.UserInfo
-            {
-                UserID = auditEntity.OWNERID,
-                UserName = auditEntity.OWNERNAME,
-                CompanyID = auditEntity.OWNERCOMPANYID,
-                CompanyName = auditEntity.OWNERCOMPANYNAME,
-                DepartmentID = auditEntity.OWNERDEPARTMENTID,
-                DepartmentName = auditEntity.OWNERDEPARTMENTNAME,
-                PostID = auditEntity.OWNERPOSTID,
-                PostName = auditEntity.OWNERPOSTNAME
-            };
-            AuditSubmitData.ApprovalResult = (FlowWFService.ApprovalResult)auditEntity.Result;
-            AuditSubmitData.FlowSelectType = (FlowWFService.FlowSelectType)auditEntity.FlowSelectType;
+                SubjectBLL sbll = new SubjectBLL();
+                FBEntity curFBEntity =  fbEntity.ReferencedEntity[0].FBEntity;
+                curFBEntity = sbll.GetFBEntityByEntityKey(curFBEntity.Entity.EntityKey, true);
+                string xml = GetAuditXmlForMobile(auditSubmitData.ModelCode, curFBEntity);
+                auditSubmitData.XML = xml;
+            }
 
-            FlowWFService.SubmitFlag AuditSubmitFlag = auditEntity.Op.ToUpper() == "ADD" ? FlowWFService.SubmitFlag.New : FlowWFService.SubmitFlag.Approval;
-            AuditSubmitData.SubmitFlag = AuditSubmitFlag;
-            AuditSubmitData.XML = xml;
-            //#region 
+            //#region 测试　直接返回
             //FlowWFService.DataResult ar = new FlowWFService.DataResult();
             //ar.FlowResult = FlowWFService.FlowResult.FAIL;
-
-            //return testResult;
             //#endregion
 
-            FlowWFService.DataResult ar = flowSerivice.SubimtFlow(AuditSubmitData);
+            FlowWFService.DataResult ar = flowSerivice.SubimtFlow(auditSubmitData);
 
             if (ar.FlowResult == FlowWFService.FlowResult.FAIL)
             {
                 string msg = @"流程提交or审核失败. 参数: "
-                      + string.Format("\r\n ApprovalUser.CompanyID: {0} ", AuditSubmitData.ApprovalUser.CompanyID)
-                      + string.Format("\r\n ApprovalUser.DepartmentID: {0} ", AuditSubmitData.ApprovalUser.DepartmentID)
-                      + string.Format("\r\n ApprovalUser.PostID: {0} ", AuditSubmitData.ApprovalUser.PostID)
-                      + string.Format("\r\n ApprovalUser.UserName: {0} ", AuditSubmitData.ApprovalUser.UserName)
-                      + string.Format("\r\n FormID: {0} ", AuditSubmitData.FormID)
-                      + string.Format("\r\n ModelCode: {0} ", AuditSubmitData.ModelCode)
-                      + string.Format("\r\n ApprovalContent: {0} ", AuditSubmitData.ApprovalContent)
-                      + string.Format("\r\n NextStateCode: {0} ", AuditSubmitData.NextStateCode)
-                      + string.Format("\r\n ApprovalResult: {0} ", AuditSubmitData.ApprovalResult)
-                      + string.Format("\r\n FlowSelectType: {0} ", AuditSubmitData.FlowSelectType.ToString())
-                      + string.Format("\r\n SubmitFlag: {0} ", AuditSubmitData.SubmitFlag.ToString())
-                      + string.Format("\r\n NextApprovalUser.UserID: {0} ", AuditSubmitData.NextApprovalUser.UserName)
-                      + string.Format("\r\n NextApprovalUser.UserName: {0} ", AuditSubmitData.NextApprovalUser.UserName)
+                      + string.Format("\r\n ApprovalUser.CompanyID: {0} ", auditSubmitData.ApprovalUser.CompanyID)
+                      + string.Format("\r\n ApprovalUser.DepartmentID: {0} ", auditSubmitData.ApprovalUser.DepartmentID)
+                      + string.Format("\r\n ApprovalUser.PostID: {0} ", auditSubmitData.ApprovalUser.PostID)
+                      + string.Format("\r\n ApprovalUser.UserName: {0} ", auditSubmitData.ApprovalUser.UserName)
+                      + string.Format("\r\n FormID: {0} ", auditSubmitData.FormID)
+                      + string.Format("\r\n ModelCode: {0} ", auditSubmitData.ModelCode)
+                      + string.Format("\r\n ApprovalContent: {0} ", auditSubmitData.ApprovalContent)
+                      + string.Format("\r\n NextStateCode: {0} ", auditSubmitData.NextStateCode)
+                      + string.Format("\r\n ApprovalResult: {0} ", auditSubmitData.ApprovalResult)
+                      + string.Format("\r\n FlowSelectType: {0} ", auditSubmitData.FlowSelectType.ToString())
+                      + string.Format("\r\n SubmitFlag: {0} ", auditSubmitData.SubmitFlag.ToString())
+                      + string.Format("\r\n NextApprovalUser.UserID: {0} ", auditSubmitData.NextApprovalUser.UserName)
+                      + string.Format("\r\n NextApprovalUser.UserName: {0} ", auditSubmitData.NextApprovalUser.UserName)
                       + string.Format("\r\n ErrMessage: {0} ", ar.Err);
 
                 Tracer.Debug(msg);
@@ -457,14 +429,15 @@ namespace SMT.FB.BLL
         /// </summary>
         /// <param name="fbEntity"></param>
         /// <returns></returns>
-        public string GetAuditXmlForMobile(FBEntity fbEntity)
+        public string GetAuditXmlForMobile( string modelCode, FBEntity fbEntityMaster)
         {
+
             string xml = string.Empty;
-            VirtualAudit auditEntity = fbEntity.Entity as VirtualAudit;
+            
             List<EntityInfo> Modules = SubjectBLL.FBCommonEntityList;
             EntityInfo entityInfo = Modules.FirstOrDefault(entity =>
             {
-                return entity.EntityCode == auditEntity.ModelCode;
+                return entity.EntityCode.ToLower() == modelCode.ToLower();
             });
 
             if (entityInfo == null)
@@ -472,9 +445,9 @@ namespace SMT.FB.BLL
                 return xml;
             }
             xml = @"<?xml version=""1.0"" encoding=""utf-8""?><System><Name>FB</Name><Version>1.0</Version>{0}{1}{2}</System>";
-            XElement xe = dictXML_XE[auditEntity.ModelCode.ToLower()].Element("Object");
-            XElement xeCSys = dictXML_XE[auditEntity.ModelCode.ToLower()].Element("System");
-            XElement xeMsg = dictXML_XE[auditEntity.ModelCode.ToLower()].Element("MsgOpen");
+            XElement xe = dictXML_XE[modelCode.ToLower()].Element("Object");
+            XElement xeCSys = dictXML_XE[modelCode.ToLower()].Element("System");
+            XElement xeMsg = dictXML_XE[modelCode.ToLower()].Element("MsgOpen");
             xe = XElement.Parse(xe.ToString());  // 新建一个实例的XML。
             string StrSource = string.Empty;
 
@@ -493,14 +466,14 @@ namespace SMT.FB.BLL
             }
 
             #region 填充XML一级节点
-            EntityObject ent = fbEntity.ReferencedEntity[0].FBEntity.Entity;
+            EntityObject ent = fbEntityMaster.Entity;
 
             //预算预算，修改直接提交后fbEntity.ReferencedEntity[0].FBEntity.Entity的数据为没有更改的值，这时要加上修改的数据
             if (entityInfo.EntityCode == "T_FB_DEPTBUDGETAPPLYMASTER")//月度部门预算
             {
                 #region 月度预算，修改直接提交后fbEntity.ReferencedEntity[0].FBEntity.Entity的数据为没有更改的值，这时要加上修改的数据
 
-                var tempEntity = fbEntity.ReferencedEntity[0].FBEntity.CollectionEntity[0].FBEntities;
+                var tempEntity = fbEntityMaster.CollectionEntity[0].FBEntities;
                 if (tempEntity.Count > 0)
                 {
                     tempEntity.ForEach(item =>
@@ -522,7 +495,7 @@ namespace SMT.FB.BLL
             else if (entityInfo.EntityCode == "T_FB_DEPTBUDGETADDMASTER")//月度预算增补
             {
                 #region 月度预算增补
-                var tempEntity = fbEntity.ReferencedEntity[0].FBEntity.CollectionEntity[0].FBEntities;
+                var tempEntity = fbEntityMaster.CollectionEntity[0].FBEntities;
                 if (tempEntity.Count > 0)
                 {
                     tempEntity.ForEach(item =>
@@ -544,7 +517,7 @@ namespace SMT.FB.BLL
             else if (entityInfo.EntityCode == "T_FB_COMPANYBUDGETMODMASTER")
             {
                 #region 年度增补
-                var tempEntity = fbEntity.ReferencedEntity[0].FBEntity.CollectionEntity[0].FBEntities;
+                var tempEntity = fbEntityMaster.CollectionEntity[0].FBEntities;
                 if (tempEntity.Count > 0)
                 {
                     tempEntity.ForEach(item =>
@@ -566,7 +539,7 @@ namespace SMT.FB.BLL
             else if (entityInfo.EntityCode == "T_FB_COMPANYBUDGETAPPLYMASTER")
             {
                 #region 年度预算
-                var tempEntity = fbEntity.ReferencedEntity[0].FBEntity.CollectionEntity[0].FBEntities;
+                var tempEntity = fbEntityMaster.CollectionEntity[0].FBEntities;
                 if (tempEntity.Count > 0)
                 {
                     tempEntity.ForEach(item =>
@@ -586,27 +559,27 @@ namespace SMT.FB.BLL
                 #endregion
             }
             #region 部门分配没有去到字表数据，这里组一下
-            if (entityInfo.EntityCode == "T_FB_DEPTTRANSFERMASTER")
-            {
-                QueryEntityBLL bll = new QueryEntityBLL();
-                QueryExpression qeDetail = QueryExpression.Equal("DEPTTRANSFERMASTERID", ent.EntityKey.EntityKeyValues[0].Value.ToString());
-                qeDetail.QueryType = "T_FB_DEPTTRANSFERMASTER";
-                qeDetail.Include = new string[] { typeof(T_FB_DEPTTRANSFERDETAIL).Name };
-                var deptDetail = bll.InnerGetEntities<T_FB_DEPTTRANSFERMASTER>(qeDetail).FirstOrDefault();///部门分配明细
-                foreach (var item in deptDetail.T_FB_DEPTTRANSFERDETAIL)
-                {
-                    QueryExpression qePer = QueryExpression.Equal("DEPTTRANSFERDETAILID", item.DEPTTRANSFERDETAILID);
-                    qePer.QueryType = "T_FB_DEPTTRANSFERDETAIL";
-                    qePer.Include = new string[] { typeof(T_FB_PERSONTRANSFERDETAIL).Name };
-                    var perDetail = bll.InnerGetEntities<T_FB_DEPTTRANSFERDETAIL>(qePer).FirstOrDefault();///部门分配给个人的明细
-                    perDetail.T_FB_PERSONTRANSFERDETAIL.ForEach(it =>
-                    {
-                        item.T_FB_PERSONTRANSFERDETAIL.Add(it);
-                    });
-                }
+            //if (entityInfo.EntityCode == "T_FB_DEPTTRANSFERMASTER")
+            //{
+            //    QueryEntityBLL bll = new QueryEntityBLL();
+            //    QueryExpression qeDetail = QueryExpression.Equal("DEPTTRANSFERMASTERID", ent.EntityKey.EntityKeyValues[0].Value.ToString());
+            //    qeDetail.QueryType = "T_FB_DEPTTRANSFERMASTER";
+            //    qeDetail.Include = new string[] { typeof(T_FB_DEPTTRANSFERDETAIL).Name };
+            //    var deptDetail = bll.InnerGetEntities<T_FB_DEPTTRANSFERMASTER>(qeDetail).FirstOrDefault();///部门分配明细
+            //    foreach (var item in deptDetail.T_FB_DEPTTRANSFERDETAIL)
+            //    {
+            //        QueryExpression qePer = QueryExpression.Equal("DEPTTRANSFERDETAILID", item.DEPTTRANSFERDETAILID);
+            //        qePer.QueryType = "T_FB_DEPTTRANSFERDETAIL";
+            //        qePer.Include = new string[] { typeof(T_FB_PERSONTRANSFERDETAIL).Name };
+            //        var perDetail = bll.InnerGetEntities<T_FB_DEPTTRANSFERDETAIL>(qePer).FirstOrDefault();///部门分配给个人的明细
+            //        perDetail.T_FB_PERSONTRANSFERDETAIL.ForEach(it =>
+            //        {
+            //            item.T_FB_PERSONTRANSFERDETAIL.Add(it);
+            //        });
+            //    }
 
-                ent = (EntityObject)deptDetail;
-            }
+            //    ent = (EntityObject)deptDetail;
+            //}
             #endregion
             string strFirstKeyName = xe.Attribute("Key").Value;
             if (!string.IsNullOrWhiteSpace(strFirstKeyName))
@@ -929,7 +902,7 @@ namespace SMT.FB.BLL
             {
                 //var tempEntity = listChildEnts.FirstOrDefault();
                 //为了按照科目编号排序
-                listChildEnts = OrderBudget(listChildEnts);
+                listChildEnts = OrderBudget(listChildEnts);  
             }
             catch (Exception ex)
             {
@@ -986,7 +959,7 @@ namespace SMT.FB.BLL
                             if (baData != null)
                             {
                                 decimal? money = baData.BUDGETMONEY;
-                                if (money > 0)
+                                if (money != 0)
                                 {
                                     ent.AUDITBUDGETMONEY = money;//该字段在年度增补里面没有使用，所以在这里进行后面的xml数据生成使用
                                 }
@@ -995,7 +968,7 @@ namespace SMT.FB.BLL
                                     ent.AUDITBUDGETMONEY = baData.PAIEDMONEY;
                                 }
                             }
-                            if (ent.BUDGETMONEY > 0)
+                            if (ent.BUDGETMONEY != 0)
                             {
                                 listTemp.Add(it);
                             }
@@ -1008,8 +981,9 @@ namespace SMT.FB.BLL
                         listChildEnts.ForEach(it =>
                         {
                             var entity = it as V_SubjectCompanySum;
-                            if (entity.T_FB_COMPANYBUDGETAPPLYDETAIL != null && entity.T_FB_COMPANYBUDGETAPPLYDETAIL.Count > 0 && entity.T_FB_COMPANYBUDGETAPPLYDETAIL.FirstOrDefault().BUDGETMONEY > 0)
+                            if (entity.BUDGETMONEY > 0)
                             {
+                                entity.T_FB_COMPANYBUDGETAPPLYDETAIL.RemoveAll(item => item.BUDGETMONEY == 0);
                                 listTemp.Add(it);
                             }
                         });
@@ -1021,8 +995,9 @@ namespace SMT.FB.BLL
                         listChildEnts.ForEach(it =>
                         {
                             var entity = it as V_SubjectDeptSum;
-                            if (entity.T_FB_DEPTBUDGETAPPLYDETAIL != null && entity.T_FB_DEPTBUDGETAPPLYDETAIL.Count > 0 && entity.T_FB_DEPTBUDGETAPPLYDETAIL.FirstOrDefault().TOTALBUDGETMONEY > 0)
+                            if (entity.BUDGETMONEY > 0)
                             {
+                                entity.T_FB_DEPTBUDGETAPPLYDETAIL.RemoveAll(item => item.BUDGETMONEY == 0);
                                 listTemp.Add(it);
                             }
                         });
@@ -1044,12 +1019,24 @@ namespace SMT.FB.BLL
                         listChildEnts.ForEach(it =>
                         {
                             var entity = it as T_FB_DEPTBUDGETADDDETAIL;
-                            if (entity != null && entity.TOTALBUDGETMONEY > 0)
+                            if (entity != null && entity.TOTALBUDGETMONEY != 0)
                             {
                                 listTemp.Add(it);
                             }
                         });
                         listChildEnts = listTemp.OrderBy(item => ((T_FB_DEPTBUDGETADDDETAIL)(item)).T_FB_SUBJECT.SUBJECTCODE).ToList();
+                        break;
+                    case "SMT_FB_EFModel.T_FB_DEPTTRANSFERDETAIL"://部门预算增补明细
+                        
+                        listChildEnts.ForEach(it =>
+                        {
+                            var entity = it as T_FB_DEPTTRANSFERDETAIL;
+                            if (entity != null && entity.TRANSFERMONEY != 0)
+                            {
+                                listTemp.Add(it);
+                            }
+                        });
+                        listChildEnts = listTemp.OrderBy(item => ((T_FB_DEPTTRANSFERDETAIL)(item)).T_FB_SUBJECT.SUBJECTCODE).ToList();
                         break;
                     default: break;
                 }
@@ -1061,6 +1048,7 @@ namespace SMT.FB.BLL
             }
 
         }
+
 
 
         /// <summary>
@@ -1166,6 +1154,85 @@ namespace SMT.FB.BLL
                                         listTemp.Add(it);
                                     }
                                 });
+
+
+                            //alter by ken 增加公共科目元数据显示
+                            if (listTemp.Count > 0)
+                            {
+                                var curItemEntity = item as T_FB_DEPTBUDGETAPPLYDETAIL;
+
+                                var sumEntity = new T_FB_PERSONBUDGETAPPLYDETAIL();
+                                sumEntity.PERSONBUDGETAPPLYDETAILID = Guid.NewGuid().ToString();
+                                sumEntity.OWNERNAME = "公共";
+                                //sumEntity.T_FB_SUBJECT.SUBJECTID = curItemEntity.T_FB_SUBJECT.SUBJECTID;
+                                sumEntity.LIMITBUDGETMONEY = curItemEntity.BEGINNINGBUDGETBALANCE.Subtract(listGrandSonEnts.Sum(itemFB =>
+                                {
+                                    var tee = (itemFB as T_FB_PERSONBUDGETAPPLYDETAIL);
+                                    if (tee.LIMITBUDGETMONEY == null)
+                                    {
+                                        return 0;
+                                    }
+                                    else
+                                    {
+                                        return tee.LIMITBUDGETMONEY;
+                                    }
+                                }));
+                                sumEntity.BUDGETMONEY = curItemEntity.BUDGETMONEY;
+                                listTemp.Insert(0, sumEntity);
+                            }
+
+
+                            listGrandSonEnts = listTemp;
+                        }
+                        else if (listGrandSonEnts != null && listGrandSonEnts.Count > 0 && listGrandSonEnts.FirstOrDefault().GetType().ToString() == "SMT_FB_EFModel.T_FB_PERSONBUDGETADDDETAIL")
+                        {
+                            listGrandSonEnts.ForEach(it =>
+                            {
+                                var entity = it as T_FB_PERSONBUDGETADDDETAIL;
+                                if (entity != null && entity.BUDGETMONEY != 0)
+                                {
+                                    listTemp.Add(it);
+                                }
+                            });
+
+                            //alter by ken 增加公共科目元数据显示
+                            if (listTemp.Count > 0)
+                            {
+                                var curItemEntity = item as T_FB_DEPTBUDGETADDDETAIL;
+
+                                var sumEntity = new T_FB_PERSONBUDGETADDDETAIL();
+                                sumEntity.PERSONBUDGETADDDETAILID = Guid.NewGuid().ToString();
+                                sumEntity.OWNERNAME = "公共";
+                                //sumEntity.T_FB_SUBJECT.SUBJECTID = curItemEntity.T_FB_SUBJECT.SUBJECTID;
+                                sumEntity.LIMITBUDGETMONEY = curItemEntity.AUDITBUDGETMONEY.Subtract(listGrandSonEnts.Sum(itemFB =>
+                                {
+                                    var tee = (itemFB as T_FB_PERSONBUDGETADDDETAIL);
+                                    if (tee.LIMITBUDGETMONEY == null)
+                                    {
+                                        return 0;
+                                    }
+                                    else
+                                    {
+                                        return tee.LIMITBUDGETMONEY;
+                                    }
+                                }));
+                                sumEntity.BUDGETMONEY = curItemEntity.BUDGETMONEY;
+                                listTemp.Insert(0, sumEntity);
+                            }
+
+                            listGrandSonEnts = listTemp;
+                        }
+                        else if (listGrandSonEnts != null && listGrandSonEnts.Count > 0 && listGrandSonEnts.FirstOrDefault().GetType().ToString() == "SMT_FB_EFModel.T_FB_PERSONTRANSFERDETAIL")
+                        {
+                            
+                            listGrandSonEnts.ForEach(it =>
+                            {
+                                var entity = it as T_FB_PERSONTRANSFERDETAIL;
+                                if (entity != null && entity.BUDGETMONEY != 0)
+                                {
+                                    listTemp.Add(it);
+                                }
+                            });
                             listGrandSonEnts = listTemp;
                         }
 
@@ -1234,27 +1301,19 @@ namespace SMT.FB.BLL
 
         private void GetAuditPersonMoneyAssignDetails(EntityObject entityObject, string strXItemName, ref List<EntityObject> listAllEnts)
         {
-            using (SubjectBLL bll = new SubjectBLL())
+            using (BaseBLL bll = new BaseBLL())
             {
                 T_FB_PERSONMONEYASSIGNMASTER entMaster = entityObject as T_FB_PERSONMONEYASSIGNMASTER;
-                FBEntity entCur = bll.GetFBEntityByEntityKey(entMaster.EntityKey);
-
-                var rs = (entCur.Entity as IEntityWithRelationships).RelationshipManager.GetAllRelatedEnds();
-
-                foreach (IRelatedEnd re in rs)
+                var mid = entMaster.PERSONMONEYASSIGNMASTERID;
+                var temps = bll.GetTable<T_FB_PERSONMONEYASSIGNDETAIL>();
+                temps = temps.Where(item => item.T_FB_PERSONMONEYASSIGNMASTER.PERSONMONEYASSIGNMASTERID == mid)
+                    .OrderBy(item => item.OWNERCOMPANYNAME).ThenBy(item => item.OWNERDEPARTMENTNAME).ThenBy(item => item.POSTLEVEL);
+                foreach (var item in temps)
                 {
-                    IEnumerator etrs = re.GetEnumerator();
-                    while (etrs.MoveNext())
-                    {
-                        EntityObject obj = etrs.Current as EntityObject;
-
-                        if (obj.GetType().Name != strXItemName)
-                        {
-                            continue;
-                        }
-                        listAllEnts.Add(obj);
-                    }
+                    listAllEnts.Add(item);
                 }
+
+            
             }
         }
 

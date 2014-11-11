@@ -193,7 +193,7 @@ namespace SMT.SAAS.Platform.WebParts.Views
             try
             {
                 if (loading != null)
-                    loading.Stop();
+                    // loading.Stop();
 
                 // IsAutofresh ：是否是自动刷新，如果是自动刷新值为true,手动刷新为false
                 // HaveNewTask:该参数是返回给门户的字段，是自动刷新，

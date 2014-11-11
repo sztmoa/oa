@@ -17,17 +17,16 @@
     <Grid x:Name="LayoutRoot" Background="White" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" x:Name="gridRowDefinition"/>
         </Grid.RowDefinitions>
-         
-        <StackPanel x:Name="P1" VerticalAlignment="Top" Grid.Row="0">
+            <StackPanel x:Name="P1" VerticalAlignment="Top" Grid.Row="0">
             <Border  Style="{StaticResource ButtonToolBarBorder}" Height="26">
                 <StackPanel x:Name="P11" VerticalAlignment="Top" Grid.Row="0" Margin="0,-2,0,0">
                     <smtx:ToolBar x:Name="deatilGridBar" />
                 </StackPanel >
             </Border>
         </StackPanel >
-        <local:AutoDataGrid x:Name="ADGrid"  MinHeight="100" MinWidth="180" MaxHeight="500" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" >
+        <local:AutoDataGrid x:Name="ADGrid"  MinHeight="100" MinWidth="180"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" >
 
         </local:AutoDataGrid>
     </Grid>

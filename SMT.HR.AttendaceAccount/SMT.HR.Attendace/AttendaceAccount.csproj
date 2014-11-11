@@ -11,7 +11,8 @@
     <RootNamespace>AttendaceAccount</RootNamespace>
     <AssemblyName>协同办公工具</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <SccProjectName>Svn</SccProjectName>
@@ -99,6 +100,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SearchFBAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchFBAccount.Designer.cs">
+      <DependentUpon>SearchFBAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee.cs" />
     <Compile Include="Form_First.cs">
       <SubType>Form</SubType>
@@ -187,6 +194,9 @@
     <Compile Include="打卡机导入打卡记录\AttendLog%28汉王%29.Designer.cs">
       <DependentUpon>AttendLog%28汉王%29.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SearchFBAccount.resx">
+      <DependentUpon>SearchFBAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_First.resx">
       <DependentUpon>Form_First.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +252,18 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.AbnormalAttendanceeEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.CaculateLeaveHoursResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.CalculateLeaveCancelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.CalculateOTHoursResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.EmployeeAlreadyLeave.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.T_HR_ATTENDANCEDEDUCTDETAIL.datasource">
@@ -310,7 +332,13 @@
     <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.T_HR_EMPLOYEESIGNINRECORD.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.T_HR_EMPLOYEEVACATION.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.T_HR_FREELEAVEDAYSET.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.T_HR_LEAVEREFEROT.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.T_HR_LEAVETYPESET.datasource">
@@ -346,16 +374,25 @@
     <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.V_EmpLeaveRdInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.V_EMPLOYEEATTENDANCESOLUTIONASIGN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.V_EMPLOYEELEAVE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.V_EMPLOYEELEAVERECORD.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.V_EMPLOYEESIGNINRECORD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.V_LandDetail.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.V_LandStatistic.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendWS\AttendaceAccount.AttendWS.V_LeaveReferOvertime.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AttendWS\AttendanceService.wsdl" />
@@ -385,6 +422,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AttendWS\AttendanceService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendWS\AttendanceService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendWS\AttendanceService91.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\HRCommonSV\HrCommonService.wsdl" />

@@ -175,7 +175,7 @@
                             </Canvas>
                             <Canvas Height="24">
                                 <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/Tool/ico_16_systemEntity.png" HorizontalAlignment="Left" Width="16" Height="16" Margin="6,1,0,0"/>
-                                <HyperlinkButton x:Name="Pf15" Content="公司科目设置" NavigateUri="/SubjectManagement/SubjectCompanySet" Margin="26,0,0,0" Style="{StaticResource HyperlinkButton}"/>
+                                <HyperlinkButton x:Name="Pf15" Content="公司科目分配" NavigateUri="/SubjectManagement/SubjectCompanySet" Margin="26,0,0,0" Style="{StaticResource HyperlinkButton}"/>
                             </Canvas>
                             <Canvas Height="24">
                                 <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/Tool/ico_16_systemEntity.png" HorizontalAlignment="Left" Width="16" Height="16" Margin="6,1,0,0"/>
@@ -233,13 +233,10 @@
                             </Canvas>
                             <Canvas Height="24">
                                 <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/Tool/ico_16_systemEntity.png" HorizontalAlignment="Left" Width="16" Height="16" Margin="6,1,0,0"/>
-                                <HyperlinkButton x:Name="Pe1213" Content="测试" NavigateUri="/Test/TestPage" Margin="26,0,0,0"  Style="{StaticResource HyperlinkButton}"/>
+                                <HyperlinkButton x:Name="Pe1213" Content="我的单据" NavigateUri="/Test/TestPage" Margin="26,0,0,0"  Style="{StaticResource HyperlinkButton}"/>
                             </Canvas>
 
-                            <Canvas Height="24">
-                                <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/Tool/ico_16_systemEntity.png" HorizontalAlignment="Left" Width="16" Height="16" Margin="6,1,0,0"/>
-                                <HyperlinkButton  Content="测试1" NavigateUri="/Test/Test2" Margin="26,0,0,0"  Style="{StaticResource HyperlinkButton}"/>
-                            </Canvas>
+                            
                         </StackPanel>
                     </layoutToolkit:TransitioningContentControl>
                 </layoutToolkit:AccordionItem>

@@ -196,6 +196,7 @@ namespace SMT.SaaS.OA.BLL
                 }
                 catch (Exception ex)
                 {
+                    Tracer.Debug(ex.ToString());
                     return false;
                     throw (ex);
                 }
@@ -295,7 +296,7 @@ namespace SMT.SaaS.OA.BLL
                     user.UPDATEUSERID = ApprovalInfo.UPDATEUSERID;                    
                     user.CHECKSTATE = ApprovalInfo.CHECKSTATE;                    
                     user.UPDATEDATE = DateTime.Now;
-                    nRet = Update(user);
+                    nRet = dal.Update(user);
                 }
                 nRet = 0;
             }

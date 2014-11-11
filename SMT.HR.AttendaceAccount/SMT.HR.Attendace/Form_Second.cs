@@ -489,7 +489,8 @@ namespace SmtPortalSetUp
                     where 
                     c.city=(
                     select t.dictionaryvalue from smtsystem.t_sys_dictionary t--查询城市字典值
-                    where t.dictionaryname='"+txtTraveCityName.Text+@"')
+                    where t.dictionaryname='"+txtTraveCityName.Text+ @"'                    
+                    and t.dictioncategory='CITY')
                     and a.postlevel in (
                     select --查询员工出差岗位级别,所属公司
                            ep.postlevel      
@@ -526,6 +527,11 @@ where t.nobudgetclaims='" + txtTravNomber.Text + "'";
 
         }
         #endregion
+
+        private void btnSearchFBAccoutn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     

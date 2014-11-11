@@ -12,10 +12,10 @@
     <AssemblyName>CommonDll</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -76,9 +76,45 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="开发帮助与规范\FB数据库设计.pdm" />
+    <Content Include="Lib\83Test\SMT.SAAS.ClientServices.dll" />
+    <Content Include="Lib\83Test\SMT.SAAS.ClientUtility.dll" />
+    <Content Include="Lib\SMT.SAAS.ClientServices.dll" />
+    <Content Include="Lib\SMT.SAAS.ClientUtility.dll" />
+    <Content Include="SMT.Framework.EntityFramework.dll" />
+    <Content Include="安装开发环境\EFOracleProvider.dll" />
+    <Content Include="安装开发环境\SMTDevEnvironmentSetUp.exe" />
+    <Content Include="安装开发环境\SMTDevEnvironmentSetUp.pdb" />
+    <Content Include="部署与安装\DBScript\20101118\集团数据20101118.sql" />
+    <Content Include="部署与安装\DBScript\20101118\预算_Create20101105.txt" />
+    <Content Include="部署与安装\DBScript\20101118\预算_Drop20101105.txt" />
+    <Content Include="部署与安装\DBScript\FB_Create.sql" />
+    <Content Include="部署与安装\DBScript\FB_Drop.sql" />
+    <Content Include="部署与安装\DBScript\集团初始化数据20100916.sql" />
+    <Content Include="部署与安装\DBScript\预算集团菜单数据20101015.sql" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="安装开发环境\RegeditDll.bat" />
+    <None Include="开发帮助与规范\FB数据库设计.pdm" />
+    <None Include="开发帮助与规范\FB系统需求文档.doc" />
+    <None Include="开发帮助与规范\神州通在线SaaS体系开发帮助文档.doc" />
+    <None Include="开发帮助与规范\神州通在线科技编程规范.doc" />
+    <None Include="开发帮助与规范\神州通数据库命名规则.doc" />
+    <None Include="开发帮助与规范\预算（FB）数据库结构.rtf" />
+    <None Include="部署与安装\DBScript\20101118\预算最新脚本20101118.rar" />
+    <None Include="部署与安装\DBScript\FB_DBScript_20100526.rar" />
+    <None Include="部署与安装\DBScript\FB_DBScript_20100611.rar" />
+    <None Include="部署与安装\DBScript\FB_DBScript_20100625.zip" />
+    <None Include="部署与安装\DBScript\FB_DBScript_20100715.zip" />
+    <None Include="部署与安装\DBScript\FB_DBScript_20100807.zip" />
+    <None Include="部署与安装\DBScript\FB_DBScript_20100813.zip" />
+    <None Include="部署与安装\DBScript\FB_DBScript_20100813_变更.zip" />
+    <None Include="部署与安装\DBScript\FB_DBScript_20100821.zip" />
+    <None Include="部署与安装\DBScript\FB_DBScript_20100916.zip" />
+    <None Include="部署与安装\预算安装部署说明文档.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="部署与安装\DBScript\History\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

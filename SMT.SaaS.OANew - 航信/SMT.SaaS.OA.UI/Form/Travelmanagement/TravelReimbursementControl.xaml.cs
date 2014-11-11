@@ -160,7 +160,9 @@ namespace SMT.SaaS.OA.UI.UserControls
                 Utility.InitFileLoad("TravelReimbursement", travelReimbursementID, formType, uploadFile);
                 BrowseShieldedControl();
             }
-            FormToolBar1.btnNew.Click += new RoutedEventHandler(btnNew_Click);
+            //FormToolBar1.btnNew.Click += new RoutedEventHandler(btnNew_Click);
+            FormToolBar1.Visibility = Visibility.Collapsed;
+            FormToolBar1.btnNew.Visibility = Visibility.Collapsed;//行程修改-不允许修改出差
             FormToolBar1.btnEdit.Visibility = Visibility.Collapsed;//修改
             FormToolBar1.btnDelete.Visibility = Visibility.Collapsed;//删除
             FormToolBar1.BtnView.Visibility = Visibility.Collapsed;//查看

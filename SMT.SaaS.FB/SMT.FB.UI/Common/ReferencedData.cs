@@ -22,6 +22,7 @@ namespace SMT.FB.UI.Common
         object Value { get; set; }
     }
   
+    
     public class TextValueItemBase : StructuralObject, ITextValueItem
     {
         public TextValueItemBase()
@@ -71,6 +72,59 @@ namespace SMT.FB.UI.Common
         }
     }
 
+
+    public class MoneyData : StructuralObject, ITextValueItem
+    {
+        public MoneyData()
+        {
+            ID = Guid.NewGuid().ToString();
+        }
+        public string ID { get; set; }
+        public string Text 
+        {
+            get
+            {
+                var tempTexts = Convert.ToString(this.Value).ToCharArray();
+                var result = string.Empty;
+                for(int j = tempTexts.Length; j >= 0 ; j--)
+                {
+                    result = string.Concat(tempTexts[j],result);
+                    if ( j % 3 == 0)
+                    {
+                        result = string.Concat(",",result);
+                    }
+                }
+                result = result.Trim(',');
+                return result;
+            }
+            set
+            {
+                var tempText = Convert.ToString(value).Replace(",", "");
+                decimal tempValue = 0;
+                Decimal.TryParse(tempText, out tempValue);
+                this.Value = tempValue;
+            }
+        }
+
+        private object _Value;
+        public object Value 
+        {
+            get
+            {
+                return _Value;
+            }
+            set
+            {
+                if ((object.ReferenceEquals(this._Value, value) != true))
+                {
+                    _Value = value;
+                    RaisePropertyChanged("Value");
+                    RaisePropertyChanged("Text");
+                }
+            }
+        }
+
+    }
     public class MonthItem : TextValueItemBase
     {
 

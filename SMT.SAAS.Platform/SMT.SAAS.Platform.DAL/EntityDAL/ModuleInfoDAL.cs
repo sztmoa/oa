@@ -223,6 +223,14 @@ namespace SMT.SAAS.Platform.OracleDAL
 
                     if(item.ENTITYMENUID == "9b58888d-cf4e-40cf-bab6-de4ee00d0ceb")
                     {
+                        Tracer.Debug("！已获取到(新)流程定义");
+                    }
+                    if(item.ENTITYMENUID=="709D9380-5405-4429-B047-20100401D255")
+                    {
+                        Tracer.Debug("！已获取到系统科目字典维护");
+                    }else
+                    {
+                        Tracer.Debug("已获取到菜单:"+item.MENUNAME);
                     }
 
                     ModuleInfo parentModule = moduleinfos.FirstOrDefault(e => (e.ModuleCode == item.SYSTEMTYPE));
@@ -279,7 +287,9 @@ namespace SMT.SAAS.Platform.OracleDAL
             }
             catch (Exception ex)
             {
-                throw ex;
+                Tracer.Debug("Dal GetModuleCatalogByUser 异常："+ex.ToString());
+                //throw ex;
+                return new List<ModuleInfo>();
             }
             finally
             {

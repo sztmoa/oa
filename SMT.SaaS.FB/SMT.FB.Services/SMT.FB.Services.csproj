@@ -13,10 +13,10 @@
     <RootNamespace>SMT.FB.Services</RootNamespace>
     <AssemblyName>SMT.FB.Services</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
     <SilverlightApplicationList>
     </SilverlightApplicationList>
     <FileUpgradeFlags>
@@ -71,17 +71,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SMT.Foundation.Core">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Core.dll</HintPath>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Core.dll</HintPath>
     </Reference>
-    <Reference Include="SMT.Foundation.Log">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Log.dll</HintPath>
+    <Reference Include="SMT.Foundation.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Log.dll</HintPath>
     </Reference>
     <Reference Include="Smt.Global.IContract">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\Smt.Global.IContract.dll</HintPath>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Server\Smt.Global.IContract.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SaaS.BLLCommonServices, Version=1.0.0.1222, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
+      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -118,7 +119,9 @@
     <Content Include="FBCommonService.svc" />
     <Content Include="FBExtensionalService.svc" />
     <Content Include="FBService.svc" />
-    <Content Include="FB_UI_Config.xml" />
+    <Content Include="FB_UI_Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="OaService.svc" />
     <Content Include="ReDoForm.aspx" />
     <Content Include="SalaryBudget.xml" />
@@ -135,9 +138,7 @@
     <Content Include="xml\T_FB_BORROWAPPLYMASTER.xml" />
     <Content Include="xml\T_FB_CHARGEAPPLYMASTER.xml" />
     <Content Include="xml\T_FB_COMPANYBUDGETAPPLYMASTER.xml" />
-    <Content Include="xml\T_FB_COMPANYBUDGETMODMASTER.xml">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="xml\T_FB_COMPANYBUDGETMODMASTER.xml" />
     <Content Include="xml\T_FB_COMPANYBUDGETSUMMASTER.XML" />
     <Content Include="xml\T_FB_COMPANYTRANSFERMASTER.xml" />
     <Content Include="xml\T_FB_DEPTBUDGETADDMASTER.xml" />
@@ -203,7 +204,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SMT.FB.BLL\SMT.FB.BLL.csproj">
-      <Project>{08A41840-AC4A-4D1E-8CF5-881E968B44AF}</Project>
+      <Project>{08A41840-AC4A-4D1E-8CF5-881E968B44AE}</Project>
       <Name>SMT.FB.BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\SMT.FB.DAL\SMT.FB.DAL.csproj">
@@ -220,6 +221,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\配置文件1.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -241,7 +245,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
-          <DevelopmentServerPort>12169</DevelopmentServerPort>
+          <DevelopmentServerPort>23938</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

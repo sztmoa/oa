@@ -50,6 +50,7 @@ namespace SMT.FB.UI.Form.BudgetApply
 
         void EditForm_Saving(object sender, SavingEventArgs e)
         {
+           
             e.SaveFBEntity.CollectionEntity.Clear();
         }
 
@@ -82,6 +83,84 @@ namespace SMT.FB.UI.Form.BudgetApply
 
                 grid.AddToolBarItems(list);
             }
+            var dGrid = grid;
+            dGrid.ADGrid.LoadingRow += (object sender, DataGridRowEventArgs e) =>
+            {
+                if ((this.EditForm.OperationType == OperationTypes.Add
+                    || this.EditForm.OperationType == OperationTypes.Edit
+                    || this.EditForm.OperationType == OperationTypes.ReSubmit) && SumType == 1)
+                {
+                    var con = dGrid.ADGrid.Columns[7].GetCellContent(e.Row) as StackPanel;
+                    Action a2 = () =>
+                    {
+                        Label label = new Label();
+                        label.Content = "已打回";
+                        con.Children.Clear();
+                        con.Children.Add(label);
+                    };
+
+                    Action a1 = () =>
+                    {
+                        ImageButton myButton = new ImageButton();
+                        myButton.Margin = new Thickness(0);
+                        myButton.AddButtonAction("/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/ico_16_delete.png", "打回");
+                        myButton.Tag = e.Row.DataContext;
+                        myButton.Click += (oo, ee) =>
+                        {
+                            Control c = oo as Control;
+                            var entity = c.Tag as FBEntity;
+                            Action action = () =>
+                            {
+
+                                // dGrid.Delete(new List<FBEntity> { entity });
+                                var saveEntity = entity.Entity.ToFBEntity();
+                                saveEntity.SetObjValue("Entity.CHECKSTATES", 4);
+                                saveEntity.FBEntityState = FBEntityState.Modified;
+                                FBEntityService fbs = new FBEntityService();
+                                fbs.SetVisitUser(saveEntity);
+                                fbs.FBService.SaveCompleted += (ooo, eee) =>
+                                {
+                                    this.CloseProcess();
+                                    if (eee.Error != null)
+                                    {
+                                        CommonFunction.ShowErrorMessage("操作失败, " + eee.Error.Message);
+
+                                    }
+                                    else if (eee.Result.Exception != null)
+                                    {
+                                        CommonFunction.ShowErrorMessage(eee.Result.Exception);
+                                    }
+                                    else
+                                    {
+                                        a2();
+                                    }
+                                };
+                                this.ShowProcess();
+                                fbs.FBService.SaveAsync(saveEntity);
+                                // none;
+                            };
+                            var personName = entity.GetObjValue("Entity.T_FB_DEPTBUDGETAPPLYMASTER.OWNERDEPARTMENTNAME");
+
+                            var msg = "你确定要打回 [" + personName + "] 的部门月度预算吗?";
+                            CommonFunction.AskDelete(msg, action);
+                        };
+                        con.Children.Clear();
+                        con.Children.Add(myButton);
+                    };
+
+                    var cs = e.Row.DataContext.GetObjValue("Entity.CHECKSTATES") as decimal?;
+                    if (cs.Equal(4))
+                    {
+                        a2();
+                    }
+                    else
+                    {
+                        a1();
+                    }
+                }
+            };     
+
+
             grid.deatilGridBar.ItemClicked += new EventHandler<ToolBar.ToolBarItemClickArgs>(deatilGridBar_ItemClicked);
             deatilGridBar_ItemClicked(grid, new ToolBar.ToolBarItemClickArgs("S1"));
         }
@@ -114,6 +193,7 @@ namespace SMT.FB.UI.Form.BudgetApply
                     grid.ADGrid.Columns[i + 1].Visibility = Visibility.Collapsed;
                     grid.ADGrid.Columns[i + 2].Visibility = Visibility.Collapsed;
                     grid.ADGrid.Columns[i + 4].Visibility = Visibility.Collapsed;
+                    grid.ADGrid.Columns[i + 5].Visibility = Visibility.Collapsed;
 
                     grid.ItemsSource = this.OrderEntity.GetRelationFBEntities(typeof(V_SubjectDepartmentSum).Name);
                 }
@@ -131,6 +211,7 @@ namespace SMT.FB.UI.Form.BudgetApply
                     grid.ADGrid.Columns[i + 1].Visibility = Visibility.Visible;
                     grid.ADGrid.Columns[i + 3].Visibility = Visibility.Visible;
                     grid.ADGrid.Columns[i + 4].Visibility = Visibility.Visible;
+                    grid.ADGrid.Columns[i + 5].Visibility = Visibility.Visible;
 
                     grid.ItemsSource = this.OrderEntity.GetRelationFBEntities(typeof(T_FB_DEPTBUDGETSUMDETAIL).Name);
                 }
@@ -207,13 +288,36 @@ namespace SMT.FB.UI.Form.BudgetApply
                     ac.AuditEntity.CreatePostID = user.Post.Value.ToString();
                 }
 
-                base.OnAuditing(sender, e);
+
             }
             catch (Exception ex)
             {
                 e.Result = AuditEventArgs.AuditResult.Cancel;
-                CommonFunction.ShowErrorMessage("提交或审核异常, " +ex.ToString());
+                CommonFunction.ShowErrorMessage("提交或审核异常, " + ex.ToString());
             }
+        }
+
+        protected override bool AuditCheck()
+        {
+            var details = this.OrderEntity.GetRelationFBEntities(typeof(T_FB_DEPTBUDGETSUMDETAIL).Name);
+            var findsT = details.FindAll(item => (item.Entity as T_FB_DEPTBUDGETSUMDETAIL).CHECKSTATES.Equal(4));
+            if (findsT.Count > 0)
+            {
+                Action action = () =>
+                {
+                    if (details.Count == findsT.Count)
+                    {
+                        CommonFunction.ShowErrorMessage("不存在可提交的明细单据，请确认！");
+                        return;
+                    }
+                    base.InnerSubmit();
+                };
+                var msg = "系统将会自动从汇总明细单据中移除已打回明细单据并提交，请确认继续提交？";
+                CommonFunction.AskDelete(msg, action);
+                return false;
+            }
+
+            return true;
         }
         
     }

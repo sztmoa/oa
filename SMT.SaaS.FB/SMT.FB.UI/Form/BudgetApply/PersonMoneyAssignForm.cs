@@ -96,10 +96,44 @@ namespace SMT.FB.UI.Form.BudgetApply
 
             entCurr.T_FB_PERSONMONEYASSIGNDETAIL.Clear();
         }
+        protected override bool AuditCheck()
+        {
+            decimal? atype = this.OrderEntity.GetObjValue("Entity.APPLIEDTYPE") as decimal?;
+            if (atype.Equal(1))
+            {
+                try
+                {
+                    Action action = () =>
+                    {
+                        this.OrderEntity.SetObjValue("Entity.APPLIEDTYPE", 2);
+                        var sR = this.EditForm.Save();
+                        if (!sR)
+                        {
+                            this.OrderEntity.SetObjValue("Entity.APPLIEDTYPE", 1);
+                        }
+                        IsNeedToRefresh |= sR;
+                    };
+                    string msg = string.Empty;
+
+                    var ownername = Convert.ToString(this.OrderEntity.GetObjValue("Entity.OWNERNAME"));
+                    msg = "你确定完成核对并提交给 " + ownername + " 吗?";
+
+                    CommonFunction.DialogOKCanel("提交确认", msg, action, null);
+                }
+                catch (Exception ex)
+                {
+
+                }
+
+                
+                return false;
+            }
+            return base.AuditCheck();
+        }
 
         private void InitData()
         {
-            this.StartProcess();
+            
             if (this.OrderEntity.FBEntityState == FBEntityState.Added)
             {
                 OrderEntity.SetObjValue("Entity.BUDGETARYMONTH", new DateTime(DataCore.SystemDateTime.Year, DataCore.SystemDateTime.Month, 1));
@@ -118,7 +152,7 @@ namespace SMT.FB.UI.Form.BudgetApply
                 //if (isFirst)
                 //{
                 //    isFirst = false;
-                SortDetails();
+                // SortDetails();
                 //  }
             }
 
@@ -132,7 +166,7 @@ namespace SMT.FB.UI.Form.BudgetApply
         /// <summary>
         /// 为了明细安排岗位级别和薪资级别排序
         /// </summary>
-        void SortDetails()
+        void SortDetails() //不需要此项来排序，已添加postlevel字段进行排序了。
         {
             var details = this.OrderEntity.GetRelationFBEntities(typeof(T_FB_PERSONMONEYASSIGNDETAIL).Name);
             ObservableCollection<string> employeeIDs = new ObservableCollection<string>();
@@ -151,36 +185,47 @@ namespace SMT.FB.UI.Form.BudgetApply
         }
         void fbService_QueryFBEntitiesCompleted(object sender, QueryFBEntitiesCompletedEventArgs e)
         {
-            if (e.Error == null)
+            try
             {
-                List<string> msgs = new List<string>();
-                try
+                if (e.Error == null)
                 {
-                    this.OrderEntity.GetRelationFBEntities(typeof(T_FB_PERSONMONEYASSIGNDETAIL).Name).Clear();
-
-                    if (e.Result.Count == 0)
+                    List<string> msgs = new List<string>();
+                    try
                     {
-                        this.OrderEntity.SetObjValue("Entity.BUDGETMONEY", 0);
-                        this.StopProcess();
-                        CommonFunction.ShowErrorMessage("根据公司加载人员信息失败，请手动选择下拨人员");
-                        return;
+                        this.OrderEntity.GetRelationFBEntities(typeof(T_FB_PERSONMONEYASSIGNDETAIL).Name).Clear();
+
+                        if (e.Result.Count == 0)
+                        {
+                            this.OrderEntity.SetObjValue("Entity.BUDGETMONEY", 0);
+
+                            CommonFunction.ShowErrorMessage("根据公司加载人员信息失败，请手动选择下拨人员");
+                            return;
+                        }
+
+                        T_FB_PERSONMONEYASSIGNMASTER entlastest = e.Result[0].Entity as T_FB_PERSONMONEYASSIGNMASTER;
+                        // 2. 复制上个月的单据数据到当前操作的新单据上
+                        CopyData(entlastest);
+                        //SortDetails();
+                    }
+                    catch (Exception ex)
+                    {
+                        msgs.Add(ex.ToString());
                     }
 
-                    T_FB_PERSONMONEYASSIGNMASTER entlastest = e.Result[0].Entity as T_FB_PERSONMONEYASSIGNMASTER;
-                    // 2. 复制上个月的单据数据到当前操作的新单据上
-                    CopyData(entlastest);
-                    SortDetails();
-                }
-                catch (Exception ex)
-                {
-                    msgs.Add(ex.ToString());
-                }
-
-                if (msgs.Count > 0)
-                {
-                    CommonFunction.ShowErrorMessage(msgs);
+                    if (msgs.Count > 0)
+                    {
+                        CommonFunction.ShowErrorMessage(msgs);
+                    }
                 }
             }
+            catch(Exception ex)
+            {
+            }
+            finally
+            {
+                this.CloseProcess(false);
+            }
+            
         }
 
         private string GetAssignCompanyName(string strAssignCompanyID)
@@ -229,7 +274,7 @@ namespace SMT.FB.UI.Form.BudgetApply
             T_FB_PERSONMONEYASSIGNMASTER entCurr = this.OrderEntity.Entity as T_FB_PERSONMONEYASSIGNMASTER;
             if (e.Result.Contains("Entity.AssignCompany"))
             {
-                this.StartProcess();
+                
                 CompanyData comData = entCurr.AssignCompany as CompanyData;
 
                 entCurr.ASSIGNCOMPANYNAME = comData.Text.ToString();
@@ -308,10 +353,24 @@ namespace SMT.FB.UI.Form.BudgetApply
                             itemFBEntity.UPDATEUSERNAME = Convert.ToString(it.SALARYLEVEL);//把薪资级别存在更新热字段，目前表里面没有相应字段
                         }
                     });
+                    // 写这蛋疼的代码，为了填这个坑：为了下面orderby...ThenBy不报错。
+                    itemFBEntity.CREATEUSERNAME = "1000";//目前把岗位级别存为创建人字段
+                    itemFBEntity.UPDATEUSERNAME = "1000";//把薪资级别存在更新热字段，目前表里面没有相应字段
+
+                    var find = listSalay.FirstOrDefault(it => it.OWNERID == itemFBEntity.OWNERID);
+                    if (find != null)
+                    {
+                        itemFBEntity.CREATEUSERNAME = Convert.ToString(find.POSTLEVEL);//目前把岗位级别存为创建人字段
+                        itemFBEntity.UPDATEUSERNAME = Convert.ToString(find.SALARYLEVEL);//把薪资级别存在更新热字段，目前表里面没有相应字段
+                    }
                     perLIst.Add(itemFBEntity);
                 }
+                System.Diagnostics.Debug.WriteLine("");
+                System.Diagnostics.Debug.WriteLine("");
+                System.Diagnostics.Debug.WriteLine("");
 
-                perLIst = perLIst.OrderBy(t => Convert.ToDecimal(t.CREATEUSERNAME)).ThenBy(t => Convert.ToDecimal(t.UPDATEUSERNAME)).ToList();//排序
+                perLIst = perLIst.OrderBy(t => t.OWNERCOMPANYNAME).ThenBy(t => t.OWNERDEPARTMENTNAME).ThenBy(t => Convert.ToDecimal(t.CREATEUSERNAME)).ToList();//先公司部门排序
+                //perLIst = perLIst.OrderBy(t => Convert.ToDecimal(t.CREATEUSERNAME)).ThenBy(t => Convert.ToDecimal(t.UPDATEUSERNAME)).ToList();//再岗位薪资级别排序
                 var fbEntity = perLIst.ToFBEntityList();
                 DetailGrid dgrid = this.EditForm.FindControl("OrderGrid") as DetailGrid;
                 if (dgrid != null)
@@ -332,12 +391,15 @@ namespace SMT.FB.UI.Form.BudgetApply
                 {
                     (details[i].Entity as T_FB_PERSONMONEYASSIGNDETAIL).RowIndex = i + 1;//序号
                 }
-                this.StopProcess();
+
             }
             catch (Exception ex)
             {
-                this.StopProcess();
                 CommonFunction.ShowErrorMessage("调用HR服务返回异常信息：" + ex.ToString());
+            }
+            finally
+            {
+                this.CloseProcess();
             }
         }
 
@@ -347,6 +409,7 @@ namespace SMT.FB.UI.Form.BudgetApply
         /// </summary>
         private void GetOrderDetail()
         {
+            
             QueryExpression qe = QueryExpressionHelper.Equal(FieldName.OwnerID, DataCore.CurrentUser.Value.ToString());
             qe.QueryType = typeof(T_FB_PERSONMONEYASSIGNMASTER).Name + "FormHR";//Latest
 
@@ -355,13 +418,29 @@ namespace SMT.FB.UI.Form.BudgetApply
             qeAssign.IsUnCheckRight = true;
             qeAssign.RelatedExpression = qe;
             qeAssign.IsNoTracking = false;
-
+            this.ShowProcess(true);
             fbService.QueryFBEntities(qeAssign);
+            
         }
 
         protected override void OnLoadDataComplete()
         {
-            this.InitProcess();
+            if (this.EditForm.OperationType == OperationTypes.Edit)
+            {
+                decimal? atype = this.OrderEntity.GetObjValue("Entity.APPLIEDTYPE") as decimal?;
+                var createUserID = Convert.ToString(this.OrderEntity.GetObjValue("Entity.CREATEUSERID"));
+                var loginUserID = Convert.ToString(this.OrderEntity.LoginUser.Value);
+                var ownerUserID = Convert.ToString(this.OrderEntity.GetObjValue("Entity.OWNERID"));
+
+                if ((atype.Equal(1)) && (createUserID != loginUserID))
+                {
+                    this.EditForm.OperationType = OperationTypes.Browse;
+                }
+                else if ((atype.Equal(3) || atype == null) && (ownerUserID != loginUserID))
+                {
+                    this.EditForm.OperationType = OperationTypes.Browse;
+                }
+            }
             InitData();
             //SortDetails();
         }
@@ -373,6 +452,10 @@ namespace SMT.FB.UI.Form.BudgetApply
             if (dGrid != null && !this.EditForm.IsReInitForm)
             {
                 dGrid.ToolBars[0].Title = "选择下拨人员";
+                if (dGrid.ToolBars.Count > 1)
+                {
+                    dGrid.ToolBars.Remove(dGrid.ToolBars[1]);
+                }
                 dGrid.AddToolBarItems(dGrid.ToolBars);
                 double width = dGrid.ADGrid.Columns[dGrid.ADGrid.Columns.Count - 1].Width.Value;
                 dGrid.ToolBarItemClick += new EventHandler<ToolBarItemClickEventArgs>(dGrid_ToolBarItemClick);
@@ -385,6 +468,38 @@ namespace SMT.FB.UI.Form.BudgetApply
                 //{
                 //    dGrid.ADGrid.Columns[5].Visibility = Visibility.Visible;
                 //}
+                var totalWidth = dGrid.ADGrid.Columns.Sum(item => item.Width.Value);
+                dGrid.ADGrid.MinWidth = totalWidth + 10;
+                dGrid.ADGrid.LoadingRow += (object sender, DataGridRowEventArgs e) =>
+                {
+                    if (this.EditForm.OperationType == OperationTypes.Add
+                        || this.EditForm.OperationType == OperationTypes.Edit
+                        || this.EditForm.OperationType == OperationTypes.ReSubmit)
+                    {
+                        var con = dGrid.ADGrid.Columns[9].GetCellContent(e.Row) as StackPanel;
+                        ImageButton myButton = new ImageButton();
+                        myButton.Margin = new Thickness(0);
+                        myButton.AddButtonAction("/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/ico_16_delete.png", Utility.GetResourceStr("DELETE"));
+                        myButton.Tag = e.Row.DataContext;
+                        myButton.Click += (oo, ee) =>
+                        {
+                            Control c = oo as Control;
+                            var entity = c.Tag as FBEntity;
+                            Action action = () =>
+                            {
+
+                                dGrid.Delete(new List<FBEntity> { entity });
+                                // none;
+                            };
+                            var personName = entity.GetObjValue("Entity.OWNERNAME");
+
+                            var msg = "你确定要删除" + personName + "的个人活动经费下拨吗?";
+                            CommonFunction.AskDelete(msg, action);
+                        };
+                        con.Children.Clear();
+                        con.Children.Add(myButton);
+                    }
+                };               
             }
             if (this.EditForm.OperationType != OperationTypes.Add)
             {
@@ -393,6 +508,8 @@ namespace SMT.FB.UI.Form.BudgetApply
                 if (lu != null)
                     lu.IsEnabled = false;
             }
+
+            
         }
 
         void dGrid_ToolBarItemClick(object sender, ToolBarItemClickEventArgs e)
@@ -441,6 +558,8 @@ namespace SMT.FB.UI.Form.BudgetApply
                         var selectedObjects = ogzLookup.SelectedObj;
                         selectedObjects.ForEach(obj =>
                         {
+                            
+                            
                             ExtOrgObj post = obj.ParentObject as ExtOrgObj;
                             ExtOrgObj dept = post.ParentObject as ExtOrgObj;
 
@@ -467,6 +586,20 @@ namespace SMT.FB.UI.Form.BudgetApply
                                 detail.T_FB_PERSONMONEYASSIGNMASTER = this.OrderEntity.Entity as T_FB_PERSONMONEYASSIGNMASTER;
                                 detail.BUDGETMONEY = 0;
                             }
+
+                            // start 添加岗位级别，用于排序
+                            var employee1 = obj.ObjectInstance as SMT.Saas.Tools.PersonnelWS.T_HR_EMPLOYEE;
+                            if (employee1 != null)
+                            {
+                                var ep = employee1.T_HR_EMPLOYEEPOST.FirstOrDefault();
+                                if (ep != null)
+                                {
+                                    detail.POSTLEVEL = ep.POSTLEVEL;
+                                }    
+                            }
+                            
+                            
+                            // end 
 
                             detail.OWNERID = obj.ObjectID;
                             detail.OWNERNAME = obj.ObjectName;
@@ -503,6 +636,7 @@ namespace SMT.FB.UI.Form.BudgetApply
                         });
                         if (vlistpostinfo != null && vlistpostinfo.Count > 0)
                         {
+                            this.ShowProcess();
                             pe.GetEmployeeFundsListCompleted += new EventHandler<Saas.Tools.PersonnelWS.GetEmployeeFundsListCompletedEventArgs>(pe_GetEmployeeFundsListCompleted);
                             pe.GetEmployeeFundsListAsync(vlistpostinfo);
                         }
@@ -512,7 +646,6 @@ namespace SMT.FB.UI.Form.BudgetApply
             }
             catch (Exception ex)
             {
-                this.StopProcess();
                 CommonFunction.ShowErrorMessage("调用HR服务返回异常信息：" + ex.ToString());
             }
         }
@@ -559,96 +692,11 @@ namespace SMT.FB.UI.Form.BudgetApply
             }
             catch (Exception ex)
             {
-                this.StopProcess();
                 CommonFunction.ShowErrorMessage("调用HR服务返回异常信息：" + ex.ToString());
             }
-        }
-
-        void pe_GetEmployeeListForFBCompleted(object sender, Saas.Tools.PersonnelWS.GetEmployeeListForFBCompletedEventArgs e)
-        {
-            try
+            finally
             {
-                if (e.Result == null || e.Result.Count == 0 || e.Error != null)
-                {
-                    CommonFunction.ShowErrorMessage("调用HR服务返回异常信息（为空表示没有数据）：" + e.Error);
-                    return;
-                }
-                var assignDetail = this.OrderEntity.GetRelationFBEntities(typeof(T_FB_PERSONMONEYASSIGNDETAIL).Name);
-                ObservableCollection<SMT.Saas.Tools.PersonnelWS.V_EMPLOYEEPOSTFORFB> vlistpostinfo = e.Result;
-
-                vlistpostinfo.ForEach(person =>
-                {
-                    var detail = assignDetail.FirstOrDefault(p =>
-                    {
-                        T_FB_PERSONMONEYASSIGNDETAIL cd = p.Entity as T_FB_PERSONMONEYASSIGNDETAIL;
-                        return cd.PERSONBUDGETAPPLYDETAILID == person.PERSONBUDGETAPPLYDETAILID;
-                    });
-                    if (detail != null)
-                    {
-                        T_FB_PERSONMONEYASSIGNDETAIL item = detail.Entity as T_FB_PERSONMONEYASSIGNDETAIL;
-                        item.SUGGESTBUDGETMONEY = person.SUM;
-                        switch (person.EMPLOYEESTATE)
-                        {
-                            case "0"://试用期
-                                item.POSTINFO = "试用期，请注意";
-                                break;
-                            case "1"://在职
-                                item.POSTINFO = string.Empty;
-                                break;
-                            case "2"://已离职
-                                item.POSTINFO = "已离职，请删除";
-                                break;
-                            case "3"://离职中
-                                item.POSTINFO = "离职中，请注意";
-                                break;
-                            case "4"://未入职
-                                item.POSTINFO = "未入职，请删除";
-                                break;
-                            case "10"://异动中
-                                item.POSTINFO = "异动中，请异动后再处理";
-                                break;
-                            case "11"://异动过
-                                item.POSTINFO = "异动过，已转换成新岗位";
-
-                                item.OWNERPOSTID = person.NEWPOSTID;
-                                item.OWNERPOSTNAME = person.NEWPOSTNAME;
-                                item.OWNERDEPARTMENTID = person.NEWDEPARTMENTID;
-                                item.OWNERDEPARTMENTNAME = person.NEWDEPARTMENTNAME;
-                                item.OWNERCOMPANYID = person.NEWCOMPANYID;
-                                item.OWNERCOMPANYNAME = person.NEWCOMPANYNAME;
-                                break;
-                            case "12"://岗位异常
-                                item.POSTINFO = "岗位异常，请删除后再选择";
-                                break;
-                            default:
-                                item.POSTINFO = string.Empty;
-                                break;
-                        }
-
-                        switch (person.ISAGENCY)
-                        {
-                            case "0"://主岗位
-                                // item.POSTINFO += string.Empty;
-                                break;
-                            case "1"://赚职
-                                if (item.POSTINFO != string.Empty && person.EMPLOYEESTATE != "1")
-                                    item.POSTINFO = item.POSTINFO.Insert(0, "兼职，");
-                                else
-                                    item.POSTINFO = "兼职";
-                                break;
-                            default:
-                                // item.POSTINFO += string.Empty;
-                                break;
-                        }
-                    }
-                });
-
-
-            }
-            catch (Exception ex)
-            {
-                this.StopProcess();
-                CommonFunction.ShowErrorMessage("调用HR服务返回异常信息：" + ex.ToString());
+                this.CloseProcess();
             }
         }
 
@@ -660,7 +708,7 @@ namespace SMT.FB.UI.Form.BudgetApply
             var details = this.OrderEntity.GetRelationFBEntities(typeof(T_FB_PERSONMONEYASSIGNDETAIL).Name);
 
             // 复制每一个子表
-            masterOld.T_FB_PERSONMONEYASSIGNDETAIL.OrderBy(item => item.OWNERNAME).ForEach(item =>
+            masterOld.T_FB_PERSONMONEYASSIGNDETAIL.ForEach(item =>
             {
                 item.EntityKey = null;
                 item.T_FB_PERSONMONEYASSIGNMASTER = master;
@@ -697,34 +745,5 @@ namespace SMT.FB.UI.Form.BudgetApply
             return entityNewly;
         }
 
-        #region 进度条（转圈那个东西）
-        private  void InitProcess()
-        {
-            Panel parent = this.Content as Panel;
-            if (parent != null)
-            {
-                Grid g = new Grid();
-                this.Content = g;
-                g.Children.Add(parent);
-                loadbar = new SMTLoading(); //全局变量
-                g.Children.Add(loadbar);
-            }
-        }
-        private void StartProcess()
-        {
-            if (loadbar != null)
-            {
-                loadbar.Start();//调用服务时写
-            }
-        }
-        private void StopProcess()
-        {
-            if (loadbar != null)
-            {
-                loadbar.Stop();
-            }
-
-        }
-        #endregion 
     }
 }

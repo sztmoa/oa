@@ -32,7 +32,7 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
         /// <summary>
         /// 本地xap保存的文件夹名称
         /// </summary>
-        private string ApplicationPath = "SmtPortal";
+        private string strApplicationPath = SMT.SAAS.Main.CurrentContext.Common.HostIP.Replace(":", "").Replace(".","");
         /// <summary>
         /// 本地版本文件路径
         /// </summary>
@@ -80,7 +80,7 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
         /// </summary>
         public void dllVersionUpdataCheck()
         {
-            string path = @"http://" + SMT.SAAS.Main.CurrentContext.Common.HostIP.ToString() + @"/ClientBin/DllVersion.xml?dt=" + DateTime.Now.Millisecond;
+            string path = @"http://" + SMT.SAAS.Main.CurrentContext.Common.HostIP + @"/ClientBin/DllVersion.xml?dt=" + DateTime.Now.Millisecond;
             webcDllVersion.OpenReadAsync(new Uri(path, UriKind.Absolute));
         }
 
@@ -156,7 +156,7 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
                         List<string> needDownload = new List<string>();
                         foreach (var q in dllVersionglistlocal)
                         {
-                            string filepath = @"SmtPortal/" + q.Attribute("Source").Value;
+                            string filepath = strApplicationPath+@"/" + q.Attribute("Source").Value;
                             if (!IosManager.ExistsFile(filepath))
                             {
                                 Loginform.NotifyUserMessage(@"silverlight本地存储异常，请右键点击silverlight
@@ -200,7 +200,7 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
                 e.Result.Seek(0, SeekOrigin.Begin);
                 e.Result.Read(streambyte, 0, streambyte.Length);
                 e.Result.Close();
-                IosManager.CreateFile(ApplicationPath, "DllVersion.xml", streambyte);
+                IosManager.CreateFile(strApplicationPath, "DllVersion.xml", streambyte);
             }
 
 
@@ -222,7 +222,7 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
                 return;
             }
             downloadDllName = dllXElements.FirstOrDefault();
-            string path = @"http://" + SMT.SAAS.Main.CurrentContext.Common.HostIP.ToString() + @"/ClientBin/" + downloadDllName + "?dt=" + DateTime.Now.Millisecond;
+            string path = @"http://" + SMT.SAAS.Main.CurrentContext.Common.HostIP + @"/ClientBin/" + downloadDllName + "?dt=" + DateTime.Now.Millisecond;
             DownloadDllClinet.OpenReadAsync(new Uri(path, UriKind.Absolute));
         }
 
@@ -247,7 +247,7 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
                 byte[] streambyte = new byte[e.Result.Length];
                 e.Result.Read(streambyte, 0, streambyte.Length);
                 e.Result.Close();
-                IosManager.CreateFile(ApplicationPath, downloadDllName, streambyte);
+                IosManager.CreateFile(strApplicationPath, downloadDllName, streambyte);
 
                 #endregion
 
@@ -270,7 +270,7 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
 
         private void LoadAssemblyPart(Object state)
         {
-            string XapName = ApplicationPath + @"/SMT.SAAS.Platform.xap";
+            string XapName = strApplicationPath + @"/SMT.SAAS.Platform.xap";
             string DllSourceName = string.Empty;
             AssemblyPart asmPart = null;
             List<XElement> deploymentParts = new List<XElement>();
@@ -307,7 +307,7 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
                     foreach (XElement xElement in deploymentParts)
                     {
                         if (xElement.Attribute("Source").Value.Contains("zip")
-                            && !IosManager.ExistsFile(ApplicationPath + @"/" + xElement.Attribute("Source").Value))
+                            && !IosManager.ExistsFile(strApplicationPath + @"/" + xElement.Attribute("Source").Value))
                         {
                             dllDelete.Add(xElement.Attribute("Source").Value);
                             canStart = false;
@@ -352,7 +352,7 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
                                 if (DllSourceName.Contains("zip"))
                                 {
                                     //打开本地zip包流                
-                                    IsolatedStorageFileStream zipfileStream = IosManager.GetFileStream(ApplicationPath + @"/" + DllSourceName);
+                                    IsolatedStorageFileStream zipfileStream = IosManager.GetFileStream(strApplicationPath + @"/" + DllSourceName);
                                     streamInfo = Application.GetResourceStream(new StreamResourceInfo(zipfileStream, "application/binary"), new Uri(DllSourceName.Replace("zip", "dll"), UriKind.Relative));
                                     asmPart = new AssemblyPart();
                                     asmPart.Source = DllSourceName.Replace("zip", "dll");

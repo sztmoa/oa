@@ -72,11 +72,13 @@ namespace SMT.FB.UI.Views.SubjectManagement
 
         #region 全局变量
         private string companyId = string.Empty;//保存公司ID，在查询是使用
+        bool isLoadTree = true;//只加载左边树
         #endregion
 
         #region 获取数据
         protected void InitData()
         {
+            isLoadTree = true;
             EntityList.Clear();
 
             dictTreeViewItem.Clear();
@@ -95,17 +97,26 @@ namespace SMT.FB.UI.Views.SubjectManagement
              //this.TreeView.Items.Clear();
 
             List<OrderEntity> listCompany = e.Result.ToEntityAdapterList<OrderEntity>().ToList();
-
-          
-            if (listCompany!=null && listCompany.Count==1)
-            {
-                this.CurrentOrderEntity = listCompany.FirstOrDefault();
-            }
-            else
+            if (isLoadTree)
             {
                 this.TreeView.Items.Clear();
                 List<TreeViewItem> items = TreeView.Items.AddObjectList(listCompany, "Entity.Name");
+                isLoadTree = false;
             }
+            else
+            {
+                this.CurrentOrderEntity = listCompany.FirstOrDefault();
+            }
+          
+            //if (listCompany!=null && listCompany.Count==1)
+            //{
+            //    this.CurrentOrderEntity = listCompany.FirstOrDefault();
+            //}
+            //else
+            //{
+            //    this.TreeView.Items.Clear();
+            //    List<TreeViewItem> items = TreeView.Items.AddObjectList(listCompany, "Entity.Name");
+            //}
             
             EntityList = listCompany;
             this.CloseProcess();
@@ -164,14 +175,28 @@ namespace SMT.FB.UI.Views.SubjectManagement
         void editForm_LoadControlComplete(object sender, EventArgs e)
         {
             DetailGrid grid = editForm.FindChildControl<DetailGrid>("OrderGrid");
+            
             if (grid != null)
             {
+                grid.SetGridFix();
+                grid.ADGrid.Columns.ForEach(item =>
+                    {
+                        item.CanUserSort = false;
+                    });
+                // var aa = grid.ADGrid.Columns[3].Header;
+                grid.ADGrid.Columns[3].HeaderStyle = null;
+                grid.ADGrid.Columns[3].HeaderStyle = Resources["activeStyle"] as Style;  
                 List<string> groups = new List<string> { "Entity.T_FB_SUBJECT.T_FB_SUBJECTTYPE.SUBJECTTYPENAME" };
                 grid.Groups = groups;
 
                 grid.ADGrid.Columns[2].Visibility = Visibility.Collapsed;
-                grid.ADGrid.Columns[6].Visibility = Visibility.Collapsed;
-
+                
+                // 是否可以设置滚动
+                if (DataCore.GetSetting("CanSetSubjectControl") == "1")
+                {
+                    grid.ADGrid.Columns[7].IsReadOnly = false;
+                }
+                grid.ADGrid.Columns[5].IsReadOnly = false;
                 //活动经费处理
                 OrderEntity oe = grid.DataContext as OrderEntity;
                 oe.FBEntity.CollectionEntity.ForEach(p=>
@@ -188,6 +213,8 @@ namespace SMT.FB.UI.Views.SubjectManagement
                     });
             }
         }
+
+        
 
         void DeatilEntity_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {            
@@ -406,6 +433,7 @@ namespace SMT.FB.UI.Views.SubjectManagement
 
                 qeCompany.RelatedExpression = qeFilterString;
                 qe.RelatedExpression = qeCompany;
+                this.ShowProcess();
                 orderEntityService.QueryFBEntities(qe);
             }
             catch (Exception ex)
@@ -422,7 +450,53 @@ namespace SMT.FB.UI.Views.SubjectManagement
         private void btnReset_Click(object sender, RoutedEventArgs e)
         {
             this.tbSubjectName.Text = "";
-            this.InitData();
+            try
+            {
+                if (string.IsNullOrWhiteSpace(companyId))
+                {
+                    return;
+                }
+                QueryExpression qe = new QueryExpression();
+                qe.QueryType = typeof(T_FB_SUBJECTCOMPANY).Name + "_COMPANY";
+
+                QueryExpression qeCompany = new QueryExpression();
+                qeCompany.PropertyName = "COMPANYID";
+                qeCompany.PropertyValue = companyId;
+                qe.RelatedExpression = qeCompany;
+                this.ShowProcess();
+                orderEntityService.QueryFBEntities(qe);
+            }
+            catch (Exception ex)
+            {
+                CommonFunction.ShowErrorMessage(ex.Message);
+                CloseProcess();
+            }
+        }
+
+        private void cbActiveS_Click(object sender, RoutedEventArgs e)
+        {
+            var isCheck = ((CheckBox)sender).IsChecked.Value;
+            
+            var msg = isCheck ? "是否确认全部启用？" : "是否确认全部不启用？";
+            var active = isCheck ? 1 : 0;
+            
+            Action action = () =>
+            {
+                ((CheckBox)sender).IsChecked = isCheck;
+                var oEntity = editForm.OrderEntity;
+
+                var list = oEntity.GetRelationFBEntities(typeof(T_FB_SUBJECTCOMPANY).Name).ToEntityList<T_FB_SUBJECTCOMPANY>();
+                list.ForEach(item =>
+                    {
+                        if (item.T_FB_SUBJECT.SUBJECTID != DataCore.SystemSetting.MONEYASSIGNSUBJECTID)
+                        {
+                            item.ACTIVED = active;
+                        }
+
+                    });
+            };
+            ((CheckBox)sender).IsChecked = !isCheck;
+            CommonFunction.DialogOKCanel("确认", msg, action,null);
         }
 
     }

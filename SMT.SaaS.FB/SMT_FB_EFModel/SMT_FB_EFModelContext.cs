@@ -209,6 +209,8 @@ namespace SMT_FB_EFModel
     {
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string Exception { get; set; }
+
+        public Exception InnerException { get; set; }
     }
 
     [DataContract]

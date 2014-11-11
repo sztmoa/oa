@@ -52,6 +52,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SMT.Foundation.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Log.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -79,39 +83,57 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="HR\TestDo.aspx" />
     <Content Include="HR\TestDo2.aspx" />
-    <None Include="Properties\PublishProfiles\57toolhx.pubxml" />
-    <None Include="Service References\AttWS\AttendanceService.wsdl" />
-    <None Include="Service References\AttWS\AttendanceService.xsd">
+    <None Include="Properties\PublishProfiles\ToolHx.pubxml" />
+    <None Include="Service References\AttWS\AttendanceService2.wsdl" />
+    <None Include="Service References\AttWS\AttendanceService21.wsdl" />
+    <None Include="Service References\AttWS\AttendanceService9.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttWS\AttendanceService1.wsdl" />
-    <None Include="Service References\AttWS\AttendanceService1.xsd">
+    <None Include="Service References\AttWS\AttendanceService91.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttWS\AttendanceService2.xsd">
+    <None Include="Service References\AttWS\AttendanceService910.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttWS\AttendanceService3.xsd">
+    <None Include="Service References\AttWS\AttendanceService92.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttWS\AttendanceService4.xsd">
+    <None Include="Service References\AttWS\AttendanceService93.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttWS\AttendanceService5.xsd">
+    <None Include="Service References\AttWS\AttendanceService94.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttWS\AttendanceService6.xsd">
+    <None Include="Service References\AttWS\AttendanceService95.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttWS\AttendanceService7.xsd">
+    <None Include="Service References\AttWS\AttendanceService96.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AttWS\AttendanceService8.xsd">
+    <None Include="Service References\AttWS\AttendanceService97.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttWS\AttendanceService98.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttWS\AttendanceService99.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.AbnormalAttendanceeEntity.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <Content Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.CaculateLeaveHoursResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.CalculateLeaveCancelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.CalculateOTHoursResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.EmployeeAlreadyLeave.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.T_HR_ATTENDANCEDEDUCTDETAIL.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -178,9 +200,15 @@
     <None Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.T_HR_EMPLOYEESIGNINRECORD.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <Content Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.T_HR_EMPLOYEEVACATION.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.T_HR_FREELEAVEDAYSET.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <Content Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.T_HR_LEAVEREFEROT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.T_HR_LEAVETYPESET.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -208,18 +236,33 @@
     <None Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.V_ATTENDANCERECORD.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <Content Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.V_ATTENDANCESOLUTIONASIGN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.V_EmpLeaveRdInfo1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.V_EMPLOYEEATTENDANCESOLUTIONASIGN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.V_EMPLOYEELEAVE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.V_EMPLOYEELEAVERECORD.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <Content Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.V_EMPLOYEESIGNINRECORD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.V_LandDetail.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.V_LandStatistic.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <Content Include="Service References\AttWS\SmtOnlinePortalTools.AttWS.V_LeaveReferOvertime.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\FBWS\FBService.wsdl" />
     <None Include="Service References\FBWS\FBService.xsd">
       <SubType>Designer</SubType>
@@ -381,7 +424,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\AttWS\AttendanceService.disco" />
     <None Include="Service References\AttWS\configuration91.svcinfo" />
     <None Include="Service References\AttWS\configuration.svcinfo" />
     <None Include="Service References\AttWS\Reference.svcmap">
@@ -416,6 +458,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\AttWS\AttendanceService1.disco" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />

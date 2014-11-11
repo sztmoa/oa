@@ -51,6 +51,7 @@ namespace SMT.FB.UI.Common
     {
         public const string Err_ComCheck1 = "总预算资金必需等于总分配资金!";
         public const string MoneyZero = "科目：{0} 的{1}不能小于零!";
+        public const string MoneyBiggerThanZero = "科目：{0} 的{1}不能大于零!";
         public const string Err_ComCheck2 = "回收资金不能大于已分配资金!";
 
         public static string TransMoneyZero
@@ -258,7 +259,9 @@ namespace SMT.FB.UI.Common
         LookUp, Remark, DatePicker = 5,
         CheckBox, DateTimePicker = 7, TreeViewItem,
         // Add By LVCHAO 2011.01.30 14:46
-        HyperlinkButton = 8
+        HyperlinkButton = 9,
+        Templete =11
+
     }
 
    
@@ -528,6 +531,39 @@ namespace SMT.FB.UI.Common
             return listOE;
 
         }
+
+        public static void CompareFBEntity( this ObservableCollection<FBEntity> list1, ObservableCollection<FBEntity> list2, Func<FBEntity, FBEntity, bool> compare,
+             Action<FBEntity, FBEntity> findSame = null, Action<FBEntity> findT1 = null, Action<FBEntity> findT2 = null)
+        {
+            var tempList1 = list1.ToList();
+            var tempList2 = list2.ToList();
+            var findT1List = tempList1.ToList();
+            var findT2List = tempList2.ToList();
+            tempList1.ForEach(item1 =>
+            {
+                var finds = tempList2.FindAll(item2 => compare(item1, item2));
+                finds.ForEach(item2 =>
+                {
+                    findSame(item1, item2);
+                    findT1List.Remove(item1);
+                    findT2List.Remove(item2);
+                });
+
+            });
+            findT1List.ForEach(item1 => findT1(item1));
+            findT2List.ForEach(item2 => findT2(item2));
+        }
+        public static bool CompareFBEntity<T>( this FBEntity fbEntity1, FBEntity fbEntity2, params Func<T, object>[] selectors) where T : class
+        {
+            var result = true;
+            foreach (var selector in selectors)
+            {
+                var obj1 = selector(fbEntity1.Entity as T);
+                var obj2 = selector(fbEntity2.Entity as T);
+                result &= obj1.Equals(obj2);
+            }
+            return result;
+        }
     }
 
     public static class EntityExtension
@@ -542,7 +578,23 @@ namespace SMT.FB.UI.Common
             // fbEntity.FBEntityState = EntityState.Unchanged;
             return fbEntity;
         }
-        
+
+        /// <summary>
+        /// 根据 entityType , 返回对应的有关系的 FBEntity的集合, 
+        /// </summary>
+        /// <param name="fbEntity"></param>
+        /// <param name="entityType">有关系的对象集合类型</param>
+        /// <returns>如果不存在,将会创建相应的集合</returns>
+        public static List<T> GetEntityList<T>(this FBEntity fbEntity, Func<object, T> func = null) where T : class
+        {
+            var list = fbEntity.GetRelationFBEntities(typeof(T).Name).ToList();
+            if (func == null)
+            {
+                func = item => item as T;
+            }
+            return list.CreateList(item => func(item.Entity));
+            
+        }
 
         /// <summary>
         /// 根据 entityType , 返回对应的有关系的 FBEntity的集合, 

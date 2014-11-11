@@ -16,6 +16,7 @@ using OrganizationWS = SMT.Saas.Tools.OrganizationWS;
 
 using SMT.SAAS.ClientServices;
 using SMT.SAAS.ClientUtility;
+using System.IO.IsolatedStorage;
 
 namespace SMT.FB.UI.Common
 {
@@ -112,6 +113,17 @@ namespace SMT.FB.UI.Common
         public static List<VirtualCompany> CompanyList { get; set; }
         public static T_FB_SYSTEMSETTINGS SystemSetting { get; set; }
         public static DateTime SystemDateTime { get; set; }
+        public static Dictionary<string, string> Settings { get; set; }
+        public static string GetSetting(string key)
+        {
+            var result = "";
+            if (Settings.ContainsKey(key))
+            {
+                result = Settings[key];
+            }
+            return result;
+
+        }
         #region 初始化数据
 
         public static event EventHandler<ActionCompletedEventArgs<string>> InitDataCoreCompleted;
@@ -122,12 +134,16 @@ namespace SMT.FB.UI.Common
                 throw new Exception("没有登录信息");
             }
             CompanyList = new List<VirtualCompany>();
-            QueryExpression qe = new QueryExpression();
-            qe.QueryType = "InitDataCore";
+           
             //InitHR(); --2011年6月21日注释，原因是：新平台组织架构缓存是按需加载，因此不能直接使用了
+            InitHR();  // 新的加载2013.12.24
+
             FBEntityService service = new FBEntityService();
             service.QueryFBEntitiesCompleted += new EventHandler<QueryFBEntitiesCompletedEventArgs>(service_QueryFBEntitiesCompleted);
-            service.QueryFBEntities(qe);
+
+            var fbVersion = "";
+
+            service.QueryFBEntities(new QueryExpression() { QueryType = "InitDataCore", PropertyName = "FBVerson", PropertyValue = fbVersion });
 
             SuperUser = new EmployeerData();
             SuperUser.Company = new CompanyData();
@@ -161,50 +177,12 @@ namespace SMT.FB.UI.Common
         {
             if (e.Error == null)
             {
-                IList<CompanyData> listCompany = new List<CompanyData>();
-                IList<DepartmentData> listDepartment = new List<DepartmentData>();
-                IList<PostData> listPost = new List<PostData>();
-
-
-                List<FBEntity> listVC = e.Result[0].GetRelationFBEntities(typeof(VirtualCompany).Name).ToList();
                 SystemSetting = e.Result[0].GetRelationFBEntities(typeof(T_FB_SYSTEMSETTINGS).Name)[0].Entity as T_FB_SYSTEMSETTINGS;
+                Settings = SystemSetting.Settings;
                 SystemDateTime = SystemSetting.UPDATEDATE.Value;
-                listVC.ForEach(companyFB =>
-                {
-                    VirtualCompany vc = companyFB.Entity as VirtualCompany;
-                    CompanyData cData = CreateItem<CompanyData>(vc);
-                    List<DepartmentData> listDepartmentData = new List<DepartmentData>();
-
-                    vc.DepartmentCollection.ToList().ForEach(departmentFB =>
-                    {
-                        DepartmentData dData = CreateItem<DepartmentData>(departmentFB);
-                        List<PostData> listPostData = new List<PostData>();
-                        departmentFB.PostCollection.ToList().ForEach(postFB =>
-                        {
-                            PostData pData = CreateItem<PostData>(postFB);
-                            pData.Company = cData;
-                            pData.Department = dData;
-                            listPostData.Add(pData);
-                            listPost.Add(pData);
-                        });
-
-                        dData.Company = cData;
-                        dData.PostCollection = listPostData;
-                        listDepartmentData.Add(dData);
-                        listDepartment.Add(dData);
-
-                    });
-
-                    cData.DepartmentCollection = listDepartmentData;
-                    listCompany.Add(cData);
-                    CompanyList.Add(vc);
-
-                });
-                ReferencedData<CompanyData>.RefData = listCompany;
-                ReferencedData<DepartmentData>.RefData = listDepartment;
-                ReferencedData<PostData>.RefData = listPost;
-
                 RefreshData();
+
+
             }
         }
 
@@ -438,13 +416,19 @@ namespace SMT.FB.UI.Common
         {
             List<T_SYS_DICTIONARY> listDict = GetDictionary("BudgetSumStates");
 
-            var result = listDict.CreateList(item =>
-            {
-                BudgetSumStatesData cbbD = new BudgetSumStatesData();
-                cbbD.Value = item.DICTIONARYVALUE;
-                cbbD.Text = item.DICTIONARYNAME;
-                return cbbD;
-            });
+            //var result = listDict.CreateList(item =>
+            //{
+            //    BudgetSumStatesData cbbD = new BudgetSumStatesData();
+            //    cbbD.Value = item.DICTIONARYVALUE;
+            //    cbbD.Text = item.DICTIONARYNAME;
+            //    return cbbD;
+            //});
+            var result = new List<BudgetSumStatesData>();
+            result.Add(new BudgetSumStatesData() { Value = "0", Text = "未汇总" });
+            result.Add(new BudgetSumStatesData() { Value = "3", Text = "汇总中" });
+            result.Add(new BudgetSumStatesData() { Value = "1", Text = "已生效" });
+            result.Add(new BudgetSumStatesData() { Value = "2", Text = "未生效" });
+
             return result;
         }
         #endregion
@@ -753,6 +737,112 @@ namespace SMT.FB.UI.Common
 
         #endregion
 
+        /// <summary>
+        /// 新的，从平台组织架构缓存中加载。
+        /// </summary>
+        public static void InitHR()
+        {
+            try
+            {
+                IList<CompanyData> listCData = new List<CompanyData>();
+                IList<DepartmentData> ListDData = new List<DepartmentData>();
+                IList<PostData> ListPData = new List<PostData>();
+
+
+                List<OrganizationWS.T_HR_COMPANY> comList 
+                    = App.Current.Resources["SYS_CompanyInfo"] as List<OrganizationWS.T_HR_COMPANY> ?? new List<OrganizationWS.T_HR_COMPANY>();
+                List<OrganizationWS.T_HR_DEPARTMENT> deptList
+                    = App.Current.Resources["SYS_DepartmentInfo"] as List<OrganizationWS.T_HR_DEPARTMENT> ?? new List<OrganizationWS.T_HR_DEPARTMENT>();
+                List<OrganizationWS.T_HR_POST> postList
+                    = App.Current.Resources["SYS_PostInfo"] as List<OrganizationWS.T_HR_POST> ?? new List<OrganizationWS.T_HR_POST>();
+
+
+                comList.ForEach(comHR =>
+                {
+                    ObservableCollection<VirtualDepartment> listDepartment = new ObservableCollection<VirtualDepartment>();
+
+                    VirtualCompany vc = new VirtualCompany();
+                    vc.ID = comHR.COMPANYID;
+                    vc.Name = comHR.CNAME;
+                    vc.DepartmentCollection = listDepartment;
+
+
+                    CompanyData cData = CreateItem<CompanyData>(vc);
+                    List<DepartmentData> listDepartmentData = new List<DepartmentData>();
+
+                    List<OrganizationWS.T_HR_DEPARTMENT> deptListPart = deptList.FindAll(item =>
+                    {
+                        if (item.T_HR_COMPANY == null)
+                        {
+                            return false;
+                        }
+                        return item.T_HR_COMPANY.COMPANYID == comHR.COMPANYID;
+
+                    });
+
+                    deptListPart.ForEach(deptHR =>
+                    {
+                        ObservableCollection<VirtualPost> listPost = new ObservableCollection<VirtualPost>();
+
+                        VirtualDepartment vd = new VirtualDepartment();
+                        vd.ID = deptHR.DEPARTMENTID;
+                        vd.Name = deptHR.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTNAME;
+                        vd.VirtualCompany = vc;
+                        vd.PostCollection = listPost;
+                        listDepartment.Add(vd);
+
+
+                        DepartmentData dData = CreateItem<DepartmentData>(vd);
+                        List<PostData> listPostData = new List<PostData>();
+
+                        List<OrganizationWS.T_HR_POST> postListPart = postList.FindAll(item =>
+                        {
+                            if (item.T_HR_DEPARTMENT == null)
+                            {
+                                return false;
+                            }
+                            return item.T_HR_DEPARTMENT.DEPARTMENTID == deptHR.DEPARTMENTID;
+                        });
+
+                        postListPart.ForEach(postHR =>
+                        {
+                            VirtualPost vp = new VirtualPost();
+                            vp.ID = postHR.POSTID;
+                            vp.Name = postHR.T_HR_POSTDICTIONARY.POSTNAME;
+                            vp.VirtualCompany = vc;
+                            vp.VirtualDepartment = vd;
+                            listPost.Add(vp);
+
+
+                            PostData pData = CreateItem<PostData>(vp);
+                            pData.Company = cData;
+                            pData.Department = dData;
+                            listPostData.Add(pData);
+                            ListPData.Add(pData);
+
+                        });
+
+                        dData.Company = cData;
+                        dData.PostCollection = listPostData;
+                        listDepartmentData.Add(dData);
+                        ListDData.Add(dData);
+                    });
+
+                    cData.DepartmentCollection = listDepartmentData;
+                    listCData.Add(cData);
+                    CompanyList.Add(vc);
+                });
+
+                ReferencedData<CompanyData>.RefData = listCData;
+                ReferencedData<DepartmentData>.RefData = ListDData;
+                ReferencedData<PostData>.RefData = ListPData;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+                throw new Exception("调用HR服务异常", ex);
+            }
+        }
     }
     #endregion
 
@@ -814,5 +904,5 @@ namespace SMT.FB.UI.Common
     }
     #endregion
 
-
+  
 }

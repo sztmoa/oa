@@ -126,15 +126,16 @@
             this.txtTravNomber = new System.Windows.Forms.TextBox();
             this.txtTraveSolutionid = new System.Windows.Forms.TextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.txtConfigResult = new System.Windows.Forms.TextBox();
+            this.txtConfigSource = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnGetConfig = new System.Windows.Forms.Button();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.btnPreviousMonth = new System.Windows.Forms.Button();
             this.btnImportPunchRecord = new System.Windows.Forms.Button();
             this.btnSendDocument = new System.Windows.Forms.Button();
-            this.btnGetConfig = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtConfigSource = new System.Windows.Forms.TextBox();
-            this.txtConfigResult = new System.Windows.Forms.TextBox();
+            this.btnSearchFBAccoutn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtEmployeeEntry)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -974,6 +975,41 @@
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // txtConfigResult
+            // 
+            this.txtConfigResult.Location = new System.Drawing.Point(36, 100);
+            this.txtConfigResult.Multiline = true;
+            this.txtConfigResult.Name = "txtConfigResult";
+            this.txtConfigResult.Size = new System.Drawing.Size(527, 87);
+            this.txtConfigResult.TabIndex = 3;
+            // 
+            // txtConfigSource
+            // 
+            this.txtConfigSource.Location = new System.Drawing.Point(150, 7);
+            this.txtConfigSource.Name = "txtConfigSource";
+            this.txtConfigSource.Size = new System.Drawing.Size(413, 21);
+            this.txtConfigSource.TabIndex = 2;
+            this.txtConfigSource.Text = "ConnectionString";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(34, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 12);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "请输入配置节点";
+            // 
+            // btnGetConfig
+            // 
+            this.btnGetConfig.Location = new System.Drawing.Point(36, 51);
+            this.btnGetConfig.Name = "btnGetConfig";
+            this.btnGetConfig.Size = new System.Drawing.Size(75, 23);
+            this.btnGetConfig.TabIndex = 0;
+            this.btnGetConfig.Text = "获取";
+            this.btnGetConfig.UseVisualStyleBackColor = true;
+            this.btnGetConfig.Click += new System.EventHandler(this.btnGetConfig_Click);
+            // 
             // tabPage9
             // 
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
@@ -1016,7 +1052,7 @@
             // btnSendDocument
             // 
             this.btnSendDocument.BackColor = System.Drawing.Color.Silver;
-            this.btnSendDocument.Location = new System.Drawing.Point(766, 206);
+            this.btnSendDocument.Location = new System.Drawing.Point(762, 251);
             this.btnSendDocument.Name = "btnSendDocument";
             this.btnSendDocument.Size = new System.Drawing.Size(109, 23);
             this.btnSendDocument.TabIndex = 18;
@@ -1024,40 +1060,16 @@
             this.btnSendDocument.UseVisualStyleBackColor = false;
             this.btnSendDocument.Click += new System.EventHandler(this.btnSendDocument_Click);
             // 
-            // btnGetConfig
+            // btnSearchFBAccoutn
             // 
-            this.btnGetConfig.Location = new System.Drawing.Point(36, 51);
-            this.btnGetConfig.Name = "btnGetConfig";
-            this.btnGetConfig.Size = new System.Drawing.Size(75, 23);
-            this.btnGetConfig.TabIndex = 0;
-            this.btnGetConfig.Text = "获取";
-            this.btnGetConfig.UseVisualStyleBackColor = true;
-            this.btnGetConfig.Click += new System.EventHandler(this.btnGetConfig_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(34, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 12);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "请输入配置节点";
-            // 
-            // txtConfigSource
-            // 
-            this.txtConfigSource.Location = new System.Drawing.Point(150, 7);
-            this.txtConfigSource.Name = "txtConfigSource";
-            this.txtConfigSource.Size = new System.Drawing.Size(413, 21);
-            this.txtConfigSource.TabIndex = 2;
-            this.txtConfigSource.Text = "ConnectionString";
-            // 
-            // txtConfigResult
-            // 
-            this.txtConfigResult.Location = new System.Drawing.Point(36, 100);
-            this.txtConfigResult.Multiline = true;
-            this.txtConfigResult.Name = "txtConfigResult";
-            this.txtConfigResult.Size = new System.Drawing.Size(527, 87);
-            this.txtConfigResult.TabIndex = 3;
+            this.btnSearchFBAccoutn.BackColor = System.Drawing.Color.Silver;
+            this.btnSearchFBAccoutn.Location = new System.Drawing.Point(766, 188);
+            this.btnSearchFBAccoutn.Name = "btnSearchFBAccoutn";
+            this.btnSearchFBAccoutn.Size = new System.Drawing.Size(109, 23);
+            this.btnSearchFBAccoutn.TabIndex = 18;
+            this.btnSearchFBAccoutn.Text = "查询预算";
+            this.btnSearchFBAccoutn.UseVisualStyleBackColor = false;
+            this.btnSearchFBAccoutn.Click += new System.EventHandler(this.btnSearchFBAccoutn_Click);
             // 
             // Form_Second
             // 
@@ -1067,6 +1079,7 @@
             this.ClientSize = new System.Drawing.Size(876, 697);
             this.Controls.Add(this.btnPreviousMonth);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.btnSearchFBAccoutn);
             this.Controls.Add(this.btnSendDocument);
             this.Controls.Add(this.btnGenerateSalary);
             this.Controls.Add(this.btnGetPassword);
@@ -1196,6 +1209,7 @@
         private System.Windows.Forms.TextBox txtConfigSource;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnGetConfig;
+        private System.Windows.Forms.Button btnSearchFBAccoutn;
     }
 }
 

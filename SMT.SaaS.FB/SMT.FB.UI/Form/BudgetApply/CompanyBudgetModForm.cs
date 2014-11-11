@@ -95,11 +95,11 @@ namespace SMT.FB.UI.Form.BudgetApply
                     return (item.Entity as T_FB_COMPANYBUDGETMODDETAIL).BUDGETMONEY == 0;
                 });
 
-            if (dTotalMoney <= 0)
-            {
-                string errorMessage = "申请的预算总额必须大于零!";
-                msgs.Add(errorMessage);
-            }
+            //if (dTotalMoney <= 0)
+            //{
+            //    string errorMessage = "申请的预算总额必须大于零!";
+            //    msgs.Add(errorMessage);
+            //}
 
             if (msgs.Count > 0)
             {
@@ -113,6 +113,13 @@ namespace SMT.FB.UI.Form.BudgetApply
                     {
                         item.FBEntityState = FBEntityState.Added;
                         item.SetObjValue("Entity.CREATEUSERID", this.OrderEntity.GetObjValue("Entity.CREATEUSERID"));
+
+                        var q = (T_FB_COMPANYBUDGETMODDETAIL)item.Entity;
+                        if (string.IsNullOrEmpty(q.CREATEUSERID))
+                        {
+                            MessageBox.Show("T_FB_COMPANYBUDGETAPPLYDETAIL CREATEUSERID == null");
+                        }
+
                         item.SetObjValue("Entity.CREATEDATE", this.OrderEntity.GetObjValue("Entity.CREATEDATE"));
                     }
                 });
@@ -137,7 +144,7 @@ namespace SMT.FB.UI.Form.BudgetApply
             //{
             //    grid.Groups = new List<string>() { "ReferencedEntity[0].FBEntity.Entity.Name" };
             //}
-            
+            this.CloseProcess();
         }
 
         private void GroupData()
@@ -156,8 +163,6 @@ namespace SMT.FB.UI.Form.BudgetApply
             this.OrderEntity.Entity.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(Entity_PropertyChanged);
             if (this.OrderEntity.FBEntityState == FBEntityState.Added)
             {
-                GetDetail();
-
                 EmployeerData create = this.OrderEntity.GetCreateInfo();
                 this.OrderEntity.SetObjValue(EntityFieldName.OwnerID, create.Value);
                 this.OrderEntity.SetObjValue(EntityFieldName.OwnerName, create.Text);
@@ -166,64 +171,126 @@ namespace SMT.FB.UI.Form.BudgetApply
 
                 OrderEntity.SetObjValue("Entity.BUDGETYEAR", DataCore.SystemDateTime.Year);
             }
-            else
+            else if (this.EditForm.OperationType == OperationTypes.Browse)
             {
-                UpdateData();
-                dictComDetail.Clear();
-                //ObservableCollection<FBEntity> detailList = this.OrderEntity.GetRelationFBEntities(typeof(T_FB_COMPANYBUDGETAPPLYDETAIL).Name);
-                ObservableCollection<FBEntity> detailList = this.OrderEntity.GetRelationFBEntities(typeof(T_FB_COMPANYBUDGETMODDETAIL).Name);
-                detailList.ToList().ForEach(item =>
-                {
-                    item.Entity.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(DeatilEntity_PropertyChanged);
-                    T_FB_COMPANYBUDGETMODDETAIL ComDetail = (item.Entity as T_FB_COMPANYBUDGETMODDETAIL);
-                    dictComDetail.Add(ComDetail.COMPANYBUDGETMODDETAILID, ComDetail.BUDGETMONEY);
 
-                });
+                SetPropertyChanged();
+                return;
             }
+            GetOrderDetail();
+        }
+
+        protected void GetOrderDetail()
+        {
+            this.ShowProcess(true);
+            // 获取部门ID
+            string deptID = Convert.ToString(OrderEntity.GetObjValue(EntityFieldName.OwnerDepartmentID));
+            string companyID = Convert.ToString(OrderEntity.GetObjValue(EntityFieldName.OwnerCompanyID));
+            curCompany = DataCore.CompanyList.FirstOrDefault(company => { return company.ID == companyID; });
+            
+            QueryExpression qe = QueryExpressionHelper.Equal(FieldName.OwnerDepartmentID, deptID);
+            qe.QueryType = typeof(T_FB_COMPANYBUDGETMODDETAIL).Name;
+            fbService.QueryFBEntities(qe);
+
 
         }
+
+        void fbService_QueryFBEntitiesCompleted(object sender, QueryFBEntitiesCompletedEventArgs e)
+        {
+
+
+            
+            if (this.EditForm.OperationType == OperationTypes.Add)
+            {
+                DoForAdd(e);
+            }
+            else
+            {
+                DoForEdit(e);
+            }
+
+            SetPropertyChanged();
+        }
+
+        /// <summary>
+        /// 添加时操作
+        /// </summary>
+        /// <param name="e"></param>
+        private void DoForAdd(QueryFBEntitiesCompletedEventArgs e)
+        {
+
+            // 清除预算明细
+            this.OrderEntity.GetRelationFBEntities(typeof(T_FB_COMPANYBUDGETMODDETAIL).Name).Clear();
+
+            // 添加预算明细
+            e.Result.ToList().ForEach(item =>
+            {
+                T_FB_COMPANYBUDGETMODDETAIL ComDetail = (item.Entity as T_FB_COMPANYBUDGETMODDETAIL);
+                ComDetail.T_FB_COMPANYBUDGETMODMASTER = this.OrderEntity.Entity as T_FB_COMPANYBUDGETMODMASTER;
+                ComDetail.CREATEDATE = DateTime.Now;
+                ComDetail.CREATEUSERID = this.OrderEntity.LoginUser.Value.ToString();
+                ComDetail.UPDATEDATE = DateTime.Now;
+                ComDetail.UPDATEUSERID = this.OrderEntity.LoginUser.Value.ToString(); ;
+                item.FBEntityState = FBEntityState.Added;
+            });
+            this.OrderEntity.FBEntity.AddFBEntities<T_FB_COMPANYBUDGETMODDETAIL>(e.Result);
+
+            this.OrderEntity.FBEntity.Entity.SetObjValue("BUDGETMONEY", 0);
+        }
+
+        /// <summary>
+        /// 编辑时操作
+        /// </summary>
+        /// <param name="e"></param>
+        private void DoForEdit(QueryFBEntitiesCompletedEventArgs e)
+        {
+
+            // 清除预算明细
+            var details = this.OrderEntity.GetRelationFBEntities(typeof(T_FB_COMPANYBUDGETMODDETAIL).Name);
+
+            details.CompareFBEntity(e.Result,
+                (item, itemR) => item.CompareFBEntity<T_FB_COMPANYBUDGETMODDETAIL>(itemR, entity => entity.T_FB_SUBJECT.SUBJECTID),
+                (item, find) =>  /*找到的处理*/
+                {
+                    var itemEntity = item.Entity as T_FB_COMPANYBUDGETMODDETAIL;
+                    var findEntity = find.Entity as T_FB_COMPANYBUDGETMODDETAIL;
+                    itemEntity.USABLEMONEY = findEntity.USABLEMONEY;
+                },
+                (item) => /*需要删除的item*/
+                {
+                    details.Remove(item);
+                },
+
+                (itemR) => /*需要新的item*/
+                {
+                    var ComDetail = itemR.Entity as T_FB_COMPANYBUDGETMODDETAIL;
+                    ComDetail.T_FB_COMPANYBUDGETMODMASTER = this.OrderEntity.Entity as T_FB_COMPANYBUDGETMODMASTER;
+                    ComDetail.CREATEDATE = DateTime.Now;
+                    ComDetail.CREATEUSERID = this.OrderEntity.LoginUser.Value.ToString();
+                    ComDetail.UPDATEDATE = DateTime.Now;
+                    ComDetail.UPDATEUSERID = this.OrderEntity.LoginUser.Value.ToString(); ;
+                    itemR.FBEntityState = FBEntityState.Added;
+
+                    details.Add(itemR);
+                }
+            );
+            RefreshBudgetData();
+        }
+
+
+      
 
         void DeatilEntity_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (e.PropertyName == "BUDGETMONEY")
             {
-                T_FB_COMPANYBUDGETMODDETAIL ComDetail = sender as T_FB_COMPANYBUDGETMODDETAIL;
-                decimal? budgetMoney = sender.GetObjValue(e.PropertyName) as decimal?;
-                decimal? oldbudgetMoney = 0;
-                if (dictComDetail.ContainsKey(ComDetail.COMPANYBUDGETMODDETAILID))
-                {
-                    oldbudgetMoney = dictComDetail[ComDetail.COMPANYBUDGETMODDETAILID];
-                }
-
-                decimal? SumbudgetMoney = this.OrderEntity.FBEntity.Entity.GetObjValue(e.PropertyName) as decimal?;
-                if (SumbudgetMoney == null)
-                {
-                    SumbudgetMoney = 0;
-                }
-                SumbudgetMoney = SumbudgetMoney.Add(oldbudgetMoney * -1);
-                this.OrderEntity.FBEntity.Entity.SetObjValue("BUDGETMONEY", SumbudgetMoney.Add(budgetMoney));
-
-                dictComDetail[ComDetail.COMPANYBUDGETMODDETAILID] = budgetMoney;
+                RefreshBudgetData();
             }
 
 
         }
 
-        #region Update data when Init;
-        protected void UpdateData()
-        {
-            //ObservableCollection<FBEntity> listDetail = this.OrderEntity.GetRelationFBEntities(typeof(T_FB_COMPANYBUDGETMODDETAIL).Name);
-            
-            //listDetail.ToList().ForEach ( item =>
-            //    {
-            //        string deptID = (item.Entity as T_FB_COMPANYBUDGETMODDETAIL).OWNERDEPARTMENTID;
-            //        VirtualDepartment vd = this.curCompany.DepartmentCollection.FirstOrDefault(dept => {return dept.ID == deptID;});
-            //        item.AddReferenceFBEntity<VirtualDepartment>(vd.ToFBEntity());
-            //    });
-            GroupData();
-        }
-        #endregion
-
+    
         #region New Records when Init;
         void Entity_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
@@ -234,54 +301,9 @@ namespace SMT.FB.UI.Form.BudgetApply
             }
             
         }
-        protected void GetDetail()
-        {
-            // 获取部门ID
-            string deptID = Convert.ToString(OrderEntity.GetObjValue(EntityFieldName.OwnerDepartmentID));
-            string companyID = Convert.ToString(OrderEntity.GetObjValue(EntityFieldName.OwnerCompanyID));
-            curCompany = DataCore.CompanyList.FirstOrDefault(company => { return company.ID == companyID; });
-
-            // 清除预算明细
-            this.OrderEntity.CollectionEntity.ToList().ForEach(item => { item.FBEntities.Clear(); });
+      
 
 
-            QueryExpression qe = QueryExpressionHelper.Equal(FieldName.OwnerDepartmentID, deptID);
-            qe.QueryType = typeof(T_FB_COMPANYBUDGETMODDETAIL).Name;
-            fbService.QueryFBEntities(qe);
-
-           
-        }
-
-        void fbService_QueryFBEntitiesCompleted(object sender, QueryFBEntitiesCompletedEventArgs e)
-        {
-
-
-            var listDetail = this.OrderEntity.GetRelationFBEntities(typeof(T_FB_COMPANYBUDGETMODDETAIL).Name);
-            listDetail.Clear();
-
-            e.Result.ToList().ForEach(detail =>
-            {
-
-                T_FB_COMPANYBUDGETMODDETAIL deptDetail = detail.Entity as T_FB_COMPANYBUDGETMODDETAIL;
-                deptDetail.T_FB_COMPANYBUDGETMODMASTER = this.OrderEntity.Entity as T_FB_COMPANYBUDGETMODMASTER;
-
-                listDetail.Add(detail);
-            });
-            e.Result.ToList().ForEach(item =>
-            {
-                T_FB_COMPANYBUDGETMODDETAIL ComDetail = (item.Entity as T_FB_COMPANYBUDGETMODDETAIL);
-                ComDetail.T_FB_COMPANYBUDGETMODMASTER = this.OrderEntity.Entity as T_FB_COMPANYBUDGETMODMASTER;
-                ComDetail.CREATEDATE = DateTime.Now;
-                ComDetail.CREATEUSERID = this.OrderEntity.LoginUser.Value.ToString();
-                ComDetail.UPDATEDATE = DateTime.Now;
-                ComDetail.UPDATEUSERID = this.OrderEntity.LoginUser.Value.ToString(); ;
-                item.FBEntityState = FBEntityState.Added;
-                item.Entity.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(DeatilEntity_PropertyChanged);
-                dictComDetail.Add(ComDetail.COMPANYBUDGETMODDETAILID, ComDetail.BUDGETMONEY);
-
-            });
-            GroupData();
-        }
         #endregion
 
         public class GroupSubject : FBEntity
@@ -307,5 +329,31 @@ namespace SMT.FB.UI.Form.BudgetApply
 
         //    //list.
         //}
+
+
+        private void SetPropertyChanged()
+        {
+            
+            ObservableCollection<FBEntity> detailList = this.OrderEntity.GetRelationFBEntities(typeof(T_FB_COMPANYBUDGETMODDETAIL).Name);
+            detailList.ToList().ForEach(item =>
+            {
+                item.Entity.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(DeatilEntity_PropertyChanged);
+            });
+
+            this.EditForm.BindingData();
+            this.CloseProcess(false);
+        }
+
+        /// <summary>
+        /// 统计总预算
+        /// </summary>
+        private void RefreshBudgetData()
+        {
+            var details = this.OrderEntity.GetRelationFBEntities(typeof(T_FB_COMPANYBUDGETMODDETAIL).Name);
+
+            var total = details.Sum(itemFB => (itemFB.Entity as T_FB_COMPANYBUDGETMODDETAIL).BUDGETMONEY);
+
+            (this.OrderEntity.Entity as T_FB_COMPANYBUDGETMODMASTER).BUDGETMONEY = total;
+        }
     }
 }

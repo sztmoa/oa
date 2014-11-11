@@ -612,6 +612,7 @@
     <Property Name="CREATEDATE" Type="date" Nullable="false" />
     <Property Name="UPDATEUSERID" Type="nvarchar2" Nullable="false" MaxLength="100" />
     <Property Name="UPDATEDATE" Type="date" Nullable="false" />
+    <Property Name="CHECKSTATES" Type="number" />
   </EntityType>
   <EntityType Name="T_FB_COMPANYBUDGETSUMMASTER">
     <Key>
@@ -828,6 +829,7 @@
     <Property Name="CREATEDATE" Type="date" Nullable="false" />
     <Property Name="UPDATEUSERID" Type="nvarchar2" Nullable="false" MaxLength="100" />
     <Property Name="UPDATEDATE" Type="date" Nullable="false" />
+    <Property Name="CHECKSTATES" Type="number" />
   </EntityType>
   <EntityType Name="T_FB_DEPTBUDGETSUMMASTER">
     <Key>
@@ -1125,6 +1127,7 @@
     <Property Name="REMARK" Type="nvarchar2" MaxLength="400" />
     <Property Name="POSTINFO" Type="nvarchar2" MaxLength="400" />
     <Property Name="SUGGESTBUDGETMONEY" Type="number" />
+    <Property Name="POSTLEVEL" Type="number" />
   </EntityType>
   <EntityType Name="T_FB_PERSONMONEYASSIGNMASTER">
     <Key>
@@ -2992,6 +2995,7 @@
     <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
     <Property Name="UPDATEUSERID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="UPDATEDATE" Type="DateTime" Nullable="false" />
+    <Property Name="CHECKSTATES" Type="Decimal" Precision="18" Scale="0" />
     <NavigationProperty Name="T_FB_COMPANYBUDGETAPPLYMASTER" Relationship="SMT_FB_EFModel.FK_T_FB_COM_REFERENCE_T_FB_K02" FromRole="T_FB_COMPANYBUDGETSUMDETAIL" ToRole="T_FB_COMPANYBUDGETAPPLYMASTER" />
     <NavigationProperty Name="T_FB_COMPANYBUDGETSUMMASTER" Relationship="SMT_FB_EFModel.FK_T_FB_COM_REFERENCE_T_FB_K01" FromRole="T_FB_COMPANYBUDGETSUMDETAIL" ToRole="T_FB_COMPANYBUDGETSUMMASTER" />
   </EntityType>
@@ -3215,6 +3219,7 @@
     <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
     <Property Name="UPDATEUSERID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="UPDATEDATE" Type="DateTime" Nullable="false" />
+    <Property Name="CHECKSTATES" Type="Decimal" Precision="18" Scale="0" />
     <NavigationProperty Name="T_FB_DEPTBUDGETAPPLYMASTER" Relationship="SMT_FB_EFModel.FK_T_FB_DEP_REFERENCE_T_FB_K03" FromRole="T_FB_DEPTBUDGETSUMDETAIL" ToRole="T_FB_DEPTBUDGETAPPLYMASTER" />
     <NavigationProperty Name="T_FB_DEPTBUDGETSUMMASTER" Relationship="SMT_FB_EFModel.FK_T_FB_DEP_REFERENCE_T_FB_K04" FromRole="T_FB_DEPTBUDGETSUMDETAIL" ToRole="T_FB_DEPTBUDGETSUMMASTER" />
   </EntityType>
@@ -3521,6 +3526,7 @@
     <Property Name="REMARK" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
     <Property Name="POSTINFO" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
     <Property Name="SUGGESTBUDGETMONEY" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="POSTLEVEL" Type="Decimal" Precision="18" Scale="0" />
     <NavigationProperty Name="T_FB_PERSONMONEYASSIGNMASTER" Relationship="SMT_FB_EFModel.FK_T_FB_PER_REFERENCE_T_FB_N01" FromRole="T_FB_PERSONMONEYASSIGNDETAIL" ToRole="T_FB_PERSONMONEYASSIGNMASTER" />
     <NavigationProperty Name="T_FB_SUBJECT" Relationship="SMT_FB_EFModel.FK_T_FB_PER_REFERENCE_T_FB_N02" FromRole="T_FB_PERSONMONEYASSIGNDETAIL" ToRole="T_FB_SUBJECT" />
   </EntityType>
@@ -4633,6 +4639,7 @@
           <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
           <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
           <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+          <ScalarProperty Name="CHECKSTATES" ColumnName="CHECKSTATES" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -4849,6 +4856,7 @@
           <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
           <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
           <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+          <ScalarProperty Name="CHECKSTATES" ColumnName="CHECKSTATES" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -5146,6 +5154,8 @@
           <ScalarProperty Name="REMARK" ColumnName="REMARK" />
           <ScalarProperty Name="POSTINFO" ColumnName="POSTINFO" />
           <ScalarProperty Name="SUGGESTBUDGETMONEY" ColumnName="SUGGESTBUDGETMONEY" />
+          <ScalarProperty Name="POSTLEVEL" ColumnName="POSTLEVEL" />
+          
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

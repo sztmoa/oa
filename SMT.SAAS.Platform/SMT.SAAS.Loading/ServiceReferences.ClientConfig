@@ -567,12 +567,7 @@
       <endpoint address="http://10.10.0.93:8080/New/services/RM/ResumeService.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Common"
         contract="ResumeService.ResumeService" name="BasicHttpBinding_ResumeService" />
-      <!--<endpoint address="http://10.10.0.93:8080/New/services/Main/PlatformServices.svc"
-        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPlatformServices"
-        contract="NewsWS.IPlatformServices" name="BasicHttpBinding_IPlatformServices" />-->
-      <endpoint address="http://localhost:22222/PlatformSiServices.svc"
-        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPlatformServices"
-        contract="NewsWS.IPlatformServices" name="BasicHttpBinding_IPlatformServices" />
+
       <endpoint address="http://10.10.0.93:8080/New/services/MyRecord/PersonalRecordService.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPersonalRecordService"
         contract="PersonalRecordWS.IPersonalRecordService" name="BasicHttpBinding_IPersonalRecordService" />
@@ -721,18 +716,9 @@
       <endpoint address="http://10.10.0.93:8080/New/Services/HR/EmployeeInfoService.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_EmployeeInfoService"
         contract="EmployeeInfoWS.EmployeeInfoService" name="CustomBinding_EmployeeInfoService" />
-
       <endpoint address="http://10.10.0.93:8080/New/Services/System/MainUIServices.svc"
                 binding="customBinding" bindingConfiguration="CustomBinding_MainUIServices"
                 contract="UserLoginWS.MainUIServices" name="CustomBinding_MainUIServices" />
-      <!--<endpoint address="http://10.10.0.93:8080/New/Services/Platform/PlatformServices.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPlatformServices1"
-                contract="PlatformWS.IPlatformServices" name="BasicHttpBinding_IPlatformServices1" />-->
-
-<endpoint address="http://localhost:22222/PlatformServices.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPlatformServices1"
-                contract="PlatformWS.IPlatformServices" name="BasicHttpBinding_IPlatformServices1" />
-
       <endpoint address="http://fileserver.smt-online.net:9000/FileUpLoad.svc" binding="customBinding"
   bindingConfiguration="CustomBinding_IUploadService" contract="NewFileUploadWS.IUploadService"
   name="CustomBinding_IUploadService" />
@@ -742,6 +728,21 @@
       <endpoint address="http://10.10.0.93:8080/New/Services/SMTEngine/EngineWcfGlobalFunction.svc"
         binding="customBinding" bindingConfiguration="WSHttpBinding_IEngineWcfGlobalFunction"
         contract="EngineWS.IEngineWcfGlobalFunction" name="WSHttpBinding_IEngineWcfGlobalFunction" />
+
+
+      <!--<endpoint address="http://10.10.0.93:8080/New/services/Main/PlatformServices.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPlatformServices"
+        contract="NewsWS.IPlatformServices" name="BasicHttpBinding_IPlatformServices" />-->
+      <endpoint address="http://localhost:22222/PlatformSiServices.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPlatformServices"
+        contract="NewsWS.IPlatformServices" name="BasicHttpBinding_IPlatformServices" />
+      <!--<endpoint address="http://10.10.0.93:8080/New/Services/Platform/PlatformServices.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPlatformServices1"
+          contract="PlatformWS.IPlatformServices" name="BasicHttpBinding_IPlatformServices1" />-->
+      <endpoint address="http://localhost:22222/PlatformServices.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPlatformServices1"
+                contract="PlatformWS.IPlatformServices" name="BasicHttpBinding_IPlatformServices1" />
+
     </client>
    
   </system.serviceModel>

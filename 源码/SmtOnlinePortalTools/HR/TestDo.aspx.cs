@@ -7,6 +7,7 @@ using SmtOnlinePortalTools.PersonWS;
 using SmtOnlinePortalTools.SalaryWS;
 using System.Text;
 using System.Security.Cryptography;
+using SMT.Foundation.Log;
 namespace SMT.HRM.Services
 {
     /// <summary>
@@ -130,27 +131,35 @@ namespace SMT.HRM.Services
         /// <param name="e"></param>
         protected void btnUpdateAttRd_Click(object sender, EventArgs e)
         {
-            if (Session["LOGINUSER"] == null)
+            try
             {
-                plLogin.Visible = true;
-                plManage.Visible = false;
-                return;
-            }
+                if (Session["LOGINUSER"] == null)
+                {
+                    plLogin.Visible = true;
+                    plManage.Visible = false;
+                    return;
+                }
 
-            ltlMsg.Text = string.Empty;
-            string strCompanyID = string.Empty, strCurMonth = string.Empty;
-            if (string.IsNullOrWhiteSpace(txtCompanyID.Text) || string.IsNullOrWhiteSpace(txtCurMonth.Text))
+                ltlMsg.Text = string.Empty;
+                string strCompanyID = string.Empty, strCurMonth = string.Empty;
+                if (string.IsNullOrWhiteSpace(txtCompanyID.Text) || string.IsNullOrWhiteSpace(txtCurMonth.Text))
+                {
+                    return;
+                }
+
+                strCompanyID = txtCompanyID.Text;
+                strCurMonth = txtCurMonth.Text;
+
+
+                AttRdSvc.UpdateAttendRecordByEvectionAndLeaveRd(strCompanyID, strCurMonth);
+
+                ltlMsg.Text = "检查请假及出差情况完毕";
+            }
+            catch (Exception ex)
             {
-                return;
+                Tracer.Debug(ex.ToString());
+                Response.Write("alter(" + ex.ToString() + ")");
             }
-
-            strCompanyID = txtCompanyID.Text;
-            strCurMonth = txtCurMonth.Text;
-
-
-            AttRdSvc.UpdateAttendRecordByEvectionAndLeaveRd(strCompanyID, strCurMonth);
-
-            ltlMsg.Text = "检查请假及出差情况完毕";
         }
 
         /// <summary>
@@ -160,6 +169,7 @@ namespace SMT.HRM.Services
         /// <param name="e"></param>
         protected void btnCheckAbnormal_Click(object sender, EventArgs e)
         {
+            try { 
             if (Session["LOGINUSER"] == null)
             {
                 plLogin.Visible = true;
@@ -202,6 +212,10 @@ namespace SMT.HRM.Services
             }
 
             ltlMsg.Text = "检查考勤异常完毕";
+            }catch(Exception ex)
+            {
+                Tracer.Debug(ex.ToString());
+            }
         }
 
         /// <summary>

@@ -50,6 +50,17 @@ namespace SMT.ImportClockInRdCustomServies
             //服务启动
             this.timerImportRd.Enabled = true;   
             Tracer.Debug("启动服务成功");
+
+            string msg = "定时打卡服务启动服务成功。";
+            Tracer.Debug(msg);
+            TestMode = "False";
+            TestCompanyIp = string.Empty;
+            SMT.Foundation.Log.LogManager log = new SMT.Foundation.Log.LogManager();
+            Exception ex = new Exception(msg);
+            ErrorLog msgsend = new ErrorLog(ex);
+            log.SendMail(msgsend);
+
+
             strElapsedHour = ConfigurationManager.AppSettings["ElapsedHour"].ToString();
 
             TestMode = "False";
@@ -137,9 +148,17 @@ namespace SMT.ImportClockInRdCustomServies
         {
             //服务停止
             this.timerImportRd.Enabled = false;
-            Tracer.Debug("服务已停止");
+            string msg = "定时打卡服务已停止，请确认是否异常停止。";
+            Tracer.Debug(msg);
             TestMode = "False";
             TestCompanyIp = string.Empty;
+            SMT.Foundation.Log.LogManager log = new SMT.Foundation.Log.LogManager();
+            Exception ex = new Exception(msg);
+            ErrorLog msgsend = new ErrorLog(ex);
+            log.SendMail(msgsend);
+            Tracer.Debug( "定时打卡服务已停止，已发送邮件。");
+            Thread.Sleep(5000);//windows服务完全停止后，会将发送邮件的进程也停掉
+            Tracer.Debug("定时打卡服务已完全停止。");
         }
 
         /// <summary>

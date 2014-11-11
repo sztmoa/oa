@@ -1586,4 +1586,14 @@
             </GridItems>
         </Selector>
     </Selectors>
+  
+  <!-- 预算参数设置-->
+  <Settings>
+     <!--月度，年度预算增补是否可为负数 (默认值为０) 1:-->
+    <Setting Key="CanAddLessThanZero" Value="1" />
+    <!--公司科目中月度滚动是否可以设置-->
+    <Setting Key="CanSetSubjectControl" Value="1" />
+    <!--科目设置，在不同的类别中是否可以保存相同名字的科目-->
+    <Setting Key="CanSameSubjectName" Value="1" />
+  </Settings>
 </FB>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SMT.FB.UI</RootNamespace>
     <AssemblyName>SMT.FB.UI</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>zh-Hans</SupportedCultures>
     <XapOutputs>true</XapOutputs>
@@ -31,17 +31,18 @@
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <LinkedServerProject>
     </LinkedServerProject>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
     <ExpressionBlendVersion>3.0.1938.0</ExpressionBlendVersion>
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation />
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
     <PublishUrl>http://localhost/SMT.FB.UI/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -109,51 +110,52 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="SMT.Extensions">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="SMT.FileUpLoad">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.FileUpLoad.dll</HintPath>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.FileUpLoad.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SAAS.AnimationEngine">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.AnimationEngine.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SAAS.ClientServices">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.ClientServices.dll</HintPath>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.ClientServices.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SAAS.ClientUtility">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.ClientUtility.dll</HintPath>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.ClientUtility.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SAAS.Controls.Toolkit">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.Controls.Toolkit.dll</HintPath>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SAAS.Controls.Toolkit.Windows">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.Controls.Toolkit.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="SMT.SAAS.Extensions">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.Extensions.dll</HintPath>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Controls.Toolkit.Windows.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SaaS.FrameworkUI">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SaaS.FrameworkUI.dll</HintPath>
+      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SaaS.FrameworkUI.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SaaS.Globalization">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SaaS.Globalization.dll</HintPath>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SaaS.Globalization.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SaaS.LocalData">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SaaS.LocalData.dll</HintPath>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SaaS.LocalData.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SAAS.Main.CurrentContext, Version=1.1.1.1218, Culture=neutral, PublicKeyToken=7cc70637b746d9be, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.Main.CurrentContext.dll</HintPath>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Main.CurrentContext.dll</HintPath>
     </Reference>
-    <Reference Include="SMT.SAAS.Main.CurrentContextLoadData">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.Main.CurrentContextLoadData.dll</HintPath>
-    </Reference>
+    <Reference Include="SMT.SAAS.Main.CurrentContextLoadData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="SMT.SAAS.Themes">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.Themes.dll</HintPath>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Themes.dll</HintPath>
     </Reference>
     <Reference Include="SMT.Saas.Tools">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.Saas.Tools.dll</HintPath>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.Saas.Tools.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SAAS.Utility">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.Utility.dll</HintPath>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Utility.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SaaS.Window">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SaaS.Window.dll</HintPath>
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SaaS.Window.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.Serialization" />
@@ -334,6 +336,9 @@
     <Compile Include="Views\S_Images.xaml.cs">
       <DependentUpon>S_Images.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Test\TestPage.xaml.cs">
+      <DependentUpon>TestPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -341,9 +346,13 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="CommForm\ErrorWindow.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -353,10 +362,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Common\CommonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -365,19 +378,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Common\Controls\PageDataGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Common\EditForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Common\GridFormItem.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -387,9 +408,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Common\Controls\FieldForm2.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -399,9 +424,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Common\SelectedForm.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -411,10 +440,14 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Form\Test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -423,10 +456,14 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ShowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -435,15 +472,21 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Test\DGRowDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\AuditOrder.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -453,9 +496,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Login\Login.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -465,15 +512,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MasterPageTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\OrderView.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -483,33 +536,47 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Query\QueryBudgetExecute.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Query\QueryOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\SubjectManagement\SubjectCompany.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\SubjectManagement\SubjectCompanySet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\SubjectManagement\SubjectDepartment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\SubjectManagement\SubjectManagement.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -519,49 +586,121 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\S_Images.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Test\TestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="Service References\FBCommonWS\FBCommonService1.disco" />
+    <Content Include="XMLFile1.xml" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\DataSources\SMT.SaaS.FrameworkUI.AuditService.CompositeType.datasource" />
     <None Include="Properties\DataSources\SMT.SaaS.FrameworkUI.AuditService.Flow_FlowRecord_T.datasource" />
     <None Include="Properties\DataSources\SMT.SaaS.FrameworkUI.AuditService.Flow_ModelFlowRelation_T.datasource" />
     <None Include="Properties\OutOfBrowserSettings.xml" />
+    <None Include="Service References\FBCommonWS\FBCommonService.wsdl" />
+    <None Include="Service References\FBCommonWS\FBCommonService.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\FBCommonWS\FBCommonService1.wsdl" />
-    <None Include="Service References\FBCommonWS\FBCommonService9.xsd">
+    <None Include="Service References\FBCommonWS\FBCommonService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBCommonWS\FBCommonService91.xsd">
+    <None Include="Service References\FBCommonWS\FBCommonService10.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBCommonWS\FBCommonService92.xsd">
+    <None Include="Service References\FBCommonWS\FBCommonService11.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBCommonWS\FBCommonService93.xsd">
+    <None Include="Service References\FBCommonWS\FBCommonService12.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBCommonWS\FBCommonService94.xsd">
+    <None Include="Service References\FBCommonWS\FBCommonService13.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBCommonWS\FBCommonService95.xsd">
+    <None Include="Service References\FBCommonWS\FBCommonService14.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBCommonWS\FBCommonService96.xsd">
+    <None Include="Service References\FBCommonWS\FBCommonService15.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBCommonWS\FBCommonService97.xsd">
+    <None Include="Service References\FBCommonWS\FBCommonService16.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBCommonWS\FBCommonService98.xsd">
+    <None Include="Service References\FBCommonWS\FBCommonService17.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\FBCommonWS\FBCommonService18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="正式- ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Service References\FBCommonWS\SMT.FB.UI.FBCommonWS.AuditResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -582,13 +721,16 @@
     <Resource Include="Images\I_CmbBox.png" />
     <Resource Include="Images\Collapsed.png" />
     <Resource Include="Images\Expend.png" />
+    <None Include="Service References\FBCommonWS\FBCommonService.disco" />
     <None Include="Service References\FBCommonWS\configuration91.svcinfo" />
     <None Include="Service References\FBCommonWS\configuration.svcinfo" />
+    <None Include="Service References\FBCommonWS\FBCommonService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\FBCommonWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\FBCommonWS\FBCommonService1.disco" />
     <Content Include="ServiceReferences.ClientConfig">
       <SubType>Designer</SubType>
     </Content>
@@ -598,7 +740,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\MoneyAllocate\" />
-    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

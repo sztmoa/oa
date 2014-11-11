@@ -133,7 +133,7 @@
                                     "<param name=\"onerror\" value=\"onSilverlightError\" />" +
                                     "<param name=\"background\" value=\"white\" />" +
                                     "<param name=\"minRuntimeVersion\" value=\"4.0.50917.0\" />" +
-                                    "<param name=\"initparams\" value=\"p1=" + "10.10.0.93:8080" + ",p2=.new.Services,PhoneDownloadUrl=http://l13g.smtsoft.net/download,IMDownloadUrl=http://smtim.smtsoft.net/download/SMTIM.exe,UpdateVersionUrl=http://l1.smtsoft.net/imprint.html" + "\" />" +
+                                    "<param name=\"initparams\" value=\"p1=" + "l1.smtsoft.net" + ",p2=.new.Services,PhoneDownloadUrl=http://l13g.smtsoft.net/download,IMDownloadUrl=http://smtim.smtsoft.net/download/SMTIM.exe,UpdateVersionUrl=http://l1.smtsoft.net/imprint.html" + "\" />" +
                                     "<param name=\"onload\" value=\"onTravelSilverlightLoad\" />" +
                                     "<param name=\"autoUpgrade\" value=\"true\" />" +
                                     "<a href=\"http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.50917.0\" style=\"text-decoration: none\">" +
@@ -182,6 +182,21 @@
             }
         }
 
+
+        function OpenModel() {
+            //获取SilverLight插件中 以创建的对象
+            var plugin = document.getElementById("SMTPlatform");
+            //执行SilverLight项目中已经注册的可被Javascript调用的方法
+            var strConfig = "";
+            strConfig = "";
+            //t_sys_user sysuserid
+            // strConfig = "";
+            //55623178-A187-421a-8556-067E6908207A 公司信息           
+            var TaskType = "709D9380-5405-4429-B047-20100401D255";
+            var strMessageid = TaskType;
+            plugin.content.MvcToSl.OpenModuleWithMVC(strMessageid, "Module", strMessageid, strConfig);
+        }
+
     </script>
 </head>
 <body onload="">
@@ -199,6 +214,8 @@
       <br /><br />
      <input type="button" onclick="OpenMessageBox();" value="显示silverlight系统输出框" />
       <br />
+    <input type="button" onclick="OpenModel();" value="打开模块" />
+    <br />
 
     <div id="silverlightControlHost" style="width:100%;">
         <object id="SMTPlatform" data="data:application/x-silverlight-2," type="application/x-silverlight-2"

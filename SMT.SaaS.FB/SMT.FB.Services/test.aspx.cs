@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SMT_FB_EFModel;
 using SMT.FB.BLL;
+using SMT.SaaS.BLLCommonServices.PersonnelWS;
 
 namespace SMT.FB.Services
 {
@@ -13,8 +14,8 @@ namespace SMT.FB.Services
     {
         protected List<EntityInfo> EntityInfoList { get; set; }
         protected void Page_Load(object sender, EventArgs e)
-        { 
-
+        {
+            return;
             FBCommonService fbCommonService = new FBCommonService();
             EntityInfoList = fbCommonService.GetEntityInfoList();
             if (!IsPostBack)
@@ -167,7 +168,47 @@ namespace SMT.FB.Services
             FBService service = new FBService();
             service.CloseBudget();
         }
-               
+
+        /// <summary>
+        /// 活动经费测试
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnFunds_Click(object sender, EventArgs e)
+        {
+          
+            //BudgetAccountBLL bll = new BudgetAccountBLL();
+            //string strCompanyID = "bac05c76-0f5b-40ae-b73b-8be541ed35ed";
+            //string strAssignOwnerID = "24a358f9-8539-4faa-aee6-d5cbc8ea450d";
+            //bll.CreatePersonMoneyAssignInfo(strCompanyID, strAssignOwnerID);
+
+            //FBService fb = new FBService();
+            //T_HR_EMPLOYEEPOSTCHANGE personChange = new T_HR_EMPLOYEEPOSTCHANGE();
+            //string str = string.Empty;
+            //personChange.FROMPOSTID = "6631a391-dd20-4033-a769-71c3c6263801";
+            //personChange.T_HR_EMPLOYEE = new T_HR_EMPLOYEE();
+            //personChange.T_HR_EMPLOYEE.EMPLOYEEID = "df5acddf-d902-49e3-84f0-4be2a900c5f0";
+
+            //personChange.TOCOMPANYID = "3cd50b8b-8288-465b-826f-58d1dbe43464";
+            //personChange.TODEPARTMENTID = "df5acddf-d902-49e3-84f0-4be2a900c5f0";
+            //personChange.TOPOSTID = "de006da5-ab43-4ee1-ac7a-f9d49dddb5c0";
+            //fb.HRPersonPostChanged(personChange,ref str);
+
+            //QueryExpression qe = new QueryExpression();
+            //qe.QueryType = "T_FB_EXTENSIONALORDER";
+            //qe.PropertyName = "ORDERID";
+            //qe.PropertyValue = "692eea24-c4b2-4e82-af28-aab1d86b2e14";
+
+            //QueryExpression a = QueryExpression.Equal("OWNERID", "1111");
+            //QueryExpression b = QueryExpression.Equal("OWNERDEPARTMENTID", "2222");
+            //b.RelatedExpression = a;
+            //qe.RelatedExpression = b;
+            //qe.Include = new string[] { ("T_FB_EXTENSIONORDERDETAIL") };
+            //qe.Operation = QueryExpression.Operations.Equal;
+            //FBService ss = new FBService();
+            //ss.QueryFBEntities(qe);
+
+        }
         /// <summary>
         /// 手机提交审核
         /// </summary>
@@ -267,6 +308,34 @@ namespace SMT.FB.Services
                 return;
             }
             Response.Write("手机测试服务操作成功");
+        }
+
+        protected void testGetPersonMoneyAssign_Click(object sender, EventArgs e)
+        {
+            SMT.FB.BLL.BudgetAccountBLL bll = new BudgetAccountBLL();
+            var masters = bll.GetPersonMoneyAssign(this.inputASSIGNCOMPANYID.Value, this.inputOWNERID.Value,"");
+
+            List<FBEntity> resultList = new List<FBEntity>();
+            if (masters != null)
+            {
+                FBEntity fbResult = masters.ToFBEntity();
+
+                //处理岗位信息一栏
+                List<T_FB_PERSONMONEYASSIGNDETAIL> rlist = masters.T_FB_PERSONMONEYASSIGNDETAIL.ToList();
+                // rlist = obll.UpdatePostInfo(rlist);
+                //按公司、部门排序
+                rlist = rlist.OrderBy(c => c.OWNERCOMPANYID).ThenBy(c => c.OWNERDEPARTMENTID).ToList();
+
+                fbResult.AddFBEntities<T_FB_PERSONMONEYASSIGNDETAIL>(rlist.ToFBEntityList());
+                resultList.Add(fbResult);
+                this.GridView1.DataSource = masters.T_FB_PERSONMONEYASSIGNDETAIL.ToList();
+                this.DataBind();
+            }
+        }
+        protected void testGetPersonMoneyAssignAA_Click(object sender, EventArgs e)
+        {
+            FBService s = new FBService();
+            s.CreatePersonMoneyAssignInfo(this.inputASSIGNCOMPANYID.Value, this.inputOWNERID.Value, this.inputCreateID.Value);
         }
     }
 }

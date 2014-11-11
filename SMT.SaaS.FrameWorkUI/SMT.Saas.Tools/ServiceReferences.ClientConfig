@@ -86,12 +86,12 @@
           <binaryMessageEncoding />
           <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
         </binding>
-        <binding name="CustomBinding_IUploadService">
-          <binaryMessageEncoding />
-          <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
-        </binding>
         <binding name="WSHttpBinding_IEngineWcfGlobalFunction">
           <textMessageEncoding messageVersion="Default" writeEncoding="utf-8" />
+          <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+        </binding>
+        <binding name="CustomBinding_IUploadService">
+          <binaryMessageEncoding />
           <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
         </binding>
       </customBinding>
@@ -154,12 +154,12 @@
       <endpoint address="http://10.10.0.93:8080/New/Services/SMTFBAService/DailyManagementServices.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_DailyManagementServices"
         contract="DailyManagementWS.DailyManagementServices" name="CustomBinding_DailyManagementServices" />
-      <endpoint address="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc"
-        binding="customBinding" bindingConfiguration="CustomBinding_IUploadService"
-        contract="NewFileUploadWS.IUploadService" name="CustomBinding_IUploadService" />
       <endpoint address="http://10.10.0.93:8080/New/Services/System/PermissionService.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_PermissionService"
         contract="PermissionWS.PermissionService" name="CustomBinding_PermissionService" />
+      <endpoint address="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc"
+        binding="customBinding" bindingConfiguration="CustomBinding_IUploadService"
+        contract="NewFileUploadWS.IUploadService" name="CustomBinding_IUploadService" />
     </client>
 
   </system.serviceModel>

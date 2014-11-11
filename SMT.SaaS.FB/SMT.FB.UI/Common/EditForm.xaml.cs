@@ -342,7 +342,7 @@ namespace SMT.FB.UI.Common
             return true;
         }
 
-        private void BindingData()
+        public void BindingData(OrderEntity curOrderEntity = null)
         {
             if (Controls == null)
             {
@@ -352,7 +352,7 @@ namespace SMT.FB.UI.Common
             }
             for (int i = 0; i < Controls.Count; i++)
             {
-                Controls[i].DataContext = this.OrderEntity;
+                Controls[i].DataContext = curOrderEntity ?? this.OrderEntity;
             }
         }
         #endregion
@@ -364,6 +364,10 @@ namespace SMT.FB.UI.Common
             if (e.Result != null)
             {
                 this.OrderEntity = e.Result;
+                if (this.orderEntity.FBEntityState == FBEntityState.Unchanged && this.OperationType == OperationTypes.Add)
+                {
+                    this.OperationType = OperationTypes.Edit;
+                }
                 this.InitData();
             }
             if (this.OrderEntity.FBEntityState != FBEntityState.ReSubmit)

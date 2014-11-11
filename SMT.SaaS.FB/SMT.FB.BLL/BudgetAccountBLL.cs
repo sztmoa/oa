@@ -12,7 +12,6 @@ using PersonnelWS = SMT.SaaS.BLLCommonServices.PersonnelWS;
 using OrganizationWS = SMT.SaaS.BLLCommonServices.OrganizationWS;
 using EngineWS = SMT.SaaS.BLLCommonServices.EngineConfigWS;
 using FlowWFService = SMT.SaaS.BLLCommonServices.FlowWFService;
-
 using System.Data.Objects;
 using System.Xml.Linq;
 using SMT.Foundation.Log;
@@ -129,7 +128,7 @@ namespace SMT.FB.BLL
 
 
             // 如果是 年/月度预算汇总申请，并且是审核通过或审核不通过时，更新汇总的每个申请单(生效或不生效）并修改预算总账。
-            if (statesNew == CheckStates.Approved || statesNew == CheckStates.UnApproved)
+            if (statesNew == CheckStates.Approved)
             {
                 if (entity.GetType() == typeof(T_FB_DEPTBUDGETSUMMASTER))
                 {
@@ -1706,12 +1705,11 @@ namespace SMT.FB.BLL
                     Tracer.Debug("BUDGETMONEY:" + account.BUDGETMONEY.ToString());
                     Tracer.Debug("ACTUALMONEY:" + account.ACTUALMONEY.ToString());
                     Tracer.Debug("报销年月" + account.BUDGETYEAR.ToString() + "-" + account.BUDGETMONTH.ToString());
-                    Tracer.Debug("报销公司" + account.OWNERCOMPANYID.ToString());
-                    Tracer.Debug("报销部门" + account.OWNERDEPARTMENTID.ToString());
-                    Tracer.Debug("报销岗位" + account.OWNERPOSTID.ToString());
-                    Tracer.Debug("报销人" + account.OWNERID.ToString());
-                    Tracer.Debug("报销人" + account.OWNERID.ToString());
-                    Tracer.Debug("报销类型：" + account.ACCOUNTOBJECTTYPE.ToString());
+                    Tracer.Debug("报销公司" + account.OWNERCOMPANYID);
+                    Tracer.Debug("报销部门" + account.OWNERDEPARTMENTID);
+                    Tracer.Debug("报销岗位" + account.OWNERPOSTID);
+                    Tracer.Debug("报销人" + account.OWNERID);
+                    Tracer.Debug("报销类型：" + Convert.ToString(account.ACCOUNTOBJECTTYPE));
                     string strMessage = string.Empty;
                     if (account.ACCOUNTOBJECTTYPE.Value == 3)
                     {
@@ -2543,24 +2541,29 @@ namespace SMT.FB.BLL
                 var baData = this.InnerGetEntities<T_FB_BUDGETACCOUNT>(qeDept);
 
                 var dataSubjectCompany = this.GetTable<T_FB_SUBJECTCOMPANY>();
-                var dataYear = (from item in baData
+                var yearList = (from item in baData
                                 where item.ACCOUNTOBJECTTYPE.Value == (int)AccountObjectType.Company
-                                select item);
+                                select new {item.T_FB_SUBJECT.SUBJECTID, item.ACTUALMONEY}).ToList();
                 var dataMonth = (from item in baData
                                  where item.ACCOUNTOBJECTTYPE.Value != (int)AccountObjectType.Company
                                 && item.BUDGETMONTH.Value == dateCheck.Month
                                  select item);
                 //var dataPerson = (from item in baData
                 //                  where item.ACCOUNTOBJECTTYPE.Value =
+
+                // 是个bug，因为有可能有可能没有年度预算的记录
                 var dataCheck = from itemMonth in dataMonth
-                                from itemYear in dataYear
                                 from itemSubjectCompany in dataSubjectCompany
-                                where itemMonth.T_FB_SUBJECT.SUBJECTID == itemYear.T_FB_SUBJECT.SUBJECTID
-                                   && itemMonth.T_FB_SUBJECT != null
-                                   && itemMonth.OWNERCOMPANYID == itemSubjectCompany.OWNERCOMPANYID
-                                select new { itemMonth, itemYear.ACTUALMONEY, itemSubjectCompany.CONTROLTYPE };
+                                where itemMonth.T_FB_SUBJECT.SUBJECTID == itemSubjectCompany.T_FB_SUBJECT.SUBJECTID
+                                  && itemMonth.OWNERCOMPANYID == itemSubjectCompany.OWNERCOMPANYID
+                                select new { itemMonth, itemSubjectCompany.CONTROLTYPE };
 
-
+                /*
+                 from itemYear in dataYear
+                 * 
+                 * where itemMonth.T_FB_SUBJECT.SUBJECTID == itemYear.T_FB_SUBJECT.SUBJECTID
+                 *  && itemMonth.OWNERCOMPANYID == itemSubjectCompany.OWNERCOMPANYID
+                 */
                 listDeptCheck = dataCheck.ToList().CreateList(itemData =>
                     {
 
@@ -2575,12 +2578,17 @@ namespace SMT.FB.BLL
                             item.T_FB_SUBJECTReference.Load();
                         }
                         temp.T_FB_SUBJECT = item.T_FB_SUBJECT;
-                        temp.YEARBUDGETMONEY = itemData.ACTUALMONEY;
+                        
                         temp.OWNERDEPARTMENTID = item.OWNERDEPARTMENTID;
                         temp.OWNERCOMPANYID = item.OWNERCOMPANYID;
                         temp.OWNERID = item.OWNERID;
                         temp.OWNERPOSTID = item.OWNERPOSTID;
-
+                        temp.YEARBUDGETMONEY = 0;
+                        var yearFind = yearList.Find(itemY => itemY.SUBJECTID == temp.T_FB_SUBJECT.SUBJECTID);
+                        if (yearFind != null)
+                        {
+                            temp.YEARBUDGETMONEY = yearFind.ACTUALMONEY;
+                        }
 
                         ControlType curType = (ControlType)Convert.ToInt32(itemData.CONTROLTYPE);
                         if (curType == ControlType.LimitMonth)
@@ -2599,6 +2607,7 @@ namespace SMT.FB.BLL
             else
             {
                 qeYear.RelatedExpression = qeMonth;
+                qeDept.Include = new string[] { typeof(T_FB_SUBJECT).Name };
                 listDeptCheck = this.GetEntities<T_FB_BUDGETCHECK>(qeDept);
 
 
@@ -3537,7 +3546,7 @@ namespace SMT.FB.BLL
                             var accountPerson = listBudgetAccount.Where(item =>
                             {
                                 return item.T_FB_SUBJECT.SUBJECTID == subjectID && item.ACCOUNTOBJECTTYPE.Equal((int)AccountObjectType.Person)
-                                    && item.OWNERID == persondetail.OWNERID;
+                                    && item.OWNERID == persondetail.OWNERID && item.OWNERPOSTID == persondetail.OWNERPOSTID;
                             }).FirstOrDefault();
                             if (accountPerson != null)
                             {
@@ -3925,7 +3934,7 @@ namespace SMT.FB.BLL
             if (qeCompanyID != null)
             {
                 VirtualCompany company = listCompany.Where(t => t.ID == qeCompanyID.PropertyValue).FirstOrDefault();
-                List<FBEntity> listsc = GetSubjectCompany(company, listSubject);
+                List<FBEntity> listsc = GetSubjectCompanySet(company, listSubject, filterString);
                 RelationManyEntity rme = new RelationManyEntity();
                 rme.EntityType = "T_FB_SUBJECTCOMPANY";
                 rme.FBEntities = listsc;
@@ -4121,7 +4130,7 @@ namespace SMT.FB.BLL
                 OrganizationBLL obll = new OrganizationBLL();
                 rlist = obll.UpdatePostInfo(rlist);
                 //按公司、部门排序
-                rlist = rlist.OrderBy(c => c.OWNERCOMPANYID).ThenBy(c => c.OWNERDEPARTMENTID).ToList();
+                rlist = rlist.OrderBy(c => c.OWNERCOMPANYNAME).ThenBy(c => c.OWNERDEPARTMENTNAME).ThenBy(c => c.POSTLEVEL).ToList();
 
 
                 fbResult.AddFBEntities<T_FB_PERSONMONEYASSIGNDETAIL>(rlist.ToFBEntityList());
@@ -4138,20 +4147,20 @@ namespace SMT.FB.BLL
             QueryExpression qeAssign = qe.GetQueryExpression("ASSIGNCOMPANYID");
 
 
-            var masters = GetPersonMoneyAssign(qeAssign.PropertyValue, qeOwner.PropertyValue);
+            var masters = GetPersonMoneyAssign(qeAssign.PropertyValue, qeOwner.PropertyValue,"");
 
             List<FBEntity> resultList = new List<FBEntity>();
             if (masters != null)
             {
                 FBEntity fbResult = masters.ToFBEntity();
 
-                //处理岗位信息一栏
-                List<T_FB_PERSONMONEYASSIGNDETAIL> rlist = masters.T_FB_PERSONMONEYASSIGNDETAIL.ToList();
-                // rlist = obll.UpdatePostInfo(rlist);
-                //按公司、部门排序
-                rlist = rlist.OrderBy(c => c.OWNERCOMPANYID).ThenBy(c => c.OWNERDEPARTMENTID).ToList();
-
-                fbResult.AddFBEntities<T_FB_PERSONMONEYASSIGNDETAIL>(rlist.ToFBEntityList());
+                ////处理岗位信息一栏
+                //List<T_FB_PERSONMONEYASSIGNDETAIL> rlist = masters.T_FB_PERSONMONEYASSIGNDETAIL.ToList();
+                                
+                //// rlist = obll.UpdatePostInfo(rlist);
+                ////按公司、部门排序
+                //rlist = rlist.OrderBy(c => c.OWNERCOMPANYID).ThenBy(c => c.OWNERDEPARTMENTID).ThenBy(c => c.POSTLEVEL).ToList();
+                //fbResult.AddFBEntities<T_FB_PERSONMONEYASSIGNDETAIL>(rlist.ToFBEntityList());
                 resultList.Add(fbResult);
             }
 
@@ -4167,7 +4176,15 @@ namespace SMT.FB.BLL
         public FBEntity GetEntityT_FB_PERSONMONEYASSIGNMASTER(QueryExpression qe)
         {
             FBEntity fbEntity = this.GetEntityDefault(qe);
-            fbEntity.OrderDetailBy<T_FB_PERSONMONEYASSIGNDETAIL>(item => item.OWNERDEPARTMENTNAME);
+
+            var details = fbEntity.GetRelationFBEntities(typeof(T_FB_PERSONMONEYASSIGNDETAIL).Name);
+
+            var tempList = details.ToEntityList<T_FB_PERSONMONEYASSIGNDETAIL>();
+            tempList = tempList.OrderBy(item => item.OWNERCOMPANYNAME).ThenBy(item => item.OWNERDEPARTMENTNAME).ThenBy(item => item.POSTLEVEL).ToList();
+            
+            details.Clear();
+            details.AddRange(tempList.ToFBEntityList());
+
             return fbEntity;
         }
 
@@ -4220,10 +4237,10 @@ namespace SMT.FB.BLL
 
 
         #region 活动经费
-        public T_FB_PERSONMONEYASSIGNMASTER CreatePersonMoneyAssignInfo(string ASSIGNCOMPANYID, string OWNERID)
+        public T_FB_PERSONMONEYASSIGNMASTER CreatePersonMoneyAssignInfo(string ASSIGNCOMPANYID, string SubmitUserID, string CreateUserid)
         {
-          
-                T_FB_PERSONMONEYASSIGNMASTER master = GetPersonMoneyAssign(ASSIGNCOMPANYID, OWNERID);
+
+            T_FB_PERSONMONEYASSIGNMASTER master = GetPersonMoneyAssign(ASSIGNCOMPANYID, SubmitUserID, CreateUserid);
                 try
                 {
                     if (master == null)
@@ -4247,14 +4264,15 @@ namespace SMT.FB.BLL
                     FBEntity fbEntity = new FBEntity();
                     fbEntity.Entity = master;
                     fbEntity.FBEntityState = FBEntityState.Added;
+                    master.APPLIEDTYPE = 1; // 核对单;
                     SaveFBEntityDefault(fbEntity);
 
-                    string strCustomMsgBody = "您收到了[" + master.ASSIGNCOMPANYNAME + "]的活动经费下拨申请单，请及时处理！";
+                    string strCustomMsgBody = "您收到了[" + master.ASSIGNCOMPANYNAME + "]的活动经费下拨核对单，请及时处理！";
 
                     EngineWS.EngineWcfGlobalFunctionClient Client = new EngineWS.EngineWcfGlobalFunctionClient();
                     EngineWS.CustomUserMsg userMsg = new EngineWS.CustomUserMsg();
                     userMsg.FormID = master.PERSONMONEYASSIGNMASTERID;
-                    userMsg.UserID = master.OWNERID;
+                    userMsg.UserID = master.CREATEUSERID;
                     EngineWS.CustomUserMsg[] List = new EngineWS.CustomUserMsg[1];
                     List[0] = userMsg;
                     string submitName = master.OWNERNAME;
@@ -4268,15 +4286,15 @@ namespace SMT.FB.BLL
                     return master;
                 }
         }
-
-        public T_FB_PERSONMONEYASSIGNMASTER GetPersonMoneyAssign(string ASSIGNCOMPANYID, string OWNERID)
+        
+        public T_FB_PERSONMONEYASSIGNMASTER GetPersonMoneyAssign(string ASSIGNCOMPANYID, string SubmitUserID,string CreateUserid)
         {
             PersonnelWS.PersonnelServiceClient pe = new PersonnelWS.PersonnelServiceClient();
 
             T_FB_PERSONMONEYASSIGNMASTER master = new T_FB_PERSONMONEYASSIGNMASTER();
             master.PERSONMONEYASSIGNMASTERID = Guid.NewGuid().ToString();
 
-            PersonnelWS.V_EMPLOYEEPOST employee = pe.GetEmployeeDetailByID(OWNERID);
+            PersonnelWS.V_EMPLOYEEPOST employee = pe.GetEmployeeDetailByID(SubmitUserID);
 
             OrganizationWS.OrganizationServiceClient orgClient = new OrganizationWS.OrganizationServiceClient();
             OrganizationWS.T_HR_COMPANY entCompany = orgClient.GetCompanyById(ASSIGNCOMPANYID);
@@ -4292,7 +4310,7 @@ namespace SMT.FB.BLL
             QueryExpression qeAssignComp = QueryExpression.Equal("ASSIGNCOMPANYID", entCompany.COMPANYID);
             qeAssignComp.QueryType = "T_FB_PERSONMONEYASSIGNMASTER";
 
-            QueryExpression qeOwner = QueryExpression.Equal(FieldName.OwnerID, OWNERID);
+            QueryExpression qeOwner = QueryExpression.Equal(FieldName.OwnerID, SubmitUserID);
             QueryExpression qeBudgetMonth = QueryExpression.Equal("BUDGETARYMONTH", budgetMonth);
             QueryExpression qeCheckState = QueryExpression.NotEqual(FieldName.CheckStates, Convert.ToInt32(CheckStates.UnApproved).ToString());
             QueryExpression qeCreateUserID = QueryExpression.Equal(FieldName.CreateUserID, "001");//自动创建的单创建人为001
@@ -4316,7 +4334,7 @@ namespace SMT.FB.BLL
             QueryExpression qelastAssignComp = QueryExpression.Equal("ASSIGNCOMPANYID", entCompany.COMPANYID);
             qelastAssignComp.QueryType = "T_FB_PERSONMONEYASSIGNMASTER";
 
-            QueryExpression qelastOwner = QueryExpression.Equal(FieldName.OwnerID, OWNERID);
+            QueryExpression qelastOwner = QueryExpression.Equal(FieldName.OwnerID, SubmitUserID);
             QueryExpression qelastBudgetMonth = QueryExpression.Equal("BUDGETARYMONTH", DateTime.Now.AddMonths(-1).ToString("yyyy-MM") + "-1");
             QueryExpression qelastCheckState = QueryExpression.Equal(FieldName.CheckStates, Convert.ToInt32(CheckStates.Approved).ToString());
 
@@ -4339,7 +4357,7 @@ namespace SMT.FB.BLL
                 }
             }
 
-            master.OWNERID = OWNERID;
+            master.OWNERID = SubmitUserID;
             master.OWNERNAME = employee.T_HR_EMPLOYEE.EMPLOYEECNAME;
             master.OWNERCOMPANYID = employee.EMPLOYEEPOSTS[0].T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.COMPANYID;
             master.OWNERCOMPANYNAME = employee.EMPLOYEEPOSTS[0].T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.CNAME;
@@ -4367,7 +4385,7 @@ namespace SMT.FB.BLL
             master.CREATEDEPARTMENTNAME = "系统生成";
             master.CREATEPOSTID = "001";
             master.CREATEPOSTNAME = "系统生成";
-            master.CREATEUSERID = "001";
+            master.CREATEUSERID = CreateUserid;
             master.CREATEUSERNAME = "系统生成";
 
             master.UPDATEUSERID = "001";
@@ -4380,7 +4398,7 @@ namespace SMT.FB.BLL
             try
             {
                 //通过HR接口获取被下拨人
-                vlistpostinfo = pe.GetEmployeeFunds(ASSIGNCOMPANYID,OWNERID);
+                vlistpostinfo = pe.GetEmployeeFunds(ASSIGNCOMPANYID,SubmitUserID);
                 if (vlistpostinfo == null)
                 {
                     SystemBLL.Debug("调用HR服务 GetEmployeeFunds,返回结果为空，对应下拨公司的ID为： " + ASSIGNCOMPANYID);
@@ -4397,7 +4415,7 @@ namespace SMT.FB.BLL
             {
                 SystemBLL.Debug("调用HR服务异常 GetEmployeeFunds " + ex.ToString());
             }
-
+            List<T_FB_PERSONMONEYASSIGNDETAIL> tempList = new List<T_FB_PERSONMONEYASSIGNDETAIL>();
             if (vlistpostinfo != null && vlistpostinfo.Count() > 0)
             {
                 QueryExpression qe = QueryExpression.Equal("SUBJECTID", "d5134466-c207-44f2-8a36-cf7b96d5851f");
@@ -4406,19 +4424,23 @@ namespace SMT.FB.BLL
                 if (entSubject == null)
                 {
                     return null;
-                }                
-
+                }
+                
                 foreach (var item in vlistpostinfo)
                 {
+                    
+
                     T_FB_PERSONMONEYASSIGNDETAIL detail = new T_FB_PERSONMONEYASSIGNDETAIL();
+                    
                     detail.PERSONBUDGETAPPLYDETAILID = Guid.NewGuid().ToString();
-                    detail.T_FB_PERSONMONEYASSIGNMASTER = master;
+                    // detail.T_FB_PERSONMONEYASSIGNMASTER = master;
+                    tempList.Add(detail);
                     detail.T_FB_SUBJECT = entSubject;
                     //detail.BUDGETMONEY = item.REALSUM;
                     detail.BUDGETMONEY = item.REALSUM;
                     detail.SUGGESTBUDGETMONEY = item.NEEDSUM;
                     detail.POSTINFO = item.ATTENDREMARK;
-
+                    
                     detail.OWNERID = item.EMPLOYEEID;
                     detail.OWNERNAME = item.EMPLOYECNAME;
                     detail.OWNERPOSTID = item.POSTID;
@@ -4436,36 +4458,46 @@ namespace SMT.FB.BLL
                     detail.UPDATEUSERNAME = "系统生成";
                     detail.UPDATEDATE = DateTime.Now;
 
+                    // var epm = pe.(item.EMPLOYEEID, item.POSTID);
+                    var epm = pe.GetEmployeeDetailViewByID(item.EMPLOYEEID);
+
+                    if (epm != null)
+                    {
+                        var p = epm.EMPLOYEEPOSTS.FirstOrDefault(itemE => itemE.POSTID == item.POSTID);
+                        detail.POSTLEVEL = p != null ? p.POSTLEVEL : 100;
+                    }
+                    
                     if (item.REALSUM != null)
                     {
                         master.BUDGETMONEY += item.REALSUM;
                     }
                 }
 
-                if (master.T_FB_PERSONMONEYASSIGNDETAIL != null)
+                if (tempList != null)
                 {
-                    if (master.T_FB_PERSONMONEYASSIGNDETAIL.Count() > 0)
+                    if (tempList.Count() > 0)
                     {
                         foreach (var entLastMonthDetail in entLastMonthmdetails)
                         {
-                            var existitems = from n in master.T_FB_PERSONMONEYASSIGNDETAIL
+                            var existitems = from n in tempList
                                              where n.OWNERID == entLastMonthDetail.OWNERID
                                              select n;
-
-                            PersonnelWS.V_EMPLOYEEVIEW vEmp = pe.GetEmployeeInfoByEmployeeID(entLastMonthDetail.OWNERID);
-                            //离职员工就不做活动经费了吧
-                            if (vEmp.EMPLOYEESTATE == "2")
+                            if (existitems.Count() > 0)
                             {
                                 continue;
                             }
-                            if (existitems.Count() > 0)
+                            var epm = pe.GetEmployeeDetailViewByID(entLastMonthDetail.OWNERID);
+                            var p = epm.EMPLOYEEPOSTS.FirstOrDefault(itemE => itemE.POSTID == entLastMonthDetail.OWNERPOSTID);
+                            if (epm == null || epm.EMPLOYEESTATE == "2" || p == null)
                             {
+                                //离职员工就不做活动经费了吧
                                 continue;
                             }
 
                             T_FB_PERSONMONEYASSIGNDETAIL detail = new T_FB_PERSONMONEYASSIGNDETAIL();
                             detail.PERSONBUDGETAPPLYDETAILID = Guid.NewGuid().ToString();
-                            detail.T_FB_PERSONMONEYASSIGNMASTER = master;
+                           //detail.T_FB_PERSONMONEYASSIGNMASTER = master;
+                            tempList.Add(detail);
                             detail.T_FB_SUBJECT = entSubject;
                             //detail.BUDGETMONEY = item.REALSUM;
                             detail.BUDGETMONEY = entLastMonthDetail.BUDGETMONEY;
@@ -4480,7 +4512,7 @@ namespace SMT.FB.BLL
                             detail.OWNERDEPARTMENTNAME = entLastMonthDetail.OWNERDEPARTMENTNAME;
                             detail.OWNERCOMPANYID = entLastMonthDetail.OWNERCOMPANYID;
                             detail.OWNERCOMPANYNAME = entLastMonthDetail.OWNERCOMPANYNAME;
-
+                            
                             detail.CREATEUSERID = "001";
                             detail.CREATEUSERNAME = "系统生成";
                             detail.CREATEDATE = DateTime.Now;
@@ -4493,11 +4525,16 @@ namespace SMT.FB.BLL
                             {
                                 master.BUDGETMONEY += entLastMonthDetail.BUDGETMONEY;
                             }
+                            detail.POSTLEVEL = p != null ? p.POSTLEVEL : 100;
                         }
                     }
                 }
             }
-
+            tempList = tempList.OrderBy(c => c.OWNERCOMPANYNAME).ThenBy(c => c.OWNERDEPARTMENTNAME).ThenBy(c => c.POSTLEVEL).ToList();
+            for (int i = 0; i < tempList.Count; i++)
+            {
+                tempList[i].T_FB_PERSONMONEYASSIGNMASTER = master;
+            }
             return master;
         }
 
@@ -4823,7 +4860,43 @@ namespace SMT.FB.BLL
             }
         }
 
+        public bool SaveT_FB_SUBJECTCOMPANY(List<FBEntity> fbEntityList)
+        {
+            var saveList = fbEntityList.ToList();
+            fbEntityList.ForEach(item =>
+            {
+                var master = item.Entity as T_FB_SUBJECTCOMPANY;
+                if (!(master.ACTIVED == 0 || master.EDITSTATES == 0))
+                {
+                    return;
+                }
+                
+                master.ACTIVED = 0;
+                var detps = this.InnerGetEntities<T_FB_SUBJECTDEPTMENT>(new QueryExpression()
+                {
+                    QueryType = typeof(T_FB_SUBJECTDEPTMENT).Name,
+                    PropertyName = "T_FB_SUBJECTCOMPANY.SUBJECTCOMPANYID", 
+                    PropertyValue=master.SUBJECTCOMPANYID,IsNoTracking=true,IsUnCheckRight = true, Include= new string[1]{"T_FB_SUBJECTPOST"}}).ToList();
+                
+                foreach (var itemDept in detps)
+                {
+                    itemDept.ACTIVED = 0;
+                    var fbDept = itemDept.ToFBEntity();
+                    fbDept.FBEntityState = FBEntityState.Modified;
+                    saveList.Add(fbDept);
+                    foreach (var itemPost in itemDept.T_FB_SUBJECTPOST)
+                    {
+                        itemPost.ACTIVED = 0;
+                        var fbPost = itemPost.ToFBEntity();
+                        fbPost.FBEntityState = FBEntityState.Modified;
+                        saveList.Add(fbPost);
+                    }
+                }
+            });
 
+
+            return FBEntityBLLSaveList(saveList);
+        }
         /// <summary>
         /// 生成内部单据编号
         /// </summary>
@@ -5070,6 +5143,7 @@ namespace SMT.FB.BLL
             fbEntityNew.FBEntityState = setState;
         }
 
+
         #endregion
 
         #region 审核
@@ -5163,7 +5237,18 @@ namespace SMT.FB.BLL
                     }
 
                     #region 更新预算总账
-
+                    if (entity is T_FB_COMPANYBUDGETAPPLYMASTER || entity is T_FB_DEPTBUDGETAPPLYMASTER)
+                    {
+                        if (checkStates == CheckStates.Approved)
+                        {
+                            entity.SetValue("ISVALID", "3");
+                        }
+                        else if (checkStates == CheckStates.Approving)
+                        {
+                            entity.SetValue("ISVALID", "0");
+                        }
+                    }
+                   
                     FBEntity fbEntitySave = entity.ToFBEntity();
 
                     fbEntitySave.Entity.SetValue(FieldName.CheckStates, Convert.ToDecimal((int)checkStates));
@@ -5186,7 +5271,10 @@ namespace SMT.FB.BLL
                     //    }
                     //}
 
+
                     // 保存业务表单
+                    
+
                     SaveResult sResult = FBCommSaveEntity(fbEntitySave);
                     if (sResult.Successful)
                     {
@@ -5194,6 +5282,16 @@ namespace SMT.FB.BLL
                     }
                     else
                     {
+                        FBBLLException bllExcep = sResult.InnerException as FBBLLException;
+                        if ( bllExcep != null)
+                        {
+                            if (entityType == typeof(T_FB_DEPTBUDGETAPPLYMASTER).Name && bllExcep.ErrorCode == "HaveSumData")
+                            {
+                                throw new FBBLLException("该月度已做过月度汇总或正在审核中, 请选择审核不通过!");
+                            }
+                        }
+                        // 月度预算
+                        
                         //保存失败，抛出异常，触发回滚
                         throw new FBBLLException(sResult.Exception);
                     }
@@ -5273,9 +5371,7 @@ namespace SMT.FB.BLL
 
                         throw new FBBLLException(msg, bbex);
                     }
-
                     #endregion
-
                 }
                 catch (Exception ex)
                 {
@@ -5289,6 +5385,21 @@ namespace SMT.FB.BLL
                     strMsg = ex.Message;
                     throw ex;
                 }
+                #region 活动经费审核通过产生待办
+                try
+                {
+                    if (entityType == typeof(T_FB_PERSONMONEYASSIGNMASTER).Name && checkStates == CheckStates.Approved)
+                    {
+                        SystemBLL.Debug("调用活动经费下拨产生待办主键ID：" + orderID);
+                        SMT.SaaS.BLLCommonServices.FBDailyManageWS.DailyManagementServicesClient ds = new SMT.SaaS.BLLCommonServices.FBDailyManageWS.DailyManagementServicesClient();
+                        ds.PersonmoneyAssignSendTask(orderID);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    SystemBLL.Debug("调用活动经费下拨产生待办错误：" + ex.ToString());
+                }
+                #endregion
             }
             catch (Exception ex)
             {
@@ -5689,6 +5800,7 @@ namespace SMT.FB.BLL
                     // 提交流程系统
                     using (AuditBLL bll = new AuditBLL())
                     {
+                        fbEntity.ReferencedEntity[0].FBEntity = fbEntitySave;
                         result.DataResult = bll.Audit(fbEntity);
                     }
                     if (result.DataResult.FlowResult == FlowWFService.FlowResult.END) // 流程结束
@@ -5927,17 +6039,26 @@ namespace SMT.FB.BLL
                 T_FB_DEPTBUDGETSUMMASTER master = entity as T_FB_DEPTBUDGETSUMMASTER;
 
                 #region T_FB_DEPTBUDGETAPPLYMASTER 提交的时间有效性判断
-                if ((oldStates == CheckStates.ReSubmit || oldStates == CheckStates.UnApproved) && (newStates == CheckStates.Approving))
-                {
+                //if ((oldStates == CheckStates.ReSubmit || oldStates == CheckStates.UnApproved) && (newStates == CheckStates.Approving))
+                //{
 
-                    if (System.DateTime.Now > master.BUDGETARYMONTH)
-                    {
-                        strMsg = string.Format("单据提交失败，单据的最大有效提交时间为: {0}", master.BUDGETARYMONTH.ToString("yyyy-MM-dd"));
-                        result = false;
-                    }
+                //    if (System.DateTime.Now > master.BUDGETARYMONTH)
+                //    {
+                //        strMsg = string.Format("单据提交失败，单据的最大有效提交时间为: {0}", master.BUDGETARYMONTH.ToString("yyyy-MM-dd"));
+                //        result = false;
+                //    }
 
-                }
-                else if (newStates != CheckStates.UnApproved)
+                //}
+                //else if (newStates != CheckStates.UnApproved)
+                //{
+                //    var lastAuditDate = master.BUDGETARYMONTH.AddMonths(1);
+                //    if (System.DateTime.Now > lastAuditDate)
+                //    {
+                //        strMsg = string.Format("单据审核失败，单据的最大有效审核时间为{0}", lastAuditDate.ToString("yyyy-MM-dd"));
+                //        result = false;
+                //    }
+                //}
+                if (newStates != CheckStates.UnApproved)
                 {
                     var lastAuditDate = master.BUDGETARYMONTH.AddMonths(1);
                     if (System.DateTime.Now > lastAuditDate)
@@ -5962,7 +6083,11 @@ namespace SMT.FB.BLL
         {
             try
             {
-
+                var first = fbEntityList.FirstOrDefault();
+                if (first != null && first.Entity.GetType() == typeof(T_FB_SUBJECTCOMPANY))
+                {
+                    return SaveT_FB_SUBJECTCOMPANY(fbEntityList);
+                }
                 return FBEntityBLLSaveList(fbEntityList);
 
                 //FBEntityBLL bll = new FBEntityBLL();
@@ -5994,6 +6119,7 @@ namespace SMT.FB.BLL
             {
                 result.Successful = false;
                 result.Exception = ex.Message;
+                result.InnerException = ex;
                 SystemBLL.Debug(ex.ToString());
 
             }

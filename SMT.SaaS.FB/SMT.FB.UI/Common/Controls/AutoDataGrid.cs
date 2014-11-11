@@ -34,8 +34,8 @@ namespace SMT.FB.UI.Common.Controls
             //writtableStyle.Setters.Add(new Setter() { Property = BackgroundProperty, Value = new SolidColorBrush(GetColor("#FFE9E8D9")) });
 
             writtableStyle.TargetType = typeof(DataGridCell);
-            this.HorizontalAlignment = HorizontalAlignment.Stretch;
-            this.VerticalAlignment = VerticalAlignment.Stretch;
+            // this.HorizontalAlignment = HorizontalAlignment.Stretch;
+            // this.VerticalAlignment = VerticalAlignment.Stretch;
             
             this.AutoGenerateColumns = false;
 
@@ -185,6 +185,15 @@ namespace SMT.FB.UI.Common.Controls
                     DataGridIconColumn dgtvic = new DataGridIconColumn();
                     dgtvic.Binding = bding;
                     dgc = dgtvic;
+                    break;
+                case ControlType.Templete:
+                    
+                     //"<StackPanel Orientation="Horizontal"><smtx:ImageButton x:Name="myDelete" Click="Delete_Click"/></StackPanel>"
+                    var gridXCs = new XElementString("StackPanel",new XAttributeString("Orientation", "Horizontal"));
+                  
+                    DataGridTemplateColumn dtc = new DataGridTemplateColumn();
+                    dtc.CellTemplate = DataTemplateHelper.GetDataTemplate(gridXCs);
+                    dgc = dtc;
                     break;
             }
 

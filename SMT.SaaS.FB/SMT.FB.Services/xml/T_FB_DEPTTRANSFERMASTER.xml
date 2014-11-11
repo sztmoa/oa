@@ -30,9 +30,10 @@
     <Attribute Name="POSTLEVEL" LableResourceID="POSTLEVEL"  Description="岗位级别" DataType="decimal" DataValue="" DataText=""></Attribute>
     <Attribute Name="DEPTTRANSFERMASTERID" LableResourceID="DEPTTRANSFERMASTERID" Description="单据ID" DataType="string" DataValue="" DataText=""/>
     <Attribute Name="DEPTTRANSFERMASTERCODE" LableResourceID="DEPTTRANSFERMASTERCODE" Description="单据编号" DataType="string" DataValue="" DataText=""/>
-    <Attribute Name="BUDGETARYMONTH" LableResourceID="BUDGETARYMONTH" Description="预算月份" DataType="DateTime" DataValue="" DataText=""/>    
+    <Attribute Name="BUDGETARYMONTH" LableResourceID="BUDGETARYMONTH" Description="预算月份" DataType="string" DataValue="" DataText=""/>    
     <Attribute Name="CHECKSTATES" LableResourceID="CHECKSTATES" Description="状态" DataType="decimal" DataValue="" DataText=""/>
     <Attribute Name="TRANSFERFROM" LableResourceID="TRANSFERFROM" Description="分配部门" DataType="string" DataValue="" DataText=""/>
+    <Attribute Name="OWNERCOMPANYNAME" LableResourceID="OWNERCOMPANYNAME" Description="申请部门" DataType="string" DataValue="" DataText=""/>
     <Attribute Name="OWNERID" LableResourceID="OWNERID" Description="申请人ID" DataType="string" DataValue="" DataText="" />
     <Attribute Name="CREATEUSERNAME" LableResourceID="CREATEUSERNAME" Description="创建人" DataType="string" DataValue="" DataText=""/>
     <Attribute Name="CREATEDATE" LableResourceID="CREATEDATE" Description="创建时间" DataType="DateTime" DataValue="" DataText=""/>
@@ -53,7 +54,8 @@
             <Attribute Name="BUDGETMONEY" LableResourceID="BUDGETMONEY" Description="资金预算" DataType="decimal" DataValue="" DataText=""/>
             <Attribute Name="LIMITBUDGETMONEY" LableResourceID="LIMITBUDGETMONEY" Description="可用金额" DataType="decimal" DataValue="" DataText=""/>
             <Attribute Name="OWNERNAME" LableResourceID="OWNERNAME" Description="申请人名称" DataType="string" DataValue="" DataText=""/>
-          <Attribute Name="REMARK" LableResourceID="REMARK" Description="摘要" DataType="string" DataValue="" DataText=""/>
+            <Attribute Name="OWNERPOSTNAME" LableResourceID="OWNERPOSTNAME" Description="申请人岗位" DataType="string" DataValue="" DataText=""/>
+            <Attribute Name="REMARK" LableResourceID="REMARK" Description="摘要" DataType="string" DataValue="" DataText=""/>
           </Object>
         </ObjectList>
       </Object>

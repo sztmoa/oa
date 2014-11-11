@@ -113,7 +113,12 @@ namespace SMT.FB.Services
             {
                 using (FBCommonBLL fbCommonBLL = new FBCommonBLL())
                 {
+                    fbCommonBLL.BeginTransaction();
                     result = fbCommonBLL.FBCommSaveEntity(fbEntity);
+                    if (result.Successful)
+                    {
+                        fbCommonBLL.CommitTransaction();
+                    }
                 }
             }
             catch (Exception ex)

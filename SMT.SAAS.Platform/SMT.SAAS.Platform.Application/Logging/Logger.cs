@@ -83,20 +83,25 @@ namespace SMT.SAAS.Platform.Logging
         /// <param name="priority">消息优先级</param>
         public void Log(string logCode, string appName, string moduleName, string messager, Exception exception, Category category, Priority priority)
         {
-            if (_systemLogs.Count >= 50)
-                _systemLogs.Clear();
+            if (exception != null) { 
+            SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage(exception.ToString());
+            SMT.SAAS.Main.CurrentContext.AppContext.ShowSystemMessageText();
+            }
 
-            _systemLogs.Add(new Logging.Log()
-            {
-                AppCode = appName,
-                ModuleCode = moduleName,
-                Exception = exception,
-                LogCode = logCode,
-                Message = messager,
-                Category = category,
-                Priority = priority,
-                CreateTime = DateTime.Now
-            });
+            //if (_systemLogs.Count >= 50)
+            //    _systemLogs.Clear();
+
+            //_systemLogs.Add(new Logging.Log()
+            //{
+            //    AppCode = appName,
+            //    ModuleCode = moduleName,
+            //    Exception = exception,
+            //    LogCode = logCode,
+            //    Message = messager,
+            //    Category = category,
+            //    Priority = priority,
+            //    CreateTime = DateTime.Now
+            //});
         }
 
         /// <summary>
