@@ -155,6 +155,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                             travelReimbursement.CREATECOMPANYID = businesstripInfo.CREATECOMPANYID;
 
                             postLevel = businesstripInfo.POSTLEVEL;
+                            travelReimbursement.REMARKS=businesstripInfo.REMARKS;
                             //client.GetEmployeePostBriefByEmployeeIDAsync(businesstripInfo.OWNERID, e.UserState);
                             //if (businesstripInfo.BUSINESSTRIPID != null)
                             //{

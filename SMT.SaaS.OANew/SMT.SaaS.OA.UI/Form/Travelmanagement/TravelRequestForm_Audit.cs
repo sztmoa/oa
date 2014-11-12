@@ -297,9 +297,9 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             {
                 AutoList.Add(basedata("T_OA_BUSINESSTRIP", "OWNERPOSTID", Master_Golbal.OWNERPOSTID, Master_Golbal.OWNERPOSTNAME));
             }
-            if (fbCtr.Order.TOTALMONEY != null && fbCtr.Order.TOTALMONEY > 0)//借款金额
+            if (fbCtr.ExtensionalOrder.TOTALMONEY != null && fbCtr.ExtensionalOrder.TOTALMONEY > 0)//借款金额
             {
-                AutoList.Add(basedata("T_OA_BUSINESSTRIP", "CHARGEMONEY", Master_Golbal.CHARGEMONEY.ToString(), fbCtr.Order.TOTALMONEY.ToString()));
+                AutoList.Add(basedata("T_OA_BUSINESSTRIP", "CHARGEMONEY", Master_Golbal.CHARGEMONEY.ToString(), fbCtr.ExtensionalOrder.TOTALMONEY.ToString()));
             }
             AutoList.Add(basedata("T_OA_BUSINESSTRIP", "POSTLEVEL", Master_Golbal.POSTLEVEL, string.Empty));//出差人的岗位级别
             //AutoList.Add(basedata("T_OA_BUSINESSTRIP", "DEPARTMENTNAME", string.Empty, Master_Golbal.OWNERDEPARTMENTNAME));//出差人所在部门

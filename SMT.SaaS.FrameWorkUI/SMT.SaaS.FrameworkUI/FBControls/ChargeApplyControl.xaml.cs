@@ -42,8 +42,8 @@ namespace SMT.SaaS.FrameworkUI.FBControls
 {
     public partial class ChargeApplyControl : UserControl
     {
-        public bool IsFromWP = false;//数据源是否来自工作计划
-        public bool IsFromFB = true;
+        public bool IsFromFB = true;// false 数据源是否来自工作计划
+        public string strBussinessTripID = string.Empty;
         SelectedForm selectForm = null;
         public SelectedForm SelectForm
         {
@@ -76,18 +76,33 @@ namespace SMT.SaaS.FrameworkUI.FBControls
         }
         private FBDataGrid AGrid;
         private FBDataGrid BorrowGrid;
-        private FBEntity CurrentOrderEntity { get; set; }
-        private T_FB_CHARGEAPPLYMASTER master { get; set; }
-        public ObservableCollection<FBEntity> ListDetail { get; set; }
+        private FBEntity ExtensionalOrderFBEntity { get; set; }
+        private T_FB_CHARGEAPPLYMASTER ChargeApplyMaster { get; set; }
+        public ObservableCollection<FBEntity> ExtensionalOrderDetailFBEntityList { get; set; }
         public ObservableCollection<FBEntity> ListExtOrderType { get; set; }
         public ObservableCollection<T_FB_CHARGEAPPLYREPAYDETAIL> ListBorrowDetail { get; set; }
+        /// 
+        public T_FB_EXTENSIONALORDER ExtensionalOrder { get; set; }
+
+        /// <summary>
+        /// 如果是出差申请,可以对该对象赋值.注:需要在调用InitData方法前赋值
+        /// e.g
+        ///   c.TravelSubject  = new TravelSubject();
+        ///   c.InitData()
+        ///   ......
+        ///   
+        ///   c.ApplyMoney = 400
+        ///   c.Save()
+        /// </summary>
+        public TravelSubject TravelSubject { get; set; }
+
         public ChargeApplyControl()
         {
             try
             {
                 InitializeComponent();
-                Order = new T_FB_EXTENSIONALORDER();
-                Order.CHECKSTATES = 0;
+                ExtensionalOrder = new T_FB_EXTENSIONALORDER();
+                ExtensionalOrder.CHECKSTATES = 0;
                 GetPayType.Opacity = 0;
                 //InitAllExtOrderType();
                 InitApplyType();
@@ -115,35 +130,8 @@ namespace SMT.SaaS.FrameworkUI.FBControls
             return new ChargeParameter();
         }
 
-        /// <summary>
-        /// 扩展表单对象
-        ///	单据ID	ORDERID
-        ///	单据编号	ORDERCODE
-        ///	申请人	OWNERID
-        ///	申请人岗位	OWNERPOSTID
-        ///	申请人部门	OWNERDEPARTMENTID
-        ///	申请人公司	OWNERCOMPANYID
-        ///	创建人	CREATEUSERID
-        ///	创建时间	CREATEDATE
-        ///	公司ID	CREATECOMPANYID
-        ///	部门ID	CREATEDEPARTMENTID
-        ///	岗位ID	CREATEPOSTID
-        ///	修改人	UPDATEUSERID
-        ///	修改时间	UPDATEDATE
-        ///	创建人名称	CREATEUSERNAME
-        ///	修改人名称	UPDATEUSERNAME
-        ///	申请人名称	OWNERNAME
-        ///	部门名称	CREATEDEPARTMENTNAME
-        ///	公司名称	CREATECOMPANYNAME
-        ///	岗位名称	CREATEPOSTNAME
-        ///	申请人部门名称	OWNERDEPARTMENTNAME
-        ///	申请人公司名称	OWNERCOMPANYNAME
-        ///	申请人岗位名称	OWNERPOSTNAME
-        /// </summary>
-        /// 
-        public T_FB_EXTENSIONALORDER Order { get; set; }
 
-        public ExtensionalOrderTypes ExtOrderType { get; set; }
+        //public ExtensionalOrderTypes ExtOrderType { get; set; }
 
         public string strExtOrderModelCode = string.Empty;
         public FormTypes submitFBFormTypes { get; set; }
@@ -153,39 +141,6 @@ namespace SMT.SaaS.FrameworkUI.FBControls
             TravelApplication,
             TravelReimbursement,
             ApprovalForm
-        }
-
-        /// <summary>
-        /// 初始化数据绑定
-        /// </summary>
-        public void InitData()
-        {
-            InitData(false);
-        }
-
-
-        private QueryExpression GetOrderQueryExp()
-        {
-            string orderID = Order.ORDERID;
-            QueryExpression qe = GetQE("ORDERID", orderID);
-
-
-            qe.RelatedExpression = GetQueryE();
-
-            if (this.TravelSubject != null)
-            {
-                var tempQe = qe;
-                qe = GetQE("TravelSubject", "1");
-                qe.RelatedExpression = tempQe;
-            }
-
-            QueryExpression qeExtType = GetExtOrderType();
-            qeExtType.RelatedExpression = qe;
-            qe = qeExtType;
-
-            qe.QueryType = typeof(T_FB_EXTENSIONALORDER).Name;           
-
-            return qe;
         }
 
         /// <summary>
@@ -240,17 +195,6 @@ namespace SMT.SaaS.FrameworkUI.FBControls
 
         }
 
-        /// <summary>
-        /// 如果是出差申请,可以对该对象赋值.注:需要在调用InitData方法前赋值
-        /// e.g
-        ///   c.TravelSubject  = new TravelSubject();
-        ///   c.InitData()
-        ///   ......
-        ///   
-        ///   c.ApplyMoney = 400
-        ///   c.Save()
-        /// </summary>
-        public TravelSubject TravelSubject { get; set; }
 
         private void InitApplyType()
         {
@@ -269,139 +213,8 @@ namespace SMT.SaaS.FrameworkUI.FBControls
         }
 
 
-        private QueryExpression GetExtOrderType()
-        {
-            QueryExpression qeRes = null;
-            if (string.IsNullOrWhiteSpace(strExtOrderModelCode))
-            {
-                return qeRes;
-            }
-
-            qeRes = new QueryExpression();
-            qeRes.Operation = QueryExpression.Operations.Equal;
-            qeRes.PropertyName = "EXTENSIONALTYPECODE";
-            qeRes.PropertyValue = strExtOrderModelCode;
-            qeRes.QueryType = typeof(T_FB_EXTENSIONALTYPE).Name;            
-
-            return qeRes;
-        }
 
         string msgBiggerError = Utility.GetResourceStr("DATEGREATERERROR");
-        private List<string> OnSave()
-        {
-            List<string> listReslut = new List<string>();
-            if (this.ListDetail != null)
-            {
-                this.ListDetail.ForEach(item =>
-                {
-                    T_FB_EXTENSIONORDERDETAIL detailEntity = item.Entity as T_FB_EXTENSIONORDERDETAIL;
-
-                    if (detailEntity.APPLIEDMONEY > detailEntity.USABLEMONEY.Value)
-                    {
-                        listReslut.Add(string.Format("科目:{2} 的" + msgBiggerError, "申请金额", "可用金额", detailEntity.T_FB_SUBJECT.SUBJECTNAME));
-
-                    }
-                    if (detailEntity.APPLIEDMONEY <= 0)
-                    {
-                        string errorMessage = string.Format("科目： {0} 的申请金额必须大于零!", detailEntity.T_FB_SUBJECT.SUBJECTNAME);
-                        listReslut.Add(errorMessage);
-
-                    }
-                    if (string.IsNullOrWhiteSpace(detailEntity.REMARK))
-                    {
-                        string errorMessage = string.Format("科目： {0} 的摘要不能为空!", detailEntity.T_FB_SUBJECT.SUBJECTNAME);
-                        listReslut.Add(errorMessage);
-                    }
-
-                });
-            }
-
-            var items = from item in ListDetail
-                        group item by new
-                        {
-
-                            (item.Entity as T_FB_EXTENSIONORDERDETAIL).T_FB_SUBJECT.SUBJECTNAME,
-                            (item.Entity as T_FB_EXTENSIONORDERDETAIL).CHARGETYPE,
-                            (item.Entity as T_FB_EXTENSIONORDERDETAIL).USABLEMONEY
-                        } into g
-                        where g.Sum(item => (item.Entity as T_FB_EXTENSIONORDERDETAIL).APPLIEDMONEY) > g.Key.USABLEMONEY
-                        select new { g.Key, totalCharge = g.Sum(item => (item.Entity as T_FB_EXTENSIONORDERDETAIL).APPLIEDMONEY) };
-
-            if (this.TravelSubject != null)
-            {
-                if (this.TravelSubject.SpecialListDetail.Count == 0)
-                {
-                    listReslut.Add("当前申请人没有出差的预算额度");
-                }
-                else if (this.TravelSubject.ApplyMoney > this.TravelSubject.UsableMoney)
-                {
-                    listReslut.Add(string.Format("科目:{2} 的" + msgBiggerError, "申请金额", "可用金额", TravelSubject.subject.SUBJECTNAME));
-                }
-
-            }
-
-            foreach (var item in items)
-            {
-                listReslut.Add(string.Format("科目:{2} 的" + msgBiggerError, "申请金额", "可用金额", item.Key.SUBJECTNAME));
-            }
-
-            bool isbError = false;
-            
-                if (ListBorrowDetail != null)
-                {
-                    this.ListBorrowDetail.ForEach(item =>
-                        {
-                            if (isbError)
-                            {
-                                return;
-                            }
-                            var dItem = this.BorrowGrid.GridItems[0].ReferenceTypes.FirstOrDefault(itemFind => itemFind.DICTIONARYVALUE == item.REPAYTYPE);
-                            string typeName = "{0}-的";
-                            if (dItem != null)
-                            {
-                                typeName = string.Format(typeName, dItem.DICTIONARYNAME);
-                            }
-                            else
-                            {
-                                typeName = "";
-                            }
-
-                            if (item.BORROWMONEY < item.REPAYMONEY)
-                            {
-
-                                listReslut.Add(string.Format("冲借款金额不能大于借款余额或报销金额"));
-                                isbError = true;
-                            }
-
-                            if (item.REPAYMONEY > 0 && string.IsNullOrWhiteSpace(item.REMARK))
-                            {
-                                listReslut.Add("冲借款明细的摘要不能为空");
-                                isbError = true;
-                            }
-                        });
-
-
-                    var bcount = this.ListBorrowDetail.Sum(item =>
-                        {
-                            return item.REPAYMONEY;
-                        });
-                    if (bcount > Order.TOTALMONEY.Value)
-                    {
-                        listReslut.Add("冲借款金额不能大于借款余额或报销金额");
-                    }
-                    if (this.rbtnChargeBorrow.IsChecked == true)
-                    {
-                        if (bcount == 0)
-                        {
-                            listReslut.Add("冲借款时明细不能为空!");
-                        }
-                    }
-                
-            }
-
-
-            return listReslut;
-        }
         public event EventHandler<SaveCompletedArgs> SaveCompleted;
 
         public event EventHandler<InitDataCompletedArgs> ItemSelectChange;
@@ -434,7 +247,7 @@ namespace SMT.SaaS.FrameworkUI.FBControls
 
         #region 初始化数据
 
-        private void InitControl()
+        private void QueryDataCompletedInitControl()
         {
             if (isInit)
             {
@@ -458,7 +271,7 @@ namespace SMT.SaaS.FrameworkUI.FBControls
                 InitToolBar();
                 
             }
-            AGrid.ItemsSource = this.ListDetail;
+            AGrid.ItemsSource = this.ExtensionalOrderDetailFBEntityList;
             BorrowGrid.ItemsSource = this.ListBorrowDetail;
             SetValue();
             isInit = false;
@@ -552,7 +365,13 @@ namespace SMT.SaaS.FrameworkUI.FBControls
             deatilGridBar.ItemClicked += new EventHandler<ToolBar.ToolBarItemClickArgs>(deatilGridBar_ItemClicked);
         }
 
-
+        /// <summary>
+        /// 初始化数据绑定
+        /// </summary>
+        public void InitData()
+        {
+            QueryTravelSubjectData(false);
+        }
         #endregion
 
         #region 明细 工具栏操作
@@ -574,23 +393,23 @@ namespace SMT.SaaS.FrameworkUI.FBControls
         {
             SelectedForm sf = new SelectedForm();
             sf.SelectedDataManager = this.SelectedDataManager;
-            sf.SelectedItems = this.ListDetail.ToList();
+            sf.SelectedItems = this.ExtensionalOrderDetailFBEntityList.ToList();
             bool isBigger5 = false;
             sf.SelectedCompleted += (o, e) =>
             {
                 
                 sf.SelectedItems.ForEach(item =>
                 {
-                    if (ListDetail.Count >= 5)
+                    if (ExtensionalOrderDetailFBEntityList.Count >= 5)
                     {
                         isBigger5 = true;
                         return;
                     }
                     item.FBEntityState = FBEntityState.Added;
-                    (item.Entity as T_FB_EXTENSIONORDERDETAIL).T_FB_EXTENSIONALORDER = this.CurrentOrderEntity.Entity as T_FB_EXTENSIONALORDER;
-                    this.ListDetail.Add(item);
+                    (item.Entity as T_FB_EXTENSIONORDERDETAIL).T_FB_EXTENSIONALORDER = this.ExtensionalOrderFBEntity.Entity as T_FB_EXTENSIONALORDER;
+                    this.ExtensionalOrderDetailFBEntityList.Add(item);
                 });
-                AGrid.ItemsSource = this.ListDetail;
+                AGrid.ItemsSource = this.ExtensionalOrderDetailFBEntityList;
 
                 if (isBigger5)
                 {
@@ -619,7 +438,7 @@ namespace SMT.SaaS.FrameworkUI.FBControls
                 if (entity != null)
                 {
                     entity.Actived = false;
-                    ListDetail.Remove(entity);
+                    ExtensionalOrderDetailFBEntityList.Remove(entity);
                 }
             }
         }
@@ -629,9 +448,9 @@ namespace SMT.SaaS.FrameworkUI.FBControls
         //这个是在出差申请中用到的函数，但是值ListDetail一直是null，所以会出错，现在判断一下
         public void Clear()
         {
-            if (this.ListDetail != null)
+            if (this.ExtensionalOrderDetailFBEntityList != null)
             {
-                this.ListDetail.Clear();
+                this.ExtensionalOrderDetailFBEntityList.Clear();
             }   
         }
         #endregion
@@ -666,7 +485,7 @@ namespace SMT.SaaS.FrameworkUI.FBControls
                     RegisterFBEntity(fbEntity);
                 }
             }
-            this.OnEntityPropertyChanged(this.CurrentOrderEntity);
+            this.OnEntityPropertyChanged(this.ExtensionalOrderFBEntity);
 
             if (ItemSelectChange != null)
             {
@@ -700,7 +519,7 @@ namespace SMT.SaaS.FrameworkUI.FBControls
 
         private void Entity_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            FBEntity fbEntity = this.ListDetail.FirstOrDefault(item =>
+            FBEntity fbEntity = this.ExtensionalOrderDetailFBEntityList.FirstOrDefault(item =>
             {
                 return object.Equals(item.Entity, sender);
             });
@@ -763,7 +582,7 @@ namespace SMT.SaaS.FrameworkUI.FBControls
                 });
             }
 
-            (this.CurrentOrderEntity.Entity as T_FB_EXTENSIONALORDER).TOTALMONEY = totalMoney;
+            (this.ExtensionalOrderFBEntity.Entity as T_FB_EXTENSIONALORDER).TOTALMONEY = totalMoney;
 
             SetLittleCount();
         }
@@ -772,7 +591,7 @@ namespace SMT.SaaS.FrameworkUI.FBControls
 
         private decimal LittleCount()
         {
-            totalMoney = this.ListDetail.Sum(item =>
+            totalMoney = this.ExtensionalOrderDetailFBEntityList.Sum(item =>
             {
                 return (item.Entity as T_FB_EXTENSIONORDERDETAIL).APPLIEDMONEY;
             });
@@ -788,7 +607,7 @@ namespace SMT.SaaS.FrameworkUI.FBControls
 
             if (this.TravelSubject != null)
             {
-                this.TravelSubject.SpecialListDetail = GetRelationFBEntities(this.CurrentOrderEntity, "T_FB_EXTENSIONORDERDETAIL_Travel");
+                this.TravelSubject.SpecialListDetail = GetRelationFBEntities(this.ExtensionalOrderFBEntity, "T_FB_EXTENSIONORDERDETAIL_Travel");
 
                 this.TravelSubject.SpecialListDetail.ForEach(item =>
                 {

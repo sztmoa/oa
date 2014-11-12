@@ -62,9 +62,9 @@ namespace SMT.SaaS.OA.UI.UserControls
             string path = string.Empty;
             string chargetype = string.Empty;
             string ExtTotal = "";
-            if (fbCtr.ListDetail.Count() > 0)
+            if (fbCtr.ExtensionalOrderDetailFBEntityList.Count() > 0)
             {
-                decimal totalMoney = this.fbCtr.ListDetail.Sum(item =>
+                decimal totalMoney = this.fbCtr.ExtensionalOrderDetailFBEntityList.Sum(item =>
                 {
                     return (item.Entity as T_FB_EXTENSIONORDERDETAIL).APPLIEDMONEY;
                 });
@@ -79,11 +79,11 @@ namespace SMT.SaaS.OA.UI.UserControls
             AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "BUSINESSTRIPID", businesstrID, string.Empty));//出差申请ID
             AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "AVAILABLECREDIT", UsableMoney, string.Empty));//可用额度
             AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "REIMBURSEMENTSTANDARDS", textStandards.Text, string.Empty));//报销标准
-            AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "REIMBURSEMENTOFCOSTS", fbCtr.Order.TOTALMONEY.ToString(), string.Empty));//报销总计
+            AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "REIMBURSEMENTOFCOSTS", fbCtr.ExtensionalOrder.TOTALMONEY.ToString(), string.Empty));//报销总计
             AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "POSTLEVEL", EmployeePostLevel, string.Empty));//出差人的岗位级别
             AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "CONTENT", TravelReimbursement_Golbal.CONTENT, TravelReimbursement_Golbal.CONTENT));//报告内容
             AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "REMARKS", TravelReimbursement_Golbal.REMARKS, string.Empty));//备注
-            AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "PAYMENTINFO", fbCtr.Order.PAYMENTINFO, string.Empty));//支付信息
+            AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "PAYMENTINFO", fbCtr.ExtensionalOrder.PAYMENTINFO, string.Empty));//支付信息
             AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "PAYTARGET", ExtTotal, string.Empty));//小计
             StrPayInfo = txtPAYMENTINFO.Text.ToString();
             AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "PAYMENTINFO", StrPayInfo, string.Empty));//支付信息 
@@ -199,31 +199,31 @@ namespace SMT.SaaS.OA.UI.UserControls
                 TrListObj.Add(item);
             }
 
-            if (fbCtr.ListDetail.Count > 0)//获取算控件中的数据
+            if (fbCtr.ExtensionalOrderDetailFBEntityList.Count > 0)//获取算控件中的数据
             {
                 //SMT.Saas.Tools.FBServiceWS.T_FB_EXTENSIONALORDER entext = fbCtr
                 //fbCtr.Order.REMARK
                 string StrType = "";
-                if (fbCtr.Order.REMARK != null)
+                if (fbCtr.ExtensionalOrder.REMARK != null)
                 {
-                    AutoList.Add(basedata("T_FB_EXTENSIONORDERDETAIL", "FBREMARK", fbCtr.Order.REMARK, fbCtr.Order.REMARK, fbCtr.Order.EXTENSIONALORDERID));//科目报销备注
+                    AutoList.Add(basedata("T_FB_EXTENSIONORDERDETAIL", "FBREMARK", fbCtr.ExtensionalOrder.REMARK, fbCtr.ExtensionalOrder.REMARK, fbCtr.ExtensionalOrder.EXTENSIONALORDERID));//科目报销备注
 
-                    AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "FBREMARK", fbCtr.Order.REMARK, fbCtr.Order.REMARK));//科目报销备注,同时加入主表
+                    AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "FBREMARK", fbCtr.ExtensionalOrder.REMARK, fbCtr.ExtensionalOrder.REMARK));//科目报销备注,同时加入主表
                 }
-                if (fbCtr.Order.APPLYTYPE == 1)
+                if (fbCtr.ExtensionalOrder.APPLYTYPE == 1)
                 {
                     StrType = "个人费用报销";
                 }
-                if (fbCtr.Order.APPLYTYPE == 2)
+                if (fbCtr.ExtensionalOrder.APPLYTYPE == 2)
                 {
                     StrType = "冲借款";
                 }
                 if (!string.IsNullOrEmpty(StrType))
                 {
-                    AutoList.Add(basedata("T_FB_EXTENSIONORDERDETAIL", "EXTENSIONTYPE", StrType, StrType, fbCtr.Order.EXTENSIONALORDERID));//科目报销备注
+                    AutoList.Add(basedata("T_FB_EXTENSIONORDERDETAIL", "EXTENSIONTYPE", StrType, StrType, fbCtr.ExtensionalOrder.EXTENSIONALORDERID));//科目报销备注
                     AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "EXTENSIONTYPE", StrType, StrType));//科目报销备注,同时加入主表
                 }
-                foreach (FBEntity item in fbCtr.ListDetail)//预算费用报销明细
+                foreach (FBEntity item in fbCtr.ExtensionalOrderDetailFBEntityList)//预算费用报销明细
                 {
                     SMT.Saas.Tools.FBServiceWS.T_FB_EXTENSIONORDERDETAIL entTemp = item.Entity as SMT.Saas.Tools.FBServiceWS.T_FB_EXTENSIONORDERDETAIL;
 
@@ -303,7 +303,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             }
             string strXmlObjectSource = string.Empty;
             Dictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("REIMBURSEMENTOFCOSTS", fbCtr.Order.TOTALMONEY.ToString());
+            parameters.Add("REIMBURSEMENTOFCOSTS", fbCtr.ExtensionalOrder.TOTALMONEY.ToString());
             parameters.Add("POSTLEVEL", EmployeePostLevel);
             parameters.Add("DEPARTMENTNAME", depName);
             parameters.Add("BUSINESSTRIPID", businesstrID);
@@ -332,7 +332,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             paraIDs.Add("CreateDepartmentID", TravelReimbursement_Golbal.OWNERDEPARTMENTID);
             paraIDs.Add("CreateCompanyID", TravelReimbursement_Golbal.OWNERCOMPANYID);
 
-            if (TravelReimbursement_Golbal.REIMBURSEMENTOFCOSTS > 0 || fbCtr.Order.TOTALMONEY > 0)
+            if (TravelReimbursement_Golbal.REIMBURSEMENTOFCOSTS > 0 || fbCtr.ExtensionalOrder.TOTALMONEY > 0)
             {
                 if (TravelReimbursement_Golbal.CHECKSTATE == Convert.ToInt32(CheckStates.UnSubmit).ToString())
                 {

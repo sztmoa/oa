@@ -320,16 +320,16 @@ namespace SMT.SaaS.OA.UI.UserControls
 
                 if (!string.IsNullOrEmpty(txtPAYMENTINFO.Text))
                 {
-                    fbCtr.Order.PAYMENTINFO = txtPAYMENTINFO.Text;//支付信息
+                    fbCtr.ExtensionalOrder.PAYMENTINFO = txtPAYMENTINFO.Text;//支付信息
                     StrPayInfo = txtPAYMENTINFO.Text;
                 }
                 TravelReimbursement_Golbal.TEL = this.txtTELL.Text;//联系电话;
                 TravelReimbursement_Golbal.CONTENT = this.txtReport.Text;//报告内容    
                 TravelReimbursement_Golbal.THETOTALCOST = Convert.ToDecimal(txtSubTotal.Text);//本次差旅总费用
 
-                if (fbCtr.Order.TOTALMONEY != null)
+                if (fbCtr.ExtensionalOrder.TOTALMONEY != null)
                 {   //总费用;
-                    TravelReimbursement_Golbal.REIMBURSEMENTOFCOSTS = fbCtr.Order.TOTALMONEY;
+                    TravelReimbursement_Golbal.REIMBURSEMENTOFCOSTS = fbCtr.ExtensionalOrder.TOTALMONEY;
                 }
                 TravelReimbursement_Golbal.REIMBURSEMENTTIME = Convert.ToDateTime(ReimbursementTime.Text);
                 TravelReimbursement_Golbal.REMARKS = this.txtRemark.Text;
@@ -426,13 +426,13 @@ namespace SMT.SaaS.OA.UI.UserControls
                         if (TravelReimbursement_Golbal.CHECKSTATE == "3"
                             && TravelReimbursement_Golbal.REIMBURSEMENTOFCOSTS > 0)
                         {
-                            fbCtr.Order.ORDERID = TravelReimbursement_Golbal.TRAVELREIMBURSEMENTID;
+                            fbCtr.ExtensionalOrder.ORDERID = TravelReimbursement_Golbal.TRAVELREIMBURSEMENTID;
                             fbCtr.Save(SMT.SaaS.FrameworkUI.CheckStates.UnApproved);//提交费用 
                         }
                         else if (TravelReimbursement_Golbal.CHECKSTATE == "0"
                              && TravelReimbursement_Golbal.REIMBURSEMENTOFCOSTS > 0)
                         {
-                            fbCtr.Order.ORDERID = TravelReimbursement_Golbal.TRAVELREIMBURSEMENTID;
+                            fbCtr.ExtensionalOrder.ORDERID = TravelReimbursement_Golbal.TRAVELREIMBURSEMENTID;
                             //if (fbCtr.ListDetail == null) fbCtr.ListDetail = new ObservableCollection<FBEntity>();
                             fbCtr.Save(SMT.SaaS.FrameworkUI.CheckStates.UnSubmit);//提交费用 
                         }
@@ -481,13 +481,13 @@ namespace SMT.SaaS.OA.UI.UserControls
                                 ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("无报销单号,请重试！"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
                                 return;
                             }
-                            txtNoClaims.Text = fbCtr.Order.INNERORDERCODE;//保存后将单号显示出来
-                            if (fbCtr.Order.PAYMENTINFO != null)
+                            txtNoClaims.Text = fbCtr.ExtensionalOrder.INNERORDERCODE;//保存后将单号显示出来
+                            if (fbCtr.ExtensionalOrder.PAYMENTINFO != null)
                             {
-                                txtPAYMENTINFO.Text = fbCtr.Order.PAYMENTINFO;//支付信息
+                                txtPAYMENTINFO.Text = fbCtr.ExtensionalOrder.PAYMENTINFO;//支付信息
                                 StrPayInfo = txtPAYMENTINFO.Text;
                             }
-                            TravelReimbursement_Golbal.NOBUDGETCLAIMS = fbCtr.Order.INNERORDERCODE;//预算返回的报销单号
+                            TravelReimbursement_Golbal.NOBUDGETCLAIMS = fbCtr.ExtensionalOrder.INNERORDERCODE;//预算返回的报销单号
 
                             if (needsubmit == true)
                             {
@@ -512,8 +512,8 @@ namespace SMT.SaaS.OA.UI.UserControls
                                 ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("无报销单号,请重试！"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
                                 return;
                             }
-                            txtNoClaims.Text = fbCtr.Order.INNERORDERCODE;//保存后将单号显示出来
-                            TravelReimbursement_Golbal.NOBUDGETCLAIMS = fbCtr.Order.INNERORDERCODE;//预算返回的报销单号
+                            txtNoClaims.Text = fbCtr.ExtensionalOrder.INNERORDERCODE;//保存后将单号显示出来
+                            TravelReimbursement_Golbal.NOBUDGETCLAIMS = fbCtr.ExtensionalOrder.INNERORDERCODE;//预算返回的报销单号
 
                             if (needsubmit == true)
                             {
@@ -531,10 +531,10 @@ namespace SMT.SaaS.OA.UI.UserControls
                                 ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("无报销单号,请重试！"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
                                 return;
                             }
-                            if (fbCtr.Order.INNERORDERCODE != null)
+                            if (fbCtr.ExtensionalOrder.INNERORDERCODE != null)
                             {
-                                txtNoClaims.Text = fbCtr.Order.INNERORDERCODE;//保存后将单号显示出来
-                                TravelReimbursement_Golbal.NOBUDGETCLAIMS = fbCtr.Order.INNERORDERCODE;//预算返回的报销单号
+                                txtNoClaims.Text = fbCtr.ExtensionalOrder.INNERORDERCODE;//保存后将单号显示出来
+                                TravelReimbursement_Golbal.NOBUDGETCLAIMS = fbCtr.ExtensionalOrder.INNERORDERCODE;//预算返回的报销单号
                             }
                             if (needsubmit == true)
                             {
@@ -554,8 +554,8 @@ namespace SMT.SaaS.OA.UI.UserControls
                                 ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("无报销单号,请重试！"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
                                 return;
                             }
-                            txtNoClaims.Text = fbCtr.Order.INNERORDERCODE;//保存后将单号显示出来
-                            TravelReimbursement_Golbal.NOBUDGETCLAIMS = fbCtr.Order.INNERORDERCODE;//预算返回的报销单号
+                            txtNoClaims.Text = fbCtr.ExtensionalOrder.INNERORDERCODE;//保存后将单号显示出来
+                            TravelReimbursement_Golbal.NOBUDGETCLAIMS = fbCtr.ExtensionalOrder.INNERORDERCODE;//预算返回的报销单号
 
                             if (needsubmit == true)
                             {
@@ -580,8 +580,8 @@ namespace SMT.SaaS.OA.UI.UserControls
                                     ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("无报销单号,请重试！"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
                                     return;
                                 }
-                                txtNoClaims.Text = fbCtr.Order.INNERORDERCODE;//保存后将单号显示出来
-                                TravelReimbursement_Golbal.NOBUDGETCLAIMS = fbCtr.Order.INNERORDERCODE;//预算返回的报销单号
+                                txtNoClaims.Text = fbCtr.ExtensionalOrder.INNERORDERCODE;//保存后将单号显示出来
+                                TravelReimbursement_Golbal.NOBUDGETCLAIMS = fbCtr.ExtensionalOrder.INNERORDERCODE;//预算返回的报销单号
 
                                 if (needsubmit == true)
                                 {
@@ -656,7 +656,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                     canSubmit = true;
 
                     RefreshUI(RefreshedTypes.AuditInfo);
-                    if (TravelReimbursement_Golbal.REIMBURSEMENTOFCOSTS > 0 || fbCtr.Order.TOTALMONEY > 0)
+                    if (TravelReimbursement_Golbal.REIMBURSEMENTOFCOSTS > 0 || fbCtr.ExtensionalOrder.TOTALMONEY > 0)
                     {
                         if (needsubmit == true)
                         {

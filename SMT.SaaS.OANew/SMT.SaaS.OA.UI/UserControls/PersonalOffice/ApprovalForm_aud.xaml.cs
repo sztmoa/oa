@@ -534,48 +534,48 @@ namespace SMT.SaaS.OA.UI.UserControls
             fbCtr.ApplyType = FrameworkUI.FBControls.ChargeApplyControl.ApplyTypes.BorrowApply;//借款选择
             if (operationType == FormTypes.New)
             {
-                fbCtr.Order.ORDERID = "";
+                fbCtr.ExtensionalOrder.ORDERID = "";
                 //fbCtr.strExtOrderModelCode = "SXSP";
             }
             else
             {
-                fbCtr.Order.ORDERID = approvalInfo.APPROVALID;//费用对象
+                fbCtr.ExtensionalOrder.ORDERID = approvalInfo.APPROVALID;//费用对象
             }
             fbCtr.strExtOrderModelCode = "SXSP";
 
 
-            fbCtr.Order.CREATECOMPANYID = Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
-            fbCtr.Order.CREATECOMPANYNAME = Common.CurrentLoginUserInfo.UserPosts[0].CompanyName;
-            fbCtr.Order.CREATEDEPARTMENTID = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentID;
-            fbCtr.Order.CREATEDEPARTMENTNAME = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName;
-            fbCtr.Order.CREATEPOSTID = Common.CurrentLoginUserInfo.UserPosts[0].PostID;
-            fbCtr.Order.CREATEPOSTNAME = Common.CurrentLoginUserInfo.UserPosts[0].PostName;
-            fbCtr.Order.CREATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
-            fbCtr.Order.CREATEUSERNAME = Common.CurrentLoginUserInfo.EmployeeName;
+            fbCtr.ExtensionalOrder.CREATECOMPANYID = Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
+            fbCtr.ExtensionalOrder.CREATECOMPANYNAME = Common.CurrentLoginUserInfo.UserPosts[0].CompanyName;
+            fbCtr.ExtensionalOrder.CREATEDEPARTMENTID = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentID;
+            fbCtr.ExtensionalOrder.CREATEDEPARTMENTNAME = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName;
+            fbCtr.ExtensionalOrder.CREATEPOSTID = Common.CurrentLoginUserInfo.UserPosts[0].PostID;
+            fbCtr.ExtensionalOrder.CREATEPOSTNAME = Common.CurrentLoginUserInfo.UserPosts[0].PostName;
+            fbCtr.ExtensionalOrder.CREATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
+            fbCtr.ExtensionalOrder.CREATEUSERNAME = Common.CurrentLoginUserInfo.EmployeeName;
 
-            fbCtr.Order.OWNERCOMPANYID = Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
-            fbCtr.Order.OWNERCOMPANYNAME = Common.CurrentLoginUserInfo.UserPosts[0].CompanyName;
-            fbCtr.Order.OWNERDEPARTMENTID = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentID;
-            fbCtr.Order.OWNERDEPARTMENTNAME = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName;
-            fbCtr.Order.OWNERPOSTID = Common.CurrentLoginUserInfo.UserPosts[0].PostID;
-            fbCtr.Order.OWNERPOSTNAME = Common.CurrentLoginUserInfo.UserPosts[0].PostName;
-            fbCtr.Order.OWNERID = Common.CurrentLoginUserInfo.EmployeeID;
-            fbCtr.Order.OWNERNAME = Common.CurrentLoginUserInfo.EmployeeName;
+            fbCtr.ExtensionalOrder.OWNERCOMPANYID = Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
+            fbCtr.ExtensionalOrder.OWNERCOMPANYNAME = Common.CurrentLoginUserInfo.UserPosts[0].CompanyName;
+            fbCtr.ExtensionalOrder.OWNERDEPARTMENTID = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentID;
+            fbCtr.ExtensionalOrder.OWNERDEPARTMENTNAME = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName;
+            fbCtr.ExtensionalOrder.OWNERPOSTID = Common.CurrentLoginUserInfo.UserPosts[0].PostID;
+            fbCtr.ExtensionalOrder.OWNERPOSTNAME = Common.CurrentLoginUserInfo.UserPosts[0].PostName;
+            fbCtr.ExtensionalOrder.OWNERID = Common.CurrentLoginUserInfo.EmployeeID;
+            fbCtr.ExtensionalOrder.OWNERNAME = Common.CurrentLoginUserInfo.EmployeeName;
 
 
-            fbCtr.Order.UPDATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
-            fbCtr.Order.UPDATEUSERNAME = Common.CurrentLoginUserInfo.EmployeeName;
+            fbCtr.ExtensionalOrder.UPDATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
+            fbCtr.ExtensionalOrder.UPDATEUSERNAME = Common.CurrentLoginUserInfo.EmployeeName;
 
             fbCtr.InitDataComplete += (o, e) =>
             {
                 Binding bding = new Binding();
                 bding.Path = new PropertyPath("TOTALMONEY");
                 this.txtFee.SetBinding(TextBox.TextProperty, bding);
-                this.txtFee.DataContext = fbCtr.Order;
+                this.txtFee.DataContext = fbCtr.ExtensionalOrder;
             };
             if (operationType == FormTypes.Audit || operationType == FormTypes.Browse)
             {
-                fbCtr.InitData(false);
+                fbCtr.QueryTravelSubjectData(false);
             }
             else
             {

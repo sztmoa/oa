@@ -87,40 +87,40 @@ namespace SMT.SaaS.OA.UI.UserControls
             fbCtr.strExtOrderModelCode = "JGZC";
 
             if (actions == FormTypes.Edit)
-                fbCtr.Order.ORDERID = conserVation.MAINTENANCEAPPID;//费用对象
+                fbCtr.ExtensionalOrder.ORDERID = conserVation.MAINTENANCEAPPID;//费用对象
             else
             {
-                fbCtr.Order.ORDERID = "";
-                fbCtr.Order.ORDERCODE = "JGZC" + string.Format("{0:yyyyMMddHHmmssffff}", System.DateTime.Now);
+                fbCtr.ExtensionalOrder.ORDERID = "";
+                fbCtr.ExtensionalOrder.ORDERCODE = "JGZC" + string.Format("{0:yyyyMMddHHmmssffff}", System.DateTime.Now);
             }
-            fbCtr.Order.CREATECOMPANYID = Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
-            fbCtr.Order.CREATECOMPANYNAME = Common.CurrentLoginUserInfo.UserPosts[0].CompanyName;
-            fbCtr.Order.CREATEDEPARTMENTID = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentID;
-            fbCtr.Order.CREATEDEPARTMENTNAME = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName;
-            fbCtr.Order.CREATEPOSTID = Common.CurrentLoginUserInfo.UserPosts[0].PostID;
-            fbCtr.Order.CREATEPOSTNAME = Common.CurrentLoginUserInfo.UserPosts[0].PostName;
-            fbCtr.Order.CREATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
-            fbCtr.Order.CREATEUSERNAME = Common.CurrentLoginUserInfo.EmployeeName;
+            fbCtr.ExtensionalOrder.CREATECOMPANYID = Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
+            fbCtr.ExtensionalOrder.CREATECOMPANYNAME = Common.CurrentLoginUserInfo.UserPosts[0].CompanyName;
+            fbCtr.ExtensionalOrder.CREATEDEPARTMENTID = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentID;
+            fbCtr.ExtensionalOrder.CREATEDEPARTMENTNAME = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName;
+            fbCtr.ExtensionalOrder.CREATEPOSTID = Common.CurrentLoginUserInfo.UserPosts[0].PostID;
+            fbCtr.ExtensionalOrder.CREATEPOSTNAME = Common.CurrentLoginUserInfo.UserPosts[0].PostName;
+            fbCtr.ExtensionalOrder.CREATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
+            fbCtr.ExtensionalOrder.CREATEUSERNAME = Common.CurrentLoginUserInfo.EmployeeName;
 
-            fbCtr.Order.OWNERCOMPANYID = Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
-            fbCtr.Order.OWNERCOMPANYNAME = Common.CurrentLoginUserInfo.UserPosts[0].CompanyName;
-            fbCtr.Order.OWNERDEPARTMENTID = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentID;
-            fbCtr.Order.OWNERDEPARTMENTNAME = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName;
-            fbCtr.Order.OWNERPOSTID = Common.CurrentLoginUserInfo.UserPosts[0].PostID;
-            fbCtr.Order.OWNERPOSTNAME = Common.CurrentLoginUserInfo.UserPosts[0].PostName;
-            fbCtr.Order.OWNERID = Common.CurrentLoginUserInfo.EmployeeID;
-            fbCtr.Order.OWNERNAME = Common.CurrentLoginUserInfo.EmployeeName;
+            fbCtr.ExtensionalOrder.OWNERCOMPANYID = Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
+            fbCtr.ExtensionalOrder.OWNERCOMPANYNAME = Common.CurrentLoginUserInfo.UserPosts[0].CompanyName;
+            fbCtr.ExtensionalOrder.OWNERDEPARTMENTID = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentID;
+            fbCtr.ExtensionalOrder.OWNERDEPARTMENTNAME = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName;
+            fbCtr.ExtensionalOrder.OWNERPOSTID = Common.CurrentLoginUserInfo.UserPosts[0].PostID;
+            fbCtr.ExtensionalOrder.OWNERPOSTNAME = Common.CurrentLoginUserInfo.UserPosts[0].PostName;
+            fbCtr.ExtensionalOrder.OWNERID = Common.CurrentLoginUserInfo.EmployeeID;
+            fbCtr.ExtensionalOrder.OWNERNAME = Common.CurrentLoginUserInfo.EmployeeName;
 
 
-            fbCtr.Order.UPDATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
-            fbCtr.Order.UPDATEUSERNAME = Common.CurrentLoginUserInfo.EmployeeName;
+            fbCtr.ExtensionalOrder.UPDATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
+            fbCtr.ExtensionalOrder.UPDATEUSERNAME = Common.CurrentLoginUserInfo.EmployeeName;
 
             fbCtr.InitDataComplete += (o, e) =>
             {
                 Binding bding = new Binding();
                 bding.Path = new PropertyPath("TOTALMONEY");
                 this.txtFee.SetBinding(TextBox.TextProperty, bding);
-                this.txtFee.DataContext = fbCtr.Order;
+                this.txtFee.DataContext = fbCtr.ExtensionalOrder;
             };
 
             //Action.AUDIT  fbCtr.InitData(false);
@@ -221,7 +221,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                     }
                     if (ckbHasFee.IsChecked == true && Convert.ToInt32(txtFee.Text) > 0)
                     {
-                        fbCtr.Order.ORDERID = conserVation.MAINTENANCEAPPID;
+                        fbCtr.ExtensionalOrder.ORDERID = conserVation.MAINTENANCEAPPID;
                         fbCtr.Save(_flwResult);//提交费用
                     }
                     else
@@ -258,7 +258,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                     }
                     if (ckbHasFee.IsChecked == true && Convert.ToInt32(txtFee.Text) > 0)
                     {
-                        fbCtr.Order.ORDERID = conserVation.MAINTENANCEAPPID;
+                        fbCtr.ExtensionalOrder.ORDERID = conserVation.MAINTENANCEAPPID;
                         fbCtr.Save(_flwResult);//提交费用
                     }
                     else

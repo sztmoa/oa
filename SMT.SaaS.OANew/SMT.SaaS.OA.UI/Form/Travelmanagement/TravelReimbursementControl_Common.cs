@@ -47,45 +47,45 @@ namespace SMT.SaaS.OA.UI.UserControls
 
             if (formType == FormTypes.New)
             {
-                fbCtr.Order.ORDERID = "";
+                fbCtr.ExtensionalOrder.ORDERID = "";
                 fbCtr.strExtOrderModelCode = "CCBX";
             }
             else
             {
-                fbCtr.Order.ORDERID = TravelReimbursement_Golbal.TRAVELREIMBURSEMENTID;//费用对象
+                fbCtr.ExtensionalOrder.ORDERID = TravelReimbursement_Golbal.TRAVELREIMBURSEMENTID;//费用对象
                 fbCtr.strExtOrderModelCode = "CCBX";
             }
-            fbCtr.Order.CREATECOMPANYID = Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
-            fbCtr.Order.CREATECOMPANYNAME = Common.CurrentLoginUserInfo.UserPosts[0].CompanyName;
-            fbCtr.Order.CREATEDEPARTMENTID = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentID;
-            fbCtr.Order.CREATEDEPARTMENTNAME = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName;
-            fbCtr.Order.CREATEPOSTID = Common.CurrentLoginUserInfo.UserPosts[0].PostID;
-            fbCtr.Order.CREATEPOSTNAME = Common.CurrentLoginUserInfo.UserPosts[0].PostName;
-            fbCtr.Order.CREATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
-            fbCtr.Order.CREATEUSERNAME = Common.CurrentLoginUserInfo.EmployeeName;
+            fbCtr.ExtensionalOrder.CREATECOMPANYID = Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
+            fbCtr.ExtensionalOrder.CREATECOMPANYNAME = Common.CurrentLoginUserInfo.UserPosts[0].CompanyName;
+            fbCtr.ExtensionalOrder.CREATEDEPARTMENTID = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentID;
+            fbCtr.ExtensionalOrder.CREATEDEPARTMENTNAME = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName;
+            fbCtr.ExtensionalOrder.CREATEPOSTID = Common.CurrentLoginUserInfo.UserPosts[0].PostID;
+            fbCtr.ExtensionalOrder.CREATEPOSTNAME = Common.CurrentLoginUserInfo.UserPosts[0].PostName;
+            fbCtr.ExtensionalOrder.CREATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
+            fbCtr.ExtensionalOrder.CREATEUSERNAME = Common.CurrentLoginUserInfo.EmployeeName;
             if (Travel != null)//新增获取出差报告的时候用的是报告人的信息
             {
-                fbCtr.Order.OWNERCOMPANYID = Travel.OWNERCOMPANYID;//出差人所属公司ID
-                fbCtr.Order.OWNERCOMPANYNAME = Travel.OWNERCOMPANYNAME;//出差人所属公司名称
-                fbCtr.Order.OWNERDEPARTMENTID = Travel.OWNERDEPARTMENTID;//出差人所属部门ID
-                fbCtr.Order.OWNERDEPARTMENTNAME = Travel.OWNERDEPARTMENTNAME;//出差人所属部门名称
-                fbCtr.Order.OWNERPOSTID = Travel.OWNERPOSTID;//出差人所属工岗位ID
-                fbCtr.Order.OWNERPOSTNAME = Travel.OWNERPOSTNAME;//出差人所属岗位名称
-                fbCtr.Order.OWNERID = Travel.OWNERID;//出差人ID
-                fbCtr.Order.OWNERNAME = Travel.OWNERNAME;//出差人姓名
+                fbCtr.ExtensionalOrder.OWNERCOMPANYID = Travel.OWNERCOMPANYID;//出差人所属公司ID
+                fbCtr.ExtensionalOrder.OWNERCOMPANYNAME = Travel.OWNERCOMPANYNAME;//出差人所属公司名称
+                fbCtr.ExtensionalOrder.OWNERDEPARTMENTID = Travel.OWNERDEPARTMENTID;//出差人所属部门ID
+                fbCtr.ExtensionalOrder.OWNERDEPARTMENTNAME = Travel.OWNERDEPARTMENTNAME;//出差人所属部门名称
+                fbCtr.ExtensionalOrder.OWNERPOSTID = Travel.OWNERPOSTID;//出差人所属工岗位ID
+                fbCtr.ExtensionalOrder.OWNERPOSTNAME = Travel.OWNERPOSTNAME;//出差人所属岗位名称
+                fbCtr.ExtensionalOrder.OWNERID = Travel.OWNERID;//出差人ID
+                fbCtr.ExtensionalOrder.OWNERNAME = Travel.OWNERNAME;//出差人姓名
             }
             else//修改、查看、审核的时候获取的是报销人的信息
             {
                 MessageBox.Show("没有获取到出差报销人相关组织架构信息，请联系管理员！");
                 return;
             }
-            fbCtr.Order.UPDATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
-            fbCtr.Order.UPDATEUSERNAME = Common.CurrentLoginUserInfo.EmployeeName;
+            fbCtr.ExtensionalOrder.UPDATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
+            fbCtr.ExtensionalOrder.UPDATEUSERNAME = Common.CurrentLoginUserInfo.EmployeeName;
 
             if (formType == FormTypes.Audit || formType == FormTypes.Browse)
             {
                 fbCtr.strExtOrderModelCode = "CCBX";
-                fbCtr.InitData(false);
+                fbCtr.QueryTravelSubjectData(false);
             }
             else
             {
@@ -119,15 +119,15 @@ namespace SMT.SaaS.OA.UI.UserControls
                 }
                 Binding bding = new Binding();
                 bding.Path = new PropertyPath("TOTALMONEY");
-                if (fbCtr.ListDetail.Count() > 0)
+                if (fbCtr.ExtensionalOrderDetailFBEntityList.Count() > 0)
                 {
                     this.txtChargeApplyTotal.SetBinding(TextBox.TextProperty, bding);//报销费用总额
-                    this.txtChargeApplyTotal.DataContext = fbCtr.Order;
+                    this.txtChargeApplyTotal.DataContext = fbCtr.ExtensionalOrder;
                 }
                 this.txtAvailableCredit.Text = fbCtr.TravelSubject.UsableMoney.ToString();//当前用户可用额度
-                if (fbCtr.Order.PAYMENTINFO != null && !string.IsNullOrEmpty(fbCtr.Order.PAYMENTINFO))
+                if (fbCtr.ExtensionalOrder.PAYMENTINFO != null && !string.IsNullOrEmpty(fbCtr.ExtensionalOrder.PAYMENTINFO))
                 {
-                    this.txtPAYMENTINFO.Text = fbCtr.Order.PAYMENTINFO;//支付信息
+                    this.txtPAYMENTINFO.Text = fbCtr.ExtensionalOrder.PAYMENTINFO;//支付信息
                     StrPayInfo = this.txtPAYMENTINFO.Text;
                 }
                 UsableMoney = txtAvailableCredit.Text;
@@ -139,7 +139,7 @@ namespace SMT.SaaS.OA.UI.UserControls
 
                     fbCtr.strExtOrderModelCode = "CCBX";
                     //费用报销
-                    if (fbCtr.ListDetail.Count() > 0)
+                    if (fbCtr.ExtensionalOrderDetailFBEntityList.Count() > 0)
                     {
                         fbCtr.Visibility = Visibility.Visible;
                         scvFB.Visibility = Visibility.Visible;

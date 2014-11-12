@@ -72,17 +72,17 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
 
 
                     //fb控件
-                    fbCtr.Order.OWNERCOMPANYID = selectCompanyId;
-                    fbCtr.Order.OWNERCOMPANYNAME = corp.CNAME;
+                    fbCtr.ExtensionalOrder.OWNERCOMPANYID = selectCompanyId;
+                    fbCtr.ExtensionalOrder.OWNERCOMPANYNAME = corp.CNAME;
 
-                    fbCtr.Order.OWNERDEPARTMENTID = deptid;
-                    fbCtr.Order.OWNERDEPARTMENTNAME = dept.ObjectName;
+                    fbCtr.ExtensionalOrder.OWNERDEPARTMENTID = deptid;
+                    fbCtr.ExtensionalOrder.OWNERDEPARTMENTNAME = dept.ObjectName;
 
-                    fbCtr.Order.OWNERPOSTID = postid;
-                    fbCtr.Order.OWNERPOSTNAME = post.ObjectName;
+                    fbCtr.ExtensionalOrder.OWNERPOSTID = postid;
+                    fbCtr.ExtensionalOrder.OWNERPOSTNAME = post.ObjectName;
 
-                    fbCtr.Order.OWNERID = userInfo.ObjectID;
-                    fbCtr.Order.OWNERNAME = userInfo.ObjectName;
+                    fbCtr.ExtensionalOrder.OWNERID = userInfo.ObjectID;
+                    fbCtr.ExtensionalOrder.OWNERNAME = userInfo.ObjectName;
                     fbCtr.RefreshData();
 
                     if (!string.IsNullOrEmpty(selectCompanyId))//如果是选出差人的情况下(获取所选用户公司)
