@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f7cfdae7-4177-401f-abe1-9c9dad27ceb5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f62a6b8e-a951-486d-9d0d-d157cee1f5ef" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,17 +18,17 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://10.10.0.57/New/Services/FileUploadService/FileUpLoad.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UploadService.wsdl" MetadataType="Wsdl" ID="d70556ae-844e-4e05-b8c6-8ae3ab6d07e9" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/FileUploadService/FileUpLoad.svc?wsdl" />
-    <MetadataFile FileName="FileUpLoad.xsd" MetadataType="Schema" ID="f6172d4e-bc76-4bcf-891d-f06c9d1666e4" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd4" />
-    <MetadataFile FileName="FileUpLoad1.xsd" MetadataType="Schema" ID="d80ca93f-62e3-4446-9789-1b26478089a8" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd2" />
-    <MetadataFile FileName="FileUpLoad2.xsd" MetadataType="Schema" ID="4017c2d3-0ad6-4ac1-8565-ca0b471bd677" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd0" />
-    <MetadataFile FileName="FileUpLoad3.xsd" MetadataType="Schema" ID="34b96e24-9193-4500-91ed-5c6a6aee3751" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd5" />
-    <MetadataFile FileName="FileUpLoad.disco" MetadataType="Disco" ID="d4890170-7801-4395-ab99-d8f6add428a5" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/FileUploadService/FileUpLoad.svc?disco" />
-    <MetadataFile FileName="FileUpLoad4.xsd" MetadataType="Schema" ID="eb995fe0-365b-49f7-aca3-4c446aedb708" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd1" />
-    <MetadataFile FileName="FileUpLoad5.xsd" MetadataType="Schema" ID="36187e68-be4d-4271-85de-442b9af3b74e" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd3" />
+    <MetadataFile FileName="FileUpLoad.disco" MetadataType="Disco" ID="e5fc7f5b-489d-4e68-9cef-919a525179af" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc?disco" />
+    <MetadataFile FileName="FileUpLoad.xsd" MetadataType="Schema" ID="b988d18f-a6b0-4656-b3aa-6c05a0342e0d" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd1" />
+    <MetadataFile FileName="FileUpLoad1.xsd" MetadataType="Schema" ID="895029a5-5253-4a7b-8f03-c39e252a9845" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd0" />
+    <MetadataFile FileName="FileUpLoad2.xsd" MetadataType="Schema" ID="54c4e0d0-6142-46cd-b0c4-6d8200ba526c" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd3" />
+    <MetadataFile FileName="FileUpLoad3.xsd" MetadataType="Schema" ID="7d6e2b83-0054-4b88-b6d6-bfd188d62448" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd2" />
+    <MetadataFile FileName="FileUpLoad4.xsd" MetadataType="Schema" ID="92346668-31a9-4525-8e9e-dadc08dff669" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd5" />
+    <MetadataFile FileName="FileUpLoad5.xsd" MetadataType="Schema" ID="ca3840bd-51d8-49f6-b7f4-68e1ecc85fcd" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd4" />
+    <MetadataFile FileName="UploadService.wsdl" MetadataType="Wsdl" ID="6864bf3d-6b20-42e6-926a-290fe86bcf8c" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

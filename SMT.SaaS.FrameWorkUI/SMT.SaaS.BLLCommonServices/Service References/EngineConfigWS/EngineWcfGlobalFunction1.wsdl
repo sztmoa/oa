@@ -16,8 +16,15 @@
       <xsd:import schemaLocation="http://10.10.0.93:8080/New/Services/SMTEngine/EngineWcfGlobalFunction.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SMT.Workflow.Engine.Services.BLL" />
       <xsd:import schemaLocation="http://10.10.0.93:8080/New/Services/SMTEngine/EngineWcfGlobalFunction.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
       <xsd:import schemaLocation="http://10.10.0.93:8080/New/Services/SMTEngine/EngineWcfGlobalFunction.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/EngineDataModel" />
+      <xsd:import schemaLocation="http://10.10.0.93:8080/New/Services/SMTEngine/EngineWcfGlobalFunction.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IEngineWcfGlobalFunction_WFAddTimingTrigger_InputMessage">
+    <wsdl:part name="parameters" element="tns:WFAddTimingTrigger" />
+  </wsdl:message>
+  <wsdl:message name="IEngineWcfGlobalFunction_WFAddTimingTrigger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WFAddTimingTriggerResponse" />
+  </wsdl:message>
   <wsdl:message name="IEngineWcfGlobalFunction_AddTask_InputMessage">
     <wsdl:part name="parameters" element="tns:AddTask" />
   </wsdl:message>
@@ -81,6 +88,36 @@
   <wsdl:message name="IEngineWcfGlobalFunction_GetForwardHistory_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetForwardHistoryResponse" />
   </wsdl:message>
+  <wsdl:message name="IEngineWcfGlobalFunction_DeleteTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTasks" />
+  </wsdl:message>
+  <wsdl:message name="IEngineWcfGlobalFunction_DeleteTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEngineWcfGlobalFunction_GetAuditScopeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuditScopeList" />
+  </wsdl:message>
+  <wsdl:message name="IEngineWcfGlobalFunction_GetAuditScopeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuditScopeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEngineWcfGlobalFunction_AddAuditScope_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAuditScope" />
+  </wsdl:message>
+  <wsdl:message name="IEngineWcfGlobalFunction_AddAuditScope_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAuditScopeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEngineWcfGlobalFunction_RemoveAuditScope_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAuditScope" />
+  </wsdl:message>
+  <wsdl:message name="IEngineWcfGlobalFunction_RemoveAuditScope_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAuditScopeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEngineWcfGlobalFunction_AddTaskRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTaskRule" />
+  </wsdl:message>
+  <wsdl:message name="IEngineWcfGlobalFunction_AddTaskRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTaskRuleResponse" />
+  </wsdl:message>
   <wsdl:message name="IEngineWcfGlobalFunction_TaskCacheReflesh_InputMessage">
     <wsdl:part name="parameters" element="tns:TaskCacheReflesh" />
   </wsdl:message>
@@ -128,6 +165,12 @@
   </wsdl:message>
   <wsdl:message name="IEngineWcfGlobalFunction_GetPendingTaskPrevNext_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPendingTaskPrevNextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEngineWcfGlobalFunction_GetPendingTaskPrevNextForMobile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPendingTaskPrevNextForMobile" />
+  </wsdl:message>
+  <wsdl:message name="IEngineWcfGlobalFunction_GetPendingTaskPrevNextForMobile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPendingTaskPrevNextForMobileResponse" />
   </wsdl:message>
   <wsdl:message name="IEngineWcfGlobalFunction_PendingCacheTasksParmsPageIndex_InputMessage">
     <wsdl:part name="parameters" element="tns:PendingCacheTasksParmsPageIndex" />
@@ -279,13 +322,11 @@
   <wsdl:message name="IEngineWcfGlobalFunction_SendTaskMessage_OutputMessage">
     <wsdl:part name="parameters" element="tns:SendTaskMessageResponse" />
   </wsdl:message>
-  <wsdl:message name="IEngineWcfGlobalFunction_WFAddTimingTrigger_InputMessage">
-    <wsdl:part name="parameters" element="tns:WFAddTimingTrigger" />
-  </wsdl:message>
-  <wsdl:message name="IEngineWcfGlobalFunction_WFAddTimingTrigger_OutputMessage">
-    <wsdl:part name="parameters" element="tns:WFAddTimingTriggerResponse" />
-  </wsdl:message>
   <wsdl:portType name="IEngineWcfGlobalFunction">
+    <wsdl:operation name="WFAddTimingTrigger">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/WFAddTimingTrigger" message="tns:IEngineWcfGlobalFunction_WFAddTimingTrigger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/WFAddTimingTriggerResponse" message="tns:IEngineWcfGlobalFunction_WFAddTimingTrigger_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/AddTask" message="tns:IEngineWcfGlobalFunction_AddTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/AddTaskResponse" message="tns:IEngineWcfGlobalFunction_AddTask_OutputMessage" />
@@ -329,6 +370,26 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/GetForwardHistory" message="tns:IEngineWcfGlobalFunction_GetForwardHistory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/GetForwardHistoryResponse" message="tns:IEngineWcfGlobalFunction_GetForwardHistory_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="DeleteTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/DeleteTasks" message="tns:IEngineWcfGlobalFunction_DeleteTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/DeleteTasksResponse" message="tns:IEngineWcfGlobalFunction_DeleteTasks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuditScopeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/GetAuditScopeList" message="tns:IEngineWcfGlobalFunction_GetAuditScopeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/GetAuditScopeListResponse" message="tns:IEngineWcfGlobalFunction_GetAuditScopeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAuditScope">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/AddAuditScope" message="tns:IEngineWcfGlobalFunction_AddAuditScope_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/AddAuditScopeResponse" message="tns:IEngineWcfGlobalFunction_AddAuditScope_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAuditScope">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/RemoveAuditScope" message="tns:IEngineWcfGlobalFunction_RemoveAuditScope_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/RemoveAuditScopeResponse" message="tns:IEngineWcfGlobalFunction_RemoveAuditScope_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTaskRule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/AddTaskRule" message="tns:IEngineWcfGlobalFunction_AddTaskRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/AddTaskRuleResponse" message="tns:IEngineWcfGlobalFunction_AddTaskRule_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="TaskCacheReflesh">
       <wsdl:input wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/TaskCacheReflesh" message="tns:IEngineWcfGlobalFunction_TaskCacheReflesh_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/TaskCacheRefleshResponse" message="tns:IEngineWcfGlobalFunction_TaskCacheReflesh_OutputMessage" />
@@ -360,6 +421,10 @@
     <wsdl:operation name="GetPendingTaskPrevNext">
       <wsdl:input wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/GetPendingTaskPrevNext" message="tns:IEngineWcfGlobalFunction_GetPendingTaskPrevNext_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/GetPendingTaskPrevNextResponse" message="tns:IEngineWcfGlobalFunction_GetPendingTaskPrevNext_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingTaskPrevNextForMobile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/GetPendingTaskPrevNextForMobile" message="tns:IEngineWcfGlobalFunction_GetPendingTaskPrevNextForMobile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/GetPendingTaskPrevNextForMobileResponse" message="tns:IEngineWcfGlobalFunction_GetPendingTaskPrevNextForMobile_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="PendingCacheTasksParmsPageIndex">
       <wsdl:input wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/PendingCacheTasksParmsPageIndex" message="tns:IEngineWcfGlobalFunction_PendingCacheTasksParmsPageIndex_InputMessage" />
@@ -477,14 +542,19 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/SendTaskMessage" message="tns:IEngineWcfGlobalFunction_SendTaskMessage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/SendTaskMessageResponse" message="tns:IEngineWcfGlobalFunction_SendTaskMessage_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="WFAddTimingTrigger">
-      <wsdl:input wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/WFAddTimingTrigger" message="tns:IEngineWcfGlobalFunction_WFAddTimingTrigger_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IEngineWcfGlobalFunction/WFAddTimingTriggerResponse" message="tns:IEngineWcfGlobalFunction_WFAddTimingTrigger_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IEngineWcfGlobalFunction" type="tns:IEngineWcfGlobalFunction">
     <wsp:PolicyReference URI="#WSHttpBinding_IEngineWcfGlobalFunction_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WFAddTimingTrigger">
+      <soap12:operation soapAction="http://tempuri.org/IEngineWcfGlobalFunction/WFAddTimingTrigger" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddTask">
       <soap12:operation soapAction="http://tempuri.org/IEngineWcfGlobalFunction/AddTask" style="document" />
       <wsdl:input>
@@ -581,6 +651,51 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DeleteTasks">
+      <soap12:operation soapAction="http://tempuri.org/IEngineWcfGlobalFunction/DeleteTasks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuditScopeList">
+      <soap12:operation soapAction="http://tempuri.org/IEngineWcfGlobalFunction/GetAuditScopeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAuditScope">
+      <soap12:operation soapAction="http://tempuri.org/IEngineWcfGlobalFunction/AddAuditScope" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAuditScope">
+      <soap12:operation soapAction="http://tempuri.org/IEngineWcfGlobalFunction/RemoveAuditScope" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTaskRule">
+      <soap12:operation soapAction="http://tempuri.org/IEngineWcfGlobalFunction/AddTaskRule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="TaskCacheReflesh">
       <soap12:operation soapAction="http://tempuri.org/IEngineWcfGlobalFunction/TaskCacheReflesh" style="document" />
       <wsdl:input>
@@ -646,6 +761,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetPendingTaskPrevNext">
       <soap12:operation soapAction="http://tempuri.org/IEngineWcfGlobalFunction/GetPendingTaskPrevNext" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingTaskPrevNextForMobile">
+      <soap12:operation soapAction="http://tempuri.org/IEngineWcfGlobalFunction/GetPendingTaskPrevNextForMobile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -895,15 +1019,6 @@
     </wsdl:operation>
     <wsdl:operation name="SendTaskMessage">
       <soap12:operation soapAction="http://tempuri.org/IEngineWcfGlobalFunction/SendTaskMessage" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="WFAddTimingTrigger">
-      <soap12:operation soapAction="http://tempuri.org/IEngineWcfGlobalFunction/WFAddTimingTrigger" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

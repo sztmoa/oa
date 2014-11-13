@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3d744f52-2f7d-4e2f-a5c7-670e932acc0e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e6ddcd5c-0cec-494d-ad85-b37e53d0d437" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -21,15 +21,15 @@
     <MetadataSource Address="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PlatformServices7.xsd" MetadataType="Schema" ID="c400890a-e71c-4834-b847-3b280b41e720" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd3" />
-    <MetadataFile FileName="PlatformServices71.xsd" MetadataType="Schema" ID="bdec0899-84ac-448c-916a-faa7082e47f2" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd5" />
-    <MetadataFile FileName="PlatformServices1.wsdl" MetadataType="Wsdl" ID="ed6b44b4-b0ca-44ae-b1d1-b4fd4fcba342" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?wsdl" />
-    <MetadataFile FileName="PlatformServices72.xsd" MetadataType="Schema" ID="33bfd212-930d-4aaf-867b-8cf6d940e186" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd1" />
-    <MetadataFile FileName="PlatformServices73.xsd" MetadataType="Schema" ID="3c05fa75-39ea-4288-a563-8012eaa91918" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd2" />
-    <MetadataFile FileName="PlatformServices74.xsd" MetadataType="Schema" ID="e8a0a41f-55ab-4bbd-a9de-2208cc29a0e3" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd4" />
-    <MetadataFile FileName="PlatformServices1.disco" MetadataType="Disco" ID="28cb53c0-1d27-4883-b3af-ba8c1645a115" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?disco" />
-    <MetadataFile FileName="PlatformServices75.xsd" MetadataType="Schema" ID="9e6154be-c46e-41bd-a388-f02bb44d9efd" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd6" />
-    <MetadataFile FileName="PlatformServices76.xsd" MetadataType="Schema" ID="3631eadf-daa4-40c6-877c-105bf0f63e33" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="PlatformServices4.xsd" MetadataType="Schema" ID="5d2049bb-8e32-47e2-8be1-5e76a737fba4" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd4" />
+    <MetadataFile FileName="PlatformServices.xsd" MetadataType="Schema" ID="9a3d8349-67b5-4c68-b618-f356853d2c7d" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd3" />
+    <MetadataFile FileName="PlatformServices1.xsd" MetadataType="Schema" ID="7062e9d6-ac6f-47e9-bf64-bc0448de8699" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd5" />
+    <MetadataFile FileName="PlatformServices.wsdl" MetadataType="Wsdl" ID="a8bbc38d-5136-497c-be30-3abf53444ad2" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?wsdl" />
+    <MetadataFile FileName="PlatformServices2.xsd" MetadataType="Schema" ID="35802ebd-3567-4261-9d38-87a9a6e801c1" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="PlatformServices3.xsd" MetadataType="Schema" ID="bcf88939-8391-422b-9fed-005f2dd4bc9b" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="PlatformServices.disco" MetadataType="Disco" ID="5e5b7f1b-b4bf-4022-aa94-d5b36e059640" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?disco" />
+    <MetadataFile FileName="PlatformServices5.xsd" MetadataType="Schema" ID="41c75d19-e8f1-4639-8f7c-caba48d62dd5" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd6" />
+    <MetadataFile FileName="PlatformServices6.xsd" MetadataType="Schema" ID="44008380-6a16-48f6-9048-6a7ce419081f" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

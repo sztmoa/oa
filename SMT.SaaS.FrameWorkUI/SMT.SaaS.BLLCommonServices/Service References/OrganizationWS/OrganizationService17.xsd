@@ -18,6 +18,8 @@
           <xs:element minOccurs="0" name="EMPLOYEEPOSTID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ISAGENCY" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="POSTLEVEL" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="REPORTEMP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="REPORTEMPNAME" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SALARYLEVEL" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEE" nillable="true" type="tns:T_HR_EMPLOYEE" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q1:EntityReferenceOfT_HR_EMPLOYEELmi1kWPo" />
@@ -1391,6 +1393,8 @@
           <xs:element minOccurs="0" name="WORKTIMEPERDAY" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="YEARLYBALANCEDATE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="YEARLYBALANCETYPE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="YOUTHEXTEND" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="YOUTHEXTENDVALUE" nillable="true" type="xs:decimal" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1511,6 +1515,8 @@
           <xs:element minOccurs="0" name="EMPLOYEEID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="EMPLOYEENAME" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ENDDATETIME" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FINEDAYS" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FINEHOURS" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="LEAVEDAYS" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="LEAVEHOURS" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="LEAVERECORDID" nillable="true" type="xs:string" />
@@ -1528,6 +1534,8 @@
           <xs:element minOccurs="0" name="T_HR_LEAVETYPESETReference" nillable="true" type="q38:EntityReferenceOfT_HR_LEAVETYPESETLmi1kWPo" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="USEABLEDAYS" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="USEABLEHOURS" nillable="true" type="xs:decimal" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1821,6 +1829,10 @@
           <xs:element minOccurs="0" name="FOURTHENDTIME" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="FOURTHSTARTSTATE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="FOURTHSTARTTIME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NEEDFOURTHATTEND" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NEEDFRISTATTEND" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NEEDSECONDATTEND" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NEEDTHIRDATTEND" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OWNERCOMPANYID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OWNERDEPARTMENTID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OWNERID" nillable="true" type="xs:string" />

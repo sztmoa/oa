@@ -22,42 +22,26 @@
       <ReferencedAssembly AssemblyName="System.Net" />
       <ReferencedAssembly AssemblyName="System.Runtime.Serialization" />
       <ReferencedAssembly AssemblyName="System.ServiceModel" />
-      <ReferencedAssembly AssemblyName="System.Windows" />
-      <ReferencedAssembly AssemblyName="System.Windows.Browser" />
-      <ReferencedAssembly AssemblyName="System.Windows.Controls" />
-      <ReferencedAssembly AssemblyName="System.Windows.Controls.Data" />
-      <ReferencedAssembly AssemblyName="System.Windows.Controls.Data.DataForm.Toolkit" />
-      <ReferencedAssembly AssemblyName="System.Windows.Controls.Data.Input" />
-      <ReferencedAssembly AssemblyName="System.Windows.Controls.DataVisualization.Toolkit" />
-      <ReferencedAssembly AssemblyName="System.Windows.Controls.Input" />
-      <ReferencedAssembly AssemblyName="System.Windows.Controls.Input.Toolkit" />
-      <ReferencedAssembly AssemblyName="System.Windows.Controls.Layout.Toolkit" />
-      <ReferencedAssembly AssemblyName="System.Windows.Controls.Navigation" />
-      <ReferencedAssembly AssemblyName="System.Windows.Controls.Theming.Toolkit" />
-      <ReferencedAssembly AssemblyName="System.Windows.Controls.Toolkit" />
-      <ReferencedAssembly AssemblyName="System.Windows.Data" />
-      <ReferencedAssembly AssemblyName="System.Xml" />
-      <ReferencedAssembly AssemblyName="System.Xml.Serialization" />
     </ReferencedAssemblies>
     <ReferencedDataContractTypes />
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://10.10.0.57/new/services/oa/SmtOAPersonOffice.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:3938/SmtOAPersonOffice.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SmtOAPersonOffice9.xsd" MetadataType="Schema" ID="a6ea862a-12e8-4ec3-8399-6fd27512e22e" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/OA/SmtOAPersonOffice.svc?xsd=xsd1" />
-    <MetadataFile FileName="SmtOAPersonOffice91.xsd" MetadataType="Schema" ID="dfd27379-d697-46e3-ae03-4fdf94b7a8f7" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/OA/SmtOAPersonOffice.svc?xsd=xsd3" />
-    <MetadataFile FileName="SmtOAPersonOffice92.xsd" MetadataType="Schema" ID="32de4581-f1bb-477d-a84c-42c9818e16ed" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/OA/SmtOAPersonOffice.svc?xsd=xsd8" />
-    <MetadataFile FileName="SmtOAPersonOffice93.xsd" MetadataType="Schema" ID="8a3b8bbc-fe0b-4fc8-a2f6-8da07b27efec" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/OA/SmtOAPersonOffice.svc?xsd=xsd5" />
-    <MetadataFile FileName="SmtOAPersonOffice94.xsd" MetadataType="Schema" ID="b625ef8a-89d8-42ce-a552-120ed90281f4" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/OA/SmtOAPersonOffice.svc?xsd=xsd7" />
-    <MetadataFile FileName="SmtOAPersonOffice2.wsdl" MetadataType="Wsdl" ID="adb84641-9ee3-4774-9da0-1c90302fb589" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/OA/SmtOAPersonOffice.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="SmtOAPersonOffice1.disco" MetadataType="Disco" ID="2e0b9743-86cd-416a-a0f7-45c9dfc0761b" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/OA/SmtOAPersonOffice.svc?disco" />
-    <MetadataFile FileName="SmtOAPersonOffice21.wsdl" MetadataType="Wsdl" ID="cfc9a67b-ac98-4b72-988d-99d96a0a02d1" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/OA/SmtOAPersonOffice.svc?wsdl" />
-    <MetadataFile FileName="SmtOAPersonOffice95.xsd" MetadataType="Schema" ID="8d57b948-c9d7-42a7-9779-e10d00be7597" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/OA/SmtOAPersonOffice.svc?xsd=xsd2" />
-    <MetadataFile FileName="SmtOAPersonOffice96.xsd" MetadataType="Schema" ID="5934a8f2-1b85-49a6-ba98-f6eb829aa970" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/OA/SmtOAPersonOffice.svc?xsd=xsd6" />
-    <MetadataFile FileName="SmtOAPersonOffice97.xsd" MetadataType="Schema" ID="a5c17930-ea68-45ec-992d-f7d8a0cb5885" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/OA/SmtOAPersonOffice.svc?xsd=xsd4" />
-    <MetadataFile FileName="SmtOAPersonOffice98.xsd" MetadataType="Schema" ID="49153f15-6dbc-4ee8-857a-377303a619e7" SourceId="1" SourceUrl="http://10.10.0.57/New/Services/OA/SmtOAPersonOffice.svc?xsd=xsd0" />
+    <MetadataFile FileName="SmtOAPersonOffice3.wsdl" MetadataType="Wsdl" ID="9391f790-ce45-4718-8d39-d3b74693fca1" SourceId="1" SourceUrl="http://localhost:3938/SmtOAPersonOffice.svc?wsdl" />
+    <MetadataFile FileName="SmtOAPersonOffice2.disco" MetadataType="Disco" ID="826c0814-e1d1-440e-b559-6fb6e27c6658" SourceId="1" SourceUrl="http://localhost:3938/SmtOAPersonOffice.svc?disco" />
+    <MetadataFile FileName="SmtOAPersonOffice10.xsd" MetadataType="Schema" ID="a0b83e65-7384-420b-bbe1-040851a4b1ee" SourceId="1" SourceUrl="http://localhost:3938/SmtOAPersonOffice.svc?xsd=xsd0" />
+    <MetadataFile FileName="SmtOAPersonOffice11.xsd" MetadataType="Schema" ID="48735cc1-a870-40cd-8880-4df509a52add" SourceId="1" SourceUrl="http://localhost:3938/SmtOAPersonOffice.svc?xsd=xsd7" />
+    <MetadataFile FileName="SmtOAPersonOffice12.xsd" MetadataType="Schema" ID="923dd1de-3867-4691-b590-f881601a88af" SourceId="1" SourceUrl="http://localhost:3938/SmtOAPersonOffice.svc?xsd=xsd8" />
+    <MetadataFile FileName="SmtOAPersonOffice13.xsd" MetadataType="Schema" ID="ee39beb4-6b4d-4d9e-99e9-b484f68056cf" SourceId="1" SourceUrl="http://localhost:3938/SmtOAPersonOffice.svc?xsd=xsd3" />
+    <MetadataFile FileName="SmtOAPersonOffice14.xsd" MetadataType="Schema" ID="79bf46ad-1a33-4736-bf6f-3d81a1fded63" SourceId="1" SourceUrl="http://localhost:3938/SmtOAPersonOffice.svc?xsd=xsd4" />
+    <MetadataFile FileName="SmtOAPersonOffice15.xsd" MetadataType="Schema" ID="1667a3aa-76ff-4901-abd6-ba4c668d5582" SourceId="1" SourceUrl="http://localhost:3938/SmtOAPersonOffice.svc?xsd=xsd5" />
+    <MetadataFile FileName="SmtOAPersonOffice16.xsd" MetadataType="Schema" ID="11ecdfcc-22c5-43c3-b18a-29171c01c25c" SourceId="1" SourceUrl="http://localhost:3938/SmtOAPersonOffice.svc?xsd=xsd6" />
+    <MetadataFile FileName="SmtOAPersonOffice17.xsd" MetadataType="Schema" ID="f46a9079-8743-4480-9c33-ba3e2b1fd3c2" SourceId="1" SourceUrl="http://localhost:3938/SmtOAPersonOffice.svc?xsd=xsd1" />
+    <MetadataFile FileName="SmtOAPersonOffice18.xsd" MetadataType="Schema" ID="1a84ec3c-81d0-433a-b286-be2c1519059f" SourceId="1" SourceUrl="http://localhost:3938/SmtOAPersonOffice.svc?xsd=xsd2" />
+    <MetadataFile FileName="SmtOAPersonOffice4.wsdl" MetadataType="Wsdl" ID="402c9be0-d92d-4138-a995-7b2f61f56884" SourceId="1" SourceUrl="http://localhost:3938/SmtOAPersonOffice.svc?wsdl=wsdl0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

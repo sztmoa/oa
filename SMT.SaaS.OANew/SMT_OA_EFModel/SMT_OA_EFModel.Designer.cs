@@ -66,7 +66,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("SMT_OA_EFModel", "FK_T_OA_WELFAREDISTRIBUTEUNDO", "T_OA_WELFAREDISTRIBUTEMASTER", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SMT_OA_EFModel.T_OA_WELFAREDISTRIBUTEMASTER), "T_OA_WELFAREDISTRIBUTEUNDO", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SMT_OA_EFModel.T_OA_WELFAREDISTRIBUTEUNDO))]
 
 // 原始文件名:
-// 生成日期: 2014/8/13 11:37:41
+// 生成日期: 2014/11/12 13:46:55
 namespace SMT_OA_EFModel
 {
     
@@ -9946,6 +9946,33 @@ namespace SMT_OA_EFModel
         partial void OnALTERDETAILATFERChanging(string value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnALTERDETAILATFERChanged();
+        /// <summary>
+        /// 架构中不存在属性 ISFROMWP 的任何注释。
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string ISFROMWP
+        {
+            get
+            {
+                return this._ISFROMWP;
+            }
+            set
+            {
+                this.OnISFROMWPChanging(value);
+                this.ReportPropertyChanging("ISFROMWP");
+                this._ISFROMWP = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("ISFROMWP");
+                this.OnISFROMWPChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _ISFROMWP;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnISFROMWPChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnISFROMWPChanged();
         /// <summary>
         /// 架构中不存在 T_OA_TRAVELREIMBURSEMENT 的注释。
         /// </summary>
@@ -49973,6 +50000,33 @@ namespace SMT_OA_EFModel
         partial void OnENDCITYNAMEChanging(string value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnENDCITYNAMEChanged();
+        /// <summary>
+        /// 架构中不存在属性 ISFROMWP 的任何注释。
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string ISFROMWP
+        {
+            get
+            {
+                return this._ISFROMWP;
+            }
+            set
+            {
+                this.OnISFROMWPChanging(value);
+                this.ReportPropertyChanging("ISFROMWP");
+                this._ISFROMWP = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("ISFROMWP");
+                this.OnISFROMWPChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _ISFROMWP;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnISFROMWPChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnISFROMWPChanged();
         /// <summary>
         /// 架构中不存在 T_OA_BUSINESSTRIP 的注释。
         /// </summary>

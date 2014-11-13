@@ -88,7 +88,18 @@ namespace SMT.SaaS.OA.UI.UserControls
 
                     if (InitFB == false)
                     {
-                        InitFBControl(TravelReimbursement_Golbal);
+                        bool isFromWP = false;//报销费用来自工作计划
+                        if(!string.IsNullOrEmpty(TravelReimbursement_Golbal.ISFROMWP))
+                        {
+                            if(TravelReimbursement_Golbal.ISFROMWP=="1")
+                            {
+                                isFromWP = true;
+                                //不显示支付信息
+                                labPAYMENTINFO.Visibility = Visibility.Collapsed;
+                                txtPAYMENTINFO.Visibility = Visibility.Collapsed;
+                            }
+                        }
+                        InitFBControl(TravelReimbursement_Golbal,isFromWP);
                     }
                     //HrPersonnelclient.GetEmployeePostBriefByEmployeeIDAsync(TravelReimbursement.OWNERID);
                     postName = TravelReimbursement_Golbal.OWNERPOSTNAME;

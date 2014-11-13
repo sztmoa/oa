@@ -30,15 +30,15 @@
       
         <StackPanel x:Name="PayP" Grid.Row="0" Orientation="Vertical" Margin="0,0,0,5" >
 
-            <StackPanel Orientation="Horizontal" x:Name="spApplyType"  Height="25" >
+            <!--<StackPanel Orientation="Horizontal" x:Name="spApplyType"  Height="25" >
                 <TextBlock Text="申请类型" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Width="75"/>
                 <RadioButton Style="{StaticResource RadioButtonStyle}" x:Name="rbtnApplyTypeCharge" Content="费用报销" Click="rbtnApplyTypeCharge_Click"
                                          GroupName="ApplyType" VerticalAlignment="Center"/>
                 <RadioButton Style="{StaticResource RadioButtonStyle}" x:Name="rbtnApplyTypeBorrow" Content="借款" Click="rbtnApplyTypeCharge_Click"
                                          GroupName="ApplyType" VerticalAlignment="Center"/>
-            </StackPanel>
+            </StackPanel>-->
 
-            <StackPanel Orientation="Horizontal" x:Name="spChargeApplyType" Height="25" Visibility="Collapsed">
+            <StackPanel Orientation="Horizontal" x:Name="spChargeApplyType" Height="25" >
                 <TextBlock Text="付款类型" VerticalAlignment="Center" Width="75"/>
                 <RadioButton Style="{StaticResource RadioButtonStyle}" x:Name="rbtnChargePerson" Content="个人费用报销" Click="rbtnChargePerson_Click"
                                          GroupName="ChargeApplyType" VerticalAlignment="Center" IsChecked="True"  />

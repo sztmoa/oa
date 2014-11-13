@@ -58,20 +58,20 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Enyim.Caching">
+    <Reference Include="Enyim.Caching, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\Memcached\Enyim.Caching.dll</HintPath>
     </Reference>
-    <Reference Include="SMT.Foundation.Core">
+    <Reference Include="log4net">
+      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.Foundation.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Core.dll</HintPath>
     </Reference>
-    <Reference Include="SMT.Foundation.Log">
+    <Reference Include="SMT.Foundation.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Log.dll</HintPath>
-    </Reference>
-    <Reference Include="SMT.SaaS.BLLCommonServices">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
-    </Reference>
-    <Reference Include="SMT_OA_EFModel">
-      <HintPath>..\SMT_OA_EFModel\bin\Debug\SMT_OA_EFModel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -504,9 +504,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\SMT.SaaS.FrameWorkUI\SMT.SaaS.BLLCommonServices\SMT.SAAS.BLLCommonServices.csproj">
+      <Project>{6673751a-d03d-4d7a-acf3-f363469b73ae}</Project>
+      <Name>SMT.SAAS.BLLCommonServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SMT.SaaS.OA.DAL\SMT.SaaS.OA.DAL.csproj">
       <Project>{4b906a26-7f19-4707-a3da-61482fe72ba4}</Project>
       <Name>SMT.SaaS.OA.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMT_OA_EFModel\SMT_OA_EFModel.csproj">
+      <Project>{30d6706d-a200-4ed0-bbaa-3574e09f54d1}</Project>
+      <Name>SMT_OA_EFModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

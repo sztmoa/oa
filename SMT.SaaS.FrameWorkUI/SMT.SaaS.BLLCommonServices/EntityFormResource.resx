@@ -325,4 +325,8 @@
     <value>HRM/OutApplyConfirm/Details</value>
     <comment>外出申请确认</comment>
   </data>
+  <data name="T_HR_EMPLOYEESALARYPOSTASIGN" xml:space="preserve">
+    <value>SMT.HRM.UI.Form.Salary.EmployeeBalancePostAddForm</value>
+    <comment>薪资结算岗位变更Form类名</comment>
+  </data>
 </root>

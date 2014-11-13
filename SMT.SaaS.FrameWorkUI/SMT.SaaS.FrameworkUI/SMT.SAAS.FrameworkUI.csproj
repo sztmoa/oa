@@ -203,6 +203,7 @@
       <DependentUpon>SelectedForm.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FBControls\SelectedDataManager_WP.cs" />
     <Compile Include="FileUpload\ByteConverter.cs" />
     <Compile Include="FileUpload\CtrlFileUploadM.xaml.cs">
       <DependentUpon>CtrlFileUploadM.xaml</DependentUpon>

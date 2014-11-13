@@ -53,7 +53,7 @@
   <ItemGroup>
     <Reference Include="Enyim.Caching, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\MemCache\Enyim.Caching.dll</HintPath>
+      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Server\Memcached\Enyim.Caching.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -73,10 +73,6 @@
     <Reference Include="SMT.SaaS.BLLCommonServices, Version=1.0.0.1222, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\SMT.SaaS.CommonDll\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
-    </Reference>
-    <Reference Include="SMT_OA_EFModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT_OA_EFModel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -236,6 +232,10 @@
     <ProjectReference Include="..\SMT.SaaS.OA.DAL\SMT.SaaS.OA.DAL.csproj">
       <Project>{4B906A26-7F19-4707-A3DA-61482FE72BA4}</Project>
       <Name>SMT.SaaS.OA.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMT_OA_EFModel\SMT_OA_EFModel.csproj">
+      <Project>{30d6706d-a200-4ed0-bbaa-3574e09f54d1}</Project>
+      <Name>SMT_OA_EFModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

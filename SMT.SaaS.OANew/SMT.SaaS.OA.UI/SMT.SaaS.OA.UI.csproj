@@ -3199,6 +3199,144 @@
     <None Include="Service References\SmtOADocumentAdminService\SmtOADocumentAdmin96.xsd" />
     <None Include="Service References\SmtOADocumentAdminService\SmtOADocumentAdmin97.xsd" />
     <None Include="Service References\SmtOADocumentAdminService\SmtOADocumentAdmin98.xsd" />
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFO1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFOTEMPLET1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREAALLOWANCE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREACITY1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREADIFFERENCE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CANTAKETHEPLANELINE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_PROGRAMAPPLICATIONS1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL21.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDISTRIBUTE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONREQUIRE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TAKETHESTANDARDTRANSPORT1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany3.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyApp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveying1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyRequireDistribute1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyStaticfaction1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SatisfactionResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice.wsdl" />
     <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice.xsd">
       <SubType>Designer</SubType>
@@ -3207,12 +3345,41 @@
     <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice18.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice3.wsdl" />
     <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice4.wsdl" />
     <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice4.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -3288,6 +3455,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice2.disco" />
     <Content Include="ServiceReferences.ClientConfig">
       <SubType>Designer</SubType>
     </Content>
@@ -3317,6 +3485,10 @@
     <WCFMetadataStorage Include="Service References\TravelExpApplyMaster\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\SmtWorkSpace\Tools\SMT.Saas.Tools.csproj">
+      <Project>{36e9d744-4747-4f92-8abe-d747adbc811a}</Project>
+      <Name>SMT.Saas.Tools</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\SMT.SaaS.FrameWorkUI\SMT.Controls.Toolkit.Windows\SMT.SAAS.Controls.Toolkit.Windows.csproj">
       <Project>{e0139d17-5b27-42c0-9f44-aa2a693a8442}</Project>
       <Name>SMT.SAAS.Controls.Toolkit.Windows</Name>

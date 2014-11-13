@@ -21,7 +21,6 @@ using SMT.SaaS.BLLCommonServices.RMServicesWS;
 using SMT.SaaS.BLLCommonServices.WPServicesWS;
 using SMT.SaaS.BLLCommonServices.TMServicesWS;
 using SMT.SaaS.BLLCommonServices.MVCCacheSV;
-using SMT.SaaS.BLLCommonServices.EngineConfigWS;
 
 namespace SMT.SaaS.BLLCommonServices
 {
@@ -1172,26 +1171,16 @@ namespace SMT.SaaS.BLLCommonServices
         /// <param name="entity">源实体</param>
         public static void SubmitMyRecord<TEntity>(object entity)
         {
-            object obj = string.Empty as object;
-            SubmitMyRecord<TEntity>(entity, "0", obj);
+            SubmitMyRecord<TEntity>(entity, "0");
         }
 
-        /// <summary>
-        /// 添加"我的单据"
-        /// </summary>
-        /// <param name="entity">源实体</param>
-        public static void SubmitMyRecord<TEntity>(object entity, string customerMessage)
-        {
-            object obj = customerMessage as object;
-            SubmitMyRecord<TEntity>(entity, "0", obj);
-        }
 
 
         /// <summary>
         /// 添加"我的单据"
         /// </summary>
         /// <param name="entity">源实体</param>
-        public static void SubmitMyRecord<TEntity>(object entity, string strIsForward,object customerMessage)
+        public static void SubmitMyRecord<TEntity>(object entity, string strIsForward)
         {
             try
             {
@@ -1372,14 +1361,7 @@ namespace SMT.SaaS.BLLCommonServices
                 {
                     case "0":
                         strSubmitXmlObj = SetSubmitXmlObj(strSysName, strFormName, strFormId, "Edit");
-                        if (customerMessage.ToString() == string.Empty)
-                        {
-                            strModelDesp = GetModelDescription(entSubmit.CREATEDATE.Value, strModelCode, "您{0}的[{1}]还未提交！");
-                        }
-                        else
-                        {
-                            strModelDesp = customerMessage.ToString();
-                        }
+                        strModelDesp = GetModelDescription(entSubmit.CREATEDATE.Value, strModelCode, "您{0}的[{1}]还未提交！");
                         break;
                     case "1":
                         strSubmitXmlObj = SetSubmitXmlObj(strSysName, strFormName, strFormId, "Audit");
@@ -2300,7 +2282,7 @@ namespace SMT.SaaS.BLLCommonServices
         /// <param name="entityName">实体命</param>
         /// <param name="entityKey">实体id</param>
         /// <param name="action">动作：增，删，改</param>
-        public static void MvcCacheClearAsync(string entityName, string entityKey, EntityAction action)
+        public static void MvcCacheClearAsync(string entityName, string entityKey, SMT.SaaS.BLLCommonServices.MVCCacheSV.EntityAction action)
         {
             
             try
@@ -2398,44 +2380,7 @@ namespace SMT.SaaS.BLLCommonServices
         {
             return PermClient.GetDictionaryByCategoryArray(new string[] { dictionaryName }).Where(p => p.DICTIONARYVALUE == dictionaryValue).FirstOrDefault().DICTIONARYNAME;
         }
-
-
-        public static void SendtimingEvent(string systemCode, string systemName, string ModelCode, string ModelName, string FormId, string strXml, DateTime triggerTime)
-        {
-            using (EngineWcfGlobalFunctionClient wcfClient = new EngineWcfGlobalFunctionClient())
-            {
-                T_WF_TIMINGTRIGGERACTIVITY triggerEntity = new T_WF_TIMINGTRIGGERACTIVITY();
-                triggerEntity.TRIGGERID = Guid.NewGuid().ToString();
-                triggerEntity.BUSINESSID = FormId;
-                triggerEntity.TRIGGERNAME = FormId;
-                triggerEntity.SYSTEMCODE = systemCode;// "OA";
-                triggerEntity.SYSTEMNAME = systemName;// "办公系统";
-                triggerEntity.MODELCODE = ModelCode;// "T_OA_BUSINESSTRIP";
-                triggerEntity.MODELNAME = ModelName;// "出差申请";
-                triggerEntity.TRIGGERACTIVITYTYPE = 2;
-
-                //获取出差申请的结束时间
-                DateTime arriveTime = triggerTime;
-                triggerEntity.TRIGGERTIME = arriveTime;//待改-出差申请的结束时间
-                Tracer.Debug("定时结束时间:" + arriveTime.ToString());
-                triggerEntity.TRIGGERROUND = 0;//只触发一次
-                triggerEntity.WCFURL = "EngineEventServices.svc";//需要传输数据至的服务名
-                triggerEntity.FUNCTIONNAME = "EventTriggerProcess";//需要传输数据至的方法名称
-                //因两次调用回调函数的问题在此产生出差报销id
-                //strXml += "<Para FuncName=\"DelayTravelreimbursmentAdd\"  Name=\"TRAVELREIMBURSEMENTID\"  Description=\"出差报销ID\" Value=\""+Guid.NewGuid().ToString()+"\" ValueName=\"出差报销ID\" ></Para>";
-                //处理消息规则里T_OA_BUSINESSTRIP的信息
-                //strXml = strXml.Replace("<?xml version=\"1.0\" encoding=\"utf-8\" ?>", "").Replace("<Paras>", "").Replace("</Paras>", "").Replace("TableName", "FuncName").Replace("T_OA_BUSINESSTRIP", "DelayTravelreimbursmentAdd").Trim();
-                //处理消息规则里T_OA_TRAVELREIMBURSEMENT的信息
-                //strXml = strXml.Replace("T_OA_TRAVELREIMBURSEMENT", "DelayTravelreimbursmentAdd");
-                triggerEntity.FUNCTIONPARAMTER = strXml;//传输的对象方法获取的数据
-                triggerEntity.PAMETERSPLITCHAR = "Г";
-                triggerEntity.WCFBINDINGCONTRACT = "CustomBinding";
-                triggerEntity.CREATEDATETIME = System.DateTime.Now;
-                //triggerEntity.TRIGGERSTART = System.DateTime.Now;
-                //triggerEntity.TRIGGEREND = Convert.ToDateTime("2099/12/30 18:00:00");
-                wcfClient.WFAddTimingTrigger(triggerEntity);
-            }
-        }
+    
     }
 
 

@@ -14,8 +14,10 @@ using SMT.Saas.Tools.FBServiceWS;
 
 namespace SMT.SaaS.FrameworkUI.FBControls
 {
-    public class SelectedDataManager
+    public partial class SelectedDataManager
     {
+        public bool IsFromFB = true;// false 数据源是否来自工作计划
+        public string strBussinessTripID = string.Empty;
         public SelectedDataManager()
         {
             GetSameItem = (list, entity) =>
@@ -72,10 +74,17 @@ namespace SMT.SaaS.FrameworkUI.FBControls
             OriginalItems = e.Result.ToList();
             OnGetUnSelectedItems();
         }
-        
+
         private void GetOriginalItems()
         {
-            FBService.QueryFBEntitiesAsync(this.QueryExpression);
+            if (IsFromFB)
+            {
+                FBService.QueryFBEntitiesAsync(this.QueryExpression);
+            }
+            else
+            {
+                WpServiceClient.GetTripSubjectAsync(strBussinessTripID);
+            }
         }
 
         private void SetActivedItems()

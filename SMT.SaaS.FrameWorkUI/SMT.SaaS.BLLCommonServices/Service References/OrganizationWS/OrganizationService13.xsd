@@ -148,4 +148,37 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="V_ORGANIZATIONINFO" nillable="true" type="tns:V_ORGANIZATIONINFO" />
+  <xs:complexType name="ArrayOfV_EMPLOYEEVIEW">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_EMPLOYEEVIEW" nillable="true" type="tns:V_EMPLOYEEVIEW" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_EMPLOYEEVIEW" nillable="true" type="tns:ArrayOfV_EMPLOYEEVIEW" />
+  <xs:complexType name="V_EMPLOYEEVIEW">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANYNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATEUSERID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEPARTMENTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMPLOYEECNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMPLOYEECODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMPLOYEEENAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMPLOYEEID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMPLOYEEPOSTID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMPLOYEESTATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINGERPRINTID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDNUMBER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ISAGENCY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOBILE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OFFICEPHONE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNERCOMPANYID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNERDEPARTMENTID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNERID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POSTLEVEL" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="POSTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEX" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_EMPLOYEEVIEW" nillable="true" type="tns:V_EMPLOYEEVIEW" />
 </xs:schema>

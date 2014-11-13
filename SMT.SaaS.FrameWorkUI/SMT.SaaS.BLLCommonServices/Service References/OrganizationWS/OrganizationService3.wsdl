@@ -133,6 +133,12 @@
   <wsdl:message name="OrganizationService_GetCompanyView_OutputMessage">
     <wsdl:part name="parameters" element="GetCompanyViewResponse" />
   </wsdl:message>
+  <wsdl:message name="OrganizationService_GetCompanyViewByApproval_InputMessage">
+    <wsdl:part name="parameters" element="GetCompanyViewByApproval" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetCompanyViewByApproval_OutputMessage">
+    <wsdl:part name="parameters" element="GetCompanyViewByApprovalResponse" />
+  </wsdl:message>
   <wsdl:message name="OrganizationService_GetCompanyViewByDateAndUser_InputMessage">
     <wsdl:part name="parameters" element="GetCompanyViewByDateAndUser" />
   </wsdl:message>
@@ -258,6 +264,12 @@
   </wsdl:message>
   <wsdl:message name="OrganizationService_GetDepartmentView_OutputMessage">
     <wsdl:part name="parameters" element="GetDepartmentViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetDepartmentViewByApproval_InputMessage">
+    <wsdl:part name="parameters" element="GetDepartmentViewByApproval" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetDepartmentViewByApproval_OutputMessage">
+    <wsdl:part name="parameters" element="GetDepartmentViewByApprovalResponse" />
   </wsdl:message>
   <wsdl:message name="OrganizationService_GetDepartmentViewByDateAndUser_InputMessage">
     <wsdl:part name="parameters" element="GetDepartmentViewByDateAndUser" />
@@ -571,6 +583,18 @@
   <wsdl:message name="OrganizationService_OrgChange_OutputMessage">
     <wsdl:part name="parameters" element="OrgChangeResponse" />
   </wsdl:message>
+  <wsdl:message name="OrganizationService_GetAllEmployeePostForWP_InputMessage">
+    <wsdl:part name="parameters" element="GetAllEmployeePostForWP" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetAllEmployeePostForWP_OutputMessage">
+    <wsdl:part name="parameters" element="GetAllEmployeePostForWPResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetDepartmentBossHeadList_InputMessage">
+    <wsdl:part name="parameters" element="GetDepartmentBossHeadList" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetDepartmentBossHeadList_OutputMessage">
+    <wsdl:part name="parameters" element="GetDepartmentBossHeadListResponse" />
+  </wsdl:message>
   <wsdl:portType name="OrganizationService">
     <wsdl:operation name="DoWork">
       <wsdl:input wsaw:Action="urn:OrganizationService/DoWork" message="OrganizationService_DoWork_InputMessage" />
@@ -651,6 +675,10 @@
     <wsdl:operation name="GetCompanyView">
       <wsdl:input wsaw:Action="urn:OrganizationService/GetCompanyView" message="OrganizationService_GetCompanyView_InputMessage" />
       <wsdl:output wsaw:Action="urn:OrganizationService/GetCompanyViewResponse" message="OrganizationService_GetCompanyView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyViewByApproval">
+      <wsdl:input wsaw:Action="urn:OrganizationService/GetCompanyViewByApproval" message="OrganizationService_GetCompanyViewByApproval_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrganizationService/GetCompanyViewByApprovalResponse" message="OrganizationService_GetCompanyViewByApproval_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCompanyViewByDateAndUser">
       <wsdl:input wsaw:Action="urn:OrganizationService/GetCompanyViewByDateAndUser" message="OrganizationService_GetCompanyViewByDateAndUser_InputMessage" />
@@ -735,6 +763,10 @@
     <wsdl:operation name="GetDepartmentView">
       <wsdl:input wsaw:Action="urn:OrganizationService/GetDepartmentView" message="OrganizationService_GetDepartmentView_InputMessage" />
       <wsdl:output wsaw:Action="urn:OrganizationService/GetDepartmentViewResponse" message="OrganizationService_GetDepartmentView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentViewByApproval">
+      <wsdl:input wsaw:Action="urn:OrganizationService/GetDepartmentViewByApproval" message="OrganizationService_GetDepartmentViewByApproval_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrganizationService/GetDepartmentViewByApprovalResponse" message="OrganizationService_GetDepartmentViewByApproval_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDepartmentViewByDateAndUser">
       <wsdl:input wsaw:Action="urn:OrganizationService/GetDepartmentViewByDateAndUser" message="OrganizationService_GetDepartmentViewByDateAndUser_InputMessage" />
@@ -943,6 +975,14 @@
     <wsdl:operation name="OrgChange">
       <wsdl:input wsaw:Action="urn:OrganizationService/OrgChange" message="OrganizationService_OrgChange_InputMessage" />
       <wsdl:output wsaw:Action="urn:OrganizationService/OrgChangeResponse" message="OrganizationService_OrgChange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmployeePostForWP">
+      <wsdl:input wsaw:Action="urn:OrganizationService/GetAllEmployeePostForWP" message="OrganizationService_GetAllEmployeePostForWP_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrganizationService/GetAllEmployeePostForWPResponse" message="OrganizationService_GetAllEmployeePostForWP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentBossHeadList">
+      <wsdl:input wsaw:Action="urn:OrganizationService/GetDepartmentBossHeadList" message="OrganizationService_GetDepartmentBossHeadList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrganizationService/GetDepartmentBossHeadListResponse" message="OrganizationService_GetDepartmentBossHeadList_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

@@ -42,7 +42,24 @@ namespace SMT.SaaS.FrameworkUI.FBControls
 {
     public partial class ChargeApplyControl : UserControl
     {
-        public bool IsFromFB = true;// false 数据源是否来自工作计划
+        private bool IsFromFB = true;// false 数据源是否来自工作计划
+
+        public bool FromFB
+        {
+            get { return IsFromFB; }
+            set
+            {
+                IsFromFB = value;
+                if (IsFromFB == false)
+                {
+                    rbtnChargePerson.IsChecked = true;
+                    rbtnChargeBorrow.Visibility = Visibility.Collapsed;
+
+                    SetRemarkVisiblity(Visibility.Collapsed);
+                    this.gridForBorrowInfo.Visibility = System.Windows.Visibility.Collapsed;                    
+                }
+            }
+        }
         public string strBussinessTripID = string.Empty;
         SelectedForm selectForm = null;
         public SelectedForm SelectForm
@@ -71,6 +88,8 @@ namespace SMT.SaaS.FrameworkUI.FBControls
                 {
                     selectedDataManager = new SelectedDataManager();
                 }
+                selectedDataManager.IsFromFB = this.IsFromFB;
+                selectedDataManager.strBussinessTripID = this.strBussinessTripID;
                 return selectedDataManager;
             }
         }
@@ -118,11 +137,6 @@ namespace SMT.SaaS.FrameworkUI.FBControls
         public void SetRemarkVisiblity(System.Windows.Visibility visibility)
         {
             this.gridRemark.Visibility = visibility;
-        }
-        
-        public void SetApplyTypeVisiblity(System.Windows.Visibility visibility)
-        {
-            this.spApplyType.Visibility = visibility;
         }
 
         public ChargeParameter GetParamenter()
@@ -198,18 +212,8 @@ namespace SMT.SaaS.FrameworkUI.FBControls
 
         private void InitApplyType()
         {
-            if (ApplyType == ApplyTypes.BorrowApply)
-            {
-                this.rbtnApplyTypeCharge.Visibility = System.Windows.Visibility.Collapsed;
-
-            }
-            else if (ApplyType == ApplyTypes.ChargeApply)
-            {
-                this.rbtnApplyTypeBorrow.Visibility = System.Windows.Visibility.Collapsed;
-
-            }
             rbtnChargePerson_Click(null, null);
-            rbtnApplyTypeCharge_Click(null, null);
+            //rbtnApplyTypeCharge_Click(null, null);
         }
 
 
@@ -636,19 +640,19 @@ namespace SMT.SaaS.FrameworkUI.FBControls
             }
         }
 
-        private void rbtnApplyTypeCharge_Click(object sender, RoutedEventArgs e)
-        {
-            if (rbtnApplyTypeCharge.IsChecked == true)
-            {
-                this.spChargeApplyType.Visibility = System.Windows.Visibility.Visible;
-            }
-            else
-            {
-                this.spChargeApplyType.Visibility = System.Windows.Visibility.Collapsed;
-                this.rbtnChargePerson.IsChecked = true;
-                this.gridForBorrowInfo.Visibility = System.Windows.Visibility.Collapsed;
-            }
-        }
+        //private void rbtnApplyTypeCharge_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (rbtnApplyTypeCharge.IsChecked == true)
+        //    {
+        //        this.spChargeApplyType.Visibility = System.Windows.Visibility.Visible;
+        //    }
+        //    else
+        //    {
+        //        this.spChargeApplyType.Visibility = System.Windows.Visibility.Collapsed;
+        //        this.rbtnChargePerson.IsChecked = true;
+        //        this.gridForBorrowInfo.Visibility = System.Windows.Visibility.Collapsed;
+        //    }
+        //}
 
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
         {

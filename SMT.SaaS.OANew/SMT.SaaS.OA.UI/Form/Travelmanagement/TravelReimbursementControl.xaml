@@ -881,6 +881,7 @@
                   
                 <!--支付信息-->
                 <TextBlock HorizontalAlignment="Left"
+                          x:Name="labPAYMENTINFO"
                 Grid.Row="7"
                 Grid.Column="0"
                 Text="{Binding Converter={StaticResource ResourceConveter}, Source=PAYMENTINFO}"

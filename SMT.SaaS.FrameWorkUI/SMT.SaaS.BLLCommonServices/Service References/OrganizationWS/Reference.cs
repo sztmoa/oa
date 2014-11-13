@@ -981,6 +981,12 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         private System.Nullable<decimal> POSTLEVELField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string REPORTEMPField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string REPORTEMPNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> SALARYLEVELField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1081,6 +1087,26 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
             }
             set {
                 this.POSTLEVELField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string REPORTEMP {
+            get {
+                return this.REPORTEMPField;
+            }
+            set {
+                this.REPORTEMPField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string REPORTEMPNAME {
+            get {
+                return this.REPORTEMPNAMEField;
+            }
+            set {
+                this.REPORTEMPNAMEField = value;
             }
         }
         
@@ -7161,6 +7187,12 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string YEARLYBALANCETYPEField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string YOUTHEXTENDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> YOUTHEXTENDVALUEField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -7620,6 +7652,26 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
                 this.YEARLYBALANCETYPEField = value;
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string YOUTHEXTEND {
+            get {
+                return this.YOUTHEXTENDField;
+            }
+            set {
+                this.YOUTHEXTENDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> YOUTHEXTENDVALUE {
+            get {
+                return this.YOUTHEXTENDVALUEField;
+            }
+            set {
+                this.YOUTHEXTENDVALUEField = value;
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7663,6 +7715,12 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> ENDDATETIMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> FINEDAYSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> FINEHOURSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> LEAVEDAYSField;
@@ -7714,6 +7772,12 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UPDATEUSERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> USEABLEDAYSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> USEABLEHOURSField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -7832,6 +7896,26 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
             }
             set {
                 this.ENDDATETIMEField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> FINEDAYS {
+            get {
+                return this.FINEDAYSField;
+            }
+            set {
+                this.FINEDAYSField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> FINEHOURS {
+            get {
+                return this.FINEHOURSField;
+            }
+            set {
+                this.FINEHOURSField = value;
             }
         }
         
@@ -8002,6 +8086,26 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
             }
             set {
                 this.UPDATEUSERIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> USEABLEDAYS {
+            get {
+                return this.USEABLEDAYSField;
+            }
+            set {
+                this.USEABLEDAYSField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> USEABLEHOURS {
+            get {
+                return this.USEABLEHOURSField;
+            }
+            set {
+                this.USEABLEHOURSField = value;
             }
         }
     }
@@ -8916,6 +9020,18 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         private string FOURTHSTARTTIMEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NEEDFOURTHATTENDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NEEDFRISTATTENDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NEEDSECONDATTENDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NEEDTHIRDATTENDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OWNERCOMPANYIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -9176,6 +9292,46 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
             }
             set {
                 this.FOURTHSTARTTIMEField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NEEDFOURTHATTEND {
+            get {
+                return this.NEEDFOURTHATTENDField;
+            }
+            set {
+                this.NEEDFOURTHATTENDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NEEDFRISTATTEND {
+            get {
+                return this.NEEDFRISTATTENDField;
+            }
+            set {
+                this.NEEDFRISTATTENDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NEEDSECONDATTEND {
+            get {
+                return this.NEEDSECONDATTENDField;
+            }
+            set {
+                this.NEEDSECONDATTENDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NEEDTHIRDATTEND {
+            get {
+                return this.NEEDTHIRDATTENDField;
+            }
+            set {
+                this.NEEDTHIRDATTENDField = value;
             }
         }
         
@@ -18623,6 +18779,387 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="V_EMPLOYEEVIEW", Namespace="http://schemas.datacontract.org/2004/07/SMT.HRM.CustomModel")]
+    [System.SerializableAttribute()]
+    public partial class V_EMPLOYEEVIEW : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string COMPANYNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEUSERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DEPARTMENTNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EMAILField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EMPLOYEECNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EMPLOYEECODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EMPLOYEEENAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EMPLOYEEIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EMPLOYEEPOSTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EMPLOYEESTATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FINGERPRINTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IDNUMBERField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ISAGENCYField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MOBILEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OFFICEPHONEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERCOMPANYIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERDEPARTMENTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERPOSTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> POSTLEVELField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string POSTNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SEXField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string COMPANYNAME {
+            get {
+                return this.COMPANYNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.COMPANYNAMEField, value) != true)) {
+                    this.COMPANYNAMEField = value;
+                    this.RaisePropertyChanged("COMPANYNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERID {
+            get {
+                return this.CREATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
+                    this.CREATEUSERIDField = value;
+                    this.RaisePropertyChanged("CREATEUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DEPARTMENTNAME {
+            get {
+                return this.DEPARTMENTNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DEPARTMENTNAMEField, value) != true)) {
+                    this.DEPARTMENTNAMEField = value;
+                    this.RaisePropertyChanged("DEPARTMENTNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EMAIL {
+            get {
+                return this.EMAILField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EMAILField, value) != true)) {
+                    this.EMAILField = value;
+                    this.RaisePropertyChanged("EMAIL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EMPLOYEECNAME {
+            get {
+                return this.EMPLOYEECNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EMPLOYEECNAMEField, value) != true)) {
+                    this.EMPLOYEECNAMEField = value;
+                    this.RaisePropertyChanged("EMPLOYEECNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EMPLOYEECODE {
+            get {
+                return this.EMPLOYEECODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EMPLOYEECODEField, value) != true)) {
+                    this.EMPLOYEECODEField = value;
+                    this.RaisePropertyChanged("EMPLOYEECODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EMPLOYEEENAME {
+            get {
+                return this.EMPLOYEEENAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EMPLOYEEENAMEField, value) != true)) {
+                    this.EMPLOYEEENAMEField = value;
+                    this.RaisePropertyChanged("EMPLOYEEENAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EMPLOYEEID {
+            get {
+                return this.EMPLOYEEIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EMPLOYEEIDField, value) != true)) {
+                    this.EMPLOYEEIDField = value;
+                    this.RaisePropertyChanged("EMPLOYEEID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EMPLOYEEPOSTID {
+            get {
+                return this.EMPLOYEEPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EMPLOYEEPOSTIDField, value) != true)) {
+                    this.EMPLOYEEPOSTIDField = value;
+                    this.RaisePropertyChanged("EMPLOYEEPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EMPLOYEESTATE {
+            get {
+                return this.EMPLOYEESTATEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EMPLOYEESTATEField, value) != true)) {
+                    this.EMPLOYEESTATEField = value;
+                    this.RaisePropertyChanged("EMPLOYEESTATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FINGERPRINTID {
+            get {
+                return this.FINGERPRINTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FINGERPRINTIDField, value) != true)) {
+                    this.FINGERPRINTIDField = value;
+                    this.RaisePropertyChanged("FINGERPRINTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IDNUMBER {
+            get {
+                return this.IDNUMBERField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IDNUMBERField, value) != true)) {
+                    this.IDNUMBERField = value;
+                    this.RaisePropertyChanged("IDNUMBER");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ISAGENCY {
+            get {
+                return this.ISAGENCYField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ISAGENCYField, value) != true)) {
+                    this.ISAGENCYField = value;
+                    this.RaisePropertyChanged("ISAGENCY");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MOBILE {
+            get {
+                return this.MOBILEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MOBILEField, value) != true)) {
+                    this.MOBILEField = value;
+                    this.RaisePropertyChanged("MOBILE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OFFICEPHONE {
+            get {
+                return this.OFFICEPHONEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OFFICEPHONEField, value) != true)) {
+                    this.OFFICEPHONEField = value;
+                    this.RaisePropertyChanged("OFFICEPHONE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERCOMPANYID {
+            get {
+                return this.OWNERCOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERCOMPANYIDField, value) != true)) {
+                    this.OWNERCOMPANYIDField = value;
+                    this.RaisePropertyChanged("OWNERCOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERDEPARTMENTID {
+            get {
+                return this.OWNERDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERDEPARTMENTIDField, value) != true)) {
+                    this.OWNERDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("OWNERDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERID {
+            get {
+                return this.OWNERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERIDField, value) != true)) {
+                    this.OWNERIDField = value;
+                    this.RaisePropertyChanged("OWNERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERPOSTID {
+            get {
+                return this.OWNERPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERPOSTIDField, value) != true)) {
+                    this.OWNERPOSTIDField = value;
+                    this.RaisePropertyChanged("OWNERPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> POSTLEVEL {
+            get {
+                return this.POSTLEVELField;
+            }
+            set {
+                if ((this.POSTLEVELField.Equals(value) != true)) {
+                    this.POSTLEVELField = value;
+                    this.RaisePropertyChanged("POSTLEVEL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string POSTNAME {
+            get {
+                return this.POSTNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.POSTNAMEField, value) != true)) {
+                    this.POSTNAMEField = value;
+                    this.RaisePropertyChanged("POSTNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SEX {
+            get {
+                return this.SEXField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SEXField, value) != true)) {
+                    this.SEXField = value;
+                    this.RaisePropertyChanged("SEX");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EntityNames", Namespace="http://schemas.datacontract.org/2004/07/SMT.HRM.BLL")]
     public enum EntityNames : int {
@@ -18818,6 +19355,8 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_RELATIONPOST))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_ORGANIZATIONINFO[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_ORGANIZATIONINFO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.EntityNames))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.UploadFileModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.T_HR_EMPLOYEEPOST[]))]
@@ -18977,6 +19516,8 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_RELATIONPOST))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_ORGANIZATIONINFO[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_ORGANIZATIONINFO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.EntityNames))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.UploadFileModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.T_HR_EMPLOYEEPOST[]))]
@@ -19095,6 +19636,9 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrganizationService/GetCompanyView", ReplyAction="urn:OrganizationService/GetCompanyViewResponse")]
         SMT.SaaS.BLLCommonServices.OrganizationWS.V_COMPANY[] GetCompanyView(string userID, string perm, string entity);
         
+        [System.ServiceModel.OperationContractAttribute(Action="urn:OrganizationService/GetCompanyViewByApproval", ReplyAction="urn:OrganizationService/GetCompanyViewByApprovalResponse")]
+        SMT.SaaS.BLLCommonServices.OrganizationWS.V_COMPANY[] GetCompanyViewByApproval(string userID, string perm, string entity);
+        
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrganizationService/GetCompanyViewByDateAndUser", ReplyAction="urn:OrganizationService/GetCompanyViewByDateAndUserResponse")]
         SMT.SaaS.BLLCommonServices.OrganizationWS.V_COMPANY[] GetCompanyViewByDateAndUser(string startDate, string userID);
         
@@ -19160,6 +19704,8 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_RELATIONPOST))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_ORGANIZATIONINFO[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_ORGANIZATIONINFO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.EntityNames))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.UploadFileModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.T_HR_EMPLOYEEPOST[]))]
@@ -19299,6 +19845,9 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrganizationService/GetDepartmentView", ReplyAction="urn:OrganizationService/GetDepartmentViewResponse")]
         SMT.SaaS.BLLCommonServices.OrganizationWS.V_DEPARTMENT[] GetDepartmentView(string userID, string perm, string entity);
         
+        [System.ServiceModel.OperationContractAttribute(Action="urn:OrganizationService/GetDepartmentViewByApproval", ReplyAction="urn:OrganizationService/GetDepartmentViewByApprovalResponse")]
+        SMT.SaaS.BLLCommonServices.OrganizationWS.V_DEPARTMENT[] GetDepartmentViewByApproval(string userID, string perm, string entity);
+        
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrganizationService/GetDepartmentViewByDateAndUser", ReplyAction="urn:OrganizationService/GetDepartmentViewByDateAndUserResponse")]
         SMT.SaaS.BLLCommonServices.OrganizationWS.V_DEPARTMENT[] GetDepartmentViewByDateAndUser(string startDate, string userID);
         
@@ -19370,6 +19919,8 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_RELATIONPOST))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_ORGANIZATIONINFO[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_ORGANIZATIONINFO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.EntityNames))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.UploadFileModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.T_HR_EMPLOYEEPOST[]))]
@@ -19553,6 +20104,8 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_RELATIONPOST))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_ORGANIZATIONINFO[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_ORGANIZATIONINFO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.EntityNames))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.UploadFileModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.T_HR_EMPLOYEEPOST[]))]
@@ -19730,6 +20283,8 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_RELATIONPOST))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_ORGANIZATIONINFO[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_ORGANIZATIONINFO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.EntityNames))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.UploadFileModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.T_HR_EMPLOYEEPOST[]))]
@@ -19886,6 +20441,8 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_RELATIONPOST))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_ORGANIZATIONINFO[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_ORGANIZATIONINFO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.EntityNames))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.UploadFileModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.OrganizationWS.T_HR_EMPLOYEEPOST[]))]
@@ -20018,6 +20575,12 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrganizationService/OrgChange", ReplyAction="urn:OrganizationService/OrgChangeResponse")]
         void OrgChange();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:OrganizationService/GetAllEmployeePostForWP", ReplyAction="urn:OrganizationService/GetAllEmployeePostForWPResponse")]
+        SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW[] GetAllEmployeePostForWP();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:OrganizationService/GetDepartmentBossHeadList", ReplyAction="urn:OrganizationService/GetDepartmentBossHeadListResponse")]
+        SMT.SaaS.BLLCommonServices.OrganizationWS.V_DEPARTMENT[] GetDepartmentBossHeadList(string postId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -20127,6 +20690,10 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
             return base.Channel.GetCompanyView(userID, perm, entity);
         }
         
+        public SMT.SaaS.BLLCommonServices.OrganizationWS.V_COMPANY[] GetCompanyViewByApproval(string userID, string perm, string entity) {
+            return base.Channel.GetCompanyViewByApproval(userID, perm, entity);
+        }
+        
         public SMT.SaaS.BLLCommonServices.OrganizationWS.V_COMPANY[] GetCompanyViewByDateAndUser(string startDate, string userID) {
             return base.Channel.GetCompanyViewByDateAndUser(startDate, userID);
         }
@@ -20209,6 +20776,10 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         
         public SMT.SaaS.BLLCommonServices.OrganizationWS.V_DEPARTMENT[] GetDepartmentView(string userID, string perm, string entity) {
             return base.Channel.GetDepartmentView(userID, perm, entity);
+        }
+        
+        public SMT.SaaS.BLLCommonServices.OrganizationWS.V_DEPARTMENT[] GetDepartmentViewByApproval(string userID, string perm, string entity) {
+            return base.Channel.GetDepartmentViewByApproval(userID, perm, entity);
         }
         
         public SMT.SaaS.BLLCommonServices.OrganizationWS.V_DEPARTMENT[] GetDepartmentViewByDateAndUser(string startDate, string userID) {
@@ -20417,6 +20988,14 @@ namespace SMT.SaaS.BLLCommonServices.OrganizationWS {
         
         public void OrgChange() {
             base.Channel.OrgChange();
+        }
+        
+        public SMT.SaaS.BLLCommonServices.OrganizationWS.V_EMPLOYEEVIEW[] GetAllEmployeePostForWP() {
+            return base.Channel.GetAllEmployeePostForWP();
+        }
+        
+        public SMT.SaaS.BLLCommonServices.OrganizationWS.V_DEPARTMENT[] GetDepartmentBossHeadList(string postId) {
+            return base.Channel.GetDepartmentBossHeadList(postId);
         }
     }
 }

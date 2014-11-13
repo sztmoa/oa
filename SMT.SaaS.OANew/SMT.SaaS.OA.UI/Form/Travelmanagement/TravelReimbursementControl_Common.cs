@@ -28,12 +28,17 @@ namespace SMT.SaaS.OA.UI.UserControls
     {
 
         #region InitFBControl
-        private void InitFBControl(T_OA_TRAVELREIMBURSEMENT Travel)
+        private void InitFBControl(T_OA_TRAVELREIMBURSEMENT Travel, bool isFromWP)
         {
             if (OpenFrom == "FromMVC")
             {
                 this.InitFB = true;
                 return;//从mvc打卡，不使用预算科目
+            }
+            if (isFromWP)
+            {
+                fbCtr.FromFB = false;
+                fbCtr.strBussinessTripID = Travel.T_OA_BUSINESSTRIP.BUSINESSTRIPID;
             }
             fbCtr.submitFBFormTypes = formType;//将FormType赋给FB
             if (formType == FormTypes.Resubmit)
@@ -41,7 +46,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                 fbCtr.submitFBFormTypes = FormTypes.Edit;
             }
             //fbCtr.SetRemarkVisiblity(Visibility.Collapsed);//隐藏预算控件中的备注
-            fbCtr.SetApplyTypeVisiblity(Visibility.Collapsed);//隐藏支付类型
+            //fbCtr.SetApplyTypeVisiblity(Visibility.Collapsed);//隐藏支付类型
             fbCtr.TravelSubject = new FrameworkUI.FBControls.TravelSubject();
             fbCtr.ApplyType = FrameworkUI.FBControls.ChargeApplyControl.ApplyTypes.ChargeApply;//费用报销
 

@@ -156,6 +156,10 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
 
                             postLevel = businesstripInfo.POSTLEVEL;
                             travelReimbursement.REMARKS=businesstripInfo.REMARKS;
+                            if (businesstripInfo.REMARKS == "工作计划生成")
+                            {
+                                travelReimbursement.ISFROMWP = "1";
+                            }
                             //client.GetEmployeePostBriefByEmployeeIDAsync(businesstripInfo.OWNERID, e.UserState);
                             //if (businesstripInfo.BUSINESSTRIPID != null)
                             //{

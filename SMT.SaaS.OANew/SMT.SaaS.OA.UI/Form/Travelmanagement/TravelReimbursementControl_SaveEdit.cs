@@ -241,11 +241,14 @@ namespace SMT.SaaS.OA.UI.UserControls
             }
             if (OpenFrom != "FromMVC")
             {
-                if (string.IsNullOrEmpty(txtPAYMENTINFO.Text))//支付信息
+                if (fbCtr.FromFB == true)
                 {
-                    RefreshUI(RefreshedTypes.HideProgressBar);
-                    ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), "支付信息不能为空，请重新填写", Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
-                    return false;
+                    if (string.IsNullOrEmpty(txtPAYMENTINFO.Text))//支付信息
+                    {
+                        RefreshUI(RefreshedTypes.HideProgressBar);
+                        ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), "支付信息不能为空，请重新填写", Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
+                        return false;
+                    }
                 }
             }
             if (string.IsNullOrEmpty(this.txtSubTotal.Text) && this.txtSubTotal.Text.Trim() != "0")
@@ -256,9 +259,12 @@ namespace SMT.SaaS.OA.UI.UserControls
             }
             if (string.IsNullOrEmpty(txtPAYMENTINFO.Text))
             {
-                RefreshUI(RefreshedTypes.HideProgressBar);
-                ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), "支付信息不能为空，请重新填写", Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
-                return false;
+                if (fbCtr.FromFB == true)
+                {
+                    RefreshUI(RefreshedTypes.HideProgressBar);
+                    ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), "支付信息不能为空，请重新填写", Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
+                    return false;
+                }
             }
             else
             {
@@ -481,7 +487,10 @@ namespace SMT.SaaS.OA.UI.UserControls
                                 ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("无报销单号,请重试！"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
                                 return;
                             }
+                            if(!string.IsNullOrEmpty(fbCtr.ExtensionalOrder.INNERORDERCODE))
+                            { 
                             txtNoClaims.Text = fbCtr.ExtensionalOrder.INNERORDERCODE;//保存后将单号显示出来
+                            }
                             if (fbCtr.ExtensionalOrder.PAYMENTINFO != null)
                             {
                                 txtPAYMENTINFO.Text = fbCtr.ExtensionalOrder.PAYMENTINFO;//支付信息

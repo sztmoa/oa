@@ -193,6 +193,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetCompanyViewByApproval">
+      <soap12:operation soapAction="urn:OrganizationService/GetCompanyViewByApproval" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetCompanyViewByDateAndUser">
       <soap12:operation soapAction="urn:OrganizationService/GetCompanyViewByDateAndUser" style="document" />
       <wsdl:input>
@@ -375,6 +384,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetDepartmentView">
       <soap12:operation soapAction="urn:OrganizationService/GetDepartmentView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentViewByApproval">
+      <soap12:operation soapAction="urn:OrganizationService/GetDepartmentViewByApproval" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -843,6 +861,24 @@
     </wsdl:operation>
     <wsdl:operation name="OrgChange">
       <soap12:operation soapAction="urn:OrganizationService/OrgChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmployeePostForWP">
+      <soap12:operation soapAction="urn:OrganizationService/GetAllEmployeePostForWP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentBossHeadList">
+      <soap12:operation soapAction="urn:OrganizationService/GetDepartmentBossHeadList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

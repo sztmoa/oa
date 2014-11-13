@@ -1,4 +1,4 @@
-﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
 <edmx:Runtime>
 <edmx:StorageModels>
 <Schema Namespace="SMT_OA_EFModel.Store" Alias="Self" Provider="EFOracleProvider" ProviderManifestToken="11g" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
@@ -584,7 +584,7 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
       <PropertyRef Name="AREADIFFERENCEID" />
     </Key>
     <Property Name="AREADIFFERENCEID" Type="nvarchar2" Nullable="false" MaxLength="100" />
-    <Property Name="AREACATEGORY" Type="nvarchar2" MaxLength="100" />
+    <Property Name="AREACATEGORY" Type="nvarchar2" />
     <Property Name="AREAINDEX" Type="number" />
     <Property Name="CREATEUSERID" Type="nvarchar2" MaxLength="100" />
     <Property Name="CREATEUSERNAME" Type="nvarchar2" Nullable="false" MaxLength="100" />
@@ -683,6 +683,7 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <Property Name="ALTERDETAILBASE" Type="nvarchar2" />
     <Property Name="ALTERDETAILBEFORE" Type="nvarchar2" />
     <Property Name="ALTERDETAILATFER" Type="nvarchar2" />
+    <Property Name="ISFROMWP" Type="nvarchar2" />
   </EntityType>
   <EntityType Name="T_OA_BUSINESSTRIPDETAIL">
     <Key>
@@ -2310,6 +2311,7 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <Property Name="POSTLEVEL" Type="nvarchar2" />
     <Property Name="STARTCITYNAME" Type="nvarchar2" />
     <Property Name="ENDCITYNAME" Type="nvarchar2" />
+    <Property Name="ISFROMWP" Type="nvarchar2" />
   </EntityType>
   <EntityType Name="T_OA_TRAVELSOLUTIONS">
     <Key>
@@ -3879,7 +3881,7 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
       <PropertyRef Name="AREADIFFERENCEID" />
     </Key>
     <Property Name="AREADIFFERENCEID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="AREACATEGORY" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="AREACATEGORY" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
     <Property Name="AREAINDEX" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="CREATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="CREATEUSERNAME" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
@@ -3981,6 +3983,7 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <Property Name="ALTERDETAILBASE" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
     <Property Name="ALTERDETAILBEFORE" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
     <Property Name="ALTERDETAILATFER" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="ISFROMWP" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="T_OA_TRAVELREIMBURSEMENT" Relationship="SMT_OA_EFModel.FK_BUSINESSTRIP_T_OA_BUS" FromRole="T_OA_BUSINESSTRIP" ToRole="T_OA_TRAVELREIMBURSEMENT" />
     <NavigationProperty Name="T_OA_BUSINESSTRIPDETAIL" Relationship="SMT_OA_EFModel.FK_T_OA_BUS_T_OA_BUSDETAIL" FromRole="T_OA_BUSINESSTRIP" ToRole="T_OA_BUSINESSTRIPDETAIL" />
   </EntityType>
@@ -5630,6 +5633,7 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <Property Name="POSTLEVEL" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
     <Property Name="STARTCITYNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
     <Property Name="ENDCITYNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="ISFROMWP" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="T_OA_BUSINESSTRIP" Relationship="SMT_OA_EFModel.FK_BUSINESSTRIP_T_OA_BUS" FromRole="T_OA_TRAVELREIMBURSEMENT" ToRole="T_OA_BUSINESSTRIP" />
     <NavigationProperty Name="T_OA_REIMBURSEMENTDETAIL" Relationship="SMT_OA_EFModel.FK_T_OA_REI_REFERENCE_T_OA_TRA" FromRole="T_OA_TRAVELREIMBURSEMENT" ToRole="T_OA_REIMBURSEMENTDETAIL" />
   </EntityType>
@@ -6588,6 +6592,7 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
           <ScalarProperty Name="ALTERDETAILBASE" ColumnName="ALTERDETAILBASE" />
           <ScalarProperty Name="ALTERDETAILBEFORE" ColumnName="ALTERDETAILBEFORE" />
           <ScalarProperty Name="ALTERDETAILATFER" ColumnName="ALTERDETAILATFER" />
+          <ScalarProperty Name="ISFROMWP" ColumnName="ISFROMWP" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -8217,6 +8222,7 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
           <ScalarProperty Name="POSTLEVEL" ColumnName="POSTLEVEL" />
           <ScalarProperty Name="STARTCITYNAME" ColumnName="STARTCITYNAME" />
           <ScalarProperty Name="ENDCITYNAME" ColumnName="ENDCITYNAME" />
+          <ScalarProperty Name="ISFROMWP" ColumnName="ISFROMWP" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -9053,150 +9059,5 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
 <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
 <Connection><DesignerInfoPropertySet><DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" /></DesignerInfoPropertySet></Connection>
 <edmx:Options />
-<edmx:Diagrams >
-      <Diagram DiagramId="d4bc18c8556848df8df8a184cda21c19" Name="Diagram1">
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_ACCIDENTRECORD" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_AGENTDATESET" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_AGENTSET" Width="1.5" PointX="12.75" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_APPROVALINFO" Width="1.5" PointX="23.75" PointY="32.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_APPROVALINFOTEMPLET" Width="1.5" PointX="25.75" PointY="32.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_APPROVALTYPESET" Width="1.5" PointX="35.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_ARCHIVES" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_AREAALLOWANCE" Width="1.5" PointX="12.25" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_AREACITY" Width="1.5" PointX="12.25" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_AREADIFFERENCE" Width="1.5" PointX="10" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_BUSINESSREPORT" Width="1.5" PointX="7.75" PointY="26.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_BUSINESSREPORTDETAIL" Width="1.5" PointX="10" PointY="27" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_BUSINESSTRIP" Width="1.5" PointX="9.75" PointY="35.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_BUSINESSTRIPDETAIL" Width="1.5" PointX="12" PointY="33.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_BUSINESSTRIPDETAIL_BAK" Width="1.5" PointX="17.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_BUSINESSTRIP_BAK" Width="1.5" PointX="30.75" PointY="36.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_CALENDAR" Width="1.5" PointX="32.75" PointY="36.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_CANTAKETHEPLANELINE" Width="1.5" PointX="10" PointY="14.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_CONSERVATION" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_CONSERVATIONRECORD" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_CONTRACTAPP" Width="1.5" PointX="16.75" PointY="33.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_CONTRACTPRINT" Width="1.5" PointX="19" PointY="33.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_CONTRACTTEMPLATE" Width="1.5" PointX="15" PointY="19" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_CONTRACTTYPE" Width="1.5" PointX="12.75" PointY="19.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_CONTRACTVIEW" Width="1.5" PointX="21.25" PointY="34" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_COSTRECORD" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_DISTRIBUTEUSER" Width="1.5" PointX="34.75" PointY="36.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_GIFTAPPLYDETAIL" Width="1.5" PointX="36.75" PointY="36.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_GIFTAPPLYMASTER" Width="1.5" PointX="37.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_GIFTPLAN" Width="1.5" PointX="37.75" PointY="27.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_GRADED" Width="1.5" PointX="38.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_HIREAPP" Width="1.5" PointX="33.25" PointY="29.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_HIRERECORD" Width="1.5" PointX="35.5" PointY="29.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_HOUSEINFO" Width="1.5" PointX="28.75" PointY="29.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_HOUSEINFOISSUANCE" Width="1.5" PointX="28.75" PointY="37.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_HOUSELIST" Width="1.5" PointX="31" PointY="29.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_LENDARCHIVES" Width="1.5" PointX="8" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_LICENSEDETAIL" Width="1.5" PointX="33.25" PointY="16.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_LICENSEMASTER" Width="1.5" PointX="31" PointY="18.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_LICENSEUSER" Width="1.5" PointX="33.25" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_MAINTENANCEAPP" Width="1.5" PointX="3" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_MAINTENANCERECORD" Width="1.5" PointX="5.25" PointY="20.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_MEETINGCONTENT" Width="1.5" PointX="38.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_MEETINGINFO" Width="1.5" PointX="17" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_MEETINGMESSAGE" Width="1.5" PointX="19.25" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_MEETINGROOM" Width="1.5" PointX="14.75" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_MEETINGROOMAPP" Width="1.5" PointX="17" PointY="26.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_MEETINGROOMTIMECHANGE" Width="1.5" PointX="19.25" PointY="26.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_MEETINGSTAFF" Width="1.5" PointX="19.25" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_MEETINGTEMPLATE" Width="1.5" PointX="17" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_MEETINGTIMECHANGE" Width="1.5" PointX="19.25" PointY="16" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_MEETINGTYPE" Width="1.5" PointX="14.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_ORDERMEAL" Width="1.5" PointX="38.75" PointY="35.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_ORGANIZATION" Width="1.5" PointX="28.75" PointY="19.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_PRIORITIES" Width="1.5" PointX="18.75" PointY="39.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_PROGRAMAPPLICATIONS" Width="1.5" PointX="10" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_REIMBURSEMENTDETAIL" Width="1.5" PointX="14.25" PointY="38.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_REQUIRE" Width="1.5" PointX="31" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_REQUIREDETAIL" Width="1.5" PointX="39.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_REQUIREDETAIL2" Width="1.5" PointX="31" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_REQUIREDISTRIBUTE" Width="1.5" PointX="33.25" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_REQUIREMASTER" Width="1.5" PointX="28.75" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_REQUIRERESULT" Width="1.5" PointX="36.25" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_SATISFACTIONDETAIL" Width="1.5" PointX="24" PointY="16.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_SATISFACTIONDISTRIBUTE" Width="1.5" PointX="26.25" PointY="21.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_SATISFACTIONMASTER" Width="1.5" PointX="21.75" PointY="22" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_SATISFACTIONREQUIRE" Width="1.5" PointX="24" PointY="24" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_SATISFACTIONRESULT" Width="1.5" PointX="26.25" PointY="27.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_SENDDOC" Width="1.5" PointX="38" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_SENDDOCTEMPLATE" Width="1.5" PointX="20.75" PointY="39.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_SENDDOCTYPE" Width="1.5" PointX="35.75" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_TAKETHESTANDARDTRANSPORT" Width="1.5" PointX="10" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_TRAVELREIMBURSEMENT" Width="1.5" PointX="12" PointY="37.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_TRAVELSOLUTIONS" Width="1.5" PointX="7.75" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_VEHICLE" Width="1.5" PointX="0.75" PointY="16.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_VEHICLECARD" Width="1.5" PointX="3" PointY="27.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_VEHICLEDISPATCH" Width="1.5" PointX="3" PointY="33.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_VEHICLEDISPATCHDETAIL" Width="1.5" PointX="5.25" PointY="34" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_VEHICLEDISPATCHRECORD" Width="1.5" PointX="7.5" PointY="33.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_VEHICLEUSEAPP" Width="1.5" PointX="3" PointY="40.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_VIEWSENDDOC" Width="1.5" PointX="25.75" PointY="39.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_WELFAREDETAIL" Width="1.5" PointX="24" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_WELFAREDISTRIBUTEDETAIL" Width="1.5" PointX="26.25" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_WELFAREDISTRIBUTEMASTER" Width="1.5" PointX="24" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_WELFAREDISTRIBUTEUNDO" Width="1.5" PointX="26.25" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_WELFAREMASERT" Width="1.5" PointX="21.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMT_OA_EFModel.T_OA_WORKRECORD" Width="1.5" PointX="39.75" PointY="26.75" IsExpanded="true" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_ACCIDENTRECORD" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_LENDARCHIVES" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_AREADIFFERENCE_T_OA_ARE" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_AREAALLOWANCE" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_ARE_AREACITY" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_AREADIFFERENCE" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_REPORTDETAIL_T_OA_BUS" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_BUSINESSTRIP_T_OA_BUS" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_BUS_T_OA_BUSDETAIL" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_CAN_REFERENCE_T_OA_TRA" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_CONSERVATION" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_CONSERVATIONRECORD" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_CONTRACTPRINT" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_CONTRACTVIEW" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_CONTRACTTEMPLATE" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_COSTRECORD" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_HIREAPP" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.T_OA_HIRERECORD1" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_HOUSELIST1" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_HOUSELIST2" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_LICENSEDETAIL" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_LICENSEMASTER" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_LICENSEUSER" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_MAINTENANCEAPP" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_MAINTENANCERECORD" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_MEETINGINFO1" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_MEETINGINFO2" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_MEETINGMESSAGE" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_MEETINGSTAFF" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_MEETINGTIMECHANGE" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_MEETINGROOMAPP" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_MEETINGROOMTIMECHANGE" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_MEETINGTEMPLATE" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_PRO_REFERENCE_T_OA_TRA" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_REI_REFERENCE_T_OA_TRA" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_REQUIRE" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_REQUIREDISTRIBUTE" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_REQUIRERESULT2" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_REQUIREDETAIL2" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_REQUIRERESULT" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_SATISFACTIONDETAIL" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_SATISFACTIONDISTRIBUTE" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_SATISFACTIONREQUIRE" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_SATISFACTIONRESULT" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_SENDDOC" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_TAK_REFERENCE_T_OA_TRA" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_VEHICLECARD" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_VEHICLEDISPATCH" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_VEHICLEDISPATCHDETAIL1" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_VEHICLEDISPATCHDETAIL2" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_VEHICLEDISPATCHRECORD" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_WELFAREDETAIL" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_WELFAREDISDETAIL" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_WELFAREDISMASTER" ManuallyRouted="false" />
-        <AssociationConnector Association="SMT_OA_EFModel.FK_T_OA_WELFAREDISTRIBUTEUNDO" ManuallyRouted="false" />
-      </Diagram>
-    </edmx:Diagrams>
+<edmx:Diagrams />
 </edmx:Designer></edmx:Edmx>

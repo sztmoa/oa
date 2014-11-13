@@ -20,6 +20,9 @@ namespace SMT.SaaS.OA.BLL
         
         public T_OA_APPROVALINFO Get_Apporval(string id)
         {
+            //WorkerCordManagementBll workBll = new WorkerCordManagementBll();
+            //List<T_OA_WORKRECORD> records = workBll.GetWorkRecordsByEmployeeIDAndDate("c094d3aa-ffda-46c4-8634-3ca327af7148", "2014/8/25");
+            //List<string> rec = workBll.GetDateByEmployeeIDAndDate("c094d3aa-ffda-46c4-8634-3ca327af7148", "2014-08-25");
             var m = from master in dal.GetObjects<T_OA_APPROVALINFO>() where master.APPROVALID == id select master;
             if (m.Count() > 0)
             {
@@ -474,6 +477,13 @@ namespace SMT.SaaS.OA.BLL
             int k = 0;
             try
             {
+                SMT.SaaS.BLLCommonServices.PermissionWS.PermissionServiceClient permClient = new BLLCommonServices.PermissionWS.PermissionServiceClient();                
+                List<SMT.SaaS.BLLCommonServices.PermissionWS.V_Dictionary> listDicts = new List<BLLCommonServices.PermissionWS.V_Dictionary>();
+                List<string> listStrs = new List<string>();
+                //添加事项审批类型
+                listStrs.Add("TYPEAPPROVAL");
+                //获取事项审批类型集合
+                listDicts = permClient.GetDictionaryByCategoryArray(listStrs.ToArray()).ToList();
                 //公司
                 var companyents = from ent in dal.GetObjects<T_OA_APPROVALTYPESET>()
                                   where ent.ORGANIZATIONTYPE == "0" && lstcompany.Contains(ent.ORGANIZATIONID)
@@ -501,7 +511,94 @@ namespace SMT.SaaS.OA.BLL
                 {
                      k = dal.SaveContextChanges();
                 }
+                List<decimal> approvalVaues = new List<decimal>();
+                var ents = from ent in ListSet
+                           select new { ent.TYPEAPPROVAL};
+                foreach (var ent in ents)
+                { 
+                    if(!string.IsNullOrEmpty(ent.TYPEAPPROVAL))
+                    {
+                        decimal  aa = System.Convert.ToDecimal(ent.TYPEAPPROVAL);
+                        approvalVaues.Add(aa);
+                    }
+                }
+                var ents2 = from ent in listDicts
+                            where approvalVaues.Contains(ent.DICTIONARYVALUE) 
+                            select ent;
 
+                foreach(var ent in approvalVaues)
+                {
+                    var entaa = from a in ents2
+                                where a.DICTIONARYVALUE == ent
+                                select a;
+                    if (entaa.Count() > 0)
+                    {
+                        SMT.SaaS.BLLCommonServices.PermissionWS.V_Dictionary dict = entaa.FirstOrDefault();
+                        string fatherID = string.Empty;
+                        decimal fatherValue = 0;
+                        string strFatherValue = "";
+                        //事项审批子集合
+                        List<string> childIDs = new List<string>();
+                        if (dict != null)
+                        {
+                            fatherID = dict.FATHERID;
+                        }
+                        if (!string.IsNullOrEmpty(fatherID))
+                        {
+                            SMT.SaaS.BLLCommonServices.PermissionWS.V_Dictionary fatherDict = listDicts.Where(s => s.DICTIONARYID == fatherID).FirstOrDefault();
+                            fatherValue = fatherDict.DICTIONARYVALUE;
+                            strFatherValue = fatherValue.ToString();
+                            var entchilds = from b in listDicts
+                                            where b.FATHERID == strFatherValue
+                                            select b.DICTIONARYVALUE;
+                            entchilds.ToList().ForEach(c =>
+                            {
+                                childIDs.Add(c.ToString());
+                            });
+                        }
+
+                        var existSets = from aa in ListSet
+                                        where aa.TYPEAPPROVAL == strFatherValue
+                                        select aa;
+                        if (existSets.Count() == 0)
+                        {
+                            SMT.Foundation.Log.Tracer.Debug("添加了新的父类，ListSet数量：" + ListSet.Count());
+                            SMT.Foundation.Log.Tracer.Debug("添加了新的父类，childIDs数量：" + childIDs.Count() + "childIDs：" + childIDs.ToString());
+                            var childSets = from cc in ListSet
+                                            where childIDs.Contains(cc.TYPEAPPROVAL)
+                                            select cc;
+                            T_OA_APPROVALTYPESET typeSet = childSets.FirstOrDefault();
+                            if (typeSet != null)
+                            {
+                                T_OA_APPROVALTYPESET typeSet1 = new T_OA_APPROVALTYPESET();
+                                typeSet1 = typeSet;
+                                typeSet1.TYPESETID = Guid.NewGuid().ToString();
+                                typeSet1.TYPEAPPROVAL = strFatherValue;
+                                var existfather = from fath in ListSet
+                                                  where fath.TYPEAPPROVAL == strFatherValue
+                                                  select fath;
+                                //只选择了子类型没有添加父类型，则默认添加
+                                if (existfather.Count() == 0)
+                                {
+                                    ListSet.Add(typeSet1);
+                                    SMT.Foundation.Log.Tracer.Debug("添加了新的父类：" + strFatherValue);
+                                }
+                            }
+                            else
+                            {
+                                SMT.Foundation.Log.Tracer.Debug("查找父类的子节点为空，父类：" + strFatherValue);
+                            }
+                        }
+                        else
+                        {
+                            SMT.Foundation.Log.Tracer.Debug("existSets查找父类的节点不为空，父类ID：" + strFatherValue);
+                        }
+                    }
+                    else
+                    {
+                        SMT.Foundation.Log.Tracer.Debug("existSets不为0，为空添加了新的父类：");
+                    }
+                }
                 if (ListSet.Count > 0)
                 {
                     ListSet.ForEach(
@@ -709,14 +806,73 @@ namespace SMT.SaaS.OA.BLL
                     });
                 }
                 List<SMT.SaaS.BLLCommonServices.PermissionWS.V_Dictionary> listDictSeconds = new List<BLLCommonServices.PermissionWS.V_Dictionary>();
+                List<SMT.SaaS.BLLCommonServices.PermissionWS.V_Dictionary> listDictSeconds2 = new List<BLLCommonServices.PermissionWS.V_Dictionary>();
                 listDictSeconds = listDicts.Where(s=>oldApprovals.Contains(s.DICTIONARYVALUE.ToString())).ToList();
-                listDictSeconds.ForEach(s => {
-                    //过滤叶节点
-                    var entFather = from ent in listDictSeconds
-                                    where ent.FATHERID == s.DICTIONARYID
+                List<string> fathIDs = new List<string>();
+                var ent2 = from ent in listDictSeconds
+                           where ent.FATHERID != "" && ent.FATHERID != null
+                           select ent.FATHERID;
+                fathIDs = ent2.ToList();
+                var dictb = listDicts.Where(s=>ent2.ToList().Contains(s.DICTIONARYID));
+                foreach (var b in dictb)
+                {
+                    var exist = from ent in listDictSeconds
+                                where ent.DICTIONARYID == b.DICTIONARYID
+                                select ent;
+                    if (exist.Count() == 0)
+                    {
+                        listDictSeconds2.Add(b);
+                        var entfather = from ent in listDicts
+                                        where ent.DICTIONARYID == b.FATHERID
+                                        select ent;
+                        if (entfather.Count() > 0)
+                        {
+                            string dtID = entfather.FirstOrDefault().DICTIONARYID;
+                            var exist2 = from ent in listDictSeconds
+                                         where ent.DICTIONARYID == dtID
+                                        select ent;
+                            if (exist2.Count() == 0)
+                            {
+                                listDictSeconds2.Add(entfather.FirstOrDefault());
+                            }
+                        }
+                    }
+                }
+                foreach (var aa in listDictSeconds)
+                {
+                    var exist2 = from ent in listDictSeconds2
+                                 where ent.DICTIONARYID == aa.DICTIONARYID
+                                 select ent;
+                    if (exist2.Count() == 0)
+                    {
+                        listDictSeconds2.Add(aa);
+                    }
+                    var entdict = from ent in listDicts
+                                  where ent.FATHERID == aa.DICTIONARYID
+                                  select ent;
+                    var entchilds = from ent in listDictSeconds
+                                    where ent.FATHERID == aa.DICTIONARYID
                                     select ent;
-                    if (entFather.Count() == 0)
-                    {                        
+                    if (entdict.Count() > 0 && entchilds.Count() == 0)
+                    {
+                        var del = from ent in listDictSeconds2
+                                  where ent.DICTIONARYID == aa.DICTIONARYID
+                                  select ent;
+
+                        if (del.Count() > 0)
+                        {
+                            listDictSeconds2.Remove(aa);
+                        }
+                    }
+                }
+
+                listDictSeconds2.ForEach(s => {
+                    //过滤叶节点
+                    //var entFather = from ent in listDictSeconds
+                    //                where ent.FATHERID == s.DICTIONARYID
+                    //                select ent;
+                    //if (entFather.Count() == 0)
+                    //{                        
                         string dictValue = s.DICTIONARYVALUE.ToString();
                         var entRange = from ent in ents
                                        where ent.TYPEAPPROVAL == dictValue
@@ -725,10 +881,22 @@ namespace SMT.SaaS.OA.BLL
                         {
                             entRange.ToList().ForEach(m => {
                                 V_ApprovalType approvalDict = new V_ApprovalType();
+                                string dictName = string.Empty;
+                                //需求没确定暂时注销
+                                //var fathers = listDicts.Where(n=>n.FATHERID == s.FATHERID);
+                                //if (fathers.Count() > 0)
+                                //{
+                                //    dictName = fathers.FirstOrDefault().DICTIONARYNAME + "-->" + s.DICTIONARYNAME;
+                                //}
+                                //else
+                                //{
+                                //    dictName =  s.DICTIONARYNAME;
+                                //}
+                                dictName = s.DICTIONARYNAME;
                                 approvalDict.APPROVALTYPE = s.DICTIONARYVALUE;
-                                approvalDict.APPROVALTYPENAME = s.DICTIONARYNAME;
+                                approvalDict.APPROVALTYPENAME = dictName;
                                 approvalDict.FATHERAPPROVALID = s.FATHERID;
-                                var entFathers = listDictSeconds.Where(n => n.DICTIONARYID == s.FATHERID).FirstOrDefault();
+                                var entFathers = listDictSeconds2.Where(n => n.DICTIONARYID == s.FATHERID).FirstOrDefault();
                                 if (entFathers != null)
                                 {
                                     if (entFathers.DICTIONARYVALUE != null)
@@ -768,17 +936,78 @@ namespace SMT.SaaS.OA.BLL
                                         approvalDict.DEPARTMENTNAME = entDicts.FirstOrDefault().Value;
                                     }
                                 }
+                                approvalDict.ApprovalTypeID = s.DICTIONARYID;
                                 listTypes.Add(approvalDict);
+                                //考虑父节点的情况
+                                if (!string.IsNullOrEmpty(s.FATHERID))
+                                {
+                                    //原来的节点
+                                    var entfathers2 = from b in listDictSeconds
+                                                      where b.DICTIONARYID == approvalDict.FATHERAPPROVALID
+                                                      select b;
+                                    //后来的节点
+                                    var entfathers3 = from b in listDictSeconds2
+                                                      where b.DICTIONARYID == approvalDict.FATHERAPPROVALID
+                                                      select b;
+                                    if (entfathers2.Count() == 0 && entfathers3.Count() >0)
+                                    {
+                                        V_ApprovalType approvalDict1 = new V_ApprovalType();
+                                        SMT.SaaS.BLLCommonServices.PermissionWS.V_Dictionary s1 = new BLLCommonServices.PermissionWS.V_Dictionary();
+                                        s1 = entfathers3.FirstOrDefault();
+                                        approvalDict1.ApprovalTypeID = s1.DICTIONARYID;
+                                        approvalDict1.APPROVALTYPENAME = s1.DICTIONARYNAME;
+                                        approvalDict1.APPROVALTYPE = s1.DICTIONARYVALUE;
+                                        approvalDict1.COMPANYID = approvalDict.COMPANYID;
+                                        approvalDict1.COMPANYNAME = approvalDict.COMPANYNAME;
+                                        approvalDict1.DEPARTMENTID = approvalDict.DEPARTMENTID;
+                                        approvalDict1.DEPARTMENTNAME = approvalDict.DEPARTMENTNAME;
+                                        approvalDict1.FATHERAPPROVALID = s1.FATHERID;
+                                        var ent3 = from cc in listTypes
+                                                   where cc.ApprovalTypeID == s1.DICTIONARYID
+                                                   select cc;
+                                        if (ent3.Count() == 0)
+                                        {
+                                            listTypes.Add(approvalDict1);
+                                            //后来的节点
+                                            var entfathers4 = from b in listDictSeconds2
+                                                              where b.DICTIONARYID == approvalDict1.FATHERAPPROVALID
+                                                              select b;
+                                            if (entfathers4.Count() > 0)
+                                            {
+                                                V_ApprovalType approvalDict2 = new V_ApprovalType();
+                                                SMT.SaaS.BLLCommonServices.PermissionWS.V_Dictionary s2 = new BLLCommonServices.PermissionWS.V_Dictionary();
+                                                s1 = entfathers3.FirstOrDefault();
+                                                approvalDict2.ApprovalTypeID = s2.DICTIONARYID;
+                                                approvalDict2.APPROVALTYPENAME = s2.DICTIONARYNAME;
+                                                approvalDict2.APPROVALTYPE = s2.DICTIONARYVALUE;
+                                                approvalDict2.COMPANYID = approvalDict.COMPANYID;
+                                                approvalDict2.COMPANYNAME = approvalDict.COMPANYNAME;
+                                                approvalDict2.DEPARTMENTID = approvalDict.DEPARTMENTID;
+                                                approvalDict2.DEPARTMENTNAME = approvalDict.DEPARTMENTNAME;
+                                                approvalDict2.FATHERAPPROVALID = s2.FATHERID;
+                                                var ent4 = from cc in listTypes
+                                                           where cc.ApprovalTypeID == s1.DICTIONARYID
+                                                           select cc;
+                                                if (ent4.Count() == 0)
+                                                {
+                                                    listTypes.Add(approvalDict2);
+                                                }
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+
                             });
                         }
-                    }
+                    //}
                 });
             }
             catch (Exception ex)
             {
                 Tracer.Debug("事项审批ApprovalManagementBll-GetApprovalTypesByUserID" + System.DateTime.Now.ToString() + " " + ex.ToString());                
             }
-            listTypes = listTypes.OrderBy(s=>s.COMPANYID).OrderBy(s=>s.DEPARTMENTID).ToList();
+            listTypes = listTypes.OrderBy(s=>s.COMPANYID).OrderBy(s=>s.FATHERAPPROVALID).ToList();
             return listTypes;
         }
 

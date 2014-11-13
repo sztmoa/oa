@@ -201,7 +201,7 @@ namespace SMT.SaaS.OA.BLL
         {
             try
             {
-                AddTravelmanagement.CREATEDATE = DateTime.Now;
+                AddTravelmanagement.CREATEDATE = DateTime.Now;                
                 Utility.RefreshEntity(AddTravelmanagement);
                 foreach (var detail in TraveDetail)
                 {
