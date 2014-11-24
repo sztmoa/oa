@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="testModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="employees">
+          <Key>
+            <PropertyRef Name="emp_no" />
+          </Key>
+          <Property Name="emp_no" Type="int" Nullable="false" />
+          <Property Name="birth_date" Type="date" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="last_name" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="gender" Type="enum" Nullable="false" />
+          <Property Name="hire_date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t_flow_definedetail">
+          <Key>
+            <PropertyRef Name="POINTID" />
+          </Key>
+          <Property Name="FLOWDEFINEID" Type="varchar" MaxLength="50" />
+          <Property Name="POINTNAME" Type="varchar" MaxLength="50" />
+          <Property Name="POINTID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FATHERID" Type="varchar" MaxLength="50" />
+          <Property Name="ISSTARTPOINT" Type="varchar" MaxLength="50" />
+          <Property Name="ISENDPOINT" Type="varchar" MaxLength="50" />
+          <Property Name="ISCOMMONAUDITPOINT" Type="varchar" MaxLength="50" />
+          <Property Name="AUDITTYPE" Type="varchar" MaxLength="50" />
+          <Property Name="AUDITPOSTID" Type="varchar" MaxLength="2000" />
+          <Property Name="AUDITROLEID" Type="varchar" MaxLength="2000" />
+          <Property Name="AUDITROLENAME" Type="varchar" MaxLength="500" />
+          <Property Name="AUDITPOSTNAME" Type="varchar" MaxLength="500" />
+          <Property Name="OWNERCOMPANY" Type="varchar" MaxLength="50" />
+          <Property Name="POINTTYPE" Type="varchar" MaxLength="50" />
+          <Property Name="POINTX" Type="float" />
+          <Property Name="POINTY" Type="float" />
+          <Property Name="EFFECTDEHORUS" Type="varchar" MaxLength="50" />
+          <Property Name="ISKPIPOINT" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="t_flow_definedetailcondition">
+          <Key>
+            <PropertyRef Name="CONDITIONID" />
+          </Key>
+          <Property Name="CONDITIONID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FATHERPOINTID" Type="varchar" MaxLength="50" />
+          <Property Name="HAVECONDITION" Type="varchar" MaxLength="50" />
+          <Property Name="CHILDPOINTID" Type="varchar" MaxLength="50" />
+          <Property Name="CONDITIONNAME" Type="varchar" MaxLength="500" />
+          <Property Name="CONDICODE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="t_flow_definemaser">
+          <Key>
+            <PropertyRef Name="FLOWID" />
+          </Key>
+          <Property Name="FLOWID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ENTITYID" Type="varchar" MaxLength="50" />
+          <Property Name="FLOWNAME" Type="varchar" MaxLength="50" />
+          <Property Name="REMARK" Type="varchar" MaxLength="2000" />
+          <Property Name="OWNERID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERPOSTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERDEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERCOMPANYID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATEUSER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATEDATE" Type="datetime" Precision="0" />
+          <Property Name="UPDATEUSER" Type="varchar" MaxLength="50" />
+          <Property Name="UPDATEDATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="t_flow_definemsg">
+          <Key>
+            <PropertyRef Name="FLOWPOINTMESSAGEID" />
+          </Key>
+          <Property Name="FLOWPOINTMESSAGEID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ENTITYID" Type="varchar" MaxLength="50" />
+          <Property Name="SYSTEMTYPE" Type="varchar" MaxLength="50" />
+          <Property Name="SYSTEMNAME" Type="varchar" MaxLength="2000" />
+          <Property Name="MODELNAME" Type="varchar" MaxLength="2000" />
+          <Property Name="MODELCODE" Type="varchar" MaxLength="500" />
+          <Property Name="FLOWID" Type="varchar" MaxLength="50" />
+          <Property Name="CHECKSTATE" Type="varchar" MaxLength="50" />
+          <Property Name="MESSAGECONTENT" Type="varchar" MaxLength="2000" />
+          <Property Name="HASTRIGGERFUNCTION" Type="varchar" MaxLength="50" />
+          <Property Name="ISSYSTEMDEFAULT" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="t_flow_definemsgfunction">
+          <Key>
+            <PropertyRef Name="TRIGGERFUNCTIONID" />
+          </Key>
+          <Property Name="TRIGGERFUNCTIONID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FLOWPOINTMESSAGEID" Type="varchar" MaxLength="50" />
+          <Property Name="RECIVEPOSTID" Type="varchar" MaxLength="2000" />
+          <Property Name="TRIGGERMODECODE" Type="varchar" MaxLength="2000" />
+          <Property Name="TRIGGERMODENAME" Type="varchar" MaxLength="2000" />
+          <Property Name="TRIGGERFUNCTION" Type="varchar" MaxLength="2000" />
+          <Property Name="PARAMETERS" Type="varchar" MaxLength="2000" />
+          <Property Name="TRIGGERMESSAGE" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="t_flow_dotask">
+          <Key>
+            <PropertyRef Name="DOTASKID" />
+          </Key>
+          <Property Name="DOTASKID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FLOWDETAILID" Type="varchar" MaxLength="50" />
+          <Property Name="DOTASKCONTENT" Type="varchar" MaxLength="2000" />
+          <Property Name="SYSTEMTYPE" Type="varchar" MaxLength="50" />
+          <Property Name="SYSTEMNAME" Type="varchar" MaxLength="2000" />
+          <Property Name="FORMTYPE" Type="varchar" MaxLength="50" />
+          <Property Name="MODELCODE" Type="varchar" MaxLength="2000" />
+          <Property Name="MODELNAME" Type="varchar" MaxLength="2000" />
+          <Property Name="FORMID" Type="varchar" MaxLength="50" />
+          <Property Name="FORMSTATE" Type="varchar" MaxLength="50" />
+          <Property Name="CHECKSTATE" Type="varchar" MaxLength="50" />
+          <Property Name="CLOSETIME" Type="datetime" Precision="0" />
+          <Property Name="FORMCONFIG" Type="varchar" MaxLength="2000" />
+          <Property Name="APPXML" Type="varchar" MaxLength="2000" />
+          <Property Name="REMARK" Type="varchar" MaxLength="2000" />
+          <Property Name="OWNERNAME" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERPOSTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERDEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERCOMPANYID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATEUSER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATEDATE" Type="datetime" Precision="0" />
+          <Property Name="UPDATEUSER" Type="varchar" MaxLength="50" />
+          <Property Name="UPDATEDATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="t_flow_recorddetail">
+          <Key>
+            <PropertyRef Name="FLOWDETAILID" />
+          </Key>
+          <Property Name="FLOWDETAILID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FLOWMASTERID" Type="varchar" MaxLength="50" />
+          <Property Name="AUDITEMPID" Type="varchar" MaxLength="50" />
+          <Property Name="FATHERID" Type="varchar" MaxLength="50" />
+          <Property Name="AUDITSTATE" Type="varchar" MaxLength="50" />
+          <Property Name="AUDITCONTENT" Type="varchar" MaxLength="2000" />
+          <Property Name="ISCOMMONAUDIT" Type="varchar" MaxLength="50" />
+          <Property Name="DEALSTATE" Type="varchar" MaxLength="50" />
+          <Property Name="ISAGENCYAUDIT" Type="varchar" MaxLength="50" />
+          <Property Name="AGENCYEMPID" Type="varchar" MaxLength="50" />
+          <Property Name="AGENCYEMPNAME" Type="varchar" MaxLength="500" />
+          <Property Name="AUDITTIME" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="t_flow_recordmaster">
+          <Key>
+            <PropertyRef Name="FLOWMASTERID" />
+          </Key>
+          <Property Name="FLOWMASTERID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SYSTEMTYPE" Type="varchar" MaxLength="50" />
+          <Property Name="SYSTEMNAME" Type="varchar" MaxLength="2000" />
+          <Property Name="MODELCODE" Type="varchar" MaxLength="2000" />
+          <Property Name="MODELNAME" Type="varchar" MaxLength="2000" />
+          <Property Name="FORMID" Type="varchar" MaxLength="50" />
+          <Property Name="FLOWNAME" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERNAME" Type="varchar" MaxLength="50" />
+          <Property Name="CHECKSTATE" Type="varchar" MaxLength="50" />
+          <Property Name="REMARK" Type="varchar" MaxLength="2000" />
+          <Property Name="OWNERID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERPOSTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERDEPARTMENTID" Type="varchar" MaxLength="50" />
+          <Property Name="OWNERCOMPANYID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATEUSER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATEDATE" Type="datetime" Precision="0" />
+          <Property Name="UPDATEUSER" Type="varchar" MaxLength="50" />
+          <Property Name="UPDATEDATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="t_sys_entitymenu">
+          <Key>
+            <PropertyRef Name="ENTITYID" />
+          </Key>
+          <Property Name="ENTITYID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ENTITYNAME" Type="varchar" MaxLength="500" />
+          <Property Name="ENTITYCODE" Type="varchar" MaxLength="500" />
+          <Property Name="SYSTEMTYPE" Type="varchar" MaxLength="50" />
+          <Property Name="SYSTEMNAME" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="testModelStoreContainer">
+          <EntitySet Name="employees" EntityType="Self.employees" Schema="test" store:Type="Tables" />
+          <EntitySet Name="t_flow_definedetail" EntityType="Self.t_flow_definedetail" Schema="test" store:Type="Tables" />
+          <EntitySet Name="t_flow_definedetailcondition" EntityType="Self.t_flow_definedetailcondition" Schema="test" store:Type="Tables" />
+          <EntitySet Name="t_flow_definemaser" EntityType="Self.t_flow_definemaser" Schema="test" store:Type="Tables" />
+          <EntitySet Name="t_flow_definemsg" EntityType="Self.t_flow_definemsg" Schema="test" store:Type="Tables" />
+          <EntitySet Name="t_flow_definemsgfunction" EntityType="Self.t_flow_definemsgfunction" Schema="test" store:Type="Tables" />
+          <EntitySet Name="t_flow_dotask" EntityType="Self.t_flow_dotask" Schema="test" store:Type="Tables" />
+          <EntitySet Name="t_flow_recorddetail" EntityType="Self.t_flow_recorddetail" Schema="test" store:Type="Tables" />
+          <EntitySet Name="t_flow_recordmaster" EntityType="Self.t_flow_recordmaster" Schema="test" store:Type="Tables" />
+          <EntitySet Name="t_sys_entitymenu" EntityType="Self.t_sys_entitymenu" Schema="test" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="testModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="employees">
+          <Key>
+            <PropertyRef Name="emp_no" />
+          </Key>
+          <Property Name="emp_no" Type="Int32" Nullable="false" />
+          <Property Name="birth_date" Type="DateTime" Nullable="false" />
+          <Property Name="first_name" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hire_date" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t_flow_definedetail">
+          <Key>
+            <PropertyRef Name="POINTID" />
+          </Key>
+          <Property Name="FLOWDEFINEID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="POINTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="POINTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FATHERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISSTARTPOINT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISENDPOINT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISCOMMONAUDITPOINT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AUDITTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AUDITPOSTID" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="AUDITROLEID" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="AUDITROLENAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="AUDITPOSTNAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERCOMPANY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="POINTTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="POINTX" Type="Single" />
+          <Property Name="POINTY" Type="Single" />
+          <Property Name="EFFECTDEHORUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISKPIPOINT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="t_flow_definedetailcondition">
+          <Key>
+            <PropertyRef Name="CONDITIONID" />
+          </Key>
+          <Property Name="CONDITIONID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FATHERPOINTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HAVECONDITION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CHILDPOINTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CONDITIONNAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CONDICODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="t_flow_definemaser">
+          <Key>
+            <PropertyRef Name="FLOWID" />
+          </Key>
+          <Property Name="FLOWID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ENTITYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FLOWNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REMARK" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDATE" Type="DateTime" />
+          <Property Name="UPDATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="t_flow_definemsg">
+          <Key>
+            <PropertyRef Name="FLOWPOINTMESSAGEID" />
+          </Key>
+          <Property Name="FLOWPOINTMESSAGEID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ENTITYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SYSTEMTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SYSTEMNAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="MODELNAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="MODELCODE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FLOWID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CHECKSTATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MESSAGECONTENT" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="HASTRIGGERFUNCTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISSYSTEMDEFAULT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="t_flow_definemsgfunction">
+          <Key>
+            <PropertyRef Name="TRIGGERFUNCTIONID" />
+          </Key>
+          <Property Name="TRIGGERFUNCTIONID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FLOWPOINTMESSAGEID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RECIVEPOSTID" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="TRIGGERMODECODE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="TRIGGERMODENAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="TRIGGERFUNCTION" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="PARAMETERS" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="TRIGGERMESSAGE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="t_flow_dotask">
+          <Key>
+            <PropertyRef Name="DOTASKID" />
+          </Key>
+          <Property Name="DOTASKID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FLOWDETAILID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DOTASKCONTENT" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="SYSTEMTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SYSTEMNAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="FORMTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODELCODE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="MODELNAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="FORMID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FORMSTATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CHECKSTATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CLOSETIME" Type="DateTime" />
+          <Property Name="FORMCONFIG" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="APPXML" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="REMARK" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDATE" Type="DateTime" />
+          <Property Name="UPDATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="t_flow_recorddetail">
+          <Key>
+            <PropertyRef Name="FLOWDETAILID" />
+          </Key>
+          <Property Name="FLOWDETAILID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FLOWMASTERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AUDITEMPID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FATHERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AUDITSTATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AUDITCONTENT" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="ISCOMMONAUDIT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DEALSTATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISAGENCYAUDIT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AGENCYEMPID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AGENCYEMPNAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="AUDITTIME" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="t_flow_recordmaster">
+          <Key>
+            <PropertyRef Name="FLOWMASTERID" />
+          </Key>
+          <Property Name="FLOWMASTERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SYSTEMTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SYSTEMNAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="MODELCODE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="MODELNAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="FORMID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FLOWNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CHECKSTATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REMARK" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDATE" Type="DateTime" />
+          <Property Name="UPDATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="t_sys_entitymenu">
+          <Key>
+            <PropertyRef Name="ENTITYID" />
+          </Key>
+          <Property Name="ENTITYID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ENTITYNAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ENTITYCODE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SYSTEMTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SYSTEMNAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="testEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="employees" EntityType="Self.employees" />
+          <EntitySet Name="t_flow_definedetail" EntityType="Self.t_flow_definedetail" />
+          <EntitySet Name="t_flow_definedetailcondition" EntityType="Self.t_flow_definedetailcondition" />
+          <EntitySet Name="t_flow_definemaser" EntityType="Self.t_flow_definemaser" />
+          <EntitySet Name="t_flow_definemsg" EntityType="Self.t_flow_definemsg" />
+          <EntitySet Name="t_flow_definemsgfunction" EntityType="Self.t_flow_definemsgfunction" />
+          <EntitySet Name="t_flow_dotask" EntityType="Self.t_flow_dotask" />
+          <EntitySet Name="t_flow_recorddetail" EntityType="Self.t_flow_recorddetail" />
+          <EntitySet Name="t_flow_recordmaster" EntityType="Self.t_flow_recordmaster" />
+          <EntitySet Name="t_sys_entitymenu" EntityType="Self.t_sys_entitymenu" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="testModelStoreContainer" CdmEntityContainer="testEntities">
+          <EntitySetMapping Name="employees">
+            <EntityTypeMapping TypeName="testModel.employees">
+              <MappingFragment StoreEntitySet="employees">
+                <ScalarProperty Name="emp_no" ColumnName="emp_no" />
+                <ScalarProperty Name="birth_date" ColumnName="birth_date" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="hire_date" ColumnName="hire_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_flow_definedetail">
+            <EntityTypeMapping TypeName="testModel.t_flow_definedetail">
+              <MappingFragment StoreEntitySet="t_flow_definedetail">
+                <ScalarProperty Name="FLOWDEFINEID" ColumnName="FLOWDEFINEID" />
+                <ScalarProperty Name="POINTNAME" ColumnName="POINTNAME" />
+                <ScalarProperty Name="POINTID" ColumnName="POINTID" />
+                <ScalarProperty Name="FATHERID" ColumnName="FATHERID" />
+                <ScalarProperty Name="ISSTARTPOINT" ColumnName="ISSTARTPOINT" />
+                <ScalarProperty Name="ISENDPOINT" ColumnName="ISENDPOINT" />
+                <ScalarProperty Name="ISCOMMONAUDITPOINT" ColumnName="ISCOMMONAUDITPOINT" />
+                <ScalarProperty Name="AUDITTYPE" ColumnName="AUDITTYPE" />
+                <ScalarProperty Name="AUDITPOSTID" ColumnName="AUDITPOSTID" />
+                <ScalarProperty Name="AUDITROLEID" ColumnName="AUDITROLEID" />
+                <ScalarProperty Name="AUDITROLENAME" ColumnName="AUDITROLENAME" />
+                <ScalarProperty Name="AUDITPOSTNAME" ColumnName="AUDITPOSTNAME" />
+                <ScalarProperty Name="OWNERCOMPANY" ColumnName="OWNERCOMPANY" />
+                <ScalarProperty Name="POINTTYPE" ColumnName="POINTTYPE" />
+                <ScalarProperty Name="POINTX" ColumnName="POINTX" />
+                <ScalarProperty Name="POINTY" ColumnName="POINTY" />
+                <ScalarProperty Name="EFFECTDEHORUS" ColumnName="EFFECTDEHORUS" />
+                <ScalarProperty Name="ISKPIPOINT" ColumnName="ISKPIPOINT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_flow_definedetailcondition">
+            <EntityTypeMapping TypeName="testModel.t_flow_definedetailcondition">
+              <MappingFragment StoreEntitySet="t_flow_definedetailcondition">
+                <ScalarProperty Name="CONDITIONID" ColumnName="CONDITIONID" />
+                <ScalarProperty Name="FATHERPOINTID" ColumnName="FATHERPOINTID" />
+                <ScalarProperty Name="HAVECONDITION" ColumnName="HAVECONDITION" />
+                <ScalarProperty Name="CHILDPOINTID" ColumnName="CHILDPOINTID" />
+                <ScalarProperty Name="CONDITIONNAME" ColumnName="CONDITIONNAME" />
+                <ScalarProperty Name="CONDICODE" ColumnName="CONDICODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_flow_definemaser">
+            <EntityTypeMapping TypeName="testModel.t_flow_definemaser">
+              <MappingFragment StoreEntitySet="t_flow_definemaser">
+                <ScalarProperty Name="FLOWID" ColumnName="FLOWID" />
+                <ScalarProperty Name="ENTITYID" ColumnName="ENTITYID" />
+                <ScalarProperty Name="FLOWNAME" ColumnName="FLOWNAME" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEUSER" ColumnName="UPDATEUSER" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_flow_definemsg">
+            <EntityTypeMapping TypeName="testModel.t_flow_definemsg">
+              <MappingFragment StoreEntitySet="t_flow_definemsg">
+                <ScalarProperty Name="FLOWPOINTMESSAGEID" ColumnName="FLOWPOINTMESSAGEID" />
+                <ScalarProperty Name="ENTITYID" ColumnName="ENTITYID" />
+                <ScalarProperty Name="SYSTEMTYPE" ColumnName="SYSTEMTYPE" />
+                <ScalarProperty Name="SYSTEMNAME" ColumnName="SYSTEMNAME" />
+                <ScalarProperty Name="MODELNAME" ColumnName="MODELNAME" />
+                <ScalarProperty Name="MODELCODE" ColumnName="MODELCODE" />
+                <ScalarProperty Name="FLOWID" ColumnName="FLOWID" />
+                <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+                <ScalarProperty Name="MESSAGECONTENT" ColumnName="MESSAGECONTENT" />
+                <ScalarProperty Name="HASTRIGGERFUNCTION" ColumnName="HASTRIGGERFUNCTION" />
+                <ScalarProperty Name="ISSYSTEMDEFAULT" ColumnName="ISSYSTEMDEFAULT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_flow_definemsgfunction">
+            <EntityTypeMapping TypeName="testModel.t_flow_definemsgfunction">
+              <MappingFragment StoreEntitySet="t_flow_definemsgfunction">
+                <ScalarProperty Name="TRIGGERFUNCTIONID" ColumnName="TRIGGERFUNCTIONID" />
+                <ScalarProperty Name="FLOWPOINTMESSAGEID" ColumnName="FLOWPOINTMESSAGEID" />
+                <ScalarProperty Name="RECIVEPOSTID" ColumnName="RECIVEPOSTID" />
+                <ScalarProperty Name="TRIGGERMODECODE" ColumnName="TRIGGERMODECODE" />
+                <ScalarProperty Name="TRIGGERMODENAME" ColumnName="TRIGGERMODENAME" />
+                <ScalarProperty Name="TRIGGERFUNCTION" ColumnName="TRIGGERFUNCTION" />
+                <ScalarProperty Name="PARAMETERS" ColumnName="PARAMETERS" />
+                <ScalarProperty Name="TRIGGERMESSAGE" ColumnName="TRIGGERMESSAGE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_flow_dotask">
+            <EntityTypeMapping TypeName="testModel.t_flow_dotask">
+              <MappingFragment StoreEntitySet="t_flow_dotask">
+                <ScalarProperty Name="DOTASKID" ColumnName="DOTASKID" />
+                <ScalarProperty Name="FLOWDETAILID" ColumnName="FLOWDETAILID" />
+                <ScalarProperty Name="DOTASKCONTENT" ColumnName="DOTASKCONTENT" />
+                <ScalarProperty Name="SYSTEMTYPE" ColumnName="SYSTEMTYPE" />
+                <ScalarProperty Name="SYSTEMNAME" ColumnName="SYSTEMNAME" />
+                <ScalarProperty Name="FORMTYPE" ColumnName="FORMTYPE" />
+                <ScalarProperty Name="MODELCODE" ColumnName="MODELCODE" />
+                <ScalarProperty Name="MODELNAME" ColumnName="MODELNAME" />
+                <ScalarProperty Name="FORMID" ColumnName="FORMID" />
+                <ScalarProperty Name="FORMSTATE" ColumnName="FORMSTATE" />
+                <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+                <ScalarProperty Name="CLOSETIME" ColumnName="CLOSETIME" />
+                <ScalarProperty Name="FORMCONFIG" ColumnName="FORMCONFIG" />
+                <ScalarProperty Name="APPXML" ColumnName="APPXML" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEUSER" ColumnName="UPDATEUSER" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_flow_recorddetail">
+            <EntityTypeMapping TypeName="testModel.t_flow_recorddetail">
+              <MappingFragment StoreEntitySet="t_flow_recorddetail">
+                <ScalarProperty Name="FLOWDETAILID" ColumnName="FLOWDETAILID" />
+                <ScalarProperty Name="FLOWMASTERID" ColumnName="FLOWMASTERID" />
+                <ScalarProperty Name="AUDITEMPID" ColumnName="AUDITEMPID" />
+                <ScalarProperty Name="FATHERID" ColumnName="FATHERID" />
+                <ScalarProperty Name="AUDITSTATE" ColumnName="AUDITSTATE" />
+                <ScalarProperty Name="AUDITCONTENT" ColumnName="AUDITCONTENT" />
+                <ScalarProperty Name="ISCOMMONAUDIT" ColumnName="ISCOMMONAUDIT" />
+                <ScalarProperty Name="DEALSTATE" ColumnName="DEALSTATE" />
+                <ScalarProperty Name="ISAGENCYAUDIT" ColumnName="ISAGENCYAUDIT" />
+                <ScalarProperty Name="AGENCYEMPID" ColumnName="AGENCYEMPID" />
+                <ScalarProperty Name="AGENCYEMPNAME" ColumnName="AGENCYEMPNAME" />
+                <ScalarProperty Name="AUDITTIME" ColumnName="AUDITTIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_flow_recordmaster">
+            <EntityTypeMapping TypeName="testModel.t_flow_recordmaster">
+              <MappingFragment StoreEntitySet="t_flow_recordmaster">
+                <ScalarProperty Name="FLOWMASTERID" ColumnName="FLOWMASTERID" />
+                <ScalarProperty Name="SYSTEMTYPE" ColumnName="SYSTEMTYPE" />
+                <ScalarProperty Name="SYSTEMNAME" ColumnName="SYSTEMNAME" />
+                <ScalarProperty Name="MODELCODE" ColumnName="MODELCODE" />
+                <ScalarProperty Name="MODELNAME" ColumnName="MODELNAME" />
+                <ScalarProperty Name="FORMID" ColumnName="FORMID" />
+                <ScalarProperty Name="FLOWNAME" ColumnName="FLOWNAME" />
+                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+                <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEUSER" ColumnName="UPDATEUSER" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_sys_entitymenu">
+            <EntityTypeMapping TypeName="testModel.t_sys_entitymenu">
+              <MappingFragment StoreEntitySet="t_sys_entitymenu">
+                <ScalarProperty Name="ENTITYID" ColumnName="ENTITYID" />
+                <ScalarProperty Name="ENTITYNAME" ColumnName="ENTITYNAME" />
+                <ScalarProperty Name="ENTITYCODE" ColumnName="ENTITYCODE" />
+                <ScalarProperty Name="SYSTEMTYPE" ColumnName="SYSTEMTYPE" />
+                <ScalarProperty Name="SYSTEMNAME" ColumnName="SYSTEMNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dd1135b6-b03a-4522-9229-03d657f33464" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="SMT.HRM.BLL" />
+      <ReferencedAssembly AssemblyName="SMT.HRM.CustomModel" />
+      <ReferencedAssembly AssemblyName="SMT.HRM.DAL" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://portal.smt-online.net/New/Services/System/PermissionService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PermissionService.xsd" MetadataType="Schema" ID="4acc0c5a-7dc4-4eb6-9a00-2d7d02a0058d" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd5" />
+    <MetadataFile FileName="PermissionService1.xsd" MetadataType="Schema" ID="0cc68b62-562c-4687-a662-1dfa3d000e10" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PermissionService2.xsd" MetadataType="Schema" ID="4073246d-fd7d-441f-a7d5-db1886ada379" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd9" />
+    <MetadataFile FileName="PermissionService3.xsd" MetadataType="Schema" ID="0dd371e5-b11a-48b3-8cec-852818a94da9" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd10" />
+    <MetadataFile FileName="PermissionService4.xsd" MetadataType="Schema" ID="b06094a5-c075-4296-907b-9a07db05a6f7" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd8" />
+    <MetadataFile FileName="PermissionService5.xsd" MetadataType="Schema" ID="983ad7a2-40ff-4038-a9a9-d8ca67c25827" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd11" />
+    <MetadataFile FileName="PermissionService6.xsd" MetadataType="Schema" ID="a1ddd6dc-46aa-4550-b25f-c39642d40c95" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd7" />
+    <MetadataFile FileName="PermissionService.disco" MetadataType="Disco" ID="34ec6f83-79f6-4a65-845f-4a265cabc240" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/PermissionService.svc?disco" />
+    <MetadataFile FileName="PermissionService7.xsd" MetadataType="Schema" ID="1102c536-c10a-4abf-9ae4-02e1db3c8766" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd4" />
+    <MetadataFile FileName="PermissionService8.xsd" MetadataType="Schema" ID="9f6318fc-6b6b-4e62-bddc-9b4135f67696" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PermissionService.wsdl" MetadataType="Wsdl" ID="413be320-75de-4162-a60c-e3df35a1209c" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/PermissionService.svc?wsdl" />
+    <MetadataFile FileName="PermissionService9.xsd" MetadataType="Schema" ID="7e26e07e-a590-4824-a5ff-a16b35e59e6d" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PermissionService10.xsd" MetadataType="Schema" ID="496f6fcc-7220-4adb-b23d-fb757f88c85f" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PermissionService11.xsd" MetadataType="Schema" ID="269ab9d3-c2f4-4610-a8da-ed298ee7c714" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
