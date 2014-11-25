@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.Net;
 namespace SMT.SAAS.Main.CurrentContext
 {
     /// <summary>
@@ -27,6 +28,8 @@ namespace SMT.SAAS.Main.CurrentContext
 
         public static bool IsLoadingCompleted = false;
 
+        
+
         /// <summary>
         /// 标识权限是否需要升级
         /// </summary>
@@ -40,10 +43,14 @@ namespace SMT.SAAS.Main.CurrentContext
                     + DateTime.Now.Second.ToString() + ":" + DateTime.Now.Millisecond.ToString();
                 if (AppHost == null) return;
                 AppHost.txtSystemMessage.Text += System.Environment.NewLine + message + " 记录时间：" + strTime;
+
+                //LogToServer.logToServer(message);
             }
             catch (Exception)
             {
 
+            }finally
+            {
             }
         }
 
@@ -70,6 +77,50 @@ namespace SMT.SAAS.Main.CurrentContext
         {
             SystemMessage(msg);
             ShowSystemMessageText();
+        }
+
+       
+    }
+
+    public class LogToServer
+    {
+        private static EmpInfoWS.EmployeeInfoServiceClient empClient;
+
+        public static EmpInfoWS.EmployeeInfoServiceClient EmpClient
+        {
+            get
+            {
+                if (empClient == null)
+                {
+                    empClient = new EmpInfoWS.EmployeeInfoServiceClient();
+                }
+                return empClient;
+            }
+            set { empClient = value; }
+        }
+
+        public static void logToServer(string msg)
+        {
+            //Uri serviceUri = new Uri(SMT.SAAS.Main.CurrentContext.Common.HostAddress + "/HR/EmployeeInfoService.svc");
+            //WebClient webClient = new WebClient();
+            ////webClient.OpenReadCompleted += new OpenReadCompletedEventHandler(webClient_OpenReadCompleted);
+            ////webClient.OpenReadAsync(serviceUri);
+            //webClient.OpenWriteAsync(serviceUri, "POST", msg);
+            string empInfo = string.Empty;
+            if(Common.CurrentLoginUserInfo!=null)
+            {
+                if (Common.CurrentLoginUserInfo.UserPosts.Count>0)
+                { 
+                empInfo = Common.CurrentLoginUserInfo.UserPosts[0].CompanyName
+                   + "-" + Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName
+                      + "-" + Common.CurrentLoginUserInfo.UserPosts[0].PostName
+                + "-" + Common.CurrentLoginUserInfo.EmployeeName;
+                }
+            }
+            if(string.IsNullOrEmpty(empInfo))
+            { 
+                EmpClient.RecordUILogAsync(empInfo, msg);
+            }
         }
     }
 }

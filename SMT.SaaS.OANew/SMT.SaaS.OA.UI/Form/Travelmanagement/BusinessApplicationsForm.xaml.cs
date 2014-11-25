@@ -17,6 +17,7 @@ using SMT.SaaS.FrameworkUI;
 using SMT.SaaS.OA.UI.SmtOAPersonOfficeService;
 using SMT.Saas.Tools.OrganizationWS;
 using SMT.SAAS.Main;
+using SMT.SaaS.FrameworkUI.ChildWidow;
 
 namespace SMT.SaaS.OA.UI.UserControls
 {
@@ -300,6 +301,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             {
                 RefreshUI(RefreshedTypes.HideProgressBar);
                 SMT.SAAS.Main.CurrentContext.AppContext.SystemMessage("打开出差form，获取出差异常：" + ex.ToString());
+                ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), "打开出差form，获取出差异常：" + ex.ToString(), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
             }
         }
 

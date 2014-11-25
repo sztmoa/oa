@@ -119,6 +119,7 @@
     <Content Include="SmtOACommonOffice.svc" />
     <Content Include="SmtOADocumentAdmin.svc" />
     <Content Include="SmtOAPersonOffice.svc" />
+    <Content Include="test.aspx" />
     <Content Include="TestEngineUpdateCheckState.aspx" />
     <Content Include="TravrlPrintServices.svc" />
     <Content Include="Web.config">
@@ -196,6 +197,13 @@
     </Compile>
     <Compile Include="SmtOAPersonOffice.svc.cs">
       <DependentUpon>SmtOAPersonOffice.svc</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="TestEngineUpdateCheckState.aspx.cs">
       <DependentUpon>TestEngineUpdateCheckState.aspx</DependentUpon>

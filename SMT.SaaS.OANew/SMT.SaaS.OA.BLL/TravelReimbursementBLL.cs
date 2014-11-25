@@ -92,14 +92,15 @@ namespace SMT.SaaS.OA.BLL
                 Tracer.Debug("添加出差申请ID为" + AddTravelReimbursement.T_OA_BUSINESSTRIP.BUSINESSTRIPID + "的出差报销" + AddTravelReimbursement.TRAVELREIMBURSEMENTID);
                 AddTravelReimbursement.CREATEDATE = DateTime.Now;
                 AddTravelReimbursement.UPDATEDATE = DateTime.Now;
-                if (!string.IsNullOrEmpty(AddTravelReimbursement.ISFROMWP))
-                {
-                    if (AddTravelReimbursement.ISFROMWP == "1")
-                    {
-                        AddTravelReimbursement.NOBUDGETCLAIMS = this.GetAutoOrderCode();
-                    }
+                //if (!string.IsNullOrEmpty(AddTravelReimbursement.ISFROMWP))
+                //{
+                //    if (AddTravelReimbursement.ISFROMWP == "1")
+                //    {
+                //生成单据编号
+               AddTravelReimbursement.NOBUDGETCLAIMS = this.GetAutoOrderCode();
+                //    }
 
-                }
+                //}
                 Utility.RefreshEntity(AddTravelReimbursement);
 
                 bool isExist = CheckTravelReimbursementByBusinesstrip(businesstripId);
@@ -399,28 +400,28 @@ namespace SMT.SaaS.OA.BLL
             {
                 T_OA_TRAVELREIMBURSEMENT Master = new T_OA_TRAVELREIMBURSEMENT();
                 FBServiceClient FBClient = new FBServiceClient();
-                string strMsg = "";//string.Empty;
-                Master = (from ent in dal.GetObjects<T_OA_TRAVELREIMBURSEMENT>()
+               
+                Master = (from ent in dal.GetObjects<T_OA_TRAVELREIMBURSEMENT>().Include("T_OA_BUSINESSTRIP")
                           where ent.TRAVELREIMBURSEMENTID == BorrowID
                           select ent).FirstOrDefault();//GetTravelReimbursementById(BorrowID);
                 oldCheckState = Master.CHECKSTATE;//保留旧的审核状态
-
                 Master.CHECKSTATE = StrCheckState;
-
                 Master.UPDATEDATE = DateTime.Now;
-                Master.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELREIMBURSEMENT", "TRAVELREIMBURSEMENTID", Master.TRAVELREIMBURSEMENTID);
+                string busniessTripId = Master.T_OA_BUSINESSTRIPReference.EntityKey.EntityKeyValues[0].Value.ToString();
 
-                if (string.IsNullOrEmpty(Master.ISFROMWP))
+                #region 扣减预算额度
+                #region 工作计划预算
+                if (!string.IsNullOrEmpty(Master.ISFROMWP))
                 {
                     try
                     {
                         if (Master.ISFROMWP == "1" && Master.CHECKSTATE == "2")
                         {
-                            Tracer.Debug("事务开始 工作计划出差报销引擎开始更新工作计划预算：出差报销id：" + BorrowID + " 审核状态：" + StrCheckState);
+                            Tracer.Debug("事务开始 工作计划出差报销引擎开始更新工作计划预算：出差报销id：" + busniessTripId + " 审核状态：" + StrCheckState);
                             SMT.SaaS.BLLCommonServices.WPServicesWS.WPServicesClient WpServiceClient = new BLLCommonServices.WPServicesWS.WPServicesClient();
                             string wpMsg = string.Empty;
                             SMT.SaaS.BLLCommonServices.WPServicesWS.BussinessTripBudget[] listTripBudget = new BLLCommonServices.WPServicesWS.BussinessTripBudget[0];
-                            bool wpflag = WpServiceClient.TripSubjectPaid(Master.BUSINESSREPORTID, listTripBudget, ref wpMsg);
+                            bool wpflag = WpServiceClient.TripSubjectPaid(busniessTripId, listTripBudget, ref wpMsg);
                             if (wpflag)
                             {
                                 Tracer.Debug("出差报销扣减工作计划费用成功！" + wpMsg);
@@ -429,6 +430,8 @@ namespace SMT.SaaS.OA.BLL
                             {
                                 Tracer.Debug("出差报销扣减工作计划费用失败：" + wpMsg);
                             }
+                          
+
                         }
                     }
                     catch (Exception ex)
@@ -436,12 +439,15 @@ namespace SMT.SaaS.OA.BLL
                         Tracer.Debug("出差报销扣减工作计划费用异常：" + ex.ToString());
                     }
                 }
+                #endregion
+
+                #region "原预算系统预算"
                 else
                 {
-
                     Tracer.Debug("事务开始 出差报销引擎开始更新预算关联单据：出差报销id：" + BorrowID + " 审核状态：" + StrCheckState);
-                    var fbResult = FBClient.UpdateExtensionOrder("Travel", BorrowID, StrCheckState, ref strMsg);//手机审单时通过后台修改个人费用报销中对应的报销单据状态
-
+                    string strMsg = Master.NOBUDGETCLAIMS;//string.Empty;
+                    var fbResult = FBClient.UpdateExtensionOrder("Travel", BorrowID, StrCheckState, ref strMsg);
+                    //手机审单时通过后台修改个人费用报销中对应的报销单据状态
                     if (string.IsNullOrEmpty(strMsg))//预算没有错误才执行改变表单状态的操作
                     {
                         if (fbResult == null)
@@ -455,41 +461,46 @@ namespace SMT.SaaS.OA.BLL
                             Tracer.Debug("事务中 出差报销引擎开始更新预算关联单据成功，预算生成单号:"
                                 + fbResult.INNERORDERCODE + " 审核状态：" + StrCheckState);
                         }
-
-                        if (oldCheckState == "0" && StrCheckState == "1")
-                        {
-                            string fbOrderCode = fbResult.INNERORDERCODE;
-                            Master.NOBUDGETCLAIMS = fbOrderCode;
-                        }
-
-                        int i = Update(Master);
-                        if (i > 0)
-                        {
-                            var strCHECKSTATE = (from ent in dal.GetObjects<T_OA_TRAVELREIMBURSEMENT>()
-                                                 where ent.TRAVELREIMBURSEMENTID == BorrowID
-                                                 select ent.CHECKSTATE).FirstOrDefault();
-                            Tracer.Debug("事务中 引擎更新出差报销状态成功：出差报销id：" + BorrowID + " 流程传过来的审核状态：" + StrCheckState + " 更新后出差报销状态" + strCHECKSTATE);
-
-
-                        }
-                        else
-                        {
-                            Tracer.Debug("事务回滚 引擎更新出差报销单号失败,受影响的记录数小于1：出差报销id："
-                                + BorrowID + " 审核状态：" + StrCheckState);
-                            throw new Exception("引擎更新出差报销单号失败,受影响的记录数小于1：出差报销id："
-                                + BorrowID + " 审核状态：" + StrCheckState);
-                        }
                     }
                     else
                     {
-                        Tracer.Debug("事务回滚 引擎更新出差报销状态失败：" + BorrowID + " 出差报销引擎开始更新预算关联单据返回结果为空");
-
+                        Tracer.Debug("事务回滚 引擎更新出差报销状态失败：" + BorrowID + " 出差报销引擎开始更新预算关联单据返回结果:" + strMsg);
                         throw new Exception(strMsg);
                     }
                 }
+                #endregion
+                #endregion
+
+                #region 更新单号，审核状态
+                if (oldCheckState == "0" && StrCheckState == "1")
+                {
+                    //string fbOrderCode = fbResult.INNERORDERCODE;
+                   // Master.NOBUDGETCLAIMS = this.GetAutoOrderCode();
+                    //Master.NOBUDGETCLAIMS = fbOrderCode;
+                }
+
+                int i = Update(Master);
+                if (i > 0)
+                {
+                    var strCHECKSTATE = (from ent in dal.GetObjects<T_OA_TRAVELREIMBURSEMENT>()
+                                         where ent.TRAVELREIMBURSEMENTID == BorrowID
+                                         select ent.CHECKSTATE).FirstOrDefault();
+                    Tracer.Debug("事务中 引擎更新出差报销状态成功：出差报销id：" + BorrowID + " 流程传过来的审核状态：" + StrCheckState + " 更新后出差报销状态" + strCHECKSTATE
+                        + "预算单号：" + Master.NOBUDGETCLAIMS);
+                }
+                else
+                {
+                    Tracer.Debug("事务回滚 引擎更新出差报销单号失败,受影响的记录数小于1：出差报销id："
+                        + BorrowID + " 审核状态：" + StrCheckState);
+                    throw new Exception("引擎更新出差报销单号失败,受影响的记录数小于1：出差报销id："
+                        + BorrowID + " 审核状态：" + StrCheckState);
+                }
+                #endregion
+
+                #region 开始调用HR中考勤的数据
                 if (Master.CHECKSTATE == Convert.ToInt32(CheckStates.Approved).ToString())
                 {
-                    #region 开始调用HR中考勤的数据
+                   
                     Tracer.Debug("事务中 引擎开始同步HR考勤记录：出差报销id：" + BorrowID);
                     try
                     {
@@ -500,11 +511,13 @@ namespace SMT.SaaS.OA.BLL
                         Tracer.Debug("调用HR中考勤的接口出现错误:" + ex.ToString());
                         //throw new Exception("调用HR中考勤的接口出现错误:" + ex.ToString());
                     }
-                    #endregion
+                   
                 }
                 Tracer.Debug("事务确认成功：引擎更新出差报销，同步预算单，考勤记录成功！");
+                #endregion
+
                 dal.CommitTransaction();
-                //更新元数据单号已改为UI 调用ZgentService 方法。
+                //更新元数据单号已改为UI 调用agentService 方法。
             }
             catch (Exception ex)
             {
@@ -1279,9 +1292,12 @@ namespace SMT.SaaS.OA.BLL
             try
             {
                 string shortName = "CLBX";
-                DateTime CurrentDate = DateTime.Now;
+                string sql = @"select c.currentdate from smtfb.T_FB_ORDERCODE c where c.prename='CLBX'";
+                DateTime CurrentDate = DateTime.Parse(dal.ExecuteCustomerSql(sql).ToString());
                 if (CurrentDate.Date != System.DateTime.Now.Date)
                 {
+                    Tracer.Debug("出差单号日期变更：" + CurrentDate.ToString("yyyy-MM-dd")
+                       + "--->" + System.DateTime.Now.ToString("yyyy-MM-dd"));
                     strclear = @"declare n number(10); tsql   varchar2(1000); begin select "
                                         + tablename + "_SEQ.nextval   into   n   from   dual; "
                                         + " n:=-(n);"
@@ -1293,6 +1309,12 @@ namespace SMT.SaaS.OA.BLL
                                         + "  end; ";
                     Tracer.Debug("ExecuteCustomerSql：" + strclear);
                     dal.ExecuteCustomerSql(strclear);
+
+                    string sqlUPdate = @"update  smtfb.T_FB_ORDERCODE c set
+                                        c.currentdate=to_date('" + DateTime.Now.ToString("yyyy-MM-dd") + @"','yyyy-MM-dd')
+                                        where c.prename='CLBX'";
+                    dal.ExecuteCustomerSql(sqlUPdate);
+                    Tracer.Debug(sqlUPdate);
                 }
                 decimal curNumber = 0;
                 string strNextSqense = @" select " + tablename + "_SEQ.nextval from dual";

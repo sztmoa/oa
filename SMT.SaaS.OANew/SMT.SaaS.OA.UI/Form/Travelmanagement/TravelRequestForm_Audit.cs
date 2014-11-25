@@ -283,6 +283,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             AutoList.Add(basedata("T_OA_BUSINESSTRIP", "CHECKSTATE", Master_Golbal.CHECKSTATE, GetCheckState(Master_Golbal.CHECKSTATE)));//审核状态
             if (Master_Golbal.OWNERID != null && !string.IsNullOrEmpty(Master_Golbal.OWNERNAME))//出差人
             {
+                AutoList.Add(basedata("T_OA_BUSINESSTRIP", "CURRENTEMPLOYEENAME", Common.CurrentLoginUserInfo.EmployeeName, Common.CurrentLoginUserInfo.EmployeeName));
                 AutoList.Add(basedata("T_OA_BUSINESSTRIP", "OWNERID", Master_Golbal.OWNERID, Master_Golbal.OWNERNAME + "-" + Master_Golbal.OWNERPOSTNAME + "-" + Master_Golbal.OWNERDEPARTMENTNAME + "-" + Master_Golbal.OWNERCOMPANYNAME));
             }
             if (Master_Golbal.OWNERCOMPANYID != null && !string.IsNullOrEmpty(Master_Golbal.OWNERCOMPANYNAME))//所属公司

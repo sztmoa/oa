@@ -36,10 +36,10 @@ namespace SMT.SaaS.OA.UI.UserControls
             #region 时间计算
             TextBox myDaysTime = new TextBox();
             bool OneDayTrave = false;
-            DateTime dtTempStart=new DateTime(2014,1,1);
             int tempStart = 0;
             for (int i = 0; i < TravelDetailList_Golbal.Count; i++)
             {
+                DateTime dtTempStart = new DateTime(2014, 1, 1);
                 tempStart = i;
                 //记录本条记录以便处理
                 DateTime StartTime = Convert.ToDateTime(TravelDetailList_Golbal[i].STARTDATE);
@@ -119,7 +119,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                                 {
                                     if (dtTempStart == new DateTime(2014, 1, 1))
                                     {
-                                        dtTempStart = dtTempStart = TravelDetailList_Golbal[i].STARTDATE.Value;
+                                        dtTempStart = TravelDetailList_Golbal[i].STARTDATE.Value;
                                     }
                                     DateTime dtEndTime = Convert.ToDateTime(TravelDetailList_Golbal[j].STARTDATE);
                                     if (i == TravelDetailList_Golbal.Count() - 2)//倒数第二条记录=最后一条结束时间-上一条开始时间
@@ -127,7 +127,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                                         dtEndTime = Convert.ToDateTime(TravelDetailList_Golbal[j].ENDDATE);
                                     }
                                     TotalDays = CaculateTravDays(dtTempStart, dtEndTime);
-                                    i = j;
+                                    i = j-1;
                                     break;
                                 }
                             }
@@ -621,6 +621,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             catch (Exception ex)
             {
                 Utility.SetLog(ex.ToString());
+                ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), ex.ToString(), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
             }
         }
         ///// <summary>

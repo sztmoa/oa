@@ -100,6 +100,8 @@ namespace SMT.SaaS.OA.UI.UserControls
             }
             if (TravelReimbursement_Golbal.OWNERID != null && !string.IsNullOrEmpty(EmployeeName))//所属人
             {
+                //提交者
+                AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "CURRENTEMPLOYEENAME", Common.CurrentLoginUserInfo.EmployeeName, Common.CurrentLoginUserInfo.EmployeeName));
                 AutoList.Add(basedata("T_OA_TRAVELREIMBURSEMENT", "OWNERID", TravelReimbursement_Golbal.OWNERID, EmployeeName));
             }
             if (TravelReimbursement_Golbal.OWNERCOMPANYID != null && !string.IsNullOrEmpty(companyName))//所属公司
@@ -395,9 +397,9 @@ namespace SMT.SaaS.OA.UI.UserControls
             {
                 //MessageBox.Show("更新单号");
                 //更新元数据单号
-                AgentServicesClient clinet = new AgentServicesClient();
-                clinet.UpdateEntityXMLAsync(TravelReimbursement_Golbal.TRAVELREIMBURSEMENTID
-                    , "自动生成", TravelReimbursement_Golbal.NOBUDGETCLAIMS);
+                //AgentServicesClient clinet = new AgentServicesClient();
+                //clinet.UpdateEntityXMLAsync(TravelReimbursement_Golbal.TRAVELREIMBURSEMENTID
+                //    , "自动生成", TravelReimbursement_Golbal.NOBUDGETCLAIMS);
             }
 
             if (TravelReimbursement_Golbal.CHECKSTATE == Convert.ToInt32(CheckStates.UnSubmit).ToString()

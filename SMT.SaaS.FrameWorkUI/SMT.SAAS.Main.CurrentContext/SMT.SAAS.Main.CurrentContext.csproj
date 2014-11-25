@@ -104,6 +104,11 @@
     <Compile Include="IosManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MD5.cs" />
+    <Compile Include="Service References\EmpInfoWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="SystenVersionWindow.xaml.cs">
       <DependentUpon>SystenVersionWindow.xaml</DependentUpon>
     </Compile>
@@ -142,6 +147,21 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\EmpInfoWS\EmployeeInfoService.wsdl" />
+    <None Include="Service References\EmpInfoWS\EmployeeInfoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmpInfoWS\EmployeeInfoService1.wsdl" />
+    <None Include="Service References\EmpInfoWS\EmployeeInfoService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmpInfoWS\EmployeeInfoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\EmpInfoWS\SMT.SAAS.Main.CurrentContext.EmpInfoWS.V_EMPLOYEEDETAIL.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="SMT.SAAS.Main.CurrentContext.snk" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +169,24 @@
       <Project>{abe30de4-d5df-49a0-a0ff-e0e518dd7e10}</Project>
       <Name>SMT.SaaS.LocalData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EmpInfoWS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmpInfoWS\EmployeeInfoService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmpInfoWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmpInfoWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmpInfoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
