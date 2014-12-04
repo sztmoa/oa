@@ -48,21 +48,21 @@ namespace SMT.SaaS.OA.UI.UserControls
                 string EndCity = TravelDetailList_Golbal[i].DESTCITY;
                 GetTraveDayTextBox(myDaysTime, i).Text = string.Empty;
 
-                #region 判断是否当他往返
+                #region 判断是否当天往返
                 OneDayTrave = false;
                 //遍历剩余的记录
                 for (int j = i + 1; j < TravelDetailList_Golbal.Count; j++)
                 {
-                    DateTime NextStartTime = Convert.ToDateTime(TravelDetailList_Golbal[j].STARTDATE);
+                    //DateTime NextStartTime = Convert.ToDateTime(TravelDetailList_Golbal[j].STARTDATE);
                     DateTime NextEndTime = Convert.ToDateTime(TravelDetailList_Golbal[j].ENDDATE);
-                    string NextTraveFrom = TravelDetailList_Golbal[j].DEPCITY;
+                    //string NextTraveFrom = TravelDetailList_Golbal[j].DEPCITY;
                     string NextTraveTo = TravelDetailList_Golbal[j].DESTCITY;
                    
 
                     GetTraveDayTextBox(myDaysTime, j).Text = string.Empty;
                     if (NextEndTime.Date == StartTime.Date)
                     {
-                        if (NextTraveTo == StartCity && (TravelDetailList_Golbal.Count == 2 || TravelDetailList_Golbal.Count == 1))
+                        if (NextTraveTo == StartCity && (j== TravelDetailList_Golbal.Count - 1))
                         {
                             myDaysTime = GetTraveDayTextBox(myDaysTime, i);
                             myDaysTime.Text = "1";
@@ -78,7 +78,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                         break;
                     }
                 }
-                if (OneDayTrave == true) continue;
+                if (OneDayTrave == true) break;
                 #endregion
 
                 //非当天往返
