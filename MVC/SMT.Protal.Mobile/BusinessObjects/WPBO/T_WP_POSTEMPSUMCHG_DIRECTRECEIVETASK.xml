@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<System>
+  <Name>WP</Name>
+  <Version>1.0</Version>
+  <System>
+    <Function Description="" Address="" FuncName="" Binding="" SplitChar="Г">
+      <ParaStr>
+        <Para TableName="" Name="" Description="" Value="" />
+      </ParaStr>
+    </Function>
+  </System>
+  <MsgOpen>
+     <AssemblyName>SMT.WP.UI</AssemblyName>
+    <PublicClass>SMT.WP.UI.Class.Utility</PublicClass>
+    <ProcessName>CreateFormFromEngine</ProcessName>
+    <PageParameter>WP/PostEmpSumChg/AuditEdit</PageParameter>
+    <ApplicationOrder>{PLANCHGID}</ApplicationOrder>
+    <FormTypes>Audit</FormTypes>
+  </MsgOpen>
+  <Object Name="T_WP_POSTEMPSUMCHG" Description="T_WP_PostEmpSumChg 岗位员工周期总结计划变更主表&#xA;&#xA;当前计划所属的员工ID、岗位ID、部门ID、公司ID，与记录所属员工ID使用同一套字段&#xA;&#xA;此表业务将走审批流程" Key="PLANCHGID" id="">
+    <Attribute Name="PLANCHGID" LableResourceID="PLANCHGID" Description="员工费用主键ID，GUID" DataType="string" DataValue="" DataText="员工费用主键ID，GUID" />
+    <Attribute Name="PEMPID" LableResourceID="PEMPID" Description="员工费用主键ID" DataType="string" DataValue="" DataText="员工费用主键ID" />
+    <Attribute Name="PERIODDID" LableResourceID="PERIODDID" Description="周期从表主键ID" DataType="string" DataValue="" DataText="周期从表主键ID" />
+    <Attribute Name="PERIODTYPE" LableResourceID="PERIODTYPE" Description="周期类别" DataType="string" DataValue="" DataText="周期类别" />
+    <Attribute Name="PERIODTYPENAME" LableResourceID="PERIODTYPENAME" Description="周期类别名称" DataType="string" DataValue="" DataText="周期类别名称" />
+    <Attribute Name="PERIODCODE" LableResourceID="PERIODCODE" Description="周期编号" DataType="string" DataValue="" DataText="周期编号" />
+    <Attribute Name="APPLYDATE" LableResourceID="APPLYDATE" Description="申请日期" DataType="datetime" DataValue="" DataText="申请日期" />
+    <Attribute Name="STARTDATE" LableResourceID="STARTDATE" Description="周期开始时间" DataType="datetime" DataValue="" DataText="周期开始时间" />
+    <Attribute Name="ENDDATE" LableResourceID="ENDDATE" Description="周期结束时间" DataType="datetime" DataValue="" DataText="周期结束时间" />
+    <Attribute Name="COSTYEAR" LableResourceID="COSTYEAR" Description="费用年度" DataType="string" DataValue="" DataText="费用年度" />
+    <Attribute Name="CYBUSICOST" LableResourceID="CYBUSICOST" Description="本年指标费用" DataType="decimal" DataValue="" DataText="本年指标费用" />
+    <Attribute Name="CYBUSIFINISHCOST" LableResourceID="CYBUSIFINISHCOST" Description="本年完成费用" DataType="decimal" DataValue="" DataText="本年完成费用" />
+    <Attribute Name="LPBUSIPLANCOST" LableResourceID="LPBUSIPLANCOST" Description="上期计划费用" DataType="decimal" DataValue="" DataText="上期计划费用" />
+    <Attribute Name="LPBUSIFACTCOST" LableResourceID="LPBUSIFACTCOST" Description="上期实际费用" DataType="decimal" DataValue="" DataText="上期实际费用" />
+    <Attribute Name="CPBUSIPLANCOST" LableResourceID="CPBUSIPLANCOST" Description="本期计划费用" DataType="decimal" DataValue="" DataText="本期计划费用" />
+    <Attribute Name="OWNERCOMPANYID" LableResourceID="OWNERCOMPANYID" Description="记录所属公司ID" DataType="string" DataValue="" DataText="记录所属公司ID" />
+    <Attribute Name="OWNERDEPARTMENTID" LableResourceID="OWNERDEPARTMENTID" Description="记录所属部门ID" DataType="string" DataValue="" DataText="记录所属部门ID" />
+    <Attribute Name="OWNERPOSTID" LableResourceID="OWNERPOSTID" Description="记录所属岗位ID" DataType="string" DataValue="" DataText="记录所属岗位ID" />
+    <Attribute Name="OWNERID" LableResourceID="OWNERID" Description="记录所属用户ID&#xA;对应员工周期计划的员工ID" DataType="string" DataValue="" DataText="记录所属用户ID&#xA;对应员工周期计划的员工ID" />
+    <Attribute Name="COMPANYNAME" LableResourceID="COMPANYNAME" Description="使用公司名称" DataType="string" DataValue="" DataText="使用公司名称" />
+    <Attribute Name="DEPARTMENTNAME" LableResourceID="DEPARTMENTNAME" Description="部门名称" DataType="string" DataValue="" DataText="部门名称" />
+    <Attribute Name="POSTNAME" LableResourceID="POSTNAME" Description="岗位名称" DataType="string" DataValue="" DataText="岗位名称" />
+    <Attribute Name="EMPLOYEENAME" LableResourceID="EMPLOYEENAME" Description="员工名称" DataType="string" DataValue="" DataText="员工名称" />
+    <Attribute Name="CREATEUSERID" LableResourceID="CREATEUSERID" Description="创建人ID" DataType="string" DataValue="" DataText="创建人ID" />
+    <Attribute Name="CREATEDATE" LableResourceID="CREATEDATE" Description="创建时间" DataType="datetime" DataValue="" DataText="创建时间" />
+    <Attribute Name="UPDATEUSERID" LableResourceID="UPDATEUSERID" Description="修改人ID" DataType="string" DataValue="" DataText="修改人ID" />
+    <Attribute Name="UPDATEDATE" LableResourceID="UPDATEDATE" Description="修改时间" DataType="datetime" DataValue="" DataText="修改时间" />
+    <Attribute Name="REMARK" LableResourceID="REMARK" Description="备注" DataType="string" DataValue="" DataText="备注" />
+    <Attribute Name="O_CPBUSIPLANCOST" LableResourceID="O_CPBUSIPLANCOST" Description="原本期计划费用" DataType="decimal" DataValue="" DataText="原本期计划费用" />
+  
+  </Object>
+</System>

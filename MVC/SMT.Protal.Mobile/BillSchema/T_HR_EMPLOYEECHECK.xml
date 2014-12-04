@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail Name="CREATEUSERNAME" Text="创建人"                         Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNER" Text="所属人"                                  Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CURRENTEMPLOYEENAME" Text="提交者"                    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="EMPLOYEECNAME" Text="员工中文名"                      Orderno="1" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="POSTLEVEL" Text="岗位级别"                            Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="EMPLOYEEID" Text="员工ID"                             Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BEREGULARID" Text="BEREGULARID"                       Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="PROBATIONPERIOD" Text="试用期(月)"                    Orderno="2" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKDATE" Text="CHECKDATE"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKUSER" Text="审核人"                              Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKRESULT" Text="考核结果"                          Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKSTATE" Text="审批状态"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="REPORTDATE" Text="入职时间"                           Orderno="3" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERID" Text="创建人"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDATE" Text="创建日期"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEUSERID" Text="修改人"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEDATE" Text="修改时间"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="EMPLOYEECODE" Text="员工编号"                         Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="EMPLOYEENAME" Text="员工姓名"                         Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="ONDUTYDATE" Text="到岗日期"                           Orderno="4" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BEREGULARDATE" Text="转正时间"                        Orderno="5" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERID" Text="所属员工"                              Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERPOSTID" Text="所属岗位"                          Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERDEPARTMENTID" Text="所属部门"                    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERCOMPANYID" Text="所属公司"                       Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEPOSTID" Text="创建人岗位"                       Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDEPARTMENTID" Text="创建人部门"                 Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATECOMPANYID" Text="创建公司"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="REMARK" Text="备注"                                   Orderno="100" Colspan="2" IsVisible="true" IsShowCaption="false" CssName="billBottomLine" ></Detail>
+
+  </DetailLists>
+
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

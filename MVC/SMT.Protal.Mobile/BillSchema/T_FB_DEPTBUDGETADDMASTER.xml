@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail Name="OrderTypeName" Text="单据类型"                            Orderno="1" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="DEPTBUDGETADDMASTERID" Text="单据ID"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="DEPTBUDGETADDMASTERCODE" Text="单据编号"                  Orderno="1" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BUDGETARYMONTH" Text="预算月份"                           Orderno="2" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERCOMPANYNAME" Text="申请公司"                         Orderno="3" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERDEPARTMENTNAME" Text="申请部门"                      Orderno="4" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERNAME" Text="创建人"                             Orderno="5" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKSTATES" Text="状态"                                  Orderno="2" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>    
+    <Detail Name="CREATEDATE" Text="创建时间"                               Orderno="6" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BUDGETCHARGE" Text="总计"                           Orderno="8" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="REMARK" Text="备注"                                Orderno="9"   Colspan="2" IsVisible="true" IsShowCaption="true" CssName="billBottomLine" ></Detail>
+
+
+  </DetailLists>
+
+  <SubLists Name="T_FB_DEPTBUDGETADDDETAILList">
+    <ColumnLists>
+      <!--<Column Name="DEPTBUDGETADDDETAILID" Text="部门预算补增明细单ID"          		IsVisible="false" Width=""></Column>
+      <Column Name="T_FB_SUBJECT.SUBJECTCODE" Text="科目编号"                   		IsVisible="true" Width="15%"></Column>
+      <Column Name="T_FB_SUBJECT.SUBJECTNAME" Text="科目名称"                   		IsVisible="true" Width="15%"></Column>
+      <Column Name="USABLEMONEY" Text="年度结余"                                		IsVisible="true" Width="15%"></Column>
+      <Column Name="BUDGETMONEY" Text="费用预算"                                		IsVisible="true" Width="15%"></Column>
+      <Column Name="PERSONBUDGETMONEY" Text="个人预算"                          		IsVisible="true" Width="15%"></Column>
+      <Column Name="TOTALBUDGETMONEY" Text="预算金额"                             		IsVisible="true" Width="15%"></Column>-->
+
+
+
+      <Column Name="DEPTBUDGETADDDETAILID" Text="部门预算补增明细单ID" 	IsVisible="false" Width=""></Column>
+      <Column Name="T_FB_SUBJECT.SUBJECTCODE" Text="科目编号" IsVisible="true" Width="15%"></Column>
+      <Column Name="T_FB_SUBJECT.SUBJECTNAME" Text="科目名称" IsVisible="true" Width="15%"></Column>
+      <Column Name="USABLEMONEY" Text="年度结余" IsVisible="true" Width="15%" ToolTip="年度预算数 + 年度预算增补数 - 月度预算数 - 月度预算增补数"></Column>
+      <Column Name="AUDITBUDGETMONEY" Text="可用结余" IsVisible="true" Width="15%"></Column>
+      <Column Name="TOTALBUDGETMONEY" Text="增补金额" IsVisible="true" Width="15%" ColumnSum="true"></Column>
+      <Column Name="REMARK" Text="备注" IsVisible="true" Width="15%"></Column>
+     
+    </ColumnLists>
+    <SubColumnLists>
+      <!--<Column Name="PERSONBUDGETADDDETAILID" Text="个人预算增补明细单ID"  		IsVisible="false" Width="10%"></Column>
+      <Column Name="OWNERNAME" Text="申请人"                              		IsVisible="true" Width="10%"></Column>
+      <Column Name="OWNERPOSTNAME" Text="申请人岗位"                      		IsVisible="true" Width="10%"></Column>
+      <Column Name="USABLEMONEY" Text="可用额度"                          		IsVisible="true" Width="10%"></Column>
+      <Column Name="BUDGETMONEY" Text="预算资金"                          		IsVisible="true" Width="10%"></Column>-->
+
+
+      <Column Name="PERSONBUDGETADDDETAILID" Text="个人预算增补明细单ID" 	IsVisible="false" Width="10%"></Column>
+      <Column Name="OWNERNAME" Text="申请人" DataType="string" IsVisible="true" Width="10%"></Column>
+      <Column Name="OWNERPOSTNAME" Text="申请人岗位" IsVisible="true" Width="10%"></Column>
+      <Column Name="LIMITBUDGETMONEY" Text="可用结余" IsVisible="true" Width="10%"></Column>
+      <Column Name="BUDGETMONEY" Text="增补金额" IsVisible="true" Width="10%"></Column>
+
+
+    </SubColumnLists>
+  </SubLists>
+
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

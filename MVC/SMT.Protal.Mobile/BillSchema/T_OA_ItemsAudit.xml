@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail Name="ItemsCode" Text="事项编码"      Orderno="1" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+<Detail Name="ItemsType" Text="事项类型"      Orderno="2" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+<Detail Name="ItemsTitle" Text="事项主题"      Orderno="3" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+<Detail Name="EmployeeName" Text="所属人"      Orderno="4" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+ <Detail Name="Remark" Text="备注"          Orderno="5" Colspan="2" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+ <Detail Name="ItemsContent" Text="内容"             Orderno="12" Colspan="2" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+  </DetailLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

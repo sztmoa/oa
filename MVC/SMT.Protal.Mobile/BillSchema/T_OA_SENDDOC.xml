@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail Name="CURRENTEMPLOYEENAME" Text="提交者"          Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SENDDOCID" Text="公文ID"                    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SENDDOCTITLE" Text="公文标题"               Orderno="1" Colspan="2" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="ISREDDOC" Text="是否红头文件"               Orderno="2" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SENDDOCTYPE" Text="文档类型"                Orderno="3" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="NUM" Text="文号"                            Orderno="4" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERID" Text="申请人"                      Orderno="5" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="GRADED" Text="公文级别"                     Orderno="6" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="PRIORITIES" Text="缓急程度"                 Orderno="7" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="KEYWORDS" Text="主题词"                     Orderno="9" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SEND" Text="主送"                           Orderno="12" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CC" Text="抄送"                             Orderno="11" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="AttachMent" Text="附件"                     Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="DEPARTID" Text="部门"                       Orderno="8" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="TEL" Text="联系电话"                        Orderno="9" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKSTATE" Text="审批状态"                 Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="ISDISTRIBUTE" Text="是否发布"               Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="ISSAVE" Text="是否归档"                     Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERNAME" Text="申请人"                    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERCOMPANYID" Text="所属公司"             Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERDEPARTMENTID" Text="所属部门"          Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERPOSTID" Text="所属岗位"                Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERID" Text="创建人"                 Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERNAME" Text="创建人"               Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATECOMPANYID" Text="创建公司"            Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDEPARTMENTID" Text="创建人部门"       Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEPOSTID" Text="创建人岗位"             Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDATE" Text="创建日期"                 Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEUSERID" Text="修改人"                 Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEUSERNAME" Text="修改人名"             Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEDATE" Text="修改时间"                 Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="PUBLISHDATE" Text="发布时间"                Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CONTENT" Text="内容"               Orderno="13" Colspan="2" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+
+  </DetailLists>
+
+
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

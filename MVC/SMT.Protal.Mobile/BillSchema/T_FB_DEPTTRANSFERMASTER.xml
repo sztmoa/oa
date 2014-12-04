@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail Name="OrderTypeName" Text="单据类型"                       Orderno="1" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="DEPTTRANSFERMASTERID" Text="单据ID"                  Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKSTATES" Text="状态"                             Orderno="2" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+	<Detail Name="TRANSFERTO" Text="调入单位"                          Orderno="7" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+
+	<Detail Name="DEPTTRANSFERMASTERCODE" Text="单据编号"              Orderno="11" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+  <Detail Name="BUDGETARYMONTH" Text="预算月份"                      Orderno="12" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+	<Detail Name="OWNERCOMPANYNAME" Text="申请公司"                    Orderno="23" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+	<Detail Name="TRANSFERFROM" Text="分配部门"                        Orderno="24" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERNAME" Text="创建人"                        Orderno="35" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDATE" Text="创建时间"                          Orderno="36" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="REMARK" Text="备注"                                  Orderno="47" Colspan="2" IsVisible="true" IsShowCaption="false" CssName="billBottomLine" ></Detail>
+
+  </DetailLists>
+
+  <SubLists Name="T_FB_DEPTTRANSFERDETAILList">
+    <ColumnLists>
+      <Column Name="DEPTTRANSFERDETAILID" Text="预算调拨单申请单明细ID"         		IsVisible="false" Width=""></Column>
+      <Column Name="T_FB_SUBJECT.SUBJECTCODE" Text="科目编号"                   		IsVisible="true" Width="10%"></Column>
+      <Column Name="T_FB_SUBJECT.SUBJECTNAME" Text="科目名称"                   		IsVisible="true" Width="10%"></Column>
+      <Column Name="USABLEMONEY" Text="可用额度"                                		IsVisible="true" Width="10%"></Column>
+      <Column Name="TRANSFERMONEY" Text="已分配金额"                              		IsVisible="true" Width="10%"></Column>
+    </ColumnLists>
+    
+    <SubColumnLists>
+      <Column Name="PERSONTRANSFERDETAILID" Text="部门分配个人申请明细ID" 		IsVisible="false" Width="10%"></Column>
+      <Column Name="SUBJECTID" Text="科目ID"                             		IsVisible="false" Width="10%"></Column>
+      <Column Name="OWNERNAME" Text="申请人"                         		IsVisible="true" Width="10%"></Column>
+      <Column Name="OWNERPOSTNAME" Text="申请人岗位"                         		IsVisible="true" Width="10%"></Column>
+      <Column Name="LIMITBUDGETMONEY" Text="可用金额"                         		IsVisible="true" Width="10%"></Column>
+      <Column Name="BUDGETMONEY" Text="分配金额"                     		IsVisible="true" Width="10%"></Column>      
+      <Column Name="REMARK" Text="备注"                         		IsVisible="true" Width="10%"></Column>
+    </SubColumnLists>
+    
+  </SubLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

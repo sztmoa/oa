@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C11AC972-8306-47E8-B423-DD620BD9106C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HRTimedTaskService</RootNamespace>
+    <AssemblyName>HRTimedTaskService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>C:\Users\AuthurG\Desktop\PublishFile\AutoAsignAttendRecord\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E336035FD87EF67152551AAC2B9F9F5969ABFD51</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>HRTimedTaskService_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InitAttendanceService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InitAttendanceService.Designer.cs">
+      <DependentUpon>InitAttendanceService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AttendanceWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\FBServiceWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InitAttendanceService.resx">
+      <DependentUpon>InitAttendanceService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.manifest" />
+    <None Include="Service References\AttendanceWS\AttendanceService2.wsdl" />
+    <None Include="Service References\AttendanceWS\AttendanceService21.wsdl" />
+    <None Include="Service References\AttendanceWS\AttendanceService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendanceWS\AttendanceService91.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendanceWS\AttendanceService92.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendanceWS\AttendanceService93.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendanceWS\AttendanceService94.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendanceWS\AttendanceService95.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendanceWS\AttendanceService96.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendanceWS\AttendanceService97.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendanceWS\AttendanceService98.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.AbnormalAttendanceeEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_ATTENDANCEDEDUCTDETAIL.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_ATTENDANCEDEDUCTMASTER.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_ATTENDANCERECORD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_ATTENDANCESOLUTION.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_ATTENDANCESOLUTIONASIGN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_ATTENDANCESOLUTIONDEDUCT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_ATTENDFREELEAVE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_ATTENDMACHINESET.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_ATTENDMONTHLYBALANCE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_ATTENDMONTHLYBATCHBALANCE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_ATTENDYEARLYBALANCE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_EMPLOYEEABNORMRECORD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_EMPLOYEECANCELLEAVE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_EMPLOYEECLOCKINRECORD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_EMPLOYEEEVECTIONRECORD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_EMPLOYEEEVECTIONREPORT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_EMPLOYEELEAVERECORD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_EMPLOYEELEVELDAYCOUNT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_EMPLOYEELEVELDAYDETAILS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_EMPLOYEEOVERTIMERECORD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_EMPLOYEESIGNINDETAIL.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_EMPLOYEESIGNINRECORD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_FREELEAVEDAYSET.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_LEAVETYPESET.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_OUTPLANDAYS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_OVERTIMEREWARD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_SCHEDULINGTEMPLATEDETAIL.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_SCHEDULINGTEMPLATEMASTER.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_SHIFTDEFINE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.T_HR_VACATIONSET.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.V_ADJUSTLEAVE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.V_ATTENDANCERECORD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.V_EmpLeaveRdInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.V_EMPLOYEELEAVE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.V_EMPLOYEELEAVERECORD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.V_LandDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWS\HRTimedTaskService.AttendanceWS.V_LandStatistic.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FBServiceWS\FBService.wsdl" />
+    <None Include="Service References\FBServiceWS\FBService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBServiceWS\FBService1.wsdl" />
+    <None Include="Service References\FBServiceWS\FBService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBServiceWS\FBService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBServiceWS\FBService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBServiceWS\FBService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBServiceWS\FBService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBServiceWS\FBService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBServiceWS\FBService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBServiceWS\FBService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBServiceWS\FBService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBServiceWS\FBService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AttendanceWS\" />
+    <WCFMetadataStorage Include="Service References\FBServiceWS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AttendanceWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AttendanceWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AttendanceWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\log4net.dll" />
+    <Content Include="Lib\log4net.xml" />
+    <None Include="Service References\AttendanceWS\AttendanceService1.disco" />
+    <None Include="Service References\FBServiceWS\HRTimedTaskService.FBServiceWS.DebtInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FBServiceWS\HRTimedTaskService.FBServiceWS.FBEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FBServiceWS\HRTimedTaskService.FBServiceWS.SaveResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FBServiceWS\HRTimedTaskService.FBServiceWS.T_FB_BUDGETACCOUNT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FBServiceWS\HRTimedTaskService.FBServiceWS.T_FB_EXTENSIONALORDER.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FBServiceWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\FBServiceWS\configuration.svcinfo" />
+    <None Include="Service References\FBServiceWS\configuration91.svcinfo" />
+    <None Include="Service References\FBServiceWS\FBService.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

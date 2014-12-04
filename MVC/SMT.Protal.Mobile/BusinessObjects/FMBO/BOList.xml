@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<System Name="HRM">
+  <ObjectList>
+    <Object Name="ExpenseRequest" Description="报销申请单"></Object>
+  </ObjectList>
+</System>

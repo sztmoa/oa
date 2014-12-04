@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail Name="SENDDOCTITLE" Text="公文标题"               Orderno="1" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SENDDOCTYPE" Text="文档类型"                Orderno="2" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="GRADED" Text="公文级别"                     Orderno="3" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="PRIORITIES" Text="缓急程度"                 Orderno="4" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDATE" Text="创建日期"                 Orderno="5" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="DEPARTNAME" Text="发文部门"                 Orderno="6" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERNAME" Text="拟稿人"               Orderno="7" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="ISDISTRIBUTE" Text="是否发布"               Orderno="8" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="KEYWORDS" Text="主题词"                     Orderno="9" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SEND" Text="主送"                           Orderno="10" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CC" Text="抄送"                             Orderno="11" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="COMPANYNAME" Text="公司名称"                Orderno="12" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="NUM" Text="文号"                            Orderno="13" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="ISREDDOC" Text="是否红头文件"               Orderno="14" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+  </DetailLists>
+  <!--注：该xml只作为公司发文显示只用，为了区别待办里的公司发文，故文件名多加了"OFFICE"字符串。-->
+</Bill>

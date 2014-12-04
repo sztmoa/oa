@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<System>
+  <Name>WP</Name>
+  <Version>1.0</Version>
+
+  <Object Name="T_WP_POSTEMPSUMCHG" Description="T_WP_PostEmpSumChg" Key="PLANCHGID" id="">
+  
+  
+  </Object>
+</System>

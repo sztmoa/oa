@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail  Name="PENSIONMASTERID"         Orderno="2" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CARDID"                  Orderno="1" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="COMPUTERNO"              Orderno="3" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="PENSIONCITY"             Orderno="4" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="STARTDATE"               Orderno="5" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="LASTDATE"                Orderno="6" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="ISVALID"                 Orderno="7" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="REMARK"                  Orderno="8" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEUSERID"            Orderno="9" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEDATE"              Orderno="10" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="UPDATEUSERID"            Orderno="11" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="UPDATEDATE"              Orderno="12" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERID"                 Orderno="13" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERPOSTID"             Orderno="14" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERDEPARTMENTID"       Orderno="15" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERCOMPANYID"          Orderno="16" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEPOSTID"            Orderno="17" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEDEPARTMENTID"      Orderno="18" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATECOMPANYID"         Orderno="19" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CHECKSTATE"              Orderno="20" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="EDITSTATE"               Orderno="21" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CURRENTEMPLOYEENAME"     Orderno="22" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="EMPLOYEECNAME"           Orderno="23" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="EMPLOYEEID"              Orderno="24" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+  </DetailLists>
+
+  <SubLists Name="T_HR_PENSIONMASTERDetailList">
+    <ColumnLists>
+      <Column Name="STARTDATE" Text="开始时间" IsVisible="true" Width="10%"></Column>
+      <Column Name="ENDDATE" Text="结束时间" IsVisible="true" Width="10%"></Column>
+      <Column Name="DepCity" Text="出发城市" IsVisible="true" Width="10%"></Column>
+      <Column Name="DestCity" Text="到达城市" IsVisible="true" Width="10%"></Column>
+      <Column Name="TYPEOFTRAVELTOOLS" Text="交通工具" IsVisible="true" Width="10%"></Column>
+      <Column Name="TAKETHETOOLLEVEL" Text="方式" IsVisible="true" Width="10%"></Column>
+    </ColumnLists>
+
+  </SubLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

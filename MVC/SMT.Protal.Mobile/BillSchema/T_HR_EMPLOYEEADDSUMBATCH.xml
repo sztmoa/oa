@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail  Name="CURRENTEMPLOYEENAME" Text="提交者"                    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="MONTHLYBATCHID" Text="MONTHLYBATCHID"                 Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="BALANCEYEAR" Text="发薪年份"                          Orderno="1" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="BALANCEMONTH" Text="发薪月份"                         Orderno="2" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="BALANCESHORTDATE" Text="薪资年月"                     Orderno="2" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="BALANCEDATE" Text="结算日期"                          Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="BALANCEOBJECTTYPE" Text="发放对象类型"                Orderno="3" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="BALANCEOBJECTID" Text="发放对象"                      Orderno="4" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="BALANCEOBJECTNAME" Text="BALANCEOBJECTNAME"           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CHECKSTATE" Text="审批状态"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="EDITSTATE" Text="状态"                                Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERCOMPANYID" Text="所属公司"                       Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERDEPARTMENTID" Text="所属部门"                    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERPOSTID" Text="所属岗位"                          Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERID" Text="所属员工"                              Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEPOSTID" Text="创建人岗位"                       Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEDEPARTMENTID" Text="创建人部门"                 Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATECOMPANYID" Text="创建公司"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEUSERID" Text="创建人"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEDATE" Text="创建日期"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="REMARK" Text="备注"                                   Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="UPDATEUSERID" Text="修改人"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="UPDATEDATE" Text="修改时间"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+
+  </DetailLists>
+
+
+  <SubLists Name="EMPLOYEEADDSUMBATCHDetailList">
+    <ColumnLists>
+
+      <Column Name="PROJECTNAME" Text="项目名"           		IsVisible="false" Width="10%"></Column>
+      <Column Name="EMPLOYEENAME" Text="员工姓名"        		IsVisible="true" Width="10%"></Column>
+      <Column Name="SYSTEMTYPE" Text="加扣款类型"          		IsVisible="true" Width="10%"></Column>
+      <Column Name="PROJECTMONEY" Text="金额"        		IsVisible="true" Width="10%"></Column>
+	  <Column Name="DEALDATE" Text="加扣款年月"          		IsVisible="true" Width="10%"></Column>
+      <Column Name="DEALYEAR" Text="处理年份"            		IsVisible="false" Width="10%"></Column>
+      <Column Name="DEALMONTH" Text="处理月份"           		IsVisible="false" Width="10%"></Column>
+      <Column Name="CHECKSTATE" Text="审批状态"          		IsVisible="false" Width="10%"></Column>
+      <Column Name="REMARK" Text="备注"                  		IsVisible="true" Width="10%"></Column>
+      
+      <Column Name="ADDSUMID" Text="ADDSUMID"            		IsVisible="false" Width=""></Column>
+      <Column Name="EMPLOYEECODE" Text="员工编号"        		IsVisible="false" Width=""></Column>
+      <Column Name="PROJECTCODE" Text="项目编码"         		IsVisible="false" Width=""></Column>
+
+
+
+    </ColumnLists>
+
+  </SubLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

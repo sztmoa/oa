@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b01f0cfa-5781-46e6-b91f-9b6ef2ed637e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://portal.smt-online.net/New/Services/FB/FBService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FBService.xsd" MetadataType="Schema" ID="f22b1efb-8986-4fad-8c09-23a58dcfe216" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/FB/FBService.svc?xsd=xsd4" />
+    <MetadataFile FileName="FBService1.xsd" MetadataType="Schema" ID="c370d37c-932f-4ee6-9ee7-6ad4c68a989b" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/FB/FBService.svc?xsd=xsd5" />
+    <MetadataFile FileName="FBService2.xsd" MetadataType="Schema" ID="b36bb567-c958-4379-913c-a829709a66ca" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/FB/FBService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FBService3.xsd" MetadataType="Schema" ID="04ed34bb-ee42-4d96-9fca-cad539f70973" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/FB/FBService.svc?xsd=xsd8" />
+    <MetadataFile FileName="FBService.wsdl" MetadataType="Wsdl" ID="efc72b49-59a9-4dbf-a853-8d8ac8e22c81" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/FB/FBService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="FBService4.xsd" MetadataType="Schema" ID="759f1aa8-d778-4ba3-b754-87ca2c43a5e0" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/FB/FBService.svc?xsd=xsd10" />
+    <MetadataFile FileName="FBService5.xsd" MetadataType="Schema" ID="86545b14-b855-4c84-8c9c-3ab536192e55" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/FB/FBService.svc?xsd=xsd6" />
+    <MetadataFile FileName="FBService.disco" MetadataType="Disco" ID="657f4969-ece6-4b1f-906b-79b3d2947ea9" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/FB/FBService.svc?disco" />
+    <MetadataFile FileName="FBService6.xsd" MetadataType="Schema" ID="69d69620-17a0-410a-9691-0254c16f1727" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/FB/FBService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FBService7.xsd" MetadataType="Schema" ID="2e6b0e10-2560-4cb9-bfa1-62ca5d12b3f9" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/FB/FBService.svc?xsd=xsd9" />
+    <MetadataFile FileName="FBService1.wsdl" MetadataType="Wsdl" ID="fcf23b96-530b-4faf-a1b4-2a2be12da6ed" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/FB/FBService.svc?wsdl" />
+    <MetadataFile FileName="FBService8.xsd" MetadataType="Schema" ID="c2b213f2-7829-4de0-9d02-506b7dc2011c" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/FB/FBService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FBService9.xsd" MetadataType="Schema" ID="8fc87dff-cf5a-4ac5-83da-25cda4cbe3d9" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/FB/FBService.svc?xsd=xsd7" />
+    <MetadataFile FileName="FBService10.xsd" MetadataType="Schema" ID="7fe29580-1494-4920-9778-3358c749ff25" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/FB/FBService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,162 @@
+﻿
+        /// <summary>
+        /// 拷贝文件并修改内容再保存文件
+        /// </summary>
+        /// <param name="srcDir">源文件目录</param>
+        /// <param name="tgtDir">目标目录</param>
+        /// <param name="repalceContext">替换的键值key=原内容，value=替换的内容</param>
+        public static void CopyDirectory(string srcDir, string tgtDir, Dictionary<string, string> repalceContext)
+        {
+            DirectoryInfo source = new DirectoryInfo(srcDir);
+            DirectoryInfo target = new DirectoryInfo(tgtDir);
+
+            if (target.FullName.StartsWith(source.FullName, StringComparison.CurrentCultureIgnoreCase))
+            {
+                throw new Exception("父目录不能拷贝到子目录！");
+            }
+
+            if (!source.Exists)
+            {
+                return;
+            }
+
+            if (!target.Exists)
+            {
+                target.Create();
+            }
+
+            FileInfo[] files = source.GetFiles();
+
+            for (int i = 0; i < files.Length; i++)
+            {
+                if (files[i].Name == "Web.config")
+                {
+                    FileStream fsr = files[i].OpenRead();
+                    ///使用OpenRead()方法打开my.ini文件 
+                    byte[] datar = new byte[(int)fsr.Length];
+                    ///创建datar数组，保存从my.ini文件读取的内容 
+                    fsr.Read(datar, 0, (int)fsr.Length);
+                    ///读取my.ini文件的内容，保存到datar数组 
+                    string valuer = System.Text.Encoding.UTF8.GetString(datar);
+                    fsr.Close();
+                    foreach (var q in repalceContext)
+                    {
+                        valuer = valuer.Replace(q.Key, q.Value);
+                    }
+
+                    FileStream fsw = File.Create(target.FullName + @"\" + files[i].Name);
+                    ///设置被写入的内容 
+                    byte[] dataw = System.Text.Encoding.UTF8.GetBytes(valuer);
+                    ///转换为byte数组，保存为dataw 
+                    fsw.Write(dataw, 0, dataw.Length);
+                    ///将dataw数组中的内容写入到my.ini文件 
+                    fsw.Close();
+                }
+                if (files[i].Name == "SMT.SAAS.Loading.xap")
+                {
+                    ZipInputStream ZipReadstream = new ZipInputStream(File.OpenRead(files[i].FullName));
+                    ZipEntry theEntry;
+                    int startIndex = 0;
+                    int theEntryLength = 0;
+                    while ((theEntry = ZipReadstream.GetNextEntry()) != null)
+                    {
+                        string fileName = theEntry.Name;
+                        theEntryLength = (int)theEntry.Size;
+                        if (fileName == "ServiceReferences.ClientConfig")
+                        {
+                            byte[] filebytes = new byte[theEntry.Size];
+                            ZipReadstream.Read(filebytes, 0, (int)theEntry.Size);
+
+                            string OldString = System.Text.Encoding.UTF8.GetString(filebytes);
+                            foreach (var q in repalceContext)
+                            {
+                                OldString = OldString.Replace(q.Key, q.Value);
+                            }
+
+                            //Zipstream.Close();
+                            ///设置被写入的内容 
+
+                            byte[] bufferBody = System.Text.Encoding.UTF8.GetBytes(OldString);
+
+                            using (ZipOutputStream ZipEditStream = new ZipOutputStream(File.Create(target.FullName + @"\" + files[i].Name)))
+                            {
+                                ZipEntry ZipEntry = new ZipEntry(fileName);
+                                ZipEntry.DateTime = DateTime.Now;
+                                ZipEntry.Size = bufferBody.Length;
+
+                                ZipEditStream.PutNextEntry(ZipEntry);
+                                ZipEditStream.SetLevel(5);
+                                ZipEditStream.Write(bufferBody, 0, bufferBody.Length);
+                                ZipEditStream.Finish();
+                                ZipEditStream.Close();
+                            }
+
+
+                            //FileStream fswRead = files[i].OpenRead();
+                            //int fileLength = (int)fswRead.Length;
+
+                            ////文件头，从0开始
+                            //byte[] bufferHead = new byte[startIndex];
+                            //fswRead.Seek(0, SeekOrigin.Begin);
+                            //fswRead.Read(bufferHead, 0, bufferHead.Length);
+                            ////文件尾
+                            //byte[] bufferFoot = new byte[fileLength - startIndex - theEntryLength];
+                            //fswRead.Seek(fileLength - startIndex - theEntryLength, SeekOrigin.Begin);
+                            //fswRead.Read(bufferFoot, 0, bufferFoot.Length);
+
+                            //fswRead.Close();
+
+                            //FileStream fswWrite = files[i].OpenWrite();
+                            ////写入文件头段
+                            //fswWrite.Seek(0, SeekOrigin.Begin);
+                            //if (bufferHead.Length > 0)
+                            //{
+                            //    fswWrite.Write(bufferHead, 0, bufferHead.Length);
+                            //    fswWrite.Seek(bufferHead.Length, SeekOrigin.Begin);
+                            //}
+                            ////写入文件修改段
+                            //fswWrite.Write(bufferBody, 0, bufferBody.Length);
+                            ////写入文件末尾段
+                            //fswWrite.Seek(bufferHead.Length + bufferBody.Length, SeekOrigin.Begin);
+                            //fswWrite.Write(bufferFoot,0, bufferFoot.Length);
+                            //fswWrite.Close();
+                            break;
+                        }
+                        else
+                        {
+                            startIndex = (int)(startIndex + theEntry.Size);
+                            using (ZipOutputStream ZipEditStream = new ZipOutputStream(File.OpenWrite(target.FullName + @"\" + files[i].Name)))
+                            {
+                                ZipEntry ZipEntry = new ZipEntry(fileName);
+                                ZipEntry.DateTime = DateTime.Now;
+
+                                byte[] bufferBody = new byte[theEntry.Size];
+                                ZipReadstream.Read(bufferBody, 0, (int)theEntry.Size);
+
+                                ZipEntry.Size = bufferBody.Length;
+
+                                ZipEditStream.PutNextEntry(ZipEntry);
+                                ZipEditStream.SetLevel(5);
+                                ZipEditStream.Write(bufferBody, 0, bufferBody.Length);
+                                ZipEditStream.Finish();
+                                ZipEditStream.Close();
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    File.Copy(files[i].FullName, target.FullName + @"\" + files[i].Name, true);
+                    from.ShowMessage(DateTime.Now.ToShortTimeString() + "拷贝完成，文件：" + files[i].Name);
+                }
+                progreesValue++;
+                from.ShowProgress(progreesValue);
+            }
+
+            DirectoryInfo[] dirs = source.GetDirectories();
+
+            for (int j = 0; j < dirs.Length; j++)
+            {
+                CopyDirectory(dirs[j].FullName, target.FullName + @"\" + dirs[j].Name, repalceContext);
+            }
+        }

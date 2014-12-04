@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail Name="CURRENTEMPLOYEENAME" Text="提交者"               Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="MONTHLYBATCHID" Text="MONTHLYBATCHID"            Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEYEAR" Text="结算年份"                     Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEMONTH" Text="结算月份"                    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="PAYDATE" Text="发薪年月"                         Orderno="1" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEDATE" Text="结算日期"                     Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="PAYTOTALMONEY" Text="发薪总额"                   Orderno="3" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="PAYAVERAGE" Text="人均薪水"                      Orderno="4" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEOBJECTTYPE" Text="BALANCEOBJECTTYPE"      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEOBJECTID" Text="发放对象"          Orderno="2" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEOBJECTNAME" Text="BALANCEOBJECTNAME"      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKSTATE" Text="审批状态"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="EDITSTATE" Text="状态"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERCOMPANYID" Text="所属公司"                  Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERDEPARTMENTID" Text="所属部门"               Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERPOSTID" Text="所属岗位"                     Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERID" Text="所属员工"                         Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEPOSTID" Text="创建人岗位"                  Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDEPARTMENTID" Text="创建人部门"            Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATECOMPANYID" Text="创建公司"                 Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERID" Text="创建人"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDATE" Text="创建日期"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="REMARK" Text="备注"                              Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEUSERID" Text="修改人"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEDATE" Text="修改时间"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CURRENTEMPLOYEENAME" Text="提交者" 	      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="MONTHLYBATCHID" Text="MONTHLYBATCHID" 	      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEYEAR" Text="结算年份" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEMONTH" Text="结算月份" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="PAYDATE" Text="发薪年月" 			      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEDATE" Text="结算日期" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="PAYTOTALMONEY" Text="发薪总额" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="PAYAVERAGE" Text="人均薪水" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEOBJECTTYPE" Text="BALANCEOBJECTTYPE"      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEOBJECTID" Text="发放对象" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEOBJECTNAME" Text="BALANCEOBJECTNAME"      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKSTATE" Text="审批状态" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="EDITSTATE" Text="状态" 			      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERCOMPANYID" Text="所属公司" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERDEPARTMENTID" Text="所属部门" 	      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERPOSTID" Text="所属岗位" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERID" Text="所属员工" 			      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEPOSTID" Text="创建人岗位" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDEPARTMENTID" Text="创建人部门" 	      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATECOMPANYID" Text="创建公司" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERID" Text="创建人" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDATE" Text="创建日期" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="REMARK" Text="备注" 			      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEUSERID" Text="修改人" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEDATE" Text="修改时间" 		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="ACTUALLYPAY" Text="实发金额" 		      Orderno="5" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ColumnOrder="1"></Detail>
+    <Detail Name="SALARYITEM6" Text="基本工资" 		      Orderno="6" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM7" Text="扣款合计" 		      Orderno="7" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM8" Text="住房补贴" 		      Orderno="8" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM9" Text="岗位工资" 		      Orderno="9" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM10" Text="绩效奖金" 		      Orderno="10" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM11" Text="值班津贴" 		      Orderno="11" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM12" Text="住房公积金扣款" 	      Orderno="12" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM15" Text="餐费补贴" 		      Orderno="13" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM16" Text="加班费" 		      Orderno="14" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM17" Text="其它代扣款" 		      Orderno="15" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM18" Text="其它加扣款" 		      Orderno="16" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM19" Text="固定收入合计" 	      Orderno="17" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM20" Text="缺勤天数" 		      Orderno="18" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM21" Text="假期其它扣款" 	      Orderno="19" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM22" Text="出勤工资" 		      Orderno="20" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM23" Text="应发金额" 	      Orderno="21" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ColumnOrder="2"></Detail>
+    <Detail Name="SALARYITEM24" Text="计税工资" 		      Orderno="22" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM25" Text="个人社保负担" 	      Orderno="23" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM26" Text="地区差异补贴" 	      Orderno="24" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM27" Text="差额" 		      Orderno="25" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM29" Text="速算扣除数" 		      Orderno="26" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM30" Text="个人所得税" 		      Orderno="27" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM31" Text="考勤异常扣款" 	      Orderno="28" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM32" Text="应发小计" 		      Orderno="29" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM33" Text="尾数扣款" 		      Orderno="30" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SALARYITEM34" Text="保密津贴" 		      Orderno="31" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+
+
+
+
+  </DetailLists>
+
+  <SubLists Name="SALARYRECORDBATCHList" Align="verticle">
+<!--    
+<ColumnLists>
+
+      <Column Name="EMPLOYEENAME" Text="姓名"         		IsVisible="true" Width="" />
+      <Column Name="ACTUALLYPAY" Text="实发金额" 				IsVisible="true" Width=""></Column>
+      <Column Name="SALARYITEM6" Text="基本工资" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM7" Text="扣款合计" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM8" Text="住房补贴" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM9" Text="岗位工资" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM10" Text="绩效奖金" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM11" Text="值班津贴" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM12" Text="住房公积金扣款" 			IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM15" Text="餐费补贴" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM16" Text="加班费" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM17" Text="其它代扣款" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM18" Text="其它加扣款" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM19" Text="固定收入合计" 			IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM20" Text="缺勤天数" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM21" Text="假期其它扣款" 			IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM22" Text="出勤工资" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM23" Text="应发金额" 			IsVisible="true" Width=""></Column>
+      <Column Name="SALARYITEM24" Text="计税工资" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM25" Text="个人社保负担" 			IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM26" Text="地区差异补贴" 			IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM27" Text="差额" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM29" Text="速算扣除数" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM30" Text="个人所得税" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM31" Text="考勤异常扣款" 			IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM32" Text="应发小计" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM33" Text="尾数扣款" 				IsVisible="false" Width=""></Column>
+      <Column Name="SALARYITEM34" Text="保密津贴" 				IsVisible="false" Width=""></Column>
+
+
+    </ColumnLists>
+ -->
+  </SubLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

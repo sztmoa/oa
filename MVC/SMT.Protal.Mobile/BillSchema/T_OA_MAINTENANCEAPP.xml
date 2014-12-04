@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail  Name="CREATEPOSTID"   Orderno="9" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEDEPARTMENTID"   Orderno="10" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATECOMPANYID"     Orderno="11" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERPOSTID"       Orderno="12" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERDEPARTMENTID"         Orderno="13" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERCOMPANYID"   Orderno="14" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERNAME"      Orderno="1" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERID"       Orderno="15" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="UPDATEDATE"         Orderno="16" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="UPDATEUSERID"          Orderno="17" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="UPDATEUSERNAME"    Orderno="118" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEDATE"       Orderno="19" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEUSERID"            Orderno="20" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEUSERNAME"              Orderno="21" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="SubmitUserID"         Orderno="22" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CURRENTEMPLOYEENAME"  Orderno="23" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CHECKSTATE"           Orderno="24" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CHARGEMONEY"            Orderno="25" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="ISCHARGE"       Orderno="8" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="REMARK"            Orderno="20" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="TEL"          Orderno="6" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="REPAIRCOMPANY"             Orderno="5" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="RETRIEVEDATE"              Orderno="4" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="REPAIRDATE"                  Orderno="3" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CONTENT"          Orderno="7" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="MAINTENANCETYPE"              Orderno="26" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="ASSETID"                  Orderno="27" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="MAINTENANCEAPPID"          Orderno="28" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>    
+  </DetailLists>
+
+  <SubLists Name="T_OA_MAINTENANCEAPPDetailList">
+    <ColumnLists>
+      <Column Name="STARTDATE" Text="开始时间" IsVisible="true" Width="10%"></Column>
+      <Column Name="ENDDATE" Text="结束时间" IsVisible="true" Width="10%"></Column>
+      <Column Name="DepCity" Text="出发城市" IsVisible="true" Width="10%"></Column>
+      <Column Name="DestCity" Text="到达城市" IsVisible="true" Width="10%"></Column>
+      <Column Name="TYPEOFTRAVELTOOLS" Text="交通工具" IsVisible="true" Width="10%"></Column>
+      <Column Name="TAKETHETOOLLEVEL" Text="方式" IsVisible="true" Width="10%"></Column>
+    </ColumnLists>
+
+  </SubLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

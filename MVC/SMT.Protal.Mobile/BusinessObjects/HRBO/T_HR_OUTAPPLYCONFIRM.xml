@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<System>
+  <Name>HR</Name>
+  <Version>1.0</Version>
+  <System>
+    <Function Description="外出确认" Address="EngineService.svc"   FuncName="CallApplicationService"  Binding="customBinding" SplitChar="Г">
+      <ParaStr>
+        <Para TableName="T_HR_OUTAPPLYCONFIRM" Name="OUTAPPLYCONFIRMID" Description="外出确认ID" Value=""></Para>
+      </ParaStr>
+    </Function>
+  </System>
+  <MsgOpen>
+    <AssemblyName>SMT.HRM.UI</AssemblyName>
+    <PublicClass>SMT.HRM.UI.Utility</PublicClass>
+    <ProcessName>CreateFormFromEngine</ProcessName>
+    <PageParameter>SMT.HRM.UI.Form.Attendance.OutAppliecationForm</PageParameter>
+    <ApplicationOrder>{OUTAPPLYCONFIRMID}</ApplicationOrder>
+    <FormTypes>Audit</FormTypes>
+  </MsgOpen>
+  <Object Name="T_HR_OUTAPPLYCONFIRM" Description="员工外出确认" Key="OUTAPPLYCONFIRMID" id="">
+    <Attribute Name="CURRENTEMPLOYEENAME" LableResourceID="CURRENTEMPLOYEENAME" Description="提交者" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="OUTAPPLYCONFIRMID" LableResourceID="OUTAPPLYCONFIRMID" Description="外出确认ID" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="EMPLOYEEID" LableResourceID="EMPLOYEEID" Description="员工ID" DataType="string" DataValue="" DataText="" IsShow="false"></Attribute>
+    <Attribute Name="EMPLOYEENAME" LableResourceID="EMPLOYEENAME" Description="员工姓名" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="POSTLEVEL" LableResourceID="POSTLEVEL"  Description="岗位级别" DataType="decimal" DataValue="" DataText=""></Attribute>
+
+    <Attribute Name="ISCANCELED" LableResourceID="ISCANCELED" Description="是否取消外出" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="CANCELREASON" LableResourceID="CANCELREASON" Description="取消外出原因" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="STARTDATE" LableResourceID="STARTDATE" Description="实际外出时间" DataType="DateTime" DataValue="" DataText=""></Attribute>
+    <Attribute Name="ENDDATE" LableResourceID="ENDDATE" Description="实际返回时间" DataType="DateTime" DataValue="" DataText=""></Attribute>   
+    <Attribute Name="OUTREPORT" LableResourceID="OUTREPORT" Description="外出报告" DataType="string" DataValue="" DataText=""></Attribute>    
+   <Attribute Name="OUTAPLLYTIMES" LableResourceID="OUTAPLLYTIMES" Description="外出时长" DataType="decimal" DataValue="" DataText=""></Attribute>
+
+    <Attribute Name="CHECKSTATE" LableResourceID="CHECKSTATE" Description="审核状态" DataType="string" DataValue="" DataText="" IsShow="false"></Attribute>
+    <Attribute Name="REMARK" LableResourceID="REMARK" Description="备注" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="OWNERID" LableResourceID="OWNERID" Description="所属员工ID" DataType="string" DataValue="" DataText="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERPOSTID" LableResourceID="OWNERPOSTID" Description="所属岗位ID" DataType="string" DataValue="" DataText="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERDEPARTMENTID" LableResourceID="OWNERDEPARTMENTID" Description="所属部门ID" DataType="string" DataValue="" DataText="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERCOMPANYID" LableResourceID="OWNERCOMPANYID" Description="所属公司ID" DataType="string" DataValue="" DataText="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEUSERID" LableResourceID="CREATEUSERID" Description="创建人" DataType="string" DataValue="" DataText="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEDATE" LableResourceID="CREATEDATE" Description="创建时间" DataType="DateTime" DataValue="" DataText=""></Attribute>
+    <Attribute Name="UPDATEUSERID" LableResourceID="UPDATEUSERID" Description="修改人" DataType="string" DataValue="" DataText="" IsShow="false"></Attribute>
+    <Attribute Name="UPDATEDATE" LableResourceID="UPDATEDATE" Description="修改时间" DataType="DateTime" DataValue="" DataText=""></Attribute>
+    <Attribute Name="CREATECOMPANYID" LableResourceID="CREATECOMPANYID" Description="创建公司ID" DataType="string" DataValue="" DataText="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEDEPARTMENTID" LableResourceID="CREATEDEPARTMENTID" Description="创建部门ID" DataType="string" DataValue="" DataText="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEPOSTID" LableResourceID="CREATEPOSTID" Description="创建岗位ID" DataType="string" DataValue="" DataText="" IsShow="false"></Attribute>
+   
+  </Object>
+</System>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<System>
+  <Name>HR</Name>
+  <System>
+    <Function Description="员工入职" Address="EngineService.svc"   FuncName="CallApplicationService"  Binding="customBinding" SplitChar="Г">
+      <ParaStr>
+        <Para TableName="T_HR_EMPLOYEEENTRY" Name="EMPLOYEEENTRYID" Description="入职表ID" Value="" ></Para>
+      </ParaStr>
+    </Function>
+ <Function Description="创建社保" Address="EngineService.svc"   FuncName="CallWaitAppService"  Binding="customBinding" SplitChar="Г">
+      <ParaStr>
+        <Para TableName="T_HR_PENSIONMASTER" Name="EMPLOYEEID" Description="员工ID" Value=""></Para>
+      </ParaStr>
+    </Function>
+ <Function Description="创建合同" Address="EngineService.svc"   FuncName="CallWaitAppService"  Binding="customBinding" SplitChar="Г">
+      <ParaStr>
+        <Para TableName="T_HR_EMPLOYEECONTRACT" Name="EMPLOYEEID" Description="员工ID" Value=""></Para>
+      </ParaStr>
+    </Function>
+ <Function Description="创建薪资档案" Address="EngineService.svc"   FuncName="CallWaitAppService"  Binding="customBinding" SplitChar="Г">
+      <ParaStr>
+        <Para TableName="T_HR_SALARYARCHIVE" Name="EMPLOYEEID" Description="员工ID" Value=""></Para>
+      </ParaStr>
+    </Function>
+  </System>
+<MsgOpen>
+		<AssemblyName>SMT.HRM.UI</AssemblyName>
+	<PublicClass>SMT.HRM.UI.Utility</PublicClass>
+	<ProcessName>CreateFormFromEngine</ProcessName>
+	<PageParameter>SMT.HRM.UI.Form.Personnel.EmployeeEntryForm</PageParameter>
+		<ApplicationOrder>{EMPLOYEEENTRYID}</ApplicationOrder>
+		<FormTypes>Audit</FormTypes>
+ </MsgOpen>
+  <Object Name="T_HR_EMPLOYEEENTRY" Description="员工入职">
+    <Attribute Name="CREATEUSERNAME" Description="创建人" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="OWNER" Description="所属人" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="CURRENTEMPLOYEENAME" Description="提交者" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="EMPLOYEECNAME" Description="员工姓名" DataType="NVARCHAR2" DataValue=""></Attribute>
+    <Attribute Name="EMPLOYEEENTRYID" Description="入职表ID" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="CHECKSTATE" Description="入职审核状态" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="ENTRYDATE" Description="入职时间" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="ONPOSTDATE" Description="到岗日期" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="CREATEUSERID" Description="创建人ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEDATE" Description="创建时间" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="UPDATEUSERID" Description="修改人ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="UPDATEDATE" Description="修改时间" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="OWNERID" Description="所属员工ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERPOSTID" Description="所属岗位ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERDEPARTMENTID" Description="所属部门ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERCOMPANYID" Description="所属公司ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEPOSTID" Description="创建人岗位ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEDEPARTMENTID" Description="创建人部门ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATECOMPANYID" Description="创建人公司ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="PROBATIONPERIOD" Description="试用期" DataType="decimal" DataValue="" ></Attribute>
+    <Attribute Name="POSTLEVEL" Description="岗位级别" DataType="decimal" DataValue=""></Attribute>
+    <Attribute Name="EMPLOYEEID" Description="员工ID" DataType="string" DataValue=""></Attribute>
+  </Object>
+</System>
+

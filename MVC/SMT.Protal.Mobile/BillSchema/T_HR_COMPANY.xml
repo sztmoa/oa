@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail Name="CREATEUSERNAME" Text="创建人"                        Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNER" Text="所属人"                                 Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CURRENTEMPLOYEENAME" Text="提交者"                   Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="COMPANYID" Text="公司"                               Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="COMPANRYCODE" Text="公司编号"                        Orderno="3" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="ENAME" Text="公司英文名"                             Orderno="8" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CNAME" Text="公司名称"                               Orderno="7" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="COMPANYCATEGORY" Text="公司类型"                     Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="COMPANYLEVEL" Text="公司级别"                        Orderno="10" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="FATHERID" Text="父字典"                              Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="ADDRESS" Text="地址"                                 Orderno="22" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="LEGALPERSON" Text="法人代表"                         Orderno="17" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="LINKMAN" Text="联系人"                               Orderno="11" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="TELNUMBER" Text="电话号码"                           Orderno="12" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="LEGALPERSONID" Text="法人身份证号"                   Orderno="18" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BUSSINESSLICENCENO" Text="营业执照号"                Orderno="16" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BUSSINESSAREA" Text="经营范围"                       Orderno="23" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="ACCOUNTCODE" Text="银行账号"                         Orderno="20" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BANKID" Text="开户银行"                              Orderno="19" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="EMAIL" Text="电子邮箱"                               Orderno="13" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="ZIPCODE" Text="邮政编码"                             Orderno="15" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="FAXNUMBER" Text="传真"                               Orderno="14" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKSTATE" Text="审批状态"                          Orderno="24" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="EDITSTATE" Text="状态"                               Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERID" Text="创建人"                          Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDATE" Text="创建日期"                          Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEUSERID" Text="修改人"                          Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEDATE" Text="修改时间"                          Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="COUNTYTYPE" Text="国家/地区"                         Orderno="4" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CITY" Text="所在城市"                                Orderno="6" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERPROVINCE" Text="所在省"                         Orderno="5" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERID" Text="所属员工"                             Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERPOSTID" Text="所属岗位"                         Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERDEPARTMENTID" Text="所属部门"                   Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERCOMPANYID" Text="所属公司"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEPOSTID" Text="创建人岗位"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDEPARTMENTID" Text="创建人部门"                Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATECOMPANYID" Text="创建公司"                     Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="COMPANYTYPE" Text="所属行业"                         Orderno="9" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="FATHERTYPE" Text="FATHERTYPE"                        Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SUPERIORORG" Text="上级公司"                         Orderno="1" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SUPERIORDEPARTMENT" Text="上级部门"                  Orderno="2" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SORTINDEX" Text="排列序号"                           Orderno="21" Colspan="2" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BRIEFNAME" Text="公司简称"                          Orderno="8" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="REMARK" Text="备注"                                  Orderno="25" Colspan="2" IsVisible="true" IsShowCaption="false" CssName="billBottomLine" ></Detail>
+
+
+  </DetailLists>
+
+  <SubLists Name="COMPANYDetailList">
+    <ColumnLists>
+      <Column Name="STARTDATE" Text="开始时间" IsVisible="true" Width="10%"></Column>
+      <Column Name="ENDDATE" Text="结束时间" IsVisible="true" Width="10%"></Column>
+      <Column Name="DepCity" Text="出发城市" IsVisible="true" Width="10%"></Column>
+      <Column Name="DestCity" Text="到达城市" IsVisible="true" Width="10%"></Column>
+      <Column Name="TYPEOFTRAVELTOOLS" Text="交通工具" IsVisible="true" Width="10%"></Column>
+      <Column Name="TAKETHETOOLLEVEL" Text="方式" IsVisible="true" Width="10%"></Column>
+    </ColumnLists>
+
+  </SubLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail  Name="DEPTBUDGETAPPLYMASTERCODE" Text="单据编号"         Orderno="1" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="BUDGETARYMONTH" Text="预算月份"                    Orderno="2" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERCOMPANYNAME" Text="申请公司"                  Orderno="3" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERDEPARTMENTNAME" Text="申请部门"               Orderno="4" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEUSERNAME" Text="创建人"                      Orderno="5" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEDATE" Text="创建时间"                        Orderno="6" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OrderTypeName" Text="单据类型"                     Orderno="1" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="DEPTBUDGETAPPLYMASTERID" Text="单据ID"             Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="BUDGETMONEY" Text="合计"                       Orderno="8" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CHECKSTATES" Text="状态"                           Orderno="2" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="ISVALID" Text="生效状态"                           Orderno="9" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="REMARK" Text="备注"                                Orderno="10"  Colspan="2" IsVisible="true" IsShowCaption="true" CssName="billBottomLine" ></Detail>
+
+
+  </DetailLists>
+
+  <SubLists Name="T_FB_DEPTBUDGETAPPLYDETAILList">
+    <ColumnLists>
+      <Column  Name="DEPTBUDGETAPPLYDETAILID" Text="月度预算申请明细ID"  		IsVisible="false" Width=""></Column>
+      <Column  Name="T_FB_SUBJECT.SUBJECTNAME" Text="科目名称"           		IsVisible="true" Width="10%"></Column>
+      <Column  Name="LASTBUDGEMONEY" Text="上期总预算"                   		IsVisible="false" Width="10%"></Column>
+      <Column  Name="LASTACTUALBUDGETMONEY" Text="上期发生"        		IsVisible="true" Width="10%"></Column>
+      <Column  Name="USABLEMONEY" Text="年度结余"              		IsVisible="true" Width="10%"></Column>
+      <Column  Name="BEGINNINGBUDGETBALANCE" Text="可用结余"         		IsVisible="true" Width="10%"></Column>
+      <!--<Column  Name="USABLEMONEY" Text="可用额度"                        		IsVisible="false" Width="10%"></Column>-->
+      <!--<Column  Name="BUDGETMONEY" Text="费用预算"                        		IsVisible="false" Width="10%"></Column>-->
+      <!--<Column  Name="PERSONBUDGETMONEY" Text="个人预算"                  		IsVisible="false" Width="10%"></Column>-->
+      <!--<Column  Name="BUDGETMONEY" Text="预算资金"                   		IsVisible="true" Width="10%"></Column>-->
+	<Column Name="TOTALBUDGETMONEY" Text="预算金额"                         		IsVisible="true" ColumnSum="true" Width="10%"></Column>
+	<Column Name="REMARK" Text="备注"                         		IsVisible="true" Width="10%"></Column>
+    </ColumnLists>
+    <SubColumnLists>
+      <Column Name="PERSONBUDGETAPPLYDETAILID" Text="个人预算申请明细ID" 		IsVisible="false" Width="10%"></Column>
+      <Column Name="OWNERNAME" Text="申请人"                             		IsVisible="true" Width="10%"></Column>
+      <Column Name="OWNERPOSTNAME" Text="申请人岗位"                     		IsVisible="true" Width="10%"></Column>
+      <Column Name="LIMITBUDGETMONEY" Text="可用结余"                         		IsVisible="true" Width="10%"></Column>
+      <Column Name="BUDGETMONEY" Text="预算资金"                         		IsVisible="true" Width="10%"></Column>
+
+
+
+
+    </SubColumnLists>
+  </SubLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

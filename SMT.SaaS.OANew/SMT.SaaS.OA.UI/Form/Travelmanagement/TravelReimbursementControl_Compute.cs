@@ -99,8 +99,10 @@ namespace SMT.SaaS.OA.UI.UserControls
                             for (int j =i+1; j < TravelDetailList_Golbal.Count() ;j++ )
                             {
                                 //如果下一条记录的到达日期==上条记录的开始日期,不计算出差天数
-                                if (TravelDetailList_Golbal[j].ENDDATE.Value.Date
-                                    == TravelDetailList_Golbal[i].STARTDATE.Value.Date)
+                                if (1==2
+                                    //TravelDetailList_Golbal[j].ENDDATE.Value.Date
+                                    //== TravelDetailList_Golbal[i].STARTDATE.Value.Date
+                                    )
                                 {
                                     TravelDetailList_Golbal[i].BUSINESSDAYS = "0";
                                     if(dtTempStart==new DateTime(2014,1,1))

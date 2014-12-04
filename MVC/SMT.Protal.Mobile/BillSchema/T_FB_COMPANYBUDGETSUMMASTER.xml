@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail Name="COMPANYBUDGETSUMMASTERID" Text="单据ID"             Orderno="11" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="COMPANYBUDGETSUMMASTERCODE" Text="单据编号"         Orderno="12" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BUDGETYEAR" Text="预算年份"                         Orderno="13" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+   
+    <Detail Name="OWNERCOMPANYNAME" Text="申请公司"                   Orderno="24" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BUDGETMONEY" Text="预算总额"                        Orderno="25" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="REMARK" Text="备注"                                Orderno="36"   Colspan="2" IsVisible="true" IsShowCaption="true" CssName="billBottomLine" ></Detail>
+
+
+  </DetailLists>
+
+  <SubLists Name="COMPANYBUDGETSUMDetailList">
+    <ColumnLists>
+      <Column Name="T_FB_SUBJECT.SUBJECTCODE" Text="科目编号"                       		IsVisible="true" Width="20%"></Column>
+      <Column Name="T_FB_SUBJECT.SUBJECTNAME" Text="科目名称"                       		IsVisible="true" Width="35%"></Column>
+      <Column Name="BUDGETMONEY" Text="预算总额"                    		IsVisible="true" Width="45%"></Column>
+    </ColumnLists>
+    <SubColumnLists>
+      <Column  Name="COMPANYBUDGETAPPLYDETAILID" Text="年度预算申请ID"             		IsVisible="false" Width=""></Column>
+      <Column  Name="T_FB_COMPANYBUDGETAPPLYMASTER.OWNERCOMPANYNAME" Text="公司"		IsVisible="true" Width="20%"></Column>
+      <Column  Name="T_FB_COMPANYBUDGETAPPLYMASTER.OWNERDEPARTMENTNAME" Text="部门"		IsVisible="true" Width="15%"></Column>
+      <Column  Name="T_FB_SUBJECT.SUBJECTCODE" Text="科目编号"                     		IsVisible="true" Width="10%"></Column>
+      <Column  Name="T_FB_SUBJECT.SUBJECTNAME" Text="科目名称"                     		IsVisible="true" Width="15%"></Column>
+      <Column  Name="BUDGETMONEY" Text="预算资金"                                  		IsVisible="true" Width="15%"></Column>
+      <Column Name="REMARK" Text="备注"                         		IsVisible="true" Width="25%"></Column>
+    </SubColumnLists>
+  </SubLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

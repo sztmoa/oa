@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail Name="CURRENTEMPLOYEENAME" Text="提交者"                     Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="MONTHLYBATCHID" Text="MONTHLYBATCHID"                  Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEYEAR" Text="结算年份"                           Orderno="1" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEMONTH" Text="结算月份"                          Orderno="2" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEDATE" Text="结算日期"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEOBJECTTYPE" Text="结算对象类型"                 Orderno="3" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEOBJECTID" Text="结算对象"                       Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BALANCEOBJECTNAME" Text="结算对象"                     Orderno="4" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKSTATE" Text="审批状态"                            Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="EDITSTATE" Text="状态"                                 Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERCOMPANYID" Text="所属公司"                        Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERDEPARTMENTID" Text="所属部门"                     Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERPOSTID" Text="所属岗位"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERID" Text="所属员工"                               Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEPOSTID" Text="创建人岗位"                        Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDEPARTMENTID" Text="创建人部门"                  Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATECOMPANYID" Text="创建公司"                       Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERID" Text="创建人"                            Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDATE" Text="创建日期"                            Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="REMARK" Text="备注"                                    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEUSERID" Text="修改人"                            Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEDATE" Text="修改时间"                            Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+
+  </DetailLists>
+
+  <SubLists Name="ATTENDMONTHLYBALANCEDetailList">
+    <ColumnLists>
+      <Column Name="EMPLOYEENAME" Text="员工姓名"                   		IsVisible="true" Width="9%"></Column>
+      <Column Name="BALANCEDATE" Text="结算日期"                    		IsVisible="true" Width="9%"></Column>
+      <Column Name="REALNEEDATTENDDAYS" Text="应出勤天数"               		IsVisible="true" Width="9%"></Column>
+
+
+
+      <Column Name="REALATTENDDAYS" Text="实际出勤天数"             		IsVisible="true" Width="9%"></Column>
+      <Column Name="FORGETCARDTIMES" Text="漏打卡次数"              		IsVisible="true" Width="9%"></Column>
+      <Column Name="LATEDAYS" Text="迟到次数"                       		IsVisible="true" Width="9%"></Column>
+      <Column Name="LEAVEEARLYDAYS" Text="早退次数"                 		IsVisible="true" Width="9%"></Column>
+      <Column Name="ABSENTDAYS" Text="旷工天数"                     		IsVisible="true" Width="9%"></Column>
+      <Column Name="AFFAIRLEAVEDAYS" Text="事假天数"                		IsVisible="true" Width="9%"></Column>
+      <Column Name="SICKLEAVEDAYS" Text="病假天数"                  		IsVisible="true" Width="9%"></Column>
+      <Column Name="OTHERLEAVEDAYS" Text="其他假期天数"             		IsVisible="true" Width="9%"></Column>
+
+      <Column Name="CURRENTEMPLOYEENAME" Text="提交者"              		IsVisible="false" Width=""></Column>
+      <Column Name="MONTHLYBALANCEID" Text="MONTHLYBALANCEID"       		IsVisible="false" Width=""></Column>
+      <Column Name="EMPLOYEEID" Text="EMPLOYEEID"                   		IsVisible="false" Width=""></Column>
+      <Column Name="EMPLOYEECODE" Text="员工编号"                   		IsVisible="false" Width=""></Column>
+      <Column Name="BALANCEYEAR" Text="结算年份"                    		IsVisible="false" Width=""></Column>
+      <Column Name="BALANCEMONTH" Text="结算月份"                   		IsVisible="false" Width=""></Column>      
+      <Column Name="OVERTIMETIMES" Text="加班时长"                  		IsVisible="false" Width=""></Column>
+      <Column Name="OVERTIMESUMHOURS" Text="加班累计时间"           		IsVisible="false" Width=""></Column>
+      <Column Name="OVERTIMESUMDAYS" Text="加班累计天数"            		IsVisible="false" Width=""></Column>
+      <Column Name="OWNERCOMPANYID" Text="所属公司"                 		IsVisible="false" Width=""></Column>
+      <Column Name="OWNERDEPARTMENTID" Text="所属部门"              		IsVisible="false" Width=""></Column>
+      <Column Name="OWNERPOSTID" Text="所属岗位"                    		IsVisible="false" Width=""></Column>
+      <Column Name="OWNERID" Text="所属员工"                        		IsVisible="false" Width=""></Column>
+      <Column Name="CREATEPOSTID" Text="创建人岗位"                 		IsVisible="false" Width=""></Column>
+      <Column Name="CREATEDEPARTMENTID" Text="创建人部门"           		IsVisible="false" Width=""></Column>
+      <Column Name="CREATECOMPANYID" Text="创建公司"                		IsVisible="false" Width=""></Column>
+      <Column Name="CREATEUSERID" Text="创建人"                     		IsVisible="false" Width=""></Column>
+      <Column Name="CREATEDATE" Text="创建日期"                     		IsVisible="false" Width=""></Column>
+      <Column Name="REMARK" Text="备注"                             		IsVisible="false" Width=""></Column>
+      <Column Name="UPDATEUSERID" Text="修改人"                     		IsVisible="false" Width=""></Column>
+      <Column Name="UPDATEDATE" Text="修改时间"                     		IsVisible="false" Width=""></Column>
+      <Column Name="CHECKSTATE" Text="审批状态"                     		IsVisible="false" Width=""></Column>
+      <Column Name="EDITSTATE" Text="状态"                          		IsVisible="false" Width=""></Column>
+      <Column Name="LATETIMES" Text="迟到次数"                      		IsVisible="false" Width=""></Column>
+      <Column Name="LEAVEEARLYTIMES" Text="早退次数"                		IsVisible="false" Width=""></Column>      
+      <Column Name="EVECTIONTIME" Text="EVECTIONTIME"               		IsVisible="false" Width=""></Column>
+      <Column Name="ANNUALLEVELDAYS" Text="年休假天数"              		IsVisible="false" Width=""></Column>
+      <Column Name="LEAVEUSEDDAYS" Text="调休天数"                  		IsVisible="false" Width=""></Column>
+      <Column Name="MARRYDAYS" Text="婚假天数"                      		IsVisible="false" Width=""></Column>
+      <Column Name="MATERNITYLEAVEDAYS" Text="产假天数"             		IsVisible="false" Width=""></Column>
+      <Column Name="NURSESDAYS" Text="看护假天数"                   		IsVisible="false" Width=""></Column>
+      <Column Name="FUNERALLEAVEDAYS" Text="丧假天数"               		IsVisible="false" Width=""></Column>
+      <Column Name="TRIPDAYS" Text="路程假天数"                     		IsVisible="false" Width=""></Column>
+      <Column Name="INJURYLEAVEDAYS" Text="工伤假天数"              		IsVisible="false" Width=""></Column>
+
+    </ColumnLists>
+ 
+  </SubLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

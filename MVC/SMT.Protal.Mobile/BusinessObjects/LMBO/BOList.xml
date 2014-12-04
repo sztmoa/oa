@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<System Name="RM">
+  <ObjectList>
+    <Object Name="TrainingPlanPublish" Description="培训计划发布"></Object>
+  </ObjectList>
+</System>
+

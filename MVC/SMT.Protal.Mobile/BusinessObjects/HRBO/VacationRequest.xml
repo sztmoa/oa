@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<System>
+	<Name>HRM</Name>
+	<Object Name="VacationRequest" Description="休假申请单">
+		<Attribute Name="EmployeeID" Description="员工号" DataType="String" DataValue="" IsShow="false"></Attribute>
+		<Attribute  Name="EmployeeName" Description="员工姓名" DataType="decimal" DataValue=""></Attribute>
+		<Attribute  Name="StartDate" Description="请假开始时间" DataType="datetime" DataValue=""></Attribute>
+		<Attribute  Name="VacationDate" Description="请假天数" DataType="decimal" DataValue=""></Attribute>
+	</Object>
+</System>

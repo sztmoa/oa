@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<System Name="TK">
+  <ObjectList>
+    <Object Name="T_TASK_TASKMAINTASK" Description="配置表代办"></Object>
+  </ObjectList>
+  <ObjectList>
+    <Object Name="T_TASK_TASKDETAILTASK" Description="任务表代办"></Object>
+  </ObjectList>
+ <ObjectList>
+    <Object Name="T_TASK_TASKDETAILTASKTASK" Description="任务表跟进代办"></Object>
+  </ObjectList>
+   <ObjectList>
+    <Object Name="T_TASK_TASKDETAILTASKTASKTASK" Description="任务表变更待办"></Object>
+  </ObjectList>
+    <ObjectList>
+    <Object Name="T_TASK_CHARGEAPPLYMASTER" Description="费用报销代办"></Object>
+  </ObjectList>
+</System>
+

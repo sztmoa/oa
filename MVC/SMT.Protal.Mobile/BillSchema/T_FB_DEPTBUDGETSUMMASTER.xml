@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    
+    <Detail Name="DEPTBUDGETSUMMASTERID" Text="单据ID"               Orderno="11" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="DEPTBUDGETSUMMASTERCODE" Text="单据编号"           Orderno="12" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BUDGETARYMONTH" Text="预算月份"                    Orderno="23" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" Format="DaTime:yyyy年MM月" ></Detail>
+    <Detail Name="OWNERCOMPANYNAME" Text="申请公司"                  Orderno="35" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BUDGETMONEY" Text="预算总额"                       Orderno="47" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="REMARK" Text="备注"                                Orderno="48"   Colspan="2" IsVisible="true" IsShowCaption="true" CssName="billBottomLine" ></Detail>
+
+  </DetailLists>
+
+  <SubLists Name="T_FB_DEPTBUDGETSUMDETAILList">
+    <ColumnLists>
+      <Column Name="T_FB_SUBJECT.SUBJECTCODE" Text="科目编号"                       		IsVisible="true" Width="20%"></Column>
+      <Column Name="T_FB_SUBJECT.SUBJECTNAME" Text="科目名称"                       		IsVisible="true" Width="35%"></Column>
+      <Column Name="BUDGETMONEY" Text="预算总额"                    		IsVisible="true" Width="45%"></Column>
+    </ColumnLists>
+    <SubColumnLists>
+      <Column Name="DEPTBUDGETAPPLYDETAILID" Text="月度预算申请ID"              		IsVisible="false" Width="10%"></Column>
+      <Column Name="T_FB_DEPTBUDGETAPPLYMASTER.OWNERDEPARTMENTNAME" Text="部门" 		IsVisible="true" Width="10%"></Column>
+      <Column Name="T_FB_SUBJECT.SUBJECTCODE" Text="科目编号"                   		IsVisible="false" Width="10%"></Column>
+      <Column Name="T_FB_SUBJECT.SUBJECTNAME" Text="科目名称"                   		IsVisible="false" Width="10%"></Column>
+      <Column  Name="LASTACTUALBUDGETMONEY" Text="上期发生" ToolTip="费用报销数（上期已终审）" IsVisible="true" Width="10%"></Column>
+      <Column  Name="USABLEMONEY" Text="年度结余" ToolTip="年度预算数 + 年度预算增补数 - 月度预算数 - 月度预算增补数" IsVisible="true" Width="10%"></Column>
+      <Column  Name="BEGINNINGBUDGETBALANCE" Text="可用结余" ToolTip="月度预算数 + 月度预算增补数 - 费用报销数（已终审）- 费用报销数（审核中）" IsVisible="true" Width="10%"></Column>
+      <Column Name="TOTALBUDGETMONEY" Text="预算金额" IsVisible="true" ColumnSum="true" Width="10%"></Column>
+      <Column Name="REMARK" Text="备注" IsVisible="true" Width="10%"></Column>
+    </SubColumnLists>
+  </SubLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

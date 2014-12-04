@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config >
+
+    <Template Name="Template1" CssFile="Styles/Template1.aspx" CssImageUrl="../images/" ImageUrl="/images/"/>
+    <Template Name="Template2" CssFile="Styles/Template2.aspx" CssImageUrl="../images/" ImageUrl="/images/"/>
+    <Template Name="Template3" CssFile="Styles/Template3.aspx" CssImageUrl="../images/" ImageUrl="/images/"/>
+  
+    <Viewmode Name="Phone" Text="手机" Column="2"/>
+    <Viewmode Name="Pad" Text="平板" Column="2"/>
+    
+</Config>

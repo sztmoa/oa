@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<System>
+  <Name>VM</Name>
+  <Version>1.0</Version>
+  <System>
+    <Function Description="" Address="" FuncName="" Binding="" SplitChar="Г">
+      <ParaStr>
+        <Para TableName="" Name="" Description="" Value="" />
+      </ParaStr>
+    </Function>
+  </System>
+  <MsgOpen>
+    <AssemblyName>SMT.VM.UI</AssemblyName>
+    <PublicClass>SMT.VM.UI.Class.Utility</PublicClass>
+    <ProcessName>CreateFormFromEngine</ProcessName>
+    <PageParameter>VM/VehicleAccident/Details</PageParameter>
+    <ApplicationOrder>{ACCID}</ApplicationOrder>
+    <FormTypes>Details</FormTypes>
+  </MsgOpen>
+  <Object Name="T_VM_VEHICLEACCIDENT" Description="T_VM_VehicleAccident 用车违章事故信息表" Key="ACCID" id="">
+    <Attribute Name="ACCID" LableResourceID="ACCID" Description="事故主键ID,GUID" DataType="string" DataValue="" DataText="事故主键ID,GUID" />
+    <Attribute Name="VEHICLEID" LableResourceID="VEHICLEID" Description="车辆主键ID" DataType="string" DataValue="" DataText="车辆主键ID" />
+    <Attribute Name="MARKNO" LableResourceID="MARKNO" Description="车牌号" DataType="string" DataValue="" DataText="车牌号" />
+    <Attribute Name="CTLBILLSID" LableResourceID="CTLBILLSID" Description="派车单主键ID" DataType="string" DataValue="" DataText="派车单主键ID" />
+    <Attribute Name="CTLBILLSNO" LableResourceID="CTLBILLSNO" Description="派车单号" DataType="string" DataValue="" DataText="派车单号" />
+    <Attribute Name="ACCIDENTTYPE" LableResourceID="ACCIDENTTYPE" Description="事故类型" DataType="string" DataValue="" DataText="事故类型" />
+    <Attribute Name="ACCIDENTTYPENAME" LableResourceID="ACCIDENTTYPENAME" Description="事故类型名称" DataType="string" DataValue="" DataText="事故类型名称" IsShow="false"/>
+    <Attribute Name="ACCIDENTCONT" LableResourceID="ACCIDENTCONT" Description="事故详情 " DataType="string" DataValue="" DataText="事故详情 " IsShow="false"/>
+    <Attribute Name="OCCURDATE" LableResourceID="OCCURDATE" Description="发生时间&#xA;行车异常转入的行车异常时间" DataType="datetime" DataValue="" DataText="发生时间" />
+    <Attribute Name="IFSCENE_ALARM" LableResourceID="IFSCENE_ALARM" Description="现场_已报警（缺省0，0否1是）" DataType="string" DataValue="" DataText="现场_已报警（缺省0，0否1是）" />
+    <Attribute Name="IFSCENE_INSURE" LableResourceID="IFSCENE_INSURE" Description="现场_已报保险（缺省0，0否1是）" DataType="string" DataValue="" DataText="现场_已报保险（缺省0，0否1是）" />
+    <Attribute Name="IFSCENE_SERVICE" LableResourceID="IFSCENE_SERVICE" Description="现场_需要维修（缺省0，0否1是）" DataType="string" DataValue="" DataText="现场_需要维修（缺省0，0否1是）" />
+    <Attribute Name="IFSCENE_CONSULT" LableResourceID="IFSCENE_CONSULT" Description="现场_协商解决（缺省0，0否1是）" DataType="string" DataValue="" DataText="现场_协商解决（缺省0，0否1是）" />
+    <Attribute Name="IFDOLLARLOSS" LableResourceID="IFDOLLARLOSS" Description="有无经济损失（缺省0，0无1有）" DataType="string" DataValue="" DataText="有无经济损失（缺省0，0无1有）" />
+    <Attribute Name="LOSTCOSS" LableResourceID="LOSTCOSS" Description="损失金额（元）" DataType="decimal" DataValue="" DataText="损失金额（元）" />
+    <Attribute Name="DRIVERID" LableResourceID="DRIVERID" Description="司机ID&#xA;违章司机" DataType="string" DataValue="" DataText="司机ID&#xA;违章司机" IsShow="false"/>
+    <Attribute Name="DRIVER" LableResourceID="DRIVER" Description="司机" DataType="string" DataValue="" DataText="司机" IsShow="false"/>
+    <Attribute Name="DRIVERMOBILE" LableResourceID="DRIVERMOBILE" Description="司机手机" DataType="string" DataValue="" DataText="司机手机" IsShow="false"/>
+    <Attribute Name="IFBEAR_INSURE" LableResourceID="IFBEAR_INSURE" Description="是否保险承担（缺省0，0否1是）" DataType="string" DataValue="" DataText="是否保险承担（缺省0，0否1是）" IsShow="false"/>
+    <Attribute Name="INSURECORPID" LableResourceID="INSURECORPID" Description="承担保险公司ID&#xA;选择自表《T_PUB_SupplierInfo 供应商基本信息表》，供应商类别=12" DataType="string" DataValue="" DataText="承担保险公司" IsShow="false"/>
+    <Attribute Name="INSURECORP" LableResourceID="INSURECORP" Description="承担保险公司" DataType="string" DataValue="" DataText="承担保险公司" IsShow="false"/>
+    <Attribute Name="INSURECOSS" LableResourceID="INSURECOSS" Description="保险承担金额（元）" DataType="decimal" DataValue="" DataText="保险承担金额（元）" IsShow="false"/>
+    <Attribute Name="IFBEAR_PERSONAL" LableResourceID="IFBEAR_PERSONAL" Description="是否个人承担（缺省0，0否1是）" DataType="string" DataValue="" DataText="是否个人承担（缺省0，0否1是）" IsShow="false"/>
+    <Attribute Name="PERSONALID" LableResourceID="PERSONALID" Description="承担个人ID&#xA;选择自表《T_PUB_SupplierInfo 供应商基本信息表》，供应商类别=12" DataType="string" DataValue="" DataText="承担个人ID&#xA;选择自表《T_PUB_SupplierInfo 供应商基本信息表》，供应商类别=12" IsShow="false"/>
+    <Attribute Name="PERSONAL" LableResourceID="PERSONAL" Description="承担个人" DataType="string" DataValue="" DataText="承担个人" IsShow="false"/>
+    <Attribute Name="PERSONALCOSS" LableResourceID="PERSONALCOSS" Description="个人承担金额（元）" DataType="decimal" DataValue="" DataText="个人承担金额（元）" IsShow="false"/>
+    <Attribute Name="IFBEAR_COMPANY" LableResourceID="IFBEAR_COMPANY" Description="是否公司承担（缺省0，0否1是）" DataType="string" DataValue="" DataText="是否公司承担（缺省0，0否1是）" IsShow="false"/>
+    <Attribute Name="COMPANYID" LableResourceID="COMPANYID" Description="承担公司ID" DataType="string" DataValue="" DataText="承担公司ID" IsShow="false"/>
+    <Attribute Name="COMPANY" LableResourceID="COMPANY" Description="承担公司" DataType="string" DataValue="" DataText="承担公司" IsShow="false"/>
+    <Attribute Name="COMPANYCOSS" LableResourceID="COMPANYCOSS" Description="公司承担金额（元）" DataType="decimal" DataValue="" DataText="公司承担金额（元）" IsShow="false"/>
+    <Attribute Name="EDITSTATE" LableResourceID="EDITSTATE" Description="对象编辑状态 EditStates&#xA;0 删除状态 Deleted&#xA;1 已生效 Actived&#xA;2 未生效 UnActived&#xA;3 撤消中 PendingCancelled&#xA;4 已撤消 Cancelled&#xA;" DataType="string" DataValue="" DataText="对象编辑状态 EditStates&#xA;0 删除状态 Deleted&#xA;1 已生效 Actived&#xA;2 未生效 UnActived&#xA;3 撤消中 PendingCancelled&#xA;4 已撤消 Cancelled&#xA;" IsShow="false"/>
+    <Attribute Name="CHECKSTATES" LableResourceID="CHECKSTATES" Description="审核状态 CheckStates&#xA;0 未提交 UnSubmit,&#xA;1 审核中 Approving,&#xA;2 审核通过 Approved,&#xA;3 审核未通过 UnApproved&#xA;4 待审核&#xA;5 所有" DataType="string" DataValue="" DataText="审核状态 CheckStates&#xA;0 未提交 UnSubmit,&#xA;1 审核中 Approving,&#xA;2 审核通过 Approved,&#xA;3 审核未通过 UnApproved&#xA;4 待审核&#xA;5 所有" IsShow="false"/>
+    <Attribute Name="OWNERCOMPANYID" LableResourceID="OWNERCOMPANYID" Description="记录所属公司ID" DataType="string" DataValue="" DataText="记录所属公司ID" IsShow="false"/>
+    <Attribute Name="OWNERDEPARTMENTID" LableResourceID="OWNERDEPARTMENTID" Description="记录所属部门ID" DataType="string" DataValue="" DataText="记录所属部门ID" IsShow="false"/>
+    <Attribute Name="OWNERPOSTID" LableResourceID="OWNERPOSTID" Description="记录所属岗位ID" DataType="string" DataValue="" DataText="记录所属岗位ID" IsShow="false"/>
+    <Attribute Name="OWNERID" LableResourceID="OWNERID" Description="记录所属用户ID" DataType="string" DataValue="" DataText="记录所属用户ID" IsShow="false"/>
+    <Attribute Name="COMPANYNAME" LableResourceID="COMPANYNAME" Description="使用公司名称" DataType="string" DataValue="" DataText="使用公司名称" />
+    <Attribute Name="DEPARTMENTNAME" LableResourceID="DEPARTMENTNAME" Description="部门名称" DataType="string" DataValue="" DataText="部门名称" />
+    <Attribute Name="POSTNAME" LableResourceID="POSTNAME" Description="岗位名称" DataType="string" DataValue="" DataText="岗位名称" />
+	<Attribute Name="POSTLEVEL" LableResourceID="POSTLEVEL" Description="岗位级别" DataType="decimal" DataValue="" DataText=""></Attribute>
+    <Attribute Name="EMPLOYEENAME" LableResourceID="EMPLOYEENAME" Description="员工名称" DataType="string" DataValue="" DataText="员工名称" />
+    <Attribute Name="CREATECOMPANYID" LableResourceID="CREATECOMPANYID" Description="创建公司ID" DataType="string" DataValue="" DataText="创建公司ID" IsShow="false"/>
+    <Attribute Name="CREATEDEPARTMENTID" LableResourceID="CREATEDEPARTMENTID" Description="创建部门ID" DataType="string" DataValue="" DataText="创建部门ID" IsShow="false"/>
+    <Attribute Name="CREATEPOSTID" LableResourceID="CREATEPOSTID" Description="创建岗位ID" DataType="string" DataValue="" DataText="创建岗位ID" IsShow="false"/>
+    <Attribute Name="CREATEUSERID" LableResourceID="CREATEUSERID" Description="创建人ID" DataType="string" DataValue="" DataText="创建人ID" IsShow="false"/>
+    <Attribute Name="CREATEUSERNAME" LableResourceID="CREATEUSERNAME" Description="创建人名" DataType="string" DataValue="" DataText="创建人名" IsShow="false"/>
+    <Attribute Name="CREATEDATE" LableResourceID="CREATEDATE" Description="创建时间" DataType="datetime" DataValue="" DataText="创建时间" IsShow="false"/>
+    <Attribute Name="UPDATEUSERID" LableResourceID="UPDATEUSERID" Description="修改人ID" DataType="string" DataValue="" DataText="修改人ID" IsShow="false"/>
+    <Attribute Name="UPDATEDATE" LableResourceID="UPDATEDATE" Description="修改时间" DataType="datetime" DataValue="" DataText="修改时间" IsShow="false"/>
+    <Attribute Name="REMARK" LableResourceID="REMARK" Description="备注" DataType="string" DataValue="" DataText="备注" IsShow="false"/>
+  </Object>
+</System>

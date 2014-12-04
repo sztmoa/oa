@@ -1,0 +1,901 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7000624-4EE9-4FAB-9840-82541ED1CBDA}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMT.Protal.Mobile</RootNamespace>
+    <AssemblyName>SMT.Protal.Mobile</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Encryption">
+      <HintPath>..\Reference\Encryption.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\VM\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AjaxForm.aspx.cs">
+      <DependentUpon>AjaxForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AjaxForm.aspx.designer.cs">
+      <DependentUpon>AjaxForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Class1.cs" />
+    <Compile Include="BLL\ObjApproval.cs" />
+    <Compile Include="BLL\ObjApprovalList.cs" />
+    <Compile Include="BLL\ObjAttach.cs" />
+    <Compile Include="BLL\ObjAttachList.cs" />
+    <Compile Include="BLL\ObjBill.cs" />
+    <Compile Include="BLL\ObjColumn.cs" />
+    <Compile Include="BLL\ObjColumnList.cs" />
+    <Compile Include="BLL\ObjConfig.cs" />
+    <Compile Include="BLL\ObjConsultationList.cs" />
+    <Compile Include="BLL\ObjDetailList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BLL\ObjField.cs" />
+    <Compile Include="BLL\ObjRow.cs" />
+    <Compile Include="BLL\ObjSubList.cs" />
+    <Compile Include="BLL\ObjTemplate.cs" />
+    <Compile Include="BLL\ObjViewmode.cs" />
+    <Compile Include="Context.aspx.cs">
+      <DependentUpon>Context.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Context.aspx.designer.cs">
+      <DependentUpon>Context.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormDemo.aspx.cs">
+      <DependentUpon>FormDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormDemo.aspx.designer.cs">
+      <DependentUpon>FormDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\CacheData.cs" />
+    <Compile Include="Framework\Common.cs" />
+    <Compile Include="Framework\Config.cs" />
+    <Compile Include="Framework\ConfigManager.cs" />
+    <Compile Include="Framework\Constant.cs" />
+    <Compile Include="Framework\CookieHelper.cs" />
+    <Compile Include="Framework\DataHelper.cs" />
+    <Compile Include="Framework\DataManager.cs" />
+    <Compile Include="Framework\Enum.cs" />
+    <Compile Include="Framework\Field.cs" />
+    <Compile Include="Framework\Functions.cs" />
+    <Compile Include="Framework\ListBase.cs" />
+    <Compile Include="Framework\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Framework\ServiceHelper.cs" />
+    <Compile Include="Framework\SettingHelper.cs" />
+    <Compile Include="GetForm.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logic\BillData.cs" />
+    <Compile Include="Logic\BillSubmit.cs" />
+    <Compile Include="Logic\BillView.cs" />
+    <Compile Include="Logic\SmtException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordDetailByForm.aspx.cs">
+      <DependentUpon>RecordDetailByForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecordDetailByForm.aspx.designer.cs">
+      <DependentUpon>RecordDetailByForm.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AjaxForm.aspx" />
+    <Content Include="BillSchema\T_FB_BORROWAPPLYMASTER.xml" />
+    <Content Include="BillSchema\T_FB_CHARGEAPPLYMASTER.xml" />
+    <Content Include="BillSchema\T_FB_COMPANYBUDGETAPPLYMASTER.xml" />
+    <Content Include="BillSchema\T_FB_COMPANYBUDGETMODMASTER.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="BillSchema\T_FB_COMPANYBUDGETSUMMASTER.xml" />
+    <Content Include="BillSchema\T_FB_COMPANYTRANSFERMASTER.xml" />
+    <Content Include="BillSchema\T_FB_DEPTBUDGETADDMASTER.xml" />
+    <Content Include="BillSchema\T_FB_DEPTBUDGETAPPLYMASTER.xml" />
+    <Content Include="BillSchema\T_FB_DEPTBUDGETSUMMASTER.xml" />
+    <Content Include="BillSchema\T_FB_DEPTTRANSFERMASTER.xml" />
+    <Content Include="BillSchema\T_FB_PERSONMONEYASSIGNMASTER.xml" />
+    <Content Include="BillSchema\T_FB_REPAYAPPLYMASTER.xml" />
+    <Content Include="BillSchema\T_HR_ATTENDMONTHLYBATCHBALANCE.xml" />
+    <Content Include="BillSchema\T_HR_COMPANY.xml" />
+    <Content Include="BillSchema\T_HR_DEPARTMENT.xml" />
+    <Content Include="BillSchema\T_HR_EMPLOYEEADDSUM.xml" />
+    <Content Include="BillSchema\T_HR_EMPLOYEEADDSUMBATCH.xml" />
+    <Content Include="BillSchema\T_HR_EMPLOYEECHECK.xml" />
+    <Content Include="BillSchema\T_HR_EMPLOYEECONTRACT.xml" />
+    <Content Include="BillSchema\T_HR_EMPLOYEEENTRY.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="BillSchema\T_HR_EMPLOYEELEAVERECORD.xml" />
+    <Content Include="BillSchema\T_HR_EMPLOYEEOVERTIMERECORD.xml" />
+    <Content Include="BillSchema\T_HR_EMPLOYEEPOSTCHANGE.xml" />
+    <Content Include="BillSchema\T_HR_EMPLOYEESIGNINRECORD.xml" />
+    <Content Include="BillSchema\T_HR_LEFTOFFICE.xml" />
+    <Content Include="BillSchema\T_HR_LEFTOFFICECONFIRM.xml" />
+    <Content Include="BillSchema\T_HR_PENSIONMASTER.xml" />
+    <Content Include="BillSchema\T_HR_POST.xml" />
+    <Content Include="BillSchema\T_HR_SALARYARCHIVE.xml" />
+    <Content Include="BillSchema\T_HR_SALARYRECORDBATCH.xml" />
+    <Content Include="BillSchema\T_OA_APPROVALINFO.xml" />
+    <Content Include="BillSchema\T_OA_BUSINESSREPORT.xml" />
+    <Content Include="BillSchema\T_OA_BUSINESSTRIP.xml" />
+    <Content Include="BillSchema\T_OA_MAINTENANCEAPP.xml" />
+    <Content Include="BillSchema\T_OA_SATISFACTIONMASTER.xml" />
+    <Content Include="BillSchema\T_OA_SENDDOC.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="BillSchema\T_OA_SENDDOC_OFFICE.xml" />
+    <Content Include="BillSchema\T_OA_TRAVELREIMBURSEMENT.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="BillSchema\T_OA_VEHICLEDISPATCH.xml" />
+    <Content Include="BillSchema\T_OA_VEHICLEUSEAPP.xml" />
+    <Content Include="BusinessObjects\BOSystemList.xml" />
+    <Content Include="BusinessObjects\EDMBO\BOList.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_APPLYFORMASTER.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_BUYADVANCE.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_CGCONTRACTMASTER.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_CGRETURNSMASTER.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_DISMOUNTINGMASTER.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_FLITTINGMASTER.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_HEDGEPAYMENT.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_INCOME.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_INCOMEA.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_INCOMEHBOOK.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_INCOMEXS.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_INSTOCKMASTER.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_OTHERINSTOCKMASTER.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_OTHEROUTSTOCKDETAIL.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_OUTSTOCKMASTER.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_PAYMENT.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_PROCUREMENTMASTER.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_RETURNSPAYMENT.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_SALESMASTER.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_SELLADVANCE.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_STOCKTAKINGMASTER.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_SUPPLIERSCOMPLIANT.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_XSCONTRACTMASTER.xml" />
+    <Content Include="BusinessObjects\EDMBO\T_EDM_XSRETURNSMASTER.xml" />
+    <Content Include="BusinessObjects\EDM\BOList.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_APPLYFORMASTER.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_BUYADVANCE.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_CGCONTRACTMASTER.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_CGRETURNSMASTER.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_DISMOUNTINGMASTER.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_FLITTINGMASTER.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_INCOME.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_INSTOCKMASTER.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_OTHERINSTOCKMASTER.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_OTHEROUTSTOCKDETAIL.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_OUTSTOCKMASTER.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_PAYMENT.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_PROCUREMENTMASTER.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_SALESMASTER.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_SELLADVANCE.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_STOCKTAKINGMASTER.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_SUPPLIERSCOMPLIANT.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_XSCONTRACTMASTER.xml" />
+    <Content Include="BusinessObjects\EDM\T_EDM_XSRETURNSMASTER.xml" />
+    <Content Include="BusinessObjects\EMBO\BOList.xml" />
+    <Content Include="BusinessObjects\EMBO\T_EM_EXAMPAPER.xml" />
+    <Content Include="BusinessObjects\EMBO\T_EM_EXAMTASK.xml" />
+    <Content Include="BusinessObjects\EMBO\T_EM_SCOREREPORT.xml" />
+    <Content Include="BusinessObjects\EngineBO\BOList.xml" />
+    <Content Include="BusinessObjects\EngineBO\EngineTest.xml" />
+    <Content Include="BusinessObjects\FBBO\BOList.xml" />
+    <Content Include="BusinessObjects\FBBO\ExpenseRequest.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_BORROWAPPLYMASTER.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_BUDGETACCOUNT.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_CHARGEAPPLYMASTER.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_COMPANYBUDGETAPPLYMASTER.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_COMPANYBUDGETMODMASTER.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_COMPANYBUDGETSUMMASTER.XML" />
+    <Content Include="BusinessObjects\FBBO\T_FB_COMPANYTRANSFERMASTER.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_DEPTBUDGETADDMASTER.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_DEPTBUDGETAPPLYMASTER.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_DEPTBUDGETSUMMASTER.XML" />
+    <Content Include="BusinessObjects\FBBO\T_FB_DEPTTRANSFERMASTER.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_EXTENSIONALORDER.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_PERSONBUDGETADDMASTER.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_PERSONBUDGETAPPLYMASTER.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_PERSONMONEYASSIGNMASTER.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_REPAYAPPLYMASTER.xml" />
+    <Content Include="BusinessObjects\FBBO\T_FB_TRAVELEXPAPPLYMASTER.xml" />
+    <Content Include="BusinessObjects\FBBO\T_SYS_DICTIONARY.xml" />
+    <Content Include="BusinessObjects\FMBO\BOList.xml" />
+    <Content Include="BusinessObjects\FMBO\ExpenseRequest.xml" />
+    <Content Include="BusinessObjects\HRBO\BOList.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_ATTENDANCERECORD.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_ATTENDANCESOLUTION.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_ATTENDANCESOLUTIONASIGN.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_ATTENDMONTHLYBALANCE.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_ATTENDMONTHLYBATCHBALANCE.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_COMPANY.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_CUSTOMGUERDONRECORD.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_CUSTOMGUERDONSET.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_DEPARTMENT.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_DEPARTMENTDICTIONARY.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEEABNORMRECORD.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEEADDSUM.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEEADDSUMBATCH.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEECANCELLEAVE.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEECHECK.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEECONTRACT.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEEENTRY.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEEEVECTIONRECORD.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEEEVECTIONREPORT.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEEINSURANCE.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEELEAVERECORD.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEEOVERTIMERECORD.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEEPOST.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEEPOSTCHANGE.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEEPOSTHISTORY.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEESALARYPOSTASIGN.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEESALARYRECORD.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEESALARYRECORDHIS.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEESALARYRECORDPAYMENT.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_EMPLOYEESIGNINRECORD.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_KPIRECORD.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_KPIRECORDCOMPLAIN.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_LEFTOFFICE.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_LEFTOFFICECONFIRM.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_NOATTENDCARDEMPLOYEES.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_ORGANAZITIONCHANGE.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_OUTAPPLYCONFIRM.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_OUTAPPLYRECORD.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_PENSIONMASTER.bac.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_PENSIONMASTER.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_PERFORMANCEREWARDRECORD.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_PERFORMANCEREWARDSET.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_POST.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_POSTDICTIONARY.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_SALARYARCHIVE.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_SALARYDETAILTOPAY.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_SALARYRECORDBATCH.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_SALARYSOLUTION.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_SALARYSOLUTIONASSIGN.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_SALARYSTANDARD.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_SALARYSYSTEM.xml" />
+    <Content Include="BusinessObjects\HRBO\T_HR_SUMPERFORMANCERECORD.xml" />
+    <Content Include="BusinessObjects\HRBO\T_SYS_DICTIONARY.xml" />
+    <Content Include="BusinessObjects\HRBO\VacationRequest.xml" />
+    <Content Include="BusinessObjects\LMBO\BOList.xml" />
+    <Content Include="BusinessObjects\LMBO\T_LM_ADVICE.xml" />
+    <Content Include="BusinessObjects\LMBO\T_LM_APPEAL.xml" />
+    <Content Include="BusinessObjects\LMBO\T_LM_CUSTOMER.xml" />
+    <Content Include="BusinessObjects\LMBO\T_LM_DELIVERYMASTER.xml" />
+    <Content Include="BusinessObjects\LMBO\T_LM_DISPATCHMASTER.xml" />
+    <Content Include="BusinessObjects\LMBO\T_LM_INVENTORYMASTER.xml" />
+    <Content Include="BusinessObjects\LMBO\T_LM_NODE.xml" />
+    <Content Include="BusinessObjects\LMBO\T_LM_PROCESSINGMASTER.xml" />
+    <Content Include="BusinessObjects\LMBO\T_LM_RECEIVEGOODSMASTER.xml" />
+    <Content Include="BusinessObjects\LMBO\T_LM_RECEIVEPACKAGEMASTER.xml" />
+    <Content Include="BusinessObjects\LMBO\T_LM_RECIVEEXCEPTIONMASTER.xml" />
+    <Content Include="BusinessObjects\LMBO\T_LM_RETURNMASTER.xml" />
+    <Content Include="BusinessObjects\LMBO\T_LM_SALESMAN.xml" />
+    <Content Include="BusinessObjects\LMBO\T_LM_STORAGEMASTER.xml" />
+    <Content Include="BusinessObjects\OABO\ApplicationsForContracts.xml" />
+    <Content Include="BusinessObjects\OABO\ApprovalForm.xml" />
+    <Content Include="BusinessObjects\OABO\archivesLending.xml" />
+    <Content Include="BusinessObjects\OABO\BOList.xml" />
+    <Content Include="BusinessObjects\OABO\CompanyDoc.xml" />
+    <Content Include="BusinessObjects\OABO\ConserVationForm.xml" />
+    <Content Include="BusinessObjects\OABO\ConserVationRecord.xml" />
+    <Content Include="BusinessObjects\OABO\EmployeeSurveyApp.xml" />
+    <Content Include="BusinessObjects\OABO\EmployeeSurveyDistribute.xml" />
+    <Content Include="BusinessObjects\OABO\GiftApply_Customer.xml" />
+    <Content Include="BusinessObjects\OABO\GiftApply_Person.xml" />
+    <Content Include="BusinessObjects\OABO\houseHireApp.xml" />
+    <Content Include="BusinessObjects\OABO\housingIssuance.xml" />
+    <Content Include="BusinessObjects\OABO\licenseBorrow.xml" />
+    <Content Include="BusinessObjects\OABO\MaintenanceAppForm.xml" />
+    <Content Include="BusinessObjects\OABO\MaintenanceRecord.xml" />
+    <Content Include="BusinessObjects\OABO\MeetingInfo.xml" />
+    <Content Include="BusinessObjects\OABO\MeetingRoomApp.xml" />
+    <Content Include="BusinessObjects\OABO\OASatisfaction.xml" />
+    <Content Include="BusinessObjects\OABO\OASatisfactionApp.xml" />
+    <Content Include="BusinessObjects\OABO\OASatisfactionDistribute.xml" />
+    <Content Include="BusinessObjects\OABO\OASurveyPlan.xml" />
+    <Content Include="BusinessObjects\OABO\Organization.xml" />
+    <Content Include="BusinessObjects\OABO\ReviewMissionReports.xml" />
+    <Content Include="BusinessObjects\OABO\Test.xml" />
+    <Content Include="BusinessObjects\OABO\TravelApplication.xml" />
+    <Content Include="BusinessObjects\OABO\T_FAM_ASSETPURREQUIRE.xml" />
+    <Content Include="BusinessObjects\OABO\T_FAM_ASSETSADJUSTMENT.xml" />
+    <Content Include="BusinessObjects\OABO\T_FAM_ASSETSMAINTAIN.xml" />
+    <Content Include="BusinessObjects\OABO\T_FAM_ASSETSSALES.xml" />
+    <Content Include="BusinessObjects\OABO\T_FAM_ASSETSWASTAGE.xml" />
+    <Content Include="BusinessObjects\OABO\T_FAM_SUPPLIESHANDLE.xml" />
+    <Content Include="BusinessObjects\OABO\T_FB_BORROWAPPLYMASTER.xml" />
+    <Content Include="BusinessObjects\OABO\T_FB_CHARGEAPPLYMASTER.xml" />
+    <Content Include="BusinessObjects\OABO\T_FB_COMPANYBUDGETMODMASTER.xml" />
+    <Content Include="BusinessObjects\OABO\T_FB_DEPTBUDGETADDMASTER.xml" />
+    <Content Include="BusinessObjects\OABO\T_FB_DEPTBUDGETSUMMASTER.XML" />
+    <Content Include="BusinessObjects\OABO\T_FB_REPAYAPPLYMASTER.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_APPROVALINFO.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_AREAALLOWANCE.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_BUSINESSREPORT.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_BUSINESSTRIP.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_CONSERVATION.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_CONSERVATIONRECORD.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_CONTRACTAPP.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_CONTRACTVIEW.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_DISTRIBUTEUSER.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_GIFTAPPLYMASTER.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_HIREAPP.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_HOUSEINFOISSUANCE.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_LENDARCHIVES.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_LICENSEUSER.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_MAINTENANCEAPP.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_MAINTENANCERECORD.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_MEETINGINFO.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_MEETINGROOMAPP.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_ORGANIZATION.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_REIMBURSEMENTDETAIL.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_REQUIRE.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_REQUIREDISTRIBUTE.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_REQUIREMASTER.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_SATISFACTIONDISTRIBUTE.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_SATISFACTIONMASTER.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_SATISFACTIONREQUIRE.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_SENDDOC.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_SENDDOCPUBLISH.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_TRAVELREIMBURSEMENT - 20110825.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_TRAVELREIMBURSEMENT - 副本.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_TRAVELREIMBURSEMENT.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_TRAVELREIMBURSEMENT2.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_TRAVELREIMBURSEMENT20120428.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_VEHICLEDISPATCH.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_VEHICLEDISPATCHRECORD.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_VEHICLEUSEAPP.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_VIEWSENDDOC.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_WELFAREDISTRIBUTEMASTER.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_WELFAREDISTRIBUTEUNDO.xml" />
+    <Content Include="BusinessObjects\OABO\T_OA_WELFAREMASERT.xml" />
+    <Content Include="BusinessObjects\OABO\T_SYS_DICTIONARY.xml" />
+    <Content Include="BusinessObjects\OABO\T_SYS_ROLEAPP.xml" />
+    <Content Include="BusinessObjects\OABO\VehicleDispatchForm.xml" />
+    <Content Include="BusinessObjects\OABO\VehicleDispatchRecord.xml" />
+    <Content Include="BusinessObjects\OABO\VehicleUseAppForm.xml" />
+    <Content Include="BusinessObjects\OABO\WelfareProvisionFor.xml" />
+    <Content Include="BusinessObjects\OABO\WelfareStandardApplication.xml" />
+    <Content Include="BusinessObjects\RMBO\BOList.xml" />
+    <Content Include="BusinessObjects\RMBO\Classified.xml" />
+    <Content Include="BusinessObjects\RMBO\Deliver.xml" />
+    <Content Include="BusinessObjects\RMBO\Employ.xml" />
+    <Content Include="BusinessObjects\RMBO\Notify.xml" />
+    <Content Include="BusinessObjects\RMBO\Publish.xml" />
+    <Content Include="BusinessObjects\RMBO\Record.xml" />
+    <Content Include="BusinessObjects\RMBO\Require.xml" />
+    <Content Include="BusinessObjects\RMBO\Retest.xml" />
+    <Content Include="BusinessObjects\RMBO\TRMRESUME.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_CRPLAN.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_CRPLANEXE.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_CRPLANEXEPUTOUT.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_CRPLANFAIL.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_CRPLANMASTER.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_CRUANSWER.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_CRUQUESTION.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_DISMISSPAPER.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_EDUCATEHISTORY.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_EMPLOYAPPLY.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_EMPLOYAPPLYTASK.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_EMPLOYMENTAPPROVAL.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_ENTERLIST.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_ENTERLISTTASK.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_ENTERLISTTASKTASK.XML" />
+    <Content Include="BusinessObjects\RMBO\T_RM_ESTFORNEWER.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_ESTFORNEWERTASK.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_ESTFORRECM.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_ESTFORRECMTASK.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_ESTFORRECP.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_ESTFORRECPTASK.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_ESTFORVIEWER.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_ESTFORVIEWERTASK.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_EXAMRESULT.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_EXPERIENCE.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_HEALTHDATA.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_HRPRINC.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_INTERVIEW.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_INTERVIEWER.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_INTERVIEWERFRONTTASK.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_INTERVIEWERTELLTASK.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_MESSAGETEMPLATE.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_MESSAGETEMPLATETASK.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_NoAcceptEmployApply.XML" />
+    <Content Include="BusinessObjects\RMBO\T_RM_NOTIFY.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_PUBLISHTYPE.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_QUALIFICATION.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_RECEIPTION.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_RECEIPTIONTASK.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_RECEIPTIONTASKTASK.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_REQUIREAPPLY.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_RESUME.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_RESUMEDELIVERY.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_RESUMEDELIVERYTASK.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_RESUMEDELIVERY_FORPHONE_TASK.XML" />
+    <Content Include="BusinessObjects\RMBO\T_RM_RESUMETASK.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_SURVEY.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_SURVEYTASK.xml" />
+    <Content Include="BusinessObjects\RMBO\T_RM_TALENTEDRESUME.xml" />
+    <Content Include="BusinessObjects\RMBO\Wowed.xml" />
+    <Content Include="BusinessObjects\TKBO\BOList.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_ASSIGNINGCONFIRMTASK.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_ASSIGNINGREJECTTASK.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_CARRYDOWN.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_CARRYDOWNCHARGE.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_CARRYDOWNCHARGEDETAIL.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_CARRYDOWNCHARGEFAIL.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_CARRYDOWNCHARGETASK.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_CARRYDOWNDETAIL.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_CARRYDOWNFUNDS.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_CARRYDOWNFUNDSTASK.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_CARRYDOWNINCOME.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_CARRYDOWNINCOMEDETAIL.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_CARRYDOWNINCOMEFAIL.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_CARRYDOWNINCOMETASK.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_CHARGEAPPLYMASTER.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_CHARGEAPPLYMASTERTASK.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_INITIATORTASK.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_LOANINFO.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_REFUNDINFO.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_TASKDETAILTASK.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_TASKDETAILTASKTASK.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_TASKDETAILTASKTASKTASK.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_TASKMAINTASK.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_TASKMASTERTASK.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_TASKREPLAYTASK.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_TASKREPLAY_PROMOTERTASK.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_TASKUNDERTAKE.xml" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_ZHCARRYDOWN.xml" />
+    <Content Include="BusinessObjects\TMBO\ASSESSMENT.xml" />
+    <Content Include="BusinessObjects\TMBO\Attendance.xml" />
+    <Content Include="BusinessObjects\TMBO\Blacklist.xml" />
+    <Content Include="BusinessObjects\TMBO\BOList.xml" />
+    <Content Include="BusinessObjects\TMBO\deductions.xml" />
+    <Content Include="BusinessObjects\TMBO\EXAM.xml" />
+    <Content Include="BusinessObjects\TMBO\Feedback.xml" />
+    <Content Include="BusinessObjects\TMBO\LecturerInform.xml" />
+    <Content Include="BusinessObjects\TMBO\NotifYfeedback.xml" />
+    <Content Include="BusinessObjects\TMBO\RegisTer.xml" />
+    <Content Include="BusinessObjects\TMBO\TmReport.xml" />
+    <Content Include="BusinessObjects\TMBO\TmSendNotify.xml" />
+    <Content Include="BusinessObjects\TMBO\TraineeSummary.xml" />
+    <Content Include="BusinessObjects\TMBO\TrainingCourse.xml" />
+    <Content Include="BusinessObjects\TMBO\TrainingPlan.xml" />
+    <Content Include="BusinessObjects\TMBO\TrainingPlanPublish.xml" />
+    <Content Include="BusinessObjects\TMBO\TrainingPlanStartup.xml" />
+    <Content Include="BusinessObjects\TMBO\TrainingProject.xml" />
+    <Content Include="BusinessObjects\TMBO\TrainingReport.xml" />
+    <Content Include="BusinessObjects\TMBO\TrainOrganinzation.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_CONFCOURSE.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_CONFCOURSEFAIL.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_CONFCOURSETASK.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_CONFDATEADDR.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_CONFDATEADDRFAIL.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_CONFDATEADDRTASK.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_CONFDOCENT.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_CONFDOCENTFAIL.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_CONFDOCENTTASK.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_CONFSTUDENT.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_CONFSTUDENTFAIL.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_CONFSTUDENTTASK.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_COURSEMASTER.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_COURSEMASTERTASK.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_COURSETEMP.XML" />
+    <Content Include="BusinessObjects\TMBO\T_TM_COURSETEMPTASK.XML" />
+    <Content Include="BusinessObjects\TMBO\T_TM_DOCENTMASTER.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_DOCENTMASTERTASK.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_DOCENTNOTIFYTASK.XML" />
+    <Content Include="BusinessObjects\TMBO\T_TM_ESTFORDOCENTTASK.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_ESTFORSTUDENTTASK.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_NOTIFYSTUDENTTASK.XML" />
+    <Content Include="BusinessObjects\TMBO\T_TM_STUDENTNOTIFYTASK.XML" />
+    <Content Include="BusinessObjects\TMBO\T_TM_SUGCOURSE.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_SUGDOCENT.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_SUGTRAIN.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_SUGTRAINTASK.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_TRAINPLANTASK.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_TRAINRELATION.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_TRAINRELATIONTASK.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_TRAINRESOURCETASK.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_TRAINTASK.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_WARE.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_WARETASK.xml" />
+    <Content Include="BusinessObjects\TMBO\T_TM_WARETASKTASK.xml" />
+    <Content Include="BusinessObjects\VMBO\BOList.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_COSMETICAPPLY.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_CtlInOilExceptRec.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_CtlInUseCostDispose.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_CTLVEHICLE.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_CTLVEHICLECTLINFO.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_CtlVehicleExceptRec.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_CtlVehicleInCfm.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_CTLVEHICLEINEXCEPTREC.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_CTLVEHICLEINEXCEPTRECCOMFIRM.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_CTLVEHICLELEND.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_CtlVehicleOutCfm.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_CtlVehicleOutTask.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_CtlVehicleUseCfm.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_REPAIRAPPLY.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_REPAIRCONFIRM.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_REPAIRENQUIRY.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_REPAIRFAULTDIAGNOSE.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_REPAIRFAULTDIAGRPT.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_REPAIRFAULTRPT.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_REPAIRREG.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_REPAIRRPT.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_UpkeepApply.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_UpkeepRecord.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_USEVEHICLEAPPLY.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_UseVehicleCancel.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEACCIDENT.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEINSURE.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEINSUREAPPLY.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEINSUREENQUIRY.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLELENDAPPLY.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLELICSTEER.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLELICTAG.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEOCACCOUNT.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEOFFENCE.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEOILCAPPLY.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEOILCARD.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEOILCPAYCFM.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEOILCPAYLOAN.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEOILMONTHALARM.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEOILYEARCFM.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEPARK.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEPARKCAPPLY.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEPARKCARDPAY.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEPARKCPAYCFM.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEPARKCPAYLOAN.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLERCACCOUNT.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEROADCARD.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEROADCPAYCFM.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEROADCPAYLOAN.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEROADOILCAPPLY.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEYEARCHECK.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEYEARVAPPLY.xml" />
+    <Content Include="BusinessObjects\VMBO\T_VM_VEHICLEYEARVPAYLOAN.xml" />
+    <Content Include="BusinessObjects\WFBO\BOList.xml" />
+    <Content Include="BusinessObjects\WFBO\FLOW_FLOWDEFINE_T.xml" />
+    <Content Include="BusinessObjects\WPBO\%40T_WP_POSTEMPPLANPERIODDETAIL.xml" />
+    <Content Include="BusinessObjects\WPBO\BOList.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_ADJUSTDEPTPLAN.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_ADJUSTDEPTPLANRESOLVE.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_ADJUSTDEPTPLANTASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_ADJUSTPLAN.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_ADJUSTPLANNORM.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_ADJUSTPOSTPLAN.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_ADJUSTPOSTPLANRESOLVE.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_APPOINTDIRECTEREMP.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_APPOINTDIRECTERISSUED.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_COMPANYFIXCOSTISSUED.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_COMPANYOPISSUEDTASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_COMPNORMDEFINE.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTDRAFT.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTDRAFTISSUED.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTFIXCOSTISSUED.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTNORMRESOLVE.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTNORMRESOLVEFIX.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTNORMRESOLVEPLAN.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTONISSUED.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTONPLAN.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTONPLANFAILE.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTONPLANTASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTONRESOLVE.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTONRESOLVEEMP.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTPLANISSUED.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTYCOSTPLAN.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPTEMPYCOSTPLAN.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPTEMPYCOSTPLANITEM.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPTNORMDEFINE.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_NORMITEMCONFIG.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_OPERATENORMDRAFT.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_OPERATENORMISSUED.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_PLANDRAFT.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_PLANDRAFTFAILE.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_PLANDRAFTTASK - 复制.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_PLANDRAFTTASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_PLANISSUED.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_PLANISSUEDADJUSTEXECFAIL.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_PLANISSUEDADJUSTEXECTASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_PLANISSUEDTASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTDRAFT.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTDRAFTISSUED.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPCIRESOLVEPLAN.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPPLANPERIODCONFIG.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPPLANPERIODDETAIL.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMCHG.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMCHG_DIRECTRECEIVETASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMCHG_DIRECTREJECTTASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMCHG_OFFICERECEIVETASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMCHG_OFFICEREJECTTASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARY.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARYCYCLE.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARYCYCLETASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARYCYCLE_DIRECTRECEIVETASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARYCYCLE_DIRECTREJECTTASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARYCYCLE_OFFICERECEIVETASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARYCYCLE_OFFICEREJECTTASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARYCYCLE_RESULTTASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARYEXEC.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARYEXECDETAIL.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARYFAILE.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARYPLAN.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARYPLANDETAIL.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARYTASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARY_DIRECTRECEIVETASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARY_DIRECTREJECTTASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARY_OFFICERECEIVETASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARY_OFFICEREJECTTASK.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_PRESETCOSTCONFIG - 复制.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_PRESETCOSTCONFIG.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_PRESETCOSTCONFIGDRAFT.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_TACTICNORMDRAFT.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_TACTICNORMISSUED.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_YEARNORMDEFINE.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_YEARNORMDRAFT.xml" />
+    <Content Include="BusinessObjects\WPBO\T_WP_YEARNORMDRAFTTASK.XML" />
+    <Content Include="Config.xml" />
+    <Content Include="Context.aspx" />
+    <Content Include="FormDemo.aspx" />
+    <Content Include="Images\ajax-loader.png" />
+    <Content Include="Images\Arrow.png" />
+    <Content Include="Images\Arrow_On.png" />
+    <Content Include="Images\Attachment.png" />
+    <Content Include="Images\AuditOff.png" />
+    <Content Include="Images\AuditOn.png" />
+    <Content Include="Images\Back.png" />
+    <Content Include="Images\Background.png" />
+    <Content Include="Images\bg2.jpg" />
+    <Content Include="Images\Blue.png" />
+    <Content Include="Images\bottomBack.png" />
+    <Content Include="Images\Bottom_Background.png" />
+    <Content Include="Images\checkbox.jpg" />
+    <Content Include="Images\checked.jpg" />
+    <Content Include="Images\City.png" />
+    <Content Include="Images\City_Background.png" />
+    <Content Include="Images\consultbg.jpg" />
+    <Content Include="Images\consulting1.jpg" />
+    <Content Include="Images\consulting2.jpg" />
+    <Content Include="Images\consultOff.jpg" />
+    <Content Include="Images\consultOn.jpg" />
+    <Content Include="Images\Detail.png" />
+    <Content Include="Images\emessage.gif" />
+    <Content Include="Images\Employ.jpg" />
+    <Content Include="Images\employee.PNG" />
+    <Content Include="Images\EmployeeSeatch.png" />
+    <Content Include="Images\employPIC.png" />
+    <Content Include="Images\error.gif" />
+    <Content Include="Images\Green.png" />
+    <Content Include="Images\HellowRound.jpg" />
+    <Content Include="Images\icon-search-black.png" />
+    <Content Include="Images\icons-18-black.png" />
+    <Content Include="Images\icons-18-white.png" />
+    <Content Include="Images\icons-36-black.png" />
+    <Content Include="Images\icons-36-white.png" />
+    <Content Include="Images\ic_menu_call.png" />
+    <Content Include="Images\Line.gif" />
+    <Content Include="Images\linehover.gif" />
+    <Content Include="Images\linenormal.gif" />
+    <Content Include="Images\List_Background.png" />
+    <Content Include="Images\List_Background_On.png" />
+    <Content Include="Images\List_org.jpg" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\Loading.jpg" />
+    <Content Include="Images\Login.png" />
+    <Content Include="Images\loginout.png" />
+    <Content Include="Images\Logo.png" />
+    <Content Include="Images\Main_AddressBook.png" />
+    <Content Include="Images\Main_Email.png" />
+    <Content Include="Images\Main_News.png" />
+    <Content Include="Images\Main_OfficeDocment.png" />
+    <Content Include="Images\Main_Record.png" />
+    <Content Include="Images\Main_ReportQuery.png" />
+    <Content Include="Images\Main_Schedufing.png" />
+    <Content Include="Images\Main_Waiting.png" />
+    <Content Include="Images\Main_WaitingOff.png" />
+    <Content Include="Images\min.gif" />
+    <Content Include="Images\NewsTitlebg.png" />
+    <Content Include="Images\NewsTitleLine.png" />
+    <Content Include="Images\Next.png" />
+    <Content Include="Images\ok.png" />
+    <Content Include="Images\Pass.png" />
+    <Content Include="Images\plus.gif" />
+    <Content Include="Images\Prev.png" />
+    <Content Include="Images\Rebut.png" />
+    <Content Include="Images\Red.png" />
+    <Content Include="Images\reply.jpg" />
+    <Content Include="Images\search.jpg" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\Set.png" />
+    <Content Include="Images\shenhebutongguo_off.png" />
+    <Content Include="Images\shenhebutongguo_on.png" />
+    <Content Include="Images\shenhetongguo_off.png" />
+    <Content Include="Images\shenhetongguo_on.png" />
+    <Content Include="Images\shenhezhong_off.png" />
+    <Content Include="Images\shenhezhong_on.png" />
+    <Content Include="Images\shenhezhuanfa_off.png" />
+    <Content Include="Images\shenhezhuanfa_on.png" />
+    <Content Include="Images\SolidRound.jpg" />
+    <Content Include="Images\sym_action_email.png" />
+    <Content Include="Images\Tip_Center.png" />
+    <Content Include="Images\Tip_Left.png" />
+    <Content Include="Images\Tip_Right.png" />
+    <Content Include="Images\Title_Background.png" />
+    <Content Include="Images\WaitedOff.png" />
+    <Content Include="Images\WaitedOn.png" />
+    <Content Include="Images\WaitingFor.png" />
+    <Content Include="Images\WaitingForList.png" />
+    <Content Include="Images\WaitingForListConsult.png" />
+    <Content Include="Images\WaitingOff.png" />
+    <Content Include="Images\WaitingOn.png" />
+    <Content Include="RecordDetail.aspx" />
+    <Content Include="RecordDetailByForm.aspx" />
+    <Content Include="Scripts\Ajax.js" />
+    <Content Include="Scripts\Global.js" />
+    <Content Include="Scripts\iscroll.js" />
+    <Content Include="Styles\images\ajax-loader.png" />
+    <Content Include="Styles\images\icon-search-black.png" />
+    <Content Include="Styles\images\icons-18-black.png" />
+    <Content Include="Styles\images\icons-18-white.png" />
+    <Content Include="Styles\images\icons-36-black.png" />
+    <Content Include="Styles\images\icons-36-white.png" />
+    <Content Include="Styles\Template.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMT.SaaS.Common\SMT.SaaS.Common.csproj">
+      <Project>{BCBBB1AF-C52D-44BC-B65A-88EA245005B6}</Project>
+      <Name>SMT.SaaS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMT.SaaS.Services\SMT.SaaS.Services.csproj">
+      <Project>{43FA5454-0DF5-41A9-8FE4-4D3BC5C0F059}</Project>
+      <Name>SMT.SaaS.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BusinessObjects\FBBO\BOList.xml.bak" />
+    <Content Include="BusinessObjects\LMBO\BOList.xml.bak" />
+    <Content Include="BusinessObjects\LMBO\T_LM_ADVICE.xml.bak" />
+    <Content Include="BusinessObjects\LMBO\T_LM_APPEAL.xml.bak" />
+    <Content Include="BusinessObjects\LMBO\T_LM_CUSTOMER.xml.bak" />
+    <Content Include="BusinessObjects\LMBO\T_LM_DELIVERYMASTER.xml.bak" />
+    <Content Include="BusinessObjects\LMBO\T_LM_DISPATCHMASTER.xml.bak" />
+    <Content Include="BusinessObjects\LMBO\T_LM_INVENTORYMASTER.xml.bak" />
+    <Content Include="BusinessObjects\LMBO\T_LM_NODE.xml.bak" />
+    <Content Include="BusinessObjects\LMBO\T_LM_PROCESSINGMASTER.xml.bak" />
+    <Content Include="BusinessObjects\LMBO\T_LM_RECIVEEXCEPTIONMASTER.xml.bak" />
+    <Content Include="BusinessObjects\LMBO\T_LM_RETURNMASTER.xml.bak" />
+    <Content Include="BusinessObjects\LMBO\T_LM_SALESMAN.xml.bak" />
+    <Content Include="BusinessObjects\LMBO\T_LM_STORAGEMASTER.xml.bak" />
+    <Content Include="BusinessObjects\OABO\BOList.xml.bak" />
+    <Content Include="BusinessObjects\OABO\T_OA_BUSINESSTRIP.xml.bak" />
+    <Content Include="BusinessObjects\TKBO\BOList.xml.bak" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_TASKDETAILTASK.xml.bak" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_TASKDETAILTASKTASKTASK.xml.bak" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_TASKMAINTASK.xml.bak" />
+    <Content Include="BusinessObjects\TKBO\T_TASK_TASKMASTERTASK.xml.bak" />
+    <Content Include="BusinessObjects\TMBO\BOList.xml.bak" />
+    <Content Include="BusinessObjects\VMBO\T_VM_CTLVEHICLECTLINFO.xml.bak" />
+    <Content Include="BusinessObjects\WPBO\BOList.xml.bak" />
+    <Content Include="BusinessObjects\WPBO\T_WP_ADJUSTPLAN.xml.bak" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTONPLANFAILE.xml.bak" />
+    <Content Include="BusinessObjects\WPBO\T_WP_DEPARTMENTONPLANTASK.xml.bak" />
+    <Content Include="BusinessObjects\WPBO\T_WP_PLANDRAFTTASK.xml.bak" />
+    <Content Include="BusinessObjects\WPBO\T_WP_PLANISSUEDTASK.xml.bak" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPPLANPERIODDETAIL.xml.bak" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMCHG.xml.bak" />
+    <Content Include="BusinessObjects\WPBO\T_WP_POSTEMPSUMMARYTASK.xml.bak" />
+    <Content Include="BusinessObjects\WPBO\T_WP_PRESETCOSTCONFIG.xml.bak" />
+    <Content Include="BusinessObjects\WPBO\WPBO-longkc-201306081431.zip" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>1617</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

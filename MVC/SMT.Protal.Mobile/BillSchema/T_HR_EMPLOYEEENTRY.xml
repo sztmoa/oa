@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail  Name="CURRENTEMPLOYEENAME" Text="提交者"                 Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEUSERNAME" Text="创建人"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNER" Text="所属人"                               Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="EMPLOYEECNAME" Text="员工中文名"                   Orderno="1" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="POSTLEVEL" Text="岗位级别"                          Orderno="5" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" />
+    <Detail  Name="EMPLOYEEID" Text="员工ID"                          Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="EMPLOYEEENTRYID" Text="EMPLOYEEENTRYID"            Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CHECKSTATE" Text="审批状态"                        Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="ENTRYDATE" Text="入职时间"                         Orderno="7" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="ONPOSTDATE" Text="到岗日期"                        Orderno="8" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEUSERID" Text="创建人"                        Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEDATE" Text="创建日期"                        Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="UPDATEUSERID" Text="修改人"                        Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="UPDATEDATE" Text="修改时间"                        Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERID" Text="所属员工"                           Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERPOSTID" Text="所属岗位"                       Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERDEPARTMENTID" Text="部门"                 Orderno="4" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="OWNERCOMPANYID" Text="公司名称"                    Orderno="3" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEPOSTID" Text="创建人岗位"                    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATEDEPARTMENTID" Text="创建人部门"              Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="CREATECOMPANYID" Text="创建公司"                   Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="PROBATIONPERIOD" Text="试用期(月)"                 Orderno="6" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="REMARK" Text="备注"                                Orderno="100" Colspan="2" IsVisible="true" IsShowCaption="false" CssName="billBottomLine" ></Detail>
+    <Detail  Name="EDITSTATE" Text="状态"                             Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail  Name="EMPLOYEEPOSTID" Text="入职岗位"                    Orderno="2" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+
+  </DetailLists>
+<!--
+  <SubLists Name="T_SYS_USERDetailList">
+    <ColumnLists>
+      <Column Name="SYSUSERID" Text="SYSUSERID"          		IsVisible="false" Width=""></Column>
+      <Column Name="USERNAME" Text="用户名"              		IsVisible="true" Width="50%"></Column>
+      <Column Name="PASSWORD" Text="密码"                		IsVisible="false" Width="33%"></Column>
+      <Column Name="REMARK" Text="备注"                  		IsVisible="true" Width="50%"></Column>
+    </ColumnLists>
+  </SubLists>
+-->
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

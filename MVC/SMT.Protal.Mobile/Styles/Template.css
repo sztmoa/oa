@@ -1,0 +1,629 @@
+﻿body
+{
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+	background: #ffffff;
+	color: #000;
+	font-family: Verdana;
+}
+.smt_autobreak
+{
+    word-break:break-all; 
+    word-wrap:break-all;
+
+}
+.smt_AuditTd
+{
+    width:50%;
+    padding-right:150px;
+    }
+.smt_smt_tableList
+{
+    width:100%;
+    }
+html, body
+{
+	width: 100%;
+	height: 100%;
+}
+.smt_top
+{
+	height: 44px;
+	width: 100%;
+	_position: absolute; /*ie6*/
+	_position: absolute\9; /*ie8*/
+}
+.smt_toptd
+{
+	background-image: url(../images/Title_Background.png);
+	height: 44px;
+	width: 100%;
+	text-align: left;
+	vertical-align: top;
+}
+.smt_masktitletd
+{
+	background-image: url(../images/Title_Background.png);
+	height: 30px;
+	width: 100%;
+	text-align: center;
+	vertical-align: top;
+    color:white;
+    
+}
+
+#smt_divfloattop
+{
+ position:fixed;
+_position:absolute;
+top:0px;
+ z-index:1000;
+ width:100%;
+}
+#smt_divfloatbottom
+{
+ position:fixed;
+_position:absolute;
+ z-index:1000;
+ width:100%;
+ top:2000px;
+}
+#smt_alldiv
+{
+height:100%;
+}
+.smt_topleft
+{
+	border: 0px;
+	vertical-align: top;
+	text-align: left;
+    width:50px;
+	background-image: url(../Images/Title_Background.png);
+	background-repeat: no-repeat;
+	background-position: left;
+}
+.smt_topright
+{
+	border: 0px;
+	vertical-align: top;
+	text-align: center;
+    font-size:20px;
+    color:white;
+    font-weight:bold;
+	background-image: url(../images/logo.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+.smt_loginmain
+{
+	background-image: url(../images/Background.png);
+	text-align: center;
+}
+.smt_logininput
+{
+	width: 200px;
+    height:30px;
+    font-size:18px;
+    font-weight:bold;
+    color:#aaaaaa;
+}
+.smt_loginsubmit
+{
+	background-image: url(../images/login.png);
+	border: 0px;
+	height: 29px;
+	width: 60px;
+}
+.smt_loginset
+{
+	background-image: url(../images/set.png);
+	border: 0px;
+	height: 29px;
+	width: 60px;
+}
+.smt_loginbottom
+{
+	_position: absolute; /*ie6*/
+	_position: absolute\9; /*ie8*/
+	width: 100%;
+	height: 101px;
+}
+.smt_loginsmt_bottomtd
+{
+	background-image: url(../images/City.png);
+	height: 101px;
+}
+.smt_maintable
+{
+	width: 100%;
+	height: 100%;
+    
+}
+.smt_loginbox
+{
+	margin-top: 90px;
+}
+.smt_bottomtd
+{
+	background-image: url(../images/Bottom_Background.png);
+    background-repeat:repeat-x;
+	height: 49px;
+	vertical-align: top;
+	_position: absolute; /*ie6*/
+	_position: absolute\9; /*ie8*/
+}
+.smt_blankbottom
+{
+height: 49px;
+}
+.smt_blanktop
+{
+height: 44px;
+}
+
+.smt_PageTable
+{
+    width: 100%; 
+    vertical-align:top; 
+    text-align:left;
+    border: 0px;
+}
+
+.smt_ListTable
+{
+    text-align:center; 
+    vertical-align:middle; 
+ 
+    border:0px;
+}
+
+.smt_ListImage
+{
+    border:0px; 
+    vertical-align:middle; 
+    margin-left:2px;
+}
+
+.smt_ListTd
+{
+    text-align:center; 
+    vertical-align:middle;
+}
+
+.smt_bottomtr
+{
+	height: 49px;
+	_position: absolute; /*ie6*/
+	_position: absolute\9; /*ie8*/
+}
+.smt_topFont
+{
+text-align:center; 
+ font-size:20px; 
+ font-weight:bold; color:White;
+}
+
+.smt_topImage
+{
+ border:0px; 
+ vertical-align:top;
+}
+
+.smt_maintd
+{
+	background-image: url(../images/Background.png);
+}
+.smt_icontable
+{
+	width: 100%;
+
+	vertical-align: top;
+	text-align: center;
+}
+.smt_icontd
+{
+	height: 100px;
+}
+.smt_smt_tipbox
+{
+	display: block;
+	width: 58px;
+	height: 73px;
+	position: relative;
+}
+.smt_tip
+{
+	display: block;
+                                    left: 30px; float: left; width: 47px; position: absolute; top: 30px; height: 29px;
+	}
+.smt_tiptable
+{
+	border: 0px; height: 28px; width: 100%;
+	}
+.smt_tipleft
+{
+	width: 14px; background: url(../images/Tip_Left.png)
+	}
+.smt_tipcenter
+{
+	background: url(../images/Tip_Center.png); vertical-align: top;
+	}
+.smt_tipnum
+{
+	border: 0px; color: White; font-weight: bold; vertical-align: bottom;
+                                                    text-align: center; margin-top: 4px;
+	}
+.smt_tipright
+{
+	width: 14px; background: url(../images/Tip_Right.png);
+	}
+
+
+.smt_highline
+{
+    background-image:url(../images/List_Background_On.png);
+    color:white;
+}
+
+    .billTopTd
+    {
+        height: 16px; width: 100%; 
+        background-image: url(../images/WaitingForList.png);
+    
+        font-size: 14px; 
+        color: White; 
+        font-weight: bold;
+    }
+
+    .billFormIdText
+    {
+        width:16%; text-align:right;
+        word-break:break-all; 
+
+white-space:nowrap;
+    }
+
+    .billFormIdValue
+    {
+        width:40%;
+        text-align:left;
+    }
+    .billFormNameText
+    {
+        width:9%;
+        text-align:right;
+    }
+    .billFormNameValue
+    {
+        width:9%;
+    }
+
+    .billLink
+    {
+        line-height:30px; width:99%; margin-left:5px; margin-right:5px; height:30px;
+    }
+
+    .billApprovalCap
+    {
+        width:18%; text-align:right; line-height:20px;
+    }
+
+    .billApprovalName
+    {
+        width:20%; text-align:left; color:Blue;
+    }
+
+    .billApprovalTime
+    {
+        margin-right:10px;
+    }
+
+    .billField
+    {     
+        text-left:left;
+    }
+
+  
+
+    .billAuditTitle
+    {
+        height: 22px; width: 100%; 
+        background-image: url(../images/WaitingForList.png);
+         font-size: 14px; color: White; font-weight: bold;
+    }
+    
+    .billConsultTitle
+    {
+        height: 30px; width: 100%; 
+        line-height:30px;
+        
+        background-image: url(../images/WaitingForListConsult.png);
+         font-size: 14px; color: White; font-weight: bold;
+    }
+    .consultbox
+    {
+    background-image: url(../images/consultbg.jpg);
+    margin-top:10px;
+    padding-top:5px;
+    margin-bottom:30px;
+    }
+    .ReplyInput
+    {
+    height:19px;
+    }
+    .billTextArea
+    {
+        width: 95%;
+        text-align: left;
+        -moz-box-shadow: 1px 1px 0 #E7E7E7; 
+        -moz-box-sizing: border-box;
+       border-color: #CCCCCC #999999 #999999 #CCCCCC; 
+       border-style: solid; border-width: 1px;
+       font-family: arial,sans-serif; 
+       font-size: 12px; height: 48px; 
+       margin: 2px; 
+       outline-color: -moz-use-text-color;
+       outline-style: none; 
+       outline-width: medium; padding: 2px;
+    }
+
+    .billAuditYes
+    {
+        margin-top: 5px; 
+        background-image: url(../images/AuditOff.png); 
+        border: none;background-color: #FFFFFF; 
+        color: #ffffff; font-size: 12px; 
+        font-weight: bold;
+        height: 29px; width: 84px;
+    }
+    
+    .billConsultYes
+    {
+        margin-top: 10px; 
+        background-image: url(../images/ConsultOff.jpg); 
+        border: none;background-color: #FFFFFF; 
+        color: #ffffff; font-size: 12px; 
+        font-weight: bold;
+        height: 29px; width: 84px;
+        margin-right:10px;
+    }
+    .billAuditPerson
+    {
+        width:18%; 
+        text-align:right; 
+        line-height:20px;
+    }
+
+    .billAuditName
+    {
+        width:20%; 
+        text-align:left; 
+        color:Blue;
+    }
+
+    .billAuditTime
+    {
+        width:60%; 
+        text-align:right;
+    }
+
+    .billBottomLine
+    {
+        background-image:url(../images/Line.gif); 
+        background-repeat:repeat-x;
+        padding-top:8px;
+        width:100%;
+    }
+
+    .listWaitDiv
+    {
+        width:100%; 
+        background-image:url(../images/List_Background.png); 
+        height:45px;
+        border:0px; 
+        cursor:pointer;
+        verticle-align:middle;
+    }
+
+
+     .listWaitDiv1
+    {
+        width:100%; 
+        background-image:url(../images/List_Background_on.png); 
+        height:45px;
+        border:0px; 
+        cursor:pointer;
+        verticle-align:middle;
+        color:white;
+    }
+
+    .listUserDiv
+    {
+        width:100%; 
+        background-image:url(../images/linenormal.gif); 
+        height:37px;
+        cursor:pointer;
+        verticle-align:middle;
+     
+    }
+
+
+    .listUserDiv1
+    {
+        width:100%; 
+        background-image:url(../images/linehover.gif); 
+        height:37px;
+        cursor:pointer;
+        verticle-align:middle;
+     
+    }
+    .listpadbody
+    {
+    width:98%;   
+ display:block;
+          float:left;
+             verticle-align:middle;
+
+word-break:keep-all;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+    }
+.listpaddate
+    {
+    width:150px;
+     display:block;
+    float:right;
+    color:#999999;
+    }
+.listphonedate
+{
+   color:#999999;
+}
+.listphonebody
+    {
+     
+width:90%;
+display:block;
+overflow:hidden;
+    }
+#maskbg{ display: none;   position:fixed;_position:absolute;  top: 0%;  left: 0%;  width: 100%;  height: 100%;  background-color: black;  z-index:1001;  -moz-opacity: 0.7;  opacity:.70;  filter: alpha(opacity=70);}
+#masktimeout{display: none;   position:fixed;_position:absolute;  top: 30%;  left: 20%;  width: 250px;  min-height: 120px;  padding: 0px;  border: 3px solid #E8E9F7;  background-color: white;  z-index:1002;color:#999999;font-size:20px;font-weight:bold;text-align:center;verticle-align:middle;}
+#maskshow{display: none;   position:fixed;_position:absolute;  top: 30%;  left: 20%;  width: 250px;  min-height: 120px;  padding: 0px;  border: 3px solid #E8E9F7;  background-color: white;  z-index:1002;color:#999999;font-size:20px;font-weight:bold;text-align:center;verticle-align:middle;}
+#maskView{display: none;   position:fixed;_position:absolute; top: 30%;  left: 20%; width: 300px;  min-height: 120px;  padding: 0px;  border: 3px solid #E8E9F7;  background-color: white;  z-index:1005;text-align:center;verticle-align:middle;}
+#maskaudit{display: none;   position:fixed;_position:absolute;  top: 30%;  left: 20%;  width: 250px;  min-height: 120px;  padding: 0px;  border: 3px solid #E8E9F7;  background-color: white;  z-index:1003;color:#999999;font-size:20px;font-weight:bold;text-align:center;verticle-align:middle;}
+
+
+ #footer
+    {
+        width: 100%;
+        height: 49px;
+        padding: 0px;
+    }
+    
+        #header
+    {
+        width: 100%;
+        height: 45px;
+        line-height: 45px;
+        padding: 0;
+        color: #eee;
+        font-size: 20px;
+        text-align: center;
+        background-image: url(../images/Title_Background.png);
+    }
+    
+    #header a
+    {
+        color: #f3f3f3;
+        text-decoration: none;
+        font-weight: bold;
+        text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+    }
+    
+    #wrapper
+    {
+        height: 500px; /* Of course you need to specify the object height */
+        position: relative; /* On older OS versions "position" and "z-index" must be defined (absolute | relative), */
+        z-index: 1; /* it seems that recent webkit is less picky and works anyway. */
+        width: 100%;
+        background: #fff;
+        overflow: hidden;
+    }
+    
+    #scroller
+    {
+        /*	-webkit-touch-callout:none;*/
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        float: left;
+        width: 100%;
+        padding: 0; /*	-webkit-box-shadow:0 0 8px #555;	/* Don't use box shadows, they slow down drastically CSS animations */
+    }
+    
+    #scroller ul
+    {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        text-align: left;
+    }
+    
+    #scroller li
+    {
+        padding: 0 10px;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid #ccc;
+        border-top: 1px solid #fff;
+        background-color: #fafafa;
+        font-size: 14px;
+    }
+    
+    #scroller li > a
+    {
+        display: block;
+    }
+
+
+    .PageTd
+    {
+        text-align: center; 
+        vertical-align: middle;
+    }
+
+    .PageDetailLeftTd
+    {
+        width:50%; 
+        text-align:left;
+    }
+
+    .PageDetailRightTd
+    {
+        width:50%;
+        text-align:right;
+    }
+.rolename
+{
+padding:8px;
+display:block;
+text-align:left;
+width:100%;
+font-size:14px;
+color:black;
+}
+.sublistheader
+{
+
+
+}
+.messagenotice
+{
+   margin-top:100px;    color:black;font-size:20px;font-weight:bold;text-align:center;verticle-align:middle;
+}
+.prevnext
+{
+    font-size:12px;
+    line-height:20px;
+    text-decoration:none;
+}
+#employeeText
+{
+float: left;
+color:white;
+padding:3px;
+font-weight:bold;
+}
+#employeeText span
+{
+
+color:#c2d8fc;
+font-weight:bold;
+} 
+.employeeButton
+{
+text-align: right;
+width:105px;
+float:right;
+}

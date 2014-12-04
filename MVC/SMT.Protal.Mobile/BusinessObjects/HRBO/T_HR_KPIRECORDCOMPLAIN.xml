@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<System>
+  <Name>HR</Name>
+  <System>
+    <Function Description="绩效考核申诉记录" Address="EngineService.svc" FuncName="CallApplicationService" Binding="customBinding" SplitChar="Г">
+      <ParaStr>
+        <Para TableName="T_HR_KPIRECORDCOMPLAIN" Name="COMPLAINID" Description="申诉记录ID" Value=""></Para>
+      </ParaStr>
+    </Function>
+  </System>
+  <MsgOpen>
+	<AssemblyName>SMT.HRM.UI</AssemblyName>
+	<PublicClass>SMT.HRM.UI.Utility</PublicClass>
+	<ProcessName>CreateFormFromEngine</ProcessName>
+	<PageParameter>SMT.HRM.UI.Form.Performance.ComplainRecordForm</PageParameter>
+	<ApplicationOrder>{COMPLAINID}</ApplicationOrder>
+	<FormTypes>Audit</FormTypes>
+  </MsgOpen>
+  <Object Name="T_HR_KPIRECORDCOMPLAIN" Description="绩效考核申诉记录">
+    <Attribute Name="CURRENTEMPLOYEENAME" Description="提交者" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="COMPLAINID" Description="申诉记录ID" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="COMPLAINANTID" Description="申诉人员ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="REVIEWERID" Description="审核人员ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="COMPLAINREMARK" Description="申诉内容" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="COMPLAINDATE" Description="申诉时间" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="CHECKSTATE" Description="0.不同意；1.同意；2.待审。" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="INITIALSCORE" Description="原始得分" DataType="decimal" DataValue=""></Attribute>
+    <Attribute Name="REVIEWSCORE" Description="审核得分" DataType="decimal" DataValue=""></Attribute>
+    <Attribute Name="REVIEWREMARK" Description="审核评语" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="REVIEWDATE" Description="审核时间" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="OWNERID" Description="所属员工ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERPOSTID" Description="所属岗位ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERDEPARTMENTID" Description="所属部门ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERCOMPANYID" Description="所属公司ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEPOSTID" Description="创建人岗位ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEDEPARTMENTID" Description="创建人部门ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATECOMPANYID" Description="创建人公司ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEUSERID" Description="创建人" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEDATE" Description="创建时间" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="UPDATEUSERID" Description="修改人" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="UPDATEDATE" Description="修改时间" DataType="DateTime" DataValue=""></Attribute>
+  </Object>
+</System>

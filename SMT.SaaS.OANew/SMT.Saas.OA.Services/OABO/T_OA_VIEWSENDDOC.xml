@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<System>
+  <Name>OA</Name>
+  <Version>1.0</Version>
+  <System>
+    <Function Description="发布公司发文" Address="EngineServices.svc" FuncName="CallWaitAppService" Binding="customBinding" SplitChar="Г">
+      <ParaStr>
+        <Para TableName="T_OA_SENDDOC" Name="SENDDOCID" Description="公文ID" Value=""></Para>
+      </ParaStr>
+    </Function>
+  </System>
+  <MsgOpen>
+	<AssemblyName>SMT.SaaS.OA.UI</AssemblyName>
+    <PublicClass>SMT.SaaS.OA.UI.Utility</PublicClass>
+    <ProcessName>CreateFormFromEngine</ProcessName>
+    <PageParameter>SMT.SaaS.OA.UI.UserControls.CompanyDocForm</PageParameter>
+    <ApplicationOrder>{SENDDOCID}*{VIEWSENDDOCID}</ApplicationOrder>
+    <FormTypes>DetailDocPublish</FormTypes>  
+  </MsgOpen>
+  <Object Name="T_OA_VIEWSENDDOC" Description="查看公司发文" Key="VIEWSENDDOCID" id="">
+    <Attribute Name="VIEWSENDDOCID" LableResourceID="VIEWSENDDOCID" Description="查看公文ID" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="SENDDOCID" LableResourceID="SENDDOCID" Description="公文ID" DataType="string" DataValue="" DataText=""></Attribute>    
+    <Attribute Name="ISVIEW" LableResourceID="ISVIEW" Description="是否查看" DataType="string" DataValue="" DataText=""></Attribute>    
+    <Attribute Name="OWNERID" LableResourceID="OWNERNAMEVD" Description="申请人" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="OWNERNAME" LableResourceID="OWNERNAMEVD" Description="申请人" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="OWNERCOMPANYID" LableResourceID="OWNERCOMPANYID" Description="所属公司" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="OWNERDEPARTMENTID" LableResourceID="OWNERDEPARTMENTID" Description="所属部门" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="OWNERPOSTID" LableResourceID="OWNERPOSTID" Description="所属岗位" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="CREATEUSERID" LableResourceID="CREATEUSERID" Description="创建人" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="CREATEUSERNAME" LableResourceID="CREATEUSERNAME" Description="创建人名" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="CREATECOMPANYID" LableResourceID="CREATECOMPANYID" Description="创建公司ID" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="CREATEDEPARTMENTID" LableResourceID="CREATEDEPARTMENTID" Description="创建部门ID" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="CREATEPOSTID" LableResourceID="CREATEPOSTID" Description="创建岗位ID" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="CREATEDATE" LableResourceID="CREATEDATE" Description="创建时间" DataType="DateTime" DataValue="" DataText=""></Attribute>
+    <Attribute Name="UPDATEUSERID" LableResourceID="UPDATEUSERID" Description="修改人" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="UPDATEUSERNAME" LableResourceID="UPDATEUSERNAME" Description="修改人名" DataType="string" DataValue="" DataText=""></Attribute>
+    <Attribute Name="UPDATEDATE" LableResourceID="UPDATEDATE" Description="修改时间" DataType="DateTime" DataValue="" DataText=""></Attribute>        
+  </Object>
+</System>

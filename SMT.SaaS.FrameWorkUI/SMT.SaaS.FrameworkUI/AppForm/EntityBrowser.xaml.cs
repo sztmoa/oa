@@ -74,6 +74,7 @@ namespace SMT.SaaS.FrameworkUI
         TabControl TabContainer;//基本信息面板
         // TabItem tbAudit = new TabItem();
         TabItem tbKPI = new TabItem();
+        public bool ShowSubmitButtonWhenUnSubmit = true;
 
        
         //public SMT.SaaS.FrameworkUI.ToolBar btnToolBar = new ToolBar();
@@ -565,6 +566,7 @@ namespace SMT.SaaS.FrameworkUI
                     //9是撤单状态
                     if ((state == Convert.ToInt32(CheckStates.UnSubmit).ToString() || state == "9") && (FormType == FormTypes.Edit || FormType == FormTypes.Audit) || FormType == FormTypes.Resubmit)
                     {
+                        if (ShowSubmitButtonWhenUnSubmit) return;
                         //提交审核
                         //BtnSaveSubmit = new ImageButton();
                         BtnSaveSubmit.TextBlock.Text = UIHelper.GetResourceStr("SUBMITAUDIT");

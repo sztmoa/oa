@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<System>
+  <Name>HR</Name>
+  <System>
+    <Function Description="员工合同" Address="EngineService.svc"   FuncName="CallWaitAppService"  Binding="customBinding" SplitChar="Г">
+      <ParaStr>
+        <Para TableName="T_HR_EMPLOYEECONTRACT" Name="EMPLOYEECONTACTID" Description="员工合同ID" Value=""></Para>
+        <Para TableName="T_HR_EMPLOYEECONTRACT" Name="EMPLOYEEID" Description="员工ID" Value="" ></Para>
+      </ParaStr>
+    </Function>
+  </System>
+  <MsgOpen>
+    <AssemblyName>SMT.HRM.UI</AssemblyName>
+    <PublicClass>SMT.HRM.UI.Utility</PublicClass>
+    <ProcessName>CreateFormFromEngine</ProcessName>
+    <PageParameter>SMT.HRM.UI.Form.Personnel.EmployeeContractForm</PageParameter>
+    <ApplicationOrder>{EMPLOYEECONTACTID}</ApplicationOrder>
+    <FormTypes>Edit</FormTypes>
+  </MsgOpen>
+  <Object Name="T_HR_EMPLOYEECONTRACT" Description="EmployeecontractFlow">
+    <Attribute Name="CREATEUSERNAME" Description="创建人" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="OWNER" Description="所属人" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="CURRENTEMPLOYEENAME" Description="提交者" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="EMPLOYEECNAME" Description="员工姓名" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="EMPLOYEECONTACTID" Description="员工合同ID" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="CONTACTCODE" Description="合同编号" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="FROMDateTime" Description="合同生效日期从" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="TODateTime" Description="至" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="CONTACTPERIOD" Description="合同期限" DataType="NUMBER" DataValue=""></Attribute>
+    <Attribute Name="ENDDateTime" Description="终止日期" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="REASON" Description="终止原因" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="ATTACHMENT" Description="合同扫描件" DataType="BinaryBlob" DataValue=""></Attribute>
+    <Attribute Name="EDITSTATE" Description="编辑状态" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="ISSPECIALCONTRACT" Description="是否有约束条件" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="ALARMDAY" Description="到期提前提醒天数" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="REMARK" Description="备注" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="CREATEDEPARTMENTID" Description="创建人部门ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEPOSTID" Description="创建人岗位ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERCOMPANYID" Description="所属公司ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERDEPARTMENTID" Description="所属部门ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERPOSTID" Description="所属岗位ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERID" Description="所属员工ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATECOMPANYID" Description="创建人公司ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEUSERID" Description="创建人ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEDateTime" Description="创建时间" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="UPDateTimeUSERID" Description="修改人ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="UPDateTimeDateTime" Description="修改时间" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="CHECKSTATE" Description="审核状态" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="ATTACHMENTPATH" Description="合同扫描件地址" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="EMPLOYEEID" Description="员工ID" DataType="string" DataValue=""></Attribute>
+  </Object>
+</System>

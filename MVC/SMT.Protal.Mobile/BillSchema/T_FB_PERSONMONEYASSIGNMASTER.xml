@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail Name="OrderTypeName" Text="单据类型"                        Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="PERSONMONEYASSIGNMASTERID" Text="单据ID"              Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="PERSONMONEYASSIGNMASTERCODE" Text="单据编号"          Orderno="1" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BUDGETARYMONTH" Text="下拨月份"                       Orderno="5" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="ASSIGNCOMPANYNAME" Text="下拨公司名称"                Orderno="10" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKSTATES" Text="状态"                              Orderno="2" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BUDGETMONEY" Text="下拨总金额"                        Orderno="9" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERDEPARTMENTNAME" Text="申请部门"                  Orderno="7" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERCOMPANYNAME" Text="申请公司"                     Orderno="6" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERNAME" Text="申请人"                              Orderno="8" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERNAME" Text="创建人"                         Orderno="3" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDATE" Text="创建时间"                           Orderno="4" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="REMARK" Text="备注"                                   Orderno="11"  Colspan="2" IsVisible="true" IsShowCaption="false" CssName="billBottomLine" ></Detail>
+
+
+  </DetailLists>
+
+  <SubLists Name="PERSONBUDGETAPPLYDETAILList">
+    <ColumnLists>
+      <Column Name="OWNERCOMPANYNAME" Text="公司"                       		IsVisible="true" Width="10%"></Column>
+      <Column Name="OWNERDEPARTMENTNAME" Text="部门"                    		IsVisible="true" Width="10%"></Column>
+      <Column Name="OWNERPOSTNAME" Text="岗位"                          		IsVisible="true" Width="10%"></Column>
+      <Column Name="OWNERNAME" Text="职员"                              		IsVisible="true" Width="10%"></Column>
+      <Column Name="BUDGETMONEY" Text="本月下拨经费"                    		IsVisible="true" Width="10%"></Column>
+      <Column Name="REMARK" Text="摘要"                                 		IsVisible="true" Width="10%"></Column>
+      
+      <Column Name="PERSONBUDGETAPPLYDETAILID" Text="个人经费下拨申请ID"		IsVisible="false" Width=""></Column>
+      <Column Name="RowIndex" Text="序列号"                             		IsVisible="false" Width=""></Column>
+      <Column Name="UPBUDGETMONEY" Text="上月下拨经费"                  		IsVisible="false" Width=""></Column>
+      <!--<Column Name="BUDGETMONEY" Text="本月下拨经费"                    		IsVisible="false" Width=""></Column>-->
+    </ColumnLists>
+ 
+  </SubLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

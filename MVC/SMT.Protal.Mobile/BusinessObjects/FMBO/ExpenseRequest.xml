@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<System>
+	<Name>FM</Name>
+	<Object Name="ExpenseRequest" Description="休假申请单">
+		<Attribute Name="EmployeeID" Description="员工号" DataType="string" DataValue=""></Attribute>
+		<Attribute  Name="EmployeeName" Description="员工姓名" DataType="decimal" DataValue=""></Attribute>
+		<Attribute  Name="ExpenseDate" Description="报销日期" DataType="datetime" DataValue=""></Attribute>
+		<Attribute  Name="ExpenseAmount" Description="报销总额" DataType="decimal" DataValue=""></Attribute>
+		<Attribute  Name="AdvanceLoadAmount" Description="已预支总额" DataType="decimal" DataValue=""></Attribute>
+	</Object>
+</System>

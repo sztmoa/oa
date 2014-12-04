@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail Name="CURRENTEMPLOYEENAME"				Text="提交者"				      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHARGEAPPLYMASTERID"				Text="费用申请单ID"			      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHARGEAPPLYMASTERCODE"                       Text="单据编号"				      Orderno="1" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERID"					Text="申请人"				          Orderno="2" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    
+    <Detail Name="BUDGETARYMONTH"				Text="预算月份"				      Orderno="8" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+
+    <!--<Detail Name="TOTALMONEY" Text="合计" Orderno="13" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" />
+    <Detail Name="REPAYMENT" Text="冲借款合计" Orderno="14" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" />-->
+
+
+    <Detail Name="PAYTYPE"					Text="付款类型"				  Orderno="5" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="PAYMENTINFO"			Text="支付信息"				  Orderno="6" Colspan="2" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="REPAYMENT"				Text="冲借款合计"				Orderno="7" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="REMARK"					  Text="备注"				      Orderno="8" Colspan="2" IsVisible="true" IsShowCaption="true" CssName="billBottomLine" ></Detail>
+    <Detail Name="LINK"					  Text="事项审批编号"				Orderno="9" Colspan="2" IsVisible="true" IsShowCaption="true" IsLink="true" ></Detail>
+    <Detail Name="TOTALMONEY"				Text="合计"				      Orderno="6" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+
+
+
+
+    <Detail Name="REPAYMENT"					Text="预还款日期"			      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="EDITSTATES"					Text="状态"				          Orderno="2" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKSTATES"					Text="审核状态"				    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERPOSTID"					Text="所属岗位"				    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERDEPARTMENTID"				Text="所属部门"				Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERCOMPANYID"				Text="所属公司"				    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERID"				Text="创建人"				        Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDATE"					Text="创建时间"				      Orderno="4" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATECOMPANYID"				Text="创建公司"				  Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDEPARTMENTID"				Text="创建人部门"			Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEPOSTID"				Text="创建人岗位"			      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEUSERID"				Text="修改人"				        Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEDATE"					Text="修改时间"				      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERNAME"				Text="创建人"				      Orderno="3" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEUSERNAME"				Text="修改人名"				    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERNAME"					Text="申请人"				        Orderno="10" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERPOSTNAME"				Text="申请人岗位名称"			Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERCOMPANYNAME"				Text="申请公司"			    Orderno="8" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERDEPARTMENTNAME"				Text="申请部门"			Orderno="9" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEPOSTNAME"				Text="CREATEPOSTNAME"			Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATECOMPANYNAME"				Text="CREATECOMPANYNAME"		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDEPARTMENTNAME"			Text="CREATEDEPARTMENTNAME"		      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="RECEIVER"					Text="收取方"				      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BANK"					Text="开户银行"				      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BANKACCOUT"					Text="银行帐号"				      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="PAYTARGET"					Text="付款方式"				      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BORROWAPPLYMASTERID"					Text="借款单"				      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+  </DetailLists>
+
+  <SubLists Name="T_FB_CHARGEAPPLYDETAILList">
+    <ColumnLists>
+      <Column Name="SUBJECTNAME" Text="科目名称"						IsVisible="true" Width="10%"></Column>
+      <Column Name="CHARGETYPE" Text="费用类型"						IsVisible="false" Width="10%"></Column>
+      <Column Name="BORROWMONEY" Text="借款金额"						IsVisible="false" Width="10%"></Column>
+      <Column Name="USABLEMONEY" Text="可用结余"						IsVisible="true" Width="10%"></Column>
+      <Column Name="REMARK" Text="摘要"							IsVisible="true" Width="10%"></Column>
+      <Column Name="CHARGEMONEY" Text="报销金额"						IsVisible="true" Width="10%" ColumnSum="true"></Column>
+
+      <Column Name="CURRENTEMPLOYEENAME" Text="提交者"					IsVisible="false" Width=""></Column>
+      <Column Name="CHARGEAPPLYDETAILID" Text="费用申请单明细ID"				IsVisible="false" Width=""></Column>
+      <Column Name="SERIALNUMBER" Text="编号"						IsVisible="false" Width=""></Column>
+      <Column Name="REPAYMONEY" Text="还款金额"						IsVisible="false" Width=""></Column>
+      <Column Name="CREATEUSERID" Text="创建人"						IsVisible="false" Width=""></Column>
+      <Column Name="CREATEDATE" Text="创建日期"						IsVisible="false" Width=""></Column>
+      <Column Name="UPDATEUSERID" Text="修改人"						IsVisible="false" Width=""></Column>
+      <Column Name="UPDATEDATE" Text="修改时间"						IsVisible="false" Width=""></Column>
+      <Column Name="SUBJECTID" Text="科目ID"						IsVisible="false" Width=""></Column>
+      <Column Name="SUBJECTCODE" Text="科目编号"						IsVisible="false" Width=""></Column>
+    </ColumnLists>
+  </SubLists>
+  <SubLists Name="T_FB_CHARGEAPPLYREPAYDETAILList" HideWhenEmpty="1" >
+
+    <ColumnLists>
+      <Column Name="CURRENTEMPLOYEENAME" Text="提交者"						IsVisible="false" Width="10%"></Column>
+      <Column Name="CHARGEAPPLYREPAYDETAILID" Text="CHARGEAPPLYREPAYDETAILID"						IsVisible="false" Width="10%"></Column>
+      <Column Name="REPAYTYPE" Text="借款项目"						IsVisible="true" Width="10%"></Column>
+
+      <Column Name="BORROWMONEY" Text="借款余额"							IsVisible="true" Width="10%"></Column>
+      <Column Name="REMARK" Text="摘要"						IsVisible="true" Width="10%"></Column>
+      <Column Name="REPAYMONEY" Text="还款金额"						IsVisible="true" Width="10%" ColumnSum="true"></Column>
+
+      <Column Name="CREATEUSERID" Text="创建人"					IsVisible="false" Width=""></Column>
+      <Column Name="CREATEDATE" Text="创建日期"				IsVisible="false" Width=""></Column>
+      <Column Name="UPDATEUSERID" Text="修改人"						IsVisible="false" Width=""></Column>
+      <Column Name="UPDATEDATE" Text="修改时间"						IsVisible="false" Width=""></Column>
+    </ColumnLists>
+
+  </SubLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

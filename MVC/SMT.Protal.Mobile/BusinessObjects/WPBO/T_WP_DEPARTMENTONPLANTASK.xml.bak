@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<System>
+  <Name>WP</Name>
+  <System>
+    <!--<Function Description="RESUMEFlow" Address="EngineService.svc"   FuncName="CallApplicationService"  Binding="customBinding" SplitChar="Г">
+      <ParaStr>
+        <Para TableName="T_HR_COMPANY" Name="COMPANYID" Description="公司ID" Value=""></Para>
+      </ParaStr>
+    </Function>-->
+  </System>
+  <MsgOpen>
+    <AssemblyName>SMT.RM.UI</AssemblyName>
+    <PublicClass>SMT.RM.UI.Class.Utility</PublicClass>
+    <ProcessName>CreateFormFromEngine</ProcessName>
+    <PageParameter>WP/DepartmentONPlan/Create</PageParameter>
+    <ApplicationOrder>{PLANYEAR}</ApplicationOrder>
+    <FormTypes>Audit</FormTypes>
+  </MsgOpen>
+  <Object Name="T_WP_DEPARTMENTONPLAN" Description="部门年度经营计划表代办" Key="DPID" id="">
+    <Attribute  Name="DPID" LableResourceID="DPID" Description="部门计划主键ID，GUID" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="DEPTONORMID" LableResourceID="DEPTONORMID" Description="部门经营指标主键ID" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="COMPANYID" LableResourceID="COMPANYID" Description="所属公司ID" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="DEPARTMENTID" LableResourceID="DEPARTMENTID" Description="所属部门ID
+数据来自《部门年度经营指标下达表》，与所属公司ID共同组成关联结构数据，填充上年人数、本年指标人数、上年可变费用、本年费用指标、上年业务收入、本年控制指标等数据项" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="DEPARTMENTNATURE" LableResourceID="DEPARTMENTNATURE" Description="部门性质(1业务部门0非业务部门)" DataType="CHAR" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="PLANYEAR" LableResourceID="PLANYEAR" Description="计划年度" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="COSTITEMID" LableResourceID="COSTITEMID" Description="费用项科目ID根据《T_WP_YearNormDefine 公司年度经营指标定义》->指标编码，选自部门经营指标定义（T_WP_DeptNormDefine）
+部门指标定义中是选择字典表PresetCostItemType" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="COSTITEMNAME" LableResourceID="COSTITEMNAME" Description="费用项名称" DataType="NVARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="LYNORMVALUE" LableResourceID="LYNORMVALUE" Description="上年指标值上年指标、本年指标、本年控制指标，根据指标类型不同，存放不同数值，如人数存放无小数位的整型值、费用存放带小数位数值" DataType="NUMBER" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="CYNORMVALUE" LableResourceID="CYNORMVALUE" Description="本年指标值" DataType="NUMBER" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="CYCONTROLNORM" LableResourceID="CYCONTROLNORM" Description="本年控制指标" DataType="NUMBER" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="EDITSTATE" LableResourceID="EDITSTATE" Description="对象编辑状态" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="CREATEUSERID" LableResourceID="CREATEUSERID" Description="创建人ID" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="CREATEDATE" LableResourceID="CREATEDATE" Description="创建时间" DataType="DATE" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="UPDATEUSERID" LableResourceID="UPDATEUSERID" Description="修改人ID" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="UPDATEDATE" LableResourceID="UPDATEDATE" Description="修改时间" DataType="DATE" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="REMARK" LableResourceID="REMARK" Description="备注" DataType="NVARCHAR2" DataValue="" DataText="" ></Attribute>
+</Object>
+
+</System>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail Name="CURRENTEMPLOYEENAME" Text="提交者"            Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="BUSINESSTRIPID" Text="出差申请ID"             Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="TEL" Text="联系电话"                          Orderno="2" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="ISAGENT" Text="审核代理"                      Orderno="3" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHARGEMONEY" Text="金额"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKSTATE" Text="审批状态"                   Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CONTENT" Text="出差事由"                      Orderno="4" Colspan="2" IsVisible="true" IsShowCaption="true" CssName="smt_autobreak" ></Detail>
+
+    <Detail Name="AlterTraveDetailBefore" Text="申请备注"                      Orderno="5" Colspan="4" IsVisible="true" IsShowCaption="true" CssName="smt_autobreak" ></Detail>
+    
+    
+    <Detail Name="REMARKS" Text="备注"                          Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERID" Text="出差人"                        Orderno="1" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERNAME" Text="出差人"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERCOMPANYID" Text="所属公司"               Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERDEPARTMENTID" Text="所属部门"            Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERPOSTID" Text="所属岗位"                  Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERID" Text="创建人"                   Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEUSERNAME" Text="创建人"                 Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATECOMPANYID" Text="创建公司"              Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDEPARTMENTID" Text="创建人部门"         Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEPOSTID" Text="创建人岗位"               Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDATE" Text="创建日期"                   Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEUSERID" Text="修改人"                   Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEUSERNAME" Text="修改人名"               Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEDATE" Text="修改时间"                   Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+
+  </DetailLists>
+
+  <SubLists Name="BUSINESSTRIPDetailList">
+    <ColumnLists>
+      <Column Name="BUSINESSREPORTDETAILID" Text="BUSINESSREPORTDETAILID"     		IsVisible="false" Width=""></Column>
+      <Column Name="STARTDATE" Text="出发时间"                                		IsVisible="true" Width="10%"></Column>
+      <Column Name="ENDDATE" Text="到达时间"                                  		IsVisible="true" Width="10%"></Column>
+      <Column Name="DEPCITY" Text="出发城市"                                  		IsVisible="true" Width="10%"></Column>
+      <Column Name="DESTCITY" Text="到达城市"                                 		IsVisible="true" Width="10%"></Column>
+      <Column Name="TYPEOFTRAVELTOOLS" Text="交通工具"                        		IsVisible="true" Width="10%"></Column>
+      <Column Name="TAKETHETOOLLEVEL" Text="等级"                             		IsVisible="true" Width="10%"></Column>      
+      <Column Name="PRIVATEAFFAIR" Text="私事"                                		IsVisible="true" Width="10%"></Column>
+      <Column Name="GOOUTTOMEET" Text="内部会议/培训"                         		IsVisible="true" Width="10%"></Column>
+      <Column Name="COMPANYCAR" Text="公司派车"                               		IsVisible="true" Width="10%"></Column>
+
+      <Column Name="BUSINESSDAYS" Text="天数"                                 		IsVisible="false" Width="10%"></Column>
+    </ColumnLists>
+
+  </SubLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

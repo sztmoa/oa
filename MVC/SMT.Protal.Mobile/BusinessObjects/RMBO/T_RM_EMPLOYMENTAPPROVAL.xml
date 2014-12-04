@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<System>
+  <Name>RM</Name>
+  <System>
+  </System>
+  <MsgOpen>
+    <AssemblyName>SMT.RM.UI</AssemblyName>
+    <PublicClass>SMT.RM.UI.Class.Utility</PublicClass>
+    <ProcessName>CreateFormFromEngine</ProcessName>
+    <PageParameter>RM/EmploymentApproval/Detail</PageParameter>
+    <ApplicationOrder>{EMPLOYMENTID}</ApplicationOrder>
+    <FormTypes>Detail</FormTypes>
+  </MsgOpen>
+  <Object Name="T_RM_EMPLOYMENTAPPROVAL" Description="录用审批" Key="EMPLOYMENTID" id="">
+    <Attribute  Name="EMPLOYMENTID" LableResourceID="EMPLOYMENTID" Description="录用申请ID" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="RESUMENAME" LableResourceID="RESUMENAME" Description="应聘者名称" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="REQUIREPOSTNAME" LableResourceID="REQUIREPOSTNAME" Description="应聘岗位" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+	<Attribute  Name="ENTRYPOSTID" LableResourceID="ENTRYPOSTID" Description="录用岗位ID" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+	<Attribute  Name="ENTRYPOSTNAME" LableResourceID="ENTRYPOSTNAME" Description="录用岗位名称" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+	<Attribute  Name="TRYUSERDATE" LableResourceID="TRYUSERDATE" Description="试用期(月)" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+	<Attribute  Name="SALARYDATE" LableResourceID="SALARYDATE" Description="起薪日期" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="CHECKSTATES" LableResourceID="CHECKSTATES" Description="审核状态" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="EDITSTATE" LableResourceID="EDITSTATE" Description="对象编辑状态" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="OWNERID" LableResourceID="OWNERID" Description="所属人ID" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="OWNERPOSTID" LableResourceID="OWNERPOSTID" Description="所属岗位ID" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="OWNERDEPARTMENTID" LableResourceID="OWNERDEPARTMENTID" Description="所属部门ID" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="OWNERCOMPANYID" LableResourceID="OWNERCOMPANYID" Description="" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="CREATEUSERID" LableResourceID="CREATEUSERID" Description="" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="CREATEDATE" LableResourceID="CREATEDATE" Description="" DataType="DATE" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="CREATECOMPANYID" LableResourceID="CREATECOMPANYID" Description="" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="CREATEDEPARTMENTID" LableResourceID="CREATEDEPARTMENTID" Description="" DataType="NVARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="CREATEPOSTID" LableResourceID="CREATEPOSTID" Description="" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="UPDATEUSERID" LableResourceID="UPDATEUSERID" Description="修改人ID" DataType="VARCHAR2" DataValue="" DataText="" ></Attribute>
+    <Attribute  Name="UPDATEDATE" LableResourceID="UPDATEDATE" Description="修改时间" DataType="DATE" DataValue="" DataText="" ></Attribute>
+  </Object>
+
+
+</System>

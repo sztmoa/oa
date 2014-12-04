@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DetailLists PhoneRepeatCount="1" PadRepeatCount="2">
+    <Detail Name="CURRENTEMPLOYEENAME" Text="提交者"               Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SIGNINID" Text="SIGNINID"                        Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="EMPLOYEEID" Text="EMPLOYEEID"                    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="EMPLOYEENAME" Text="员工姓名"                    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="EMPLOYEECODE" Text="员工编号"                    Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="EMPLOYEEFULLNAME" Text="员工姓名"                Orderno="1" Colspan="1" IsVisible="true" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="POSTLEVEL" Text="岗位级别"                       Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SIGNINTIME" Text="签卡日期"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="SIGNINCATEGORY" Text="签卡类型"                  Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CHECKSTATE" Text="审批状态"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="REMARK" Text="备注"                              Orderno="2" Colspan="2" IsVisible="true" IsShowCaption="false" CssName="billBottomLine" ></Detail>
+    <Detail Name="CREATEUSERID" Text="创建人"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDATE" Text="创建日期"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEUSERID" Text="修改人"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="UPDATEDATE" Text="修改时间"                      Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERID" Text="所属员工"                         Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERPOSTID" Text="所属岗位"                     Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERDEPARTMENTID" Text="所属部门"               Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="OWNERCOMPANYID" Text="所属公司"                  Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATECOMPANYID" Text="创建公司"                 Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEDEPARTMENTID" Text="创建人部门"            Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+    <Detail Name="CREATEPOSTID" Text="创建人岗位"                  Orderno="100" Colspan="1" IsVisible="false" IsShowCaption="true" CssName="" ></Detail>
+
+  </DetailLists>
+
+  <SubLists Name="EMPLOYEESIGNINDETAILetailList">
+    <ColumnLists>
+      <Column Name="ABNORMALDATE" Text="异常日期"             		IsVisible="true" Width="10%"></Column>
+      <Column Name="ABNORMCATEGORY" Text="异常类型"           		IsVisible="false" Width="10%"></Column>
+      <Column Name="ATTENDPERIOD" Text="异常时间段"           		IsVisible="true" Width="10%"></Column>
+      <Column Name="ABNORMALTIME" Text="异常时长(分钟)"       		IsVisible="false" Width="10%"></Column>
+      <Column Name="REASONCATEGORY" Text="异常类型"       		IsVisible="true" Width="10%"></Column>
+      <Column Name="DETAILREASON" Text="原因"             		IsVisible="true" Width="10%"></Column>
+      <Column Name="REMARK" Text="备注"                       		IsVisible="false" Width="10%"></Column>
+      
+      
+      <Column Name="CURRENTEMPLOYEENAME" Text="提交者"        		IsVisible="false" Width=""></Column>
+      <Column Name="SIGNINDETAILID" Text="SIGNINDETAILID"     		IsVisible="false" Width=""></Column>
+      <Column Name="SIGNINID" Text="签卡记录ID"               		IsVisible="false" Width=""></Column>
+      <Column Name="ABNORMRECORDID" Text="异常记录子表ID"     		IsVisible="false" Width=""></Column>    
+      <Column Name="CREATEUSERID" Text="创建人"               		IsVisible="false" Width=""></Column>
+      <Column Name="CREATEDATE" Text="创建日期"               		IsVisible="false" Width=""></Column>
+      <Column Name="UPDATEUSERID" Text="修改人"               		IsVisible="false" Width=""></Column>
+      <Column Name="UPDATEDATE" Text="修改时间"               		IsVisible="false" Width=""></Column>
+      <Column Name="CREATECOMPANYID" Text="创建公司"          		IsVisible="false" Width=""></Column>
+      <Column Name="CREATEDEPARTMENTID" Text="创建人部门"     		IsVisible="false" Width=""></Column>
+      <Column Name="CREATEPOSTID" Text="创建人岗位"           		IsVisible="false" Width=""></Column>
+      <Column Name="OWNERID" Text="所属员工"                  		IsVisible="false" Width=""></Column>
+      <Column Name="OWNERPOSTID" Text="所属岗位"              		IsVisible="false" Width=""></Column>
+      <Column Name="OWNERDEPARTMENTID" Text="所属部门"        		IsVisible="false" Width=""></Column>
+      <Column Name="OWNERCOMPANYID" Text="所属公司"           		IsVisible="false" Width=""></Column>
+
+    </ColumnLists>
+
+  </SubLists>
+  <Attachs>
+  </Attachs>
+  <Approvas>
+  </Approvas>
+</Bill>

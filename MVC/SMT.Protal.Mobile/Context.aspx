@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Context.aspx.cs" Inherits="SMT.Portal.Common.SmtForm.Context" %>

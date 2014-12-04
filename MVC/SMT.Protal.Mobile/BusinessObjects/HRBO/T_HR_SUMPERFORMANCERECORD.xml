@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<System>
+  <Name>HR</Name>
+  <System>
+    <Function Description="绩效考核汇总记录" Address="EngineService.svc" FuncName="CallApplicationService" Binding="customBinding" SplitChar="Г">
+      <ParaStr>
+        <Para TableName="T_HR_SUMPERFORMANCERECORD" Name="SUMID" Description="绩效考核记录ID" Value=""></Para>
+      </ParaStr>
+    </Function>
+  </System>
+  <MsgOpen>
+    <AssemblyName>SMT.HRM.UI</AssemblyName>
+    <PublicClass>SMT.HRM.UI.Utility</PublicClass>
+    <ProcessName>CreateFormFromEngine</ProcessName>
+    <PageParameter>SMT.HRM.UI.Form.Performance.EditPerformance</PageParameter>
+    <ApplicationOrder>{SUMID}</ApplicationOrder>
+    <FormTypes>Audit</FormTypes>
+  </MsgOpen>
+  <Object Name="T_HR_SUMPERFORMANCERECORD" Description="绩效考核汇总记录">
+    <Attribute Name="CURRENTEMPLOYEENAME" Description="提交者" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="SUMID" Description="绩效考核记录ID" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="SUMDEPTID" Description="汇总部门ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="SUMPERSONID" Description="汇总人员ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="REVIEWERID" Description="审核人员ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="SUMNAME" Description="绩效考核名称" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="SUMSTART" Description="考核开始时间" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="SUMEND" Description="考核结束时间" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="SUMCOUNT" Description="考核人数" DataType="decimal" DataValue=""></Attribute>
+    <Attribute Name="SUMSCORE" Description="考核得分" DataType="decimal" DataValue=""></Attribute>
+    <Attribute Name="SUMREMARK" Description="考核说明" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="SUMTYPE" Description="1.流程；2.任务。" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="SUMDATE" Description="汇总时间" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="AWARDTYPE" Description="奖金类型" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="BASEMONEY" Description="奖金基数" DataType="decimal" DataValue=""></Attribute>
+    <Attribute Name="CHECKSTATE" Description="0：没有审核；1：正在审核；2：审核通过；3：审核不通过。" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="REVIEWREMARK" Description="审核评语" DataType="string" DataValue=""></Attribute>
+    <Attribute Name="OWNERID" Description="所属员工ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERPOSTID" Description="所属岗位ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERDEPARTMENTID" Description="所属部门ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="OWNERCOMPANYID" Description="所属公司ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEPOSTID" Description="创建人岗位ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEDEPARTMENTID" Description="创建人部门ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATECOMPANYID" Description="创建人公司ID" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEUSERID" Description="创建人" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="CREATEDATE" Description="创建时间" DataType="DateTime" DataValue=""></Attribute>
+    <Attribute Name="UPDATEUSERID" Description="修改人" DataType="string" DataValue="" IsShow="false"></Attribute>
+    <Attribute Name="UPDATEDATE" Description="修改时间" DataType="DateTime" DataValue=""></Attribute>
+  </Object>
+</System>

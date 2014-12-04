@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<System Name="WF">
+  <ObjectList>
+    <Object Name="FLOW_FLOWDEFINE_T" Description="流程审计"></Object>
+  </ObjectList>
+</System>
+
