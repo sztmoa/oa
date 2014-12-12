@@ -1,0 +1,207 @@
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:40:56
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:40:56
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:40:56
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:01
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:01
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:01
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:01
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:01
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:02
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:13
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:13
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:13
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:27
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:27
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:27
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:27
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:50
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:53
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:53
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:53
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:5052cf93-3d69-4577-9450-f3600a4cf8a5调用了我的单据新建服务成功！  2012/4/13 15:41:54
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:41:56
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:42:13
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:42:13
+Error  审核异常：System.TimeoutException: 请求通道在等待 00:00:59.9739985 以后答复时超时。增加传递给请求调用的超时值，或者增加绑定上的 SendTimeout 值。分配给此操作的时间可能已经是更长超时的一部分。 ---> System.TimeoutException: 远程服务器返回错误: (504) 网关超时。 ---> System.Net.WebException: 远程服务器返回错误: (504) 网关超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.IService.SubimtFlow(SubmitData ApprovalData)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.ServiceClient.SubimtFlow(SubmitData ApprovalData) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\FlowWFService\Reference.cs:行号 1947
+   在 SMT.FB.BLL.AuditBLL.Audit(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\AuditBLL.cs:行号 79
+   在 SMT.FB.BLL.FBCommonBLL.AuditFBEntity(FBEntity fbEntity, CheckStates checkStates) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBCommonBLL.cs:行号 676  2012/4/13 15:42:13
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:42:13
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:44:39
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:44:40
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:44:40
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:44:40
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:44:53
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:44:53
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:44:53
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:44:59
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:44:59
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:15
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:15
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:15
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:15
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:15
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:15
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:15
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:15
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:23
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:6922908b-236d-48da-bba2-fa3c21bd0d36调用了我的单据新建服务成功！  2012/4/13 15:45:33
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:35
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:35
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:35
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:35
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:35
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:45:35
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/13 15:46:20
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/13 15:46:20
+Debug  生成单号：BMYS_20120413000017  2012/4/13 15:46:21
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:21
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:21
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:6922908b-236d-48da-bba2-fa3c21bd0d36调用了我的单据新建服务成功！  2012/4/13 15:46:22
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:23
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:29
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:29
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:29
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:29
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:29
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:36
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:36
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:36
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:40
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:40
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/13 15:46:41
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/13 15:46:41
+Debug  生成单号：BMYS_20120413000018  2012/4/13 15:46:41
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:42
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:42
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:6922908b-236d-48da-bba2-fa3c21bd0d36调用了我的单据新建服务成功！  2012/4/13 15:46:42
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:42
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:42
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:43
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:58
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:58
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:46:58
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:47:01
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:47:01
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:47:01
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:47:02
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:47:02
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:48:40
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:48:40
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:48:40
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:05
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:05
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:16
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:16
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:16
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:16
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:16
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:17
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:17
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:17
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:18
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:18
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:6922908b-236d-48da-bba2-fa3c21bd0d36调用了我的单据新建服务成功！  2012/4/13 15:49:29
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:29
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:36
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:50
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:50
+Error  审核异常：System.TimeoutException: 请求通道在等待 00:00:59.9990000 以后答复时超时。增加传递给请求调用的超时值，或者增加绑定上的 SendTimeout 值。分配给此操作的时间可能已经是更长超时的一部分。 ---> System.TimeoutException: 远程服务器返回错误: (504) 网关超时。 ---> System.Net.WebException: 远程服务器返回错误: (504) 网关超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.IService.SubimtFlow(SubmitData ApprovalData)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.ServiceClient.SubimtFlow(SubmitData ApprovalData) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\FlowWFService\Reference.cs:行号 1947
+   在 SMT.FB.BLL.AuditBLL.Audit(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\AuditBLL.cs:行号 79
+   在 SMT.FB.BLL.FBCommonBLL.AuditFBEntity(FBEntity fbEntity, CheckStates checkStates) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBCommonBLL.cs:行号 676  2012/4/13 15:49:50
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:49:50
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:51:17
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:51:17
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:51:23
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:51:24
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:51:45
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:51:45
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:51:45
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:52:00
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:52:00
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:52:10
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:52:10
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:52:10
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:52:10
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:52:10
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:52:10
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:52:10
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:52:16
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:add1964c-aff1-47c3-89ef-337398e7957e调用了我的单据新建服务成功！  2012/4/13 15:52:45
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:52:52
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:52:52
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:52:57
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:06
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:07
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:07
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/13 15:53:08
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/13 15:53:08
+Debug  生成单号：BMYS_20120413000019  2012/4/13 15:53:11
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:11
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:11
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:add1964c-aff1-47c3-89ef-337398e7957e调用了我的单据新建服务成功！  2012/4/13 15:53:13
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:20
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:22
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:23
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:23
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:32
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:32
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:32
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:38
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/13 15:53:38
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/13 15:53:38
+Debug  生成单号：BMYS_20120413000020  2012/4/13 15:53:39
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:39
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:40
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:add1964c-aff1-47c3-89ef-337398e7957e调用了我的单据新建服务成功！  2012/4/13 15:53:41
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:53:48
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:54:01
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:54:01
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:54:01
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:54:01
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:54:01
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:54:01
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:54:07
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:54:07
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:54:15
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:54:15
+Debug  FB BaseDAL.Dispose()  2012/4/13 15:56:25

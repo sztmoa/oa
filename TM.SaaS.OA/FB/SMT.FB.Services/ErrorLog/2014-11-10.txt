@@ -1,0 +1,13 @@
+Debug  FB BaseDAL.Dispose sucess  2014/11/10 15:43:39
+Debug  FB BaseDAL.Dispose sucess  2014/11/10 15:43:39
+Debug  FB BaseDAL.Dispose sucess  2014/11/10 15:43:42
+Debug  FB BaseDAL.Dispose sucess  2014/11/10 15:43:42
+Debug  FB BaseDAL.Dispose sucess  2014/11/10 15:43:48
+Debug  调用HR服务 GetEmployeeFunds,返回结果为空，对应下拨公司的ID为： 7cd6c0a4-9735-476a-9184-103b962d3383  2014/11/10 15:43:55
+Debug  FB BaseDAL.Dispose sucess  2014/11/10 15:43:55
+Debug  FB BaseDAL.Dispose sucess  2014/11/10 15:44:34
+Debug  FB BaseDAL.Dispose sucess  2014/11/10 15:44:34
+Debug  FB BaseDAL.Dispose sucess  2014/11/10 15:44:34
+Debug  FB BaseDAL.Dispose sucess  2014/11/10 15:44:34
+Debug  FB BaseDAL.Dispose sucess  2014/11/10 15:44:34
+Debug  FB BaseDAL.Dispose sucess  2014/11/10 15:44:34

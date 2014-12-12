@@ -1,0 +1,14 @@
+Debug  FB BaseDAL.Dispose sucess  2014/8/27 15:49:22
+Debug  FB BaseDAL.Dispose sucess  2014/8/27 15:49:22
+Debug  FB BaseDAL.Dispose sucess  2014/8/27 15:50:12
+Debug  FB BaseDAL.Dispose sucess  2014/8/27 15:50:12
+Debug  FB BaseDAL.Dispose sucess  2014/8/27 15:51:07
+Debug  FB BaseDAL.Dispose sucess  2014/8/27 15:51:07
+Debug  FB BaseDAL.Dispose sucess  2014/8/27 15:51:07
+Debug  FB BaseDAL.Dispose sucess  2014/8/27 15:51:07
+Debug  FB BaseDAL.Dispose sucess  2014/8/27 15:51:34
+Debug  FB BaseDAL.Dispose sucess  2014/8/27 15:51:34
+Debug  FB BaseDAL.Dispose sucess  2014/8/27 15:57:32
+Debug  FB BaseDAL.Dispose sucess  2014/8/27 16:25:29
+Debug  FB BaseDAL.Dispose sucess  2014/8/27 16:25:29
+Debug  FB BaseDAL.Dispose sucess  2014/8/27 16:25:29

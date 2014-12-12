@@ -1,0 +1,180 @@
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:23:27
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:23:27
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:23:27
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:23:35
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:23:35
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:23:35
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:23:36
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:23:36
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:23:56
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:24:00
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:26:47
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:26:47
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:26:48
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:26:53
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:26:54
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:26:54
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:26:54
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:26:54
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:27:42
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:27:48
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:34:10
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:34:10
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:34:11
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:34:17
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:34:17
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:34:17
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:34:17
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:34:17
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:34:35
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:34:39
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:34:54
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:34:56
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:34:56
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:35:15
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:35:38
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:35:38
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:35:48
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:35:48
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:35:48
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:36:09
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:36:28
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:36:28
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:36:28
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:36:28
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:b930a753-dc99-4fe2-944d-f0e4ecd0f966调用了我的单据新建服务成功！  2012/4/14 1:36:44
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:36:49
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:36:49
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:36:49
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:37:01
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:37:11
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:37:11
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:37:17
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:37:17
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/14 1:37:18
+Debug  ExecuteCustomerSql：declare n number(10); tsql   varchar2(1000); begin select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval   into   n   from   dual;  n:=-(n); tsql:= 'alter   sequence T_FB_DEPTBUDGETADDMASTER_SEQ   increment   by '||   n; execute   immediate   tsql;   select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval   into   n   from   dual;   tsql:= 'alter   sequence T_FB_DEPTBUDGETADDMASTER_SEQ   increment   by   1 ';   execute   immediate   tsql;   end;   2012/4/14 1:37:18
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/14 1:37:19
+Debug  生成单号：BMYS_20120414000001  2012/4/14 1:37:19
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:37:19
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:37:19
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:b930a753-dc99-4fe2-944d-f0e4ecd0f966调用了我的单据新建服务成功！  2012/4/14 1:37:20
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:37:22
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:37:24
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:37:57
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/14 1:38:05
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/14 1:38:05
+Debug  生成单号：BMYS_20120414000002  2012/4/14 1:38:05
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:38:06
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:38:06
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:b930a753-dc99-4fe2-944d-f0e4ecd0f966调用了我的单据新建服务成功！  2012/4/14 1:38:07
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:38:10
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:38:13
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:38:14
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:38:45
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:38:55
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:38:55
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:40:09
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:40:09
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:40:18
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:40:18
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:40:19
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:40:19
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:40:19
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:40:19
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:41:08
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:41:18
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:41:18
+Debug  System.ArgumentException: 类型“SMT_FB_EFModel.QueryExpression”的对象无法转换为类型“SMT_FB_EFModel.T_FB_DEPTBUDGETADDMASTER”。
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.BLL.SubjectBLL.QueryData(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1621
+   在 SMT.FB.Services.FBCommonService.Query(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 84
+参数: Name:CHECKSTATES ; Value:4  ; QueryType:T_FB_DEPTBUDGETADDMASTER
+  2012/4/14 1:41:18
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:41:32
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:41:39
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:41:39
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:41:39
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:41:39
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:41:42
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:41:43
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:41:53
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:41:53
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:b930a753-dc99-4fe2-944d-f0e4ecd0f966调用了我的单据新建服务成功！  2012/4/14 1:41:55
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:41:58
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:42:25
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:42:36
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:42:36
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:43:36
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:43:36
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:43:36
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:43:36
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:43:36
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:43:36
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:43:55
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:44:05
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:44:05
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:44:10
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:44:10
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:b930a753-dc99-4fe2-944d-f0e4ecd0f966调用了我的单据新建服务成功！  2012/4/14 1:44:11
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:44:15
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:44:38
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:44:38
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:44:38
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:44:46
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:44:46
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:44:52
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:44:52
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:44:57
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:45:12
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:45:30
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:45:30
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:45:34
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:45:41
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 1:45:44
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 2:03:04
+Debug  System.Data.EntityException: 基础提供程序在 Open 上失败。 ---> System.Data.OracleClient.OracleException: ORA-12170: TNS: 连接超时
+
+   在 System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   在 System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   在 System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.OracleClient.OracleConnection.Open()
+   在 EFOracleProvider.EFOracleConnection.Open()
+   在 System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.BLL.SubjectBLL.QueryData(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1621
+   在 SMT.FB.Services.FBCommonService.Query(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 84
+参数: Name:CHECKSTATES ; Value:  ; QueryType:T_FB_DEPTBUDGETADDMASTER
+Name:UPDATEDATE ; Value:2012/4/1 0:00:00  ; QueryType:T_FB_DEPTBUDGETADDMASTER
+Name:UPDATEDATE ; Value:2012/4/30 23:59:59  ; QueryType:T_FB_DEPTBUDGETADDMASTER
+Name:OWNERID ; Value:6ba49ec8-feb0-4f78-b801-2b8ea5387ab3  ; QueryType:
+  2012/4/14 2:03:04
+Debug  FB BaseDAL.Dispose sucess  2012/4/14 2:03:39
+Debug  System.Data.EntityException: 基础提供程序在 Open 上失败。 ---> System.Data.OracleClient.OracleException: ORA-12170: TNS: 连接超时
+
+   在 System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   在 System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   在 System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.OracleClient.OracleConnection.Open()
+   在 EFOracleProvider.EFOracleConnection.Open()
+   在 System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.BLL.SubjectBLL.QueryData(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1621
+   在 SMT.FB.Services.FBCommonService.Query(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 84
+参数: Name:CHECKSTATES ; Value:  ; QueryType:T_FB_DEPTBUDGETADDMASTER
+  2012/4/14 2:03:39

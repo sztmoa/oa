@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="450649d1-587a-4b23-8b82-52071d589d72" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1734/DailyUpdateCheckStateService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DailyUpdateCheckStateService.disco" MetadataType="Disco" ID="a6173bec-2b09-474d-88c3-2e1ec0ec94d4" SourceId="1" SourceUrl="http://localhost:1734/DailyUpdateCheckStateService.svc?disco" />
+    <MetadataFile FileName="DailyUpdateCheckStateService.xsd" MetadataType="Schema" ID="fb81ca04-b58f-4fb0-ac82-80189086a873" SourceId="1" SourceUrl="http://localhost:1734/DailyUpdateCheckStateService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DailyUpdateCheckStateService.wsdl" MetadataType="Wsdl" ID="0712297d-75fa-41d7-9571-535681afbec2" SourceId="1" SourceUrl="http://localhost:1734/DailyUpdateCheckStateService.svc?wsdl" />
+    <MetadataFile FileName="DailyUpdateCheckStateService1.wsdl" MetadataType="Wsdl" ID="d1e98481-bcfd-4449-8411-4275f7dbb291" SourceId="1" SourceUrl="http://localhost:1734/DailyUpdateCheckStateService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="DailyUpdateCheckStateService1.xsd" MetadataType="Schema" ID="2615c43e-1429-42f6-8bfb-f3f8961f1688" SourceId="1" SourceUrl="http://localhost:1734/DailyUpdateCheckStateService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

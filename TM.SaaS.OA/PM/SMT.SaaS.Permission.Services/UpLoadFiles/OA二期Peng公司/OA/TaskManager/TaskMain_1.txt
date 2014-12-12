@@ -1,0 +1,124 @@
+  public List<T_TASK_TASKMAIN> MyArrangementTaskList(int pageIndex, int pageSize, string sort, string filterString, IList<object> paras, ref int pageCount, string
+
+  checkState, DateTime startDateFrom, DateTime startDateTo, DateTime endDateFrom, DateTime endDateTo, LoginUserInfo loginUserInfo)
+        {
+            try
+            {
+
+                FAMDataModelContext context = taskmainDll.lbc.GetDataContext() as FAMDataModelContext;
+                if (context != null)
+                {
+                    //context.T_TASK_TASKMAIN.MergeOption = System.Data.Objects.MergeOption.NoTracking;
+                    //var v = from c in context.T_TASK_PARTICIPANTS
+                    //        where c.PARTICIPATEUSERID == loginUserInfo.userID
+                    //        select c;
+                    //int iAllCount = v.Count();
+                    //if (iAllCount > 0)
+                    //{
+                    //    string[] UserID = new string[iAllCount];
+                    //    foreach(
+                    //}
+                    //DateTime dtStart=new DateTime ();
+                    //DateTime dtEnd=new DateTime ();
+                    //DateTime dtStart1 = new DateTime();
+                    //DateTime dtEnd1 = new DateTime();
+                    //DateTime.TryParse(startDate, out dtStart);
+                    //DateTime.TryParse(endDate, out dtEnd);
+                    var ents = from a in context.T_TASK_TASKMAIN
+                               where a.OWNERCOMPANYID == loginUserInfo.companyID &&
+                               a.PROMOTERID == loginUserInfo.userID
+                               select a;
+                    //if (startDateFrom != null)
+                    //{
+                    //&&
+                    //       a.STARTDATE >= startDate && a.STARTDATE <= startDate1
+                    //       && a.ENDTDATE >= endDate && a.ENDTDATE <= endDate1
+                    //  ents= ents.Where(m=> m.STARTDATE >= startDateFrom);
+                    // }
+                    // DateTime FromDateRange = new DateTime();
+                    if (startDateFrom != new DateTime())
+                    {
+                        ents = ents.Where(c => c.STARTDATE >= startDateFrom);
+                    }
+                    if (startDateTo != new DateTime())
+                    {
+                        ents = ents.Where(c => c.STARTDATE <= startDateTo);
+                    }
+                    if (endDateFrom != new DateTime())
+                    {
+                        ents = ents.Where(c => c.ENDTDATE >= endDateFrom);
+                    }
+                    if (endDateTo != new DateTime())
+                    {
+                        ents = ents.Where(c => c.ENDTDATE <= endDateTo);
+                    }
+                    //string FromDateRange = "0001/1/1 0:00:00";
+                    //if (startDateFrom == new DateTime() & startDateTo == new DateTime())
+                    //    FromDateRange = "1=1";
+                    //else if (startDateFrom == new DateTime())
+                    //    FromDateRange = "T_TASK_TASKMAIN.STARTDATE<= '" + startDateTo + "'";
+                    //else if (startDateTo == new DateTime())
+                    //    FromDateRange = "T_TASK_TASKMAIN.STARTDATE>='" + startDateFrom + "'";
+                    //else
+                    //    FromDateRange = "T_TASK_TASKMAIN.STARTDATE>='" + startDateFrom + "' AND T_TASK_TASKMAIN.STARTDATE<='" + startDateTo + "'";
+                    ////ents.Where("FromDateRange");
+                    //string ToDateRange = "0001/1/1 0:00:00";
+                    //if (endDateFrom == new DateTime() & endDateTo == new DateTime())
+                    //    ToDateRange = "1=1";
+                    //else if (endDateFrom == new DateTime())
+                    //    ToDateRange = "T_TASK_TASKMAIN.ENDTDATE<= '" + endDateTo + "'";
+                    //else if (endDateTo == new DateTime())
+                    //    ToDateRange = "T_TASK_TASKMAIN.ENDTDATE>='" + endDateFrom + "'";
+                    //else
+                    //    ToDateRange = "T_TASK_TASKMAIN.ENDTDATE>='" + endDateFrom + "' AND T_TASK_TASKMAIN.ENDTDATE<='" + endDateTo + "'";
+
+                    //ents = ents.Where("" + FromDateRange + "and " + ToDateRange + " ");
+
+
+                    //if (startDate != new DateTime())
+                    //{
+                    //    ents = ents.Where(m => m.STARTDATE >= startDate);
+                    //}
+                    //if (startDate1 !=new DateTime ())
+                    //{
+                    //    ents = ents.Where(m => m.STARTDATE <= startDate1);
+                    //}
+                    //if (endDate != new DateTime())
+                    //{
+                    //    ents = ents.Where(m => m.ENDTDATE >= endDate);
+                    //}
+                    //if (endDate1 != new DateTime())
+                    //{
+                    //    ents = ents.Where(m => m.ENDTDATE <= endDate1);
+                    //}
+                    if (ents.Count() > 0)
+                    {
+                        if (!string.IsNullOrEmpty(filterString))
+                        {
+                            ents = ents.ToList().AsQueryable().Where(filterString, paras.ToArray());
+                        }
+                        ents = ents.OrderBy(sort);
+                        if (checkState == "4")
+                        {
+                            ents = ents.Where(c => DateTime.Now > c.ENDTDATE);
+                        }
+                        else if (checkState == "5")
+                        {
+                            ents = ents.Where(c => c.COMPLETEDATE > c.ENDTDATE);
+                        }
+                        else if (checkState == "2")
+                        {
+                            ents = ents.Where(c => c.COMPLETEDATE <= c.ENDTDATE);
+                        }
+                        ents = Utility.Pager<T_TASK_TASKMAIN>(ents, pageIndex, pageSize, ref pageCount);
+                        return ents.ToList();
+                    }
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+                throw (ex);
+            }
+        }

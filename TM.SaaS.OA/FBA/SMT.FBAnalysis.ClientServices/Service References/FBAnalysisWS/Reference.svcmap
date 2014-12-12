@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cbe24325-4f42-478e-98b0-01aa9cb8c9b7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1734/FBAnalysisService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FBAnalysisService.xsd" MetadataType="Schema" ID="0d421096-9a2c-4bfa-a436-a5478ec6a2d9" SourceId="1" SourceUrl="http://localhost:1734/FBAnalysisService.svc?xsd=xsd4" />
+    <MetadataFile FileName="FBAnalysisService1.xsd" MetadataType="Schema" ID="9a989265-33be-4196-ac9e-25e7b1645b59" SourceId="1" SourceUrl="http://localhost:1734/FBAnalysisService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FBAnalysisService2.xsd" MetadataType="Schema" ID="2e385324-88b9-436b-92d5-c1af68679d85" SourceId="1" SourceUrl="http://localhost:1734/FBAnalysisService.svc?xsd=xsd6" />
+    <MetadataFile FileName="FBAnalysisService21.xsd" MetadataType="Schema" ID="3ca26b81-5f10-46e9-b16e-eaf8c1436440" SourceId="1" SourceUrl="http://localhost:1734/FBAnalysisService.svc?xsd=xsd5" />
+    <MetadataFile FileName="FBAnalysisService22.xsd" MetadataType="Schema" ID="0b9c3143-2953-4ceb-8115-9746c450e2ce" SourceId="1" SourceUrl="http://localhost:1734/FBAnalysisService.svc?xsd=xsd7" />
+    <MetadataFile FileName="FBAnalysisService5.xsd" MetadataType="Schema" ID="50a4a2ef-ea59-4005-812e-90e611ddc134" SourceId="1" SourceUrl="http://localhost:1734/FBAnalysisService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FBAnalysisService6.xsd" MetadataType="Schema" ID="50e5ccda-3215-4dfb-bd57-9fa7ed915495" SourceId="1" SourceUrl="http://localhost:1734/FBAnalysisService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FBAnalysisService.wsdl" MetadataType="Wsdl" ID="8e5013df-a7b2-4074-bb14-7fbdcfbb0cf4" SourceId="1" SourceUrl="http://localhost:1734/FBAnalysisService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="FBAnalysisService8.xsd" MetadataType="Schema" ID="fa50dd09-1109-4535-86d2-cc0964506124" SourceId="1" SourceUrl="http://localhost:1734/FBAnalysisService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FBAnalysisService1.wsdl" MetadataType="Wsdl" ID="9a6b06ad-a1b7-456e-960a-eff7d14335f8" SourceId="1" SourceUrl="http://localhost:1734/FBAnalysisService.svc?wsdl" />
+    <MetadataFile FileName="FBAnalysisService.disco" MetadataType="Disco" ID="46332071-9d20-4f0d-8f0a-df621c8761a1" SourceId="1" SourceUrl="http://localhost:1734/FBAnalysisService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

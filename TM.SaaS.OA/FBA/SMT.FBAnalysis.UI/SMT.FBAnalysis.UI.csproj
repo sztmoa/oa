@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9D4754E3-20F9-477F-B53F-ABB9FBC4667B}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMT.FBAnalysis.UI</RootNamespace>
+    <AssemblyName>SMT.FBAnalysis.UI</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>zh-Hans</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>SMT.FBAnalysis.UI.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>SMT.FBAnalysis.UI.App</SilverlightAppEntry>
+    <TestPageFileName>SMT.FBAnalysis.UITestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>true</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="SMT.FileUpLoad">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.FileUpLoad.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SAAS.Behaviors">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SAAS.ClientServices">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.ClientServices.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SAAS.ClientUtility">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.ClientUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SAAS.CommonReportsModel">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.CommonReportsModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SAAS.Controls.Toolkit">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SAAS.Controls.Toolkit.Windows">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Controls.Toolkit.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SAAS.Extensions">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SaaS.FrameworkUI">
+      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SaaS.FrameworkUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SaaS.Globalization">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SaaS.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SaaS.LocalData">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SaaS.LocalData.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SAAS.Main.CurrentContext">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Main.CurrentContext.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SAAS.Main.CurrentContextLoadData">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Main.CurrentContextLoadData.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SaaS.MoblieXml">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SaaS.MoblieXml.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SAAS.Themes">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Themes.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.Saas.Tools">
+      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.Saas.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SAAS.Utility">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SaaS.Window">
+      <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SaaS.Window.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Navigation, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\MicroSoft Lib\Client\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\BorrowApp_sel.xaml.cs">
+      <DependentUpon>BorrowApp_sel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\ErrorWindow.xaml.cs">
+      <DependentUpon>ErrorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\ItemLookup.xaml.cs">
+      <DependentUpon>ItemLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\LookupForm.xaml.cs">
+      <DependentUpon>LookupForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\SubjectApp_sel.xaml.cs">
+      <DependentUpon>SubjectApp_sel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CommonTools.cs" />
+    <Compile Include="Common\DictionaryComboBox.cs" />
+    <Compile Include="Common\ExportToCSV.cs" />
+    <Compile Include="Common\GridHelper.cs" />
+    <Compile Include="Common\TravelDictionaryComboBox.cs" />
+    <Compile Include="Common\UIDictionary.cs" />
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="Common\ValueConverter.cs" />
+    <Compile Include="Form\BaseForm.cs" />
+    <Compile Include="Form\DailyManagement\aa.xaml.cs">
+      <DependentUpon>aa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DailyManagement\BorrowAppForm.xaml.cs">
+      <DependentUpon>BorrowAppForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DailyManagement\ChargeApplyForm.xaml.cs">
+      <DependentUpon>ChargeApplyForm.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Form\DailyManagement\ImportChargeApply.xaml.cs">
+      <DependentUpon>ImportChargeApply.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DailyManagement\RepayApplyForm.xaml.cs">
+      <DependentUpon>RepayApplyForm.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Form\ReportModels\V_COSTAPPLYBILL.cs" />
+    <Compile Include="Form\ReportModels\V_TRAVELEXPENSES.cs" />
+    <Compile Include="Models\BudgetType.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\ExecutionCondition.cs" />
+    <Compile Include="Models\StandingBookInfo.cs" />
+    <Compile Include="Views\AcountsView.xaml.cs">
+      <DependentUpon>AcountsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BasePage.cs" />
+    <Compile Include="Views\ContactDetails.xaml.cs">
+      <DependentUpon>ContactDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DailyManagement\BorrowApplyManagement.xaml.cs">
+      <DependentUpon>BorrowApplyManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DailyManagement\ChargeApplyManagement.xaml.cs">
+      <DependentUpon>ChargeApplyManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DailyManagement\RepayApplyManagement.xaml.cs">
+      <DependentUpon>RepayApplyManagement.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Login\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MonthlyBudgetAnalysis.xaml.cs">
+      <DependentUpon>MonthlyBudgetAnalysis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecordList.xaml.cs">
+      <DependentUpon>RecordList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StandingBook.xaml.cs">
+      <DependentUpon>StandingBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YearlyBudgetAnalysis.xaml.cs">
+      <DependentUpon>YearlyBudgetAnalysis.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="CommonForm\BorrowApp_sel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CommonForm\ErrorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CommonForm\ItemLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CommonForm\LookupForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CommonForm\SubjectApp_sel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Form\DailyManagement\aa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Form\DailyManagement\BorrowAppForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Form\DailyManagement\ChargeApplyForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Form\DailyManagement\ImportChargeApply.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Form\DailyManagement\RepayApplyForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AcountsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ContactDetails.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DailyManagement\BorrowApplyManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DailyManagement\ChargeApplyManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DailyManagement\RepayApplyManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Login\Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MonthlyBudgetAnalysis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\RecordList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StandingBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\YearlyBudgetAnalysis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\OutOfBrowserSettings.xml" />
+    <Content Include="ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMT.FBAnalysis.ClientServices\SMT.FBAnalysis.ClientServices.csproj">
+      <Project>{733A41D2-E800-44B0-9D1D-90481F4207D5}</Project>
+      <Name>SMT.FBAnalysis.ClientServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

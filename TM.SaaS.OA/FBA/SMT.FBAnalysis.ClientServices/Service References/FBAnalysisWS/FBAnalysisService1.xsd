@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.CustomModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.CustomModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfV_ExecutionList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_ExecutionList" nillable="true" type="tns:V_ExecutionList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_ExecutionList" nillable="true" type="tns:ArrayOfV_ExecutionList" />
+  <xs:complexType name="V_ExecutionList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApprovedApplyMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ApprovingApplyMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AprApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AugApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Borrow" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BudgetMoneyMonth" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BudgetMoneyYear" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BudgetMonth" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BudgetSeizureRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BudgetYear" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BudgetYearBalance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DecApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FebApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="JanApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="JulApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="JunApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MarApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MayApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MonthChargeList" nillable="true" type="tns:ArrayOfMonthCharge" />
+      <xs:element minOccurs="0" name="NovApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OctApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OrganizationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrganizationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgnizationType" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SepApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SubjectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subtotal" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_ExecutionList" nillable="true" type="tns:V_ExecutionList" />
+  <xs:complexType name="ArrayOfMonthCharge">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MonthCharge" nillable="true" type="tns:MonthCharge" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMonthCharge" nillable="true" type="tns:ArrayOfMonthCharge" />
+  <xs:complexType name="MonthCharge">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChargeMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Month" type="xs:int" />
+      <xs:element minOccurs="0" name="Year" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MonthCharge" nillable="true" type="tns:MonthCharge" />
+  <xs:complexType name="ArrayOfV_PerExecutionList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_PerExecutionList" nillable="true" type="tns:V_PerExecutionList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_PerExecutionList" nillable="true" type="tns:ArrayOfV_PerExecutionList" />
+  <xs:complexType name="V_PerExecutionList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApprovedApplyMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ApprovingApplyMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AprApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AugApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DecApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FebApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="JanApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="JulApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="JunApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MarApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MayApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NovApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OctApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OrganizationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrganizationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SepApprovedMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SubjectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subtotal" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_PerExecutionList" nillable="true" type="tns:V_PerExecutionList" />
+  <xs:complexType name="ArrayOfV_BudgetRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_BudgetRecord" nillable="true" type="tns:V_BudgetRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_BudgetRecord" nillable="true" type="tns:ArrayOfV_BudgetRecord" />
+  <xs:complexType name="V_BudgetRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CheckState" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CompanyID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateUserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UpdateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="XmlObjectValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_BudgetRecord" nillable="true" type="tns:V_BudgetRecord" />
+  <xs:complexType name="ArrayOfV_ContactDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_ContactDetail" nillable="true" type="tns:V_ContactDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_ContactDetail" nillable="true" type="tns:ArrayOfV_ContactDetail" />
+  <xs:complexType name="V_ContactDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BorrowMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BorrowType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CheckState" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CompanyID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateUserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelRecordCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepayMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RepayType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="XmlObjectValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_ContactDetail" nillable="true" type="tns:V_ContactDetail" />
+  <xs:complexType name="ArrayOfV_DeptContactDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_DeptContactDetail" nillable="true" type="tns:V_DeptContactDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_DeptContactDetail" nillable="true" type="tns:ArrayOfV_DeptContactDetail" />
+  <xs:complexType name="V_DeptContactDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NormalMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OwnerID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerPostID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerPostName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReserveMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SpecialMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalMoney" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_DeptContactDetail" nillable="true" type="tns:V_DeptContactDetail" />
+  <xs:complexType name="ArrayOfV_StandingBook">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_StandingBook" nillable="true" type="tns:V_StandingBook" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_StandingBook" nillable="true" type="tns:ArrayOfV_StandingBook" />
+  <xs:complexType name="V_StandingBook">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChecksatesName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateUserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UpdateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="XmlObjectValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_StandingBook" nillable="true" type="tns:V_StandingBook" />
+  <xs:complexType name="ArrayOfV_YearlyBudgetAnalysis">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_YearlyBudgetAnalysis" nillable="true" type="tns:V_YearlyBudgetAnalysis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_YearlyBudgetAnalysis" nillable="true" type="tns:ArrayOfV_YearlyBudgetAnalysis" />
+  <xs:complexType name="V_YearlyBudgetAnalysis">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SubjectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YearBudgetAdd" type="xs:decimal" />
+      <xs:element minOccurs="0" name="YearBudgetApply" type="xs:decimal" />
+      <xs:element minOccurs="0" name="YearBudgetDeviation" type="xs:decimal" />
+      <xs:element minOccurs="0" name="YearBudgetDeviationRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="YearChargeMoney" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_YearlyBudgetAnalysis" nillable="true" type="tns:V_YearlyBudgetAnalysis" />
+  <xs:complexType name="ArrayOfV_MonthlyBudgetAnalysis">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_MonthlyBudgetAnalysis" nillable="true" type="tns:V_MonthlyBudgetAnalysis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_MonthlyBudgetAnalysis" nillable="true" type="tns:ArrayOfV_MonthlyBudgetAnalysis" />
+  <xs:complexType name="V_MonthlyBudgetAnalysis">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LastBudgetMonth" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MonthBudgetAdd" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MonthBudgetApply" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MonthBudgetDeviation" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MonthBudgetDeviationRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MonthChargeMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SubjectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_MonthlyBudgetAnalysis" nillable="true" type="tns:V_MonthlyBudgetAnalysis" />
+</xs:schema>

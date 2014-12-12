@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SMT.HRM.CustomModel.Response" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SMT.HRM.CustomModel.Response" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:12168/AttendanceService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:12168/AttendanceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+  <xs:complexType name="CalculateOTHoursResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttendSolution" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstEndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstStartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FourthEndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FourthStartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Month" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OTDays" type="xs:double" />
+      <xs:element minOccurs="0" name="OTHours" type="xs:double" />
+      <xs:element minOccurs="0" name="Result" type="xs:int" />
+      <xs:element minOccurs="0" name="SecondEndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondStartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThirdEndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThirdStartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkPerDay" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalculateOTHoursResponse" nillable="true" type="tns:CalculateOTHoursResponse" />
+  <xs:complexType name="CaculateLeaveHoursResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdjustLeaveDays" type="xs:double" />
+      <xs:element minOccurs="0" name="AdjustLeaveHours" type="xs:double" />
+      <xs:element minOccurs="0" name="AnnualVacationDays" type="xs:double" />
+      <xs:element minOccurs="0" name="AnnualVacationHours" type="xs:double" />
+      <xs:element minOccurs="0" name="AttendSolution" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvgWorkPerDay" type="xs:double" />
+      <xs:element minOccurs="0" name="DuplicateEndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DuplicateStartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FineDays" type="xs:double" />
+      <xs:element minOccurs="0" name="FineHours" type="xs:double" />
+      <xs:element minOccurs="0" name="FineType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FineTypeMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstEndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstStartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FourthEndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FourthStartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LeaveDays" type="xs:double" />
+      <xs:element minOccurs="0" name="LeaveHours" type="xs:double" />
+      <xs:element minOccurs="0" name="LeaveTotalDays" type="xs:double" />
+      <xs:element minOccurs="0" name="LeaveTotalHours" type="xs:double" />
+      <xs:element minOccurs="0" name="LeaveTypeValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LeftDays" type="xs:double" />
+      <xs:element minOccurs="0" name="LeftHours" type="xs:double" />
+      <xs:element minOccurs="0" name="MaxVacationDays" type="xs:double" />
+      <xs:element minOccurs="0" name="MaxVacationHours" type="xs:double" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Month" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OvertTimeList" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Result" type="xs:int" />
+      <xs:element minOccurs="0" name="SecondEndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondStartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SexRestrict" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThirdEndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThirdStartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkPerDay" type="xs:decimal" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="leaveReferOT" nillable="true" type="q2:ArrayOfT_HR_LEAVEREFEROT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CaculateLeaveHoursResponse" nillable="true" type="tns:CaculateLeaveHoursResponse" />
+  <xs:complexType name="CalculateLeaveCancelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdjustLeaveDays" type="xs:double" />
+      <xs:element minOccurs="0" name="AdjustLeaveHours" type="xs:double" />
+      <xs:element minOccurs="0" name="AnnualVacationDays" type="xs:double" />
+      <xs:element minOccurs="0" name="AnnualVacationHours" type="xs:double" />
+      <xs:element minOccurs="0" name="AttendSolution" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvgWorkPerDay" type="xs:double" />
+      <xs:element minOccurs="0" name="CancelDays" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CancelHours" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CancelTotalDays" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CancelTotalHours" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="DuplicateEndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DuplicateStartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FineType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstEndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstSetting" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstStartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FourthEndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FourthStartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasBirthday" type="xs:int" />
+      <xs:element minOccurs="0" name="HasDuplicateRecord" type="xs:int" />
+      <xs:element minOccurs="0" name="HasEvection" type="xs:int" />
+      <xs:element minOccurs="0" name="HasOutApply" type="xs:int" />
+      <xs:element minOccurs="0" name="IsHalfDayMorningWork" type="xs:int" />
+      <xs:element minOccurs="0" name="IsHalfDayNoonWork" type="xs:int" />
+      <xs:element minOccurs="0" name="IsOnceRestVacation" type="xs:int" />
+      <xs:element minOccurs="0" name="IsOutOfLeaveDateRange" type="xs:int" />
+      <xs:element minOccurs="0" name="IsPastMaxVacationDays" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsPastOneDay" type="xs:int" />
+      <xs:element minOccurs="0" name="IsPastYouthDay" type="xs:int" />
+      <xs:element minOccurs="0" name="IsWorkDay" type="xs:int" />
+      <xs:element minOccurs="0" name="LeftDays" type="xs:double" />
+      <xs:element minOccurs="0" name="LeftHours" type="xs:double" />
+      <xs:element minOccurs="0" name="MaxVacationDays" type="xs:double" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Month" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OvertTimeList" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Result" type="xs:int" />
+      <xs:element minOccurs="0" name="SecondEndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondSetting" type="xs:int" />
+      <xs:element minOccurs="0" name="SecondStartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SexRestrict" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThirdEndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThirdStartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkPerDay" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalculateLeaveCancelResponse" nillable="true" type="tns:CalculateLeaveCancelResponse" />
+</xs:schema>

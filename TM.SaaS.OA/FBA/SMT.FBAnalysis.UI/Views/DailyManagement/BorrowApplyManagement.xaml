@@ -1,0 +1,92 @@
+﻿<localbase:BasePage x:Class="SMT.FBAnalysis.UI.Views.DailyManagement.BorrowApplyManagement" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+           xmlns:basics="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:smt="clr-namespace:SMT.SaaS.FrameworkUI;assembly=SMT.SaaS.FrameworkUI"  
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+           xmlns:localbase="clr-namespace:SMT.FBAnalysis.UI"  
+           d:DesignWidth="800" d:DesignHeight="480" 
+            Title="个人借款申请">
+    <Grid x:Name="PARENT">
+        <Grid x:Name="LayoutRoot">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <!--导航条-->
+
+            <smt:ViewTitle x:Name="ViewTitles" Width="auto" Grid.Row="0" VerticalAlignment="Top"></smt:ViewTitle>
+            <!--查询条件-->
+            <Grid Grid.Row="1" Margin="0,5">
+            	<Grid.ColumnDefinitions>
+            		<ColumnDefinition Width="auto"></ColumnDefinition>
+					<ColumnDefinition Width="auto"></ColumnDefinition>
+					<ColumnDefinition Width="auto"></ColumnDefinition>
+					<ColumnDefinition Width="auto"></ColumnDefinition>
+					<ColumnDefinition Width="auto"></ColumnDefinition>
+					<ColumnDefinition Width="auto"></ColumnDefinition>
+					<ColumnDefinition Width="auto"></ColumnDefinition>
+					<ColumnDefinition Width="auto"></ColumnDefinition>
+					<ColumnDefinition Width="auto"></ColumnDefinition>
+					<ColumnDefinition Width="auto"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+                	<RowDefinition Height="auto"></RowDefinition>
+				</Grid.RowDefinitions>
+				<TextBlock Grid.Column="0" Text="{Binding Converter={StaticResource ResourceConveter}, Source=INVOICESCODE}" Margin="5,0,0,0" VerticalAlignment="Center" />
+                <TextBox x:Name="txtCode" Grid.Column="1" MinWidth="120" Width="120" MaxLength="50" Margin="4,0,0,0" Height="22"/>
+                <TextBlock  Grid.Column="2" Text="{Binding Converter={StaticResource ResourceConveter}, Source=REQUESTMAN}" Margin="5,0,0,0" VerticalAlignment="Center" />
+                <smt:LookUp x:Name="lkOrg" Grid.Column="3" Height="22" FindClick="lkOrg_FindClick" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="120" Margin="5,0,0,0"/>
+                <TextBlock Grid.Column="4" Text="{Binding Converter={StaticResource ResourceConveter}, Source=STARTTIME}" Margin="5,0,0,0" VerticalAlignment="Center" />
+                <basics:DatePicker x:Name="dpStart" Grid.Column="5" Margin="4,0,0,0" Width="120" Height="22"/>
+                <TextBlock Grid.Column="6" Text="{Binding Converter={StaticResource ResourceConveter}, Source=TO}" Margin="5,0,0,0" VerticalAlignment="Center" />
+                <basics:DatePicker x:Name="dpEnd" Grid.Column="7" Margin="4,0,0,0" Width="120" Height="22"/>
+                <Button x:Name="SearchBtn" Grid.Column="8" Content="{Binding Converter={StaticResource ResourceConveter}, Source=SEARCH}" Click="SearchBtn_Click" Margin="5,0,0,0" Style="{StaticResource CommonButtonStyle}" Width="70" Height="22"/>
+                <Button x:Name="ResetBtn" Grid.Column="9" Content="{Binding Converter={StaticResource ResourceConveter}, 
+                            Source=RESET }" Click="ResetBtn_Click"  Margin="10,0,0,0" Style="{StaticResource CommonButtonStyle}" Width="70" Height="22"/>
+            </Grid>
+            <!--toolbar-->
+            <smt:FormToolBar x:Name="ToolBar" Width="auto" Grid.Row="2"/>
+            <!--datagrid显示-->
+            <data:DataGrid x:Name="DaGr" AutoGenerateColumns="False"  
+                           ItemsSource="{Binding Collection}"  RenderTransformOrigin="0.5,0.5"
+                           IsReadOnly="True" 
+                           ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" SelectionChanged="DaGr_SelectionChanged"
+                           HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto" Style="{StaticResource DataGridStyle}"
+                           CellStyle="{StaticResource DataGridCellStyle}" RowStyle="{StaticResource DataGridRowStyle}" RowHeaderStyle="{StaticResource DataGridRowHeaderStyle}"
+                           Grid.Column="1" Grid.Row="3">
+                <data:DataGrid.Columns>
+                    <data:DataGridTemplateColumn HeaderStyle="{StaticResource DataGridCheckBoxColumnHeaderStyle}">
+                        <data:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Name="entityLogo" Width="16" Height="16"></Image>
+                            </DataTemplate>
+                        </data:DataGridTemplateColumn.CellTemplate>
+                    </data:DataGridTemplateColumn>
+					<data:DataGridTextColumn Header="单据编号" Binding="{Binding BORROWAPPLYMASTERCODE}"/>
+                    <data:DataGridTextColumn Header="借款类型" Binding="{Binding Path=REPAYTYPE,Converter={StaticResource DictionaryConverter},ConverterParameter=BorrowType}"/>
+                    <data:DataGridTextColumn Header="借款金额" Binding="{Binding TOTALMONEY}"/>
+                    <data:DataGridTextColumn Header="单据状态" Binding="{Binding Path=CHECKSTATES,Converter={StaticResource DictionaryConverter},ConverterParameter=CHECKSTATE}"/>
+					<data:DataGridTextColumn Header="申请人" Binding="{Binding Path=OWNERNAME}"/>
+                    <data:DataGridTextColumn Header="申请部门" Binding="{Binding Path=OWNERDEPARTMENTNAME}"/>
+                    <data:DataGridTextColumn Header="申请公司" Binding="{Binding Path=OWNERCOMPANYNAME}"/>
+                    <data:DataGridTextColumn Header="创建人" Binding="{Binding CREATEUSERNAME}"/>
+                    <data:DataGridTextColumn Header="创建时间" Binding="{Binding CREATEDATE, Converter={StaticResource CustomDateConverter},ConverterParameter=DATETIMES}"/>
+                    <data:DataGridTextColumn Header="更新时间" Binding="{Binding UPDATEDATE, Converter={StaticResource CustomDateConverter},ConverterParameter=DATETIMES}"/>                                                            
+                </data:DataGrid.Columns>
+            </data:DataGrid>
+            <!--翻页控件-->
+
+            <smt:GridPager Name="dataPager" PageSize="20" Click="GridPager_Click"  VerticalAlignment="Bottom" Grid.Row="4"></smt:GridPager>
+        </Grid>
+    </Grid>
+</localbase:BasePage>

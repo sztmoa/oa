@@ -1,0 +1,43 @@
+﻿<smtLocal:BaseForm xmlns:smtLocal="clr-namespace:SMT.FBAnalysis.UI" x:Class="SMT.FBAnalysis.UI.CommonForm.ItemLookUp" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+            xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"  
+                   xmlns:local="clr-namespace:SMT.FBAnalysis.UI"
+                   
+            xmlns:smt="clr-namespace:SMT.SaaS.FrameworkUI;assembly=SMT.SaaS.FrameworkUI"
+             d:DesignHeight="300">
+
+    <Grid x:Name="LayoutRoot"  Margin="7" Height="290">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <data:DataGrid Grid.Row="0"  x:Name="dgvItemList" AutoGenerateColumns="False" SelectionMode="Single" 
+                        HorizontalAlignment="Stretch" 
+                         Style="{StaticResource DataGridStyle}"
+                        CellStyle="{StaticResource DataGridCellStyle}" RowStyle="{StaticResource DataGridRowStyle}" 
+                        RowHeaderStyle="{StaticResource DataGridRowHeaderStyle}" 
+                       ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" Margin="0,4,0,0"
+                       VerticalAlignment="Stretch">
+            <data:DataGrid.Columns>
+                
+                <data:DataGridTextColumn Header="事项编码" Binding="{Binding APPROVALCODE}" IsReadOnly="True" Width="110" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
+                </data:DataGridTextColumn>
+
+                <data:DataGridTextColumn Header="事项标题" Binding="{Binding APPROVALTITLE}" IsReadOnly="True" Width="250" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
+                </data:DataGridTextColumn>
+
+                <data:DataGridTextColumn Header="更新时间" Binding="{Binding UPDATEDATE, Converter={StaticResource CustomDateConverter},ConverterParameter=DATETIMES}" IsReadOnly="True" Width="150" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
+                </data:DataGridTextColumn>
+
+            </data:DataGrid.Columns>
+        </data:DataGrid>
+        <smt:GridPager Name="dataPager" PageSize="20" Click="GridPager_Click"  VerticalAlignment="Bottom" Grid.Row="1"></smt:GridPager>
+        <TextBlock Text="如果不选，默认不关联事项审批项" Grid.Row="2" Foreground="Red" HorizontalAlignment="Center" />
+    </Grid>
+</smtLocal:BaseForm>

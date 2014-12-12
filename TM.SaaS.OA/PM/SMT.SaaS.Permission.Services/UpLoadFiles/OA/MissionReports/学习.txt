@@ -1,0 +1,19 @@
+ http://dy-wizard.com/Tutorial/silverlight/Uploading%20and%20downloading%20images%20from%20WCF%20in%20Silverlight/Uploading%20and%20downloading%20images%20from%20WCF%20in%20Silverlight.aspx
+上传下载
+
+FileStream fImageFile = new FileStream("ImagePath", FileMode.Open);
+byte[] fImageByte = new byte[(int)fImageFile.Length];
+fImageFile.Read(fImageByte, 0, fImageByte.Length);
+
+using (SqlConnection conn = new SqlConnection("ConnectionString"))
+{
+    SqlCommand comm = new SqlCommand("Insert Into Table1 (Image) Values (@Image)", conn);
+    comm.Parameters.Add(new SqlParameter(@Image, fImageByte));
+    comm.Parameters.Add("@Image", SqlDbType.Binary);
+    comm.Parameters["@Image"] = fImageByte;
+    conn.Open();
+    comm.EndExecuteNonQuery();
+}
+
+
+http://www.blue1000.com/bkhtml/2008-06/57164.htm 选择图片

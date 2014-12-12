@@ -1,0 +1,5 @@
+admin20100920~
+
+
+select t.*, t.rowid from t_flow_enginemsglist t where t.createdate='2010/09/26' and t.receivetime='10:24:22'
+select t.*, t.rowid from t_flow_enginemsglist t  where createdate ='2010/10/08' and createtime >'22:03:32'

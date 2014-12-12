@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.BLL" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.BLL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="FBAEnums.BLLPrefixNames">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Execution" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FBAEnums.BLLPrefixNames" nillable="true" type="tns:FBAEnums.BLLPrefixNames" />
+</xs:schema>

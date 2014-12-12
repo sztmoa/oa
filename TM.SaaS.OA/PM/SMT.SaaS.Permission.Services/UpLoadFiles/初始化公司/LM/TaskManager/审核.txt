@@ -1,0 +1,504 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Shapes;
+using System.Text.RegularExpressions;
+
+using SMT.SaaS.FrameworkUI;
+using SMT.SaaS.EntityService.TMCommonWS;
+using SMT.Saas.Tools.PermissionWS;
+using SMT.Saas.Tools.PersonnelWS;
+using SMT.SaaS.FrameworkUI.AuditControl;
+using SMT.TM.UI.Common;
+using SMT.SaaS.EntityService;
+using System.Collections.ObjectModel;
+
+namespace SMT.TM.UI.MyForms.TrainResource.TrainProject
+{
+    public partial class TrainProjectForm : UserControl, IEntityEditor
+    {
+        /// <summary>
+        /// 控制窗体类型
+        /// </summary>
+        public FormTypes FormType { get; set; }
+        /// <summary>
+        /// 机构编号
+        /// </summary>
+        public string TrainProjectId { get; set; }
+        private EntityAdapter<T_TM_TRAINPROJECT> adapter = new EntityAdapter<T_TM_TRAINPROJECT>();
+        private List<ToolbarItem> ToolbarItems;
+        T_TM_TRAINPROJECT TrainProject;
+        /// <summary>
+        /// 保存的类型
+        /// </summary>
+        string saveType = "CommonSave";
+        //T_TM_TRAINCOURSE TrainCourse;
+        //T_TM_TRANINGCHECKPOINT CheckPoint;
+        //T_TM_TRAININGESTIMATION TrainingEstimation;
+        public TrainProjectForm()
+        {
+            InitializeComponent();
+            InitForm();
+        }
+        public TrainProjectForm(FormTypes formType, string trainProjectId)
+        {
+            FormType = formType;
+            TrainProjectId = trainProjectId;
+            InitializeComponent();
+            if (FormType == FormTypes.Browse)
+            {
+                this.projectCourse.IsEnabled = false;
+                this.assessmnetMode.IsEnabled = false;
+                this.evaluationMode.IsEnabled = false;
+                //this.feeItem.IsEnabled = false;
+            }
+            InitForm();
+
+        }
+        private void SetToolBar()
+        {
+            if (FormType == FormTypes.New)
+                ToolbarItems = Utility.CreateFormSaveButton();
+            else if (FormType == FormTypes.Edit)
+                ToolbarItems = Utility.CreateFormEditButton();
+            else
+                ToolbarItems = new List<ToolbarItem>();
+            //RefreshUI(RefreshedTypes.All);
+        }
+        void TrainProjectForm_Loaded(object sender, RoutedEventArgs e)
+        {
+            SetToolBar();
+        }
+
+        private void InitForm()
+        {
+            this.Loaded += new RoutedEventHandler(TrainProjectForm_Loaded);
+            if (FormType == FormTypes.New)
+            {
+                TrainProject = adapter.NewEntity;
+                TrainProject.TRAINPROJECTID = Guid.NewGuid().ToString();
+                TrainProject.HISTORYTRAINPROJECTID = Guid.NewGuid().ToString();
+                TrainProject.CREATECOMPANYID = Guid.NewGuid().ToString();
+                TrainProject.CREATEDEPARTMENTID = Guid.NewGuid().ToString();
+                TrainProject.OWNERPOSTID = Guid.NewGuid().ToString();
+                TrainProject.OWNERID = Guid.NewGuid().ToString();
+                TrainProject.UPDATEUSERID = Guid.NewGuid().ToString();
+                TrainProject.OWNERCOMPANYID = Guid.NewGuid().ToString();
+                TrainProject.CREATEPOSTID = Guid.NewGuid().ToString();
+                TrainProject.CREATEUSERID = Guid.NewGuid().ToString();
+                Utility.CreateCreateuserInfo(TrainProject);
+                this.baseInfo.dpTrainProject.DataSource = TrainProject;
+                this.assessmnetMode.assessmentModeList.DataSource = TrainProject;
+                this.evaluationMode.triningEstimationList.DataSource = TrainProject;
+                this.projectCourse.trainCourseList.DataSource = TrainProject;
+
+            }
+            else
+            {
+                Dictionary<string, object> dic = new Dictionary<string, object>();
+                dic.Add("TRAINPROJECTID", TrainProjectId);
+                ObservableCollection<string> include = new ObservableCollection<string>();
+                //include.Add("T_TM_PROJECTCOURSE");
+                //include.Add("T_TM_PROJECTCOURSE.T_TM_TRAINCOURSE");
+                include.Add("T_TM_TRANINGCHECKPOINT");
+                include.Add("T_TM_TRAININGESTIMATION");
+                adapter.QueryWithFilterCompleted += new EventHandler<QueryComplatedEventArgs<T_TM_TRAINPROJECT>>(adapter_QueryWithFilterCompleted);
+                adapter.QueryWithFilter(typeof(T_TM_TRAINPROJECT).Name, include, dic, null, null, "");
+            }
+
+            adapter.SaveDefaultComplated += new EventHandler<SaveEntityCompletedEventArgs>(adapter_SaveDefaultComplated);
+        }
+
+
+        #region 完成事件
+        void adapter_SaveDefaultComplated(object sender, SaveEntityCompletedEventArgs e)
+        {
+            if (e.Result.ResultStatus)// 保存成功
+            {
+                if (saveType == "CommonSave") // 普通保存
+                {
+                    Utility.ShowCustomMessage(MessageTypes.Message, Utility.GetResourceStr("提示"), "保存成功！");
+                }
+                else if (saveType == "AuditSave") // 审核保存
+                {
+                 Utility.ShowCustomMessage(MessageTypes.Message, Utility.GetResourceStr("提示"), "审核通过！");
+                }
+            }
+        }
+        void adapter_QueryWithFilterCompleted(object sender, QueryComplatedEventArgs<T_TM_TRAINPROJECT> e)
+        {
+            if (e.Result != null)
+            {
+                ObservableCollection<T_TM_TRAINPROJECT> trainProject = e.Result as ObservableCollection<T_TM_TRAINPROJECT>;
+                TrainProject = trainProject[0];
+                //this.baseInfo.dpTrainProject.DataSource = TrainProject;
+                //this.projectCourse.trainCourseList.DataSource = TrainCourse;
+                //this.assessmnetMode.assessmentModeList.DataSource = CheckPoint;
+                //this.evaluationMode.triningEstimationList.DataSource = TrainingEstimation;
+                if (FormType == FormTypes.Edit)
+                {
+                    RefreshToolBar();
+                }
+                this.baseInfo.dpTrainProject.DataSource = TrainProject;
+                this.assessmnetMode.assessmentModeList.DataSource = TrainProject;
+                this.evaluationMode.triningEstimationList.DataSource = TrainProject;
+                this.projectCourse.trainCourseList.DataSource = TrainProject;
+            }
+        }
+        private void RefreshToolBar()
+        {
+                if (TrainProject.CHECKSTATES == 0)
+                {
+                    ToolbarItem item = new ToolbarItem
+                    {
+                        DisplayType = ToolbarItemDisplayTypes.Image,
+                        Key = "2",
+                        Title = Utility.GetResourceStr("审核"),// "提交审核",
+                        ImageUrl = "/SMT.RM.UI;Component/Images/ToolBar/18_audit.png"
+                    };
+                    ToolbarItems.Add(item);
+                }
+               
+                else
+                {
+                    if (TrainProject.CHECKSTATES == 2)
+                    {
+                        ToolbarItem item = new ToolbarItem
+                        {
+                            DisplayType = ToolbarItemDisplayTypes.Image,
+                            Key = "2",
+                            Title = Utility.GetResourceStr("审核通过"),// "审核通过",
+                            ImageUrl = "/SMT.RM.UI;Component/Images/ToolBar/18_audit.png"
+                        };
+                        ToolbarItems.Add(item);
+                    }
+                    if (TrainProject.CHECKSTATES == 3)
+                    {
+                        ToolbarItem item = new ToolbarItem
+                        {
+                            DisplayType = ToolbarItemDisplayTypes.Image,
+                            Key = "3",
+                            Title = Utility.GetResourceStr("提审核不通过"),// "提审核不通过",
+                            ImageUrl = "/SMT.RM.UI;Component/Images/ToolBar/ico_16_4424.png"
+                        };
+                        ToolbarItems.Add(item);
+                    }
+                }
+           
+            RefreshUI(RefreshedTypes.ToolBar);
+        }
+        #endregion
+        /// <summary>
+        /// 选项卡切换事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tbcContainer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (tbcContainer == null)
+                return;
+            switch (tbcContainer.SelectedIndex)
+            {
+                case 0:
+                    baseInfo.TrainProjectLoad(TrainProject);
+                    break;
+                case 1:
+                    projectCourse.ProjectCourseLoad(TrainProject);
+                    break;
+                case 2:
+                    assessmnetMode.AssessmentModeFormLoad(TrainProject);
+                    break;
+                case 3:
+                    evaluationMode.EvaluationModeFormLoad(TrainProject);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        #region 保存的方法
+        /// <summary>
+        /// 保存
+        /// </summary>
+        private bool Save()
+        {
+            bool flag = false;
+            //TrainProject = this.baseInfo.dpTrainProject.DataSource as T_TM_TRAINPROJECT;
+            adapter.SaveDefault(TrainProject);
+
+            try
+            {
+                CheckSubmitForm(out flag);
+            }
+            catch (Exception ex)
+            {
+                Utility.ShowCustomMessage(MessageTypes.Error, Utility.GetResourceStr("ERROR"), Utility.GetResourceStr(ex.Message));
+            }
+
+            return flag;
+        }
+
+        /// <summary>
+        /// 保存并关闭
+        /// </summary>
+        private void SaveAndCancel()
+        {
+            bool flag = false;
+            flag = Save();
+            if (!flag)
+            {
+                return;
+            }
+
+            EntityBrowser entBrowser = this.FindParentByType<EntityBrowser>();
+            entBrowser.Close();
+        }
+
+        /// <summary>
+        /// 保存并提交
+        /// </summary>
+        private void SaveAndSubmit()
+        {
+            try
+            {
+                if (TrainProject.CHECKSTATES == 0)
+                {
+                    SetFlowRecordEntity();
+                    //ac.Submit();
+                }
+                else
+                {
+                    Utility.ShowCustomMessage(MessageTypes.Message, Utility.GetResourceStr("ERROR"), Utility.GetResourceStr("该培训项目已经审核过了！"));
+                }
+                   
+                if (TrainProject.CHECKSTATES < 3)
+                {
+                    SetFlowRecordEntity();
+                    //ac.Submit();
+                }
+                else
+                {
+                    Utility.ShowCustomMessage(MessageTypes.Message, Utility.GetResourceStr("ERROR"), Utility.GetResourceStr("该培训项目已经审核过了！"));
+                }
+            }
+            catch (Exception ex)
+            {
+                Utility.ShowCustomMessage(MessageTypes.Error, Utility.GetResourceStr("ERROR"), Utility.GetResourceStr(ex.Message));
+            }
+        }
+
+        /// <summary>
+        /// 效验提交的表单
+        /// </summary>
+        /// <param name="entFreeLeaveDaySet"></param>
+        /// <returns></returns>
+        private void CheckSubmitForm(out bool flag)
+        {
+            flag = false;
+            return;
+        }
+        #endregion
+        /// <summary>
+        /// 设置图片按钮
+        /// </summary>
+
+        #region IEntityEditor
+        public void DoAction(string actionType)
+        {
+            switch (actionType)
+            {
+                case "0":
+                    Save();
+                    break;
+                case "1":
+                    SaveAndCancel();
+                    break;
+                case "2":
+                    SaveAndSubmit();
+                    break;
+            }
+        }
+
+        public List<NavigateItem> GetLeftMenuItems()
+        {
+            List<NavigateItem> items = new List<NavigateItem>();
+            NavigateItem item = new NavigateItem
+            {
+                Title = Utility.GetResourceStr(""),
+                Tooltip = Utility.GetResourceStr("")
+            };
+            items.Add(item);
+
+            return items;
+        }
+
+        public string GetStatus()
+        {
+            string strTemp = string.Empty;
+
+            return strTemp;
+        }
+
+        public string GetTitle()
+        {
+            return Utility.GetResourceStr("培训项目");
+        }
+
+        public List<ToolbarItem> GetToolBarItems()
+        {
+            return ToolbarItems;
+        }
+
+        public event UIRefreshedHandler OnUIRefreshed;
+        private void RefreshUI(RefreshedTypes type)
+        {
+            if (OnUIRefreshed != null)
+            {
+                UIRefreshedEventArgs args = new UIRefreshedEventArgs();
+                args.RefreshedType = type;
+                OnUIRefreshed(this, args);
+            }
+        }
+        #endregion
+        
+        #region 审核流程
+
+        AuditControl ac = null;
+        public void SetFlowRecordEntity()
+        {
+            SaaS.FrameworkUI.AuditControl.Flow_FlowRecord_T entity = null;
+            string strXmlObjectSource = string.Empty;
+            strXmlObjectSource = Utility.ObjListToXml<T_TM_TRAINPROJECT>(TrainProject, "TM");
+            // 模块代码
+            string modelCode = string.Empty;
+            switch (TrainProject.CHECKSTATES.ToString())
+            {
+                case "0":              //未提交
+                    TrainProject.CHECKSTATES = 0;
+                    modelCode = "";
+                    break;
+                case "1":              //审核中
+                    TrainProject.CHECKSTATES = 1;
+                    modelCode = "";
+                    break;
+                case "2":             // 审核通过
+                    TrainProject.CHECKSTATES = 2;
+                    modelCode = "";
+                    break;
+                case "3":             // 审核未通过
+                    TrainProject.CHECKSTATES = 3;
+                    modelCode = "";
+                    break;
+                case "4":             // 保存
+                    TrainProject.CHECKSTATES = 4;
+                    modelCode = "";
+                    break;
+            }
+            entity = ac.AuditEntity;
+            Utility.SetAuditEntity(entity, modelCode, TrainProject.TRAINPROJECTID, strXmlObjectSource);
+            Test();
+            ac.AuditCompleted += new EventHandler<AuditEventArgs>(ac_AuditCompleted);
+        }
+
+        void ac_AuditCompleted(object sender, AuditEventArgs e)
+        {
+            OnSubmitCompleted(e.Result);
+        }
+
+        public void OnSubmitCompleted(SaaS.FrameworkUI.AuditControl.AuditEventArgs.AuditResult args)
+        {
+            string state = "";
+            switch (args)
+            {
+                case SMT.SaaS.FrameworkUI.AuditControl.AuditEventArgs.AuditResult.Auditing:
+                    state = Utility.GetCheckState(CheckStates.Approving);
+                    break;
+                case SMT.SaaS.FrameworkUI.AuditControl.AuditEventArgs.AuditResult.Successful:
+                    state = Utility.GetCheckState(CheckStates.Approved);
+                    break;
+                case SMT.SaaS.FrameworkUI.AuditControl.AuditEventArgs.AuditResult.Fail:
+                    state = Utility.GetCheckState(CheckStates.UnApproved);
+                    break;
+            }
+            switch (TrainProject.CHECKSTATES.ToString())
+            {
+                case "0":              //未提交
+                    TrainProject.CHECKSTATES = 0;
+                    break;
+                case "1":              //审核中
+                    TrainProject.CHECKSTATES = 1;
+                    break;
+                case "2":             // 审核通过
+                    TrainProject.CHECKSTATES = 2;
+                    break;
+                case "3":             // 审核未通过
+                    TrainProject.CHECKSTATES = 3;
+                    break;
+                case "4":             // 保存
+                    TrainProject.CHECKSTATES = 4;
+                    break;
+            }
+            AuditTrainingProject(state);
+        }
+
+        public void Test()
+        {
+            string state = "1";
+            switch (TrainProject.CHECKSTATES.ToString())
+            {
+                case "0":              //未提交
+                    TrainProject.CHECKSTATES = 0;
+                    break;
+                case "1":              //审核中
+                    TrainProject.CHECKSTATES = 1;
+                    break;
+                case "2":             // 审核通过
+                    TrainProject.CHECKSTATES = 2;
+                    break;
+                case "3":             // 审核未通过
+                    TrainProject.CHECKSTATES = 3;
+                    break;
+                case "4":             // 保存
+                    TrainProject.CHECKSTATES = 4;
+                    break;
+            }
+            AuditTrainingProject(state);
+        }
+
+        public string GetAuditState()
+        {
+            string state = "-1";
+            if (TrainProject != null)
+                state = TrainProject.CHECKSTATES.ToString();
+            return state;
+        }
+
+        /// <summary>
+        /// 修改该培训项目的状态，并且将相应的审核状态修改
+        /// </summary>
+        /// <param name="trainingplanid"></param>
+        /// <param name="checkstates"></param>
+        private void AuditTrainingProject(string state)
+        {
+            saveType = "AuditSave";
+            switch (state)
+            {
+                case "2":
+                    TrainProject.CHECKSTATES = 2;
+                    break;
+                default:
+                    break;
+            }
+            adapter.SaveDefault(TrainProject);
+        }
+        #endregion
+
+    }
+}

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SMT.TK.Services.MobileOperate" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SMT.TK.Services.MobileOperate" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TaskMain">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPLETIONCRITERIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Confirmor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsExcuter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JoinUsers" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pormoter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskCategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskMain" nillable="true" type="tns:TaskMain" />
+  <xs:complexType name="ArrayOfJoinDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JoinDetail" nillable="true" type="tns:JoinDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJoinDetail" nillable="true" type="tns:ArrayOfJoinDetail" />
+  <xs:complexType name="JoinDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APPRAISESUGGEST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GRADECLASS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOINUSERCOMPANYID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOINUSERCOMPANYNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOINUSERDEPARTMENTID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOINUSERDEPARTMENTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOINUSERID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOINUSERNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOINUSERPOSTID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOINUSERPOSTNAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JoinDetail" nillable="true" type="tns:JoinDetail" />
+  <xs:complexType name="ArrayOfTaskReplay">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskReplay" nillable="true" type="tns:TaskReplay" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskReplay" nillable="true" type="tns:ArrayOfTaskReplay" />
+  <xs:complexType name="TaskReplay">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CHANGEREP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DELAYDAYS" type="xs:float" />
+      <xs:element minOccurs="0" name="ISPROMOTER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLANENDDATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REPLAYCOMMENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REPLAYDATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REPLYERCOMPANYID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REPLYERCOMPANYNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REPLYERDEPARTMENTID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REPLYERDEPARTMENTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REPLYERID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REPLYERNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REPLYERPOSTID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REPLYERPOSTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REQCOMPDATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TASKREMARK" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskReplay" nillable="true" type="tns:TaskReplay" />
+  <xs:complexType name="ArrayOfTaskTobeCost">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskTobeCost" nillable="true" type="tns:TaskTobeCost" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskTobeCost" nillable="true" type="tns:ArrayOfTaskTobeCost" />
+  <xs:complexType name="TaskTobeCost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COSTITEMID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COSTITEMNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COSTTYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPPLANCOST" type="xs:double" />
+      <xs:element minOccurs="0" name="FACTCOSTSUM" type="xs:double" />
+      <xs:element minOccurs="0" name="REIMCOST" type="xs:double" />
+      <xs:element minOccurs="0" name="REIMID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USECOST" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskTobeCost" nillable="true" type="tns:TaskTobeCost" />
+  <xs:complexType name="SaveTaskReplay">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPLETIONCRITERIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompleteDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Delays" type="xs:int" />
+      <xs:element minOccurs="0" name="IsExcuter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ListApprise" nillable="true" type="tns:ArrayOfJoinDetail" />
+      <xs:element minOccurs="0" name="ReplayComment" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskRemark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SaveTaskReplay" nillable="true" type="tns:SaveTaskReplay" />
+</xs:schema>

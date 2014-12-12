@@ -1,0 +1,8 @@
+﻿<Button x:Class="SMT.SaaS.FrameworkUI.ImageButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="auto" Style="{StaticResource ButtonToolBarStyle}" Foreground="{StaticResource TextBBlue1}">
+        <StackPanel  Orientation="Horizontal">
+            <Image x:Name="image" Stretch="Fill"/>
+            <TextBlock x:Name="textBlock" Foreground="{StaticResource TextBBlue1}"/>
+        </StackPanel>
+</Button>

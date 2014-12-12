@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+</MsgOpen>
+<Object Name="T_FB_DEPTBUDGETAPPLYMASTER" Description="月度预算申请" Key="DEPTBUDGETAPPLYMASTERID" id="13bb7ef4-7fd5-4d9f-96a6-790c9fb282e6">
+  <Attribute Name="OrderTypeName" LableResourceID="OrderTypeName" Description="单据类型" DataType="string" DataValue="月度预算申请" DataText="月度预算申请" />
+  <Attribute Name="DEPTBUDGETAPPLYMASTERID" LableResourceID="DEPTBUDGETAPPLYMASTERID" Description="单据ID" DataType="string" DataValue="13bb7ef4-7fd5-4d9f-96a6-790c9fb282e6" DataText="" />
+  <Attribute Name="DEPTBUDGETAPPLYMASTERCODE" LableResourceID="INVOICESCODE" Description="单据编号" DataType="string" DataValue="YDYS_20130627000002" DataText="" />
+  <Attribute Name="BUDGETARYMONTH" LableResourceID="BUDGETARYMONTH" Description="预算月份" DataType="DateTime" DataValue="2013/7/1 0:00:00" DataText="" />
+  <Attribute Name="BUDGETMONEY" LableResourceID="TOTAL" Description="合计" DataType="decimal" DataValue="442300" DataText="" />
+  <Attribute Name="CHECKSTATES" LableResourceID="CHECKSTATES" Description="状态" DataType="decimal" DataValue="1" DataText="审核中" />
+  <Attribute Name="CREATEUSERNAME" LableResourceID="CREATEUSERNAME" Description="创建人" DataType="string" DataValue="林映莉" DataText="" />
+  <Attribute Name="CREATEDATE" LableResourceID="CREATEDATE" Description="创建时间" DataType="DateTime" DataValue="2013/6/27 9:43:08" DataText="" />
+  <Attribute Name="OWNERID" LableResourceID="OWNERID" Description="申请人ID" DataType="string" DataValue="b6e4fc6e-781c-4a12-91f6-dabedbf3e2f8" DataText="" />
+  <Attribute Name="OWNERDEPARTMENTNAME" LableResourceID="ApplicationDepartment" Description="申请部门" DataType="string" DataValue="人力行政部" DataText="" />
+  <Attribute Name="OWNERCOMPANYNAME" LableResourceID="APPLYCOMPANYNAME" Description="申请公司" DataType="string" DataValue="深圳市神州通在线科技有限公司" DataText="" />
+  <Attribute Name="REMARK" LableResourceID="REMARK" Description="备注" DataType="string" DataValue="" DataText="" />
+  <Attribute Name="ISVALID" LableResourceID="ISVALID" Description="生效状态" DataType="string" DataValue="0" DataText="未汇总" />
+  <Attribute Name="AttachMent" LableResourceID="AttachMent" Description="附件" DataType="attachmentlist" DataValue="" DataText="" />
+  <ObjectList Name="T_FB_DEPTBUDGETAPPLYDETAILList" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAILList" Description="月度申请明细" DataText="">
+    <Object Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Description="月度预算申请明细" Key="DEPTBUDGETAPPLYDETAILID" id="f26cc0ec-4d92-4c38-8ac9-d9bfaeeaa8de">
+      <Attribute Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" Description="月度预算申请明细ID" DataType="string" DataValue="f26cc0ec-4d92-4c38-8ac9-d9bfaeeaa8de" DataText="" />
+      <Attribute Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" Description="科目编号" DataType="string" DataValue="30.03.07.05" DataText="" />
+      <Attribute Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" Description="科目名称" DataType="string" DataValue="市场推广费" DataText="" />
+      <Attribute Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" Description="上期发生" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Name="USABLEMONEY" LableResourceID="USABLEMONEY" Description="年度结余" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" Description="可用结余" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" Description="预算金额" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Name="REMARK" LableResourceID="REMARK" Description="备注" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="a744a91d-44d0-474f-b905-c1e86c2d5eab">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="a744a91d-44d0-474f-b905-c1e86c2d5eab" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="30.03.07.10" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="业务宣传费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="d9dd8377-735c-4ce6-a923-99a5d184deb8">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="d9dd8377-735c-4ce6-a923-99a5d184deb8" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.01" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="人力成本" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="c1ccd787-a1e2-432f-b30f-bec0721c322d">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="c1ccd787-a1e2-432f-b30f-bec0721c322d" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.01.02" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="社会保险费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="56000" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="7597.92" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="25000" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="f23d73cd-8717-489d-a92f-dbed0e2168ac">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="f23d73cd-8717-489d-a92f-dbed0e2168ac" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.01.03" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="职工福利费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="4780" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="12500" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="35361" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="313d9209-fbac-4b98-bfa3-a8b01aa31eda">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="313d9209-fbac-4b98-bfa3-a8b01aa31eda" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.01.04" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="职工教育经费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="3e18f563-9cdf-41f1-a209-a5ad69a15c80">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="3e18f563-9cdf-41f1-a209-a5ad69a15c80" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.01.05" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="人事管理费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="1000" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="4f8e5ba0-bde1-48f1-b169-bad19f417e8d">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="4f8e5ba0-bde1-48f1-b169-bad19f417e8d" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.01.06" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="住房公积金" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="30000" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="792" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="5000" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="effc29a1-f34e-47a0-a836-77aa0ea45b89">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="effc29a1-f34e-47a0-a836-77aa0ea45b89" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.01.07" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="工会经费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="83d9d10f-5208-419f-9247-5b470806e4a0">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="83d9d10f-5208-419f-9247-5b470806e4a0" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.02" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="中介服务费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="ee729c69-783d-44a1-bd57-c6279523502e">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="ee729c69-783d-44a1-bd57-c6279523502e" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.02.01" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="注册登记费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="378c5226-206e-4a8c-88e5-afa6973dd619">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="378c5226-206e-4a8c-88e5-afa6973dd619" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.03.07" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="残疾人就业保障金" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="14d955ce-b4d4-4aa7-94ba-fb10cf23484b">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="14d955ce-b4d4-4aa7-94ba-fb10cf23484b" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.04.01" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="固定资产折旧" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="dea1ff6d-d607-451c-a62e-2e951e92752b">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="dea1ff6d-d607-451c-a62e-2e951e92752b" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.05" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="办公费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="4508.80" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="12750" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="874.40" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="4500" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="d914d90d-1f17-4f8c-beeb-cccd476cab84">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="d914d90d-1f17-4f8c-beeb-cccd476cab84" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.06" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="邮递费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="171" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="62" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="ac833992-0fe6-4c4f-a592-20d7d413927b">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="ac833992-0fe6-4c4f-a592-20d7d413927b" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.07" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="书刊杂志费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="1100" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="73" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="300" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="448d62c8-3fc5-41b8-bcc4-ab0019bba4b2">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="448d62c8-3fc5-41b8-bcc4-ab0019bba4b2" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.08" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="办公维修费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="1000" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="810" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="bce2a07d-688a-416a-a56c-22ba96f82ad1">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="bce2a07d-688a-416a-a56c-22ba96f82ad1" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.09" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="企业宣传费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="1000" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="cc5f5b09-45b4-4094-ab48-afd0734bc154">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="cc5f5b09-45b4-4094-ab48-afd0734bc154" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.12" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="水电费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="193000" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="15756.94" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="bd86b67d-7921-4aea-9891-c769fc5f5a6a">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="bd86b67d-7921-4aea-9891-c769fc5f5a6a" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.13" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="物业租赁费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="2386" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="133601" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="235410.90" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="52000" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="ead4c796-a759-408a-b30e-52abfe7fbe55">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="ead4c796-a759-408a-b30e-52abfe7fbe55" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.14" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="宿舍租赁费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="575b6c3f-bea4-46ba-8479-7591940acb08">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="575b6c3f-bea4-46ba-8479-7591940acb08" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.15" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="移动电话费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="3730" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="32100" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="930" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="3500" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="520b2019-ba40-4efd-ac4c-3c477adbcae6">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="520b2019-ba40-4efd-ac4c-3c477adbcae6" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.16" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="固定电话费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="5300" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="3100" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="950fab23-e611-43ba-b462-0eb6a0fc3bf6">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="950fab23-e611-43ba-b462-0eb6a0fc3bf6" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.17" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="网络信息费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="d95262a6-9ec4-4bd9-9f94-556ed4e18e4a">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="d95262a6-9ec4-4bd9-9f94-556ed4e18e4a" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.18" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="会议组织费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="3000" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="585" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="44696a7d-8001-4a80-9d8c-209f1a420515">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="44696a7d-8001-4a80-9d8c-209f1a420515" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.19" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="培训组织费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="3ad6d11d-9a42-441a-9b69-1cb114d3747a">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="3ad6d11d-9a42-441a-9b69-1cb114d3747a" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.21" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="市内交通费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="52" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="78.80" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="7b509180-6886-4375-9dbc-e1668fae23ec">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="7b509180-6886-4375-9dbc-e1668fae23ec" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.22" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="业务差旅费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="3022" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="20000" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="8777.50" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="5703d0e5-9a67-44d5-84d5-8697d7aa9368">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="5703d0e5-9a67-44d5-84d5-8697d7aa9368" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.25" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="研究开发费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="02498d38-94f5-403f-a4e7-ad8ade443d49">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="02498d38-94f5-403f-a4e7-ad8ade443d49" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.26" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="部门经费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="04e00f90-66bd-4440-915c-cb60f33832b1">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="04e00f90-66bd-4440-915c-cb60f33832b1" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.29" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="笔记本电脑补助" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="fa10f74b-ddb4-4b96-996b-4e6dfdeda6fa">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="fa10f74b-ddb4-4b96-996b-4e6dfdeda6fa" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="52.99" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="其他费用" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="10000" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="10b1f2df-8017-42a0-814b-ebdab945072a">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="10b1f2df-8017-42a0-814b-ebdab945072a" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="53.01" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="银行手续费" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="b9ff4563-1df1-4a44-b685-c594a9691774">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="b9ff4563-1df1-4a44-b685-c594a9691774" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="54.01" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="固定资产（电脑）" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="39afe31f-5d3a-401c-95a6-9ba261e2c8bc">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="39afe31f-5d3a-401c-95a6-9ba261e2c8bc" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="54.02" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="固定资产（办公设备）" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="361f7ce2-0966-44df-ada4-1b6439d5a637">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="361f7ce2-0966-44df-ada4-1b6439d5a637" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="54.06" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="固定资产（其他）" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="a717c545-d68b-469a-becd-e303a4c22208">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="a717c545-d68b-469a-becd-e303a4c22208" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="J1.37" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="集团内部收入" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="700000" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+    <Object Description="月度预算申请明细" Name="T_FB_DEPTBUDGETAPPLYDETAIL" LableResourceID="T_FB_DEPTBUDGETAPPLYDETAIL" Key="DEPTBUDGETAPPLYDETAILID" id="28b3d970-869c-4afe-b82a-bcd3dd3687b6">
+      <Attribute Description="月度预算申请明细ID" Name="DEPTBUDGETAPPLYDETAILID" LableResourceID="DEPTBUDGETAPPLYDETAILID" DataType="string" DataValue="28b3d970-869c-4afe-b82a-bcd3dd3687b6" DataText="" />
+      <Attribute Description="科目编号" Name="T_FB_SUBJECT.SUBJECTCODE" LableResourceID="SUBJECTCODE" DataType="string" DataValue="J1.38" DataText="" />
+      <Attribute Description="科目名称" Name="T_FB_SUBJECT.SUBJECTNAME" LableResourceID="SUBJECTNAME" DataType="string" DataValue="补贴收入" DataText="" />
+      <Attribute Description="上期发生" Name="LASTACTUALBUDGETMONEY" LableResourceID="LASTACTUALBUDGETMONEY" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="年度结余" Name="USABLEMONEY" LableResourceID="USABLEMONEY" DataType="decimal" DataValue="1500000" DataText="" />
+      <Attribute Description="可用结余" Name="BEGINNINGBUDGETBALANCE" LableResourceID="BEGINNINGBUDGETBALANCE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="预算金额" Name="TOTALBUDGETMONEY" LableResourceID="BUTGETCHARGE" DataType="decimal" DataValue="0" DataText="" />
+      <Attribute Description="备注" Name="REMARK" LableResourceID="REMARK" DataType="string" DataValue="" DataText="" />
+    </Object>
+  </ObjectList>
+</Object>
+</System>

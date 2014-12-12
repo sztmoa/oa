@@ -1,0 +1,154 @@
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:19:48
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:19:48
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:19:49
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:20:30
+Debug  获取预算初始化信息出错，出错信息：System.InvalidOperationException: 当数据读取器关闭时调用“Read”是无效的操作。
+   在 System.Data.Common.Internal.Materialization.Shaper`1.StoreRead()
+   在 System.Data.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   在 System.Data.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   在 System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   在 System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   在 System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   在 SMT.FB.BLL.SystemBLL.GetSetting(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SystemBLL.cs:行号 55  2014/7/23 9:20:30
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.InvalidOperationException: 当数据读取器关闭时调用“Read”是无效的操作。
+   在 SMT.FB.BLL.SystemBLL.GetSetting(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SystemBLL.cs:行号 65
+   在 SMT.FB.BLL.BudgetAccountBLL.QueryT_FB_SYSTEMSETTINGS(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 4224
+   在 SMT.FB.BLL.BudgetAccountBLL.QueryInitDataCore(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 4211
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryEntitiesByType(QueryExpression qe, String returnType) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SubjectBLL.cs:行号 1279
+   在 SMT.FB.BLL.SubjectBLL.QueryEntities(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SubjectBLL.cs:行号 1254
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SubjectBLL.cs:行号 2087  2014/7/23 9:20:31
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:20:31
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.InvalidOperationException: 当数据读取器关闭时调用“Read”是无效的操作。
+   在 SMT.FB.BLL.SystemBLL.GetSetting(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SystemBLL.cs:行号 65
+   在 SMT.FB.BLL.BudgetAccountBLL.QueryT_FB_SYSTEMSETTINGS(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 4224
+   在 SMT.FB.BLL.BudgetAccountBLL.QueryInitDataCore(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 4211
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SubjectBLL.cs:行号 2093
+   在 SMT.FB.Services.FBCommonService.QueryFBEntities(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.Services\FBCommonService.svc.cs:行号 58
+参数: Name:FBVerson ; Value:  ; QueryType:T_FB_SYSTEMSETTINGS
+  2014/7/23 9:20:31
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:34:53
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:34:53
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:34:54
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:34:55
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:34:55
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:34:55
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:35:01
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:35:02
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:35:10
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:35:10
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:35:18
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:42:43
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:43:50
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:43:51
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 9:46:14
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 10:02:33
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 10:04:23
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 10:04:24
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 11:38:14
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 11:38:14
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 11:38:14
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 11:38:15
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 11:38:15
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 11:38:23
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 11:38:24
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 11:38:26
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 11:45:39
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 11:45:39
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 11:45:52
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 11:49:19
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 11:57:03
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 11:57:03
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:25:05
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:26:32
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:27:57
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:28:31
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:28:51
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:29:23
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:29:24
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:29:24
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:29:24
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:30:42
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:30:47
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:30:50
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:32:00
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:33:41
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:35:23
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:36:41
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:38:39
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:38:40
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:40:03
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:40:30
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:42:57
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 12:42:57
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:31:58
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:32:32
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:32:41
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:32:41
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:33:52
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:34:13
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:34:52
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:35:15
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:35:27
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:35:49
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:35:49
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:35:49
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:36:05
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:36:39
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:42:48
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:42:48
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:42:48
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:42:49
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:42:49
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:42:49
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:43:04
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:43:05
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:43:50
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:43:50
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:44:21
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:52:33
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:52:33
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:52:34
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:52:35
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:52:35
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:52:52
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:52:53
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:52:53
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:52:54
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:53:33
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:53:45
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:57:01
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:57:54
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 13:58:57
+Debug  模块T_FB_DEPTBUDGETADDMASTER ID:993a42b2-6639-47d8-af35-17ac4c9708c1调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/7/23 14:00:20
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:00:50
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:01:09
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:02:11
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:03:47
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:04:13
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:04:28
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:04:28
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:04:45
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:05:05
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:05:13
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:05:14
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:05:14
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:05:14
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:05:14
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:08:06
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:08:06
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:08:06
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:08:07
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:08:07
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:08:07
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:08:10
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:08:10
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:08:10
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:08:11
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:14:59
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:15:12
+Debug  调用HR服务 GetEmployeeFunds,返回结果为空，对应下拨公司的ID为： 4eb26a32-c460-47c5-8ade-f1b398c27e35  2014/7/23 14:18:42
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:18:42
+Debug  FB BaseDAL.Dispose sucess  2014/7/23 14:47:05

@@ -1,0 +1,43 @@
+﻿<swc:Window x:Class="SMT.FBAnalysis.UI.LookupForm"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                      xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+                      xmlns:smtx="clr-namespace:SMT.SaaS.FrameworkUI;assembly=SMT.SaaS.FrameworkUI"
+                      xmlns:swc="clr-namespace:System.Windows.Controls;assembly=SMT.SaaS.Window"
+                      xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+                      xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"  
+                      xmlns:datactr="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+                      >
+    <Grid x:Name="LayoutRoot" Margin="0" Background="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <data:DataGrid x:Name="DtGrid" Grid.Row="0" AutoGenerateColumns="False" Style="{StaticResource DataGridStyle}"
+                        CellStyle="{StaticResource DataGridCellStyle}" RowStyle="{StaticResource DataGridRowStyle}" RowHeaderStyle="{StaticResource DataGridRowHeaderStyle}" 
+                        ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" HorizontalAlignment="Stretch" MaxWidth="1024" VerticalAlignment="Stretch">
+                <data:DataGrid.Columns >
+                    <data:DataGridTemplateColumn  x:Name="CheckColunm" >
+                        <data:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <CheckBox x:Name="checkbox" Margin="5,5,0,0" Style="{StaticResource CheckBoxStyle}"></CheckBox>
+                                </StackPanel>
+                            </DataTemplate>
+                        </data:DataGridTemplateColumn.CellTemplate>
+                    </data:DataGridTemplateColumn>
+                </data:DataGrid.Columns>
+            </data:DataGrid>
+            <smtx:GridPager Name="dataPager" PageSize="20" Click="GridPager_Click" Grid.Row="1" Height="30"></smtx:GridPager>
+
+            <StackPanel HorizontalAlignment="Center" Grid.Row="2" Orientation="Horizontal" Height="45" VerticalAlignment="Bottom">
+                <Button x:Name="OKButton" Content="{Binding Converter={StaticResource ResourceConveter}, Source=OKBUTTON}" Click="OKButton_Click" Style="{StaticResource CommonButtonStyle}" Width="70" Height="24" Margin="5,0,5,0" />
+                <Button x:Name="CancelButton" Content="{Binding Converter={StaticResource ResourceConveter}, Source=CANCELBUTTON}" Click="CancelButton_Click" Style="{StaticResource CommonButtonStyle}" Width="70" Height="24" Margin="5,0,5,0" />
+            </StackPanel>
+            <TextBlock Text="科目允许多选" Grid.Row="3" Foreground="Red" HorizontalAlignment="Center" />
+        </Grid>
+        </Grid>
+</swc:Window>

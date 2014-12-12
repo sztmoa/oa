@@ -1,0 +1,55 @@
+Debug  UpdateTravelReimbursement formid:46ecc2ca-80fe-4825-bde8-61545af7f0bf CheckState:0 单号：  2014/11/14 15:01:20
+Debug  UpdateTravelReimbursement11 CheckState:0  2014/11/14 15:01:20
+Debug  模块T_OA_TRAVELREIMBURSEMENT ID:46ecc2ca-80fe-4825-bde8-61545af7f0bf调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/14 15:01:21
+Debug  UpdateTravelReimbursement11 完成 CheckState:0  2014/11/14 15:01:21
+Debug  UpdateTravelReimbursement formid:46ecc2ca-80fe-4825-bde8-61545af7f0bf CheckState:0 单号：  2014/11/14 16:10:01
+Debug  UpdateTravelReimbursement11 CheckState:0  2014/11/14 16:10:01
+Debug  模块T_OA_TRAVELREIMBURSEMENT ID:46ecc2ca-80fe-4825-bde8-61545af7f0bf调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/14 16:10:01
+Debug  UpdateTravelReimbursement11 完成 CheckState:0  2014/11/14 16:10:01
+Debug  UpdateTravelReimbursement formid:46ecc2ca-80fe-4825-bde8-61545af7f0bf CheckState:0 单号：  2014/11/14 16:11:46
+Debug  UpdateTravelReimbursement11 CheckState:0  2014/11/14 16:11:46
+Debug  模块T_OA_TRAVELREIMBURSEMENT ID:46ecc2ca-80fe-4825-bde8-61545af7f0bf调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/14 16:11:46
+Debug  UpdateTravelReimbursement11 完成 CheckState:0  2014/11/14 16:11:46
+Debug  引擎开始更新出差申请状态：出差申请id：46ecc2ca-80fe-4825-bde8-61545af7f0bf 审核状态：2  2014/11/14 17:27:59
+Debug  引擎更新出差申请状态失败：出差申请id：46ecc2ca-80fe-4825-bde8-61545af7f0bf 审核状态：2  2014/11/14 17:28:15
+Debug  模块T_OA_TRAVELREIMBURSEMENT ID:46ecc2ca-80fe-4825-bde8-61545af7f0bf调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/14 17:29:05
+Debug  事务中 引擎更新出差报销状态成功：出差报销id：46ecc2ca-80fe-4825-bde8-61545af7f0bf 流程传过来的审核状态：2 更新后出差报销状态2  2014/11/14 17:29:08
+Debug  出差报销扣减工作计划费用异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SMT.SaaS.OA.BLL.TravelReimbursementBLL.UpdateTravelReimbursementFromEngine(String BorrowID, String StrCheckState) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelReimbursementBLL.cs:行号 430  2014/11/14 17:29:46
+Debug  事务中 引擎开始同步HR考勤记录：出差报销id：46ecc2ca-80fe-4825-bde8-61545af7f0bf  2014/11/14 17:29:46
+Debug  陈某某 的出差报销同步考勤数据成功，出差报销开始时间：2014-11-14 15:00:00 结束时间:2014-11-14 18:30:00  2014/11/14 17:29:47
+Debug  事务确认成功：引擎更新出差报销，同步预算单，考勤记录成功！  2014/11/14 17:29:47
+Debug  UpdateTravelReimbursementFromEngine完成 出差报销表最终审核状态：2  2014/11/14 17:29:47
+Debug  模块T_OA_TRAVELREIMBURSEMENT ID:46ecc2ca-80fe-4825-bde8-61545af7f0bf调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/14 17:31:46
+Debug  事务中 引擎更新出差报销状态成功：出差报销id：46ecc2ca-80fe-4825-bde8-61545af7f0bf 流程传过来的审核状态：2 更新后出差报销状态2  2014/11/14 17:31:47
+Debug  出差报销扣减工作计划费用异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SMT.SaaS.OA.BLL.TravelReimbursementBLL.UpdateTravelReimbursementFromEngine(String BorrowID, String StrCheckState) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelReimbursementBLL.cs:行号 427  2014/11/14 17:32:52
+Debug  事务中 引擎开始同步HR考勤记录：出差报销id：46ecc2ca-80fe-4825-bde8-61545af7f0bf  2014/11/14 17:32:52
+Debug  陈某某 的出差报销同步考勤数据成功，出差报销开始时间：2014-11-14 15:00:00 结束时间:2014-11-14 18:30:00  2014/11/14 17:32:53
+Debug  事务确认成功：引擎更新出差报销，同步预算单，考勤记录成功！  2014/11/14 17:32:53
+Debug  UpdateTravelReimbursementFromEngine完成 出差报销表最终审核状态：2  2014/11/14 17:32:53
+Debug  模块T_OA_TRAVELREIMBURSEMENT ID:46ecc2ca-80fe-4825-bde8-61545af7f0bf调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/14 17:33:31
+Debug  事务中 引擎更新出差报销状态成功：出差报销id：46ecc2ca-80fe-4825-bde8-61545af7f0bf 流程传过来的审核状态：2 更新后出差报销状态2  2014/11/14 17:33:31
+Debug  事务开始 工作计划出差报销引擎开始更新工作计划预算：出差报销id：System.Data.EntityKeyMember[] 审核状态：2  2014/11/14 17:33:43
+Debug  出差报销扣减工作计划费用异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SMT.SaaS.OA.BLL.TravelReimbursementBLL.UpdateTravelReimbursementFromEngine(String BorrowID, String StrCheckState) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelReimbursementBLL.cs:行号 431  2014/11/14 17:33:43
+Debug  事务中 引擎开始同步HR考勤记录：出差报销id：46ecc2ca-80fe-4825-bde8-61545af7f0bf  2014/11/14 17:33:43
+Debug  陈某某 的出差报销同步考勤数据成功，出差报销开始时间：2014-11-14 15:00:00 结束时间:2014-11-14 18:30:00  2014/11/14 17:33:43
+Debug  事务确认成功：引擎更新出差报销，同步预算单，考勤记录成功！  2014/11/14 17:33:43
+Debug  UpdateTravelReimbursementFromEngine完成 出差报销表最终审核状态：2  2014/11/14 17:33:43
+Debug  模块T_OA_TRAVELREIMBURSEMENT ID:46ecc2ca-80fe-4825-bde8-61545af7f0bf调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/14 17:35:07
+Debug  事务中 引擎更新出差报销状态成功：出差报销id：46ecc2ca-80fe-4825-bde8-61545af7f0bf 流程传过来的审核状态：2 更新后出差报销状态2  2014/11/14 17:35:09
+Debug  事务开始 工作计划出差报销引擎开始更新工作计划预算：出差报销id：bfcd7321-9a89-c263-4799-c62c2fa8 审核状态：2  2014/11/14 17:35:10
+Debug  出差报销扣减工作计划费用失败：未将对象引用设置到对象的实例。  2014/11/14 17:35:16
+Debug  事务中 引擎开始同步HR考勤记录：出差报销id：46ecc2ca-80fe-4825-bde8-61545af7f0bf  2014/11/14 17:35:27
+Debug  陈某某 的出差报销同步考勤数据成功，出差报销开始时间：2014-11-14 15:00:00 结束时间:2014-11-14 18:30:00  2014/11/14 17:35:28
+Debug  事务确认成功：引擎更新出差报销，同步预算单，考勤记录成功！  2014/11/14 17:35:28
+Debug  UpdateTravelReimbursementFromEngine完成 出差报销表最终审核状态：2  2014/11/14 17:35:28
+Debug  模块T_OA_TRAVELREIMBURSEMENT ID:46ecc2ca-80fe-4825-bde8-61545af7f0bf调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/14 17:35:45
+Debug  事务中 引擎更新出差报销状态成功：出差报销id：46ecc2ca-80fe-4825-bde8-61545af7f0bf 流程传过来的审核状态：2 更新后出差报销状态2  2014/11/14 17:35:45
+Debug  事务开始 工作计划出差报销引擎开始更新工作计划预算：出差报销id：bfcd7321-9a89-c263-4799-c62c2fa8 审核状态：2  2014/11/14 17:35:45
+Debug  出差报销扣减工作计划费用失败：未将对象引用设置到对象的实例。  2014/11/14 17:35:45
+Debug  事务中 引擎开始同步HR考勤记录：出差报销id：46ecc2ca-80fe-4825-bde8-61545af7f0bf  2014/11/14 17:35:45
+Debug  陈某某 的出差报销同步考勤数据成功，出差报销开始时间：2014-11-14 15:00:00 结束时间:2014-11-14 18:30:00  2014/11/14 17:35:45
+Debug  事务确认成功：引擎更新出差报销，同步预算单，考勤记录成功！  2014/11/14 17:35:46
+Debug  UpdateTravelReimbursementFromEngine完成 出差报销表最终审核状态：2  2014/11/14 17:35:46

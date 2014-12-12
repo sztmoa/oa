@@ -1,0 +1,28 @@
+Debug  模块T_OA_BUSINESSTRIP ID:f6db7a1f-5b71-41a5-bc04-6bd1aada调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/12 16:18:05
+Debug  更新出差申请审核状态成功：idf6db7a1f-5b71-41a5-bc04-6bd1aada!!!!!!!!!!!!!!!!!!!!!!!!审核状态:0  2014/11/12 16:18:05
+Debug  模块T_OA_BUSINESSTRIP ID:f6db7a1f-5b71-41a5-bc04-6bd1aada调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/12 16:18:57
+Debug  更新出差申请审核状态成功：idf6db7a1f-5b71-41a5-bc04-6bd1aada!!!!!!!!!!!!!!!!!!!!!!!!审核状态:0  2014/11/12 16:18:57
+Debug  模块T_OA_BUSINESSTRIP ID:f6db7a1f-5b71-41a5-bc04-6bd1aada调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/12 16:30:34
+Debug  更新出差申请审核状态成功：idf6db7a1f-5b71-41a5-bc04-6bd1aada!!!!!!!!!!!!!!!!!!!!!!!!审核状态:0  2014/11/12 16:30:34
+Debug  模块T_OA_BUSINESSTRIP ID:f6db7a1f-5b71-41a5-bc04-6bd1aada调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/12 16:31:17
+Debug  更新出差申请审核状态成功：idf6db7a1f-5b71-41a5-bc04-6bd1aada!!!!!!!!!!!!!!!!!!!!!!!!审核状态:0  2014/11/12 16:31:17
+Debug  模块T_OA_BUSINESSTRIP ID:f6db7a1f-5b71-41a5-bc04-6bd1aada调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/12 16:32:54
+Debug  更新出差申请审核状态成功：idf6db7a1f-5b71-41a5-bc04-6bd1aada!!!!!!!!!!!!!!!!!!!!!!!!审核状态:0  2014/11/12 16:32:54
+Debug  模块T_OA_BUSINESSTRIP ID:f6db7a1f-5b71-41a5-bc04-6bd1aada调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/12 16:43:32
+Debug  更新出差申请审核状态成功：idf6db7a1f-5b71-41a5-bc04-6bd1aada!!!!!!!!!!!!!!!!!!!!!!!!审核状态:0  2014/11/12 16:43:32
+Debug  模块T_OA_BUSINESSTRIP ID:f6db7a1f-5b71-41a5-bc04-6bd1aada调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/12 16:45:50
+Debug  更新出差申请审核状态成功：idf6db7a1f-5b71-41a5-bc04-6bd1aada!!!!!!!!!!!!!!!!!!!!!!!!审核状态:0  2014/11/12 16:45:50
+Debug  模块T_OA_BUSINESSTRIP ID:f6db7a1f-5b71-41a5-bc04-6bd1aada调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/12 16:45:56
+Debug  更新出差申请审核状态成功：idf6db7a1f-5b71-41a5-bc04-6bd1aada!!!!!!!!!!!!!!!!!!!!!!!!审核状态:0  2014/11/12 16:45:56
+Debug  模块T_OA_BUSINESSTRIP ID:f6db7a1f-5b71-41a5-bc04-6bd1aada调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/12 16:46:03
+Debug  更新出差申请审核状态成功：idf6db7a1f-5b71-41a5-bc04-6bd1aada!!!!!!!!!!!!!!!!!!!!!!!!审核状态:0  2014/11/12 16:46:03
+Debug  模块T_OA_BUSINESSTRIP ID:f6db7a1f-5b71-41a5-bc04-6bd1aada调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/12 17:07:24
+Debug  更新出差申请审核状态成功：idf6db7a1f-5b71-41a5-bc04-6bd1aada!!!!!!!!!!!!!!!!!!!!!!!!审核状态:0  2014/11/12 17:07:25
+Debug  模块T_OA_BUSINESSTRIP ID:f6db7a1f-5b71-41a5-bc04-6bd1aada调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/12 17:11:38
+Debug  更新出差申请审核状态成功：idf6db7a1f-5b71-41a5-bc04-6bd1aada!!!!!!!!!!!!!!!!!!!!!!!!审核状态:0  2014/11/12 17:11:38
+Debug  模块T_OA_BUSINESSTRIP ID:f6db7a1f-5b71-41a5-bc04-6bd1aada调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/12 17:14:10
+Debug  更新出差申请审核状态成功：idf6db7a1f-5b71-41a5-bc04-6bd1aada!!!!!!!!!!!!!!!!!!!!!!!!审核状态:0  2014/11/12 17:14:10
+Debug  添加出差申请ID为f6db7a1f-5b71-41a5-bc04-6bd1aada的出差报销96a91b64-ce74-4cf8-a678-a58119d830bf  2014/11/12 17:16:57
+Debug  调用新生成单号接口：tablename：T_FB_TRAVELEXPAPPLYMASTER ExecuteCustomerSql: select T_FB_TRAVELEXPAPPLYMASTER_SEQ.nextval from dual  2014/11/12 17:16:57
+Debug  生成单号：CLBX_20141112000022  2014/11/12 17:16:57
+Debug  模块T_OA_TRAVELREIMBURSEMENT ID:96a91b64-ce74-4cf8-a678-a58119d830bf调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/12 17:16:58

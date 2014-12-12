@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F44EE046-87BE-45C8-9F9C-17A8B26DE720}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMT.FBAnalysis.DAL</RootNamespace>
+    <AssemblyName>SMT.FBAnalysis.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SMT.Foundation.Core">
+      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.Foundation.Log">
+      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SaaS.BLLCommonServices">
+      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BorrowApplyDetailDAL.cs" />
+    <Compile Include="BorrowApplyMasterDAL.cs" />
+    <Compile Include="BudgetAccountDAL.cs" />
+    <Compile Include="BudgetCheckDAL.cs" />
+    <Compile Include="ChargeApplyDetailDAL.cs" />
+    <Compile Include="ChargeApplyMasterDAL.cs" />
+    <Compile Include="CommDal.cs" />
+    <Compile Include="CompanyBudgetApplyDetailDAL.cs" />
+    <Compile Include="CompanyBudgetApplyMasterDAL.cs" />
+    <Compile Include="CompanyBudgetModDetailDAL.cs" />
+    <Compile Include="CompanyBudgetModMasterDAL.cs" />
+    <Compile Include="CompanyBudgetSumDetailDAL.cs" />
+    <Compile Include="CompanyBudgetSumMasterDAL.cs" />
+    <Compile Include="CompanyTransferDetailDAL.cs" />
+    <Compile Include="CompanyTransferMasterDAL.cs" />
+    <Compile Include="DeptBudgetAddDetailDAL.cs" />
+    <Compile Include="DeptBudgetAddMasterDAL.cs" />
+    <Compile Include="DeptBudgetApplyDetailDAL.cs" />
+    <Compile Include="DeptBudgetApplyMasterDAL.cs" />
+    <Compile Include="DeptBudgetSumDetailDAL.cs" />
+    <Compile Include="DeptBudgetSumMasterDAL.cs" />
+    <Compile Include="DeptTransferDetailDAL.cs" />
+    <Compile Include="DeptTransferMasterDAL.cs" />
+    <Compile Include="ExecutionDAL.cs" />
+    <Compile Include="ExtensionalOrderDAL.cs" />
+    <Compile Include="ExtensionalTypeDAL.cs" />
+    <Compile Include="ExtensionOrderDetailDAL.cs" />
+    <Compile Include="OaInterfaceDAL.cs" />
+    <Compile Include="OrderCodeDAL.cs" />
+    <Compile Include="PersonAccountDAL.cs" />
+    <Compile Include="PersonBudgetAddDetailDAL.cs" />
+    <Compile Include="PersonBudgetApplyDetailDAL.cs" />
+    <Compile Include="PersonmoneyAssignDetailDAL.cs" />
+    <Compile Include="PersonmoneyAssignMasterDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepayApplyDetailDAL.cs" />
+    <Compile Include="RepayApplyMasterDAL.cs" />
+    <Compile Include="SalarypayListDAL.cs" />
+    <Compile Include="SubjectCompanyDAL.cs" />
+    <Compile Include="SubjectDeptmentDAL.cs" />
+    <Compile Include="SubjectDAL.cs" />
+    <Compile Include="SubjectPostDAL.cs" />
+    <Compile Include="SubjectTypeDAL.cs" />
+    <Compile Include="SystemSettingsDAL.cs" />
+    <Compile Include="TravelexpApplyDetailDAL.cs" />
+    <Compile Include="TravelexpApplyMasterDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMT.FBAnalysis.CustomModel\SMT.FBAnalysis.CustomModel.csproj">
+      <Project>{84CCC052-4DD1-4153-9A04-27A43BEEE4F7}</Project>
+      <Name>SMT.FBAnalysis.CustomModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMT_FB_EFModel\SMT_FB_EFModel.csproj">
+      <Project>{764CEDC0-CAC5-4252-AE43-D2F2E9763F5F}</Project>
+      <Name>SMT_FB_EFModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

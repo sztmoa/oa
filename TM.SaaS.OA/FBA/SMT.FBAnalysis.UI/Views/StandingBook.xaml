@@ -1,0 +1,94 @@
+﻿<localbase:BasePage x:Class="SMT.FBAnalysis.UI.Views.StandingBook" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:dataprimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls.Data"
+           xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+           xmlns:smtx="clr-namespace:SMT.SaaS.FrameworkUI;assembly=SMT.SaaS.FrameworkUI"
+           xmlns:fbtx="clr-namespace:SMT.FBAnalysis.UI;assembly=SMT.FBAnalysis.UI"
+           xmlns:basics="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+           xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" 
+           xmlns:localbase="clr-namespace:SMT.FBAnalysis.UI"
+		   mc:Ignorable="d"
+           Title="StandingBook Page">
+    <localbase:BasePage.Resources>
+        <Style x:Key="RightAlignCell" TargetType="data:DataGridCell">
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+        </Style>
+    </localbase:BasePage.Resources>
+    <Grid x:Name="PARENT">
+        <Grid x:Name="LayoutRoot" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+			<Grid Grid.Row="0">
+        		<Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+        		</Grid.RowDefinitions>
+        		<Grid.ColumnDefinitions>
+        			<ColumnDefinition Width="70"/>
+        			<ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="70"/>
+        			<ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+        		</Grid.ColumnDefinitions>
+                <TextBlock x:Name="tbOrgIdTitle" Grid.Column="0" Text="机构" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Margin="5,0,0,0"/>
+                <smtx:LookUp x:Name="lkOrg" Grid.Column="1" Height="24" FindClick="lkOrg_FindClick" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Margin="5,0,0,0" ToolTipService.ToolTip="机构只能单选"/>
+                <TextBlock x:Name="tbOrgType" Grid.Column="0" Visibility="Collapsed" /><TextBlock x:Name="tbOrgIds" Grid.Column="0" Visibility="Collapsed" />
+                <TextBlock x:Name="tbProject" Grid.Column="2" Text="科目" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Margin="5,0,0,0"/>
+                <smtx:LookUp x:Name="lkSubject" Grid.Column="3" Height="24" DataContext="{Binding Path=T_FB_SUBJECT}" VerticalAlignment="Center" Width="Auto" Margin="5,0,0,0" FindClick="lkSubject_FindClick" ToolTipService.ToolTip="科目可以多选" />
+                <TextBlock x:Name="tbOrderType" Grid.Column="4" Grid.ColumnSpan="2" Text="单据类型" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Margin="5,0,0,0"/>
+                <fbtx:DictionaryComboBox Grid.Column="6" x:Name="dicOrderType" Style="{StaticResource ComboBoxStyle}" Cursor="Hand" Width="110" Height="24" />
+                <TextBlock x:Name="tbOrderState" Grid.Row="1" Grid.Column="0" Text="单据状态" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Margin="5,0,0,0"/>
+                <fbtx:DictionaryComboBox Grid.Row="1" Grid.Column="1" x:Name="dicOrderState" Style="{StaticResource ComboBoxStyle}" Cursor="Hand" Width="110" Height="24" />
+                <TextBlock x:Name="tbDateFrom" Grid.Row="1" Grid.Column="2" Text="查询时间" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                <basics:DatePicker x:Name="dpStart" Grid.Row="1" Grid.Column="3" Margin="4,0,0,0" Width="110" Height="24"/>
+                <TextBlock x:Name="tbDateTo" Grid.Row="1" Grid.Column="4" Text="至" VerticalAlignment="Center" Width="Auto" Margin="5,0,0,0"/>
+                <basics:DatePicker x:Name="dpEnd" Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="2" Margin="4,0,0,0" Width="110" Height="24" HorizontalAlignment="Left"/>
+                <Button x:Name="btnQuerySubmit" Grid.Column="7" Style="{StaticResource CommonButtonStyle}" Content="{Binding Converter={StaticResource ResourceConveter}, Source=FIND}" Height="24" Click="btnQuerySubmit_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Width="70" Margin="5,0,0,0"/>
+                <Button x:Name="btnClear" Grid.Column="8" Style="{StaticResource CommonButtonStyle}" Content="{Binding Converter={StaticResource ResourceConveter}, Source=RESET}" Height="24" Click="btnClear_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Width="70" Margin="5,0,0,0"/>
+            </Grid>
+			<Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <smtx:FormToolBar x:Name="toolBarTop"></smtx:FormToolBar>
+				<sdk:DataGrid x:Name="dgQueryResult" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" FontSize="12"
+                           ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto" Style="{StaticResource DataGridStyle}"
+                           CellStyle="{StaticResource DataGridCellStyle}" RowStyle="{StaticResource DataGridRowStyle}" RowHeaderStyle="{StaticResource DataGridRowHeaderStyle}">
+                    <sdk:DataGrid.Columns>
+                        <sdk:DataGridTemplateColumn Header="查看单据">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton Width="80" Tag="{Binding XmlObjectValue}" Content="查看单据" VerticalAlignment="Center" Click="hbnShowRecord_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTextColumn Header="单据编号" Width="Auto" Binding="{Binding RecordCode}" />
+                        <sdk:DataGridTextColumn Header="科目名称" Width="Auto" Binding="{Binding SubjectName}" />
+                        <sdk:DataGridTextColumn Header="金额" Width="Auto" Binding="{Binding TotalMoney, Converter={StaticResource FinanceConverter}}" CellStyle="{StaticResource RightAlignCell}"/>
+                        <sdk:DataGridTextColumn Header="申请人" Width="Auto" Binding="{Binding OwnerName}"/>
+                        <sdk:DataGridTextColumn Header="申请部门" Width="Auto" Binding="{Binding DepartmentName}"/>
+                        <sdk:DataGridTextColumn Header="申请公司" Width="Auto" Binding="{Binding CompanyName}"/>
+                        <sdk:DataGridTextColumn Header="单据状态" Width="Auto" Binding="{Binding ChecksatesName}"/>
+                        <sdk:DataGridTextColumn Header="更新日期" Width="Auto" Binding="{Binding UpdateDate, Converter={StaticResource CustomDateConverter},ConverterParameter=DATETIMES}" />
+                    </sdk:DataGrid.Columns>
+                </sdk:DataGrid>
+				<smtx:GridPager x:Name="dataPager" PageSize="20" Click="GridPager_Click" Grid.Row="2"/>
+			</Grid>	
+    	</Grid>
+	</Grid>
+</localbase:BasePage>

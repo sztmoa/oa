@@ -1,0 +1,25 @@
+var a = from t in T_LM_BADLOSE
+		group t by t.T_LM_ACCEPTMASTER into g
+		//where 
+		select new
+		{
+			g.Key,
+			Count = g.Sum(s=>s.BADLOSEACCOUNT)
+		}
+	
+	var b = from t in T_LM_ACCEPTMASTER
+		group t by t.T_LM_ACCEPTMASTER into g
+		//where 
+		select new
+		{
+			g.Key,
+			Count = g.Sum(s=>s.BADLOSEACCOUNT)
+		}
+	var result = from t in a
+				from g in b
+				where t.T_LM_ACCEPTMASTER.ACCEPTMASTERID = g.T_LM_ACCEPTMASTER.ACCEPTMASTERID
+				select new 
+				{
+					COUNTT = t.Count.
+					COUNTB = t.Count
+				}

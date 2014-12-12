@@ -1,0 +1,79 @@
+﻿<UserControl 
+    x:Class="SMT.SaaS.Permission.UI.UserControls.SysUserRoleSet"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data" 
+	xmlns:dataFormToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.DataForm.Toolkit"  
+    xmlns:smtc ="clr-namespace:SMT.SaaS.Permission.UI"
+    
+    xmlns:datactr="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    >
+    <UserControl.Resources>
+        <smtc:DictionaryConverter x:Key="DictionaryConverter"></smtc:DictionaryConverter>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>            
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+		<Grid Grid.Row="0" x:Name="gridfirst">
+		    <Grid.RowDefinitions>
+			    <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+			    <ColumnDefinition Width="60"/>
+				<ColumnDefinition/>
+				<ColumnDefinition Width="60"/>
+				<ColumnDefinition/>                
+            </Grid.ColumnDefinitions>
+			<TextBlock Text="{Binding Converter={StaticResource ResourceConveter}, Source=RESPECTIVECOMPANIES}" Grid.Column="0" Margin="2"/>
+			<TextBox x:Name="txtCompany" IsReadOnly="True" Grid.Column="1" MinWidth="120" Margin="0,2,30,2"/>
+            <Button x:Name="btnLookUpPartyb" Grid.Column="1" Height="18" Click="CompanyObject_FindClick" Margin="2" HorizontalAlignment="Right">
+                <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/area/old_school_051.png"></Image>
+            </Button>
+            <TextBlock Text="{Binding Converter={StaticResource ResourceConveter}, Source=RESPECTIVEPOSITIONS}" Grid.Column="2" Margin="2"/>
+			<ComboBox x:Name="cbxPosition" Grid.Column="3" Style="{StaticResource ComboBoxStyle}" SelectionChanged="cbxPosition_SelectionChanged" MinWidth="180" Margin="0,0,10,0"  />
+            <TextBlock Text="{Binding Converter={StaticResource ResourceConveter}, Source=SYSTEMTYPE}" Grid.Row="1" Grid.Column="0" Style="{StaticResource SysTextBlockStyle}"/>
+            <!--<TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="0" Grid.Column="1" Name="txtSearchSystemType"/>-->
+            <ComboBox x:Name="cbxSystemType" Width="150" Height="22"  SelectionChanged="cbxSystemType_SelectionChanged" Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <!--<RowDefinition Height="30"></RowDefinition>-->
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition></RowDefinition>                
+            </Grid.RowDefinitions>
+            <!--<CheckBox x:Name="chkAll" Grid.Row="0" Content="{Binding Converter={StaticResource ResourceConveter}, Source=CHECKALL}" Margin="1,2,8,2" Click="chkAll_Click"></CheckBox>-->
+            <data:DataGrid x:Name="DtGrid_user" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0"
+                     LoadingRow="DaGr_LoadingRow" MinHeight="300" MaxHeight="400" VerticalScrollBarVisibility="Auto" Margin="8,0,10,10" VerticalAlignment="Top">
+                <data:DataGrid.Columns>
+                    <data:DataGridTemplateColumn  Width="60">
+                        <data:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <dataFormToolkit:DataField Label="">
+                                    <!--<CheckBox x:Name="myChkBtn"  Click="myChkBtn_Click" Visibility="Collapsed"></CheckBox>-->
+                                    <Image Name="entityLogo" Width="16" Height="16"></Image>
+                                </dataFormToolkit:DataField>
+                            </DataTemplate>
+                        </data:DataGridTemplateColumn.CellTemplate>
+                    </data:DataGridTemplateColumn>
+                    <data:DataGridTextColumn Header="SYSTEMNAME" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}" Binding="{Binding SYSTEMTYPE, Converter={StaticResource DictionaryConverter},ConverterParameter=SYSTEMTYPE}">
+                    </data:DataGridTextColumn>
+                    <data:DataGridTextColumn Header="ROLENAME" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}" Binding="{Binding ROLENAME}">
+                    </data:DataGridTextColumn>
+                </data:DataGrid.Columns>
+            </data:DataGrid>
+            <StackPanel  VerticalAlignment="bottom" Grid.Row="1" >
+                <datactr:DataPager x:Name="dataPager" DisplayMode="FirstLastPreviousNextNumeric" 
+                    Source="{Binding}" NumericButtonCount="{Binding Value, ElementName=numericButtonCount}" 
+                    AutoEllipsis="{Binding IsChecked, ElementName=autoEllipsis}" 
+                    IsTotalItemCountFixed="{Binding IsChecked, ElementName=totalItemCountFixed}" Margin="8,0,10,10" />
+
+            </StackPanel>
+        </Grid>
+        
+
+    </Grid>
+</UserControl>

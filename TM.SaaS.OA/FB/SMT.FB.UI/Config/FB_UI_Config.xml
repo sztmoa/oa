@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Orders>
+    <Order OrderTypeName="差旅报销申请单" OrderType="T_FB_TRAVELEXPAPPLYMASTER" DBType="T_FB_TRAVELEXPAPPLYMASTER" >
+        <View>
+
+        </View>
+        <Form>
+            <FieldForm2>
+                <LeftFForm>
+                    <DataFileItem LabelName="单据编号" FieldName="OrderCode" ValueMember="" CType="0" Requited="0" />
+                    <DataFileItem LabelName="状态" FieldName="OrderStates" ValueMember="" CType="0" Requited="0" />
+                    <DataFileItem LabelName="创建人" FieldName="CreateUserID" ValueMember="" CType="0" Requited="0" />
+                    <DataFileItem LabelName="创建时间" FieldName="CreateDate" ValueMember="" CType="0" Requited="0" />
+                </LeftFForm>
+                <RightFForm>
+                    <DataFileItem LabelName="单据类型" FieldName="OrderCode" ValueMember="" CType="0" Requited="0" />
+                    <DataFileItem LabelName="申请人" FieldName="OwnerID" ValueMember="" CType="3" Requited="0" />
+                    <DataFileItem LabelName="申请部门" FieldName="OwnerDepartmentID" ValueMember="" CType="2" Requited="0" />
+                    <DataFileItem LabelName="申请公司" FieldName="OwnerCompanyID" ValueMember="" CType="2" Requited="0" />
+                </RightFForm>
+            </FieldForm2>
+            <FieldForm>
+                <DataFileItem LabelName="备注" FieldName="Remark" ValueMember="" CType="4" Requited="0" />
+            </FieldForm>
+            <DetailGrid>
+                <Column Header="编号" PropertyName="SerialNumber" Width="75" IsReadOnly="1" />
+                <Column Header="预算项目" PropertyName="ObjectName" Width="200" IsReadOnly="1" />
+                <Column Header="可用金额" PropertyName="UsableMoney" Width="100" IsReadOnly="1" />
+                <Column Header="已用金额" PropertyName="UsedMoney" Width="100" IsReadOnly="0" />
+                <Column Header="费用类型" PropertyName="ChargeType" Width="100" IsReadOnly="1" />
+            </DetailGrid>
+        </Form>
+    </Order>
+    <Order OrderTypeName="年度预算划拨申请" OrderType="T_FB_TRANSFERAPPLYMASTER" DBType="T_FB_TRANSFERAPPLYMASTER" >
+    </Order>
+</Orders>

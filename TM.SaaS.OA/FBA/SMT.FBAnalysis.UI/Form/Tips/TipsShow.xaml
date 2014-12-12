@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="SMT.FBAnalysis.UI.Form.Tips.TipsShow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+    xmlns:local="clr-namespace:SMT.FBAnalysis.UI.ViewModel"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <local:TipsShowViewModel x:Key="vm"/>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="White" DataContext="{Binding Source={StaticResource vm}}">
+        <Grid x:Name="toolTip"  Background="#D8E9FD">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"  />
+                <RowDefinition  />
+            </Grid.RowDefinitions>
+            <!--科目开始-->
+            <telerik:RadGridView ItemsSource="{Binding ListSubject}"  ShowColumnHeaders="True" IsFilteringAllowed="False" telerik:StyleManager.Theme="Windows7"  ShowGroupPanel="False"  HorizontalAlignment="Stretch" x:Name="SubjectData" Grid.Row="1"   AutoGenerateColumns="False">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn Header="科目名称" Width="120">
+                        <telerik:GridViewDataColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox Width="100" ItemsSource="{Binding SubjectTypes}" />  
+                            </DataTemplate>
+                        </telerik:GridViewDataColumn.CellTemplate>
+                    </telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn Header="费用" Width="80"  DataMemberBinding="{Binding Cost,Mode=TwoWay}" IsReadOnly="False"  />
+                    <telerik:GridViewDataColumn Header="备注" Width="80"  DataMemberBinding="{Binding Name,Mode=TwoWay}" IsReadOnly="False"  />
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+            <!--科目结束-->
+            <StackPanel Grid.Row="0">
+                <Image  Width="16" Margin="10" HorizontalAlignment="Left" Source="/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/16_save.png" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost:1734/FBAnalysisService.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost:1734/FBAnalysisService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1734/FBAnalysisService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:1734/FBAnalysisService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.CustomModel" />
+      <xsd:import schemaLocation="http://localhost:1734/FBAnalysisService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.BLL" />
+      <xsd:import schemaLocation="http://localhost:1734/FBAnalysisService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SMT_FB_EFModel" />
+      <xsd:import schemaLocation="http://localhost:1734/FBAnalysisService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+      <xsd:import schemaLocation="http://localhost:1734/FBAnalysisService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="FBAnalysisService_GetExecutionListByPaging_InputMessage">
+    <wsdl:part name="parameters" element="GetExecutionListByPaging" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetExecutionListByPaging_OutputMessage">
+    <wsdl:part name="parameters" element="GetExecutionListByPagingResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetPerExecutionListByPaging_InputMessage">
+    <wsdl:part name="parameters" element="GetPerExecutionListByPaging" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetPerExecutionListByPaging_OutputMessage">
+    <wsdl:part name="parameters" element="GetPerExecutionListByPagingResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetBudgetRecordListByPaging_InputMessage">
+    <wsdl:part name="parameters" element="GetBudgetRecordListByPaging" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetBudgetRecordListByPaging_OutputMessage">
+    <wsdl:part name="parameters" element="GetBudgetRecordListByPagingResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetContactDetailListByPaging_InputMessage">
+    <wsdl:part name="parameters" element="GetContactDetailListByPaging" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetContactDetailListByPaging_OutputMessage">
+    <wsdl:part name="parameters" element="GetContactDetailListByPagingResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetDeptContactDetailListByPaging_InputMessage">
+    <wsdl:part name="parameters" element="GetDeptContactDetailListByPaging" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetDeptContactDetailListByPaging_OutputMessage">
+    <wsdl:part name="parameters" element="GetDeptContactDetailListByPagingResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetStandingBookListByPaging_InputMessage">
+    <wsdl:part name="parameters" element="GetStandingBookListByPaging" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetStandingBookListByPaging_OutputMessage">
+    <wsdl:part name="parameters" element="GetStandingBookListByPagingResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetYearlyBudgetAnalysisListByPaging_InputMessage">
+    <wsdl:part name="parameters" element="GetYearlyBudgetAnalysisListByPaging" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetYearlyBudgetAnalysisListByPaging_OutputMessage">
+    <wsdl:part name="parameters" element="GetYearlyBudgetAnalysisListByPagingResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetMonthlyBudgetAnalysisListByPaging_InputMessage">
+    <wsdl:part name="parameters" element="GetMonthlyBudgetAnalysisListByPaging" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetMonthlyBudgetAnalysisListByPaging_OutputMessage">
+    <wsdl:part name="parameters" element="GetMonthlyBudgetAnalysisListByPagingResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileBudgetRecordList_InputMessage">
+    <wsdl:part name="parameters" element="OutFileBudgetRecordList" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileBudgetRecordList_OutputMessage">
+    <wsdl:part name="parameters" element="OutFileBudgetRecordListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileExecutionList_InputMessage">
+    <wsdl:part name="parameters" element="OutFileExecutionList" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileExecutionList_OutputMessage">
+    <wsdl:part name="parameters" element="OutFileExecutionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFilePerExecutionList_InputMessage">
+    <wsdl:part name="parameters" element="OutFilePerExecutionList" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFilePerExecutionList_OutputMessage">
+    <wsdl:part name="parameters" element="OutFilePerExecutionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileDeptDayBookData_InputMessage">
+    <wsdl:part name="parameters" element="OutFileDeptDayBookData" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileDeptDayBookData_OutputMessage">
+    <wsdl:part name="parameters" element="OutFileDeptDayBookDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFilePerDayBookData_InputMessage">
+    <wsdl:part name="parameters" element="OutFilePerDayBookData" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFilePerDayBookData_OutputMessage">
+    <wsdl:part name="parameters" element="OutFilePerDayBookDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileContactDetailList_InputMessage">
+    <wsdl:part name="parameters" element="OutFileContactDetailList" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileContactDetailList_OutputMessage">
+    <wsdl:part name="parameters" element="OutFileContactDetailListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileDeptContactDetailList_InputMessage">
+    <wsdl:part name="parameters" element="OutFileDeptContactDetailList" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileDeptContactDetailList_OutputMessage">
+    <wsdl:part name="parameters" element="OutFileDeptContactDetailListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileStandingBookList_InputMessage">
+    <wsdl:part name="parameters" element="OutFileStandingBookList" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileStandingBookList_OutputMessage">
+    <wsdl:part name="parameters" element="OutFileStandingBookListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileMonthlyBudgetAnalysisList_InputMessage">
+    <wsdl:part name="parameters" element="OutFileMonthlyBudgetAnalysisList" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileMonthlyBudgetAnalysisList_OutputMessage">
+    <wsdl:part name="parameters" element="OutFileMonthlyBudgetAnalysisListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileYearlyBudgetAnalysisList_InputMessage">
+    <wsdl:part name="parameters" element="OutFileYearlyBudgetAnalysisList" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_OutFileYearlyBudgetAnalysisList_OutputMessage">
+    <wsdl:part name="parameters" element="OutFileYearlyBudgetAnalysisListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetLookupOjbects_InputMessage">
+    <wsdl:part name="parameters" element="GetLookupOjbects" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetLookupOjbects_OutputMessage">
+    <wsdl:part name="parameters" element="GetLookupOjbectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetSubjectListByOrgType_InputMessage">
+    <wsdl:part name="parameters" element="GetSubjectListByOrgType" />
+  </wsdl:message>
+  <wsdl:message name="FBAnalysisService_GetSubjectListByOrgType_OutputMessage">
+    <wsdl:part name="parameters" element="GetSubjectListByOrgTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FBAnalysisService">
+    <wsdl:operation name="GetExecutionListByPaging">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/GetExecutionListByPaging" message="FBAnalysisService_GetExecutionListByPaging_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/GetExecutionListByPagingResponse" message="FBAnalysisService_GetExecutionListByPaging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerExecutionListByPaging">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/GetPerExecutionListByPaging" message="FBAnalysisService_GetPerExecutionListByPaging_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/GetPerExecutionListByPagingResponse" message="FBAnalysisService_GetPerExecutionListByPaging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBudgetRecordListByPaging">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/GetBudgetRecordListByPaging" message="FBAnalysisService_GetBudgetRecordListByPaging_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/GetBudgetRecordListByPagingResponse" message="FBAnalysisService_GetBudgetRecordListByPaging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactDetailListByPaging">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/GetContactDetailListByPaging" message="FBAnalysisService_GetContactDetailListByPaging_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/GetContactDetailListByPagingResponse" message="FBAnalysisService_GetContactDetailListByPaging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptContactDetailListByPaging">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/GetDeptContactDetailListByPaging" message="FBAnalysisService_GetDeptContactDetailListByPaging_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/GetDeptContactDetailListByPagingResponse" message="FBAnalysisService_GetDeptContactDetailListByPaging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStandingBookListByPaging">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/GetStandingBookListByPaging" message="FBAnalysisService_GetStandingBookListByPaging_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/GetStandingBookListByPagingResponse" message="FBAnalysisService_GetStandingBookListByPaging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYearlyBudgetAnalysisListByPaging">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/GetYearlyBudgetAnalysisListByPaging" message="FBAnalysisService_GetYearlyBudgetAnalysisListByPaging_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/GetYearlyBudgetAnalysisListByPagingResponse" message="FBAnalysisService_GetYearlyBudgetAnalysisListByPaging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMonthlyBudgetAnalysisListByPaging">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/GetMonthlyBudgetAnalysisListByPaging" message="FBAnalysisService_GetMonthlyBudgetAnalysisListByPaging_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/GetMonthlyBudgetAnalysisListByPagingResponse" message="FBAnalysisService_GetMonthlyBudgetAnalysisListByPaging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OutFileBudgetRecordList">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/OutFileBudgetRecordList" message="FBAnalysisService_OutFileBudgetRecordList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/OutFileBudgetRecordListResponse" message="FBAnalysisService_OutFileBudgetRecordList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OutFileExecutionList">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/OutFileExecutionList" message="FBAnalysisService_OutFileExecutionList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/OutFileExecutionListResponse" message="FBAnalysisService_OutFileExecutionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OutFilePerExecutionList">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/OutFilePerExecutionList" message="FBAnalysisService_OutFilePerExecutionList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/OutFilePerExecutionListResponse" message="FBAnalysisService_OutFilePerExecutionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OutFileDeptDayBookData">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/OutFileDeptDayBookData" message="FBAnalysisService_OutFileDeptDayBookData_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/OutFileDeptDayBookDataResponse" message="FBAnalysisService_OutFileDeptDayBookData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OutFilePerDayBookData">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/OutFilePerDayBookData" message="FBAnalysisService_OutFilePerDayBookData_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/OutFilePerDayBookDataResponse" message="FBAnalysisService_OutFilePerDayBookData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OutFileContactDetailList">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/OutFileContactDetailList" message="FBAnalysisService_OutFileContactDetailList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/OutFileContactDetailListResponse" message="FBAnalysisService_OutFileContactDetailList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OutFileDeptContactDetailList">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/OutFileDeptContactDetailList" message="FBAnalysisService_OutFileDeptContactDetailList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/OutFileDeptContactDetailListResponse" message="FBAnalysisService_OutFileDeptContactDetailList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OutFileStandingBookList">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/OutFileStandingBookList" message="FBAnalysisService_OutFileStandingBookList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/OutFileStandingBookListResponse" message="FBAnalysisService_OutFileStandingBookList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OutFileMonthlyBudgetAnalysisList">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/OutFileMonthlyBudgetAnalysisList" message="FBAnalysisService_OutFileMonthlyBudgetAnalysisList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/OutFileMonthlyBudgetAnalysisListResponse" message="FBAnalysisService_OutFileMonthlyBudgetAnalysisList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OutFileYearlyBudgetAnalysisList">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/OutFileYearlyBudgetAnalysisList" message="FBAnalysisService_OutFileYearlyBudgetAnalysisList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/OutFileYearlyBudgetAnalysisListResponse" message="FBAnalysisService_OutFileYearlyBudgetAnalysisList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLookupOjbects">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/GetLookupOjbects" message="FBAnalysisService_GetLookupOjbects_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/GetLookupOjbectsResponse" message="FBAnalysisService_GetLookupOjbects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjectListByOrgType">
+      <wsdl:input wsaw:Action="urn:FBAnalysisService/GetSubjectListByOrgType" message="FBAnalysisService_GetSubjectListByOrgType_InputMessage" />
+      <wsdl:output wsaw:Action="urn:FBAnalysisService/GetSubjectListByOrgTypeResponse" message="FBAnalysisService_GetSubjectListByOrgType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SMTIM.Application" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SMTIM.Application" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfDepartItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DepartItem" nillable="true" type="tns:DepartItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartItem" nillable="true" type="tns:ArrayOfDepartItem" />
+  <xs:complexType name="DepartItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="expandable" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="id" type="xs:unsignedLong" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parentId" type="xs:unsignedLong" />
+      <xs:element minOccurs="0" name="valid" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepartItem" nillable="true" type="tns:DepartItem" />
+  <xs:complexType name="ArrayOfDepartMemberItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DepartMemberItem" nillable="true" type="tns:DepartMemberItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartMemberItem" nillable="true" type="tns:ArrayOfDepartMemberItem" />
+  <xs:complexType name="DepartMemberItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="departId" type="xs:unsignedLong" />
+      <xs:element minOccurs="0" name="userInfo" nillable="true" type="tns:UserItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepartMemberItem" nillable="true" type="tns:DepartMemberItem" />
+  <xs:complexType name="UserItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="strEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strNickName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strTelephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="szCompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="szDepart" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ulUserID" type="xs:unsignedLong" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserItem" nillable="true" type="tns:UserItem" />
+  <xs:complexType name="ArrayOfGroupItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupItem" nillable="true" type="tns:GroupItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupItem" nillable="true" type="tns:ArrayOfGroupItem" />
+  <xs:complexType name="GroupItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bulletin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="creatorId" type="xs:unsignedLong" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="groupId" type="xs:unsignedLong" />
+      <xs:element minOccurs="0" name="groupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userRole" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupItem" nillable="true" type="tns:GroupItem" />
+  <xs:complexType name="ArrayOfGroupMemberItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupMemberItem" nillable="true" type="tns:GroupMemberItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupMemberItem" nillable="true" type="tns:ArrayOfGroupMemberItem" />
+  <xs:complexType name="GroupMemberItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="groupId" type="xs:unsignedLong" />
+      <xs:element minOccurs="0" name="memberType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userInfo" nillable="true" type="tns:UserItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupMemberItem" nillable="true" type="tns:GroupMemberItem" />
+</xs:schema>

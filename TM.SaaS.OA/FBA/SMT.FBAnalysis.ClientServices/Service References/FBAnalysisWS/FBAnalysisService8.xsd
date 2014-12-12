@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1734/FBAnalysisService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:1734/FBAnalysisService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.CustomModel" />
+  <xs:import schemaLocation="http://localhost:1734/FBAnalysisService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.BLL" />
+  <xs:import schemaLocation="http://localhost:1734/FBAnalysisService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SMT_FB_EFModel" />
+  <xs:element name="GetExecutionListByPaging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOrgID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iYear" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthStart" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthEnd" type="xs:int" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q1:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExecutionListByPagingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.CustomModel" minOccurs="0" name="GetExecutionListByPagingResult" nillable="true" type="q2:ArrayOfV_ExecutionList" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPerExecutionListByPaging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOrgID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iYear" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthStart" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthEnd" type="xs:int" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q3:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPerExecutionListByPagingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.CustomModel" minOccurs="0" name="GetPerExecutionListByPagingResult" nillable="true" type="q4:ArrayOfV_PerExecutionList" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBudgetRecordListByPaging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iBudgetRecordType" type="xs:int" />
+        <xs:element minOccurs="0" name="iYear" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthStart" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthEnd" type="xs:int" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q5:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBudgetRecordListByPagingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.CustomModel" minOccurs="0" name="GetBudgetRecordListByPagingResult" nillable="true" type="q6:ArrayOfV_BudgetRecord" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactDetailListByPaging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOrgID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dtStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q7:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+        <xs:element minOccurs="0" name="dBeforeAccount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dAfterAccount" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactDetailListByPagingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.CustomModel" minOccurs="0" name="GetContactDetailListByPagingResult" nillable="true" type="q8:ArrayOfV_ContactDetail" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+        <xs:element minOccurs="0" name="dBeforeAccount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dAfterAccount" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeptContactDetailListByPaging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOrgID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dtStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q9:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+        <xs:element minOccurs="0" name="dTotalNormalBorrowMoney" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dTotalSpecialMoney" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dTotalReserveMoney" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeptContactDetailListByPagingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.CustomModel" minOccurs="0" name="GetDeptContactDetailListByPagingResult" nillable="true" type="q10:ArrayOfV_DeptContactDetail" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+        <xs:element minOccurs="0" name="dTotalNormalBorrowMoney" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dTotalSpecialMoney" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dTotalReserveMoney" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStandingBookListByPaging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dtStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q11:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStandingBookListByPagingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.CustomModel" minOccurs="0" name="GetStandingBookListByPagingResult" nillable="true" type="q12:ArrayOfV_StandingBook" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetYearlyBudgetAnalysisListByPaging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iYear" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthStart" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthEnd" type="xs:int" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q13:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetYearlyBudgetAnalysisListByPagingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.CustomModel" minOccurs="0" name="GetYearlyBudgetAnalysisListByPagingResult" nillable="true" type="q14:ArrayOfV_YearlyBudgetAnalysis" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMonthlyBudgetAnalysisListByPaging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iYear" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonth" type="xs:int" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q15:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMonthlyBudgetAnalysisListByPagingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.CustomModel" minOccurs="0" name="GetMonthlyBudgetAnalysisListByPagingResult" nillable="true" type="q16:ArrayOfV_MonthlyBudgetAnalysis" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileBudgetRecordList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iBudgetRecordType" type="xs:int" />
+        <xs:element minOccurs="0" name="iYear" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthStart" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthEnd" type="xs:int" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q17:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileBudgetRecordListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OutFileBudgetRecordListResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileExecutionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOrgID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iYear" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthStart" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthEnd" type="xs:int" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q18:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileExecutionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OutFileExecutionListResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFilePerExecutionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOrgID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iYear" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthStart" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthEnd" type="xs:int" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q19:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFilePerExecutionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OutFilePerExecutionListResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileDeptDayBookData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOrgID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iYear" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthStart" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthEnd" type="xs:int" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q20:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileDeptDayBookDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OutFileDeptDayBookDataResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFilePerDayBookData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOrgID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iYear" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthStart" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthEnd" type="xs:int" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q21:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFilePerDayBookDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OutFilePerDayBookDataResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileContactDetailList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFileType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOrgID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dtStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q22:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dBeforeAccount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dAfterAccount" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileContactDetailListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OutFileContactDetailListResult" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="dBeforeAccount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dAfterAccount" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileDeptContactDetailList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFileType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOrgID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dtStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q23:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dTotalNormalBorrowMoney" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dTotalSpecialMoney" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dTotalReserveMoney" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileDeptContactDetailListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OutFileDeptContactDetailListResult" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="dTotalNormalBorrowMoney" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dTotalSpecialMoney" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dTotalReserveMoney" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileStandingBookList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dtStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q24:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileStandingBookListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OutFileStandingBookListResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileMonthlyBudgetAnalysisList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iYear" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonth" type="xs:int" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q25:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileMonthlyBudgetAnalysisListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OutFileMonthlyBudgetAnalysisListResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileYearlyBudgetAnalysisList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOwnerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iYear" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthStart" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonthEnd" type="xs:int" />
+        <xs:element minOccurs="0" name="strSortKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objArgs" nillable="true" type="q26:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutFileYearlyBudgetAnalysisListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OutFileYearlyBudgetAnalysisListResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLookupOjbects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/SMT.FBAnalysis.BLL" minOccurs="0" name="prefixName" type="q27:FBAEnums.BLLPrefixNames" />
+        <xs:element minOccurs="0" name="modelCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="sort" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filterString" nillable="true" type="xs:string" />
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="paras" nillable="true" type="q28:ArrayOfanyType" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLookupOjbectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLookupOjbectsResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubjectListByOrgType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOwnerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOrgType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOrgId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubjectListByOrgTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/SMT_FB_EFModel" minOccurs="0" name="GetSubjectListByOrgTypeResult" nillable="true" type="q29:ArrayOfT_FB_SUBJECT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

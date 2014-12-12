@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SMT.FBAnalysis.Service.DailyUpdateCheckStateService" CodeBehind="DailyUpdateCheckStateService.svc.cs" %>

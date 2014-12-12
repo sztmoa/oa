@@ -1,0 +1,174 @@
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 13:58:58
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 13:58:59
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 13:59:07
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 13:59:07
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 13:59:08
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 13:59:08
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 14:01:32
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 14:03:47
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-03113: 通信通道的文件结尾
+进程 ID: 29354
+会话 ID: 496 序列号: 468
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.FB.BLL.BaseBLL.GetEntities[T](QueryExpression queryExpression) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\BaseBll.cs:行号 72
+   在 SMT.FB.BLL.QueryEntityBLL.QueryQueryBudgetAccount(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\QueryEntityBLL.cs:行号 42
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryEntitiesByType(QueryExpression qe, String returnType) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SubjectBLL.cs:行号 1279
+   在 SMT.FB.BLL.SubjectBLL.QueryEntities(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SubjectBLL.cs:行号 1254
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SubjectBLL.cs:行号 2087  2014/9/18 14:06:40
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 14:06:41
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-03113: 通信通道的文件结尾
+进程 ID: 29354
+会话 ID: 496 序列号: 468
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.FB.BLL.BaseBLL.GetEntities[T](QueryExpression queryExpression) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\BaseBll.cs:行号 72
+   在 SMT.FB.BLL.QueryEntityBLL.QueryQueryBudgetAccount(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\QueryEntityBLL.cs:行号 42
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SubjectBLL.cs:行号 2093
+   在 SMT.FB.Services.FBCommonService.QueryFBEntities(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.Services\FBCommonService.svc.cs:行号 58
+参数: Name:USABLEMONEY ; Value:0  ; QueryType:T_FB_BUDGETACCOUNT
+Name:BUDGETYEAR ; Value:2014  ; QueryType:
+Name:BUDGETMONTH ; Value:9  ; QueryType:
+Name:BUDGETYEAR ; Value:2014  ; QueryType:
+Name:ACCOUNTOBJECTTYPE ; Value:1  ; QueryType:
+Name:OWNERCOMPANYID ; Value:cafdca8a-c630-4475-a65d-490d052dca36  ; QueryType:
+  2014/9/18 14:06:41
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:08:54
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:09:26
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:12:13
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:12:36
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:14:47
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:15:11
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:15:49
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:15:49
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:15:49
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:15:49
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:15:49
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:15:49
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:15:49
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:15:49
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:15:49
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:15:49
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:16:01
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:17:57
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:18:20
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:18:34
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:20:43
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-03113: 通信通道的文件结尾
+进程 ID: 30296
+会话 ID: 481 序列号: 124
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.FB.BLL.BaseBLL.GetEntities[T](QueryExpression queryExpression) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\BaseBll.cs:行号 72
+   在 SMT.FB.BLL.QueryEntityBLL.QueryQueryBudgetAccount(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\QueryEntityBLL.cs:行号 42
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryEntitiesByType(QueryExpression qe, String returnType) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SubjectBLL.cs:行号 1279
+   在 SMT.FB.BLL.SubjectBLL.QueryEntities(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SubjectBLL.cs:行号 1254
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SubjectBLL.cs:行号 2087  2014/9/18 15:21:27
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:21:27
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-03113: 通信通道的文件结尾
+进程 ID: 30296
+会话 ID: 481 序列号: 124
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.FB.BLL.BaseBLL.GetEntities[T](QueryExpression queryExpression) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\BaseBll.cs:行号 72
+   在 SMT.FB.BLL.QueryEntityBLL.QueryQueryBudgetAccount(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\QueryEntityBLL.cs:行号 42
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.BLL\SubjectBLL.cs:行号 2093
+   在 SMT.FB.Services.FBCommonService.QueryFBEntities(QueryExpression qe) 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.Services\FBCommonService.svc.cs:行号 58
+参数: Name:USABLEMONEY ; Value:0  ; QueryType:T_FB_BUDGETACCOUNT
+Name:BUDGETYEAR ; Value:2014  ; QueryType:
+Name:BUDGETMONTH ; Value:9  ; QueryType:
+Name:BUDGETYEAR ; Value:2014  ; QueryType:
+Name:ACCOUNTOBJECTTYPE ; Value:1  ; QueryType:
+Name:OWNERCOMPANYID ; Value:cafdca8a-c630-4475-a65d-490d052dca36  ; QueryType:
+  2014/9/18 15:21:27
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:24:23
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:24:44
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:29:55
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:30:12
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:35:02
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:35:19
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:36:45
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:36:45
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:36:45
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:36:45
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:36:45
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:36:45
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:36:45
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:36:45
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:36:45
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:36:45
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:36:45
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:36:45
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:36:45
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:37:58
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:37:58
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:38:04
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:38:04
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:38:04
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:38:04
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:38:27
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:42:56
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:43:13
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:48:26
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 15:49:10
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 16:18:16
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 16:18:16
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 16:18:16
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 16:18:16
+Debug  FB BaseDAL.Dispose sucess  2014/9/18 16:18:16

@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TKServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1800/TKServices.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1800/TKServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1800/TKServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT.Portal.Communication" />
+      <xsd:import schemaLocation="http://localhost:1800/TKServices.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:1800/TKServices.svc?xsd=xsd4" namespace="SMT.QueryObjects" />
+      <xsd:import schemaLocation="http://localhost:1800/TKServices.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Common.Query" />
+      <xsd:import schemaLocation="http://localhost:1800/TKServices.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Common" />
+      <xsd:import schemaLocation="http://localhost:1800/TKServices.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SMT.TK.Model" />
+      <xsd:import schemaLocation="http://localhost:1800/TKServices.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SMT.TK.Services.MobileOperate" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITKServices_Execute_InputMessage">
+    <wsdl:part name="parameters" element="tns:Execute" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_Execute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_Query_InputMessage">
+    <wsdl:part name="parameters" element="tns:Query" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_Query_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_UpdateCheckState_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCheckState" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_UpdateCheckState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCheckStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_SendCarryDownIncomeTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendCarryDownIncomeTask" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_SendCarryDownIncomeTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendCarryDownIncomeTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_ListCarryDownFunds_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCarryDownFunds" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_ListCarryDownFunds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListCarryDownFundsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_ListCarryDownFundsDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCarryDownFundsDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_ListCarryDownFundsDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListCarryDownFundsDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_GetTaskMain_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskMain" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_GetTaskMain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_GetTaskMainByTaskId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskMainByTaskId" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_GetTaskMainByTaskId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskMainByTaskIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_GetJoinUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJoinUser" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_GetJoinUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJoinUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_GetTaskReplay_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskReplay" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_GetTaskReplay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskReplayResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_GetTaskTobeCost_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskTobeCost" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_GetTaskTobeCost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskTobeCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_SaveReplay_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveReplay" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_SaveReplay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveReplayResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_SaveTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTask" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_SaveTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_SubmitTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitTask" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_SubmitTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_AgreeTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgreeTask" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_AgreeTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgreeTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_RecjectTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecjectTask" />
+  </wsdl:message>
+  <wsdl:message name="ITKServices_RecjectTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecjectTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_CallApplicationService_InputMessage">
+    <wsdl:part name="parameters" element="tns:CallApplicationService" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_CallWaitAppService_InputMessage">
+    <wsdl:part name="parameters" element="tns:CallWaitAppService" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_CallWaitAppService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CallWaitAppServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventTriggerProcess_EventTriggerProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:EventTriggerProcess" />
+  </wsdl:message>
+  <wsdl:portType name="ITKServices">
+    <wsdl:operation name="Execute">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/Execute" message="tns:ITKServices_Execute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/ExecuteResponse" message="tns:ITKServices_Execute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Query">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/Query" message="tns:ITKServices_Query_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/QueryResponse" message="tns:ITKServices_Query_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/Save" message="tns:ITKServices_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/SaveResponse" message="tns:ITKServices_Save_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckState">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/UpdateCheckState" message="tns:ITKServices_UpdateCheckState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/UpdateCheckStateResponse" message="tns:ITKServices_UpdateCheckState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendCarryDownIncomeTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/SendCarryDownIncomeTask" message="tns:ITKServices_SendCarryDownIncomeTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/SendCarryDownIncomeTaskResponse" message="tns:ITKServices_SendCarryDownIncomeTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCarryDownFunds">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/ListCarryDownFunds" message="tns:ITKServices_ListCarryDownFunds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/ListCarryDownFundsResponse" message="tns:ITKServices_ListCarryDownFunds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCarryDownFundsDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/ListCarryDownFundsDetail" message="tns:ITKServices_ListCarryDownFundsDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/ListCarryDownFundsDetailResponse" message="tns:ITKServices_ListCarryDownFundsDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskMain">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/GetTaskMain" message="tns:ITKServices_GetTaskMain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/GetTaskMainResponse" message="tns:ITKServices_GetTaskMain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskMainByTaskId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/GetTaskMainByTaskId" message="tns:ITKServices_GetTaskMainByTaskId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/GetTaskMainByTaskIdResponse" message="tns:ITKServices_GetTaskMainByTaskId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJoinUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/GetJoinUser" message="tns:ITKServices_GetJoinUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/GetJoinUserResponse" message="tns:ITKServices_GetJoinUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskReplay">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/GetTaskReplay" message="tns:ITKServices_GetTaskReplay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/GetTaskReplayResponse" message="tns:ITKServices_GetTaskReplay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskTobeCost">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/GetTaskTobeCost" message="tns:ITKServices_GetTaskTobeCost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/GetTaskTobeCostResponse" message="tns:ITKServices_GetTaskTobeCost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveReplay">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/SaveReplay" message="tns:ITKServices_SaveReplay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/SaveReplayResponse" message="tns:ITKServices_SaveReplay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/SaveTask" message="tns:ITKServices_SaveTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/SaveTaskResponse" message="tns:ITKServices_SaveTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/SubmitTask" message="tns:ITKServices_SubmitTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/SubmitTaskResponse" message="tns:ITKServices_SubmitTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgreeTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/AgreeTask" message="tns:ITKServices_AgreeTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/AgreeTaskResponse" message="tns:ITKServices_AgreeTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecjectTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITKServices/RecjectTask" message="tns:ITKServices_RecjectTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITKServices/RecjectTaskResponse" message="tns:ITKServices_RecjectTask_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IApplicationService">
+    <wsdl:operation name="CallApplicationService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/CallApplicationService" message="tns:IApplicationService_CallApplicationService_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CallWaitAppService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationService/CallWaitAppService" message="tns:IApplicationService_CallWaitAppService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationService/CallWaitAppServiceResponse" message="tns:IApplicationService_CallWaitAppService_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IEventTriggerProcess">
+    <wsdl:operation name="EventTriggerProcess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventTriggerProcess/EventTriggerProcess" message="tns:IEventTriggerProcess_EventTriggerProcess_InputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITKServices" type="tns:ITKServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Execute">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/Execute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Query">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/Query" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckState">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/UpdateCheckState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendCarryDownIncomeTask">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/SendCarryDownIncomeTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCarryDownFunds">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/ListCarryDownFunds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCarryDownFundsDetail">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/ListCarryDownFundsDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskMain">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/GetTaskMain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskMainByTaskId">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/GetTaskMainByTaskId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJoinUser">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/GetJoinUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskReplay">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/GetTaskReplay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskTobeCost">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/GetTaskTobeCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReplay">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/SaveReplay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTask">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/SaveTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitTask">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/SubmitTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgreeTask">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/AgreeTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecjectTask">
+      <soap:operation soapAction="http://tempuri.org/ITKServices/RecjectTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IApplicationService" type="tns:IApplicationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CallApplicationService">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/CallApplicationService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="CallWaitAppService">
+      <soap:operation soapAction="http://tempuri.org/IApplicationService/CallWaitAppService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IEventTriggerProcess" type="tns:IEventTriggerProcess">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EventTriggerProcess">
+      <soap:operation soapAction="http://tempuri.org/IEventTriggerProcess/EventTriggerProcess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TKServices">
+    <wsdl:port name="BasicHttpBinding_ITKServices" binding="tns:BasicHttpBinding_ITKServices">
+      <soap:address location="http://localhost:1800/TKServices.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IApplicationService" binding="tns:BasicHttpBinding_IApplicationService">
+      <soap:address location="http://localhost:1800/TKServices.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IEventTriggerProcess" binding="tns:BasicHttpBinding_IEventTriggerProcess">
+      <soap:address location="http://localhost:1800/TKServices.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

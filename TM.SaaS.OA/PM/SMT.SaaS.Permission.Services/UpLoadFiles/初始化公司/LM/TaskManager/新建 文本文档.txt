@@ -1,0 +1,70 @@
+MSN：nancy.ldf@msn.com   nancyldf                      EH528655625CS
+skype:nancy.ldf@im.tom.com    ZLO0ND          
+6225887842060242
+
+无足够的操作控件 虚拟地址空间碎片
+http://portal.sinomaster.com/
+http://172.30.40.183:8082/SmtOnline/Application/main/TestPage.html
+Username：CWJL001
+Password：888888
+
+http://172.30.40.183/SmtOnline/Application/main/SMTTestPage.html
+
+用户名XSJL001 密码888888
+
+
+http://172.30.40.183/SmtOnline/Application/main/
+Username：BSR
+Password：888888
+
+ http://shrinkster.com/1eq0 
+
+SID : version2/orcl
+IP : 172.30.40.183
+port : 1521                                                    鼠、牛、虎、兔、蛇、马、羊、猴、鸡、狗、猪、龙
+
+http://www.msnnacopa.com.br/
+                                                    １.本周任务，２任务的分解，３完成了哪些，４还有哪些未完成。５有没有需要协助的问题。
+
+
+
+
+select * from t_rm_requireapply t  where t.checkstates=2 and t.requirestates=1
+update t_rm_requireapply t  set t.requirestates=1 where  t.checkstates=2 and t.requirestates=2
+
+
+
+ var popeList = from fun in dc.SysFun
+                           join rm in dc.RoleRight
+                               on fun.NodeId equals rm.NodeId
+                           join u in dc.UserInfo on rm.RoleId equals u.RoleId
+                           where u.UserId == userid orderby fun.DisplayOrder ascending
+                           select fun;
+
+  新一代的百元假钞又出现了，开头是CE86和CH31，仿真技术高于HD90！
+100元编号为：CE86、CH31、HD90、HB90，WJ1开头均为假币；
+50元编号为：FA开头均为假币；
+10元编号为：AB77、AB、AB99开头均为假币；
+请收到的，马上转发给你所有亲人和朋友单位同事，以免他们财产受到损失。
+
+
+<add name="EF Oracle Data Provider" invariant="EFOracleProvider" description="EF Provider for Oracle testing" type="EFOracleProvider.EFOracleProviderFactory, EFOracleProvider, Version=1.0.0.0, Culture=neutral, PublicKeyToken=def642f226e0e59b"/>
+select * from t_rm_requireapply t where t.checkstates=2 and t.requirestates=1
+
+
+从9月17日开始：
+9.17             上课1天
+9.18             休息1天
+9.19--9.21   上课3天
+9.22--9.26   中秋休息5天
+9.27--9.30   上课4天
+10.1--10.7   国庆休息7天
+10.8--10.9   上课2天
+10.10           休息1天 
+大家发表的互动观点(67781人发表
+
+Product code: leswljrftczs7bjz8pz2kq7vzq85fu67q8f8rgg2bv           QWLFKH-6MXZMT-MGY27N-ZGHDCP-6NG96Y
+Serial number: 642136713
+Password: xs374ca
+
+时间.ToString("yyyy/MM/dd", System.Globalization.DateTimeFormatInfo.InvariantInfo));

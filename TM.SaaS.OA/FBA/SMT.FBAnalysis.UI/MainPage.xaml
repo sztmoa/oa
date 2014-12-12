@@ -1,0 +1,175 @@
+﻿<UserControl
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" 
+  xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
+ 
+  xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+  xmlns:smtx="clr-namespace:SMT.SaaS.FrameworkUI;assembly=SMT.SaaS.FrameworkUI"
+    xmlns:layoutToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"
+  
+  mc:Ignorable="d" xmlns:dataInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input" 
+  x:Class="SMT.FBAnalysis.UI.MainPage"
+  d:DesignWidth="740" d:DesignHeight="480">
+    <UserControl.Resources>
+        <Storyboard  x:Name="beforSpinnerShowShowBorder"     
+                 Duration="0:0:0.5"/>
+
+        <Storyboard  x:Name="spinnerBackShowBorder" >
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="waitSpinnerBack" Storyboard.TargetProperty="(UIElement.Opacity)" >
+                <SplineDoubleKeyFrame KeyTime="00:00:0.5000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard  x:Name="spinnerShowBorder" >
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="waitSpinner" Storyboard.TargetProperty="(UIElement.Opacity)" >
+                <SplineDoubleKeyFrame KeyTime="00:00:0.5000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="ShowMyShow1">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ContentBorder" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.GlobalOffsetZ)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-200"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0" KeySpline="1,0,1,1"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.9000000" Value="-30"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ContentBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="1" KeySpline="1,0,1,1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="StoryboardStart">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="FrameParent" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0.9"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.8"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0.8"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0.9"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.2000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="FrameParent" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0.9"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.8"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0.8"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0.9"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.2000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Style="{StaticResource MainPageGridStyle1}">
+
+        <Border  x:Name="Menu" Margin="0,100,0,0"  HorizontalAlignment="Left" Height="auto" Width="190" Background="Transparent" CornerRadius="3" SizeChanged="Menu_SizeChanged" BorderThickness="1">
+
+            <layoutToolkit:Accordion x:Name="toolkitacc"  HorizontalAlignment="Stretch" BorderThickness="0" AccordionButtonStyle="{StaticResource AccordionButtonStyle1}">
+                <layoutToolkit:AccordionItem x:Name="AItem1" BorderThickness="0" >
+                    <layoutToolkit:AccordionItem.Header>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                            <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/area/bar_bottom_ico_Marketing.png" HorizontalAlignment="Left" Width="26" Height="26" Margin="6,0,0,0"/>
+                            <TextBlock Text="日常管理" Margin="5,0,0,0" Width="auto" Height="24"  FontSize="14" Style="{StaticResource TextBCommonBlue1}"></TextBlock>
+                        </StackPanel>
+                    </layoutToolkit:AccordionItem.Header>
+                    <layoutToolkit:TransitioningContentControl>
+                        <StackPanel Margin="0,6,0,0" >
+                            <Canvas Height="24">
+                                <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/ico_16_1038.png" HorizontalAlignment="Left" Width="16" Height="16" Margin="6,1,0,0" />
+                                <HyperlinkButton x:Name="H1" NavigateUri="/DailyManagement/ChargeApplyManagement" Content="费用申请" Margin="26,0,0,0"  Style="{StaticResource HyperlinkButton}"/>
+                            </Canvas>
+                            <Canvas Height="24">
+                                <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/ico_16_1038.png" HorizontalAlignment="Left" Width="16" Height="16" Margin="6,1,0,0"/>
+                                <HyperlinkButton x:Name="H3" NavigateUri="/DailyManagement/BorrowApplyManagement" Content="借款申请" Margin="26,0,0,0"  Style="{StaticResource HyperlinkButton}"/>
+                            </Canvas>
+                            <Canvas Height="24">
+                                <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/ico_16_1038.png" HorizontalAlignment="Left" Width="16" Height="16" Margin="6,1,0,0"/>
+                                <HyperlinkButton x:Name="H4" NavigateUri="/DailyManagement/RepayApplyManagement" Content="还款申请" Margin="26,0,0,0"  Style="{StaticResource HyperlinkButton}"/>
+                            </Canvas>
+
+                        </StackPanel>
+                    </layoutToolkit:TransitioningContentControl>
+                </layoutToolkit:AccordionItem >
+                <layoutToolkit:AccordionItem x:Name="AItem2" BorderThickness="0" >
+                    <layoutToolkit:AccordionItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/area/bar_bottom_ico_reports.png" HorizontalAlignment="Left" Width="26" Height="26" Margin="6,0,0,0"/>
+                            <TextBlock Text="查询分析" Margin="5,0,0,0" Width="auto" Height="24"  FontSize="14" Style="{StaticResource TextBCommonBlue1}"></TextBlock>
+                        </StackPanel>
+                    </layoutToolkit:AccordionItem.Header>
+                    <layoutToolkit:TransitioningContentControl>
+                        <StackPanel Margin="0,6,0,0" >
+                            <Canvas Height="24">
+                                <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/ico_16_1038.png" HorizontalAlignment="Left" Width="16" Height="16" Margin="6,1,0,0" />
+                                <HyperlinkButton x:Name="Hh1" NavigateUri="/Query/QueryBudgetAccount" Content="可用额度查询" Margin="26,0,0,0" Style="{StaticResource HyperlinkButton}"/>
+                            </Canvas>
+                            <Canvas Height="24">
+                                <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/ico_16_1038.png" HorizontalAlignment="Left" Width="16" Height="16" Margin="6,1,0,0" />
+                                <HyperlinkButton x:Name="Hh11" NavigateUri="/AcountsView" Content="执行一览" Margin="26,0,0,0" Style="{StaticResource HyperlinkButton}"/>
+                            </Canvas>
+                            <Canvas Height="24">
+                                <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/ico_16_1038.png" HorizontalAlignment="Left" Width="16" Height="16" Margin="6,1,0,0"/>
+                                <HyperlinkButton x:Name="Hh2" NavigateUri="/ContactDetails"  Content="借还款往来" Margin="26,0,0,0" Style="{StaticResource HyperlinkButton}"/>
+                            </Canvas>
+                            <Canvas Height="24">
+                                <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/ico_16_1038.png" HorizontalAlignment="Left" Width="16" Height="16" Margin="6,1,0,0"/>
+                                <HyperlinkButton x:Name="Hh3" NavigateUri="/StandingBook" Content="台帐查询" Margin="26,0,0,0" Style="{StaticResource HyperlinkButton}"/>
+                            </Canvas>
+                            <!--<Canvas Height="24">
+                                <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/ico_16_1038.png" HorizontalAlignment="Left" Width="16" Height="16" Margin="6,1,0,0"/>
+                                <HyperlinkButton x:Name="Hh3" NavigateUri="/OrderView?Type=T_FB_COMPANYTRANSFERMASTER" Content="年度预算调拨申请" Margin="26,0,0,0" Style="{StaticResource HyperlinkButton}"/>
+                            </Canvas>-->
+                            <Canvas Height="24">
+                                <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/ico_16_1038.png" HorizontalAlignment="Left" Width="16" Height="16" Margin="6,1,0,0"/>
+                                <HyperlinkButton x:Name="Hh4"  NavigateUri="/MonthlyBudgetAnalysis"  Content="月度预算分析" Margin="26,0,0,0" Style="{StaticResource HyperlinkButton}"/>
+                            </Canvas>
+                            <Canvas Height="24">
+                                <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/ico_16_1038.png" HorizontalAlignment="Left" Width="16" Height="16" Margin="6,1,0,0"/>
+                                <HyperlinkButton x:Name="Hh4111"  NavigateUri="/YearlyBudgetAnalysis"  Content="年度预算分析" Margin="26,0,0,0" Style="{StaticResource HyperlinkButton}"/>
+                            </Canvas>
+
+                            
+
+                        </StackPanel>
+                    </layoutToolkit:TransitioningContentControl>
+                </layoutToolkit:AccordionItem>
+
+            </layoutToolkit:Accordion>
+        </Border>
+
+        <Border x:Name="ContentBorder" Margin="190,100,0,0" CornerRadius="3" BorderThickness="1" >
+            <Grid x:Name="FrameParent" RenderTransformOrigin="0.5,0.5">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <navigation:Frame x:Name="ContentFrame" FragmentNavigation="ContentFrame_FragmentNavigation"   Navigated="ContentFrame_Navigated" NavigationFailed="ContentFrame_NavigationFailed" BorderThickness="0" JournalOwnership="OwnsJournal"  RenderTransformOrigin="0.5,0.5">
+
+                    <navigation:Frame.UriMapper>
+                        <uriMapper:UriMapper>
+                            <uriMapper:UriMapping Uri="/{pageName}" MappedUri="/views/{pageName}.xaml"/>
+                        </uriMapper:UriMapper>
+                    </navigation:Frame.UriMapper>
+                </navigation:Frame>
+            </Grid>
+        </Border>
+
+        <Grid x:Name="GridHeader" Height="100" VerticalAlignment="Top" Background="Transparent" Margin="0"  >
+            <Border CornerRadius="3" BorderThickness="1,0,1,1">
+                <smtx:HeaderMenu x:Name="HeaderMenu" Width="auto"></smtx:HeaderMenu>
+            </Border>
+        </Grid>
+
+        <Canvas Opacity="1" Margin="145,80,6,30"
+                x:Name="waitSpinnerBack">
+            <Canvas x:Name="waitSpinnerHolder" Background="red">
+                <smtx:SMTProgressBar  Opacity="1" x:Name="waitSpinner" Cancel="waitSpinner_Cancel" Canvas.Left="146" Canvas.Top="111"/>
+            </Canvas>
+        </Canvas>
+        <Canvas x:Name="canvasName"/>
+    </Grid>
+
+</UserControl>

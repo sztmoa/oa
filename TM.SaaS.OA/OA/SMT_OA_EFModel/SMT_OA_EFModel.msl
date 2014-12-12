@@ -1,0 +1,2442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="SMT_OA_EFModelStoreContainer" CdmEntityContainer="SMT_OA_EFModelContext">
+    <EntitySetMapping Name="T_OA_ACCIDENTRECORD" StoreEntitySet="T_OA_ACCIDENTRECORD" TypeName="SMT_OA_EFModel.T_OA_ACCIDENTRECORD">
+      <ScalarProperty Name="ACCIDENTRECORDID" ColumnName="ACCIDENTRECORDID" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="ACCIDENTDATE" ColumnName="ACCIDENTDATE" />
+      <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_AGENTDATESET" StoreEntitySet="T_OA_AGENTDATESET" TypeName="SMT_OA_EFModel.T_OA_AGENTDATESET">
+      <ScalarProperty Name="AGENTDATESETID" ColumnName="AGENTDATESETID" />
+      <ScalarProperty Name="MODELCODE" ColumnName="MODELCODE" />
+      <ScalarProperty Name="USERID" ColumnName="USERID" />
+      <ScalarProperty Name="EFFECTIVEDATE" ColumnName="EFFECTIVEDATE" />
+      <ScalarProperty Name="PLANEXPIRATIONDATE" ColumnName="PLANEXPIRATIONDATE" />
+      <ScalarProperty Name="EXPIRATIONDATE" ColumnName="EXPIRATIONDATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_AGENTSET" StoreEntitySet="T_OA_AGENTSET" TypeName="SMT_OA_EFModel.T_OA_AGENTSET">
+      <ScalarProperty Name="AGENTSETID" ColumnName="AGENTSETID" />
+      <ScalarProperty Name="SYSCODE" ColumnName="SYSCODE" />
+      <ScalarProperty Name="MODELCODE" ColumnName="MODELCODE" />
+      <ScalarProperty Name="USERID" ColumnName="USERID" />
+      <ScalarProperty Name="AGENTPOSTID" ColumnName="AGENTPOSTID" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_APPROVALINFO" StoreEntitySet="T_OA_APPROVALINFO" TypeName="SMT_OA_EFModel.T_OA_APPROVALINFO">
+      <ScalarProperty Name="APPROVALID" ColumnName="APPROVALID" />
+      <ScalarProperty Name="APPROVALCODE" ColumnName="APPROVALCODE" />
+      <ScalarProperty Name="APPROVALTITLE" ColumnName="APPROVALTITLE" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="ISCHARGE" ColumnName="ISCHARGE" />
+      <ScalarProperty Name="CHARGEMONEY" ColumnName="CHARGEMONEY" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="TYPEAPPROVAL" ColumnName="TYPEAPPROVAL" />
+      <ScalarProperty Name="TYPEAPPROVALONE" ColumnName="TYPEAPPROVALONE" />
+      <ScalarProperty Name="TYPEAPPROVALTWO" ColumnName="TYPEAPPROVALTWO" />
+      <ScalarProperty Name="TYPEAPPROVALTHREE" ColumnName="TYPEAPPROVALTHREE" />
+      <ScalarProperty Name="ISPERSONFLOW" ColumnName="ISPERSONFLOW" />
+      <ScalarProperty Name="ISSHOW" ColumnName="ISSHOW" />
+      <ScalarProperty Name="ISMULTPERSON" ColumnName="ISMULTPERSON" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_APPROVALINFOTEMPLET" StoreEntitySet="T_OA_APPROVALINFOTEMPLET" TypeName="SMT_OA_EFModel.T_OA_APPROVALINFOTEMPLET">
+      <ScalarProperty Name="APPROVALID" ColumnName="APPROVALID" />
+      <ScalarProperty Name="APPROVALTITLE" ColumnName="APPROVALTITLE" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="ISCHARGE" ColumnName="ISCHARGE" />
+      <ScalarProperty Name="CHARGEMONEY" ColumnName="CHARGEMONEY" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="TYPEAPPROVAL" ColumnName="TYPEAPPROVAL" />
+      <ScalarProperty Name="TYPEAPPROVALONE" ColumnName="TYPEAPPROVALONE" />
+      <ScalarProperty Name="TYPEAPPROVALTWO" ColumnName="TYPEAPPROVALTWO" />
+      <ScalarProperty Name="TYPEAPPROVALTHREE" ColumnName="TYPEAPPROVALTHREE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_APPROVALTYPESET" StoreEntitySet="T_OA_APPROVALTYPESET" TypeName="SMT_OA_EFModel.T_OA_APPROVALTYPESET">
+      <ScalarProperty Name="TYPESETID" ColumnName="TYPESETID" />
+      <ScalarProperty Name="ORGANIZATIONID" ColumnName="ORGANIZATIONID" />
+      <ScalarProperty Name="ORGANIZATIONTYPE" ColumnName="ORGANIZATIONTYPE" />
+      <ScalarProperty Name="TYPEAPPROVAL" ColumnName="TYPEAPPROVAL" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_ARCHIVES" StoreEntitySet="T_OA_ARCHIVES" TypeName="SMT_OA_EFModel.T_OA_ARCHIVES">
+      <ScalarProperty Name="ARCHIVESID" ColumnName="ARCHIVESID" />
+      <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+      <ScalarProperty Name="ARCHIVESTITLE" ColumnName="ARCHIVESTITLE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="SOURCEFLAG" ColumnName="SOURCEFLAG" />
+      <ScalarProperty Name="RECORDTYPE" ColumnName="RECORDTYPE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_AREAALLOWANCE" StoreEntitySet="T_OA_AREAALLOWANCE" TypeName="SMT_OA_EFModel.T_OA_AREAALLOWANCE">
+      <ScalarProperty Name="AREAALLOWANCEID" ColumnName="AREAALLOWANCEID" />
+      <ScalarProperty Name="POSTLEVEL" ColumnName="POSTLEVEL" />
+      <ScalarProperty Name="ACCOMMODATION" ColumnName="ACCOMMODATION" />
+      <ScalarProperty Name="TRANSPORTATIONSUBSIDIES" ColumnName="TRANSPORTATIONSUBSIDIES" />
+      <ScalarProperty Name="MEALSUBSIDIES" ColumnName="MEALSUBSIDIES" />
+      <ScalarProperty Name="OVERSEASSUBSIDIES" ColumnName="OVERSEASSUBSIDIES" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_AREACITY" StoreEntitySet="T_OA_AREACITY" TypeName="SMT_OA_EFModel.T_OA_AREACITY">
+      <ScalarProperty Name="AREACITYID" ColumnName="AREACITYID" />
+      <ScalarProperty Name="CITY" ColumnName="CITY" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_AREADIFFERENCE" StoreEntitySet="T_OA_AREADIFFERENCE" TypeName="SMT_OA_EFModel.T_OA_AREADIFFERENCE">
+      <ScalarProperty Name="AREADIFFERENCEID" ColumnName="AREADIFFERENCEID" />
+      <ScalarProperty Name="AREACATEGORY" ColumnName="AREACATEGORY" />
+      <ScalarProperty Name="AREAINDEX" ColumnName="AREAINDEX" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_BUSINESSREPORT" StoreEntitySet="T_OA_BUSINESSREPORT" TypeName="SMT_OA_EFModel.T_OA_BUSINESSREPORT">
+      <ScalarProperty Name="BUSINESSREPORTID" ColumnName="BUSINESSREPORTID" />
+      <ScalarProperty Name="BUSINESSTRIPID" ColumnName="BUSINESSTRIPID" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="CHARGEMONEY" ColumnName="CHARGEMONEY" />
+      <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_BUSINESSREPORTDETAIL" StoreEntitySet="T_OA_BUSINESSREPORTDETAIL" TypeName="SMT_OA_EFModel.T_OA_BUSINESSREPORTDETAIL">
+      <ScalarProperty Name="BUSINESSREPORTDETAILID" ColumnName="BUSINESSREPORTDETAILID" />
+      <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+      <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+      <ScalarProperty Name="BUSINESSDAYS" ColumnName="BUSINESSDAYS" />
+      <ScalarProperty Name="DEPCITY" ColumnName="DEPCITY" />
+      <ScalarProperty Name="DESTCITY" ColumnName="DESTCITY" />
+      <ScalarProperty Name="PRIVATEAFFAIR" ColumnName="PRIVATEAFFAIR" />
+      <ScalarProperty Name="TYPEOFTRAVELTOOLS" ColumnName="TYPEOFTRAVELTOOLS" />
+      <ScalarProperty Name="TAKETHETOOLLEVEL" ColumnName="TAKETHETOOLLEVEL" />
+      <ScalarProperty Name="GOOUTTOMEET" ColumnName="GOOUTTOMEET" />
+      <ScalarProperty Name="COMPANYCAR" ColumnName="COMPANYCAR" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_BUSINESSTRIP" StoreEntitySet="T_OA_BUSINESSTRIP" TypeName="SMT_OA_EFModel.T_OA_BUSINESSTRIP">
+      <ScalarProperty Name="BUSINESSTRIPID" ColumnName="BUSINESSTRIPID" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="ISAGENT" ColumnName="ISAGENT" />
+      <ScalarProperty Name="CHARGEMONEY" ColumnName="CHARGEMONEY" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+      <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+      <ScalarProperty Name="DEPCITY" ColumnName="DEPCITY" />
+      <ScalarProperty Name="DESTCITY" ColumnName="DESTCITY" />
+      <ScalarProperty Name="OWNERPOSTNAME" ColumnName="OWNERPOSTNAME" />
+      <ScalarProperty Name="OWNERDEPARTMENTNAME" ColumnName="OWNERDEPARTMENTNAME" />
+      <ScalarProperty Name="OWNERCOMPANYNAME" ColumnName="OWNERCOMPANYNAME" />
+      <ScalarProperty Name="POSTLEVEL" ColumnName="POSTLEVEL" />
+      <ScalarProperty Name="STARTCITYNAME" ColumnName="STARTCITYNAME" />
+      <ScalarProperty Name="ENDCITYNAME" ColumnName="ENDCITYNAME" />
+      <ScalarProperty Name="ISALTERTRAVE" ColumnName="ISALTERTRAVE" />
+      <ScalarProperty Name="ALTERDETAILBASE" ColumnName="ALTERDETAILBASE" />
+      <ScalarProperty Name="ALTERDETAILBEFORE" ColumnName="ALTERDETAILBEFORE" />
+      <ScalarProperty Name="ALTERDETAILATFER" ColumnName="ALTERDETAILATFER" />
+      <ScalarProperty Name="ISFROMWP" ColumnName="ISFROMWP" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_BUSINESSTRIPDETAIL" StoreEntitySet="T_OA_BUSINESSTRIPDETAIL" TypeName="SMT_OA_EFModel.T_OA_BUSINESSTRIPDETAIL">
+      <ScalarProperty Name="BUSINESSTRIPDETAILID" ColumnName="BUSINESSTRIPDETAILID" />
+      <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+      <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+      <ScalarProperty Name="DEPCITY" ColumnName="DEPCITY" />
+      <ScalarProperty Name="DESTCITY" ColumnName="DESTCITY" />
+      <ScalarProperty Name="PRIVATEAFFAIR" ColumnName="PRIVATEAFFAIR" />
+      <ScalarProperty Name="TYPEOFTRAVELTOOLS" ColumnName="TYPEOFTRAVELTOOLS" />
+      <ScalarProperty Name="TAKETHETOOLLEVEL" ColumnName="TAKETHETOOLLEVEL" />
+      <ScalarProperty Name="GOOUTTOMEET" ColumnName="GOOUTTOMEET" />
+      <ScalarProperty Name="COMPANYCAR" ColumnName="COMPANYCAR" />
+      <ScalarProperty Name="BUSINESSDAYS" ColumnName="BUSINESSDAYS" />
+      <ScalarProperty Name="STARTCITYNAME" ColumnName="STARTCITYNAME" />
+      <ScalarProperty Name="ENDCITYNAME" ColumnName="ENDCITYNAME" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_BUSINESSTRIPDETAIL_BAK" StoreEntitySet="T_OA_BUSINESSTRIPDETAIL_BAK" TypeName="SMT_OA_EFModel.T_OA_BUSINESSTRIPDETAIL_BAK">
+      <ScalarProperty Name="BUSINESSTRIPDETAILID" ColumnName="BUSINESSTRIPDETAILID" />
+      <ScalarProperty Name="BUSINESSTRIPID" ColumnName="BUSINESSTRIPID" />
+      <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+      <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+      <ScalarProperty Name="DEPCITY" ColumnName="DEPCITY" />
+      <ScalarProperty Name="DESTCITY" ColumnName="DESTCITY" />
+      <ScalarProperty Name="PRIVATEAFFAIR" ColumnName="PRIVATEAFFAIR" />
+      <ScalarProperty Name="TYPEOFTRAVELTOOLS" ColumnName="TYPEOFTRAVELTOOLS" />
+      <ScalarProperty Name="TAKETHETOOLLEVEL" ColumnName="TAKETHETOOLLEVEL" />
+      <ScalarProperty Name="GOOUTTOMEET" ColumnName="GOOUTTOMEET" />
+      <ScalarProperty Name="COMPANYCAR" ColumnName="COMPANYCAR" />
+      <ScalarProperty Name="BUSINESSDAYS" ColumnName="BUSINESSDAYS" />
+      <ScalarProperty Name="STARTCITYNAME" ColumnName="STARTCITYNAME" />
+      <ScalarProperty Name="ENDCITYNAME" ColumnName="ENDCITYNAME" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_BUSINESSTRIP_BAK" StoreEntitySet="T_OA_BUSINESSTRIP_BAK" TypeName="SMT_OA_EFModel.T_OA_BUSINESSTRIP_BAK">
+      <ScalarProperty Name="BUSINESSTRIPID" ColumnName="BUSINESSTRIPID" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="ISAGENT" ColumnName="ISAGENT" />
+      <ScalarProperty Name="CHARGEMONEY" ColumnName="CHARGEMONEY" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+      <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+      <ScalarProperty Name="DEPCITY" ColumnName="DEPCITY" />
+      <ScalarProperty Name="DESTCITY" ColumnName="DESTCITY" />
+      <ScalarProperty Name="OWNERPOSTNAME" ColumnName="OWNERPOSTNAME" />
+      <ScalarProperty Name="OWNERDEPARTMENTNAME" ColumnName="OWNERDEPARTMENTNAME" />
+      <ScalarProperty Name="OWNERCOMPANYNAME" ColumnName="OWNERCOMPANYNAME" />
+      <ScalarProperty Name="POSTLEVEL" ColumnName="POSTLEVEL" />
+      <ScalarProperty Name="STARTCITYNAME" ColumnName="STARTCITYNAME" />
+      <ScalarProperty Name="ENDCITYNAME" ColumnName="ENDCITYNAME" />
+      <ScalarProperty Name="ISALTERTRAVE" ColumnName="ISALTERTRAVE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_CALENDAR" StoreEntitySet="T_OA_CALENDAR" TypeName="SMT_OA_EFModel.T_OA_CALENDAR">
+      <ScalarProperty Name="CALENDARID" ColumnName="CALENDARID" />
+      <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="REMINDERRMODEL" ColumnName="REMINDERRMODEL" />
+      <ScalarProperty Name="PLANTIME" ColumnName="PLANTIME" />
+      <ScalarProperty Name="REPARTREMINDER" ColumnName="REPARTREMINDER" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_CANTAKETHEPLANELINE" StoreEntitySet="T_OA_CANTAKETHEPLANELINE" TypeName="SMT_OA_EFModel.T_OA_CANTAKETHEPLANELINE">
+      <ScalarProperty Name="CANTAKETHEPLANELINEID" ColumnName="CANTAKETHEPLANELINEID" />
+      <ScalarProperty Name="REGIONAL" ColumnName="REGIONAL" />
+      <ScalarProperty Name="DEPCITY" ColumnName="DEPCITY" />
+      <ScalarProperty Name="DESTCITY" ColumnName="DESTCITY" />
+      <ScalarProperty Name="LANDTIME" ColumnName="LANDTIME" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_CONSERVATION" StoreEntitySet="T_OA_CONSERVATION" TypeName="SMT_OA_EFModel.T_OA_CONSERVATION">
+      <ScalarProperty Name="CONSERVATIONID" ColumnName="CONSERVATIONID" />
+      <ScalarProperty Name="CONSERVATYPE" ColumnName="CONSERVATYPE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="REPAIRDATE" ColumnName="REPAIRDATE" />
+      <ScalarProperty Name="RETRIEVEDATE" ColumnName="RETRIEVEDATE" />
+      <ScalarProperty Name="CONSERVATIONCOMPANY" ColumnName="CONSERVATIONCOMPANY" />
+      <ScalarProperty Name="CONSERVATIONRANGE" ColumnName="CONSERVATIONRANGE" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="ISCHARGE" ColumnName="ISCHARGE" />
+      <ScalarProperty Name="CHARGEMONEY" ColumnName="CHARGEMONEY" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_CONSERVATIONRECORD" StoreEntitySet="T_OA_CONSERVATIONRECORD" TypeName="SMT_OA_EFModel.T_OA_CONSERVATIONRECORD">
+      <ScalarProperty Name="CONSERVATIONRECORDID" ColumnName="CONSERVATIONRECORDID" />
+      <ScalarProperty Name="CONSERVATYPE" ColumnName="CONSERVATYPE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="REPAIRDATE" ColumnName="REPAIRDATE" />
+      <ScalarProperty Name="RETRIEVEDATE" ColumnName="RETRIEVEDATE" />
+      <ScalarProperty Name="CONSERVATIONRANGE" ColumnName="CONSERVATIONRANGE" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="ISCHARGE" ColumnName="ISCHARGE" />
+      <ScalarProperty Name="CHARGEMONEY" ColumnName="CHARGEMONEY" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_CONTRACTAPP" StoreEntitySet="T_OA_CONTRACTAPP" TypeName="SMT_OA_EFModel.T_OA_CONTRACTAPP">
+      <ScalarProperty Name="CONTRACTAPPID" ColumnName="CONTRACTAPPID" />
+      <ScalarProperty Name="CONTRACTCODE" ColumnName="CONTRACTCODE" />
+      <ScalarProperty Name="CONTRACTTYPEID" ColumnName="CONTRACTTYPEID" />
+      <ScalarProperty Name="CONTRACTLEVEL" ColumnName="CONTRACTLEVEL" />
+      <ScalarProperty Name="PARTYA" ColumnName="PARTYA" />
+      <ScalarProperty Name="PARTYB" ColumnName="PARTYB" />
+      <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+      <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+      <ScalarProperty Name="CONTRACTFLAG" ColumnName="CONTRACTFLAG" />
+      <ScalarProperty Name="EXPIRATIONREMINDER" ColumnName="EXPIRATIONREMINDER" />
+      <ScalarProperty Name="CONTRACTTITLE" ColumnName="CONTRACTTITLE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_CONTRACTPRINT" StoreEntitySet="T_OA_CONTRACTPRINT" TypeName="SMT_OA_EFModel.T_OA_CONTRACTPRINT">
+      <ScalarProperty Name="CONTRACTPRINTID" ColumnName="CONTRACTPRINTID" />
+      <ScalarProperty Name="NUM" ColumnName="NUM" />
+      <ScalarProperty Name="SIGNDATE" ColumnName="SIGNDATE" />
+      <ScalarProperty Name="ISUPLOAD" ColumnName="ISUPLOAD" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_CONTRACTTEMPLATE" StoreEntitySet="T_OA_CONTRACTTEMPLATE" TypeName="SMT_OA_EFModel.T_OA_CONTRACTTEMPLATE">
+      <ScalarProperty Name="CONTRACTTEMPLATEID" ColumnName="CONTRACTTEMPLATEID" />
+      <ScalarProperty Name="CONTRACTTEMPLATENAME" ColumnName="CONTRACTTEMPLATENAME" />
+      <ScalarProperty Name="CONTRACTLEVEL" ColumnName="CONTRACTLEVEL" />
+      <ScalarProperty Name="CONTRACTTITLE" ColumnName="CONTRACTTITLE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_CONTRACTTYPE" StoreEntitySet="T_OA_CONTRACTTYPE" TypeName="SMT_OA_EFModel.T_OA_CONTRACTTYPE">
+      <ScalarProperty Name="CONTRACTTYPEID" ColumnName="CONTRACTTYPEID" />
+      <ScalarProperty Name="CONTRACTTYPE" ColumnName="CONTRACTTYPE" />
+      <ScalarProperty Name="CONTRACTLEVEL" ColumnName="CONTRACTLEVEL" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_CONTRACTVIEW" StoreEntitySet="T_OA_CONTRACTVIEW" TypeName="SMT_OA_EFModel.T_OA_CONTRACTVIEW">
+      <ScalarProperty Name="CONTRACTVIEWID" ColumnName="CONTRACTVIEWID" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_COSTRECORD" StoreEntitySet="T_OA_COSTRECORD" TypeName="SMT_OA_EFModel.T_OA_COSTRECORD">
+      <ScalarProperty Name="COSTRECORDID" ColumnName="COSTRECORDID" />
+      <ScalarProperty Name="MODELNAME" ColumnName="MODELNAME" />
+      <ScalarProperty Name="FORMID" ColumnName="FORMID" />
+      <ScalarProperty Name="CONSTTYPE" ColumnName="CONSTTYPE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="COST" ColumnName="COST" />
+      <ScalarProperty Name="COSTDATE" ColumnName="COSTDATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_DISTRIBUTEUSER" StoreEntitySet="T_OA_DISTRIBUTEUSER" TypeName="SMT_OA_EFModel.T_OA_DISTRIBUTEUSER">
+      <ScalarProperty Name="DISTRIBUTEUSERID" ColumnName="DISTRIBUTEUSERID" />
+      <ScalarProperty Name="MODELNAME" ColumnName="MODELNAME" />
+      <ScalarProperty Name="FORMID" ColumnName="FORMID" />
+      <ScalarProperty Name="VIEWTYPE" ColumnName="VIEWTYPE" />
+      <ScalarProperty Name="VIEWER" ColumnName="VIEWER" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="VIEWNAME" ColumnName="VIEWNAME" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_GIFTAPPLYDETAIL" StoreEntitySet="T_OA_GIFTAPPLYDETAIL" TypeName="SMT_OA_EFModel.T_OA_GIFTAPPLYDETAIL">
+      <ScalarProperty Name="GIFTAPPLYDETAILID" ColumnName="GIFTAPPLYDETAILID" />
+      <ScalarProperty Name="GIFTAPPLYMASTERID" ColumnName="GIFTAPPLYMASTERID" />
+      <ScalarProperty Name="SENDERNAME" ColumnName="SENDERNAME" />
+      <ScalarProperty Name="SENDERPHONE" ColumnName="SENDERPHONE" />
+      <ScalarProperty Name="SENDUNITNAME" ColumnName="SENDUNITNAME" />
+      <ScalarProperty Name="RECIPIENTID" ColumnName="RECIPIENTID" />
+      <ScalarProperty Name="RECIPIENTNAME" ColumnName="RECIPIENTNAME" />
+      <ScalarProperty Name="RECIPIENTPHONE" ColumnName="RECIPIENTPHONE" />
+      <ScalarProperty Name="RECIPIENTUNITID" ColumnName="RECIPIENTUNITID" />
+      <ScalarProperty Name="RECIPIENTUNITNAME" ColumnName="RECIPIENTUNITNAME" />
+      <ScalarProperty Name="ADRESSDETAIL" ColumnName="ADRESSDETAIL" />
+      <ScalarProperty Name="PROVINCE" ColumnName="PROVINCE" />
+      <ScalarProperty Name="CITY" ColumnName="CITY" />
+      <ScalarProperty Name="AREA" ColumnName="AREA" />
+      <ScalarProperty Name="COUNT" ColumnName="COUNT" />
+      <ScalarProperty Name="SENDREQUIRE" ColumnName="SENDREQUIRE" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="ITEMSTATES" ColumnName="ITEMSTATES" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_GIFTAPPLYMASTER" StoreEntitySet="T_OA_GIFTAPPLYMASTER" TypeName="SMT_OA_EFModel.T_OA_GIFTAPPLYMASTER">
+      <ScalarProperty Name="GIFTAPPLYMASTERID" ColumnName="GIFTAPPLYMASTERID" />
+      <ScalarProperty Name="GIFTPLANID" ColumnName="GIFTPLANID" />
+      <ScalarProperty Name="GIFTAPPLYMASTERCODE" ColumnName="GIFTAPPLYMASTERCODE" />
+      <ScalarProperty Name="SENDTYPE" ColumnName="SENDTYPE" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERCOMPANYNAME" ColumnName="OWNERCOMPANYNAME" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERDEPARTMENTNAME" ColumnName="OWNERDEPARTMENTNAME" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="OWNERPOSTNAME" ColumnName="OWNERPOSTNAME" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATECOMPANYNAME" ColumnName="CREATECOMPANYNAME" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEDEPARTMENTNAME" ColumnName="CREATEDEPARTMENTNAME" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEPOSTNAME" ColumnName="CREATEPOSTNAME" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="EDITSTATES" ColumnName="EDITSTATES" />
+      <ScalarProperty Name="CHECKSTATES" ColumnName="CHECKSTATES" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_GIFTPLAN" StoreEntitySet="T_OA_GIFTPLAN" TypeName="SMT_OA_EFModel.T_OA_GIFTPLAN">
+      <ScalarProperty Name="GIFTPLANID" ColumnName="GIFTPLANID" />
+      <ScalarProperty Name="GIFTPLANCODE" ColumnName="GIFTPLANCODE" />
+      <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+      <ScalarProperty Name="APPLYSTARTDATE" ColumnName="APPLYSTARTDATE" />
+      <ScalarProperty Name="APPLYENDDATE" ColumnName="APPLYENDDATE" />
+      <ScalarProperty Name="GIFTINFO" ColumnName="GIFTINFO" />
+      <ScalarProperty Name="GIFTPRICE" ColumnName="GIFTPRICE" />
+      <ScalarProperty Name="UNITMASTERCOUNT" ColumnName="UNITMASTERCOUNT" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERCOMPANYNAME" ColumnName="OWNERCOMPANYNAME" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERDEPARTMENTNAME" ColumnName="OWNERDEPARTMENTNAME" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="OWNERPOSTNAME" ColumnName="OWNERPOSTNAME" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATECOMPANYNAME" ColumnName="CREATECOMPANYNAME" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEDEPARTMENTNAME" ColumnName="CREATEDEPARTMENTNAME" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEPOSTNAME" ColumnName="CREATEPOSTNAME" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="EDITSTATES" ColumnName="EDITSTATES" />
+      <ScalarProperty Name="CHECKSTATES" ColumnName="CHECKSTATES" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_GRADED" StoreEntitySet="T_OA_GRADED" TypeName="SMT_OA_EFModel.T_OA_GRADED">
+      <ScalarProperty Name="GRADEDID" ColumnName="GRADEDID" />
+      <ScalarProperty Name="GRADED" ColumnName="GRADED" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_HIREAPP" StoreEntitySet="T_OA_HIREAPP" TypeName="SMT_OA_EFModel.T_OA_HIREAPP">
+      <ScalarProperty Name="HIREAPPID" ColumnName="HIREAPPID" />
+      <ScalarProperty Name="RENTCOST" ColumnName="RENTCOST" />
+      <ScalarProperty Name="DEPOSIT" ColumnName="DEPOSIT" />
+      <ScalarProperty Name="MANAGECOST" ColumnName="MANAGECOST" />
+      <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+      <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+      <ScalarProperty Name="BACKDATE" ColumnName="BACKDATE" />
+      <ScalarProperty Name="RENTTYPE" ColumnName="RENTTYPE" />
+      <ScalarProperty Name="SETTLEMENTTYPE" ColumnName="SETTLEMENTTYPE" />
+      <ScalarProperty Name="ISBACK" ColumnName="ISBACK" />
+      <ScalarProperty Name="ISOK" ColumnName="ISOK" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_HIRERECORD" StoreEntitySet="T_OA_HIRERECORD" TypeName="SMT_OA_EFModel.T_OA_HIRERECORD">
+      <ScalarProperty Name="HIRERECORD" ColumnName="HIRERECORD" />
+      <ScalarProperty Name="RENTER" ColumnName="RENTER" />
+      <ScalarProperty Name="RENTCOST" ColumnName="RENTCOST" />
+      <ScalarProperty Name="MANAGECOST" ColumnName="MANAGECOST" />
+      <ScalarProperty Name="WATER" ColumnName="WATER" />
+      <ScalarProperty Name="ELECTRICITY" ColumnName="ELECTRICITY" />
+      <ScalarProperty Name="OTHERCOST" ColumnName="OTHERCOST" />
+      <ScalarProperty Name="WATERNUM" ColumnName="WATERNUM" />
+      <ScalarProperty Name="ELECTRICITYNUM" ColumnName="ELECTRICITYNUM" />
+      <ScalarProperty Name="SETTLEMENTDATE" ColumnName="SETTLEMENTDATE" />
+      <ScalarProperty Name="SETTLEMENTTYPE" ColumnName="SETTLEMENTTYPE" />
+      <ScalarProperty Name="ISSETTLEMENT" ColumnName="ISSETTLEMENT" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_HOUSEINFO" StoreEntitySet="T_OA_HOUSEINFO" TypeName="SMT_OA_EFModel.T_OA_HOUSEINFO">
+      <ScalarProperty Name="HOUSEID" ColumnName="HOUSEID" />
+      <ScalarProperty Name="UPTOWN" ColumnName="UPTOWN" />
+      <ScalarProperty Name="HOUSENAME" ColumnName="HOUSENAME" />
+      <ScalarProperty Name="FLOOR" ColumnName="FLOOR" />
+      <ScalarProperty Name="ROOMCODE" ColumnName="ROOMCODE" />
+      <ScalarProperty Name="RENTCOST" ColumnName="RENTCOST" />
+      <ScalarProperty Name="DEPOSIT" ColumnName="DEPOSIT" />
+      <ScalarProperty Name="SHAREDRENTCOST" ColumnName="SHAREDRENTCOST" />
+      <ScalarProperty Name="SHAREDDEPOSIT" ColumnName="SHAREDDEPOSIT" />
+      <ScalarProperty Name="MANAGECOST" ColumnName="MANAGECOST" />
+      <ScalarProperty Name="Number" ColumnName="Number" />
+      <ScalarProperty Name="RENTNUMBER" ColumnName="RENTNUMBER" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="ISRENT" ColumnName="ISRENT" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_HOUSEINFOISSUANCE" StoreEntitySet="T_OA_HOUSEINFOISSUANCE" TypeName="SMT_OA_EFModel.T_OA_HOUSEINFOISSUANCE">
+      <ScalarProperty Name="ISSUANCEID" ColumnName="ISSUANCEID" />
+      <ScalarProperty Name="ISSUANCETITLE" ColumnName="ISSUANCETITLE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_HOUSELIST" StoreEntitySet="T_OA_HOUSELIST" TypeName="SMT_OA_EFModel.T_OA_HOUSELIST">
+      <ScalarProperty Name="HOUSELISTID" ColumnName="HOUSELISTID" />
+      <ScalarProperty Name="RENTCOST" ColumnName="RENTCOST" />
+      <ScalarProperty Name="DEPOSIT" ColumnName="DEPOSIT" />
+      <ScalarProperty Name="SHAREDRENTCOST" ColumnName="SHAREDRENTCOST" />
+      <ScalarProperty Name="SHAREDDEPOSIT" ColumnName="SHAREDDEPOSIT" />
+      <ScalarProperty Name="MANAGECOST" ColumnName="MANAGECOST" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_LENDARCHIVES" StoreEntitySet="T_OA_LENDARCHIVES" TypeName="SMT_OA_EFModel.T_OA_LENDARCHIVES">
+      <ScalarProperty Name="LENDARCHIVESID" ColumnName="LENDARCHIVESID" />
+      <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+      <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+      <ScalarProperty Name="PLANENDDATE" ColumnName="PLANENDDATE" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_LICENSEDETAIL" StoreEntitySet="T_OA_LICENSEDETAIL" TypeName="SMT_OA_EFModel.T_OA_LICENSEDETAIL">
+      <ScalarProperty Name="LICENSEDETAILID" ColumnName="LICENSEDETAILID" />
+      <ScalarProperty Name="REGISTERTYPE" ColumnName="REGISTERTYPE" />
+      <ScalarProperty Name="LEGALPERSON" ColumnName="LEGALPERSON" />
+      <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+      <ScalarProperty Name="LICENCENO" ColumnName="LICENCENO" />
+      <ScalarProperty Name="BUSSINESSAREA" ColumnName="BUSSINESSAREA" />
+      <ScalarProperty Name="REGISTERCHARGE" ColumnName="REGISTERCHARGE" />
+      <ScalarProperty Name="FROMDATE" ColumnName="FROMDATE" />
+      <ScalarProperty Name="TODATE" ColumnName="TODATE" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_LICENSEMASTER" StoreEntitySet="T_OA_LICENSEMASTER" TypeName="SMT_OA_EFModel.T_OA_LICENSEMASTER">
+      <ScalarProperty Name="LICENSEMASTERID" ColumnName="LICENSEMASTERID" />
+      <ScalarProperty Name="LICENSENAME" ColumnName="LICENSENAME" />
+      <ScalarProperty Name="POSITION" ColumnName="POSITION" />
+      <ScalarProperty Name="LEGALPERSON" ColumnName="LEGALPERSON" />
+      <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+      <ScalarProperty Name="LICENCENO" ColumnName="LICENCENO" />
+      <ScalarProperty Name="BUSSINESSAREA" ColumnName="BUSSINESSAREA" />
+      <ScalarProperty Name="FROMDATE" ColumnName="FROMDATE" />
+      <ScalarProperty Name="TODATE" ColumnName="TODATE" />
+      <ScalarProperty Name="DAY" ColumnName="DAY" />
+      <ScalarProperty Name="LENDFLAG" ColumnName="LENDFLAG" />
+      <ScalarProperty Name="ISVALID" ColumnName="ISVALID" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_LICENSEUSER" StoreEntitySet="T_OA_LICENSEUSER" TypeName="SMT_OA_EFModel.T_OA_LICENSEUSER">
+      <ScalarProperty Name="LICENSEUSERID" ColumnName="LICENSEUSERID" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+      <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+      <ScalarProperty Name="HASRETURN" ColumnName="HASRETURN" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_MAINTENANCEAPP" StoreEntitySet="T_OA_MAINTENANCEAPP" TypeName="SMT_OA_EFModel.T_OA_MAINTENANCEAPP">
+      <ScalarProperty Name="MAINTENANCEAPPID" ColumnName="MAINTENANCEAPPID" />
+      <ScalarProperty Name="MAINTENANCETYPE" ColumnName="MAINTENANCETYPE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="REPAIRDATE" ColumnName="REPAIRDATE" />
+      <ScalarProperty Name="RETRIEVEDATE" ColumnName="RETRIEVEDATE" />
+      <ScalarProperty Name="REPAIRCOMPANY" ColumnName="REPAIRCOMPANY" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="ISCHARGE" ColumnName="ISCHARGE" />
+      <ScalarProperty Name="CHARGEMONEY" ColumnName="CHARGEMONEY" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_MAINTENANCERECORD" StoreEntitySet="T_OA_MAINTENANCERECORD" TypeName="SMT_OA_EFModel.T_OA_MAINTENANCERECORD">
+      <ScalarProperty Name="MAINTENANCERECORDID" ColumnName="MAINTENANCERECORDID" />
+      <ScalarProperty Name="MAINTENANCETYPE" ColumnName="MAINTENANCETYPE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="REPAIRDATE" ColumnName="REPAIRDATE" />
+      <ScalarProperty Name="RETRIEVEDATE" ColumnName="RETRIEVEDATE" />
+      <ScalarProperty Name="REPAIRCOMPANY" ColumnName="REPAIRCOMPANY" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="ISCHARGE" ColumnName="ISCHARGE" />
+      <ScalarProperty Name="CHARGEMONEY" ColumnName="CHARGEMONEY" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_MEETINGCONTENT" StoreEntitySet="T_OA_MEETINGCONTENT" TypeName="SMT_OA_EFModel.T_OA_MEETINGCONTENT">
+      <ScalarProperty Name="MEETINGCONTENTID" ColumnName="MEETINGCONTENTID" />
+      <ScalarProperty Name="MEETINGINFOID" ColumnName="MEETINGINFOID" />
+      <ScalarProperty Name="MEETINGUSERID" ColumnName="MEETINGUSERID" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_MEETINGINFO" StoreEntitySet="T_OA_MEETINGINFO" TypeName="SMT_OA_EFModel.T_OA_MEETINGINFO">
+      <ScalarProperty Name="MEETINGINFOID" ColumnName="MEETINGINFOID" />
+      <ScalarProperty Name="ISAUTO" ColumnName="ISAUTO" />
+      <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+      <ScalarProperty Name="ENDTIME" ColumnName="ENDTIME" />
+      <ScalarProperty Name="COUNT" ColumnName="COUNT" />
+      <ScalarProperty Name="MEETINGTITLE" ColumnName="MEETINGTITLE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="DEPARTNAME" ColumnName="DEPARTNAME" />
+      <ScalarProperty Name="HOSTID" ColumnName="HOSTID" />
+      <ScalarProperty Name="HOSTNAME" ColumnName="HOSTNAME" />
+      <ScalarProperty Name="RECORDUSERID" ColumnName="RECORDUSERID" />
+      <ScalarProperty Name="RECORDUSERNAME" ColumnName="RECORDUSERNAME" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="ISCANCEL" ColumnName="ISCANCEL" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_MEETINGMESSAGE" StoreEntitySet="T_OA_MEETINGMESSAGE" TypeName="SMT_OA_EFModel.T_OA_MEETINGMESSAGE">
+      <ScalarProperty Name="MEETINGMESSAGEID" ColumnName="MEETINGMESSAGEID" />
+      <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_MEETINGROOM" StoreEntitySet="T_OA_MEETINGROOM" TypeName="SMT_OA_EFModel.T_OA_MEETINGROOM">
+      <ScalarProperty Name="MEETINGROOMID" ColumnName="MEETINGROOMID" />
+      <ScalarProperty Name="MEETINGROOMNAME" ColumnName="MEETINGROOMNAME" />
+      <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+      <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+      <ScalarProperty Name="SEAT" ColumnName="SEAT" />
+      <ScalarProperty Name="AREA" ColumnName="AREA" />
+      <ScalarProperty Name="ROSTRUM" ColumnName="ROSTRUM" />
+      <ScalarProperty Name="VIDEO" ColumnName="VIDEO" />
+      <ScalarProperty Name="AUDIO" ColumnName="AUDIO" />
+      <ScalarProperty Name="NETWORK" ColumnName="NETWORK" />
+      <ScalarProperty Name="WIFI" ColumnName="WIFI" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="PROJECTOR" ColumnName="PROJECTOR" />
+      <ScalarProperty Name="AIRCONDITIONING" ColumnName="AIRCONDITIONING" />
+      <ScalarProperty Name="WATERDISPENSER" ColumnName="WATERDISPENSER" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_MEETINGROOMAPP" StoreEntitySet="T_OA_MEETINGROOMAPP" TypeName="SMT_OA_EFModel.T_OA_MEETINGROOMAPP">
+      <ScalarProperty Name="MEETINGROOMAPPID" ColumnName="MEETINGROOMAPPID" />
+      <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+      <ScalarProperty Name="ENDTIME" ColumnName="ENDTIME" />
+      <ScalarProperty Name="DEPARTNAME" ColumnName="DEPARTNAME" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="ISCANCEL" ColumnName="ISCANCEL" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_MEETINGROOMTIMECHANGE" StoreEntitySet="T_OA_MEETINGROOMTIMECHANGE" TypeName="SMT_OA_EFModel.T_OA_MEETINGROOMTIMECHANGE">
+      <ScalarProperty Name="MEETINGROOMTIMECHANGEID" ColumnName="MEETINGROOMTIMECHANGEID" />
+      <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+      <ScalarProperty Name="ENDTIME" ColumnName="ENDTIME" />
+      <ScalarProperty Name="REASON" ColumnName="REASON" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_MEETINGSTAFF" StoreEntitySet="T_OA_MEETINGSTAFF" TypeName="SMT_OA_EFModel.T_OA_MEETINGSTAFF">
+      <ScalarProperty Name="MEETINGSTAFFID" ColumnName="MEETINGSTAFFID" />
+      <ScalarProperty Name="MEETINGINFOID" ColumnName="MEETINGINFOID" />
+      <ScalarProperty Name="MEETINGUSERID" ColumnName="MEETINGUSERID" />
+      <ScalarProperty Name="FILENAME" ColumnName="FILENAME" />
+      <ScalarProperty Name="CONFIRMFLAG" ColumnName="CONFIRMFLAG" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="ISOK" ColumnName="ISOK" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_MEETINGTEMPLATE" StoreEntitySet="T_OA_MEETINGTEMPLATE" TypeName="SMT_OA_EFModel.T_OA_MEETINGTEMPLATE">
+      <ScalarProperty Name="MEETINGTEMPLATEID" ColumnName="MEETINGTEMPLATEID" />
+      <ScalarProperty Name="TEMPLATENAME" ColumnName="TEMPLATENAME" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_MEETINGTIMECHANGE" StoreEntitySet="T_OA_MEETINGTIMECHANGE" TypeName="SMT_OA_EFModel.T_OA_MEETINGTIMECHANGE">
+      <ScalarProperty Name="MEETINGTIMECHANGEID" ColumnName="MEETINGTIMECHANGEID" />
+      <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+      <ScalarProperty Name="ENDTIME" ColumnName="ENDTIME" />
+      <ScalarProperty Name="REASON" ColumnName="REASON" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_MEETINGTYPE" StoreEntitySet="T_OA_MEETINGTYPE" TypeName="SMT_OA_EFModel.T_OA_MEETINGTYPE">
+      <ScalarProperty Name="MEETINGTYPEID" ColumnName="MEETINGTYPEID" />
+      <ScalarProperty Name="MEETINGTYPE" ColumnName="MEETINGTYPE" />
+      <ScalarProperty Name="ISAUTO" ColumnName="ISAUTO" />
+      <ScalarProperty Name="CYCLE" ColumnName="CYCLE" />
+      <ScalarProperty Name="REMINDDAY" ColumnName="REMINDDAY" />
+      <ScalarProperty Name="CONVENER" ColumnName="CONVENER" />
+      <ScalarProperty Name="CONVENERNAME" ColumnName="CONVENERNAME" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_ORDERMEAL" StoreEntitySet="T_OA_ORDERMEAL" TypeName="SMT_OA_EFModel.T_OA_ORDERMEAL">
+      <ScalarProperty Name="ORDERMEALID" ColumnName="ORDERMEALID" />
+      <ScalarProperty Name="ORDERMEALTITLE" ColumnName="ORDERMEALTITLE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="ORDERMEALFLAG" ColumnName="ORDERMEALFLAG" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_ORGANIZATION" StoreEntitySet="T_OA_ORGANIZATION" TypeName="SMT_OA_EFModel.T_OA_ORGANIZATION">
+      <ScalarProperty Name="ORGANIZATIONID" ColumnName="ORGANIZATIONID" />
+      <ScalarProperty Name="ORGCODE" ColumnName="ORGCODE" />
+      <ScalarProperty Name="ORGNAME" ColumnName="ORGNAME" />
+      <ScalarProperty Name="LEGALPERSON" ColumnName="LEGALPERSON" />
+      <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+      <ScalarProperty Name="LICENCENO" ColumnName="LICENCENO" />
+      <ScalarProperty Name="BUSSINESSAREA" ColumnName="BUSSINESSAREA" />
+      <ScalarProperty Name="ISCHARGE" ColumnName="ISCHARGE" />
+      <ScalarProperty Name="CHARGEMONEY" ColumnName="CHARGEMONEY" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_PRIORITIES" StoreEntitySet="T_OA_PRIORITIES" TypeName="SMT_OA_EFModel.T_OA_PRIORITIES">
+      <ScalarProperty Name="PRIORITIESID" ColumnName="PRIORITIESID" />
+      <ScalarProperty Name="PRIORITIES" ColumnName="PRIORITIES" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_PROGRAMAPPLICATIONS" StoreEntitySet="T_OA_PROGRAMAPPLICATIONS" TypeName="SMT_OA_EFModel.T_OA_PROGRAMAPPLICATIONS">
+      <ScalarProperty Name="PROGRAMAPPLICATIONSID" ColumnName="PROGRAMAPPLICATIONSID" />
+      <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_REIMBURSEMENTDETAIL" StoreEntitySet="T_OA_REIMBURSEMENTDETAIL" TypeName="SMT_OA_EFModel.T_OA_REIMBURSEMENTDETAIL">
+      <ScalarProperty Name="REIMBURSEMENTDETAILID" ColumnName="REIMBURSEMENTDETAILID" />
+      <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+      <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+      <ScalarProperty Name="DEPCITY" ColumnName="DEPCITY" />
+      <ScalarProperty Name="DESTCITY" ColumnName="DESTCITY" />
+      <ScalarProperty Name="BUSINESSDAYS" ColumnName="BUSINESSDAYS" />
+      <ScalarProperty Name="TYPEOFTRAVELTOOLS" ColumnName="TYPEOFTRAVELTOOLS" />
+      <ScalarProperty Name="TAKETHETOOLLEVEL" ColumnName="TAKETHETOOLLEVEL" />
+      <ScalarProperty Name="TRANSPORTCOSTS" ColumnName="TRANSPORTCOSTS" />
+      <ScalarProperty Name="ACCOMMODATION" ColumnName="ACCOMMODATION" />
+      <ScalarProperty Name="TRANSPORTATIONSUBSIDIES" ColumnName="TRANSPORTATIONSUBSIDIES" />
+      <ScalarProperty Name="MEALSUBSIDIES" ColumnName="MEALSUBSIDIES" />
+      <ScalarProperty Name="OTHERCOSTS" ColumnName="OTHERCOSTS" />
+      <ScalarProperty Name="PRIVATEAFFAIR" ColumnName="PRIVATEAFFAIR" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="GOOUTTOMEET" ColumnName="GOOUTTOMEET" />
+      <ScalarProperty Name="COMPANYCAR" ColumnName="COMPANYCAR" />
+      <ScalarProperty Name="THENUMBEROFNIGHTS" ColumnName="THENUMBEROFNIGHTS" />
+      <ScalarProperty Name="STARTCITYNAME" ColumnName="STARTCITYNAME" />
+      <ScalarProperty Name="ENDCITYNAME" ColumnName="ENDCITYNAME" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_REQUIRE" StoreEntitySet="T_OA_REQUIRE" TypeName="SMT_OA_EFModel.T_OA_REQUIRE">
+      <ScalarProperty Name="REQUIREID" ColumnName="REQUIREID" />
+      <ScalarProperty Name="APPTITLE" ColumnName="APPTITLE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+      <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+      <ScalarProperty Name="OPTFLAG" ColumnName="OPTFLAG" />
+      <ScalarProperty Name="WAY" ColumnName="WAY" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_REQUIREDETAIL" StoreEntitySet="T_OA_REQUIREDETAIL" TypeName="SMT_OA_EFModel.T_OA_REQUIREDETAIL">
+      <ScalarProperty Name="REQUIREDETAILID" ColumnName="REQUIREDETAILID" />
+      <ScalarProperty Name="REQUIREMASTERID" ColumnName="REQUIREMASTERID" />
+      <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+      <ScalarProperty Name="CODE" ColumnName="CODE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_REQUIREDETAIL2" StoreEntitySet="T_OA_REQUIREDETAIL2" TypeName="SMT_OA_EFModel.T_OA_REQUIREDETAIL2">
+      <ScalarProperty Name="REQUIREDETAIL2ID" ColumnName="REQUIREDETAIL2ID" />
+      <ScalarProperty Name="REQUIREMASTERID" ColumnName="REQUIREMASTERID" />
+      <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_REQUIREDISTRIBUTE" StoreEntitySet="T_OA_REQUIREDISTRIBUTE" TypeName="SMT_OA_EFModel.T_OA_REQUIREDISTRIBUTE">
+      <ScalarProperty Name="REQUIREDISTRIBUTEID" ColumnName="REQUIREDISTRIBUTEID" />
+      <ScalarProperty Name="DISTRIBUTETITLE" ColumnName="DISTRIBUTETITLE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_REQUIREMASTER" StoreEntitySet="T_OA_REQUIREMASTER" TypeName="SMT_OA_EFModel.T_OA_REQUIREMASTER">
+      <ScalarProperty Name="REQUIREMASTERID" ColumnName="REQUIREMASTERID" />
+      <ScalarProperty Name="REQUIRETITLE" ColumnName="REQUIRETITLE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_REQUIRERESULT" StoreEntitySet="T_OA_REQUIRERESULT" TypeName="SMT_OA_EFModel.T_OA_REQUIRERESULT">
+      <ScalarProperty Name="REQUIRERESULTID" ColumnName="REQUIRERESULTID" />
+      <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+      <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="CODE" ColumnName="CODE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_SATISFACTIONDETAIL" StoreEntitySet="T_OA_SATISFACTIONDETAIL" TypeName="SMT_OA_EFModel.T_OA_SATISFACTIONDETAIL">
+      <ScalarProperty Name="SATISFACTIONDETAILID" ColumnName="SATISFACTIONDETAILID" />
+      <ScalarProperty Name="SATISFACTIONMASTERID" ColumnName="SATISFACTIONMASTERID" />
+      <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_SATISFACTIONDISTRIBUTE" StoreEntitySet="T_OA_SATISFACTIONDISTRIBUTE" TypeName="SMT_OA_EFModel.T_OA_SATISFACTIONDISTRIBUTE">
+      <ScalarProperty Name="SATISFACTIONDISTRIBUTEID" ColumnName="SATISFACTIONDISTRIBUTEID" />
+      <ScalarProperty Name="DISTRIBUTETITLE" ColumnName="DISTRIBUTETITLE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="ANSWERID" ColumnName="ANSWERID" />
+      <ScalarProperty Name="PERCENTAGE" ColumnName="PERCENTAGE" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_SATISFACTIONMASTER" StoreEntitySet="T_OA_SATISFACTIONMASTER" TypeName="SMT_OA_EFModel.T_OA_SATISFACTIONMASTER">
+      <ScalarProperty Name="SATISFACTIONMASTERID" ColumnName="SATISFACTIONMASTERID" />
+      <ScalarProperty Name="SATISFACTIONTITLE" ColumnName="SATISFACTIONTITLE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_SATISFACTIONREQUIRE" StoreEntitySet="T_OA_SATISFACTIONREQUIRE" TypeName="SMT_OA_EFModel.T_OA_SATISFACTIONREQUIRE">
+      <ScalarProperty Name="SATISFACTIONREQUIREID" ColumnName="SATISFACTIONREQUIREID" />
+      <ScalarProperty Name="SATISFACTIONTITLE" ColumnName="SATISFACTIONTITLE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="ANSWERGROUPID" ColumnName="ANSWERGROUPID" />
+      <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+      <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+      <ScalarProperty Name="OPTFLAG" ColumnName="OPTFLAG" />
+      <ScalarProperty Name="WAY" ColumnName="WAY" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_SATISFACTIONRESULT" StoreEntitySet="T_OA_SATISFACTIONRESULT" TypeName="SMT_OA_EFModel.T_OA_SATISFACTIONRESULT">
+      <ScalarProperty Name="SATISFACTIONRESULTID" ColumnName="SATISFACTIONRESULTID" />
+      <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+      <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_SENDDOC" StoreEntitySet="T_OA_SENDDOC" TypeName="SMT_OA_EFModel.T_OA_SENDDOC">
+      <ScalarProperty Name="SENDDOCID" ColumnName="SENDDOCID" />
+      <ScalarProperty Name="GRADED" ColumnName="GRADED" />
+      <ScalarProperty Name="PRIORITIES" ColumnName="PRIORITIES" />
+      <ScalarProperty Name="SENDDOCTITLE" ColumnName="SENDDOCTITLE" />
+      <ScalarProperty Name="KEYWORDS" ColumnName="KEYWORDS" />
+      <ScalarProperty Name="SEND" ColumnName="SEND" />
+      <ScalarProperty Name="CC" ColumnName="CC" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="DEPARTID" ColumnName="DEPARTID" />
+      <ScalarProperty Name="NUM" ColumnName="NUM" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="ISDISTRIBUTE" ColumnName="ISDISTRIBUTE" />
+      <ScalarProperty Name="ISSAVE" ColumnName="ISSAVE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="PUBLISHDATE" ColumnName="PUBLISHDATE" />
+      <ScalarProperty Name="ISREDDOC" ColumnName="ISREDDOC" />
+      <ScalarProperty Name="ISTOP" ColumnName="ISTOP" />
+      <ScalarProperty Name="TOPSTARTDATE" ColumnName="TOPSTARTDATE" />
+      <ScalarProperty Name="TOPENDDATE" ColumnName="TOPENDDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_SENDDOCTEMPLATE" StoreEntitySet="T_OA_SENDDOCTEMPLATE" TypeName="SMT_OA_EFModel.T_OA_SENDDOCTEMPLATE">
+      <ScalarProperty Name="SENDDOCTEMPLATEID" ColumnName="SENDDOCTEMPLATEID" />
+      <ScalarProperty Name="TEMPLATENAME" ColumnName="TEMPLATENAME" />
+      <ScalarProperty Name="GRADED" ColumnName="GRADED" />
+      <ScalarProperty Name="PRIORITIES" ColumnName="PRIORITIES" />
+      <ScalarProperty Name="SENDDOCTITLE" ColumnName="SENDDOCTITLE" />
+      <ScalarProperty Name="SENDDOCTYPE" ColumnName="SENDDOCTYPE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_SENDDOCTYPE" StoreEntitySet="T_OA_SENDDOCTYPE" TypeName="SMT_OA_EFModel.T_OA_SENDDOCTYPE">
+      <ScalarProperty Name="SENDDOCTYPEID" ColumnName="SENDDOCTYPEID" />
+      <ScalarProperty Name="SENDDOCTYPE" ColumnName="SENDDOCTYPE" />
+      <ScalarProperty Name="OPTFLAG" ColumnName="OPTFLAG" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_TAKETHESTANDARDTRANSPORT" StoreEntitySet="T_OA_TAKETHESTANDARDTRANSPORT" TypeName="SMT_OA_EFModel.T_OA_TAKETHESTANDARDTRANSPORT">
+      <ScalarProperty Name="TAKETHESTANDARDTRANSPORTID" ColumnName="TAKETHESTANDARDTRANSPORTID" />
+      <ScalarProperty Name="ENDPOSTLEVEL" ColumnName="ENDPOSTLEVEL" />
+      <ScalarProperty Name="TYPEOFTRAVELTOOLS" ColumnName="TYPEOFTRAVELTOOLS" />
+      <ScalarProperty Name="TAKETHETOOLLEVEL" ColumnName="TAKETHETOOLLEVEL" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_TRAVELREIMBURSEMENT" StoreEntitySet="T_OA_TRAVELREIMBURSEMENT" TypeName="SMT_OA_EFModel.T_OA_TRAVELREIMBURSEMENT">
+      <ScalarProperty Name="TRAVELREIMBURSEMENTID" ColumnName="TRAVELREIMBURSEMENTID" />
+      <ScalarProperty Name="BUSINESSREPORTID" ColumnName="BUSINESSREPORTID" />
+      <ScalarProperty Name="CLAIMSWERE" ColumnName="CLAIMSWERE" />
+      <ScalarProperty Name="CLAIMSWERENAME" ColumnName="CLAIMSWERENAME" />
+      <ScalarProperty Name="REIMBURSEMENTTIME" ColumnName="REIMBURSEMENTTIME" />
+      <ScalarProperty Name="COMPUTINGTIME" ColumnName="COMPUTINGTIME" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="THETOTALCOST" ColumnName="THETOTALCOST" />
+      <ScalarProperty Name="REIMBURSEMENTOFCOSTS" ColumnName="REIMBURSEMENTOFCOSTS" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="NOBUDGETCLAIMS" ColumnName="NOBUDGETCLAIMS" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="OWNERPOSTNAME" ColumnName="OWNERPOSTNAME" />
+      <ScalarProperty Name="OWNERDEPARTMENTNAME" ColumnName="OWNERDEPARTMENTNAME" />
+      <ScalarProperty Name="OWNERCOMPANYNAME" ColumnName="OWNERCOMPANYNAME" />
+      <ScalarProperty Name="POSTLEVEL" ColumnName="POSTLEVEL" />
+      <ScalarProperty Name="STARTCITYNAME" ColumnName="STARTCITYNAME" />
+      <ScalarProperty Name="ENDCITYNAME" ColumnName="ENDCITYNAME" />
+      <ScalarProperty Name="ISFROMWP" ColumnName="ISFROMWP" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_TRAVELSOLUTIONS" StoreEntitySet="T_OA_TRAVELSOLUTIONS" TypeName="SMT_OA_EFModel.T_OA_TRAVELSOLUTIONS">
+      <ScalarProperty Name="TRAVELSOLUTIONSID" ColumnName="TRAVELSOLUTIONSID" />
+      <ScalarProperty Name="PROGRAMMENAME" ColumnName="PROGRAMMENAME" />
+      <ScalarProperty Name="ANDFROMTHATDAY" ColumnName="ANDFROMTHATDAY" />
+      <ScalarProperty Name="CUSTOMHALFDAY" ColumnName="CUSTOMHALFDAY" />
+      <ScalarProperty Name="RANGEPOSTLEVEL" ColumnName="RANGEPOSTLEVEL" />
+      <ScalarProperty Name="RANGEDAYS" ColumnName="RANGEDAYS" />
+      <ScalarProperty Name="MAXIMUMRANGEDAYS" ColumnName="MAXIMUMRANGEDAYS" />
+      <ScalarProperty Name="MINIMUMINTERVALDAYS" ColumnName="MINIMUMINTERVALDAYS" />
+      <ScalarProperty Name="INTERVALRATIO" ColumnName="INTERVALRATIO" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="NOALLOWANCEPOSTLEVEL" ColumnName="NOALLOWANCEPOSTLEVEL" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_VEHICLE" StoreEntitySet="T_OA_VEHICLE" TypeName="SMT_OA_EFModel.T_OA_VEHICLE">
+      <ScalarProperty Name="VEHICLEID" ColumnName="VEHICLEID" />
+      <ScalarProperty Name="ASSETID" ColumnName="ASSETID" />
+      <ScalarProperty Name="VEHICLEMODEL" ColumnName="VEHICLEMODEL" />
+      <ScalarProperty Name="VIN" ColumnName="VIN" />
+      <ScalarProperty Name="VEHICLEBRANDS" ColumnName="VEHICLEBRANDS" />
+      <ScalarProperty Name="VEHICLETYPE" ColumnName="VEHICLETYPE" />
+      <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+      <ScalarProperty Name="SEATQUANTITY" ColumnName="SEATQUANTITY" />
+      <ScalarProperty Name="BUYDATE" ColumnName="BUYDATE" />
+      <ScalarProperty Name="BUYPRICE" ColumnName="BUYPRICE" />
+      <ScalarProperty Name="INITIALRANGE" ColumnName="INITIALRANGE" />
+      <ScalarProperty Name="INTERVALRANGE" ColumnName="INTERVALRANGE" />
+      <ScalarProperty Name="MAINTENANCECYCLE" ColumnName="MAINTENANCECYCLE" />
+      <ScalarProperty Name="MAINTENANCEREMIND" ColumnName="MAINTENANCEREMIND" />
+      <ScalarProperty Name="MAINTAINCOMPANY" ColumnName="MAINTAINCOMPANY" />
+      <ScalarProperty Name="MAINTAINTEL" ColumnName="MAINTAINTEL" />
+      <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+      <ScalarProperty Name="VEHICLEFLAG" ColumnName="VEHICLEFLAG" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_VEHICLECARD" StoreEntitySet="T_OA_VEHICLECARD" TypeName="SMT_OA_EFModel.T_OA_VEHICLECARD">
+      <ScalarProperty Name="VEHICLECARDID" ColumnName="VEHICLECARDID" />
+      <ScalarProperty Name="CARDNAME" ColumnName="CARDNAME" />
+      <ScalarProperty Name="CARDTYPE" ColumnName="CARDTYPE" />
+      <ScalarProperty Name="EFFECTDATE" ColumnName="EFFECTDATE" />
+      <ScalarProperty Name="INVALIDDATE" ColumnName="INVALIDDATE" />
+      <ScalarProperty Name="CHARGEMONEY" ColumnName="CHARGEMONEY" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_VEHICLEDISPATCH" StoreEntitySet="T_OA_VEHICLEDISPATCH" TypeName="SMT_OA_EFModel.T_OA_VEHICLEDISPATCH">
+      <ScalarProperty Name="VEHICLEDISPATCHID" ColumnName="VEHICLEDISPATCHID" />
+      <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+      <ScalarProperty Name="ENDTIME" ColumnName="ENDTIME" />
+      <ScalarProperty Name="NUM" ColumnName="NUM" />
+      <ScalarProperty Name="ROUTE" ColumnName="ROUTE" />
+      <ScalarProperty Name="DRIVER" ColumnName="DRIVER" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="ISCANCEL" ColumnName="ISCANCEL" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_VEHICLEDISPATCHDETAIL" StoreEntitySet="T_OA_VEHICLEDISPATCHDETAIL" TypeName="SMT_OA_EFModel.T_OA_VEHICLEDISPATCHDETAIL">
+      <ScalarProperty Name="VEHICLEDISPATCHDETAILID" ColumnName="VEHICLEDISPATCHDETAILID" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_VEHICLEDISPATCHRECORD" StoreEntitySet="T_OA_VEHICLEDISPATCHRECORD" TypeName="SMT_OA_EFModel.T_OA_VEHICLEDISPATCHRECORD">
+      <ScalarProperty Name="VEHICLEDISPATCHRECORDID" ColumnName="VEHICLEDISPATCHRECORDID" />
+      <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+      <ScalarProperty Name="ENDTIME" ColumnName="ENDTIME" />
+      <ScalarProperty Name="NUM" ColumnName="NUM" />
+      <ScalarProperty Name="ROUTE" ColumnName="ROUTE" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="FUEL" ColumnName="FUEL" />
+      <ScalarProperty Name="RANGE" ColumnName="RANGE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="ISCHARGE" ColumnName="ISCHARGE" />
+      <ScalarProperty Name="CHARGEMONEY" ColumnName="CHARGEMONEY" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_VEHICLEUSEAPP" StoreEntitySet="T_OA_VEHICLEUSEAPP" TypeName="SMT_OA_EFModel.T_OA_VEHICLEUSEAPP">
+      <ScalarProperty Name="VEHICLEUSEAPPID" ColumnName="VEHICLEUSEAPPID" />
+      <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+      <ScalarProperty Name="ENDTIME" ColumnName="ENDTIME" />
+      <ScalarProperty Name="NUM" ColumnName="NUM" />
+      <ScalarProperty Name="ROUTE" ColumnName="ROUTE" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="DEPARTMENTID" ColumnName="DEPARTMENTID" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_VIEWSENDDOC" StoreEntitySet="T_OA_VIEWSENDDOC" TypeName="SMT_OA_EFModel.T_OA_VIEWSENDDOC">
+      <ScalarProperty Name="VIEWSENDDOCID" ColumnName="VIEWSENDDOCID" />
+      <ScalarProperty Name="SENDDOCID" ColumnName="SENDDOCID" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERCOMPANYNAME" ColumnName="OWNERCOMPANYNAME" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERDEPARTMENTNAME" ColumnName="OWNERDEPARTMENTNAME" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="OWNERPOSTNAME" ColumnName="OWNERPOSTNAME" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="ISVIEW" ColumnName="ISVIEW" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_WELFAREDETAIL" StoreEntitySet="T_OA_WELFAREDETAIL" TypeName="SMT_OA_EFModel.T_OA_WELFAREDETAIL">
+      <ScalarProperty Name="WELFAREDETAILID" ColumnName="WELFAREDETAILID" />
+      <ScalarProperty Name="POSTID" ColumnName="POSTID" />
+      <ScalarProperty Name="POSTLEVELA" ColumnName="POSTLEVELA" />
+      <ScalarProperty Name="POSTLEVELB" ColumnName="POSTLEVELB" />
+      <ScalarProperty Name="ISLEVEL" ColumnName="ISLEVEL" />
+      <ScalarProperty Name="STANDARD" ColumnName="STANDARD" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_WELFAREDISTRIBUTEDETAIL" StoreEntitySet="T_OA_WELFAREDISTRIBUTEDETAIL" TypeName="SMT_OA_EFModel.T_OA_WELFAREDISTRIBUTEDETAIL">
+      <ScalarProperty Name="WELFAREDISTRIBUTEDETAILID" ColumnName="WELFAREDISTRIBUTEDETAILID" />
+      <ScalarProperty Name="USERID" ColumnName="USERID" />
+      <ScalarProperty Name="STANDARD" ColumnName="STANDARD" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_WELFAREDISTRIBUTEMASTER" StoreEntitySet="T_OA_WELFAREDISTRIBUTEMASTER" TypeName="SMT_OA_EFModel.T_OA_WELFAREDISTRIBUTEMASTER">
+      <ScalarProperty Name="WELFAREDISTRIBUTEMASTERID" ColumnName="WELFAREDISTRIBUTEMASTERID" />
+      <ScalarProperty Name="WELFAREDISTRIBUTETITLE" ColumnName="WELFAREDISTRIBUTETITLE" />
+      <ScalarProperty Name="DISTRIBUTEDATE" ColumnName="DISTRIBUTEDATE" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="ISWAGE" ColumnName="ISWAGE" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_WELFAREDISTRIBUTEUNDO" StoreEntitySet="T_OA_WELFAREDISTRIBUTEUNDO" TypeName="SMT_OA_EFModel.T_OA_WELFAREDISTRIBUTEUNDO">
+      <ScalarProperty Name="WELFAREDISTRIBUTEUNDOID" ColumnName="WELFAREDISTRIBUTEUNDOID" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_WELFAREMASERT" StoreEntitySet="T_OA_WELFAREMASERT" TypeName="SMT_OA_EFModel.T_OA_WELFAREMASERT">
+      <ScalarProperty Name="WELFAREID" ColumnName="WELFAREID" />
+      <ScalarProperty Name="WELFAREPROID" ColumnName="WELFAREPROID" />
+      <ScalarProperty Name="TEL" ColumnName="TEL" />
+      <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+      <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+      <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+      <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+      <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_WORKRECORD" StoreEntitySet="T_OA_WORKRECORD" TypeName="SMT_OA_EFModel.T_OA_WORKRECORD">
+      <ScalarProperty Name="WORKRECORDID" ColumnName="WORKRECORDID" />
+      <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+      <ScalarProperty Name="PLANTIME" ColumnName="PLANTIME" />
+      <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+      <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+      <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+      <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+      <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+      <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+      <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+      <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+      <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+      <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+      <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+      <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+      <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+      <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+      <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_T_OA_ACCIDENTRECORD" TypeName="SMT_OA_EFModel.FK_T_OA_ACCIDENTRECORD" StoreEntitySet="T_OA_ACCIDENTRECORD">
+      <EndProperty Name="T_OA_VEHICLE">
+        <ScalarProperty Name="ASSETID" ColumnName="ASSETID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_ACCIDENTRECORD">
+        <ScalarProperty Name="ACCIDENTRECORDID" ColumnName="ACCIDENTRECORDID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_LENDARCHIVES" TypeName="SMT_OA_EFModel.FK_T_OA_LENDARCHIVES" StoreEntitySet="T_OA_LENDARCHIVES">
+      <EndProperty Name="T_OA_ARCHIVES">
+        <ScalarProperty Name="ARCHIVESID" ColumnName="ARCHIVESID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_LENDARCHIVES">
+        <ScalarProperty Name="LENDARCHIVESID" ColumnName="LENDARCHIVESID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_AREADIFFERENCE_T_OA_ARE" TypeName="SMT_OA_EFModel.FK_AREADIFFERENCE_T_OA_ARE" StoreEntitySet="T_OA_AREAALLOWANCE">
+      <EndProperty Name="T_OA_AREADIFFERENCE">
+        <ScalarProperty Name="AREADIFFERENCEID" ColumnName="AREADIFFERENCEID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_AREAALLOWANCE">
+        <ScalarProperty Name="AREAALLOWANCEID" ColumnName="AREAALLOWANCEID" />
+      </EndProperty>
+      <Condition ColumnName="AREADIFFERENCEID" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_AREAALLOWANCE" TypeName="SMT_OA_EFModel.FK_T_OA_AREAALLOWANCE" StoreEntitySet="T_OA_AREAALLOWANCE">
+      <EndProperty Name="T_OA_TRAVELSOLUTIONS">
+        <ScalarProperty Name="TRAVELSOLUTIONSID" ColumnName="TRAVELSOLUTIONSID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_AREAALLOWANCE">
+        <ScalarProperty Name="AREAALLOWANCEID" ColumnName="AREAALLOWANCEID" />
+      </EndProperty>
+      <Condition ColumnName="TRAVELSOLUTIONSID" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_ARE_AREACITY" TypeName="SMT_OA_EFModel.FK_T_OA_ARE_AREACITY" StoreEntitySet="T_OA_AREACITY">
+      <EndProperty Name="T_OA_AREADIFFERENCE">
+        <ScalarProperty Name="AREADIFFERENCEID" ColumnName="AREADIFFERENCEID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_AREACITY">
+        <ScalarProperty Name="AREACITYID" ColumnName="AREACITYID" />
+      </EndProperty>
+      <Condition ColumnName="AREADIFFERENCEID" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_AREADIFFERENCE" TypeName="SMT_OA_EFModel.FK_T_OA_AREADIFFERENCE" StoreEntitySet="T_OA_AREADIFFERENCE">
+      <EndProperty Name="T_OA_TRAVELSOLUTIONS">
+        <ScalarProperty Name="TRAVELSOLUTIONSID" ColumnName="TRAVELSOLUTIONSID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_AREADIFFERENCE">
+        <ScalarProperty Name="AREADIFFERENCEID" ColumnName="AREADIFFERENCEID" />
+      </EndProperty>
+      <Condition ColumnName="TRAVELSOLUTIONSID" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_REPORTDETAIL_T_OA_BUS" TypeName="SMT_OA_EFModel.FK_T_OA_REPORTDETAIL_T_OA_BUS" StoreEntitySet="T_OA_BUSINESSREPORTDETAIL">
+      <EndProperty Name="T_OA_BUSINESSREPORT">
+        <ScalarProperty Name="BUSINESSREPORTID" ColumnName="BUSINESSREPORTID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_BUSINESSREPORTDETAIL">
+        <ScalarProperty Name="BUSINESSREPORTDETAILID" ColumnName="BUSINESSREPORTDETAILID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_BUSINESSTRIP_T_OA_BUS" TypeName="SMT_OA_EFModel.FK_BUSINESSTRIP_T_OA_BUS" StoreEntitySet="T_OA_TRAVELREIMBURSEMENT">
+      <EndProperty Name="T_OA_BUSINESSTRIP">
+        <ScalarProperty Name="BUSINESSTRIPID" ColumnName="BUSINESSTRIPID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_TRAVELREIMBURSEMENT">
+        <ScalarProperty Name="TRAVELREIMBURSEMENTID" ColumnName="TRAVELREIMBURSEMENTID" />
+      </EndProperty>
+      <Condition ColumnName="BUSINESSTRIPID" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_BUS_T_OA_BUSDETAIL" TypeName="SMT_OA_EFModel.FK_T_OA_BUS_T_OA_BUSDETAIL" StoreEntitySet="T_OA_BUSINESSTRIPDETAIL">
+      <EndProperty Name="T_OA_BUSINESSTRIP">
+        <ScalarProperty Name="BUSINESSTRIPID" ColumnName="BUSINESSTRIPID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_BUSINESSTRIPDETAIL">
+        <ScalarProperty Name="BUSINESSTRIPDETAILID" ColumnName="BUSINESSTRIPDETAILID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_CAN_REFERENCE_T_OA_TRA" TypeName="SMT_OA_EFModel.FK_T_OA_CAN_REFERENCE_T_OA_TRA" StoreEntitySet="T_OA_CANTAKETHEPLANELINE">
+      <EndProperty Name="T_OA_TRAVELSOLUTIONS">
+        <ScalarProperty Name="TRAVELSOLUTIONSID" ColumnName="TRAVELSOLUTIONSID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_CANTAKETHEPLANELINE">
+        <ScalarProperty Name="CANTAKETHEPLANELINEID" ColumnName="CANTAKETHEPLANELINEID" />
+      </EndProperty>
+      <Condition ColumnName="TRAVELSOLUTIONSID" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_CONSERVATION" TypeName="SMT_OA_EFModel.FK_T_OA_CONSERVATION" StoreEntitySet="T_OA_CONSERVATION">
+      <EndProperty Name="T_OA_VEHICLE">
+        <ScalarProperty Name="ASSETID" ColumnName="ASSETID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_CONSERVATION">
+        <ScalarProperty Name="CONSERVATIONID" ColumnName="CONSERVATIONID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_CONSERVATIONRECORD" TypeName="SMT_OA_EFModel.FK_T_OA_CONSERVATIONRECORD" StoreEntitySet="T_OA_CONSERVATIONRECORD">
+      <EndProperty Name="T_OA_CONSERVATION">
+        <ScalarProperty Name="CONSERVATIONID" ColumnName="CONSERVATIONID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_CONSERVATIONRECORD">
+        <ScalarProperty Name="CONSERVATIONRECORDID" ColumnName="CONSERVATIONRECORDID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_CONTRACTPRINT" TypeName="SMT_OA_EFModel.FK_T_OA_CONTRACTPRINT" StoreEntitySet="T_OA_CONTRACTPRINT">
+      <EndProperty Name="T_OA_CONTRACTAPP">
+        <ScalarProperty Name="CONTRACTAPPID" ColumnName="CONTRACTAPPID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_CONTRACTPRINT">
+        <ScalarProperty Name="CONTRACTPRINTID" ColumnName="CONTRACTPRINTID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_CONTRACTVIEW" TypeName="SMT_OA_EFModel.FK_T_OA_CONTRACTVIEW" StoreEntitySet="T_OA_CONTRACTVIEW">
+      <EndProperty Name="T_OA_CONTRACTPRINT">
+        <ScalarProperty Name="CONTRACTPRINTID" ColumnName="CONTRACTPRINTID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_CONTRACTVIEW">
+        <ScalarProperty Name="CONTRACTVIEWID" ColumnName="CONTRACTVIEWID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_CONTRACTTEMPLATE" TypeName="SMT_OA_EFModel.FK_T_OA_CONTRACTTEMPLATE" StoreEntitySet="T_OA_CONTRACTTEMPLATE">
+      <EndProperty Name="T_OA_CONTRACTTYPE">
+        <ScalarProperty Name="CONTRACTTYPEID" ColumnName="CONTRACTTYPEID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_CONTRACTTEMPLATE">
+        <ScalarProperty Name="CONTRACTTEMPLATEID" ColumnName="CONTRACTTEMPLATEID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_COSTRECORD" TypeName="SMT_OA_EFModel.FK_T_OA_COSTRECORD" StoreEntitySet="T_OA_COSTRECORD">
+      <EndProperty Name="T_OA_VEHICLE">
+        <ScalarProperty Name="ASSETID" ColumnName="ASSETID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_COSTRECORD">
+        <ScalarProperty Name="COSTRECORDID" ColumnName="COSTRECORDID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_HIREAPP" TypeName="SMT_OA_EFModel.FK_T_OA_HIREAPP" StoreEntitySet="T_OA_HIREAPP">
+      <EndProperty Name="T_OA_HOUSELIST">
+        <ScalarProperty Name="HOUSELISTID" ColumnName="HOUSELISTID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_HIREAPP">
+        <ScalarProperty Name="HIREAPPID" ColumnName="HIREAPPID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="T_OA_HIRERECORD1" TypeName="SMT_OA_EFModel.T_OA_HIRERECORD1" StoreEntitySet="T_OA_HIRERECORD">
+      <EndProperty Name="T_OA_HIREAPP">
+        <ScalarProperty Name="HIREAPPID" ColumnName="HIREAPPID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_HIRERECORD">
+        <ScalarProperty Name="HIRERECORD" ColumnName="HIRERECORD" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_HOUSELIST1" TypeName="SMT_OA_EFModel.FK_T_OA_HOUSELIST1" StoreEntitySet="T_OA_HOUSELIST">
+      <EndProperty Name="T_OA_HOUSEINFO">
+        <ScalarProperty Name="HOUSEID" ColumnName="HOUSEID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_HOUSELIST">
+        <ScalarProperty Name="HOUSELISTID" ColumnName="HOUSELISTID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_HOUSELIST2" TypeName="SMT_OA_EFModel.FK_T_OA_HOUSELIST2" StoreEntitySet="T_OA_HOUSELIST">
+      <EndProperty Name="T_OA_HOUSEINFOISSUANCE">
+        <ScalarProperty Name="ISSUANCEID" ColumnName="ISSUANCEID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_HOUSELIST">
+        <ScalarProperty Name="HOUSELISTID" ColumnName="HOUSELISTID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_LICENSEDETAIL" TypeName="SMT_OA_EFModel.FK_T_OA_LICENSEDETAIL" StoreEntitySet="T_OA_LICENSEDETAIL">
+      <EndProperty Name="T_OA_LICENSEMASTER">
+        <ScalarProperty Name="LICENSEMASTERID" ColumnName="LICENSEMASTERID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_LICENSEDETAIL">
+        <ScalarProperty Name="LICENSEDETAILID" ColumnName="LICENSEDETAILID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_LICENSEMASTER" TypeName="SMT_OA_EFModel.FK_T_OA_LICENSEMASTER" StoreEntitySet="T_OA_LICENSEMASTER">
+      <EndProperty Name="T_OA_ORGANIZATION">
+        <ScalarProperty Name="ORGCODE" ColumnName="ORGCODE" />
+      </EndProperty>
+      <EndProperty Name="T_OA_LICENSEMASTER">
+        <ScalarProperty Name="LICENSEMASTERID" ColumnName="LICENSEMASTERID" />
+      </EndProperty>
+      <Condition ColumnName="ORGCODE" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_LICENSEUSER" TypeName="SMT_OA_EFModel.FK_T_OA_LICENSEUSER" StoreEntitySet="T_OA_LICENSEUSER">
+      <EndProperty Name="T_OA_LICENSEMASTER">
+        <ScalarProperty Name="LICENSEMASTERID" ColumnName="LICENSEMASTERID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_LICENSEUSER">
+        <ScalarProperty Name="LICENSEUSERID" ColumnName="LICENSEUSERID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_MAINTENANCEAPP" TypeName="SMT_OA_EFModel.FK_T_OA_MAINTENANCEAPP" StoreEntitySet="T_OA_MAINTENANCEAPP">
+      <EndProperty Name="T_OA_VEHICLE">
+        <ScalarProperty Name="ASSETID" ColumnName="ASSETID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_MAINTENANCEAPP">
+        <ScalarProperty Name="MAINTENANCEAPPID" ColumnName="MAINTENANCEAPPID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_MAINTENANCERECORD" TypeName="SMT_OA_EFModel.FK_T_OA_MAINTENANCERECORD" StoreEntitySet="T_OA_MAINTENANCERECORD">
+      <EndProperty Name="T_OA_MAINTENANCEAPP">
+        <ScalarProperty Name="MAINTENANCEAPPID" ColumnName="MAINTENANCEAPPID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_MAINTENANCERECORD">
+        <ScalarProperty Name="MAINTENANCERECORDID" ColumnName="MAINTENANCERECORDID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_MEETINGINFO1" TypeName="SMT_OA_EFModel.FK_T_OA_MEETINGINFO1" StoreEntitySet="T_OA_MEETINGINFO">
+      <EndProperty Name="T_OA_MEETINGROOM">
+        <ScalarProperty Name="MEETINGROOMNAME" ColumnName="MEETINGROOMNAME" />
+      </EndProperty>
+      <EndProperty Name="T_OA_MEETINGINFO">
+        <ScalarProperty Name="MEETINGINFOID" ColumnName="MEETINGINFOID" />
+      </EndProperty>
+      <Condition ColumnName="MEETINGROOMNAME" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_MEETINGINFO2" TypeName="SMT_OA_EFModel.FK_T_OA_MEETINGINFO2" StoreEntitySet="T_OA_MEETINGINFO">
+      <EndProperty Name="T_OA_MEETINGTYPE">
+        <ScalarProperty Name="MEETINGTYPE" ColumnName="MEETINGTYPE" />
+      </EndProperty>
+      <EndProperty Name="T_OA_MEETINGINFO">
+        <ScalarProperty Name="MEETINGINFOID" ColumnName="MEETINGINFOID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_MEETINGMESSAGE" TypeName="SMT_OA_EFModel.FK_T_OA_MEETINGMESSAGE" StoreEntitySet="T_OA_MEETINGMESSAGE">
+      <EndProperty Name="T_OA_MEETINGINFO">
+        <ScalarProperty Name="MEETINGINFOID" ColumnName="MEETINGINFOID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_MEETINGMESSAGE">
+        <ScalarProperty Name="MEETINGMESSAGEID" ColumnName="MEETINGMESSAGEID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_MEETINGSTAFF" TypeName="SMT_OA_EFModel.FK_T_OA_MEETINGSTAFF" StoreEntitySet="T_OA_MEETINGSTAFF">
+      <EndProperty Name="T_OA_MEETINGINFO">
+        <ScalarProperty Name="MEETINGINFOID" ColumnName="MEETINGINFOID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_MEETINGSTAFF">
+        <ScalarProperty Name="MEETINGINFOID" ColumnName="MEETINGINFOID" />
+        <ScalarProperty Name="MEETINGUSERID" ColumnName="MEETINGUSERID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_MEETINGTIMECHANGE" TypeName="SMT_OA_EFModel.FK_T_OA_MEETINGTIMECHANGE" StoreEntitySet="T_OA_MEETINGTIMECHANGE">
+      <EndProperty Name="T_OA_MEETINGINFO">
+        <ScalarProperty Name="MEETINGINFOID" ColumnName="MEETINGINFOID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_MEETINGTIMECHANGE">
+        <ScalarProperty Name="MEETINGTIMECHANGEID" ColumnName="MEETINGTIMECHANGEID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_MEETINGROOMAPP" TypeName="SMT_OA_EFModel.FK_T_OA_MEETINGROOMAPP" StoreEntitySet="T_OA_MEETINGROOMAPP">
+      <EndProperty Name="T_OA_MEETINGROOM">
+        <ScalarProperty Name="MEETINGROOMNAME" ColumnName="MEETINGROOMNAME" />
+      </EndProperty>
+      <EndProperty Name="T_OA_MEETINGROOMAPP">
+        <ScalarProperty Name="MEETINGROOMAPPID" ColumnName="MEETINGROOMAPPID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_MEETINGROOMTIMECHANGE" TypeName="SMT_OA_EFModel.FK_T_OA_MEETINGROOMTIMECHANGE" StoreEntitySet="T_OA_MEETINGROOMTIMECHANGE">
+      <EndProperty Name="T_OA_MEETINGROOMAPP">
+        <ScalarProperty Name="MEETINGROOMAPPID" ColumnName="MEETINGROOMAPPID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_MEETINGROOMTIMECHANGE">
+        <ScalarProperty Name="MEETINGROOMTIMECHANGEID" ColumnName="MEETINGROOMTIMECHANGEID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_MEETINGTEMPLATE" TypeName="SMT_OA_EFModel.FK_T_OA_MEETINGTEMPLATE" StoreEntitySet="T_OA_MEETINGTEMPLATE">
+      <EndProperty Name="T_OA_MEETINGTYPE">
+        <ScalarProperty Name="MEETINGTYPE" ColumnName="MEETINGTYPE" />
+      </EndProperty>
+      <EndProperty Name="T_OA_MEETINGTEMPLATE">
+        <ScalarProperty Name="MEETINGTEMPLATEID" ColumnName="MEETINGTEMPLATEID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_PRO_REFERENCE_T_OA_TRA" TypeName="SMT_OA_EFModel.FK_T_OA_PRO_REFERENCE_T_OA_TRA" StoreEntitySet="T_OA_PROGRAMAPPLICATIONS">
+      <EndProperty Name="T_OA_TRAVELSOLUTIONS">
+        <ScalarProperty Name="TRAVELSOLUTIONSID" ColumnName="TRAVELSOLUTIONSID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_PROGRAMAPPLICATIONS">
+        <ScalarProperty Name="PROGRAMAPPLICATIONSID" ColumnName="PROGRAMAPPLICATIONSID" />
+      </EndProperty>
+      <Condition ColumnName="TRAVELSOLUTIONSID" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_REI_REFERENCE_T_OA_TRA" TypeName="SMT_OA_EFModel.FK_T_OA_REI_REFERENCE_T_OA_TRA" StoreEntitySet="T_OA_REIMBURSEMENTDETAIL">
+      <EndProperty Name="T_OA_TRAVELREIMBURSEMENT">
+        <ScalarProperty Name="TRAVELREIMBURSEMENTID" ColumnName="TRAVELREIMBURSEMENTID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_REIMBURSEMENTDETAIL">
+        <ScalarProperty Name="REIMBURSEMENTDETAILID" ColumnName="REIMBURSEMENTDETAILID" />
+      </EndProperty>
+      <Condition ColumnName="TRAVELREIMBURSEMENTID" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_REQUIRE" TypeName="SMT_OA_EFModel.FK_T_OA_REQUIRE" StoreEntitySet="T_OA_REQUIRE">
+      <EndProperty Name="T_OA_REQUIREMASTER">
+        <ScalarProperty Name="REQUIREMASTERID" ColumnName="REQUIREMASTERID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_REQUIRE">
+        <ScalarProperty Name="REQUIREID" ColumnName="REQUIREID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_REQUIREDISTRIBUTE" TypeName="SMT_OA_EFModel.FK_T_OA_REQUIREDISTRIBUTE" StoreEntitySet="T_OA_REQUIREDISTRIBUTE">
+      <EndProperty Name="T_OA_REQUIRE">
+        <ScalarProperty Name="REQUIREID" ColumnName="REQUIREID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_REQUIREDISTRIBUTE">
+        <ScalarProperty Name="REQUIREDISTRIBUTEID" ColumnName="REQUIREDISTRIBUTEID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_REQUIRERESULT2" TypeName="SMT_OA_EFModel.FK_T_OA_REQUIRERESULT2" StoreEntitySet="T_OA_REQUIRERESULT">
+      <EndProperty Name="T_OA_REQUIRE">
+        <ScalarProperty Name="REQUIREID" ColumnName="REQUIREID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_REQUIRERESULT">
+        <ScalarProperty Name="REQUIRERESULTID" ColumnName="REQUIRERESULTID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_REQUIREDETAIL2" TypeName="SMT_OA_EFModel.FK_T_OA_REQUIREDETAIL2" StoreEntitySet="T_OA_REQUIREDETAIL2">
+      <EndProperty Name="T_OA_REQUIREMASTER">
+        <ScalarProperty Name="REQUIREMASTERID" ColumnName="REQUIREMASTERID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_REQUIREDETAIL2">
+        <ScalarProperty Name="REQUIREMASTERID" ColumnName="REQUIREMASTERID" />
+        <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_REQUIRERESULT" TypeName="SMT_OA_EFModel.FK_T_OA_REQUIRERESULT" StoreEntitySet="T_OA_REQUIRERESULT">
+      <EndProperty Name="T_OA_REQUIREMASTER">
+        <ScalarProperty Name="REQUIREMASTERID" ColumnName="REQUIREMASTERID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_REQUIRERESULT">
+        <ScalarProperty Name="REQUIRERESULTID" ColumnName="REQUIRERESULTID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_SATISFACTIONDETAIL" TypeName="SMT_OA_EFModel.FK_T_OA_SATISFACTIONDETAIL" StoreEntitySet="T_OA_SATISFACTIONDETAIL">
+      <EndProperty Name="T_OA_SATISFACTIONMASTER">
+        <ScalarProperty Name="SATISFACTIONMASTERID" ColumnName="SATISFACTIONMASTERID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_SATISFACTIONDETAIL">
+        <ScalarProperty Name="SATISFACTIONMASTERID" ColumnName="SATISFACTIONMASTERID" />
+        <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_SATISFACTIONDISTRIBUTE" TypeName="SMT_OA_EFModel.FK_T_OA_SATISFACTIONDISTRIBUTE" StoreEntitySet="T_OA_SATISFACTIONDISTRIBUTE">
+      <EndProperty Name="T_OA_SATISFACTIONREQUIRE">
+        <ScalarProperty Name="SATISFACTIONREQUIREID" ColumnName="SATISFACTIONREQUIREID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_SATISFACTIONDISTRIBUTE">
+        <ScalarProperty Name="SATISFACTIONDISTRIBUTEID" ColumnName="SATISFACTIONDISTRIBUTEID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_SATISFACTIONREQUIRE" TypeName="SMT_OA_EFModel.FK_T_OA_SATISFACTIONREQUIRE" StoreEntitySet="T_OA_SATISFACTIONREQUIRE">
+      <EndProperty Name="T_OA_SATISFACTIONMASTER">
+        <ScalarProperty Name="SATISFACTIONMASTERID" ColumnName="SATISFACTIONMASTERID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_SATISFACTIONREQUIRE">
+        <ScalarProperty Name="SATISFACTIONREQUIREID" ColumnName="SATISFACTIONREQUIREID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_SATISFACTIONRESULT" TypeName="SMT_OA_EFModel.FK_T_OA_SATISFACTIONRESULT" StoreEntitySet="T_OA_SATISFACTIONRESULT">
+      <EndProperty Name="T_OA_SATISFACTIONREQUIRE">
+        <ScalarProperty Name="SATISFACTIONREQUIREID" ColumnName="SATISFACTIONREQUIREID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_SATISFACTIONRESULT">
+        <ScalarProperty Name="SATISFACTIONRESULTID" ColumnName="SATISFACTIONRESULTID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_SENDDOC" TypeName="SMT_OA_EFModel.FK_T_OA_SENDDOC" StoreEntitySet="T_OA_SENDDOC">
+      <EndProperty Name="T_OA_SENDDOCTYPE">
+        <ScalarProperty Name="SENDDOCTYPE" ColumnName="SENDDOCTYPE" />
+      </EndProperty>
+      <EndProperty Name="T_OA_SENDDOC">
+        <ScalarProperty Name="SENDDOCID" ColumnName="SENDDOCID" />
+      </EndProperty>
+      <Condition ColumnName="SENDDOCTYPE" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_TAK_REFERENCE_T_OA_TRA" TypeName="SMT_OA_EFModel.FK_T_OA_TAK_REFERENCE_T_OA_TRA" StoreEntitySet="T_OA_TAKETHESTANDARDTRANSPORT">
+      <EndProperty Name="T_OA_TRAVELSOLUTIONS">
+        <ScalarProperty Name="TRAVELSOLUTIONSID" ColumnName="TRAVELSOLUTIONSID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_TAKETHESTANDARDTRANSPORT">
+        <ScalarProperty Name="TAKETHESTANDARDTRANSPORTID" ColumnName="TAKETHESTANDARDTRANSPORTID" />
+      </EndProperty>
+      <Condition ColumnName="TRAVELSOLUTIONSID" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_VEHICLECARD" TypeName="SMT_OA_EFModel.FK_T_OA_VEHICLECARD" StoreEntitySet="T_OA_VEHICLECARD">
+      <EndProperty Name="T_OA_VEHICLE">
+        <ScalarProperty Name="ASSETID" ColumnName="ASSETID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_VEHICLECARD">
+        <ScalarProperty Name="VEHICLECARDID" ColumnName="VEHICLECARDID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_VEHICLEDISPATCH" TypeName="SMT_OA_EFModel.FK_T_OA_VEHICLEDISPATCH" StoreEntitySet="T_OA_VEHICLEDISPATCH">
+      <EndProperty Name="T_OA_VEHICLE">
+        <ScalarProperty Name="ASSETID" ColumnName="ASSETID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_VEHICLEDISPATCH">
+        <ScalarProperty Name="VEHICLEDISPATCHID" ColumnName="VEHICLEDISPATCHID" />
+      </EndProperty>
+      <Condition ColumnName="ASSETID" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_VEHICLEDISPATCHDETAIL1" TypeName="SMT_OA_EFModel.FK_T_OA_VEHICLEDISPATCHDETAIL1" StoreEntitySet="T_OA_VEHICLEDISPATCHDETAIL">
+      <EndProperty Name="T_OA_VEHICLEDISPATCH">
+        <ScalarProperty Name="VEHICLEDISPATCHID" ColumnName="VEHICLEDISPATCHID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_VEHICLEDISPATCHDETAIL">
+        <ScalarProperty Name="VEHICLEDISPATCHDETAILID" ColumnName="VEHICLEDISPATCHDETAILID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_VEHICLEDISPATCHDETAIL2" TypeName="SMT_OA_EFModel.FK_T_OA_VEHICLEDISPATCHDETAIL2" StoreEntitySet="T_OA_VEHICLEDISPATCHDETAIL">
+      <EndProperty Name="T_OA_VEHICLEUSEAPP">
+        <ScalarProperty Name="VEHICLEUSEAPPID" ColumnName="VEHICLEUSEAPPID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_VEHICLEDISPATCHDETAIL">
+        <ScalarProperty Name="VEHICLEDISPATCHDETAILID" ColumnName="VEHICLEDISPATCHDETAILID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_VEHICLEDISPATCHRECORD" TypeName="SMT_OA_EFModel.FK_VEHICLEDISPATCHRECORD" StoreEntitySet="T_OA_VEHICLEDISPATCHRECORD">
+      <EndProperty Name="T_OA_VEHICLEDISPATCHDETAIL">
+        <ScalarProperty Name="VEHICLEDISPATCHDETAILID" ColumnName="VEHICLEDISPATCHDETAILID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_VEHICLEDISPATCHRECORD">
+        <ScalarProperty Name="VEHICLEDISPATCHRECORDID" ColumnName="VEHICLEDISPATCHRECORDID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_WELFAREDETAIL" TypeName="SMT_OA_EFModel.FK_T_OA_WELFAREDETAIL" StoreEntitySet="T_OA_WELFAREDETAIL">
+      <EndProperty Name="T_OA_WELFAREMASERT">
+        <ScalarProperty Name="WELFAREID" ColumnName="WELFAREID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_WELFAREDETAIL">
+        <ScalarProperty Name="WELFAREDETAILID" ColumnName="WELFAREDETAILID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_WELFAREDISDETAIL" TypeName="SMT_OA_EFModel.FK_T_OA_WELFAREDISDETAIL" StoreEntitySet="T_OA_WELFAREDISTRIBUTEDETAIL">
+      <EndProperty Name="T_OA_WELFAREDISTRIBUTEMASTER">
+        <ScalarProperty Name="WELFAREDISTRIBUTEMASTERID" ColumnName="WELFAREDISTRIBUTEMASTERID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_WELFAREDISTRIBUTEDETAIL">
+        <ScalarProperty Name="WELFAREDISTRIBUTEDETAILID" ColumnName="WELFAREDISTRIBUTEDETAILID" />
+      </EndProperty>
+      <Condition ColumnName="WELFAREDISTRIBUTEMASTERID" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_WELFAREDISMASTER" TypeName="SMT_OA_EFModel.FK_T_OA_WELFAREDISMASTER" StoreEntitySet="T_OA_WELFAREDISTRIBUTEMASTER">
+      <EndProperty Name="T_OA_WELFAREMASERT">
+        <ScalarProperty Name="WELFAREID" ColumnName="WELFAREID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_WELFAREDISTRIBUTEMASTER">
+        <ScalarProperty Name="WELFAREDISTRIBUTEMASTERID" ColumnName="WELFAREDISTRIBUTEMASTERID" />
+      </EndProperty>
+      <Condition ColumnName="WELFAREID" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_T_OA_WELFAREDISTRIBUTEUNDO" TypeName="SMT_OA_EFModel.FK_T_OA_WELFAREDISTRIBUTEUNDO" StoreEntitySet="T_OA_WELFAREDISTRIBUTEUNDO">
+      <EndProperty Name="T_OA_WELFAREDISTRIBUTEMASTER">
+        <ScalarProperty Name="WELFAREDISTRIBUTEMASTERID" ColumnName="WELFAREDISTRIBUTEMASTERID" />
+      </EndProperty>
+      <EndProperty Name="T_OA_WELFAREDISTRIBUTEUNDO">
+        <ScalarProperty Name="WELFAREDISTRIBUTEUNDOID" ColumnName="WELFAREDISTRIBUTEUNDOID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

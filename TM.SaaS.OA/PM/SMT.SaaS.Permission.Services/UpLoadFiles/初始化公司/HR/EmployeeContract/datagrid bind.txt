@@ -1,0 +1,179 @@
+1 、列标题居中。
+
+可以通过设置DataGridColumn的HeadStyle实现，HeadStyle的XAML代码如下：
+
+<Style x:Key="DataGridHeaderStyle" TargetType="Primitives:DataGridColumnHeader">
+     <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+</Style>
+2、根据绑定实体的属性值不同呈现不同的外观（例如，将年龄小于18岁的标记为红色）。
+
+可以使用DataGridTemplateColumn + 自定义转换器实现。
+
+列的XAML代码如下：
+
+<data:DataGridTemplateColumn Header="Age"  Width="80">
+    <data:DataGridTemplateColumn.CellTemplate>
+        <DataTemplate>
+            <TextBlock Text="{Binding Age}" VerticalAlignment="Center" 
+                Foreground="{Binding Age, Converter={StaticResource converter}}"></TextBlock>
+        </DataTemplate>
+    </data:DataGridTemplateColumn.CellTemplate>
+</data:DataGridTemplateColumn>
+ 
+
+你可能会想到通过绑定DataGridTextColumn的Foreground属性实现同样的功能，遗憾的是，DataGridTextColumn的Foreground属性并不是依赖项属性，因此绑定到该属性是不可以的。
+
+自定义转换器的代码（注：由于是单向绑定，只实现了Convert方法）如下：
+
+public class AgeConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        int age = (int)value;
+        Color color = age < 18 ? Colors.Red : Colors.Black;
+        return new SolidColorBrush(color);
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}
+3、动态控制模板列中控件的属性。
+
+使用场景：例如使用DataGrid对员工档案进行展示或编辑，为了方便的删除员工档案，为DataGrid添加包含“删除”按钮的模板列。当展示员工档案时，DataGrid的IsReadOnly属性为true，当编辑员工档案时，DataGrid的IsReadOnly属性为false。但是，“删除”按钮的可用性并不会随着DataGrid的IsReadOnly属性的改变而改变，需要我们用代码动态控制。（注：如果设置DataGrid 的IsEnabled属性为false，按钮是不可用的，但DataGrid不可滚动，并不适合查看数据）
+
+解决方案：可以在资源中添加一个按钮，便于我们的代码访问并设置按钮的属性；然后将模板列中按钮的属性绑定到资源中的按钮的相应属性上，这样便可以通过设置资源中按钮的属性实现设置模板列中按钮的属性。与该做法类似的，也可以自定义一个包含要设置的控件的属性并实现 INotifyPropertyChanged接口的类，然后在资源中添加该类的实例，然后在代码中通过设置资源中该类的实例的属性实现设置模板列中按钮的属性。
+
+ 
+
+以上三点的完整示例如码如下：
+
+DataGridSample.xaml
+
+<UserControl xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"  x:Class="AutoCompleteBoxSample.DataGridSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:Primitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls.Data" 
+    xmlns:local="clr-namespace:Sample" Width="400" Height="300">
+    <UserControl.Resources>
+        <Button x:Key="deleteButtonTemplate"></Button>
+        
+        <local:AgeConverter x:Key="converter"></local:AgeConverter>
+
+        <Style x:Key="DataGridHeaderStyle" TargetType="Primitives:DataGridColumnHeader">
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        </Style>
+
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Content="ChangeReadonly" Click="ChangeReadOnly" Margin="0,10" ></Button>
+        <data:DataGrid Name="dg" Grid.Row="1" AutoGenerateColumns="False" >
+            <data:DataGrid.Columns>
+                <data:DataGridTextColumn Binding="{Binding Code}" HeaderStyle="{StaticResource DataGridHeaderStyle}"
+                    Header="Code"  Width="80" >
+                </data:DataGridTextColumn>
+                <data:DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="120" />
+                <data:DataGridTemplateColumn Header="Age"  Width="80">
+                    <data:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Age}" VerticalAlignment="Center" 
+                                Foreground="{Binding Age, Converter={StaticResource converter}}"></TextBlock>
+                        </DataTemplate>
+                    </data:DataGridTemplateColumn.CellTemplate>
+                </data:DataGridTemplateColumn>
+                <data:DataGridTemplateColumn x:Name="cl1" Header="Delete">
+                    <data:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnDel" Content="Delete" DataContext="{StaticResource deleteButtonTemplate}" 
+                                    IsEnabled="{Binding IsEnabled}" Click="Delete"  ></Button>
+                        </DataTemplate>
+                    </data:DataGridTemplateColumn.CellTemplate>
+                </data:DataGridTemplateColumn>
+            </data:DataGrid.Columns>
+        </data:DataGrid>        
+    </Grid>
+</UserControl>
+DataGridSample.xaml.cs
+
+public partial class DataGridSample : UserControl
+{
+    public DataGridSample()
+    {
+        InitializeComponent();
+
+        this.dg.ItemsSource = this.bll.EmployeeList;
+    }
+
+    private EmployeeBll bll = new EmployeeBll();
+
+    private void ChangeReadOnly(object sender, RoutedEventArgs e)
+    {
+        this.dg.IsReadOnly = !this.dg.IsReadOnly;
+
+        (this.Resources["deleteButtonTemplate"] as Button).IsEnabled = !this.dg.IsReadOnly;
+    }
+
+    private void Delete(object sender, RoutedEventArgs e)
+    {
+        MessageBox.Show("Delete");
+    }
+}
+
+public class AgeConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        int age = (int)value;
+        Color color = age < 18 ? Colors.Red : Colors.Black;
+        return new SolidColorBrush(color);
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}
+ 
+
+Employee.cs
+
+public class Employee
+{
+    public string Code { get; set; }
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+
+    public override string ToString()
+    {
+        return Name;
+    }
+}
+
+public class EmployeeBll
+{
+    public EmployeeBll()
+    {
+        this.employeeList = new List<Employee>();
+        this.employeeList.Add(new Employee { Code = "001", Name = "Mike", Age = 16 });
+        this.employeeList.Add(new Employee { Code = "002", Name = "John", Age = 18 });
+        this.employeeList.Add(new Employee { Code = "003", Name = "Rose", Age = 20 });
+
+    }
+
+    private List<Employee> employeeList;
+
+    public List<Employee> EmployeeList
+    {
+        get { return this.employeeList; }
+    }
+}
+
+原文来自：雨枫技术教程网 http://www.fengfly.com
+原文网址：http://www.fengfly.com/plus/view-174528-1.html
+

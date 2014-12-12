@@ -1,0 +1,117 @@
+﻿<localbase:BasePage x:Class="SMT.FBAnalysis.UI.Views.ContactDetails" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+           xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+           xmlns:smtx="clr-namespace:SMT.SaaS.FrameworkUI;assembly=SMT.SaaS.FrameworkUI" 
+           xmlns:localbase="clr-namespace:SMT.FBAnalysis.UI"
+           Title="ContactDetails Page">
+    <localbase:BasePage.Resources>
+        <Style x:Key="RightAlignCell" TargetType="data:DataGridCell">
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+        </Style>
+    </localbase:BasePage.Resources>
+    <Grid x:Name="PARENT">
+        <Grid x:Name="LayoutRoot" Background="{StaticResource BlueShine2}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Margin="0,5,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="130"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>                    
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>                
+                <TextBlock Text="机构" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Style="{StaticResource FrameGridTextBlock1}" Margin="5,0,0,0"/>
+                <smtx:LookUp Grid.Column="1" HorizontalAlignment="Stretch" FindClick="lkObject_FindClick" x:Name="lkObject" Width="Auto" VerticalAlignment="Center" Height="22" ToolTipService.ToolTip="机构只能单选"/>
+                <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="5,0,0,0">
+                	  <TextBlock x:Name="tbStartTitle" Text="开始日期" Width="50" Style="{StaticResource FrameGridTextBlock1}" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" />
+                	  <sdk:DatePicker x:Name="dpStart" Width="120" Height="22" Margin="5,0,0,0" HorizontalAlignment="Left" />
+                    <TextBlock x:Name="tbEndTitle"  Width="15" Text="至" Style="{StaticResource FrameGridTextBlock1}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" />
+                	  <sdk:DatePicker x:Name="dpEnd"  Width="120" VerticalAlignment="Center" Height="22" Margin="5,0,0,0" HorizontalAlignment="Left" />          
+				</StackPanel>				
+                <Button x:Name="btnFind" Grid.Column="3" Style="{StaticResource CommonButtonStyle}" Width="70" Content="{Binding Converter={StaticResource ResourceConveter}, Source=FIND}" Click="GridPager_Click" Height="22" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" />
+                <Button x:Name="btnClear" Grid.Column="4" Style="{StaticResource CommonButtonStyle}" Content="{Binding Converter={StaticResource ResourceConveter}, Source=RESET}" Height="22" Click="btnClear_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Width="70" Margin="5,0,0,0"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <smtx:FormToolBar x:Name="toolBarTop"></smtx:FormToolBar>
+                <StackPanel x:Name="spPersBeforeAccount" Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock x:Name="tbTimeBefore" Width="70" Text="期初借款额" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBox x:Name="tbTimeBeforeAccount" HorizontalAlignment="Left" VerticalAlignment="Center" Height="22" IsReadOnly="True" Margin="0" MinWidth="200" />
+                </StackPanel>
+                <sdk:DataGrid x:Name="dgPersQueryResult"  AutoGenerateColumns="false" IsReadOnly="True" Grid.Row="2"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource DataGridStyle}"  ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}"
+                        CellStyle="{StaticResource DataGridCellStyle}" RowStyle="{StaticResource DataGridRowStyle}" RowHeaderStyle="{StaticResource DataGridRowHeaderStyle}">
+                    <sdk:DataGrid.Columns>
+                        <sdk:DataGridTextColumn Header="单据ID" Binding="{Binding RecordID}" IsReadOnly="True" Visibility="Collapsed" Width="Auto" />
+                        <sdk:DataGridTemplateColumn Header="查看单据">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <HyperlinkButton x:Name="hbnViewRd" Width="80" VerticalAlignment="Center" Tag="{Binding XmlObjectValue}" Content="查看单据" Click="hbnViewRd_Click"/>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTextColumn Header="单据编号" Binding="{Binding RecordCode}" IsReadOnly="True" Width="Auto" />
+                        <sdk:DataGridTextColumn Header="部门" Binding="{Binding DepartmentName}" IsReadOnly="True" Width="Auto" />
+                        <sdk:DataGridTextColumn Header="借款类型" Binding="{Binding BorrowType, Converter={StaticResource CustomDictionaryConverter},ConverterParameter=BorrowType}" IsReadOnly="True" Width="Auto" />
+                        <sdk:DataGridTextColumn Header="借款金额" Binding="{Binding BorrowMoney, Converter={StaticResource FinanceConverter}}" CellStyle="{StaticResource RightAlignCell}" IsReadOnly="True" Width="Auto" />
+                        <sdk:DataGridTextColumn Header="还款类型" Binding="{Binding RepayType, Converter={StaticResource CustomDictionaryConverter},ConverterParameter=FBARepayType}" IsReadOnly="True" Width="Auto" />
+                        <sdk:DataGridTextColumn Header="还款金额" Binding="{Binding RepayMoney, Converter={StaticResource FinanceConverter}}" IsReadOnly="True" Width="Auto" />
+                        <sdk:DataGridTextColumn Header="更新日期" Binding="{Binding UpdateDate, Converter={StaticResource CustomDateConverter},ConverterParameter=DATETIMES}" IsReadOnly="True" Width="Auto" />
+                        <sdk:DataGridTextColumn Header="备注" Binding="{Binding RelRecordCode}" IsReadOnly="True" Width="Auto" />                        
+                    </sdk:DataGrid.Columns>
+                </sdk:DataGrid>
+                <StackPanel x:Name="spPersAfterAccount" Grid.Row="3" Orientation="Horizontal">
+                    <TextBlock x:Name="tbTimeAfter" Width="70" Text="期末借款额" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBox x:Name="tbTimeAfterAccount" IsReadOnly="True" Margin="0" HorizontalAlignment="Left" MinWidth="200" Height="22" VerticalAlignment="Center" />
+                </StackPanel>
+                <sdk:DataGrid x:Name="dgDeptQueryResult"  AutoGenerateColumns="false" IsReadOnly="True" Grid.Row="2" Visibility="Collapsed"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource DataGridStyle}"  ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}"
+                        CellStyle="{StaticResource DataGridCellStyle}" RowStyle="{StaticResource DataGridRowStyle}" RowHeaderStyle="{StaticResource DataGridRowHeaderStyle}">
+                    <sdk:DataGrid.Columns>
+                        <sdk:DataGridTextColumn Header="姓名" Binding="{Binding OwnerName}" IsReadOnly="True" Width="Auto" />
+                        <sdk:DataGridTextColumn Header="普通借款" Binding="{Binding NormalMoney, Converter={StaticResource FinanceConverter}}" CellStyle="{StaticResource RightAlignCell}" IsReadOnly="True" Width="Auto" />
+                        <sdk:DataGridTextColumn Header="专项借款" Binding="{Binding SpecialMoney, Converter={StaticResource FinanceConverter}}" CellStyle="{StaticResource RightAlignCell}" IsReadOnly="True" Width="Auto" />
+                        <sdk:DataGridTextColumn Header="备用金借款" Binding="{Binding ReserveMoney, Converter={StaticResource FinanceConverter}}" CellStyle="{StaticResource RightAlignCell}" IsReadOnly="True" Width="Auto" />
+                        <sdk:DataGridTextColumn Header="借款合计" Binding="{Binding TotalMoney, Converter={StaticResource FinanceConverter}}" CellStyle="{StaticResource RightAlignCell}" IsReadOnly="True" Width="Auto" />
+                    </sdk:DataGrid.Columns>
+                </sdk:DataGrid>
+                <StackPanel x:Name="spDeptTotalBorrowMoney" Grid.Row="3" Orientation="Horizontal" Visibility="Collapsed">
+                    <TextBlock x:Name="tbMoneyTitle" Width="70" Text="汇总统计：" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock x:Name="tbNormalMoneyTitle" Width="70" Text="普通借款" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBox x:Name="tbNormalMoney" IsReadOnly="True" Margin="0" HorizontalAlignment="Right" MinWidth="120" Height="22" VerticalAlignment="Center" />
+                    <TextBlock x:Name="tbSpecialMoneyTitle" Width="70" Text="专项借款" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBox x:Name="tbSpecialMoney" IsReadOnly="True" Margin="0" HorizontalAlignment="Right" MinWidth="120" Height="22" VerticalAlignment="Center" />
+                    <TextBlock x:Name="tbReserveMoneyTitle" Width="70" Text="备用金借款" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBox x:Name="tbReserveMoney" IsReadOnly="True" Margin="0" HorizontalAlignment="Right" MinWidth="120" Height="22" VerticalAlignment="Center" />
+                    <TextBlock x:Name="tbTotalMoneyTitle" Width="70" Text="借款总额" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBox x:Name="tbTotalMoney" IsReadOnly="True" Margin="0" HorizontalAlignment="Right" MinWidth="120" Height="22" VerticalAlignment="Center" />
+                </StackPanel>
+                <smtx:GridPager Name="dataPager" PageSize="20" Click="GridPager_Click" Grid.Row="4"></smtx:GridPager>
+            </Grid>
+        </Grid>
+    </Grid>
+</localbase:BasePage>

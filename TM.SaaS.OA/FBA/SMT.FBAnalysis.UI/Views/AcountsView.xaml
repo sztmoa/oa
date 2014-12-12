@@ -1,0 +1,551 @@
+﻿<localbase:BasePage 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+           xmlns:dataprimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls.Data"
+           xmlns:smtx="clr-namespace:SMT.SaaS.FrameworkUI;assembly=SMT.SaaS.FrameworkUI"
+           xmlns:fbtx="clr-namespace:SMT.FBAnalysis.UI;assembly=SMT.FBAnalysis.UI"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+           xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" 
+           xmlns:localbase="clr-namespace:SMT.FBAnalysis.UI"           
+           x:Class="SMT.FBAnalysis.UI.Views.AcountsView"
+           mc:Ignorable="d"
+           Title="AcountsView Page">
+    <localbase:BasePage.Resources>
+        <Style x:Key="RightAlignCell" TargetType="data:DataGridCell">
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+        </Style>
+    </localbase:BasePage.Resources>
+    <Grid x:Name="PARENT">
+        <Grid x:Name="LayoutRoot" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="35"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="tbOrgIdTitle" Grid.Column="0" Text="机构" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Margin="5,0,0,0"/>
+                <smtx:LookUp x:Name="lkOrg" Grid.Column="1" Height="24" FindClick="lkOrg_FindClick" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Margin="5,0,0,0" ToolTipService.ToolTip="机构可以多选,但只能选择同一类型的机构"/>
+                <TextBlock x:Name="tbOrgType" Grid.Column="0" Visibility="Collapsed" />
+                <TextBlock x:Name="tbOrgIds" Grid.Column="0" Visibility="Collapsed" />
+                <TextBlock x:Name="tbProject" Grid.Column="2" Text="科目" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Margin="5,0,0,0"/>
+                <smtx:LookUp x:Name="lkSubject" Grid.Column="3" Height="24" DataContext="{Binding Path=T_FB_SUBJECT}" VerticalAlignment="Center" Width="Auto" Margin="5,0,0,0" FindClick="lkSubject_FindClick" ToolTipService.ToolTip="科目可以多选" />
+                <TextBlock x:Name="tbDate" Grid.Column="4" Text="查询时间" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                <toolkit:NumericUpDown x:Name="nudYear" Grid.Column="5" Margin="5,0,0,0" Height="24" VerticalAlignment="Center" Maximum="3000" Minimum="1"/>
+                <TextBlock x:Name="tbYear" Grid.Column="6" Text="年" VerticalAlignment="Center" Width="Auto" Margin="5,0,0,0"/>
+                <toolkit:NumericUpDown x:Name="nudMonthStart" Grid.Column="7" Margin="5,0,0,0" Height="24" VerticalAlignment="Center" Maximum="12" Minimum="1"/>
+                <TextBlock x:Name="tbMonthFrom" Text="月 至" Grid.Column="8" VerticalAlignment="Center" Width="Auto" Margin="5,0,0,0"/>
+                <toolkit:NumericUpDown x:Name="nudMonthEnd" Grid.Column="9" Margin="5,0,0,0" Height="24" VerticalAlignment="Center" Maximum="12" Minimum="1"/>
+                <TextBlock x:Name="tbMonthTo" Text="月" Grid.Column="10" VerticalAlignment="Center" Width="Auto" Margin="5,0,0,0" HorizontalAlignment="Left"/>
+                <Button x:Name="btnQuerySubmit" Grid.Column="11" Style="{StaticResource CommonButtonStyle}" Content="{Binding Converter={StaticResource ResourceConveter}, Source=FIND}" Height="24" Click="btnQuerySubmit_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Width="70" Margin="5,0,0,0"/>
+                <Button x:Name="btnClear" Grid.Column="12" Style="{StaticResource CommonButtonStyle}" Content="{Binding Converter={StaticResource ResourceConveter}, Source=RESET}" Height="24" Click="btnClear_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Width="70" Margin="5,0,0,0"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <smtx:FormToolBar x:Name="toolBarTop"></smtx:FormToolBar>
+                <sdk:DataGrid FrozenColumnCount="3" AreRowGroupHeadersFrozen="True" x:Name="dgQueryResult" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" FontSize="12"
+                           ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto" Style="{StaticResource DataGridStyle}"
+                           CellStyle="{StaticResource DataGridCellStyle}" RowStyle="{StaticResource DataGridRowStyle}" RowHeaderStyle="{StaticResource DataGridRowHeaderStyle}">
+                    <sdk:DataGrid.Columns>
+                        <sdk:DataGridTextColumn Header="机构ID" Width="Auto" Binding="{Binding OrganizationID}"  Visibility="Collapsed"/>
+                        <sdk:DataGridTextColumn Header="机构" Width="Auto" Binding="{Binding OrganizationName, ConverterParameter=OrgDynamic, Converter={StaticResource CompanyInfoConverter}}"/>
+                        <sdk:DataGridTextColumn Header="科目名称" Width="Auto" Binding="{Binding SubjectName}" />
+                        <sdk:DataGridTemplateColumn Header="年度预算总额" Width="Auto">
+                            <sdk:DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="sdk:DataGridColumnHeader" BasedOn="{StaticResource DataGridColumnHeaderStyle}">
+                                    <Setter Property="ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <TextBlock x:Name="ContentFontColor" Margin="3 2 0 2"  Text="{Binding  Converter={StaticResource GridHeaderConverter}, RelativeSource={RelativeSource TemplatedParent}}" 
+                               Foreground="{StaticResource HeaderBackgroundfontColor1}" ToolTipService.ToolTip="年度预算数 + 年度预算增补数">
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </sdk:DataGridTemplateColumn.HeaderStyle>
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton Content="{Binding BudgetMoneyYear, Converter={StaticResource FinanceConverter}}" Width="90" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbnBudgetMoneyYear_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="月度预算总额">
+                            <sdk:DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="sdk:DataGridColumnHeader" BasedOn="{StaticResource DataGridColumnHeaderStyle}">
+                                    <Setter Property="ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <TextBlock x:Name="ContentFontColor" Margin="3 2 0 2"  Text="{Binding  Converter={StaticResource GridHeaderConverter}, RelativeSource={RelativeSource TemplatedParent}}" 
+                               Foreground="{StaticResource HeaderBackgroundfontColor1}" ToolTipService.ToolTip="月度预算数 + 月度预算增补数 + 年初结余">
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </sdk:DataGridTemplateColumn.HeaderStyle>
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbBudgetMoneyMonth" Content="{Binding BudgetMoneyMonth, Converter={StaticResource FinanceConverter}}" Width="90" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbBudgetMoneyMonth_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="1月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbJanMoney" Tag="-1" Content="{Binding JanApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="2月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbFebMoney" Tag="-2" Content="{Binding FebApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="3月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbMarMoney" Tag="-3" Content="{Binding MarApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="4月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbAprMoney" Tag="-4" Content="{Binding AprApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="5月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbMayMoney" Tag="-5" Content="{Binding MayApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="6月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbJunMoney" Tag="-6" Content="{Binding JunApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="7月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbJulMoney" Tag="-7" Content="{Binding JulApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="8月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbAugMoney" Tag="-8" Content="{Binding AugApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="9月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbSepMoney" Tag="-9" Content="{Binding SepApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="10月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbOctMoney" Tag="-10" Content="{Binding OctApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="11月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbNovMoney" Tag="-11" Content="{Binding NovApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="12月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbDecMoney" Tag="-12" Content="{Binding DecApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="已审核报销">
+                            <sdk:DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="sdk:DataGridColumnHeader" BasedOn="{StaticResource DataGridColumnHeaderStyle}">
+                                    <Setter Property="ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <TextBlock x:Name="ContentFontColor" Margin="3 2 0 2"  Text="{Binding  Converter={StaticResource GridHeaderConverter}, RelativeSource={RelativeSource TemplatedParent}}" 
+                               Foreground="{StaticResource HeaderBackgroundfontColor1}" ToolTipService.ToolTip="费用报销数总和（已审核）">
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </sdk:DataGridTemplateColumn.HeaderStyle>
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbApprovedApplyMoney" Content="{Binding ApprovedApplyMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="审核中报销">
+                            <sdk:DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="sdk:DataGridColumnHeader" BasedOn="{StaticResource DataGridColumnHeaderStyle}">
+                                    <Setter Property="ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <TextBlock x:Name="ContentFontColor" Margin="3 2 0 2"  Text="{Binding  Converter={StaticResource GridHeaderConverter}, RelativeSource={RelativeSource TemplatedParent}}" 
+                               Foreground="{StaticResource HeaderBackgroundfontColor1}" ToolTipService.ToolTip="费用报销数总和（审核中）">
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </sdk:DataGridTemplateColumn.HeaderStyle>
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbApprovingApplyMoney" Content="{Binding ApprovingApplyMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovingApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="报销小计">
+                            <sdk:DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="sdk:DataGridColumnHeader" BasedOn="{StaticResource DataGridColumnHeaderStyle}">
+                                    <Setter Property="ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <TextBlock x:Name="ContentFontColor" Margin="3 2 0 2"  Text="{Binding  Converter={StaticResource GridHeaderConverter}, RelativeSource={RelativeSource TemplatedParent}}" 
+                               Foreground="{StaticResource HeaderBackgroundfontColor1}" ToolTipService.ToolTip="费用报销数总和（已审核） + 费用报销数总和（审核中）">
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </sdk:DataGridTemplateColumn.HeaderStyle>
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock x:Name="hbSubtotal" Text="{Binding Subtotal, Converter={StaticResource FinanceConverter}}" Width="75" TextAlignment="Right" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Header="年度执行结余" Width="auto">
+                            <sdk:DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="sdk:DataGridColumnHeader" BasedOn="{StaticResource DataGridColumnHeaderStyle}">
+                                    <Setter Property="ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <TextBlock x:Name="ContentFontColor" Margin="3 2 0 2"  Text="{Binding  Converter={StaticResource GridHeaderConverter}, RelativeSource={RelativeSource TemplatedParent}}" 
+                               Foreground="{StaticResource HeaderBackgroundfontColor1}" ToolTipService.ToolTip="年度预算结余 - 已审核报销">
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </sdk:DataGridTemplateColumn.HeaderStyle>
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock x:Name="hbBudgetYearBalance" Text="{Binding BudgetYearBalance, Converter={StaticResource FinanceConverter}}" Width="90" TextAlignment="Right" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Header="年度预算结余" Width="auto">
+                            <sdk:DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="sdk:DataGridColumnHeader" BasedOn="{StaticResource DataGridColumnHeaderStyle}">
+                                    <Setter Property="ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <TextBlock x:Name="ContentFontColor" Margin="3 2 0 2"  Text="{Binding  Converter={StaticResource GridHeaderConverter}, RelativeSource={RelativeSource TemplatedParent}}" 
+                               Foreground="{StaticResource HeaderBackgroundfontColor1}" ToolTipService.ToolTip="年度预算数 + 年度预算增补数 - 月度预算数 - 月度预算增补数">
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </sdk:DataGridTemplateColumn.HeaderStyle>
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock x:Name="hbBudgetYear" Text="{Binding BudgetYear, Converter={StaticResource FinanceConverter}}" Width="90" TextAlignment="Right" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Header="月度预算结余" Width="auto">
+                            <sdk:DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="sdk:DataGridColumnHeader" BasedOn="{StaticResource DataGridColumnHeaderStyle}">
+                                    <Setter Property="ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <TextBlock x:Name="ContentFontColor" Margin="3 2 0 2"  Text="{Binding  Converter={StaticResource GridHeaderConverter}, RelativeSource={RelativeSource TemplatedParent}}" 
+                               Foreground="{StaticResource HeaderBackgroundfontColor1}" ToolTipService.ToolTip="月度预算数 + 月度预算增补数 - 费用报销数总和（已审核）">
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </sdk:DataGridTemplateColumn.HeaderStyle>
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock x:Name="hbBudgetMonth" Text="{Binding BudgetMonth, Converter={StaticResource FinanceConverter}}" Width="90" TextAlignment="Right" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                    </sdk:DataGrid.Columns>
+                </sdk:DataGrid>
+                <sdk:DataGrid x:Name="dgPerQueryResult" Grid.Row="1" FrozenColumnCount="4"  IsReadOnly="True" AutoGenerateColumns="False" Visibility="Collapsed"
+                           ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto" Style="{StaticResource DataGridStyle}"
+                           CellStyle="{StaticResource DataGridCellStyle}" RowStyle="{StaticResource DataGridRowStyle}" RowHeaderStyle="{StaticResource DataGridRowHeaderStyle}">
+                    <sdk:DataGrid.Columns>
+                        <sdk:DataGridTextColumn Header="机构ID" Width="Auto" Binding="{Binding OrganizationID}"  Visibility="Collapsed"/>
+                        <sdk:DataGridTextColumn Header="机构" Width="Auto" Binding="{Binding OrganizationName, ConverterParameter=OrgDynamic, Converter={StaticResource CompanyInfoConverter}}" />
+                        <sdk:DataGridTextColumn Header="员工姓名" Width="Auto" Binding="{Binding OwnerName}"  />
+                        <sdk:DataGridTextColumn Header="科目名称" Width="Auto" Binding="{Binding SubjectName}" />
+                        <sdk:DataGridTemplateColumn Width="auto" Header="1月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbJanMoney" Tag="-1" Content="{Binding JanApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="2月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbFebMoney" Tag="-2" Content="{Binding FebApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="3月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbMarMoney" Tag="-3" Content="{Binding MarApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="4月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbAprMoney" Tag="-4" Content="{Binding AprApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="5月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbMayMoney" Tag="-5" Content="{Binding MayApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="6月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbJunMoney" Tag="-6" Content="{Binding JunApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="7月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbJulMoney" Tag="-7" Content="{Binding JulApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="8月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbAugMoney" Tag="-8" Content="{Binding AugApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="9月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbSepMoney" Tag="-9" Content="{Binding SepApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="10月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbOctMoney" Tag="-10" Content="{Binding OctApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="11月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbNovMoney" Tag="-11" Content="{Binding NovApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="12月报销">
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbDecMoney" Tag="-12" Content="{Binding DecApprovedMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="已审核报销">
+                            <sdk:DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="sdk:DataGridColumnHeader" BasedOn="{StaticResource DataGridColumnHeaderStyle}">
+                                    <Setter Property="ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <TextBlock x:Name="ContentFontColor" Margin="3 2 0 2"  Text="{Binding  Converter={StaticResource GridHeaderConverter}, RelativeSource={RelativeSource TemplatedParent}}" 
+                               Foreground="{StaticResource HeaderBackgroundfontColor1}" ToolTipService.ToolTip="费用报销数总和（已审核）">
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </sdk:DataGridTemplateColumn.HeaderStyle>
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbApprovedApplyMoney" Content="{Binding ApprovedApplyMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovedApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="审核中报销">
+                            <sdk:DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="sdk:DataGridColumnHeader" BasedOn="{StaticResource DataGridColumnHeaderStyle}">
+                                    <Setter Property="ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <TextBlock x:Name="ContentFontColor" Margin="3 2 0 2"  Text="{Binding  Converter={StaticResource GridHeaderConverter}, RelativeSource={RelativeSource TemplatedParent}}" 
+                               Foreground="{StaticResource HeaderBackgroundfontColor1}" ToolTipService.ToolTip="费用报销数总和（审核中）">
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </sdk:DataGridTemplateColumn.HeaderStyle>
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <HyperlinkButton x:Name="hbApprovingApplyMoney" Content="{Binding ApprovingApplyMoney, Converter={StaticResource FinanceConverter}}" Width="75" HorizontalContentAlignment="Right" VerticalAlignment="Center" Click="hbApprovingApplyMoney_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                        <sdk:DataGridTemplateColumn Width="auto" Header="报销小计">
+                            <sdk:DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="sdk:DataGridColumnHeader" BasedOn="{StaticResource DataGridColumnHeaderStyle}">
+                                    <Setter Property="ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <TextBlock x:Name="ContentFontColor" Margin="3 2 0 2"  Text="{Binding  Converter={StaticResource GridHeaderConverter}, RelativeSource={RelativeSource TemplatedParent}}" 
+                               Foreground="{StaticResource HeaderBackgroundfontColor1}" ToolTipService.ToolTip="费用报销数总和（已审核） + 费用报销数总和（审核中）">
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </sdk:DataGridTemplateColumn.HeaderStyle>
+                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock x:Name="hbSubtotal" Text="{Binding Subtotal, Converter={StaticResource FinanceConverter}}" Width="75" TextAlignment="Right" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </sdk:DataGridTemplateColumn.CellTemplate>
+                        </sdk:DataGridTemplateColumn>
+                    </sdk:DataGrid.Columns>
+                </sdk:DataGrid>
+                <smtx:GridPager x:Name="dataPager" PageSize="20" Click="GridPager_Click" Grid.Row="2"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</localbase:BasePage>

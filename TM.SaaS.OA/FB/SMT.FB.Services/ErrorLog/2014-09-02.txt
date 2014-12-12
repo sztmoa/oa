@@ -1,0 +1,75 @@
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:00:51
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:00:51
+Debug  UpdateCheckState方法已被调用，参数：strModelCode: T_FB_DEPTBUDGETAPPLYMASTER, orderID: 6cdbe2fb-3c88-45cd-8717-95853b2bcede, strCheckStates: 2  2014/9/2 10:00:58
+Debug  BeginTransaction T_FB_DEPTBUDGETAPPLYMASTER 的单据[6cdbe2fb-3c88-45cd-8717-95853b2bcede]  2014/9/2 10:03:46
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:03:49
+Debug  UpdateCheckState方法已被调用，参数：strModelCode: T_FB_DEPTBUDGETAPPLYMASTER, orderID: 6cdbe2fb-3c88-45cd-8717-95853b2bcede, strCheckStates: 2  2014/9/2 10:05:02
+Debug  BeginTransaction T_FB_DEPTBUDGETAPPLYMASTER 的单据[6cdbe2fb-3c88-45cd-8717-95853b2bcede]  2014/9/2 10:05:11
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:06:06
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:10:54
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:10:54
+Debug  UpdateCheckState方法已被调用，参数：strModelCode: T_FB_DEPTBUDGETAPPLYMASTER, orderID: 47787d71-d04c-445a-bc1d-9e1008caa909, strCheckStates: 2  2014/9/2 10:10:59
+Debug  BeginTransaction T_FB_DEPTBUDGETAPPLYMASTER 的单据[47787d71-d04c-445a-bc1d-9e1008caa909]  2014/9/2 10:11:07
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:11:51
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:21:07
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:21:07
+Debug  UpdateCheckState方法已被调用，参数：strModelCode: T_FB_DEPTBUDGETSUMMASTER, orderID: 47787d71-d04c-445a-bc1d-9e1008caa909, strCheckStates: 2  2014/9/2 10:21:11
+Debug  BeginTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[47787d71-d04c-445a-bc1d-9e1008caa909]  2014/9/2 10:21:11
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:21:11
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:21:17
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:21:17
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:21:17
+Debug  预算汇总单终审开始创建二次预算汇总单据,公司名：神州通油茶 单号：自动生成  2014/9/2 10:23:25
+Debug  CommitTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[47787d71-d04c-445a-bc1d-9e1008caa909]  2014/9/2 10:23:25
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:23:25
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:24:24
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:24:24
+Debug  UpdateCheckState方法已被调用，参数：strModelCode: T_FB_DEPTBUDGETSUMMASTER, orderID: 47787d71-d04c-445a-bc1d-9e1008caa909, strCheckStates: 2  2014/9/2 10:24:40
+Debug  BeginTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[47787d71-d04c-445a-bc1d-9e1008caa909]  2014/9/2 10:24:40
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:24:41
+Debug  开始更新预算汇总单据,公司名：神州通油茶 单号：自动生成  2014/9/2 10:26:12
+Debug  CommitTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[47787d71-d04c-445a-bc1d-9e1008caa909]  2014/9/2 10:26:13
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:26:13
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:50:47
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:50:47
+Debug  UpdateCheckState方法已被调用，参数：strModelCode: T_FB_DEPTBUDGETSUMMASTER, orderID: 36c3f154-64b6-459a-911e-ef6c408b9bc1, strCheckStates: 2  2014/9/2 10:50:50
+Debug  BeginTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[36c3f154-64b6-459a-911e-ef6c408b9bc1]  2014/9/2 10:50:50
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:50:50
+Debug  找到二次汇总设置，但没有二次汇总单，需要生成二次汇总单  2014/9/2 10:51:09
+Debug  预算汇总单终审开始创建二次预算汇总单据,公司名：神州通油茶 单号：YDHZ_20140902000004  2014/9/2 10:51:15
+Debug  模块T_FB_DEPTBUDGETSUMMASTER ID:b8193952-b331-4b2d-a291-e6009e03a5e8调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/9/2 10:51:18
+Debug  CommitTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[36c3f154-64b6-459a-911e-ef6c408b9bc1]  2014/9/2 10:51:18
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 10:51:18
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 11:14:33
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 11:14:33
+Debug  UpdateCheckState方法已被调用，参数：strModelCode: T_FB_DEPTBUDGETSUMMASTER, orderID: 36c3f154-64b6-459a-911e-ef6c408b9bc1, strCheckStates: 2  2014/9/2 11:14:35
+Debug  BeginTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[36c3f154-64b6-459a-911e-ef6c408b9bc1]  2014/9/2 11:14:35
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 11:14:35
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 11:14:35
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 11:14:36
+Debug  CommitTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[36c3f154-64b6-459a-911e-ef6c408b9bc1]  2014/9/2 11:16:06
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 11:16:06
+Debug  UpdateCheckState方法已被调用，参数：strModelCode: T_FB_DEPTBUDGETSUMMASTER, orderID: 36c3f154-64b6-459a-911e-ef6c408b9bc1, strCheckStates: 2  2014/9/2 11:17:59
+Debug  BeginTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[36c3f154-64b6-459a-911e-ef6c408b9bc1]  2014/9/2 11:17:59
+Debug  找到二次汇总设置，但没有二次汇总单，需要生成二次汇总单  2014/9/2 11:18:06
+Debug  预算汇总单终审开始创建二次预算汇总单据,公司名：神州通油茶 单号：YDHZ_20140902000004  2014/9/2 11:18:08
+Debug  模块T_FB_DEPTBUDGETSUMMASTER ID:32309aa1-422c-4402-9511-758d46a58ccd调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/9/2 11:18:11
+Debug  CommitTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[36c3f154-64b6-459a-911e-ef6c408b9bc1]  2014/9/2 11:18:11
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 11:18:11
+Debug  UpdateCheckState方法已被调用，参数：strModelCode: T_FB_DEPTBUDGETSUMMASTER, orderID: 36c3f154-64b6-459a-911e-ef6c408b9bc1, strCheckStates: 2  2014/9/2 11:19:05
+Debug  BeginTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[36c3f154-64b6-459a-911e-ef6c408b9bc1]  2014/9/2 11:19:05
+Debug  开始更新预算汇总单据,公司名：神州通油茶 单号：YDHZ_20140902000004  2014/9/2 11:19:12
+Debug  CommitTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[36c3f154-64b6-459a-911e-ef6c408b9bc1]  2014/9/2 11:19:13
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 11:19:13
+Debug  UpdateCheckState方法已被调用，参数：strModelCode: T_FB_DEPTBUDGETSUMMASTER, orderID: 36c3f154-64b6-459a-911e-ef6c408b9bc1, strCheckStates: 2  2014/9/2 11:19:52
+Debug  BeginTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[36c3f154-64b6-459a-911e-ef6c408b9bc1]  2014/9/2 11:19:52
+Debug  开始更新预算汇总单据,公司名：神州通油茶 单号：YDHZ_20140902000004  2014/9/2 11:20:14
+Debug  CommitTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[36c3f154-64b6-459a-911e-ef6c408b9bc1]  2014/9/2 11:20:15
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 11:20:15
+Debug  UpdateCheckState方法已被调用，参数：strModelCode: T_FB_DEPTBUDGETSUMMASTER, orderID: 36c3f154-64b6-459a-911e-ef6c408b9bc1, strCheckStates: 2  2014/9/2 11:20:42
+Debug  BeginTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[36c3f154-64b6-459a-911e-ef6c408b9bc1]  2014/9/2 11:20:42
+Debug  找到二次汇总设置，但没有二次汇总单，需要生成二次汇总单  2014/9/2 11:20:44
+Debug  预算汇总单终审开始创建二次预算汇总单据,公司名：神州通油茶 单号：YDHZ_20140902000004  2014/9/2 11:20:48
+Debug  模块T_FB_DEPTBUDGETSUMMASTER ID:be3b46a5-e2d3-4a42-b957-b2172d59d716调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/9/2 11:22:44
+Debug  CommitTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[36c3f154-64b6-459a-911e-ef6c408b9bc1]  2014/9/2 11:22:44
+Debug  FB BaseDAL.Dispose sucess  2014/9/2 11:22:44

@@ -1,0 +1,720 @@
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:05:10
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:05:10
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:05:11
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:05:19
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:05:19
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:05:19
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:05:19
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:05:19
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:05:50
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:05:57
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:05:57
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:05:58
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:05:58
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/16 0:06:05
+Debug  ExecuteCustomerSql：declare n number(10); tsql   varchar2(1000); begin select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval   into   n   from   dual;  n:=-(n); tsql:= 'alter   sequence T_FB_DEPTBUDGETADDMASTER_SEQ   increment   by '||   n; execute   immediate   tsql;   select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval   into   n   from   dual;   tsql:= 'alter   sequence T_FB_DEPTBUDGETADDMASTER_SEQ   increment   by   1 ';   execute   immediate   tsql;   end;   2012/4/16 0:06:05
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/16 0:06:06
+Debug  生成单号：BMYS_20120416000001  2012/4/16 0:06:06
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:06:09
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:06:09
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:06:09
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:c0f4b208-2338-4c0c-bd46-7c146098e88a调用了我的单据新建服务成功！  2012/4/16 0:06:11
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:06:15
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:06:15
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:08:13
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 0:14:04
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:32:50
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:32:50
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:32:51
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:32:55
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:32:55
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:32:55
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:32:55
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:32:55
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:33:22
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:40:10
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:40:10
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:40:11
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:40:11
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/16 8:40:17
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/16 8:40:17
+Debug  生成单号：BMYS_20120416000004  2012/4/16 8:40:17
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:40:18
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:40:20
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:40:20
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:c0f4b208-2338-4c0c-bd46-7c146098e88a调用了我的单据新建服务成功！  2012/4/16 8:40:21
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:40:23
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:40:29
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:42:10
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/16 8:42:49
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/16 8:42:49
+Debug  生成单号：BMYS_20120416000005  2012/4/16 8:42:49
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:42:49
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:42:50
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:c0f4b208-2338-4c0c-bd46-7c146098e88a调用了我的单据新建服务成功！  2012/4/16 8:42:50
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:42:51
+Debug  流程提交or审核失败. 参数: 
+ ApprovalUser.CompanyID: cafdca8a-c630-4475-a65d-490d052dca36 
+ ApprovalUser.DepartmentID: c1f72286-eee5-45bd-bded-5993e8a317c9 
+ ApprovalUser.PostID: 0c7a189f-fdbe-4632-a092-52c3463e0c7b 
+ ApprovalUser.UserName: 王力 
+ FormID: c0f4b208-2338-4c0c-bd46-7c146098e88a 
+ ModelCode: T_FB_DEPTBUDGETADDMASTER 
+ ApprovalContent: 提交 
+ NextStateCode: State5bafe1fd115141f3acc7c2e2e52dabca 
+ ApprovalResult: Pass 
+ FlowSelectType: FixedFlow 
+ SubmitFlag: New 
+ NextApprovalUser.UserID: 谢婷 
+ NextApprovalUser.UserName: 谢婷 
+ ErrMessage: 请求通道在等待 00:00:58.8639350 以后答复时超时。增加传递给请求调用的超时值，或者增加绑定上的 SendTimeout 值。分配给此操作的时间可能已经是更长超时的一部分。   2012/4/16 8:49:31
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:31
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:32
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:32
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:32
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:33
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:33
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:42
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:42
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:42
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:47
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:47
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:50
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:50
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:50
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/16 8:49:51
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/16 8:49:51
+Debug  生成单号：BMYS_20120416000006  2012/4/16 8:49:51
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:51
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:52
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:52
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:c0f4b208-2338-4c0c-bd46-7c146098e88a调用了我的单据新建服务成功！  2012/4/16 8:49:52
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:49:54
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 8:52:46
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:c0f4b208-2338-4c0c-bd46-7c146098e88a调用了我的单据新建服务成功！  2012/4/16 9:01:26
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:01:27
+Error  审核异常：System.Data.EntityException: 基础提供程序在 Commit 上失败。 ---> System.InvalidOperationException: 此 OracleTransaction 已完成；不再可用。
+   在 System.Data.OracleClient.OracleTransaction.AssertNotCompleted()
+   在 System.Data.OracleClient.OracleTransaction.Commit()
+   在 System.Data.EntityClient.EntityTransaction.Commit()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityTransaction.Commit()
+   在 SMT.FB.DAL.DBContext.CommitTransaction(DbTransaction dbt) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.DAL\DBContext.cs:行号 175
+   在 SMT.FB.DAL.BaseDAL.CommitTransaction() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.DAL\BaseDAL.cs:行号 341
+   在 SMT.FB.BLL.BaseBLL.CommitTransaction() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BaseBll.cs:行号 402
+   在 SMT.FB.BLL.BudgetAccountBLL.AuditFBEntityWithoutFlow(EntityObject entity, CheckStates checkStates, String& strMsg) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 5536  2012/4/16 9:01:27
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:01:27
+Debug  审核T_FB_DEPTBUDGETADDMASTER的单据[c0f4b208-2338-4c0c-bd46-7c146098e88a]出现异常，错误消息为：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SMT.FB.BLL.BudgetAccountBLL.AuditFBEntityWithoutFlow(EntityObject entity, CheckStates checkStates, String& strMsg) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 5553
+   在 SMT.FB.Services.FBService.UpdateCheckState(String strModelCode, String orderID, String strCheckStates, String& strMsg) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBService.svc.cs:行号 464  2012/4/16 9:01:27
+Error  审核异常：System.ServiceModel.FaultException`1[System.ServiceModel.ExceptionDetail]: 已中止事务。 (错误详细信息等于 很可能由 IncludeExceptionDetailInFaults=true 创建的 ExceptionDetail，其值为:
+System.Transactions.TransactionAbortedException: 已中止事务。
+   在 System.Transactions.TransactionStatePromotedAborted.BeginCommit(InternalTransaction tx, Boolean asyncCommit, AsyncCallback asyncCallback, Object asyncState)
+   在 System.Transactions.CommittableTransaction.Commit()
+   在 System.Transactions.TransactionScope.InternalDispose()
+   在 System.Transactions.TransactionScope.Dispose()
+   在 SMT.FlowWFService.调试外网.SubimtFlow(SubmitData submitData) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.Workflow\SourceCode\SMT.SaaS.FlowSystem\SMT.FlowWFService\调试外网.cs:行号 371
+   在 SMT.FlowWFService.Service2.SubimtFlow(SubmitData submitData) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.Workflow\SourceCode\SMT.SaaS.FlowSystem\SMT.FlowWFService\Service2.cs:行号 162
+   在 SMT.FlowWFService.Service.SubimtFlow(SubmitData submitData) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.Workflow\SourceCode\SMT.SaaS.FlowSystem\SMT.FlowWFService\Service.cs:行号 160
+   在 SyncInvokeSubimtFlow(Object ,...)。  2012/4/16 9:01:31
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:01:31
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:01:31
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:01:44
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:08:29
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:08:29
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:08:30
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:08:32
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:08:32
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:08:33
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:08:33
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:08:33
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:08:48
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:08:56
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:09:02
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:09:09
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:09:17
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:09:17
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:a843463e-17be-483b-b7d4-5aabd72153a3调用了我的单据新建服务成功！  2012/4/16 9:09:26
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:09:32
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:09:32
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:09:45
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:09:48
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:09:48
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:09:48
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/16 9:09:58
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/16 9:09:58
+Debug  生成单号：BMYS_20120416000007  2012/4/16 9:09:58
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:09:58
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:09:58
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:a843463e-17be-483b-b7d4-5aabd72153a3调用了我的单据新建服务成功！  2012/4/16 9:09:59
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:10:00
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:10:28
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:10:28
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/16 9:10:39
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/16 9:10:39
+Debug  生成单号：BMYS_20120416000008  2012/4/16 9:10:39
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:10:39
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:10:39
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:a843463e-17be-483b-b7d4-5aabd72153a3调用了我的单据新建服务成功！  2012/4/16 9:10:40
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:10:40
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:10:40
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:10:40
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:10:40
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:10:40
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:10:41
+Debug  流程提交or审核失败. 参数: 
+ ApprovalUser.CompanyID: cafdca8a-c630-4475-a65d-490d052dca36 
+ ApprovalUser.DepartmentID: c1f72286-eee5-45bd-bded-5993e8a317c9 
+ ApprovalUser.PostID: 0c7a189f-fdbe-4632-a092-52c3463e0c7b 
+ ApprovalUser.UserName: 王力 
+ FormID: a843463e-17be-483b-b7d4-5aabd72153a3 
+ ModelCode: T_FB_DEPTBUDGETADDMASTER 
+ ApprovalContent: 提交 
+ NextStateCode: State5bafe1fd115141f3acc7c2e2e52dabca 
+ ApprovalResult: Pass 
+ FlowSelectType: FixedFlow 
+ SubmitFlag: New 
+ NextApprovalUser.UserID: 谢婷 
+ NextApprovalUser.UserName: 谢婷 
+ ErrMessage: 请求通道在等待 00:00:58.9019372 以后答复时超时。增加传递给请求调用的超时值，或者增加绑定上的 SendTimeout 值。分配给此操作的时间可能已经是更长超时的一部分。   2012/4/16 9:12:20
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:12:20
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:12:21
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:12:21
+Error  审核异常：System.InvalidOperationException: 该连接已参与一个事务，无法再参与另一个事务。EntityClient 不支持并行事务。
+   在 SMT.FB.BLL.SubjectBLL.SaveEntityBLLSave(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1167
+   在 SMT.FB.BLL.BudgetAccountBLL.FBCommSaveEntity(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 6049
+   在 SMT.FB.BLL.BudgetAccountBLL.AuditFBEntityWithoutFlow(EntityObject entity, CheckStates checkStates, String& strMsg) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 5453  2012/4/16 9:17:37
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:17:37
+Debug  审核T_FB_DEPTBUDGETADDMASTER的单据[a843463e-17be-483b-b7d4-5aabd72153a3]出现异常，错误消息为：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SMT.FB.BLL.BudgetAccountBLL.AuditFBEntityWithoutFlow(EntityObject entity, CheckStates checkStates, String& strMsg) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 5553
+   在 SMT.FB.Services.FBService.UpdateCheckState(String strModelCode, String orderID, String strCheckStates, String& strMsg) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBService.svc.cs:行号 464  2012/4/16 9:17:37
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 9:17:51
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:21:31
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:21:31
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:21:31
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:21:34
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:21:34
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:21:35
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:21:35
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:21:35
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:21:45
+Debug  System.Exception: 流程服务异常，方法：GetFlowInfo, 参数：'','','','0','T_FB_PERSONMONEYASSIGNMASTER','',6ba49ec8-feb0-4f78-b801-2b8ea5387ab3 ---> System.ServiceModel.EndpointNotFoundException: 没有终结点在侦听可以接受消息的 http://localhost:8008/FlowWFService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。 ---> System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8008
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.IService.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.ServiceClient.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\FlowWFService\Reference.cs:行号 1963
+   在 SMT.FB.BLL.AuditBLL.GetAuditList(String auditedBy, String modelName) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\AuditBLL.cs:行号 212
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.BLL.SubjectBLL.QueryData(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1621
+   在 SMT.FB.Services.FBCommonService.Query(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 84
+参数: Name:CHECKSTATES ; Value:  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:UPDATEDATE ; Value:2012/4/1 0:00:00  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:UPDATEDATE ; Value:2012/4/30 23:59:59  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:OWNERID ; Value:6ba49ec8-feb0-4f78-b801-2b8ea5387ab3  ; QueryType:
+  2012/4/16 14:21:45
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:21:51
+Debug  System.Exception: 流程服务异常，方法：GetFlowInfo, 参数：'','','','0','T_FB_PERSONMONEYASSIGNMASTER','',6ba49ec8-feb0-4f78-b801-2b8ea5387ab3 ---> System.ServiceModel.EndpointNotFoundException: 没有终结点在侦听可以接受消息的 http://localhost:8008/FlowWFService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。 ---> System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8008
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.IService.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.ServiceClient.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\FlowWFService\Reference.cs:行号 1963
+   在 SMT.FB.BLL.AuditBLL.GetAuditList(String auditedBy, String modelName) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\AuditBLL.cs:行号 212
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.BLL.SubjectBLL.QueryData(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1621
+   在 SMT.FB.Services.FBCommonService.Query(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 84
+参数: Name:CHECKSTATES ; Value:  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+  2012/4/16 14:21:51
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:22:00
+Debug  System.Exception: 流程服务异常，方法：GetFlowInfo, 参数：'','','','0','T_FB_PERSONMONEYASSIGNMASTER','',6ba49ec8-feb0-4f78-b801-2b8ea5387ab3 ---> System.ServiceModel.EndpointNotFoundException: 没有终结点在侦听可以接受消息的 http://localhost:8008/FlowWFService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。 ---> System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8008
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.IService.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.ServiceClient.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\FlowWFService\Reference.cs:行号 1963
+   在 SMT.FB.BLL.AuditBLL.GetAuditList(String auditedBy, String modelName) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\AuditBLL.cs:行号 212
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.BLL.SubjectBLL.QueryData(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1621
+   在 SMT.FB.Services.FBCommonService.Query(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 84
+参数: Name:CHECKSTATES ; Value:  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+  2012/4/16 14:22:00
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:22:04
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:22:04
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:22:04
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:22:06
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:22:22
+Debug  模块T_FB_PERSONMONEYASSIGNMASTERID:2a492ad9-d8c1-4089-8351-a64e630ae359调用了我的单据新建服务成功！  2012/4/16 14:22:26
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:22:27
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:22:27
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:23:54
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:23:54
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:23:54
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:24:04
+Debug  System.Exception: 流程服务异常，方法：GetFlowInfo, 参数：'','','','0','T_FB_PERSONMONEYASSIGNMASTER','',a8d3b466-dd4e-45ac-9f4a-fa7ad743b365 ---> System.ServiceModel.EndpointNotFoundException: 没有终结点在侦听可以接受消息的 http://localhost:8008/FlowWFService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。 ---> System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8008
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.IService.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.ServiceClient.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\FlowWFService\Reference.cs:行号 1963
+   在 SMT.FB.BLL.AuditBLL.GetAuditList(String auditedBy, String modelName) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\AuditBLL.cs:行号 212
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.BLL.SubjectBLL.QueryData(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1621
+   在 SMT.FB.Services.FBCommonService.Query(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 84
+参数: Name:CHECKSTATES ; Value:  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:UPDATEDATE ; Value:2012/4/1 0:00:00  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:UPDATEDATE ; Value:2012/4/30 23:59:59  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:OWNERID ; Value:a8d3b466-dd4e-45ac-9f4a-fa7ad743b365  ; QueryType:
+  2012/4/16 14:24:04
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:24:25
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:24:26
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:26:35
+Debug  System.Exception: 流程服务异常，方法：GetFlowInfo, 参数：'','','','0','T_FB_PERSONMONEYASSIGNMASTER','',a8d3b466-dd4e-45ac-9f4a-fa7ad743b365 ---> System.ServiceModel.EndpointNotFoundException: 没有终结点在侦听可以接受消息的 http://localhost:8008/FlowWFService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。 ---> System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8008
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.IService.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.ServiceClient.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\FlowWFService\Reference.cs:行号 1963
+   在 SMT.FB.BLL.AuditBLL.GetAuditList(String auditedBy, String modelName) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\AuditBLL.cs:行号 212
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.BLL.SubjectBLL.QueryData(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1621
+   在 SMT.FB.Services.FBCommonService.Query(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 84
+参数: Name:CHECKSTATES ; Value:  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:UPDATEDATE ; Value:2012/4/1 0:00:00  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:UPDATEDATE ; Value:2012/4/30 23:59:59  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:OWNERID ; Value:a8d3b466-dd4e-45ac-9f4a-fa7ad743b365  ; QueryType:
+  2012/4/16 14:26:35
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:28:31
+Debug  数据添加异常：System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectStateManager.AddEntry(IEntityWrapper wrappedObject, EntityKey passedKey, EntitySet entitySet, String argumentName, Boolean isAdded)
+   在 System.Data.Objects.ObjectContext.AddSingleObject(EntitySet entitySet, IEntityWrapper wrappedEntity, String argumentName)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddEntityToObjectStateManager(IEntityWrapper wrappedEntity, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityReference`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.WalkObjectGraphToIncludeAllRelatedEntities(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelationshipManager.AddRelatedEntitiesToObjectStateManager(Boolean doAttach)
+   在 System.Data.Objects.ObjectContext.AddObject(String entitySetName, Object entity)
+   在 SMT.FB.DAL.BaseDAL.Add(EntityObject entity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.DAL\BaseDAL.cs:行号 250  2012/4/16 14:28:32
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:28:57
+Debug  System.Exception: BaseBLL.Save,异常错误: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+单据所有人: 汤韶平
+单据所有人岗位: 助理总监
+单据所有人部门: 人力中心办公室
+单据所有人公司: 深圳市神州通物流有限公司
+单据类型: T_FB_PERSONMONEYASSIGNMASTER
+操作类型: Added
+ ---> System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 SMT.FB.BLL.BaseBLL.Add(EntityObject entity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BaseBll.cs:行号 184
+   在 SMT.FB.BLL.BaseBLL.Save(EntityObject entity, FBEntityState entityState) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BaseBll.cs:行号 330
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.SaveEntityBLLSave(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1167
+   在 SMT.FB.BLL.BudgetAccountBLL.FBCommSaveEntity(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 6049
+   在 SMT.FB.Services.FBCommonService.Save(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 116  2012/4/16 14:28:57
+Debug  数据添加异常：System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectStateManager.AddEntry(IEntityWrapper wrappedObject, EntityKey passedKey, EntitySet entitySet, String argumentName, Boolean isAdded)
+   在 System.Data.Objects.ObjectContext.AddSingleObject(EntitySet entitySet, IEntityWrapper wrappedEntity, String argumentName)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddEntityToObjectStateManager(IEntityWrapper wrappedEntity, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityReference`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.WalkObjectGraphToIncludeAllRelatedEntities(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelationshipManager.AddRelatedEntitiesToObjectStateManager(Boolean doAttach)
+   在 System.Data.Objects.ObjectContext.AddObject(String entitySetName, Object entity)
+   在 SMT.FB.DAL.BaseDAL.Add(EntityObject entity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.DAL\BaseDAL.cs:行号 250  2012/4/16 14:33:37
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:40:12
+Debug  System.Exception: BaseBLL.Save,异常错误: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+单据所有人: 汤韶平
+单据所有人岗位: 助理总监
+单据所有人部门: 人力中心办公室
+单据所有人公司: 深圳市神州通物流有限公司
+单据类型: T_FB_PERSONMONEYASSIGNMASTER
+操作类型: Added
+ ---> System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 SMT.FB.BLL.BaseBLL.Add(EntityObject entity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BaseBll.cs:行号 184
+   在 SMT.FB.BLL.BaseBLL.Save(EntityObject entity, FBEntityState entityState) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BaseBll.cs:行号 330
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.SaveEntityBLLSave(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1167
+   在 SMT.FB.BLL.BudgetAccountBLL.FBCommSaveEntity(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 6049
+   在 SMT.FB.Services.FBCommonService.Save(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 116  2012/4/16 14:40:12
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:42:51
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:42:52
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:42:52
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:42:52
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:42:52
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:43:02
+Debug  System.Exception: 流程服务异常，方法：GetFlowInfo, 参数：'','','','0','T_FB_DEPTBUDGETADDMASTER','',a8d3b466-dd4e-45ac-9f4a-fa7ad743b365 ---> System.ServiceModel.EndpointNotFoundException: 没有终结点在侦听可以接受消息的 http://localhost:8008/FlowWFService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。 ---> System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8008
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.IService.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.ServiceClient.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\FlowWFService\Reference.cs:行号 1963
+   在 SMT.FB.BLL.AuditBLL.GetAuditList(String auditedBy, String modelName) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\AuditBLL.cs:行号 212
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.BLL.SubjectBLL.QueryData(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1621
+   在 SMT.FB.Services.FBCommonService.Query(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 84
+参数: Name:CHECKSTATES ; Value:  ; QueryType:T_FB_DEPTBUDGETADDMASTER
+Name:UPDATEDATE ; Value:2012/4/1 0:00:00  ; QueryType:T_FB_DEPTBUDGETADDMASTER
+Name:UPDATEDATE ; Value:2012/4/30 23:59:59  ; QueryType:T_FB_DEPTBUDGETADDMASTER
+Name:OWNERID ; Value:a8d3b466-dd4e-45ac-9f4a-fa7ad743b365  ; QueryType:
+  2012/4/16 14:43:02
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:43:04
+Debug  System.Exception: 流程服务异常，方法：GetFlowInfo, 参数：'','','','0','T_FB_PERSONMONEYASSIGNMASTER','',a8d3b466-dd4e-45ac-9f4a-fa7ad743b365 ---> System.ServiceModel.EndpointNotFoundException: 没有终结点在侦听可以接受消息的 http://localhost:8008/FlowWFService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。 ---> System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8008
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.IService.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.ServiceClient.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\FlowWFService\Reference.cs:行号 1963
+   在 SMT.FB.BLL.AuditBLL.GetAuditList(String auditedBy, String modelName) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\AuditBLL.cs:行号 212
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.BLL.SubjectBLL.QueryData(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1621
+   在 SMT.FB.Services.FBCommonService.Query(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 84
+参数: Name:CHECKSTATES ; Value:  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:UPDATEDATE ; Value:2012/4/1 0:00:00  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:UPDATEDATE ; Value:2012/4/30 23:59:59  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:OWNERID ; Value:a8d3b466-dd4e-45ac-9f4a-fa7ad743b365  ; QueryType:
+  2012/4/16 14:43:04
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:43:12
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:43:12
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:43:12
+Debug  数据添加异常：System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectStateManager.AddEntry(IEntityWrapper wrappedObject, EntityKey passedKey, EntitySet entitySet, String argumentName, Boolean isAdded)
+   在 System.Data.Objects.ObjectContext.AddSingleObject(EntitySet entitySet, IEntityWrapper wrappedEntity, String argumentName)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddEntityToObjectStateManager(IEntityWrapper wrappedEntity, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityReference`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.WalkObjectGraphToIncludeAllRelatedEntities(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelationshipManager.AddRelatedEntitiesToObjectStateManager(Boolean doAttach)
+   在 System.Data.Objects.ObjectContext.AddObject(String entitySetName, Object entity)
+   在 SMT.FB.DAL.BaseDAL.Add(EntityObject entity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.DAL\BaseDAL.cs:行号 250  2012/4/16 14:43:47
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:44:16
+Debug  System.Exception: BaseBLL.Save,异常错误: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+单据所有人: 汤韶平
+单据所有人岗位: 助理总监
+单据所有人部门: 人力中心办公室
+单据所有人公司: 深圳市神州通物流有限公司
+单据类型: T_FB_PERSONMONEYASSIGNMASTER
+操作类型: Added
+ ---> System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 SMT.FB.BLL.BaseBLL.Add(EntityObject entity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BaseBll.cs:行号 184
+   在 SMT.FB.BLL.BaseBLL.Save(EntityObject entity, FBEntityState entityState) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BaseBll.cs:行号 330
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.SaveEntityBLLSave(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1167
+   在 SMT.FB.BLL.BudgetAccountBLL.FBCommSaveEntity(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 6049
+   在 SMT.FB.Services.FBCommonService.Save(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 116  2012/4/16 14:44:16
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 14:44:19
+Debug  数据添加异常：System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectStateManager.AddEntry(IEntityWrapper wrappedObject, EntityKey passedKey, EntitySet entitySet, String argumentName, Boolean isAdded)
+   在 System.Data.Objects.ObjectContext.AddSingleObject(EntitySet entitySet, IEntityWrapper wrappedEntity, String argumentName)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddEntityToObjectStateManager(IEntityWrapper wrappedEntity, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityReference`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.WalkObjectGraphToIncludeAllRelatedEntities(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelationshipManager.AddRelatedEntitiesToObjectStateManager(Boolean doAttach)
+   在 System.Data.Objects.ObjectContext.AddObject(String entitySetName, Object entity)
+   在 SMT.FB.DAL.BaseDAL.Add(EntityObject entity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.DAL\BaseDAL.cs:行号 250  2012/4/16 15:11:53
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:11:59
+Debug  System.Exception: BaseBLL.Save,异常错误: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+单据所有人: 汤韶平
+单据所有人岗位: 助理总监
+单据所有人部门: 人力中心办公室
+单据所有人公司: 深圳市神州通物流有限公司
+单据类型: T_FB_PERSONMONEYASSIGNMASTER
+操作类型: Added
+ ---> System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 SMT.FB.BLL.BaseBLL.Add(EntityObject entity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BaseBll.cs:行号 184
+   在 SMT.FB.BLL.BaseBLL.Save(EntityObject entity, FBEntityState entityState) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BaseBll.cs:行号 330
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.SaveEntityBLLSave(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1167
+   在 SMT.FB.BLL.BudgetAccountBLL.FBCommSaveEntity(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 6049
+   在 SMT.FB.Services.FBCommonService.Save(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 116  2012/4/16 15:11:59
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:14:27
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:14:28
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:14:28
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:14:28
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:14:28
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:14:39
+Debug  System.Exception: 流程服务异常，方法：GetFlowInfo, 参数：'','','','0','T_FB_PERSONMONEYASSIGNMASTER','',a8d3b466-dd4e-45ac-9f4a-fa7ad743b365 ---> System.ServiceModel.EndpointNotFoundException: 没有终结点在侦听可以接受消息的 http://localhost:8008/FlowWFService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。 ---> System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8008
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.IService.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.ServiceClient.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\FlowWFService\Reference.cs:行号 1963
+   在 SMT.FB.BLL.AuditBLL.GetAuditList(String auditedBy, String modelName) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\AuditBLL.cs:行号 212
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.BLL.SubjectBLL.QueryData(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1621
+   在 SMT.FB.Services.FBCommonService.Query(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 84
+参数: Name:CHECKSTATES ; Value:  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:UPDATEDATE ; Value:2012/4/1 0:00:00  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:UPDATEDATE ; Value:2012/4/30 23:59:59  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:OWNERID ; Value:a8d3b466-dd4e-45ac-9f4a-fa7ad743b365  ; QueryType:
+  2012/4/16 15:14:39
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:14:54
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:15:32
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:15:44
+Debug  数据添加异常：System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectStateManager.AddEntry(IEntityWrapper wrappedObject, EntityKey passedKey, EntitySet entitySet, String argumentName, Boolean isAdded)
+   在 System.Data.Objects.ObjectContext.AddSingleObject(EntitySet entitySet, IEntityWrapper wrappedEntity, String argumentName)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddEntityToObjectStateManager(IEntityWrapper wrappedEntity, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityReference`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.WalkObjectGraphToIncludeAllRelatedEntities(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelationshipManager.AddRelatedEntitiesToObjectStateManager(Boolean doAttach)
+   在 System.Data.Objects.ObjectContext.AddObject(String entitySetName, Object entity)
+   在 SMT.FB.DAL.BaseDAL.Add(EntityObject entity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.DAL\BaseDAL.cs:行号 250  2012/4/16 15:15:49
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:16:35
+Debug  System.Exception: BaseBLL.Save,异常错误: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+单据所有人: 汤韶平
+单据所有人岗位: 助理总监
+单据所有人部门: 人力中心办公室
+单据所有人公司: 深圳市神州通物流有限公司
+单据类型: T_FB_PERSONMONEYASSIGNMASTER
+操作类型: Added
+ ---> System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 SMT.FB.BLL.BaseBLL.Add(EntityObject entity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BaseBll.cs:行号 184
+   在 SMT.FB.BLL.BaseBLL.Save(EntityObject entity, FBEntityState entityState) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BaseBll.cs:行号 330
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.SaveEntityBLLSave(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1167
+   在 SMT.FB.BLL.BudgetAccountBLL.FBCommSaveEntity(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 6049
+   在 SMT.FB.Services.FBCommonService.Save(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 116  2012/4/16 15:16:35
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:16:45
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:16:45
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:16:52
+Debug  模块T_FB_PERSONMONEYASSIGNMASTERID:14f35a0d-1295-4781-be80-1948f73c43dc调用了我的单据新建服务成功！  2012/4/16 15:16:53
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:16:53
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:16:53
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:17:00
+Debug  System.Exception: 流程服务异常，方法：GetFlowInfo, 参数：'','','','0','T_FB_PERSONMONEYASSIGNMASTER','',a8d3b466-dd4e-45ac-9f4a-fa7ad743b365 ---> System.ServiceModel.EndpointNotFoundException: 没有终结点在侦听可以接受消息的 http://localhost:8008/FlowWFService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。 ---> System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8008
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.IService.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.ServiceClient.GetFlowInfo(String FormID, String FlowGUID, String CheckState, String Flag, String ModelCode, String CompanyID, String EditUserID) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\FlowWFService\Reference.cs:行号 1963
+   在 SMT.FB.BLL.AuditBLL.GetAuditList(String auditedBy, String modelName) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\AuditBLL.cs:行号 212
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.BLL.SubjectBLL.QueryData(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1621
+   在 SMT.FB.Services.FBCommonService.Query(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 84
+参数: Name:CHECKSTATES ; Value:  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:UPDATEDATE ; Value:2012/4/1 0:00:00  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:UPDATEDATE ; Value:2012/4/30 23:59:59  ; QueryType:T_FB_PERSONMONEYASSIGNMASTER
+Name:OWNERID ; Value:a8d3b466-dd4e-45ac-9f4a-fa7ad743b365  ; QueryType:
+  2012/4/16 15:17:00
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:17:04
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:17:04
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:17:06
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:17:14
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:17:14
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:20:13
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:20:13
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:20:13
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:20:13
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:20:13
+Debug  模块T_FB_PERSONMONEYASSIGNMASTERID:df0ca877-9518-4429-a703-d4951c04f772调用了我的单据新建服务成功！  2012/4/16 15:20:38
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:20:38
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:20:38
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:20:42
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:20:42
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:20:46
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:20:46
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:21:09
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:21:09
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:21:26
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:21:30
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:21:30
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:21:30
+Debug  模块T_FB_PERSONMONEYASSIGNMASTERID:df0ca877-9518-4429-a703-d4951c04f772调用了我的单据新建服务成功！  2012/4/16 15:21:30
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:21:31
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:21:31
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:21:34
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:21:42
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:21:42
+Debug  FB BaseDAL.Dispose sucess  2012/4/16 15:34:41

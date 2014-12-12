@@ -1,0 +1,194 @@
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:15:37
+Debug  系统初始化失败System.TypeInitializationException: “SMT.FB.BLL.SystemBLL”的类型初始值设定项引发异常。 ---> System.Data.EntityException: 基础提供程序在 Open 上失败。 ---> System.Data.OracleClient.OracleException: ORA-12170: TNS: 连接超时
+
+   在 System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   在 System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   在 System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.OracleClient.OracleConnection.Open()
+   在 EFOracleProvider.EFOracleConnection.Open()
+   在 System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   在 System.Data.EntityClient.EntityConnection.Open()
+   在 System.Data.Objects.ObjectContext.EnsureConnection()
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.FB.BLL.SystemBLL.InitOrderBLL() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SystemBLL.cs:行号 56
+   在 SMT.FB.BLL.SystemBLL..cctor() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SystemBLL.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SystemBLL.InitOrderBLL()
+   在 SMT.FB.Services.FBServiceBase.Init() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBServiceBase.cs:行号 42  2012/4/15 23:15:38
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:15:38
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:18:58
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Exception: 调用HR服务异常 ---> System.ServiceModel.EndpointNotFoundException: 没有终结点在侦听可以接受消息的 http://portal.smt-online.net/New/Services/HR/OrganizationService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。 ---> System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 172.16.1.8:80
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.OrganizationWS.OrganizationService.GetCompanyByEntityPerm(String userID, String perm, String entity)
+   在 SMT.SaaS.BLLCommonServices.OrganizationWS.OrganizationServiceClient.GetCompanyByEntityPerm(String userID, String perm, String entity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\OrganizationWS\Reference.cs:行号 23800
+   在 SMT.FB.BLL.OrganizationBLL.InnerGetCompany(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\OrganizationBLL.cs:行号 57
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.OrganizationBLL.InnerGetCompany(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\OrganizationBLL.cs:行号 140
+   在 SMT.FB.BLL.OrganizationBLL.GetCompany(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\OrganizationBLL.cs:行号 27
+   在 SMT.FB.BLL.BudgetAccountBLL.QueryVirtualCompany(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 4012
+   在 SMT.FB.BLL.BudgetAccountBLL.QueryInitDataCore(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 4173
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.Services.FBCommonService.QueryFBEntities(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 58
+参数: Name: ; Value:  ; QueryType:VirtualCompany
+  2012/4/15 23:18:58
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:20:07
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.TypeInitializationException: “SMT.FB.BLL.SystemBLL”的类型初始值设定项引发异常。 ---> System.Data.EntityException: 基础提供程序在 Open 上失败。 ---> System.Data.OracleClient.OracleException: ORA-12170: TNS: 连接超时
+
+   在 System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   在 System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   在 System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.OracleClient.OracleConnection.Open()
+   在 EFOracleProvider.EFOracleConnection.Open()
+   在 System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   在 System.Data.EntityClient.EntityConnection.Open()
+   在 System.Data.Objects.ObjectContext.EnsureConnection()
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.FB.BLL.SystemBLL.InitOrderBLL() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SystemBLL.cs:行号 56
+   在 SMT.FB.BLL.SystemBLL..cctor() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SystemBLL.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SystemBLL.GetSetting(QueryExpression qe)
+   在 SMT.FB.BLL.BudgetAccountBLL.QueryT_FB_SYSTEMSETTINGS(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 4190
+   在 SMT.FB.BLL.BudgetAccountBLL.QueryInitDataCore(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 4177
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.Services.FBCommonService.QueryFBEntities(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 58
+参数: Name: ; Value:  ; QueryType:T_FB_SYSTEMSETTINGS
+  2012/4/15 23:20:07
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:20:48
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.TypeInitializationException: “SMT.FB.BLL.SystemBLL”的类型初始值设定项引发异常。 ---> System.Data.EntityException: 基础提供程序在 Open 上失败。 ---> System.Data.OracleClient.OracleException: ORA-12170: TNS: 连接超时
+
+   在 System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   在 System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   在 System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.OracleClient.OracleConnection.Open()
+   在 EFOracleProvider.EFOracleConnection.Open()
+   在 System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   在 System.Data.EntityClient.EntityConnection.Open()
+   在 System.Data.Objects.ObjectContext.EnsureConnection()
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.FB.BLL.SystemBLL.InitOrderBLL() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SystemBLL.cs:行号 56
+   在 SMT.FB.BLL.SystemBLL..cctor() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SystemBLL.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SystemBLL.GetSetting(QueryExpression qe)
+   在 SMT.FB.BLL.BudgetAccountBLL.QueryT_FB_SYSTEMSETTINGS(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 4190
+   在 SMT.FB.BLL.BudgetAccountBLL.QueryInitDataCore(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 4177
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SubjectBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 1650
+   在 SMT.FB.Services.FBCommonService.QueryFBEntities(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 58
+参数: Name: ; Value:  ; QueryType:T_FB_SYSTEMSETTINGS
+  2012/4/15 23:20:48
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:22:40
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:22:40
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:22:42
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:22:58
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:22:58
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:22:58
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:22:58
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:22:59
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:23:33
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:23:38
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:24:18
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:c0f4b208-2338-4c0c-bd46-7c146098e88a调用了我的单据新建服务成功！  2012/4/15 23:24:46
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:24:54
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:24:54
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:24:58
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/15 23:24:59
+Debug  ExecuteCustomerSql：declare n number(10); tsql   varchar2(1000); begin select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval   into   n   from   dual;  n:=-(n); tsql:= 'alter   sequence T_FB_DEPTBUDGETADDMASTER_SEQ   increment   by '||   n; execute   immediate   tsql;   select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval   into   n   from   dual;   tsql:= 'alter   sequence T_FB_DEPTBUDGETADDMASTER_SEQ   increment   by   1 ';   execute   immediate   tsql;   end;   2012/4/15 23:24:59
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/15 23:25:01
+Debug  生成单号：BMYS_20120415000001  2012/4/15 23:25:01
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:25:01
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:25:01
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:c0f4b208-2338-4c0c-bd46-7c146098e88a调用了我的单据新建服务成功！  2012/4/15 23:25:03
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:25:09
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:25:12
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:25:12
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:25:25
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/15 23:25:36
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/15 23:25:36
+Debug  生成单号：BMYS_20120415000002  2012/4/15 23:25:37
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:25:37
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:25:37
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:c0f4b208-2338-4c0c-bd46-7c146098e88a调用了我的单据新建服务成功！  2012/4/15 23:25:38
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:25:42
+Error  审核异常：System.TimeoutException: 请求通道在等待 00:00:59.9979998 以后答复时超时。增加传递给请求调用的超时值，或者增加绑定上的 SendTimeout 值。分配给此操作的时间可能已经是更长超时的一部分。 ---> System.TimeoutException: 对“http://portal.smt-online.net/New/Services/smtflow/FlowWFService.svc”的 HTTP 请求已超过为 00:01:00 分配的超时。为此操作分配的时间可能是较长超时的一部分。 ---> System.Net.WebException: 操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.IService.SubimtFlow(SubmitData ApprovalData)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.ServiceClient.SubimtFlow(SubmitData ApprovalData) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\FlowWFService\Reference.cs:行号 1947
+   在 SMT.FB.BLL.AuditBLL.Audit(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\AuditBLL.cs:行号 83
+   在 SMT.FB.BLL.BudgetAccountBLL.AuditFBEntity(FBEntity fbEntity, CheckStates checkStates) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\BudgetAccountBLL.cs:行号 5898  2012/4/15 23:28:05
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:28:05
+Debug  FB BaseDAL.Dispose sucess  2012/4/15 23:28:29

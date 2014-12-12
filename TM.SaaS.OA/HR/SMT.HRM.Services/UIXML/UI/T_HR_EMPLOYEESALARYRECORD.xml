@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+O:主表
+N：name
+C:中文名
+E:英文名
+K:key
+A:属性
+T:类型，1 string，0，number，2 DATE,3 字典，4 lookup
+v：value 值
+L：label 显示值
+s：是否显示0 否，1是
+row:所在行
+col：所在列
+ui：0 form ，1 grid
+css：所用样式名
+-->
+<UI>
+  <Form N="T_HR_EMPLOYEESALARYRECORD" C="员工薪资记录" K="EMPLOYEESALARYRECORDID" id="" row="0" col="0" ui="0" >
+    <A N="EMPLOYEESALARYRECORDID" C="薪资记录ID" T="0" V=""  E=""   L=""></A>
+    <A N="EMPLOYEEID" C="员工ID" T="0" V=""  E=""   L="" ></A>
+    <A N="EMPLOYEECODE" C="员工编号" T="0" V=""  E=""   L=""></A>
+    <A N="EMPLOYEEN" C="员工姓名" T="0" V=""  E=""   L=""></A>
+    <A N="SALARYoNTH" C="所属月份" T="0" V=""  E=""   L=""></A>
+    <A N="SALARYYEAR" C="所属年份" T="0" V=""  E=""   L="" show="1" row="0" col="0" Colspan="1" Rowspan="0" css=""></A>
+    <A N="ATTENDANCEUNUSUALDEDUCT" C="考勤异常扣款" T="1" V=""  E=""   L=""></A>
+    <A N="ATTENDANCEUNUSUALTIME" C="考勤异常次数" T="0" V=""  E=""   L=""></A>
+    <A N="ATTENDANCEUNUSUALTIMES" C="考勤异常时长" T="0" V=""  E=""   L=""></A>
+    <A N="PAIDDATE" C="发薪日期" T="2" V=""  E=""   L=""></A>
+    <Grid>
+        <A N="EMPLOYEESALARYRECORDID" C="薪资记录ID" T="0" V=""  E=""   L=""></A>
+        <A N="EMPLOYEEID" C="员工ID" T="0" V=""  E=""   L=""></A>
+        <A N="EMPLOYEECODE" C="员工编号" T="0" V=""  E=""   L=""></A>
+        <A N="EMPLOYEEN" C="员工姓名" T="0" V=""  E=""   L=""></A>
+        <A N="SALARYoNTH" C="所属月份" T="0" V=""  E=""   L=""></A>
+        <Grid>
+          <A N="EMPLOYEESALARYRECORDID" C="薪资记录ID" T="0" V=""  E=""   L=""></A>
+          <A N="EMPLOYEEID" C="员工ID" T="0" V=""  E=""   L=""></A>
+          <A N="EMPLOYEECODE" C="员工编号" T="0" V=""  E=""   L=""></A>
+          <A N="EMPLOYEEN" C="员工姓名" T="0" V=""  E=""   L=""></A>
+          <A N="SALARYoNTH" C="所属月份" T="0" V=""  E=""   L=""></A>
+        </Grid>
+    </Grid>
+  </Form>
+  <View>
+    <Query>
+      <Grid>
+        <A N="EMPLOYEESALARYRECORDID" C="薪资记录ID" T="0" V=""  E=""   L=""></A>
+        <A N="EMPLOYEEID" C="员工ID" T="0" V="{LoginUser.Company}"  E=""   L=""></A>
+        <A N="EMPLOYEECODE" C="员工编号" T="0" V=""  E=""   L=""></A>
+        <A N="EMPLOYEEN" C="员工姓名" T="0" V=""  E=""   L=""></A>
+        <A N="SALARYoNTH" C="所属月份" T="0" V=""  E=""   L=""></A>
+      </Grid>
+    </Query>
+    <A N="EMPLOYEESALARYRECORDID" C="薪资记录ID" T="0" V=""  E=""   L=""></A>
+    <A N="EMPLOYEEID" C="员工ID" T="0" V=""  E=""   L=""></A>
+    <A N="EMPLOYEECODE" C="员工编号" T="0" V=""  E=""   L=""></A>
+    <A N="EMPLOYEEN" C="员工姓名" T="0" V=""  E=""   L=""></A>
+    <A N="SALARYoNTH" C="所属月份" T="0" V=""  E=""   L=""></A>
+  </View>
+</UI>
+

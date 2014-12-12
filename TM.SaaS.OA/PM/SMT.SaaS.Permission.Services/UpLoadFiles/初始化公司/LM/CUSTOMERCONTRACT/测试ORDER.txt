@@ -1,0 +1,106 @@
+select * from t_lm_dispatchmaster where dispatchid = 'd4b5e6b8-7197-416e-9317-54247711fe20';
+select * from t_lm_customer where custerid = 'd239c23b-d115-4d8f-af23-e4c9255cb14b';
+
+select * from t_lm_quotationcontract t where t.contactcode = 'CUS20101029-0001';-- .customerid = 'd239c23b-d115-4d8f-af23-e4c9255cb14b' for update;
+
+select * from t_lm_quotationmaster t where t.Quotationcontractid = '61ac16c0-362d-47a8-b3aa-dbfc310760b2' for update;
+select * from t_lm_quotationdetail t where t.quotationmasterid = '55bf6f5d-2c5b-4680-a17a-2fb339dee1ad' for update;
+
+select * from t_lm_quotedfactor  WHERE QUOTATIONDETAILID = '16aea92c-1263-4056-b12f-00dfaa1ab89b' FOR UPDATE
+
+
+ÑîÏéºì  21:23:48
+OrderParameters order = new OrderParameters();
+                        order.OrderID = this.deliveryMaster.DELIVERYMASTERID;
+                        order.OrderState = OrderState.Valid;
+                        order.OrderType = OrderType.DELIVERYMASTER;
+                        PublicClient.HandleOrderAsync(order);
+7e1736e4-580c-445f-bc3f-5ede0a6b7cef
+
+
+ÑîÏéºì  21:32:11
+listOrderFator
+
+select TABLE_NAME from user_constraints where CONSTRAINT_NAME='FK_T_LM_QUO_REFERENCE_T_LM_QUO'
+
+
+
+
+
+publishClient.HandleOrderCompleted += new EventHandler<HandleOrderCompletedEventArgs>(client_HandleOrderCompleted);
+            OrderParameters order = new OrderParameters();
+            order.OrderID = "7e1736e4-580c-445f-bc3f-5ede0a6b7cef";
+            order.OrderState = OrderState.Valid;
+            order.OrderType = OrderType.DELIVERYMASTER;
+
+            publishClient.HandleOrderAsync(order);
+
+            //QuoteResult qr = new QuoteResult();
+            //QuoteParameters qp = new QuoteParameters();
+
+            //qp.CustomaOrCarrierID = "d239c23b-d115-4d8f-af23-e4c9255cb14b";
+            //qp.PriceType = PriceType.DISPATCHMASTER;
+            //qp.UseObject = UseObject.Contract;
+            //T_LM_DISTRICTMASTER start = new T_LM_DISTRICTMASTER();
+            //start.ALERTID = "3b51aab4-a78c-4981-8082-38d76c49f6bb";
+            //start.PARENTID = "Root";
+            //T_LM_DISTRICTMASTER end = new T_LM_DISTRICTMASTER();
+            //end.ALERTID = "e7a0fed0-dd84-452f-bbae-5a439e747e9e";
+            //end.PARENTID = "Root";
+            //qp.StartDistrict = end;
+            //qp.EndDistrict = start;
+
+            ////qp.GoodsTypeID = "GD-001";
+            //qp.LimiHours = "4";
+
+            //T_LM_FACTOR factor = new T_LM_FACTOR();
+            //factor.FACTORID = "1584a34d-3927-47ba-ab83-57581246cba5";
+            //factor.FACTORCODE = "CZF";
+            //factor.DATATYPECODE = "0";
+            //factor.FACTORNAME = "²Ù×÷·Ñ";
+
+            //qp.listOrderFator = new System.Collections.ObjectModel.ObservableCollection<FactorValue>();
+            //qp.listOrderFator.Add(new FactorValue() { Factor = factor, Value = "100" });
+
+            //publishClient.GetQuoteOrderCompleted += new EventHandler<GetQuoteOrderCompletedEventArgs>(publishClient_GetQuoteOrderCompleted);
+            //publishClient.GetQuoteOrderAsync(qp);
+
+            //publishClient.GetCustomerContractStateCompleted += new EventHandler<GetCustomerContractStateCompletedEventArgs>(client_GetCustomerContractStateCompleted);
+            //publishClient.GetCustomerContractStateAsync("00beef3c-ea00-4088-baff-6bc1b95f2985", 100);
+        }
+        void publishClient_GetQuoteOrderCompleted(object sender, GetQuoteOrderCompletedEventArgs e)
+        {
+            QuoteResult qr = new QuoteResult();
+            if (e.Error == null)
+            {
+                qr = e.Result;
+            }
+            else
+            {
+                MessageBox.Show(e.Error.ToString());
+            }
+        }
+        void client_GetCustomerContractStateCompleted(object sender, GetCustomerContractStateCompletedEventArgs e)
+        {
+            CustomerContractInfo contractinfo = new CustomerContractInfo();
+            if (e.Error == null)
+            {
+                contractinfo = e.Result;
+            }
+            else
+            {
+                MessageBox.Show(e.Error.ToString());
+            }
+        }
+        #region peter test
+        void client_HandleOrderCompleted(object sender, HandleOrderCompletedEventArgs e)
+        {
+            if (e.Result)
+            {
+                MessageBox.Show("³É¹¦");
+            }
+            else
+            {
+                MessageBox.Show("Ê§°Ü");
+            }
+        }

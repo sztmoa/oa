@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dfd0f66d-1ad6-45e3-970a-7b8e7821dde4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1800/TKServices.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TKServices.xsd" MetadataType="Schema" ID="784f845d-eaa6-4eae-b8d5-c13c0f06623d" SourceId="1" SourceUrl="http://localhost:1800/TKServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="TKServices1.xsd" MetadataType="Schema" ID="4798ba17-72f7-4c96-83f7-410d3e227f10" SourceId="1" SourceUrl="http://localhost:1800/TKServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="TKServices2.xsd" MetadataType="Schema" ID="76b4ab99-f43f-4ee7-89ef-19c313ac7b52" SourceId="1" SourceUrl="http://localhost:1800/TKServices.svc?xsd=xsd3" />
+    <MetadataFile FileName="TKServices.wsdl" MetadataType="Wsdl" ID="81d65931-443b-413a-b4df-3edf868def2e" SourceId="1" SourceUrl="http://localhost:1800/TKServices.svc?wsdl" />
+    <MetadataFile FileName="TKServices3.xsd" MetadataType="Schema" ID="db8dd3d4-4bba-4c61-9e5e-71c1e9ef09c1" SourceId="1" SourceUrl="http://localhost:1800/TKServices.svc?xsd=xsd8" />
+    <MetadataFile FileName="TKServices.disco" MetadataType="Disco" ID="96c0b1e1-79af-4218-adc3-dbb1ca2aa4ea" SourceId="1" SourceUrl="http://localhost:1800/TKServices.svc?disco" />
+    <MetadataFile FileName="TKServices4.xsd" MetadataType="Schema" ID="e3983e1b-bebf-494d-a2c0-ac9b7a8c326a" SourceId="1" SourceUrl="http://localhost:1800/TKServices.svc?xsd=xsd4" />
+    <MetadataFile FileName="TKServices5.xsd" MetadataType="Schema" ID="8e232078-0263-4650-a4f2-abdb5e74fae7" SourceId="1" SourceUrl="http://localhost:1800/TKServices.svc?xsd=xsd5" />
+    <MetadataFile FileName="TKServices6.xsd" MetadataType="Schema" ID="ead45643-99fd-4e3d-b0dd-e217fa215c16" SourceId="1" SourceUrl="http://localhost:1800/TKServices.svc?xsd=xsd6" />
+    <MetadataFile FileName="TKServices7.xsd" MetadataType="Schema" ID="a0e78b49-5a1e-4736-9c09-1eeb84d24d3a" SourceId="1" SourceUrl="http://localhost:1800/TKServices.svc?xsd=xsd7" />
+    <MetadataFile FileName="TKServices8.xsd" MetadataType="Schema" ID="f617655f-e8c5-4afc-8a4f-32613abe876c" SourceId="1" SourceUrl="http://localhost:1800/TKServices.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

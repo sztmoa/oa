@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="17a477eb-f54b-4742-a550-176e11779a7a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.10.0.95/New/Services/smtengine/PersonalRecordService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PersonalRecordService2.wsdl" MetadataType="Wsdl" ID="8c3851db-b0de-476c-ad96-716e582185e2" SourceId="1" SourceUrl="http://10.10.0.95/New/Services/SMTEngine/PersonalRecordService.svc?wsdl" />
+    <MetadataFile FileName="PersonalRecordService6.xsd" MetadataType="Schema" ID="808f6eb7-dbf9-45e2-a992-f30b47afa60f" SourceId="1" SourceUrl="http://10.10.0.95/New/Services/SMTEngine/PersonalRecordService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PersonalRecordService1.disco" MetadataType="Disco" ID="f91368ed-8181-46eb-bf4b-2d4f24a898bf" SourceId="1" SourceUrl="http://10.10.0.95/New/Services/SMTEngine/PersonalRecordService.svc?disco" />
+    <MetadataFile FileName="PersonalRecordService7.xsd" MetadataType="Schema" ID="dfad6116-59df-414c-8419-42e924c4994a" SourceId="1" SourceUrl="http://10.10.0.95/New/Services/SMTEngine/PersonalRecordService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PersonalRecordService8.xsd" MetadataType="Schema" ID="2e4cde39-7914-4346-8c94-a9c37afe640f" SourceId="1" SourceUrl="http://10.10.0.95/New/Services/SMTEngine/PersonalRecordService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PersonalRecordService12.xsd" MetadataType="Schema" ID="38f16f49-265d-4628-b455-640fab735b80" SourceId="1" SourceUrl="http://10.10.0.95/New/Services/SMTEngine/PersonalRecordService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

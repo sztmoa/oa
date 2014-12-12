@@ -1,0 +1,286 @@
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 10:36:43 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 10:36:43
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 10:37:03 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 10:37:03
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 10:44:36 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 10:44:36
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 10:45:38 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 10:45:38
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 10:54:10 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 10:54:10
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 11:06:07 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 11:06:07
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 11:06:08 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 11:06:08
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 11:06:09 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 11:06:09
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 11:06:10 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 11:06:10
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 11:06:10 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 11:06:10
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 11:45:12 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 11:45:12
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 11:45:13 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 11:45:13
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 11:45:16 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 11:45:16
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 11:45:17 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 11:45:17
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 11:45:18 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 11:45:18
+Debug  出差申请TravelmanagementBLL-GetTravelmanagementInfo2014/11/13 11:46:00 System.Data.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。 ---> System.Data.OracleClient.OracleException: ORA-00904: "Extent1"."ISFROMWP": 标识符无效
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 EFOracleProvider.EFOracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.SaaS.OA.BLL.TravelmanagementBLL.GetTravelmanagementInfo(Int32 pageIndex, Int32 pageSize, String sort, String filterString, IList`1 paras, Int32& pageCount, List`1 flowInfoList, String checkState, String userID) 位置 f:\MyWorkSpace\OA\SMT.SaaS.OANew\SMT.SaaS.OA.BLL\TravelmanagementBLL.cs:行号 1027  2014/11/13 11:46:00
+Debug  模块T_OA_BUSINESSTRIP ID:8790ffff-6547-36b3-7b10-20506bed调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/13 11:49:16
+Debug  更新出差申请审核状态成功：id8790ffff-6547-36b3-7b10-20506bed!!!!!!!!!!!!!!!!!!!!!!!!审核状态:0  2014/11/13 11:49:16
+Debug  添加出差申请ID为8790ffff-6547-36b3-7b10-20506bed的出差报销1fdd36bf-f13e-4612-ac99-b56a8a72baa8  2014/11/13 11:49:29
+Debug  调用新生成单号接口：tablename：T_FB_TRAVELEXPAPPLYMASTER ExecuteCustomerSql: select T_FB_TRAVELEXPAPPLYMASTER_SEQ.nextval from dual  2014/11/13 11:49:29
+Debug  生成单号：CLBX_20141113000021  2014/11/13 11:49:29
+Debug  模块T_OA_TRAVELREIMBURSEMENT ID:1fdd36bf-f13e-4612-ac99-b56a8a72baa8调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/13 11:49:29
+Debug  UpdateTravelReimbursement formid:1fdd36bf-f13e-4612-ac99-b56a8a72baa8 CheckState:0 单号：  2014/11/13 16:21:10
+Debug  UpdateTravelReimbursement11 CheckState:0  2014/11/13 16:21:10
+Debug  模块T_OA_TRAVELREIMBURSEMENT ID:1fdd36bf-f13e-4612-ac99-b56a8a72baa8调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/13 16:21:13
+Debug  UpdateTravelReimbursement11 完成 CheckState:0  2014/11/13 16:21:13
+Debug  UpdateTravelReimbursement formid:1fdd36bf-f13e-4612-ac99-b56a8a72baa8 CheckState:0 单号：  2014/11/13 17:06:18
+Debug  UpdateTravelReimbursement11 CheckState:0  2014/11/13 17:06:18
+Debug  模块T_OA_TRAVELREIMBURSEMENT ID:1fdd36bf-f13e-4612-ac99-b56a8a72baa8调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/11/13 17:06:19
+Debug  UpdateTravelReimbursement11 完成 CheckState:0  2014/11/13 17:06:19

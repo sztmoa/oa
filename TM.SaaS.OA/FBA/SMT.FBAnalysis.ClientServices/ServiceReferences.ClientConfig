@@ -1,0 +1,34 @@
+﻿<configuration>
+    <system.serviceModel>
+      <bindings>
+        <basicHttpBinding>
+          <binding name="BasicHttpBinding_FBAnalysisService" maxBufferSize="2147483647"
+            maxReceivedMessageSize="2147483647">
+            <security mode="None" />
+          </binding>
+          <binding name="BasicHttpBinding_DailyUpdateCheckStateService"
+            maxBufferSize="2147483647" maxReceivedMessageSize="2147483647">
+            <security mode="None" />
+          </binding>
+        </basicHttpBinding>
+        <customBinding>
+          <binding name="CustomBinding_DailyManagementServices">
+            <binaryMessageEncoding />
+            <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+          </binding>
+        </customBinding>
+      </bindings>
+      <client>
+        <endpoint address="http://localhost:1734/FBAnalysisService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_FBAnalysisService"
+          contract="FBAnalysisWS.FBAnalysisService" name="BasicHttpBinding_FBAnalysisService" />
+        <endpoint address="http://localhost:1734/DailyUpdateCheckStateService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_DailyUpdateCheckStateService"
+          contract="DailyUpdateCheckStateWS.DailyUpdateCheckStateService"
+          name="BasicHttpBinding_DailyUpdateCheckStateService" />
+        <endpoint address="http://localhost:1734/DailyManagementServices.svc"
+          binding="customBinding" bindingConfiguration="CustomBinding_DailyManagementServices"
+          contract="DailyManagementWS.DailyManagementServices" name="CustomBinding_DailyManagementServices" />
+      </client>
+    </system.serviceModel>
+</configuration>

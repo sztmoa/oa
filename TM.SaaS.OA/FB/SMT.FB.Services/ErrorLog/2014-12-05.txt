@@ -1,0 +1,36 @@
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:10:08
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:10:13
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:10:21
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:10:21
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:10:22
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:10:22
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:10:22
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:10:22
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:10:22
+Debug  开始预算结算,总记录：0  2014/12/5 17:10:24
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:10:25
+Debug  在2014-12-05 预算月结完毕!  2014/12/5 17:10:25
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:26:37
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:26:37
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:26:39
+Debug  FB BaseDAL.Dispose ErrSystem.Data.EntityException: 关闭提供程序连接时出错。有关详细信息，请参阅内部异常。 ---> System.InvalidOperationException: 内部 .Net Framework Data Provider 错误 1。
+   在 System.Data.ProviderBase.DbConnectionInternal.PrePush(Object expectedOwner)
+   在 System.Data.ProviderBase.DbConnectionPool.PutObject(DbConnectionInternal obj, Object owningObject)
+   在 System.Data.ProviderBase.DbConnectionInternal.CloseConnection(DbConnection owningObject, DbConnectionFactory connectionFactory)
+   在 System.Data.OracleClient.OracleConnection.Close()
+   在 EFOracleProvider.EFOracleConnection.Close()
+   在 System.Data.EntityClient.EntityConnection.StoreCloseHelper()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.EntityClient.EntityConnection.StoreCloseHelper()
+   在 System.Data.EntityClient.EntityConnection.Dispose(Boolean disposing)
+   在 System.ComponentModel.Component.Dispose()
+   在 System.Data.Objects.ObjectContext.Dispose(Boolean disposing)
+   在 System.Data.Objects.ObjectContext.Dispose()
+   在 SMT.FB.DAL.BaseDAL.Dispose() 位置 f:\MyWorkSpace\SmtWorkSpace\FB\SMT.FB.DAL\BaseDAL.cs:行号 361  2014/12/5 17:26:39
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:26:39
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:26:57
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:27:01
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:27:01
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:27:02
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:27:02
+Debug  FB BaseDAL.Dispose sucess  2014/12/5 17:27:02

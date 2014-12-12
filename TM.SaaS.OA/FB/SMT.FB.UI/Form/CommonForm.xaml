@@ -1,0 +1,48 @@
+﻿<controls:ChildWindow x:Class="SMT.FB.UI.Form.CommonForm"  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" Width="800" Height="600" Title="CommonForm">
+    <Grid x:Name="LayoutRoot" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="P1" VerticalAlignment="Top" Grid.Row="0">
+            <Border CornerRadius="3" BorderThickness="1" BorderBrush="{StaticResource BlueShine1}">
+                <Grid Height="25" x:Name="GridToolBar" Background="{StaticResource BlueShine2}" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel x:Name="GridToolBar_SaveAndClose" Orientation="Horizontal" Height="25" Grid.Column="0" MouseLeftButtonUp="SaveAndClose_Click">
+                        <Image Width="16" Source="/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/18_addView.png" Stretch="Fill" Height="16" Margin="10,0,0,0" ToolTipService.ToolTip="保存"/>
+                        <TextBlock Text="保存并关闭" Height="20" Margin="3,4,0,0"></TextBlock>
+                        <Rectangle Height="18" Width="1" Fill="#FF9A9A99" HorizontalAlignment="Right" Margin="10,4,0,3"/>
+                    </StackPanel>
+
+                    <StackPanel x:Name="GridToolBar_Save" Orientation="Horizontal" Height="25" Grid.Column="1" MouseLeftButtonUp="GridToolBar_Save_MouseLeftButtonUp">
+                        <Image Width="16" Source="/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/18_addView.png" Stretch="Fill" Height="16" Margin="10,0,0,0" ToolTipService.ToolTip="保存"/>
+                        <TextBlock Text="保存" Height="20" Margin="3,4,0,0"></TextBlock>
+                        <Rectangle Height="18" Width="1" Fill="#FF9A9A99" HorizontalAlignment="Right" Margin="10,4,0,3"/>
+                    </StackPanel>
+                    <StackPanel x:Name="GridToolBar_Delete" Orientation="Horizontal" Height="25" Grid.Column="2" MouseLeftButtonUp="GridToolBar_Delete_MouseLeftButtonUp">
+                        <Image Width="18" x:Name="FormToolEdit" Source="/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/18_editForm.png" Stretch="Fill" Height="18" Margin="6,0,0,0" ToolTipService.ToolTip="删除"/>
+                        <TextBlock Text="删除"  Margin="3,4,0,0"></TextBlock>
+                        <Rectangle Height="18" Width="1" Fill="#FF9A9A99" HorizontalAlignment="Right" Margin="10,4,0,3"/>
+                    </StackPanel >
+
+                    <StackPanel x:Name="GridToolBar_Other" Orientation="Horizontal" Height="25" Grid.Column="3">
+                        <Rectangle Height="18" Width="1" Fill="#FF9A9A99" HorizontalAlignment="Right" Margin="10,4,0,3"/>
+                        <Image Height="16" x:Name="FormToolPrint" Source="/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/16_print.png" Stretch="Fill" Width="16" Margin="5,0,0,0" ToolTipService.ToolTip="打印"/>
+                        <Image Width="16" x:Name="FormToolOutExcel" Source="/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/16_excel.png" Stretch="Fill" Height="16" Margin="8,0,0,0" ToolTipService.ToolTip="导出Excel"/>
+                        <Image Width="16" x:Name="FormToolOutPDF" Source="/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/16_pdf.png" Stretch="Fill" Height="21" Margin="8,0,0,0" ToolTipService.ToolTip="导出PDF"/>
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+        </StackPanel >
+        <Grid x:Name="MainGrid" Margin="2" Grid.Row="1">
+        </Grid>
+    </Grid>
+</controls:ChildWindow>

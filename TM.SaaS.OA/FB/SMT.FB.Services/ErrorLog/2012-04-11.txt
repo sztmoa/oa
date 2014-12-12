@@ -1,0 +1,329 @@
+Debug  FB BaseDAL.Dispose()  2012/4/11 17:59:41
+Debug  系统初始化失败System.TypeInitializationException: “SMT.FB.BLL.SystemBLL”的类型初始值设定项引发异常。 ---> System.ObjectDisposedException: 此 ObjectContext 实例已释放，不可再用于需要连接的操作。
+   在 System.Data.Objects.ObjectContext.EnsureConnection()
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.FB.BLL.SystemBLL.InitOrderBLL() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SystemBLL.cs:行号 48
+   在 SMT.FB.BLL.SystemBLL..cctor() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SystemBLL.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---  2012/4/11 18:01:08
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.TypeInitializationException: “SMT.FB.BLL.SystemBLL”的类型初始值设定项引发异常。 ---> System.ObjectDisposedException: 此 ObjectContext 实例已释放，不可再用于需要连接的操作。
+   在 System.Data.Objects.ObjectContext.EnsureConnection()
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.FB.BLL.SystemBLL.InitOrderBLL() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SystemBLL.cs:行号 48
+   在 SMT.FB.BLL.SystemBLL..cctor() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SystemBLL.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SystemBLL.GetSetting(QueryExpression qe)
+   在 SMT.FB.BLL.QueryEntityBLL.QueryT_FB_SYSTEMSETTINGS(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\QueryEntityBLL.cs:行号 2097
+   在 SMT.FB.BLL.QueryEntityBLL.QueryInitDataCore(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\QueryEntityBLL.cs:行号 2083
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.FBCommonBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBCommonBLL.cs:行号 887
+   在 SMT.FB.Services.FBCommonService.QueryFBEntities(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 60
+参数: Name: ; Value:  ; QueryType:T_FB_SYSTEMSETTINGS
+  2012/4/11 18:01:42
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:05:35
+Debug  系统初始化失败System.TypeInitializationException: “SMT.FB.BLL.SystemBLL”的类型初始值设定项引发异常。 ---> System.ObjectDisposedException: 此 ObjectContext 实例已释放，不可再用于需要连接的操作。
+   在 System.Data.Objects.ObjectContext.EnsureConnection()
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.FB.BLL.SystemBLL.InitOrderBLL() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SystemBLL.cs:行号 56
+   在 SMT.FB.BLL.SystemBLL..cctor() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SystemBLL.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SystemBLL.InitOrderBLL()
+   在 SMT.FB.Services.FBServiceBase.Init() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBServiceBase.cs:行号 42  2012/4/11 18:06:06
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.TypeInitializationException: “SMT.FB.BLL.SystemBLL”的类型初始值设定项引发异常。 ---> System.ObjectDisposedException: 此 ObjectContext 实例已释放，不可再用于需要连接的操作。
+   在 System.Data.Objects.ObjectContext.EnsureConnection()
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.FB.BLL.SystemBLL.InitOrderBLL() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SystemBLL.cs:行号 56
+   在 SMT.FB.BLL.SystemBLL..cctor() 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SystemBLL.cs:行号 24
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SystemBLL.GetSetting(QueryExpression qe)
+   在 SMT.FB.BLL.QueryEntityBLL.QueryT_FB_SYSTEMSETTINGS(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\QueryEntityBLL.cs:行号 2097
+   在 SMT.FB.BLL.QueryEntityBLL.QueryInitDataCore(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\QueryEntityBLL.cs:行号 2083
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.FBCommonBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBCommonBLL.cs:行号 887
+   在 SMT.FB.Services.FBCommonService.QueryFBEntities(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 60
+参数: Name: ; Value:  ; QueryType:T_FB_SYSTEMSETTINGS
+  2012/4/11 18:06:09
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:08:03
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:08:24
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:10:45
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:12:04
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:12:26
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.ObjectDisposedException: 此 ObjectContext 实例已释放，不可再用于需要连接的操作。
+   在 System.Data.Objects.ObjectContext.EnsureConnection()
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.FB.BLL.SubjectBLL.GetSubjectDepartment(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 33
+   在 SMT.FB.BLL.QueryEntityBLL.QueryT_FB_DEPTBUDGETADDDETAIL(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\QueryEntityBLL.cs:行号 1225
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.FBCommonBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBCommonBLL.cs:行号 887
+   在 SMT.FB.Services.FBCommonService.QueryFBEntities(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 60
+参数: Name:OWNERDEPARTMENTID ; Value:c1f72286-eee5-45bd-bded-5993e8a317c9  ; QueryType:T_FB_DEPTBUDGETADDDETAIL
+Name:BUDGETCHECKDATE ; Value:2012-03-01  ; QueryType:T_FB_DEPTBUDGETADDDETAIL
+  2012/4/11 18:12:43
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:13:20
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.ObjectDisposedException: 此 ObjectContext 实例已释放，不可再用于需要连接的操作。
+   在 System.Data.Objects.ObjectContext.EnsureConnection()
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 SMT.FB.BLL.SubjectBLL.GetSubjectDepartment(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SubjectBLL.cs:行号 33
+   在 SMT.FB.BLL.QueryEntityBLL.QueryT_FB_DEPTBUDGETADDDETAIL(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\QueryEntityBLL.cs:行号 1225
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.FBCommonBLL.QueryFBEntities(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBCommonBLL.cs:行号 887
+   在 SMT.FB.Services.FBCommonService.QueryFBEntities(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 60
+参数: Name:OWNERDEPARTMENTID ; Value:c1f72286-eee5-45bd-bded-5993e8a317c9  ; QueryType:T_FB_DEPTBUDGETADDDETAIL
+Name:BUDGETCHECKDATE ; Value:2012-03-01  ; QueryType:T_FB_DEPTBUDGETADDDETAIL
+  2012/4/11 18:14:07
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:17:11
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:17:13
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:17:21
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:17:59
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:18:34
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:18:35
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:18:36
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:18:37
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:18:38
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:18:39
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:18:40
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:18:42
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:18:43
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:19:24
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:0eb7eb13-41d2-4f2c-ac72-45a4b1c37d52调用了我的单据新建服务成功！  2012/4/11 18:19:40
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:19:40
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:19:41
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:19:41
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.ObjectDisposedException: 此 ObjectContext 实例已释放，不可再用于需要连接的操作。
+   在 System.Data.Objects.ObjectContext.EnsureConnection()
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Load(List`1 collection, MergeOption mergeOption)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Load(MergeOption mergeOption)
+   在 System.Data.Objects.DataClasses.RelatedEnd.Load()
+   在 SMT.FB.BLL.FBEntityBLL.AttachRelationManyEntity(FBEntity entity, IRelatedEnd re) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBEntityBLL.cs:行号 97
+   在 SMT.FB.BLL.FBEntityBLL.GetFBEntityFull(FBEntity entity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBEntityBLL.cs:行号 61
+   在 SMT.FB.BLL.FBEntityBLL.GetFBEntity(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBEntityBLL.cs:行号 34
+   在 SMT.FB.BLL.QueryEntityBLL.GetEntityDefault(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\QueryEntityBLL.cs:行号 51
+   在 SMT.FB.BLL.QueryEntityBLL.GetEntityT_FB_DEPTBUDGETADDMASTER(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\QueryEntityBLL.cs:行号 132
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SaveEntityBLL.Save(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SaveEntityBLL.cs:行号 85
+   在 SMT.FB.BLL.FBCommonBLL.Save(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBCommonBLL.cs:行号 76
+   在 SMT.FB.Services.FBCommonService.Save(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 112  2012/4/11 18:24:17
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:32:15
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:32:15
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:32:23
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:32:57
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:33:09
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:33:09
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:33:10
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:33:12
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:33:12
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:33:13
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:33:15
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:33:16
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:33:17
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:33:23
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:84482528-1c4d-48ab-8950-8dae09145f5d调用了我的单据新建服务成功！  2012/4/11 18:33:40
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:33:41
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:33:41
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:33:41
+Debug  System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.ObjectDisposedException: 此 ObjectContext 实例已释放，不可再用于需要连接的操作。
+   在 System.Data.Objects.ObjectContext.EnsureConnection()
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Load(List`1 collection, MergeOption mergeOption)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Load(MergeOption mergeOption)
+   在 System.Data.Objects.DataClasses.RelatedEnd.Load()
+   在 SMT.FB.BLL.FBEntityBLL.AttachRelationManyEntity(FBEntity entity, IRelatedEnd re) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBEntityBLL.cs:行号 98
+   在 SMT.FB.BLL.FBEntityBLL.GetFBEntityFull(FBEntity entity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBEntityBLL.cs:行号 61
+   在 SMT.FB.BLL.FBEntityBLL.GetFBEntity(QueryExpression queryExpression) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBEntityBLL.cs:行号 34
+   在 SMT.FB.BLL.QueryEntityBLL.GetEntityDefault(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\QueryEntityBLL.cs:行号 51
+   在 SMT.FB.BLL.QueryEntityBLL.GetEntityT_FB_DEPTBUDGETADDMASTER(QueryExpression qe) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\QueryEntityBLL.cs:行号 132
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SMT.FB.BLL.SaveEntityBLL.Save(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\SaveEntityBLL.cs:行号 85
+   在 SMT.FB.BLL.FBCommonBLL.Save(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBCommonBLL.cs:行号 76
+   在 SMT.FB.Services.FBCommonService.Save(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.Services\FBCommonService.svc.cs:行号 112  2012/4/11 18:43:31
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:50:18
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:50:19
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:50:31
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:50:53
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:51:06
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:51:06
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:51:07
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:51:08
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:51:09
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:51:10
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:51:11
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:51:12
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:51:14
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:51:24
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:f80b887b-4507-4a2f-8d7f-02367a1ed959调用了我的单据新建服务成功！  2012/4/11 18:51:33
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:51:33
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:51:34
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:51:35
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:52:26
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:52:30
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:52:37
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:52:43
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:52:48
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:52:53
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:52:53
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/11 18:52:53
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/11 18:52:53
+Debug  生成单号：BMYS_20120411000026  2012/4/11 18:52:53
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:52:54
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:52:54
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:52:54
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:f80b887b-4507-4a2f-8d7f-02367a1ed959调用了我的单据新建服务成功！  2012/4/11 18:52:55
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:52:55
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:52:55
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:52:56
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:54:48
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:54:49
+Debug  模块代码：T_FB_DEPTBUDGETADDMASTER  2012/4/11 18:54:49
+Debug  调用新生成单号接口：tablename：T_FB_DEPTBUDGETADDMASTER ExecuteCustomerSql: select T_FB_DEPTBUDGETADDMASTER_SEQ.nextval from dual  2012/4/11 18:54:49
+Debug  生成单号：BMYS_20120411000027  2012/4/11 18:54:49
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:54:49
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:54:49
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:54:49
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:f80b887b-4507-4a2f-8d7f-02367a1ed959调用了我的单据新建服务成功！  2012/4/11 18:54:50
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:54:50
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:54:51
+Debug  FB BaseDAL.Dispose()  2012/4/11 18:54:52
+Error  审核异常：System.TimeoutException: 请求通道在等待 00:00:59.9989999 以后答复时超时。增加传递给请求调用的超时值，或者增加绑定上的 SendTimeout 值。分配给此操作的时间可能已经是更长超时的一部分。 ---> System.TimeoutException: 远程服务器返回错误: (504) 网关超时。 ---> System.Net.WebException: 远程服务器返回错误: (504) 网关超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.IService.SubimtFlow(SubmitData ApprovalData)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.ServiceClient.SubimtFlow(SubmitData ApprovalData) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\FlowWFService\Reference.cs:行号 1947
+   在 SMT.FB.BLL.AuditBLL.Audit(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\AuditBLL.cs:行号 79
+   在 SMT.FB.BLL.FBCommonBLL.AuditFBEntity(FBEntity fbEntity, CheckStates checkStates) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBCommonBLL.cs:行号 680  2012/4/11 18:55:02
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:00:32
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:00:53
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:02:02
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:02:07
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:02:26
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:02:29
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:02:32
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:02:37
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:02:43
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:02:50
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:02:56
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:03:08
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:03:17
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:03:31
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:03:41
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:03:41
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:f80b887b-4507-4a2f-8d7f-02367a1ed959调用了我的单据新建服务成功！  2012/4/11 19:03:42
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:03:42
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:03:42
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:03:43
+Error  审核异常：System.TimeoutException: 请求通道在等待 00:00:59.9979999 以后答复时超时。增加传递给请求调用的超时值，或者增加绑定上的 SendTimeout 值。分配给此操作的时间可能已经是更长超时的一部分。 ---> System.TimeoutException: 远程服务器返回错误: (504) 网关超时。 ---> System.Net.WebException: 远程服务器返回错误: (504) 网关超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   在 System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.IService.SubimtFlow(SubmitData ApprovalData)
+   在 SMT.SaaS.BLLCommonServices.FlowWFService.ServiceClient.SubimtFlow(SubmitData ApprovalData) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.SAAS.FrameWork\SMT.SaaS.BLLCommonServices\Service References\FlowWFService\Reference.cs:行号 1947
+   在 SMT.FB.BLL.AuditBLL.Audit(FBEntity fbEntity) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\AuditBLL.cs:行号 79
+   在 SMT.FB.BLL.FBCommonBLL.AuditFBEntity(FBEntity fbEntity, CheckStates checkStates) 位置 F:\Ken\SMTWorkSpace\SMT.SaaS\SMT.SaaS.Portal\SMT.Saas.FB\SMT.FB.BLL\FBCommonBLL.cs:行号 680  2012/4/11 19:03:53
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:03:56
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:04:03
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:04:09
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:04:58
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:05:02
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:05:26
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:05:32
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:05:32
+Debug  模块T_FB_DEPTBUDGETADDMASTERID:f80b887b-4507-4a2f-8d7f-02367a1ed959调用了我的单据新建服务成功！  2012/4/11 19:05:33
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:05:33
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:05:33
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:05:34
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:05:43
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:06:01
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:06:07
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:06:08
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:06:08
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:06:09
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:06:09
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:06:11
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:06:12
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:06:13
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:06:14
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:06:59
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:02
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:04
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:06
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:08
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:10
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:17
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:18
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:21
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:23
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:25
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:27
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:30
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:34
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:36
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:38
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:40
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:46
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:48
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:50
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:51
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:52
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:54
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:55
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:07:58
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:08:02
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:08:13
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:08:14
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:08:17
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:08:19
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:08:22
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:08:24
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:08:25
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:08:27
+Debug  FB BaseDAL.Dispose()  2012/4/11 19:08:30

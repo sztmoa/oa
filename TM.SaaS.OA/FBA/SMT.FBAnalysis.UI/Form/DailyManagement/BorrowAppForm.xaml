@@ -1,0 +1,234 @@
+﻿<smtLocal:BaseForm xmlns:smtLocal="clr-namespace:SMT.FBAnalysis.UI"
+    x:Class="SMT.FBAnalysis.UI.Form.BorrowAppForm"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:basics="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:behaviors="clr-namespace:SMT.SAAS.Behaviors;assembly=SMT.SAAS.Behaviors" 
+    xmlns:smt="clr-namespace:SMT.SaaS.FrameworkUI;assembly=SMT.SaaS.FrameworkUI"
+    xmlns:validator="clr-namespace:SMT.SaaS.FrameworkUI.Validator;assembly=SMT.SaaS.FrameworkUI"
+    xmlns:cbx="clr-namespace:SMT.FBAnalysis.UI;assembly=SMT.FBAnalysis.UI"
+    xmlns:fbctr="clr-namespace:SMT.SaaS.FrameworkUI.FBControls;assembly=SMT.SaaS.FrameworkUI"
+    xmlns:interaction="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:aa="clr-namespace:SMT.SaaS.FrameworkUI.FileUpload;assembly=SMT.SaaS.FrameworkUI"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data" 
+    xmlns:smtx="clr-namespace:SMT.SaaS.FrameworkUI;assembly=SMT.SaaS.FrameworkUI"
+    xmlns:local="clr-namespace:SMT.FBAnalysis.UI"
+    xmlns:wmt="clr-namespace:SMT.SaaS.FrameworkUI.WaterMarkTextBox;assembly=SMT.SaaS.FrameworkUI"
+    xmlns:my="clr-namespace:SMT.FileUpLoad;assembly=SMT.FileUpLoad"               
+    d:DesignHeight="300" d:DesignWidth="500">
+
+    <UserControl.Resources>
+        <local:ChargeTpyeConverter x:Key="ChargeTpyeConverter" />
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto"/>     
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <validator:ValidatorManager x:Name="Group1"/>
+
+        <!--Row-0-->
+		<!--申请人-->
+		<TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Converter={StaticResource ResourceConveter}, 
+            Source=REQUESTMAN}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2,0,5,0" />
+        <Grid Grid.Row="0" Margin="5,0,20,2" Grid.Column="1"  VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="txtOwnerName" Grid.Column="0" Style="{StaticResource TextBoxStyle}"
+                     Height="24" IsReadOnly="True" MinWidth="120" Margin="0,2,2,2" HorizontalAlignment="Stretch" >
+                <validator:ValidatorService.Validator>
+                    <validator:RequiredValidator ManagerName="Group1" ErrorMessage="REQUIRED"  ErrorMessageParameter="OWNERNAMEVD"/>
+                </validator:ValidatorService.Validator>
+            </TextBox>
+            <TextBox x:Name="txtOwnerID" Grid.Column="0" Style="{StaticResource TextBoxStyle}" IsReadOnly="True" MinHeight="24" Visibility="Collapsed">
+            </TextBox>
+            <Button x:Name="btnLookUpOwner" MinHeight="25" Click="btnLookUpOwner_Click" HorizontalAlignment="Right"
+                    Margin="0,2,0,3" d:LayoutOverrides="HorizontalAlignment, Height">
+                <Image Source="/SMT.SaaS.FrameworkUI;Component/Images/(09,24).png" />
+                <interaction:Interaction.Behaviors>
+                    <behaviors:ShowRequire></behaviors:ShowRequire>
+                </interaction:Interaction.Behaviors>
+            </Button>
+        </Grid>
+		
+        <!--单据编号-->
+        <TextBlock Text="{Binding Converter={StaticResource ResourceConveter}, Source=INVOICESCODE}" TextWrapping="Wrap" Grid.Row="0"  Grid.Column="2" x:Name="tbCode"
+                  HorizontalAlignment="Left"  Margin="2,0,0,0"  VerticalAlignment="Center"/>
+        <TextBox Grid.Column="3"    x:Name="txtCode" MinWidth="100" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Stretch"
+                 Text="{Binding Converter={StaticResource ResourceConveter}, Source=SYSTEMAUTOPRODUCED}" 
+                 IsReadOnly="True" Margin="5,2,20,0" TextAlignment="Left" Height="26" VerticalAlignment="Top" />
+
+        <!--Row-1-->
+		<!--借款类型-->
+        <TextBlock Text="{Binding Converter={StaticResource ResourceConveter}, Source=BORROWTYPE}"  Grid.Row="1"  Grid.Column="0"
+                  HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"/>
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5,2,20,5" Height="24" VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1">
+			<RadioButton Content="普通借款" x:Name="rabGeneral" IsChecked="True" Margin="0,2,2,0" Click="rabGeneral_Click"></RadioButton>
+			<RadioButton Content="备用金借款" x:Name="rabBackup" Margin="0,2,2,0" Click="rabBackup_Click"></RadioButton>
+            <RadioButton Content="专项借款" x:Name="rabSpecial" Margin="0,2,2,0" Click="rabSpecial_Click"></RadioButton>
+		</StackPanel>
+         
+        <!--预还款日期-->
+        <TextBlock Text="{Binding Converter={StaticResource ResourceConveter}, Source=REPAYMENT}" Grid.Row="1"  Grid.Column="2"
+                  HorizontalAlignment="Left"  Margin="2,0,0,0"  VerticalAlignment="Center"/>
+
+        <basics:DatePicker  x:Name="RepayDate" 
+                                    Grid.Row="1" Grid.Column="3"  Margin="5,2,20,2"
+                                    MinHeight="24"   MinWidth="160" SelectedDate="{Binding PLANREPAYDATE,Mode=TwoWay,ValidatesOnExceptions=True,NotifyOnValidationError=True}"
+                                   VerticalAlignment="Stretch"  />
+
+        <!--Row-2-->
+        <!--支付信息-->
+        <TextBlock Text="{Binding Converter={StaticResource ResourceConveter}, Source=PAYMENTINFO}" TextWrapping="Wrap" Grid.Row="2"  Grid.Column="0"
+                  HorizontalAlignment="Left"  Margin="2,0,0,0"  VerticalAlignment="Center"/>
+        <!--<TextBox x:Name="txtPayInfo" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Style="{StaticResource TextBoxStyle}" AcceptsReturn="True" MinHeight="30"
+                    Height="auto" MaxLength="90" TextWrapping="Wrap" TextChanged="txtPayInfo_TextChanged"/>-->
+        <wmt:WaterMarkTextBox x:Name="txtPayInfo" Grid.Column="1" Grid.Row="2"  Grid.ColumnSpan="3"   MinHeight="30"  
+                    Height="auto" MaxLength="95" TextWrapping="Wrap" >
+            <wmt:WaterMarkTextBox.Watermark>
+                <StackPanel Orientation="Horizontal" Opacity="0.4">
+                    <TextBlock x:Name="tbWaterMarkText" Margin="0,1,0,0" Text="汇本人账户或款其他账号信息（户名，开户行，账号）"/>
+                </StackPanel>
+            </wmt:WaterMarkTextBox.Watermark>
+        </wmt:WaterMarkTextBox>
+
+        <!--隐藏，需要修改时打开-->
+        <Grid Grid.Row="2" Grid.Column="1" x:Name="pzGrid" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!--个人账户情况-->
+            <!--<CheckBox x:Name="cbSelf" Grid.Column="0" Grid.Row="0" Margin="5,12,0,0" Click="cbSelf_Click"></CheckBox>-->
+            <RadioButton  x:Name="rbSelf" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0" Margin="5,12,0,0" GroupName="gmPz" Content="汇本人账户"  IsChecked="True" Click="rbOther_Click"
+                          Style="{StaticResource RadioButtonStyle}"></RadioButton>
+            <!--多人账户情况-->
+            <!--<CheckBox x:Name="cbOther" Grid.Column="0" Grid.Row="1" Click="cbOther_Click" Margin="5,8,0,0"></CheckBox>-->
+            <RadioButton  x:Name="rbOther" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" Margin="5,12,0,0" GroupName="gmPz"  Content="汇其他账户" Click="rbOther_Click" 
+                          Style="{StaticResource RadioButtonStyle}"></RadioButton>
+            <wmt:WaterMarkTextBox x:Name="wtOther" Grid.Column="2" Grid.Row="0" MinHeight="25"  MaxLength="86" Grid.ColumnSpan="3" 
+                                  Margin="5,8,0,0" Width="400" Height="auto" TextWrapping="Wrap"  >
+                <wmt:WaterMarkTextBox.Watermark>
+                    <StackPanel Orientation="Horizontal" Opacity="0.4">
+                        <TextBlock x:Name="tbOther" Margin="0,1,0,0" Text="本人账户或他人账户信息（开户行，户名，账号等）"/>
+                    </StackPanel>
+                </wmt:WaterMarkTextBox.Watermark>
+            </wmt:WaterMarkTextBox>
+        </Grid>
+
+        <!--Row-3-->
+        <!--备注-->
+        <TextBlock Text="{Binding Converter={StaticResource ResourceConveter}, Source=REMARK}"  Grid.Row="3"  Grid.Column="0"
+                  HorizontalAlignment="Left"  Margin="2,0,0,0"  VerticalAlignment="Center" />
+        <!--<TextBox x:Name="txtRemark" Grid.Row="3" Grid.ColumnSpan="4" Visibility="Visible" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Stretch" Grid.Column="1" AcceptsReturn="True"
+                         MinHeight="30" Height="auto" MaxLength="1000" Style="{StaticResource TextBoxStyle}" Text="{Binding REMARK,Mode=TwoWay,ValidatesOnExceptions=True,NotifyOnValidationError=True}" >
+        </TextBox>-->
+        <wmt:WaterMarkTextBox x:Name="txtRemark" Grid.Row="3" Grid.ColumnSpan="4" Visibility="Visible" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Stretch" Grid.Column="1" AcceptsReturn="True"
+                         MinHeight="30" Height="auto" MaxLength="1000"  Text="{Binding REMARK,Mode=TwoWay,ValidatesOnExceptions=True,NotifyOnValidationError=True}" >
+            <wmt:WaterMarkTextBox.Watermark>
+                <StackPanel Orientation="Horizontal" Opacity="0.4">
+                    <TextBlock x:Name="tbRemark" Margin="0,1,0,0"  Text="备注信息，对支付信息补充说明"/>
+                </StackPanel>
+            </wmt:WaterMarkTextBox.Watermark>
+        </wmt:WaterMarkTextBox>
+
+        <!--Row-4-->
+        <!-- 新增按钮和明细表格-->
+        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <!--<StackPanel x:Name="spDetailAction" Orientation="Horizontal"  Grid.Row="0"  HorizontalAlignment="Left">
+                <Image Height="22" Width="22"  Source="/SMT.SaaS.FrameworkUI;Component/Images/ToolBar/18_addView.png"/>
+                <Button x:Name="AddSub" Width="60" Height="22" Style="{StaticResource ButtonStyle}" Click="AddSub_Click">
+                    <TextBlock Text="添加" Margin="0,0,0,0"  />
+                </Button>
+            </StackPanel>-->
+
+            <data:DataGrid Grid.Row="1" Grid.Column="0"  x:Name="dgvBorrowDetailList" AutoGenerateColumns="False"
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" Style="{StaticResource DataGridStyle}"
+                        CellStyle="{StaticResource DataGridCellStyle}" RowStyle="{StaticResource DataGridRowStyle}" 
+                        RowHeaderStyle="{StaticResource DataGridRowHeaderStyle}" 
+                       ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" Margin="0,4,0,0">
+                <data:DataGrid.Columns>
+                    <data:DataGridTemplateColumn Header="BORROWREMARK" Width="330" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
+                        <data:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+                                    <TextBox Text="{Binding REMARK, Mode=TwoWay}" VerticalAlignment="Center" Width="330" MaxLength="150" x:Name="txtRemark" AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+                                </StackPanel>
+                            </DataTemplate>
+                        </data:DataGridTemplateColumn.CellTemplate>
+                    </data:DataGridTemplateColumn>
+
+                    <data:DataGridTemplateColumn Header="BORROWCOUNT" Width="70" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
+                        <data:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+                                    <TextBox Text="{Binding BORROWMONEY}" VerticalAlignment="Center" Width="70" MaxLength="10" x:Name="txtMon" TextAlignment="Right" KeyUp="txtMon_KeyUp" LostFocus="txtMon_LostFocus"></TextBox>
+                                </StackPanel>
+                            </DataTemplate>
+                        </data:DataGridTemplateColumn.CellTemplate>
+                    </data:DataGridTemplateColumn>
+
+                    <!--<data:DataGridTemplateColumn Header="OPERATION" x:Name="Operation" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
+                        <data:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <smtx:ImageButton x:Name="myDelete"  Click="Delete_Click"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </data:DataGridTemplateColumn.CellTemplate>
+                    </data:DataGridTemplateColumn>-->
+                </data:DataGrid.Columns>
+            </data:DataGrid>
+        </Grid>
+
+        <!--Row-5-->
+        <!--合计-->
+        <TextBlock Text="合计" TextWrapping="Wrap" Grid.Row="5"  Grid.Column="0"
+                  HorizontalAlignment="Left"  Margin="2,5,0,0"  VerticalAlignment="Center"/>
+        <TextBox x:Name="txttotal"    Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" MaxLength="20"
+                                     Style="{StaticResource TextBoxStyle}" Text="0.00" IsReadOnly="True"
+                 Height="30" TextAlignment="Right" LostFocus="txttotal_LostFocus"/>
+
+        <!--Row-6-->
+        <!--上传附件-->
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="{Binding Converter={StaticResource ResourceConveter}, Source=FileUpload}" 
+                   TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="2,8,0,0" />
+        <!--<aa:CtrlFileUploadM  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Top" x:Name="ctrFile"
+                             SystemName="OA" ModelName="Approval" Margin="0,1,20,4" />-->
+
+        <ScrollViewer Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" MaxHeight="200" Margin="0,1,20,4" BorderThickness="0" VerticalScrollBarVisibility="Auto"  VerticalAlignment="Top" HorizontalAlignment="Stretch" >
+
+            <my:FileControl x:Name="uploadFile"/>
+        </ScrollViewer>
+
+    </Grid>
+</smtLocal:BaseForm>

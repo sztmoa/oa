@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="080e8c0d-f233-419b-acda-af68ebc7fb08" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="mscorlib" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.10.0.92:8080/New/services/HR/PersonnelService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PersonnelService8.xsd" MetadataType="Schema" ID="e5a773de-f367-427b-b4bf-ef90ba837aba" SourceId="1" SourceUrl="http://10.10.0.92:8080/New/Services/HR/PersonnelService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PersonnelService9.xsd" MetadataType="Schema" ID="f1110f75-02c3-4eb8-b7c6-522a9439e89b" SourceId="1" SourceUrl="http://10.10.0.92:8080/New/Services/HR/PersonnelService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PersonnelService10.xsd" MetadataType="Schema" ID="e2799d10-fb33-4d03-a973-e36e3831f25c" SourceId="1" SourceUrl="http://10.10.0.92:8080/New/Services/HR/PersonnelService.svc?xsd=xsd6" />
+    <MetadataFile FileName="PersonnelService1.disco" MetadataType="Disco" ID="41c0dc17-bbc2-4c74-8f5b-831d63e3f0d7" SourceId="1" SourceUrl="http://10.10.0.92:8080/New/Services/HR/PersonnelService.svc?disco" />
+    <MetadataFile FileName="PersonnelService11.xsd" MetadataType="Schema" ID="19d03515-b7c6-43d4-b76c-7e0c6fbe4470" SourceId="1" SourceUrl="http://10.10.0.92:8080/New/Services/HR/PersonnelService.svc?xsd=xsd9" />
+    <MetadataFile FileName="PersonnelService2.wsdl" MetadataType="Wsdl" ID="15954596-56d7-49a2-849c-106447778f56" SourceId="1" SourceUrl="http://10.10.0.92:8080/New/Services/HR/PersonnelService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="PersonnelService12.xsd" MetadataType="Schema" ID="2a168260-0aac-47b7-b109-38c95e4e7a3f" SourceId="1" SourceUrl="http://10.10.0.92:8080/New/Services/HR/PersonnelService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PersonnelService13.xsd" MetadataType="Schema" ID="8daf4706-3fdc-4127-bd72-d7c6535ceec2" SourceId="1" SourceUrl="http://10.10.0.92:8080/New/Services/HR/PersonnelService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PersonnelService14.xsd" MetadataType="Schema" ID="2dba5ef9-0715-4bee-b39f-854dfcbd284c" SourceId="1" SourceUrl="http://10.10.0.92:8080/New/Services/HR/PersonnelService.svc?xsd=xsd5" />
+    <MetadataFile FileName="PersonnelService3.wsdl" MetadataType="Wsdl" ID="f5b56b50-85a8-4bfa-89ef-2b07d0b4f5d4" SourceId="1" SourceUrl="http://10.10.0.92:8080/New/Services/HR/PersonnelService.svc?wsdl" />
+    <MetadataFile FileName="PersonnelService15.xsd" MetadataType="Schema" ID="5a1358e5-8914-45f6-89f2-feb761debee4" SourceId="1" SourceUrl="http://10.10.0.92:8080/New/Services/HR/PersonnelService.svc?xsd=xsd4" />
+    <MetadataFile FileName="PersonnelService16.xsd" MetadataType="Schema" ID="17837067-38bd-4bac-9916-a66893a45d96" SourceId="1" SourceUrl="http://10.10.0.92:8080/New/Services/HR/PersonnelService.svc?xsd=xsd7" />
+    <MetadataFile FileName="PersonnelService17.xsd" MetadataType="Schema" ID="2a38ad1b-6451-408f-9598-5fe36d2ba8ec" SourceId="1" SourceUrl="http://10.10.0.92:8080/New/Services/HR/PersonnelService.svc?xsd=xsd8" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

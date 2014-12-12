@@ -1,0 +1,5 @@
+建议处理
+
+T_LM_NODE      NODECODE   网点资料
+
+T_LM_SALESMAN    SMCODE    网点配送员

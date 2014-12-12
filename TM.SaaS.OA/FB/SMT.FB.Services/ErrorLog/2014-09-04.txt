@@ -1,0 +1,45 @@
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 13:36:49
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 13:36:49
+Debug  UpdateCheckState方法已被调用，参数：strModelCode: T_FB_DEPTBUDGETSUMMASTER, orderID: 36c3f154-64b6-459a-911e-ef6c408b9bc1, strCheckStates: 2  2014/9/4 13:38:31
+Debug  BeginTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[36c3f154-64b6-459a-911e-ef6c408b9bc1]  2014/9/4 13:38:31
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 13:38:32
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 13:43:21
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 13:43:21
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 13:43:21
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 13:50:46
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 13:51:02
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:07:30
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:07:30
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:07:41
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:08:02
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:08:47
+Debug  UpdateCheckState方法已被调用，参数：strModelCode: T_FB_DEPTBUDGETSUMMASTER, orderID: 36c3f154-64b6-459a-911e-ef6c408b9bc1, strCheckStates: 2  2014/9/4 14:09:32
+Debug  BeginTransaction T_FB_DEPTBUDGETSUMMASTER 的单据[36c3f154-64b6-459a-911e-ef6c408b9bc1]  2014/9/4 14:09:32
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:09:32
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:12:12
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:12:16
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:12:16
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:12:16
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:12:16
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:12:16
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:12:16
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:12:19
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:26:01
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:26:01
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:27:41
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:27:41
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:45:27
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:45:27
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 14:45:27
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 15:00:28
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 15:00:49
+Debug  调用HR服务 GetEmployeeFunds,返回结果为空，对应下拨公司的ID为： cafdca8a-c630-4475-a65d-490d052dca36  2014/9/4 15:01:04
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 15:01:04
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 15:15:52
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 15:16:03
+Debug  调用HR服务 GetEmployeeFunds,返回结果为空，对应下拨公司的ID为： cafdca8a-c630-4475-a65d-490d052dca36  2014/9/4 15:16:10
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 15:16:10
+Debug  模块T_FB_PERSONMONEYASSIGNMASTER ID:912ad553-c7e3-43d2-aeb9-f4db503a8fd5调用了我的单据新建服务成功BLLCOMMONSERVICES！  2014/9/4 15:16:48
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 15:16:48
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 15:16:49
+Debug  FB BaseDAL.Dispose sucess  2014/9/4 15:16:57

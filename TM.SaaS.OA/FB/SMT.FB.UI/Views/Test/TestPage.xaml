@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="SMT.FB.UI.Views.Test.Test"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <TextBlock Text="单据类型"   Margin="20 5 0 0" Width="75"/>
+            <TextBox   x:Name="tbOrderType" Width="229" Height="20" Margin="5,0,0,0" Text="T_FB_DEPTBUDGETADDMASTER"></TextBox>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBlock Text="ID"   Margin="20 5 0 0" Width="75"/>
+            <TextBox   x:Name="tbID" Width="229" Height="20" Margin="5,0,0,0"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <TextBlock Text="操作类型"   Margin="20 5 0 0" Width="75"/>
+            <TextBox   x:Name="tbOpType" Width="229" Height="20" Margin="5,0,0,0" Text="Edit"></TextBox>
+            <Button  x:Name="btnOpen" Content="打开" Width="50" Height="20" Margin="5,0,0,0" Click="btnOpen_Click"></Button>
+        </StackPanel>
+
+        <Button Content="测试" x:Name="test" Click="test_Click" Grid.Row="5"></Button>
+    </Grid>
+</UserControl>
