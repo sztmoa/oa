@@ -18,23 +18,23 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://10.10.0.93:8080/New/Services/system/PermissionService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1604/PermissionService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PermissionService10.xsd" MetadataType="Schema" ID="026283e5-a817-4317-a292-912981dddc8d" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/System/PermissionService.svc?xsd=xsd4" />
-    <MetadataFile FileName="PermissionService101.xsd" MetadataType="Schema" ID="0a1ff331-fa18-4381-9330-313355341b6e" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/System/PermissionService.svc?xsd=xsd7" />
-    <MetadataFile FileName="PermissionService102.xsd" MetadataType="Schema" ID="f40d84fd-2811-4a18-b6fa-b88754a772b0" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/System/PermissionService.svc?xsd=xsd6" />
-    <MetadataFile FileName="PermissionService1.disco" MetadataType="Disco" ID="71bde4d5-1e49-4cf7-b0b6-2395d8b870b6" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/System/PermissionService.svc?disco" />
-    <MetadataFile FileName="PermissionService.xsd" MetadataType="Schema" ID="2c1f4c51-b8c6-45b1-bb59-d67ee93259e8" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/System/PermissionService.svc?xsd=xsd11" />
-    <MetadataFile FileName="PermissionService104.xsd" MetadataType="Schema" ID="a145e0d1-4c44-4686-ab1b-718bc899ab8e" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/System/PermissionService.svc?xsd=xsd9" />
-    <MetadataFile FileName="PermissionService105.xsd" MetadataType="Schema" ID="dafe2589-56f7-4ed8-8c30-1891481c286b" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/System/PermissionService.svc?xsd=xsd8" />
-    <MetadataFile FileName="PermissionService106.xsd" MetadataType="Schema" ID="8abe6036-7036-430b-a9f8-b4d923be25d0" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/System/PermissionService.svc?xsd=xsd10" />
-    <MetadataFile FileName="PermissionService1.wsdl" MetadataType="Wsdl" ID="fbd93861-f9c4-47ac-b1e6-7e9576310ddb" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/System/PermissionService.svc?wsdl" />
-    <MetadataFile FileName="PermissionService107.xsd" MetadataType="Schema" ID="7ec46dc0-a45a-4075-9303-4fa57fa24ddc" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/System/PermissionService.svc?xsd=xsd1" />
-    <MetadataFile FileName="PermissionService108.xsd" MetadataType="Schema" ID="84cf7f1d-b03a-4baa-a296-068bc8e2aac8" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/System/PermissionService.svc?xsd=xsd0" />
-    <MetadataFile FileName="PermissionService109.xsd" MetadataType="Schema" ID="f09e8ff7-85da-4f9e-89be-92edb352556c" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/System/PermissionService.svc?xsd=xsd3" />
-    <MetadataFile FileName="PermissionService1010.xsd" MetadataType="Schema" ID="979ab91d-4b36-4f7b-8fac-443cd3ebb81e" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/System/PermissionService.svc?xsd=xsd2" />
-    <MetadataFile FileName="PermissionService1011.xsd" MetadataType="Schema" ID="df68a703-272b-4ece-8af4-b27da6868ac8" SourceId="1" SourceUrl="http://10.10.0.93:8080/New/Services/System/PermissionService.svc?xsd=xsd5" />
+    <MetadataFile FileName="PermissionService10.xsd" MetadataType="Schema" ID="c3ece406-3559-41b4-a11b-d3d2b7bbf172" SourceId="1" SourceUrl="http://localhost:1604/PermissionService.svc?xsd=xsd6" />
+    <MetadataFile FileName="PermissionService11.xsd" MetadataType="Schema" ID="938f4ed1-9feb-4dc9-a796-b6b58404dcbc" SourceId="1" SourceUrl="http://localhost:1604/PermissionService.svc?xsd=xsd10" />
+    <MetadataFile FileName="PermissionService12.xsd" MetadataType="Schema" ID="b7a1822f-c2c5-4fa4-8854-3eb2ae367c71" SourceId="1" SourceUrl="http://localhost:1604/PermissionService.svc?xsd=xsd8" />
+    <MetadataFile FileName="PermissionService13.xsd" MetadataType="Schema" ID="b742e956-2ac8-402d-bd18-658dfc386116" SourceId="1" SourceUrl="http://localhost:1604/PermissionService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PermissionService1.disco" MetadataType="Disco" ID="057bfaf0-0fa4-42d2-9503-14eb9380977f" SourceId="1" SourceUrl="http://localhost:1604/PermissionService.svc?disco" />
+    <MetadataFile FileName="PermissionService14.xsd" MetadataType="Schema" ID="3e6ec053-2a12-456f-bc80-a6f2c50f90c4" SourceId="1" SourceUrl="http://localhost:1604/PermissionService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PermissionService1.wsdl" MetadataType="Wsdl" ID="97dc9d0f-3c47-42cf-b580-20c151b06d52" SourceId="1" SourceUrl="http://localhost:1604/PermissionService.svc?wsdl" />
+    <MetadataFile FileName="PermissionService15.xsd" MetadataType="Schema" ID="be384e67-b4cb-44d1-a198-94dacf0349c1" SourceId="1" SourceUrl="http://localhost:1604/PermissionService.svc?xsd=xsd5" />
+    <MetadataFile FileName="PermissionService16.xsd" MetadataType="Schema" ID="48591011-7499-4c9b-b45d-73af837eb770" SourceId="1" SourceUrl="http://localhost:1604/PermissionService.svc?xsd=xsd7" />
+    <MetadataFile FileName="PermissionService17.xsd" MetadataType="Schema" ID="18cb4c75-a561-4d75-bae6-5288ec2ebac6" SourceId="1" SourceUrl="http://localhost:1604/PermissionService.svc?xsd=xsd9" />
+    <MetadataFile FileName="PermissionService18.xsd" MetadataType="Schema" ID="4f0038b6-0c31-4222-a738-139adf82e602" SourceId="1" SourceUrl="http://localhost:1604/PermissionService.svc?xsd=xsd11" />
+    <MetadataFile FileName="PermissionService19.xsd" MetadataType="Schema" ID="1796fdf1-645b-4756-8e37-8c8dc9c2e2f4" SourceId="1" SourceUrl="http://localhost:1604/PermissionService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PermissionService20.xsd" MetadataType="Schema" ID="e325b39c-61e3-460c-bd40-7a52963c7b72" SourceId="1" SourceUrl="http://localhost:1604/PermissionService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PermissionService21.xsd" MetadataType="Schema" ID="9d3af95e-1c97-4b1b-9d87-a7ff0631fe82" SourceId="1" SourceUrl="http://localhost:1604/PermissionService.svc?xsd=xsd4" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

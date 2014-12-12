@@ -30,6 +30,17 @@ namespace SMT.SAAS.Platform
         {
             try
             {
+                string parasString = string.Empty;
+                if (e.InitParams.Count > 0)
+                {
+                    foreach (var item in e.InitParams)
+                    {
+                        parasString += item.Value;
+                    }
+                }
+                //MessageBox.Show("传递过来的参数：" + parasString);
+                AppContext.SystemMessage(parasString);
+
                 if (!string.IsNullOrEmpty(e.InitParams["PhoneDownloadUrl"]))
                 {
                     string PhoneDownloadUrl = e.InitParams["PhoneDownloadUrl"];
@@ -80,9 +91,11 @@ namespace SMT.SAAS.Platform
                 //存储已经创建过的容器
                 //Common.AppContext.Host = host;
                 //this.RootVisual = new SLtext();
+                //MessageBox.Show("初始化成功！");
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Application_Startup"+ex.ToString());
                 AppContext.logAndShow(ex.ToString());
             }
         }

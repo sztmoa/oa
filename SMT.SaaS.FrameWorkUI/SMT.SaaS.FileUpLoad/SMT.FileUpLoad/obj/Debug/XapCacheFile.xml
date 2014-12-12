@@ -1,5 +1,5 @@
-﻿<xapCache source="F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SaaS.FileUpLoad\SMT.FileUpLoad\Bin\Debug\SMT.FileUpLoad.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="2014/8/8 15:38:37">
-  <file source="F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SaaS.FileUpLoad\SMT.FileUpLoad\obj\Debug\SMT.FileUpLoad.dll" archivePath="SMT.FileUpLoad.dll" lastWriteTime="2014/8/8 15:38:30" />
+﻿<xapCache source="F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SaaS.FileUpLoad\SMT.FileUpLoad\Bin\Debug\SMT.FileUpLoad.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="2014/10/13 15:04:24">
+  <file source="F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SaaS.FileUpLoad\SMT.FileUpLoad\obj\Debug\SMT.FileUpLoad.dll" archivePath="SMT.FileUpLoad.dll" lastWriteTime="2014/10/13 15:04:18" />
   <file source="F:\MyWorkSpace\OA\SMT.SaaS.CommonDll\SMT\Client\SMT.SaaS.LocalData.dll" archivePath="SMT.SaaS.LocalData.dll" lastWriteTime="2014/7/23 10:30:01" />
   <file source="F:\MyWorkSpace\OA\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.Main.CurrentContext.dll" archivePath="SMT.SAAS.Main.CurrentContext.dll" lastWriteTime="2014/7/23 10:30:04" />
   <file source="F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SaaS.FileUpLoad\SMT.FileUpLoad\Bin\Debug\SMT.Saas.Tools.dll" archivePath="SMT.Saas.Tools.dll" lastWriteTime="2012/11/22 19:32:09" />
@@ -10,7 +10,6 @@
   <file source="F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SaaS.FileUpLoad\SMT.FileUpLoad\Bin\Debug\System.Windows.Controls.Navigation.dll" archivePath="System.Windows.Controls.Navigation.dll" lastWriteTime="2012/8/31 10:40:17" />
   <file source="F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SaaS.FileUpLoad\SMT.FileUpLoad\Bin\Debug\System.Windows.Controls.Toolkit.dll" archivePath="System.Windows.Controls.Toolkit.dll" lastWriteTime="2012/8/31 10:40:17" />
   <file source="F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SaaS.FileUpLoad\SMT.FileUpLoad\Bin\Debug\System.Windows.Data.dll" archivePath="System.Windows.Data.dll" lastWriteTime="2012/8/31 10:40:17" />
-  <file source="F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SaaS.FileUpLoad\SMT.FileUpLoad\Bin\Debug\System.Windows.Controls.Toolkit.Internals.dll" archivePath="System.Windows.Controls.Toolkit.Internals.dll" lastWriteTime="2012/8/31 10:40:17" />
   <file source="F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SaaS.FileUpLoad\SMT.FileUpLoad\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="2012/12/4 14:01:15" />
-  <file source="F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SaaS.FileUpLoad\SMT.FileUpLoad\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2014/8/8 15:38:31" />
+  <file source="F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SaaS.FileUpLoad\SMT.FileUpLoad\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2014/8/29 10:54:14" />
 </xapCache>

@@ -7,3 +7,8 @@ F:\MyWorkSpace\mysmtproject\SMT.SaaS.FrameWorkUI\SMT.SAAS.ClientServices\Bin\Deb
 F:\MyWorkSpace\mysmtproject\SMT.SaaS.FrameWorkUI\SMT.SAAS.ClientServices\obj\Debug\SMT.SAAS.ClientServices.dll
 F:\MyWorkSpace\mysmtproject\SMT.SaaS.FrameWorkUI\SMT.SAAS.ClientServices\obj\Debug\SMT.SAAS.ClientServices.pdb
 F:\MyWorkSpace\mysmtproject\SMT.SaaS.FrameWorkUI\SMT.SAAS.ClientServices\obj\Debug\SMT.SAAS.ClientServices.csprojResolveAssemblyReference.cache
+F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SAAS.ClientServices\Bin\Debug\SMT.SAAS.ClientServices.dll
+F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SAAS.ClientServices\Bin\Debug\SMT.SAAS.ClientServices.pdb
+F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SAAS.ClientServices\obj\Debug\SMT.SAAS.ClientServices.csprojResolveAssemblyReference.cache
+F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SAAS.ClientServices\obj\Debug\SMT.SAAS.ClientServices.dll
+F:\MyWorkSpace\OA\SMT.SaaS.FrameWorkUI\SMT.SAAS.ClientServices\obj\Debug\SMT.SAAS.ClientServices.pdb

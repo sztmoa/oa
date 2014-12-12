@@ -3403,6 +3403,9 @@
     <None Include="Service References\TravelExpApplyMaster\OaInterface21.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="SMT.SaaS.FrameworkUI.AuditService.Flow_FlowRecord_T.datasource" />
     <None Include="Service References\EngineDataSource\configuration91.svcinfo" />
     <None Include="Service References\EngineDataSource\configuration.svcinfo" />
@@ -3456,7 +3459,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\SmtOAPersonOfficeService\SmtOAPersonOffice2.disco" />
-    <Content Include="ServiceReferences.ClientConfig">
+    <Content Include="ServiceReferences开发.ClientConfig">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>

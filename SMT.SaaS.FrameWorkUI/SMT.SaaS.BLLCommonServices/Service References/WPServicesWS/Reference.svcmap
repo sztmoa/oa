@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c4b16b61-69ee-41c0-879b-994ee4d2d778" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9040072e-de64-4a18-a35b-177b4e82f9a1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,19 +18,23 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:1600/WPServices.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://10.10.0.92:8030/Services/WP/WPServices.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WPServices4.xsd" MetadataType="Schema" ID="81a7b721-aca7-4aa0-b760-487df22aa973" SourceId="1" SourceUrl="http://localhost:1600/WPServices.svc?xsd=xsd4" />
-    <MetadataFile FileName="WPServices41.xsd" MetadataType="Schema" ID="3f07666e-82dc-4516-a732-22829bdea33a" SourceId="1" SourceUrl="http://localhost:1600/WPServices.svc?xsd=xsd5" />
-    <MetadataFile FileName="WPServices42.xsd" MetadataType="Schema" ID="d83b49de-297b-42f7-84ca-99df9e38e50b" SourceId="1" SourceUrl="http://localhost:1600/WPServices.svc?xsd=xsd6" />
-    <MetadataFile FileName="WPServices43.xsd" MetadataType="Schema" ID="d18db5dc-8a6b-4530-862c-b15cc9bedd7c" SourceId="1" SourceUrl="http://localhost:1600/WPServices.svc?xsd=xsd7" />
-    <MetadataFile FileName="WPServices.xsd" MetadataType="Schema" ID="afb026fe-ed47-4871-8084-6a6cc9f82bfc" SourceId="1" SourceUrl="http://localhost:1600/WPServices.svc?xsd=xsd0" />
-    <MetadataFile FileName="WPServices1.xsd" MetadataType="Schema" ID="84f007a5-b23c-46e0-9c21-9679b1b3689c" SourceId="1" SourceUrl="http://localhost:1600/WPServices.svc?xsd=xsd1" />
-    <MetadataFile FileName="WPServices2.xsd" MetadataType="Schema" ID="c16ae57f-1dc8-4f49-aa1e-d81c3cbb1c37" SourceId="1" SourceUrl="http://localhost:1600/WPServices.svc?xsd=xsd2" />
-    <MetadataFile FileName="WPServices3.xsd" MetadataType="Schema" ID="d56e945a-ef0b-407b-a534-6f73841caabd" SourceId="1" SourceUrl="http://localhost:1600/WPServices.svc?xsd=xsd3" />
-    <MetadataFile FileName="WPServices.wsdl" MetadataType="Wsdl" ID="25be7d32-e016-4dc9-bac1-fe79b80b2303" SourceId="1" SourceUrl="http://localhost:1600/WPServices.svc?wsdl" />
-    <MetadataFile FileName="WPServices.disco" MetadataType="Disco" ID="39367c8d-ea42-44d7-ab4a-cbf8574cc080" SourceId="1" SourceUrl="http://localhost:1600/WPServices.svc?disco" />
+    <MetadataFile FileName="WPServices.wsdl" MetadataType="Wsdl" ID="4adbf2bb-9397-4d45-9c14-20d2d35ae12c" SourceId="1" SourceUrl="http://10.10.0.92:8030/Services/WP/WPServices.svc?wsdl" />
+    <MetadataFile FileName="WPServices.xsd" MetadataType="Schema" ID="db8c1435-d094-475a-adf4-4c851d05816c" SourceId="1" SourceUrl="http://10.10.0.92:8030/Services/WP/WPServices.svc?xsd=xsd9" />
+    <MetadataFile FileName="WPServices1.xsd" MetadataType="Schema" ID="eef5d580-4f3a-4568-9e69-96b1f73f68b2" SourceId="1" SourceUrl="http://10.10.0.92:8030/Services/WP/WPServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="WPServices2.xsd" MetadataType="Schema" ID="61e45f13-8712-468e-b2e6-f2be69437566" SourceId="1" SourceUrl="http://10.10.0.92:8030/Services/WP/WPServices.svc?xsd=xsd5" />
+    <MetadataFile FileName="WPServices4.xsd" MetadataType="Schema" ID="29a13570-263c-4e22-8a20-8d662c7f032e" SourceId="1" SourceUrl="http://10.10.0.92:8030/Services/WP/WPServices.svc?xsd=xsd8" />
+    <MetadataFile FileName="WPServices5.xsd" MetadataType="Schema" ID="c984ea60-9fae-4aaf-b5f3-2eba1c4e8851" SourceId="1" SourceUrl="http://10.10.0.92:8030/Services/WP/WPServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="WPServices6.xsd" MetadataType="Schema" ID="b627ddac-c0e3-4eed-bc46-5cb00ccf34bb" SourceId="1" SourceUrl="http://10.10.0.92:8030/Services/WP/WPServices.svc?xsd=xsd4" />
+    <MetadataFile FileName="WPServices7.xsd" MetadataType="Schema" ID="205f537a-0846-41c6-810b-6598997a4026" SourceId="1" SourceUrl="http://10.10.0.92:8030/Services/WP/WPServices.svc?xsd=xsd11" />
+    <MetadataFile FileName="WPServices8.xsd" MetadataType="Schema" ID="01567db4-c4b9-4cf0-8aa6-b63389867760" SourceId="1" SourceUrl="http://10.10.0.92:8030/Services/WP/WPServices.svc?xsd=xsd3" />
+    <MetadataFile FileName="WPServices9.xsd" MetadataType="Schema" ID="a18940b4-894f-4763-87bc-99b73c5a2428" SourceId="1" SourceUrl="http://10.10.0.92:8030/Services/WP/WPServices.svc?xsd=xsd7" />
+    <MetadataFile FileName="WPServices.disco" MetadataType="Disco" ID="57640dc9-0373-433a-a138-752fec23971d" SourceId="1" SourceUrl="http://10.10.0.92:8030/Services/WP/WPServices.svc?disco" />
+    <MetadataFile FileName="WPServices3.xsd" MetadataType="Schema" ID="b9edde84-fbf1-4703-8cf0-7b446055e29a" SourceId="1" SourceUrl="http://10.10.0.92:8030/Services/WP/WPServices.svc?xsd=xsd10" />
+    <MetadataFile FileName="WPServices10.xsd" MetadataType="Schema" ID="aeebf485-056a-4701-bcb0-68ef57c3464e" SourceId="1" SourceUrl="http://10.10.0.92:8030/Services/WP/WPServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="WPServices11.xsd" MetadataType="Schema" ID="c2e066a9-6183-404f-8e19-0dc45ea6b51a" SourceId="1" SourceUrl="http://10.10.0.92:8030/Services/WP/WPServices.svc?xsd=xsd6" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
