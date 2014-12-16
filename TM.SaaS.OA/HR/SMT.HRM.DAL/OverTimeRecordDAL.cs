@@ -17,7 +17,7 @@ using System.Data.Objects.DataClasses;
 using System.Collections;
 using System.Linq.Expressions;
 using SMT.HRM.CustomModel;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 
 namespace SMT.HRM.DAL
 {

@@ -12,6 +12,6 @@ namespace SMT.HRM.CustomModel
         }
         public string AssignObjectName { get; set; }
 
-        public SMT_HRM_EFModel.T_HR_SALARYSOLUTIONASSIGN SalarySolutionAssign { get; set; }
+        public TM_SaaS_OA_EFModel.T_HR_SALARYSOLUTIONASSIGN SalarySolutionAssign { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.HRM.DAL;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using System.Collections;
 using System.Linq.Dynamic;
@@ -721,7 +721,7 @@ namespace SMT.HRM.BLL
             entAbnormRecord.ABNORMRECORDID = System.Guid.NewGuid().ToString().ToUpper();
 
             entAbnormRecord.T_HR_ATTENDANCERECORDReference.EntityKey =
-                   new EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCERECORD", "ATTENDANCERECORDID", item.ATTENDANCERECORDID);
+                   new EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCERECORD", "ATTENDANCERECORDID", item.ATTENDANCERECORDID);
 
             entAbnormRecord.ABNORMALDATE = item.ATTENDANCEDATE;
             entAbnormRecord.ABNORMCATEGORY = strAbnormCategory;

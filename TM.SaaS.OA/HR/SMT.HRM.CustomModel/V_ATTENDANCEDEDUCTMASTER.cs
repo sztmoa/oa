@@ -21,7 +21,7 @@ namespace SMT.HRM.CustomModel
         public V_ATTENDANCEDEDUCTMASTER()
         { }
 
-        public SMT_HRM_EFModel.T_HR_ATTENDANCEDEDUCTMASTER T_HR_ATTENDANCEDEDUCTMASTER { get; set; }
+        public TM_SaaS_OA_EFModel.T_HR_ATTENDANCEDEDUCTMASTER T_HR_ATTENDANCEDEDUCTMASTER { get; set; }
 
         /// <summary>
         /// 0迟到,1 早退,2未刷卡,3旷工(字典值)

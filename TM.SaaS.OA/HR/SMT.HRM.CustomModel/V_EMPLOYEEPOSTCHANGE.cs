@@ -7,7 +7,7 @@ namespace SMT.HRM.CustomModel
 {
     public class V_EMPLOYEEPOSTCHANGE
     {
-        public SMT_HRM_EFModel.T_HR_EMPLOYEEPOSTCHANGE EMPLOYEEPOSTCHANGE { get; set; }
+        public TM_SaaS_OA_EFModel.T_HR_EMPLOYEEPOSTCHANGE EMPLOYEEPOSTCHANGE { get; set; }
         public string FROMCOMPANY { get; set; }
         public string TOCOMPANY { get; set; }
         public string FROMDEPARTMENT { get; set; }

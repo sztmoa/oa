@@ -18,7 +18,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.DAL;
 using SMT.HRM.CustomModel;
 using SMT.Foundation.Log;
@@ -1138,7 +1138,7 @@ namespace SMT.HRM.BLL
                     entTemp.CREATECOMPANYID = gPKId;
                     Utility.CloneEntity<T_HR_ATTENDANCESOLUTIONASIGN>(entTemp, ent);
                     ent.T_HR_ATTENDANCESOLUTIONReference.EntityKey =
-                        new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
+                        new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
 
                     Utility.RefreshEntity(ent);
                     dalAttendanceSolutionAsign.Add(ent);
@@ -1157,7 +1157,7 @@ namespace SMT.HRM.BLL
                             ent.CREATECOMPANYID = gPKId;
 
                             ent.T_HR_ATTENDANCESOLUTIONReference.EntityKey =
-                                new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
+                                new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
 
                             Utility.RefreshEntity(ent);
                             dalAttendanceSolutionAsign.Add(ent);
@@ -1172,7 +1172,7 @@ namespace SMT.HRM.BLL
                     T_HR_ATTENDANCESOLUTIONASIGN ent = new T_HR_ATTENDANCESOLUTIONASIGN();
                     Utility.CloneEntity<T_HR_ATTENDANCESOLUTIONASIGN>(entTemp, ent);
                     ent.T_HR_ATTENDANCESOLUTIONReference.EntityKey =
-                        new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
+                        new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
                     ent.REMARK = "1";
                     Utility.RefreshEntity(ent);
 
@@ -1305,11 +1305,11 @@ namespace SMT.HRM.BLL
                     //T_HR_ATTENDANCESOLUTIONASIGN entUpdate = dalAttendanceSolutionAsign.GetAttendanceSolutionAsignRdByMultSearch(strFilter.ToString(), objArgs.ToArray());
                     //Utility.CloneEntity(entTemp, entUpdate);
                     //entUpdate.T_HR_ATTENDANCESOLUTIONReference.EntityKey =
-                    //    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
+                    //    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
                     entTemp.T_HR_ATTENDANCESOLUTIONReference.EntityKey =
-                           new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
+                           new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
                     entTemp.T_HR_ATTENDANCESOLUTION.EntityKey =
-                           new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
+                           new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
 
 
                     dalAttendanceSolutionAsign.Update(entTemp);

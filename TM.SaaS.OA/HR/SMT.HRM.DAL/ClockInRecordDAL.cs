@@ -16,7 +16,7 @@ using System.Data.Objects;
 using SMT.Foundation.Core;
 using System.Linq.Expressions;
 using System.Linq.Dynamic;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.CustomModel;
 
 namespace SMT.HRM.DAL

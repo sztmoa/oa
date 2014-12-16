@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.HRM.DAL;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using System.Collections;
 using System.Linq.Dynamic;
@@ -319,11 +319,11 @@ namespace SMT.HRM.BLL
                     Utility.CloneEntity(entDetail, entTemp);
                     if (entDetail.T_HR_EMPLOYEEABNORMRECORD != null)
                     {
-                        entTemp.T_HR_EMPLOYEEABNORMRECORDReference.EntityKey = new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_EMPLOYEEABNORMRECORD", "ABNORMRECORDID", entDetail.T_HR_EMPLOYEEABNORMRECORD.ABNORMRECORDID);
+                        entTemp.T_HR_EMPLOYEEABNORMRECORDReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_EMPLOYEEABNORMRECORD", "ABNORMRECORDID", entDetail.T_HR_EMPLOYEEABNORMRECORD.ABNORMRECORDID);
                     }
                     if (entDetail.T_HR_EMPLOYEESIGNINRECORD != null)
                     {
-                        entTemp.T_HR_EMPLOYEESIGNINRECORDReference.EntityKey = new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_EMPLOYEESIGNINRECORD", "SIGNINID", entDetail.T_HR_EMPLOYEESIGNINRECORD.SIGNINID);
+                        entTemp.T_HR_EMPLOYEESIGNINRECORDReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_EMPLOYEESIGNINRECORD", "SIGNINID", entDetail.T_HR_EMPLOYEESIGNINRECORD.SIGNINID);
                     }
 
                     dal.AddToContext(entTemp);

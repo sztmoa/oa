@@ -20,7 +20,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.DAL;
 
 namespace SMT.HRM.BLL
@@ -366,7 +366,7 @@ namespace SMT.HRM.BLL
                 int cout = 0;
                 foreach (T_HR_ATTENDMONTHLYBALANCE item in entBalanceList)
                 {
-                    //item.T_HR_ATTENDMONTHLYBATCHBALANCEReference.EntityKey = new EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDMONTHLYBATCHBALANCE", "MONTHLYBATCHID", entAudit.MONTHLYBATCHID);                    
+                    //item.T_HR_ATTENDMONTHLYBATCHBALANCEReference.EntityKey = new EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDMONTHLYBATCHBALANCE", "MONTHLYBATCHID", entAudit.MONTHLYBATCHID);                    
                     item.T_HR_ATTENDMONTHLYBATCHBALANCE = entAudit;
                     item.CHECKSTATE = entTemp.CHECKSTATE;
                     item.EDITSTATE = entTemp.EDITSTATE;

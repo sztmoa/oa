@@ -20,7 +20,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.DAL;
 
 namespace SMT.HRM.BLL
@@ -168,10 +168,10 @@ namespace SMT.HRM.BLL
                 Utility.CloneEntity<T_HR_ATTENDFREELEAVE>(entTemp, ent);
 
                 ent.T_HR_ATTENDANCESOLUTIONReference.EntityKey =
-                    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
+                    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
 
                 ent.T_HR_LEAVETYPESETReference.EntityKey =
-                    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_LEAVETYPESET", "LEAVETYPESETID", entTemp.T_HR_LEAVETYPESET.LEAVETYPESETID);
+                    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_LEAVETYPESET", "LEAVETYPESETID", entTemp.T_HR_LEAVETYPESET.LEAVETYPESETID);
                 
                 dalAttendFreeLeave.Add(ent);
 
@@ -416,7 +416,7 @@ namespace SMT.HRM.BLL
                     freeTypeSet.FREELEAVEDAYSETID = Guid.NewGuid().ToString();
                     freeTypeSet.T_HR_LEAVETYPESET = typeset;
                     //freeTypeSet.T_HR_LEAVETYPESETReference.EntityKey =
-                    //new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_LEAVETYPESET", "LEAVETYPESETID", typeset.LEAVETYPESETID);
+                    //new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_LEAVETYPESET", "LEAVETYPESETID", typeset.LEAVETYPESETID);
                     freeTypeSet.MINIMONTH = 0;
                     freeTypeSet.MAXMONTH = 9999;
                     freeTypeSet.LEAVEDAYS = (decimal)0.53;
@@ -522,7 +522,7 @@ namespace SMT.HRM.BLL
                     freeTypeSetYouth.FREELEAVEDAYSETID = Guid.NewGuid().ToString();
                     freeTypeSetYouth.T_HR_LEAVETYPESET = typesetYouth;
                     //freeTypeSetYouth.T_HR_LEAVETYPESETReference.EntityKey =
-                    //new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_LEAVETYPESET", "LEAVETYPESETID", typesetYouth.LEAVETYPESETID);
+                    //new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_LEAVETYPESET", "LEAVETYPESETID", typesetYouth.LEAVETYPESETID);
                     freeTypeSetYouth.MINIMONTH = 0;
                     freeTypeSetYouth.MAXMONTH = 9999;
                     freeTypeSetYouth.LEAVEDAYS = (decimal)0.53;
@@ -557,7 +557,7 @@ namespace SMT.HRM.BLL
 
                     attendFreeYouth.T_HR_LEAVETYPESET = typesetYouth;
                     //attendFreeYouth.T_HR_LEAVETYPESETReference.EntityKey =
-                    //    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_LEAVETYPESET", "LEAVETYPESETID", typesetYouth.LEAVETYPESETID);
+                    //    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_LEAVETYPESET", "LEAVETYPESETID", typesetYouth.LEAVETYPESETID);
                     attendFreeYouth.REMARK = "自动产生五四青年节";
                     attendFreeYouth.CREATEDATE = DateTime.Now;
                     attendFreeYouth.UPDATEDATE = DateTime.Now;

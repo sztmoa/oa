@@ -11,9 +11,9 @@ namespace SMT.HRM.CustomModel
         { }
         
         //当前请假记录表
-        public SMT_HRM_EFModel.T_HR_EMPLOYEELEAVERECORD EmployeeLeaveRecord { get; set; }
+        public TM_SaaS_OA_EFModel.T_HR_EMPLOYEELEAVERECORD EmployeeLeaveRecord { get; set; }
         //当前请假调休记录表
-        public List<SMT_HRM_EFModel.T_HR_ADJUSTLEAVE> AdjustLeave { get; set; }
+        public List<TM_SaaS_OA_EFModel.T_HR_ADJUSTLEAVE> AdjustLeave { get; set; }
         //当前请假调休记录表
         public List<V_EMPLOYEELEAVE> EmployeeLeave { get; set; }
         //工作时长

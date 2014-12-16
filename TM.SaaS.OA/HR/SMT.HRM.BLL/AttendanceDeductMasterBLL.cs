@@ -20,7 +20,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.CustomModel;
 using SMT.HRM.DAL;
 

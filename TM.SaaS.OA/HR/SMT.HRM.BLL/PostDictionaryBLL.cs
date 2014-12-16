@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.HRM.DAL;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Linq.Dynamic;
 
 namespace SMT.HRM.BLL

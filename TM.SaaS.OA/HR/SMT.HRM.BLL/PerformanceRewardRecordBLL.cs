@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.HRM.DAL;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using System.Collections;
 using System.Linq.Expressions;
@@ -17,7 +17,7 @@ namespace SMT.HRM.BLL
     {
         protected bool IsComputer = false;
         List<string> employeIDs = new List<string>();
-        List<SMT_HRM_EFModel.T_HR_EMPLOYEE> employes = new List<SMT_HRM_EFModel.T_HR_EMPLOYEE>();
+        List<TM_SaaS_OA_EFModel.T_HR_EMPLOYEE> employes = new List<TM_SaaS_OA_EFModel.T_HR_EMPLOYEE>();
         protected string[] construe = new string[9];
         protected SMT.SaaS.BLLCommonServices.FBServiceWS.FBServiceClient FBSclient = new SMT.SaaS.BLLCommonServices.FBServiceWS.FBServiceClient();
 
@@ -202,7 +202,7 @@ namespace SMT.HRM.BLL
         public void GenerateCompanySalary(string companyID, string year, string month)
         {
             DepartmentBLL bll = new DepartmentBLL();
-            List<SMT_HRM_EFModel.T_HR_DEPARTMENT> emplist = bll.GetDepartmentByCompanyId(companyID);
+            List<TM_SaaS_OA_EFModel.T_HR_DEPARTMENT> emplist = bll.GetDepartmentByCompanyId(companyID);
             foreach (var emp in emplist)
             {
                 GenerateDepartmentSalary(emp.DEPARTMENTID, year, month);
@@ -212,7 +212,7 @@ namespace SMT.HRM.BLL
         public void GenerateDepartmentSalary(string departID, string year, string month)
         {
             PostBLL bll = new PostBLL();
-            List<SMT_HRM_EFModel.T_HR_POST> emplist = bll.GetPostByDepartId(departID);
+            List<TM_SaaS_OA_EFModel.T_HR_POST> emplist = bll.GetPostByDepartId(departID);
             foreach (var emp in emplist)
             {
                 GeneratePostSalary(emp.POSTID, year, month);
@@ -222,7 +222,7 @@ namespace SMT.HRM.BLL
         {
             EmployeePostBLL bll = new EmployeePostBLL();    
             EmployeeSalaryRecordBLL bllemp = new EmployeeSalaryRecordBLL();
-            List<SMT_HRM_EFModel.T_HR_EMPLOYEEPOST> emplist = bll.GetEmployeePostByPostID(postID);
+            List<TM_SaaS_OA_EFModel.T_HR_EMPLOYEEPOST> emplist = bll.GetEmployeePostByPostID(postID);
             foreach (var emp in emplist)
             {
                 employes.Add(bllemp.GetEmployeeInfor(emp.T_HR_EMPLOYEE.EMPLOYEEID));

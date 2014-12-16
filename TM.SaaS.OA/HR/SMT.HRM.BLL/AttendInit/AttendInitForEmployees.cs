@@ -18,7 +18,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.DAL;
 using SMT.HRM.CustomModel;
 using SMT.Foundation.Log;
@@ -325,7 +325,7 @@ namespace SMT.HRM.BLL
 
                                         //外键实体
                                         //entAttRd.T_HR_SHIFTDEFINE = item.T_HR_SHIFTDEFINE;
-                                        entAttRd.T_HR_SHIFTDEFINEReference.EntityKey = new EntityKey("SMT_HRM_EFModelContext.T_HR_SHIFTDEFINE", "SHIFTDEFINEID", item.T_HR_SHIFTDEFINE.SHIFTDEFINEID);
+                                        entAttRd.T_HR_SHIFTDEFINEReference.EntityKey = new EntityKey("TM_SaaS_OA_EFModelContext.T_HR_SHIFTDEFINE", "SHIFTDEFINEID", item.T_HR_SHIFTDEFINE.SHIFTDEFINEID);
 
                                         //第一段工作时间
                                         entAttRd.FIRSTSTARTTIME = item.T_HR_SHIFTDEFINE.FIRSTSTARTTIME;
@@ -603,7 +603,7 @@ namespace SMT.HRM.BLL
                         Tracer.Debug("生成员工列外工作日期错误，排班定义T_HR_SCHEDULINGTEMPLATEDETAIL:" + item.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATENAME + " T_HR_SHIFTDEFINE为Null");
                         return;
                     }
-                    entAttRd.T_HR_SHIFTDEFINEReference.EntityKey = new EntityKey("SMT_HRM_EFModelContext.T_HR_SHIFTDEFINE", "SHIFTDEFINEID", item.T_HR_SHIFTDEFINE.SHIFTDEFINEID);
+                    entAttRd.T_HR_SHIFTDEFINEReference.EntityKey = new EntityKey("TM_SaaS_OA_EFModelContext.T_HR_SHIFTDEFINE", "SHIFTDEFINEID", item.T_HR_SHIFTDEFINE.SHIFTDEFINEID);
 
                     //第一段工作时间
                     entAttRd.FIRSTSTARTTIME = item.T_HR_SHIFTDEFINE.FIRSTSTARTTIME;

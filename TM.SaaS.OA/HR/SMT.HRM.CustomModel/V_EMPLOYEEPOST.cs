@@ -5,7 +5,7 @@ using System.Text;
 
 using System.Data.Objects.DataClasses;
 using System.Data.Entity;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 namespace SMT.HRM.CustomModel
 {
     public class V_EMPLOYEEPOST : EntityObject

@@ -85,38 +85,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommDAL.cs" />
-    <Compile Include="FileUploadManagementDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SysEntityMenuDAL.cs" />
-    <Compile Include="SysPermissionDAL.cs" />
-    <Compile Include="SysRoleDAL.cs" />
-    <Compile Include="SysUseractLogDAL.cs" />
-    <Compile Include="views\EmployeeInfo .cs" />
-    <Compile Include="views\EntityPermission.cs" />
-    <Compile Include="views\FlowUserInfo.cs" />
-    <Compile Include="views\V_CustomerPermission.cs" />
-    <Compile Include="views\V_EntityMenuCustomperm.cs" />
-    <Compile Include="views\V_UserLoginRecord.cs" />
-    <Compile Include="views\V_UserLoginRecordHistory.cs" />
-    <Compile Include="V_BllCommonUserPermission.cs" />
-    <Compile Include="V_Dictionary.cs" />
-    <Compile Include="V_EntityMenu.cs" />
-    <Compile Include="V_FBAdmin.cs" />
-    <Compile Include="V_MenuPermissionUI.cs" />
-    <Compile Include="V_MenuSetRole.cs" />
-    <Compile Include="V_OnlineUser.cs" />
-    <Compile Include="V_Permission.cs" />
-    <Compile Include="V_PermissionUpdateState.cs" />
-    <Compile Include="V_ProvinceCity.cs" />
-    <Compile Include="V_RoleEntity.cs" />
-    <Compile Include="V_UserLogin.cs" />
-    <Compile Include="V_UserMenu.cs" />
-    <Compile Include="V_UserMenuPermission.cs" />
-    <Compile Include="V_UserPermission.cs" />
-    <Compile Include="V_UserPermissionRoleID.cs" />
-    <Compile Include="V_UserPermissionUI.cs" />
-    <Compile Include="V_UserRoleCustomerPerm.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -136,10 +105,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SMT_System_EFModel\SMT_System_EFModel.csproj">
-      <Project>{792419E7-4F0F-4881-AD01-AB64AF014458}</Project>
-      <Name>SMT_System_EFModel</Name>
+    <ProjectReference Include="..\..\TM_SaaS_OA_EFModel\TM_SaaS_OA_EFModel.csproj">
+      <Project>{7571bce6-3b80-41c1-af97-9118e7f41845}</Project>
+      <Name>TM_SaaS_OA_EFModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

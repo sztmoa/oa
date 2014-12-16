@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.DAL;
 using SMT.HRM.CustomModel;
 using SMT.Foundation.Log;
@@ -187,7 +187,7 @@ namespace SMT.HRM.BLL
                 //T_HR_ATTENDANCERECORD ent = new T_HR_ATTENDANCERECORD();
                 //Utility.CloneEntity<T_HR_ATTENDANCERECORD>(entTemp, ent);
                 //ent.T_HR_SHIFTDEFINEReference.EntityKey =
-                //    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_SHIFTDEFINE", "SHIFTDEFINEID", entTemp.T_HR_SHIFTDEFINE.SHIFTDEFINEID);
+                //    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_SHIFTDEFINE", "SHIFTDEFINEID", entTemp.T_HR_SHIFTDEFINE.SHIFTDEFINEID);
                 //if (ent.T_HR_SHIFTDEFINE != null)
                 //{
                 //    Utility.RefreshEntity(ent);                

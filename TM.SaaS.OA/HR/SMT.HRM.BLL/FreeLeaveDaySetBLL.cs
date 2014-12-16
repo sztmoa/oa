@@ -20,7 +20,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.DAL;
 using SMT.HRM.CustomModel;
 using SMT.Foundation.Log;
@@ -222,7 +222,7 @@ namespace SMT.HRM.BLL
                 T_HR_FREELEAVEDAYSET ent = new T_HR_FREELEAVEDAYSET();
                 Utility.CloneEntity<T_HR_FREELEAVEDAYSET>(entTemp, ent);
                 ent.T_HR_LEAVETYPESETReference.EntityKey =
-                    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_LEAVETYPESET", "LEAVETYPESETID", entTemp.T_HR_LEAVETYPESET.LEAVETYPESETID);
+                    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_LEAVETYPESET", "LEAVETYPESETID", entTemp.T_HR_LEAVETYPESET.LEAVETYPESETID);
                 Utility.RefreshEntity(ent);
                 if (entTemp.T_HR_LEAVETYPESET != null)
                 {
@@ -280,7 +280,7 @@ namespace SMT.HRM.BLL
                 if (entUpdate.T_HR_LEAVETYPESETReference.EntityKey == null)
                 {
                     entUpdate.T_HR_LEAVETYPESETReference.EntityKey =
-                        new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_LEAVETYPESET", "LEAVETYPESETID", entTemp.T_HR_LEAVETYPESET.LEAVETYPESETID);
+                        new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_LEAVETYPESET", "LEAVETYPESETID", entTemp.T_HR_LEAVETYPESET.LEAVETYPESETID);
                 }
                 if (entUpdate.T_HR_LEAVETYPESET != null)
                 {

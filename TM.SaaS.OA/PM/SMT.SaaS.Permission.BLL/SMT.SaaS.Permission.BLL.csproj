@@ -68,9 +68,6 @@
     <Reference Include="SMT.HRM.IMServices">
       <HintPath>..\..\..\OA\SMT.SaaS.CommonDll\SMT\Server\SMT.HRM.IMServices.dll</HintPath>
     </Reference>
-    <Reference Include="SMT.SaaS.BLLCommonServices">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
-    </Reference>
     <Reference Include="SMT.SaaS.SmtOlineEn">
       <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.SmtOlineEn.dll</HintPath>
     </Reference>
@@ -105,13 +102,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseBLL.cs" />
-    <Compile Include="CacheManager.cs" />
-    <Compile Include="FbAdminBLL.cs" />
-    <Compile Include="FileUploadManagementBll.cs" />
-    <Compile Include="InstantMessageBll.cs" />
-    <Compile Include="provinceBll.cs" />
-    <Compile Include="RoleEntityMenuBLL.cs" />
     <Compile Include="Service References\HrInstantMessageWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -128,23 +118,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="SysSecurity.cs" />
-    <Compile Include="SysUseractLogBLL.cs" />
-    <Compile Include="SysUserLoginRecordBll.cs" />
-    <Compile Include="Utility.cs" />
-    <Compile Include="ILookupEntity.cs" />
-    <Compile Include="EntityNames.cs" />
-    <Compile Include="SysDictionaryBLL.cs" />
-    <Compile Include="SysEntityMenuBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SysPermissionBLL.cs" />
-    <Compile Include="SysRoleBLL.cs" />
-    <Compile Include="SysRoleMenuPermBLL.cs" />
-    <Compile Include="SysUserRoleBLL.cs" />
-    <Compile Include="SysUserBLL.cs" />
-    <Compile Include="EntityMenuCustomPermBLL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\HR\SMT.HRM.BLL\SMT.HRM.BLL.csproj">
+      <Project>{b35234a0-7bf1-49b6-bdf2-4041d0763d9b}</Project>
+      <Name>SMT.HRM.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HR\SMT.HRM.CustomModel\SMT.HRM.CustomModel.csproj">
+      <Project>{0e45b937-670f-49e1-8ef1-a4bd312b94da}</Project>
+      <Name>SMT.HRM.CustomModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HR\SMT.HRM.Services\SMT.HRM.Services.csproj">
+      <Project>{f41ce952-0a8e-488c-bd79-05be26d28801}</Project>
+      <Name>SMT.HRM.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TM.SaaS.BLLCommonServices\TM.SaaS.BLLCommonServices.csproj">
+      <Project>{17598db5-9d1d-45f9-9ff8-77bd7d9f1b44}</Project>
+      <Name>TM.SaaS.BLLCommonServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TM_SaaS_OA_EFModel\TM_SaaS_OA_EFModel.csproj">
+      <Project>{7571bce6-3b80-41c1-af97-9118e7f41845}</Project>
+      <Name>TM_SaaS_OA_EFModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SMT.SaaS.Permission.CustomerModel\SMT.SaaS.Permission.CustomerModel.csproj">
       <Project>{CBEDE1B9-39ED-49B4-90D3-4F8320B991B4}</Project>
       <Name>SMT.SaaS.Permission.CustomerModel</Name>
@@ -152,10 +148,6 @@
     <ProjectReference Include="..\SMT.SaaS.Permission.DAL\SMT.SaaS.Permission.DAL.csproj">
       <Project>{5E6B2FA5-7ABB-481B-9D3B-F54506D5B7DB}</Project>
       <Name>SMT.SaaS.Permission.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SMT_System_EFModel\SMT_System_EFModel.csproj">
-      <Project>{792419E7-4F0F-4881-AD01-AB64AF014458}</Project>
-      <Name>SMT_System_EFModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.DAL;
 using SMT.HRM.CustomModel;
 

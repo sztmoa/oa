@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.HRM.CustomModel;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 
 
 namespace SMT.HRM.DAL

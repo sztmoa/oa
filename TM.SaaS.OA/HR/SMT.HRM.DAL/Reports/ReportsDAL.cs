@@ -8,7 +8,7 @@ using System.Data;
 using SMT.Foundation.Core;
 using System.Linq.Expressions;
 using System.Linq.Dynamic;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 
 namespace SMT.HRM.DAL
 {

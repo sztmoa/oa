@@ -14,7 +14,7 @@ namespace SMT.HRM.CustomModel
         public string PostCode { get; set; }
         public string PostName { get; set; }
         public string RelationPostID { get; set; }
-        public SMT_HRM_EFModel.T_HR_POST Post { get; set; }
+        public TM_SaaS_OA_EFModel.T_HR_POST Post { get; set; }
     }
      
 }

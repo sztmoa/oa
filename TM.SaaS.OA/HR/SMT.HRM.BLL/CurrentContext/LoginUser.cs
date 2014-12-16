@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Net;
 using System.Collections.Generic;
-
-using SMT.SaaS.BLLCommonServices.PermissionWS;
 using SMT.HRM.CustomModel;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 
 namespace SMT.HRM.BLL
 {

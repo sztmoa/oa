@@ -21,7 +21,7 @@ using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
 using SMT.HRM.CustomModel;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.DAL;
 
 namespace SMT.HRM.BLL
@@ -418,7 +418,7 @@ namespace SMT.HRM.BLL
                 T_HR_OUTPLANDAYS ent = new T_HR_OUTPLANDAYS();
                 Utility.CloneEntity<T_HR_OUTPLANDAYS>(entTemp, ent);
                 ent.T_HR_VACATIONSETReference.EntityKey =
-                    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_VACATIONSET", "VACATIONID", entTemp.T_HR_VACATIONSET.VACATIONID);
+                    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_VACATIONSET", "VACATIONID", entTemp.T_HR_VACATIONSET.VACATIONID);
 
                 Utility.RefreshEntity(ent);
                 

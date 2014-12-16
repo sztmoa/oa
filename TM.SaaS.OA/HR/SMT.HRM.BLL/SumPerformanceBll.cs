@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.HRM.DAL;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using System.Collections;
 using System.Linq.Expressions;
@@ -1221,7 +1221,7 @@ namespace SMT.HRM.BLL
 
             if (entPerRd.T_HR_SUMPERFORMANCERECORD != null)
             {
-                entPerRd.T_HR_SUMPERFORMANCERECORDReference.EntityKey = new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_SUMPERFORMANCERECORD", "SUMID", entPerRd.T_HR_SUMPERFORMANCERECORD.SUMID);
+                entPerRd.T_HR_SUMPERFORMANCERECORDReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_SUMPERFORMANCERECORD", "SUMID", entPerRd.T_HR_SUMPERFORMANCERECORD.SUMID);
             }
 
             if (bIsUpdate)
@@ -1241,8 +1241,8 @@ namespace SMT.HRM.BLL
             //建立KPI明细(T_HR_KPIRECORD)记录 与 被考核人 绩效考核记录（T_HR_PERFORMANCERECORD）的关系
             T_HR_PERFORMANCEDETAIL entPersDetail = new T_HR_PERFORMANCEDETAIL();
             entPersDetail.PERFORMANCEDETAILID = System.Guid.NewGuid().ToString().ToUpper();
-            entPersDetail.T_HR_KPIRECORDReference.EntityKey = new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_KPIRECORD", "KPIRECORDID", record.KPIRECORDID);
-            entPersDetail.T_HR_PERFORMANCERECORDReference.EntityKey = new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_PERFORMANCERECORD", "PERFORMANCEID", entPerRd.PERFORMANCEID);
+            entPersDetail.T_HR_KPIRECORDReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_KPIRECORD", "KPIRECORDID", record.KPIRECORDID);
+            entPersDetail.T_HR_PERFORMANCERECORDReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_PERFORMANCERECORD", "PERFORMANCEID", entPerRd.PERFORMANCEID);
 
             dal.Add(entPersDetail);
         }
@@ -1332,7 +1332,7 @@ namespace SMT.HRM.BLL
 
             if (entPerRd.T_HR_SUMPERFORMANCERECORD != null)
             {
-                entPerRd.T_HR_SUMPERFORMANCERECORDReference.EntityKey = new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_SUMPERFORMANCERECORD", "SUMID", entPerRd.T_HR_SUMPERFORMANCERECORD.SUMID);
+                entPerRd.T_HR_SUMPERFORMANCERECORDReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_SUMPERFORMANCERECORD", "SUMID", entPerRd.T_HR_SUMPERFORMANCERECORD.SUMID);
             }
 
             if (bIsUpdate)

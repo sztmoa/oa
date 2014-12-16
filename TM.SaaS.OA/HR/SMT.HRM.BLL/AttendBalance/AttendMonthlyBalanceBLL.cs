@@ -20,7 +20,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.DAL;
 using SMT.HRM.CustomModel;
 using SMT.Foundation.Log;
@@ -966,7 +966,7 @@ namespace SMT.HRM.BLL
                 if (entTemp.T_HR_ATTENDMONTHLYBATCHBALANCE != null)
                 {
                     entUpdate.T_HR_ATTENDMONTHLYBATCHBALANCE = entTemp.T_HR_ATTENDMONTHLYBATCHBALANCE;
-                    entUpdate.T_HR_ATTENDMONTHLYBATCHBALANCEReference.EntityKey = new EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDMONTHLYBATCHBALANCE", "MONTHLYBATCHID", entTemp.T_HR_ATTENDMONTHLYBATCHBALANCE.MONTHLYBATCHID);
+                    entUpdate.T_HR_ATTENDMONTHLYBATCHBALANCEReference.EntityKey = new EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDMONTHLYBATCHBALANCE", "MONTHLYBATCHID", entTemp.T_HR_ATTENDMONTHLYBATCHBALANCE.MONTHLYBATCHID);
                 }
 
                 dalAttendMonthlyBalance.Update(entUpdate);

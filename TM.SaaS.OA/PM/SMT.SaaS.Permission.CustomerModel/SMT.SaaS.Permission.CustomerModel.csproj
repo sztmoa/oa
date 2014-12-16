@@ -44,12 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FbMenuPermission.cs" />
-    <Compile Include="NewMenuInfo.cs" />
-    <Compile Include="T_SYS_ROLE_V.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="V_RoleUserInfo.cs" />
-    <Compile Include="V_SupperFbAdmin.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -22,7 +22,7 @@ using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
 using SMT.HRM.CustomModel;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.DAL;
 
 namespace SMT.HRM.BLL
@@ -422,9 +422,9 @@ namespace SMT.HRM.BLL
                 T_HR_ATTENDANCESOLUTION ent = new T_HR_ATTENDANCESOLUTION();
                 Utility.CloneEntity<T_HR_ATTENDANCESOLUTION>(entTemp, ent);
                 ent.T_HR_OVERTIMEREWARDReference.EntityKey =
-                    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_OVERTIMEREWARD", "OVERTIMEREWARDID", entTemp.T_HR_OVERTIMEREWARD.OVERTIMEREWARDID);
+                    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_OVERTIMEREWARD", "OVERTIMEREWARDID", entTemp.T_HR_OVERTIMEREWARD.OVERTIMEREWARDID);
                 ent.T_HR_SCHEDULINGTEMPLATEMASTERReference.EntityKey =
-                    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_SCHEDULINGTEMPLATEMASTER", "TEMPLATEMASTERID", entTemp.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATEMASTERID);
+                    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_SCHEDULINGTEMPLATEMASTER", "TEMPLATEMASTERID", entTemp.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATEMASTERID);
 
                 Utility.RefreshEntity(ent);
 
@@ -499,15 +499,15 @@ namespace SMT.HRM.BLL
 
                 Utility.CloneEntity(entTemp, entUpdate);
                 entUpdate.T_HR_OVERTIMEREWARD.EntityKey =
-                    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_OVERTIMEREWARD", "OVERTIMEREWARDID", entTemp.T_HR_OVERTIMEREWARD.OVERTIMEREWARDID);
+                    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_OVERTIMEREWARD", "OVERTIMEREWARDID", entTemp.T_HR_OVERTIMEREWARD.OVERTIMEREWARDID);
                 entUpdate.T_HR_OVERTIMEREWARDReference.EntityKey =
-                    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_OVERTIMEREWARD", "OVERTIMEREWARDID", entTemp.T_HR_OVERTIMEREWARD.OVERTIMEREWARDID);
+                    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_OVERTIMEREWARD", "OVERTIMEREWARDID", entTemp.T_HR_OVERTIMEREWARD.OVERTIMEREWARDID);
 
 
                 entUpdate.T_HR_SCHEDULINGTEMPLATEMASTER.EntityKey =
-                     new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_SCHEDULINGTEMPLATEMASTER", "TEMPLATEMASTERID", entTemp.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATEMASTERID);
+                     new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_SCHEDULINGTEMPLATEMASTER", "TEMPLATEMASTERID", entTemp.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATEMASTERID);
                 entUpdate.T_HR_SCHEDULINGTEMPLATEMASTERReference.EntityKey =
-                    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_SCHEDULINGTEMPLATEMASTER", "TEMPLATEMASTERID", entTemp.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATEMASTERID);
+                    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_SCHEDULINGTEMPLATEMASTER", "TEMPLATEMASTERID", entTemp.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATEMASTERID);
 
                 dalAttendanceSolution.Update(entUpdate);
                 SaveMyRecord(entUpdate);

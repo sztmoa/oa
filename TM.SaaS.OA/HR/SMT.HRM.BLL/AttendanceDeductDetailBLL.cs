@@ -20,7 +20,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.DAL;
 
 namespace SMT.HRM.BLL
@@ -205,7 +205,7 @@ namespace SMT.HRM.BLL
                 T_HR_ATTENDANCEDEDUCTDETAIL ent = new T_HR_ATTENDANCEDEDUCTDETAIL();
                 Utility.CloneEntity<T_HR_ATTENDANCEDEDUCTDETAIL>(entTemp, ent);
                 ent.T_HR_ATTENDANCEDEDUCTMASTERReference.EntityKey =
-                    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCEDEDUCTMASTER", "DEDUCTMASTERID", entTemp.T_HR_ATTENDANCEDEDUCTMASTER.DEDUCTMASTERID);
+                    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCEDEDUCTMASTER", "DEDUCTMASTERID", entTemp.T_HR_ATTENDANCEDEDUCTMASTER.DEDUCTMASTERID);
                 Utility.RefreshEntity(ent);
 
                 dalAttendanceDeductDetail.Add(ent);

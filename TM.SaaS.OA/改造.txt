@@ -1,0 +1,5 @@
+using (EmployeePostBLL EmpPostbll = new EmployeePostBLL())
+{
+    Tracer.Debug("Ω¯»ÎGetFlowUserInfoPostBriefByEmployeeID£∫" + employeeids.Count().ToString());
+    return bll.GetFlowUserInfoPostBriefByEmployeeID(employeeids);
+}

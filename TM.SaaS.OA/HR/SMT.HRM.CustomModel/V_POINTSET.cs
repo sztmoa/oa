@@ -14,7 +14,7 @@ namespace SMT.HRM.CustomModel
         public string CheckPoint { get; set; }
         public string CheckPointDes { get; set; }
         public decimal? CheckPointScore { get; set; }
-        public List<SMT_HRM_EFModel.T_HR_CHECKPOINTLEVELSET> LeavelList {get;set;}
+        public List<TM_SaaS_OA_EFModel.T_HR_CHECKPOINTLEVELSET> LeavelList {get;set;}
         public decimal FirstScore { get; set; }
         public decimal SecondScore { get; set; }
     }

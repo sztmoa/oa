@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Objects.DataClasses;
-using SMT.SaaS.BLLCommonServices.FlowWFService;
 
 namespace SMT.HRM.CustomModel
 {
@@ -130,95 +129,95 @@ namespace SMT.HRM.CustomModel
     /// <summary>
     /// 审核事件参数
     /// </summary>
-    public class AuditEventArgs : EventArgs
-    {
-        public AuditEventArgs(AuditResult auditResult, DataResult innerResult)
-        {
-            result = auditResult;
-            InnerResult = innerResult;
-            this.Action = AuditAction.Audit;
-        }
-        private AuditResult result = AuditResult.Cancel;
-        public AuditResult Result
-        {
-            get
-            {
-                return result;
-            }
-            set
-            {
-                result = value;
-            }
-        }
+    //public class AuditEventArgs : EventArgs
+    //{
+    //    public AuditEventArgs(AuditResult auditResult, DataResult innerResult)
+    //    {
+    //        result = auditResult;
+    //        InnerResult = innerResult;
+    //        this.Action = AuditAction.Audit;
+    //    }
+    //    private AuditResult result = AuditResult.Cancel;
+    //    public AuditResult Result
+    //    {
+    //        get
+    //        {
+    //            return result;
+    //        }
+    //        set
+    //        {
+    //            result = value;
+    //        }
+    //    }
 
-        public AuditAction Action { get; set; }
-        public DateTime StartDate { get; set; }
+    //    public AuditAction Action { get; set; }
+    //    public DateTime StartDate { get; set; }
 
-        public DateTime EndDate { get; set; }
+    //    public DateTime EndDate { get; set; }
 
-        public DataResult InnerResult
-        {
-            get;
-            set;
-        }
+    //    public DataResult InnerResult
+    //    {
+    //        get;
+    //        set;
+    //    }
 
-        /// <summary>
-        /// Auditing : 审核中
-        /// Successful : 终审通过
-        /// Fail : 终审不通过
-        /// Cancel : 取消当前操作
-        /// Error : 审核提交异常
-        /// CancelSubmit:撤单
-        /// </summary>
-        public enum AuditResult
-        {
-            Auditing, Successful, Fail, Cancel, Error, Saved, CancelSubmit = 9
-        }
-        /// <summary>
-        /// 审核动作
-        /// Submit : 提交
-        /// Audit : 审核
-        /// </summary>
-        public enum AuditAction
-        {
-            Submit, Audit
-        }
+    //    /// <summary>
+    //    /// Auditing : 审核中
+    //    /// Successful : 终审通过
+    //    /// Fail : 终审不通过
+    //    /// Cancel : 取消当前操作
+    //    /// Error : 审核提交异常
+    //    /// CancelSubmit:撤单
+    //    /// </summary>
+    //    public enum AuditResult
+    //    {
+    //        Auditing, Successful, Fail, Cancel, Error, Saved, CancelSubmit = 9
+    //    }
+    //    /// <summary>
+    //    /// 审核动作
+    //    /// Submit : 提交
+    //    /// Audit : 审核
+    //    /// </summary>
+    //    public enum AuditAction
+    //    {
+    //        Submit, Audit
+    //    }
 
 
-        /// <summary>
-        /// 审核操作
-        /// </summary>
-        protected enum AuditOperation
-        {
-            /// <summary>
-            /// 新增
-            /// </summary>
-            Add,
-            /// <summary>
-            /// 修改
-            /// </summary>
-            Update,
-            #region beyond
-            Cancel = 5
+    //    /// <summary>
+    //    /// 审核操作
+    //    /// </summary>
+    //    protected enum AuditOperation
+    //    {
+    //        /// <summary>
+    //        /// 新增
+    //        /// </summary>
+    //        Add,
+    //        /// <summary>
+    //        /// 修改
+    //        /// </summary>
+    //        Update,
+    //        #region beyond
+    //        Cancel = 5
 
-            #endregion
-        }
-        ///// <summary>
-        ///// 审核动作
-        ///// </summary>
-        //public enum AuditAction
-        //{
-        //    /// <summary>
-        //    /// 审核不通过
-        //    /// </summary>
-        //    Fail = 0,
-        //    /// <summary>
-        //    /// 审核通过
-        //    /// </summary>
-        //    Pass = 1
+    //        #endregion
+    //    }
+    //    ///// <summary>
+    //    ///// 审核动作
+    //    ///// </summary>
+    //    //public enum AuditAction
+    //    //{
+    //    //    /// <summary>
+    //    //    /// 审核不通过
+    //    //    /// </summary>
+    //    //    Fail = 0,
+    //    //    /// <summary>
+    //    //    /// 审核通过
+    //    //    /// </summary>
+    //    //    Pass = 1
 
-        //}
+    //    //}
 
-    }
+    //}
 
 }

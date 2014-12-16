@@ -20,7 +20,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.DAL;
 
 namespace SMT.HRM.BLL
@@ -162,9 +162,9 @@ namespace SMT.HRM.BLL
                 T_HR_SCHEDULINGTEMPLATEDETAIL ent = new T_HR_SCHEDULINGTEMPLATEDETAIL();
                 Utility.CloneEntity<T_HR_SCHEDULINGTEMPLATEDETAIL>(entTemp, ent);
                 ent.T_HR_SCHEDULINGTEMPLATEMASTERReference.EntityKey =
-                    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_SCHEDULINGTEMPLATEMASTER", "TEMPLATEMASTERID", entTemp.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATEMASTERID);
+                    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_SCHEDULINGTEMPLATEMASTER", "TEMPLATEMASTERID", entTemp.T_HR_SCHEDULINGTEMPLATEMASTER.TEMPLATEMASTERID);
                 ent.T_HR_SHIFTDEFINEReference.EntityKey =
-                    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_SHIFTDEFINE", "SHIFTDEFINEID", entTemp.T_HR_SHIFTDEFINE.SHIFTDEFINEID);
+                    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_SHIFTDEFINE", "SHIFTDEFINEID", entTemp.T_HR_SHIFTDEFINE.SHIFTDEFINEID);
 
                 Utility.RefreshEntity(ent);
 

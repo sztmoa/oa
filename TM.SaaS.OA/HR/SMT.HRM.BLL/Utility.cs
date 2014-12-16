@@ -20,7 +20,7 @@ using EngineWS = SMT.SaaS.BLLCommonServices.EngineConfigWS;
 using System.Linq.Dynamic;
 using SMT.HRM.DAL;
 using SMT.Foundation.Log;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 
 namespace SMT.HRM.BLL
 {
@@ -33,7 +33,7 @@ namespace SMT.HRM.BLL
             {
                 string qualifiedEntitySetName = entityName + ConfigurationManager.AppSettings["EntityDllPath"];
                 List<string> list = new List<string>();
-                object a = (object)Activator.CreateInstance(Type.GetType("SMT_HRM_EFModel." + qualifiedEntitySetName));
+                object a = (object)Activator.CreateInstance(Type.GetType("TM_SaaS_OA_EFModel." + qualifiedEntitySetName));
                 Type type = a.GetType();
                 PropertyInfo[] infos = type.GetProperties();
                 foreach (PropertyInfo info in infos)

@@ -19,7 +19,7 @@ using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
 using SMT.HRM.CustomModel;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.DAL;
 using SMT.Foundation.Log;
 using System.Threading;

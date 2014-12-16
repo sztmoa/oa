@@ -54,15 +54,8 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SMT.SaaS.BLLCommonServices">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
-    </Reference>
     <Reference Include="SMT.SaaS.Common">
       <HintPath>..\..\Common\Reference\SMT.SaaS.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="SMT_HRM_EFModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT_HRM_EFModel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -92,6 +85,18 @@
     <Compile Include="DataSetData.cs" />
     <Compile Include="DataTableInfo.cs" />
     <Compile Include="EmployeeContactWays.cs" />
+    <Compile Include="Permission\EmployeeInfo .cs" />
+    <Compile Include="Permission\EntityPermission.cs" />
+    <Compile Include="Permission\FbMenuPermission.cs" />
+    <Compile Include="Permission\FlowUserInfo.cs" />
+    <Compile Include="Permission\NewMenuInfo.cs" />
+    <Compile Include="Permission\T_SYS_ROLE_V.cs" />
+    <Compile Include="Permission\V_CustomerPermission.cs" />
+    <Compile Include="Permission\V_EntityMenuCustomperm.cs" />
+    <Compile Include="Permission\V_RoleUserInfo.cs" />
+    <Compile Include="Permission\V_SupperFbAdmin.cs" />
+    <Compile Include="Permission\V_UserLoginRecord.cs" />
+    <Compile Include="Permission\V_UserLoginRecordHistory.cs" />
     <Compile Include="Reports\AbnormalAttendanceeEntity.cs" />
     <Compile Include="Reports\EmployeeMarriage.cs" />
     <Compile Include="Reports\PieEmployeece.cs" />
@@ -197,7 +202,16 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\TM.SaaS.BLLCommonServices\TM.SaaS.BLLCommonServices.csproj">
+      <Project>{17598db5-9d1d-45f9-9ff8-77bd7d9f1b44}</Project>
+      <Name>TM.SaaS.BLLCommonServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TM_SaaS_OA_EFModel\TM_SaaS_OA_EFModel.csproj">
+      <Project>{7571bce6-3b80-41c1-af97-9118e7f41845}</Project>
+      <Name>TM_SaaS_OA_EFModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
