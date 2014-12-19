@@ -13,11 +13,9 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="BeginDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="IsMobile" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LastDay" type="xs:int" />
       <xs:element minOccurs="0" name="MessageBody" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OrderBy" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
       <xs:element minOccurs="0" name="PageSize" type="xs:int" />
       <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />

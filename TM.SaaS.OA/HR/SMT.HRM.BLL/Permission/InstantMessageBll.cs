@@ -13,7 +13,6 @@ using System.Data.Objects;
 using SMT.SaaS.Permission.DAL.views;
 using System.Xml;
 using SMT.SaaS.SmtOlineEn;
-using SMT.SaaS.Permission.BLL.HrInstantMessageWS;
 
 namespace SMT.SaaS.Permission.BLL
 {
@@ -313,91 +312,91 @@ namespace SMT.SaaS.Permission.BLL
         #region 获取组织架构信息
         public string GetAllOrganization(int companyNum, int departNum, int employeeNum)
         {
-            StringBuilder StrReturn = new StringBuilder();
-            XmlWriterSettings settings = new XmlWriterSettings();
-            settings.Indent = true;
-            settings.OmitXmlDeclaration = true;
-            try
-            {
-                using (XmlWriter writer = XmlWriter.Create(StrReturn, settings))
-                {
-                    HrInstantMessageWS.InstantMessagingServiceClient InstantMessage = new InstantMessagingServiceClient();
-                    CompanyModel[] companys = InstantMessage.GetAllCompany();//获取所有公司
-                    DepartmentModel[] department = InstantMessage.GetAllDepartment();//获取所有部门
-                    EmployeeModel[] employes = InstantMessage.GetAllEmployee();//获取所有员工
-                    var sysUsers = from ent in dal.GetObjects<T_SYS_USER>()
-                                   select ent;
-                    if (sysUsers.Count() == 0)
-                        return "";
-                    writer.WriteStartElement("BizRegReq");
-                    if (companyNum == companys.Count() && departNum == department.Count() && employeeNum == employes.Count())
-                    {
-                        return "";
-                    }
-                    else
-                    {                        
-                        writer.WriteStartElement("CompanyList");
-                        for (int i = 0; i < companys.Count(); i++)
-                        {
-                            writer.WriteStartElement("Company");
-                            writer.WriteAttributeString("CompanyID", companys[i].CompanyID);
-                            writer.WriteAttributeString("CompanyName", companys[i].CompanyName);
-                            writer.WriteAttributeString("ParentID", companys[i].ParentID);
-                            writer.WriteEndElement();//完成Company节点
+            //StringBuilder StrReturn = new StringBuilder();
+            //XmlWriterSettings settings = new XmlWriterSettings();
+            //settings.Indent = true;
+            //settings.OmitXmlDeclaration = true;
+            //try
+            //{
+            //    using (XmlWriter writer = XmlWriter.Create(StrReturn, settings))
+            //    {
+            //        HrInstantMessageWS.InstantMessagingServiceClient InstantMessage = new InstantMessagingServiceClient();
+            //        CompanyModel[] companys = InstantMessage.GetAllCompany();//获取所有公司
+            //        DepartmentModel[] department = InstantMessage.GetAllDepartment();//获取所有部门
+            //        EmployeeModel[] employes = InstantMessage.GetAllEmployee();//获取所有员工
+            //        var sysUsers = from ent in dal.GetObjects<T_SYS_USER>()
+            //                       select ent;
+            //        if (sysUsers.Count() == 0)
+            //            return "";
+            //        writer.WriteStartElement("BizRegReq");
+            //        if (companyNum == companys.Count() && departNum == department.Count() && employeeNum == employes.Count())
+            //        {
+            //            return "";
+            //        }
+            //        else
+            //        {                        
+            //            writer.WriteStartElement("CompanyList");
+            //            for (int i = 0; i < companys.Count(); i++)
+            //            {
+            //                writer.WriteStartElement("Company");
+            //                writer.WriteAttributeString("CompanyID", companys[i].CompanyID);
+            //                writer.WriteAttributeString("CompanyName", companys[i].CompanyName);
+            //                writer.WriteAttributeString("ParentID", companys[i].ParentID);
+            //                writer.WriteEndElement();//完成Company节点
 
-                        }
-                        writer.WriteEndElement();//完成CompanyList节点
-                        writer.WriteStartElement("DepartmentList");
-                        for (int k = 0; k < department.Count(); k++)
-                        {
-                            writer.WriteStartElement("Department");
-                            writer.WriteAttributeString("DeptID", department[k].DeptID);
-                            writer.WriteAttributeString("DepartName", department[k].DepartName);
-                            writer.WriteAttributeString("CompanyID", department[k].CompanyID);
-                            writer.WriteAttributeString("ParentID", department[k].ParentID);
-                            writer.WriteEndElement();//完成Department节点
-                        }
+            //            }
+            //            writer.WriteEndElement();//完成CompanyList节点
+            //            writer.WriteStartElement("DepartmentList");
+            //            for (int k = 0; k < department.Count(); k++)
+            //            {
+            //                writer.WriteStartElement("Department");
+            //                writer.WriteAttributeString("DeptID", department[k].DeptID);
+            //                writer.WriteAttributeString("DepartName", department[k].DepartName);
+            //                writer.WriteAttributeString("CompanyID", department[k].CompanyID);
+            //                writer.WriteAttributeString("ParentID", department[k].ParentID);
+            //                writer.WriteEndElement();//完成Department节点
+            //            }
 
-                        writer.WriteEndElement();//完成DepartmentList 节点
-                        writer.WriteStartElement("EmployeeList");
-                        for (int n = 0; n < employes.Count(); n++)
-                        {
-                            string employeeId = employes[n].EmployeeId;
-                            var ents = sysUsers.Where(p => p.EMPLOYEEID == employeeId);
-                            if (ents.Count() > 0)
-                            {
-                                writer.WriteStartElement("Employee");
-                                writer.WriteAttributeString("EmployeeID", employes[n].EmployeeId);
-                                writer.WriteAttributeString("EmployeeName", employes[n].EmployeeName);
-                                writer.WriteAttributeString("LoginAccount", ents.FirstOrDefault().USERNAME);
-                                writer.WriteAttributeString("Moblie", employes[n].Mobile);
-                                writer.WriteAttributeString("DeptID", employes[n].DeptID);
-                                writer.WriteAttributeString("PostName", employes[n].PostName);
-                                writer.WriteEndElement();//完成Employee节点
-                            }
+            //            writer.WriteEndElement();//完成DepartmentList 节点
+            //            writer.WriteStartElement("EmployeeList");
+            //            for (int n = 0; n < employes.Count(); n++)
+            //            {
+            //                string employeeId = employes[n].EmployeeId;
+            //                var ents = sysUsers.Where(p => p.EMPLOYEEID == employeeId);
+            //                if (ents.Count() > 0)
+            //                {
+            //                    writer.WriteStartElement("Employee");
+            //                    writer.WriteAttributeString("EmployeeID", employes[n].EmployeeId);
+            //                    writer.WriteAttributeString("EmployeeName", employes[n].EmployeeName);
+            //                    writer.WriteAttributeString("LoginAccount", ents.FirstOrDefault().USERNAME);
+            //                    writer.WriteAttributeString("Moblie", employes[n].Mobile);
+            //                    writer.WriteAttributeString("DeptID", employes[n].DeptID);
+            //                    writer.WriteAttributeString("PostName", employes[n].PostName);
+            //                    writer.WriteEndElement();//完成Employee节点
+            //                }
                            
-                        }
-                        writer.WriteEndElement();//完成EmployeeList节点
+            //            }
+            //            writer.WriteEndElement();//完成EmployeeList节点
 
-                        writer.WriteEndElement();//完成BizRegReq节点
-                        writer.Flush();
-                    }
+            //            writer.WriteEndElement();//完成BizRegReq节点
+            //            writer.Flush();
+            //        }
                     
                     
-                }
+            //    }
 
 
-            }
-            catch (Exception ex)
-            {
-                using (XmlWriter catchError = XmlWriter.Create(StrReturn, settings))
-                {
-                    ErrorMessage(catchError, "服务器错误");
-                    Tracer.Debug("即时通讯-GetAllOrganization：" + ex.ToString() + System.DateTime.Now);
-                    catchError.Flush();
-                }
-            }
-            
+            //}
+            //catch (Exception ex)
+            //{
+            //    using (XmlWriter catchError = XmlWriter.Create(StrReturn, settings))
+            //    {
+            //        ErrorMessage(catchError, "服务器错误");
+            //        Tracer.Debug("即时通讯-GetAllOrganization：" + ex.ToString() + System.DateTime.Now);
+            //        catchError.Flush();
+            //    }
+            //}
+            string StrReturn=string.Empty;
             return StrReturn.ToString().Replace("\r","").Replace("\n","");
         }
         #endregion

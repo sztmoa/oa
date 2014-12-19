@@ -27,7 +27,7 @@ namespace SMT.HRM.BLL
 {
     public class BaseBll<TEntity> : IDisposable where TEntity : class
     {
-        public SubmitData AuditSubmitData { set; get; }
+        //public SubmitData AuditSubmitData { set; get; }
         public CommDal<TEntity> dal;
         public static string qualifiedEntitySetName = ConfigurationManager.AppSettings["DBContextName"] + ".";
         protected static PermissionWS.PermissionServiceClient PermClient;

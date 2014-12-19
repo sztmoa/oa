@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using SMT_System_EFModel;
+using TM_SaaS_OA_EFModel;
 
 namespace SMT.SaaS.Permission.Services
 {

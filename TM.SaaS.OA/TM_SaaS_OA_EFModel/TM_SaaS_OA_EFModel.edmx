@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="TM_SaaS_OA_EFModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+      <Schema Namespace="TM_SaaS_OA_EFModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
         <EntityType Name="FLOW_CONSULTATION_T">
           <Key>
             <PropertyRef Name="CONSULTATIONID" />
@@ -4466,7 +4466,7 @@
             <PropertyRef Name="PERFORMANCEDETAILID" />
           </Key>
           <Property Name="PERFORMANCEDETAILID" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="KPIRCORDID" Type="varchar" MaxLength="50" />
+          <Property Name="KPIRECORDID" Type="varchar" MaxLength="50" />
           <Property Name="PERFORMANCEID" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="T_HR_PERFORMANCERECORD">
@@ -5063,6 +5063,8 @@
             <PropertyRef Name="SOLUTIONSTANDARDID" />
           </Key>
           <Property Name="SOLUTIONSTANDARDID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="STANDARDID" Type="varchar" MaxLength="50" />
+          <Property Name="T_H_SALARYSOLUTIONID" Type="varchar" MaxLength="50" />
           <Property Name="SALARYSTANDARDID" Type="varchar" MaxLength="50" />
           <Property Name="SALARYSOLUTIONID" Type="varchar" MaxLength="50" />
           <Property Name="CREATEUSERID" Type="varchar" MaxLength="50" />
@@ -10091,6 +10093,66 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_REFERENCE_171">
+          <End Role="T_HR_SALARYSOLUTION" Type="Self.T_HR_SALARYSOLUTION" Multiplicity="0..1" />
+          <End Role="T_HR_SALARYSOLUTIONSTANDARD" Type="Self.T_HR_SALARYSOLUTIONSTANDARD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_HR_SALARYSOLUTION">
+              <PropertyRef Name="SALARYSOLUTIONID" />
+            </Principal>
+            <Dependent Role="T_HR_SALARYSOLUTIONSTANDARD">
+              <PropertyRef Name="T_H_SALARYSOLUTIONID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REFERENCE_172">
+          <End Role="T_HR_SALARYSTANDARD" Type="Self.T_HR_SALARYSTANDARD" Multiplicity="0..1" />
+          <End Role="T_HR_SALARYSOLUTIONSTANDARD" Type="Self.T_HR_SALARYSOLUTIONSTANDARD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_HR_SALARYSTANDARD">
+              <PropertyRef Name="SALARYSTANDARDID" />
+            </Principal>
+            <Dependent Role="T_HR_SALARYSOLUTIONSTANDARD">
+              <PropertyRef Name="STANDARDID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REFERENCE_173">
+          <End Role="T_HR_KPIPOINT" Type="Self.T_HR_KPIPOINT" Multiplicity="0..1" />
+          <End Role="T_HR_KPIRECORD" Type="Self.T_HR_KPIRECORD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_HR_KPIPOINT">
+              <PropertyRef Name="KPIPOINTID" />
+            </Principal>
+            <Dependent Role="T_HR_KPIRECORD">
+              <PropertyRef Name="KPIPOINTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REFERENCE_174">
+          <End Role="T_HR_KPIRECORD" Type="Self.T_HR_KPIRECORD" Multiplicity="0..1" />
+          <End Role="T_HR_PERFORMANCEDETAIL" Type="Self.T_HR_PERFORMANCEDETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_HR_KPIRECORD">
+              <PropertyRef Name="KPIRECORDID" />
+            </Principal>
+            <Dependent Role="T_HR_PERFORMANCEDETAIL">
+              <PropertyRef Name="KPIRECORDID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REFERENCE_175">
+          <End Role="T_HR_KPIRECORD" Type="Self.T_HR_KPIRECORD" Multiplicity="0..1" />
+          <End Role="T_HR_KPIRECORDCOMPLAIN" Type="Self.T_HR_KPIRECORDCOMPLAIN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_HR_KPIRECORD">
+              <PropertyRef Name="KPIRECORDID" />
+            </Principal>
+            <Dependent Role="T_HR_KPIRECORDCOMPLAIN">
+              <PropertyRef Name="KPIRECORDID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_REFERENCE_2">
           <End Role="T_FB_TRAVELEXPAPPLYMASTER" Type="Self.T_FB_TRAVELEXPAPPLYMASTER" Multiplicity="0..1" />
           <End Role="T_FB_TRAVELEXPAPPLYDETAIL" Type="Self.T_FB_TRAVELEXPAPPLYDETAIL" Multiplicity="*" />
@@ -11327,6 +11389,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_T_HR_EMP_REFERENCE_T_HR_PC">
+          <End Role="T_HR_EMPLOYEE" Type="Self.T_HR_EMPLOYEE" Multiplicity="1" />
+          <End Role="T_HR_EMPLOYEECHANGEHISTORY" Type="Self.T_HR_EMPLOYEECHANGEHISTORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_HR_EMPLOYEE">
+              <PropertyRef Name="EMPLOYEEID" />
+            </Principal>
+            <Dependent Role="T_HR_EMPLOYEECHANGEHISTORY">
+              <PropertyRef Name="EMPLOYEEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_T_HR_EMPBASE_T_HR_RES">
           <End Role="T_HR_RESUME" Type="Self.T_HR_RESUME" Multiplicity="0..1" />
           <End Role="T_HR_EMPLOYEE" Type="Self.T_HR_EMPLOYEE" Multiplicity="*" />
@@ -11495,6 +11569,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <!--生成过程中发现错误:
+警告 6037: 存储模型中已省略了外键约束“FK_T_HR_KPI_KPIPOINTDEFINE”。表“TM_SaaS_OA_EFModel.Store.T_HR_KPIRECORD”的列“KPIPOINTID”是参与多个关系的外键。由于数据可能不一致，因此将不验证一对一的实体模型。
         <Association Name="FK_T_HR_KPI_KPIPOINTDEFINE">
           <End Role="T_HR_KPIPOINTDEFINE" Type="Self.T_HR_KPIPOINTDEFINE" Multiplicity="0..1" />
           <End Role="T_HR_KPIRECORD" Type="Self.T_HR_KPIRECORD" Multiplicity="*" />
@@ -11506,7 +11582,7 @@
               <PropertyRef Name="KPIPOINTID" />
             </Dependent>
           </ReferentialConstraint>
-        </Association>
+        </Association>-->
         <!--生成过程中发现错误:
 警告 6037: 存储模型中已省略了外键约束“FK_T_HR_KPI_REFERENCE_T_HR_KPI”。表“TM_SaaS_OA_EFModel.Store.T_HR_KPIRECORD”的列“KPIPOINTID”是参与多个关系的外键。由于数据可能不一致，因此将不验证一对一的实体模型。
         <Association Name="FK_T_HR_KPI_REFERENCE_T_HR_KPI">
@@ -13329,6 +13405,26 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <End Role="T_SYS_FBADMIN" EntitySet="T_SYS_FBADMIN" />
             <End Role="T_SYS_FBADMINROLE" EntitySet="T_SYS_FBADMINROLE" />
           </AssociationSet>
+          <AssociationSet Name="FK_REFERENCE_171" Association="Self.FK_REFERENCE_171">
+            <End Role="T_HR_SALARYSOLUTION" EntitySet="T_HR_SALARYSOLUTION" />
+            <End Role="T_HR_SALARYSOLUTIONSTANDARD" EntitySet="T_HR_SALARYSOLUTIONSTANDARD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REFERENCE_172" Association="Self.FK_REFERENCE_172">
+            <End Role="T_HR_SALARYSTANDARD" EntitySet="T_HR_SALARYSTANDARD" />
+            <End Role="T_HR_SALARYSOLUTIONSTANDARD" EntitySet="T_HR_SALARYSOLUTIONSTANDARD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REFERENCE_173" Association="Self.FK_REFERENCE_173">
+            <End Role="T_HR_KPIPOINT" EntitySet="T_HR_KPIPOINT" />
+            <End Role="T_HR_KPIRECORD" EntitySet="T_HR_KPIRECORD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REFERENCE_174" Association="Self.FK_REFERENCE_174">
+            <End Role="T_HR_KPIRECORD" EntitySet="T_HR_KPIRECORD" />
+            <End Role="T_HR_PERFORMANCEDETAIL" EntitySet="T_HR_PERFORMANCEDETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REFERENCE_175" Association="Self.FK_REFERENCE_175">
+            <End Role="T_HR_KPIRECORD" EntitySet="T_HR_KPIRECORD" />
+            <End Role="T_HR_KPIRECORDCOMPLAIN" EntitySet="T_HR_KPIRECORDCOMPLAIN" />
+          </AssociationSet>
           <AssociationSet Name="FK_REFERENCE_2" Association="Self.FK_REFERENCE_2">
             <End Role="T_FB_TRAVELEXPAPPLYMASTER" EntitySet="T_FB_TRAVELEXPAPPLYMASTER" />
             <End Role="T_FB_TRAVELEXPAPPLYDETAIL" EntitySet="T_FB_TRAVELEXPAPPLYDETAIL" />
@@ -13741,6 +13837,10 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <End Role="T_HR_EMPLOYEEEVECTIONRECORD" EntitySet="T_HR_EMPLOYEEEVECTIONRECORD" />
             <End Role="T_HR_EMPLOYEEEVECTIONREPORT" EntitySet="T_HR_EMPLOYEEEVECTIONREPORT" />
           </AssociationSet>
+          <AssociationSet Name="FK_T_HR_EMP_REFERENCE_T_HR_PC" Association="Self.FK_T_HR_EMP_REFERENCE_T_HR_PC">
+            <End Role="T_HR_EMPLOYEE" EntitySet="T_HR_EMPLOYEE" />
+            <End Role="T_HR_EMPLOYEECHANGEHISTORY" EntitySet="T_HR_EMPLOYEECHANGEHISTORY" />
+          </AssociationSet>
           <AssociationSet Name="FK_T_HR_EMPBASE_T_HR_RES" Association="Self.FK_T_HR_EMPBASE_T_HR_RES">
             <End Role="T_HR_RESUME" EntitySet="T_HR_RESUME" />
             <End Role="T_HR_EMPLOYEE" EntitySet="T_HR_EMPLOYEE" />
@@ -13796,10 +13896,6 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <AssociationSet Name="FK_T_HR_IMPORTSETMASTER_DETAIL" Association="Self.FK_T_HR_IMPORTSETMASTER_DETAIL">
             <End Role="T_HR_IMPORTSETMASTER" EntitySet="T_HR_IMPORTSETMASTER" />
             <End Role="T_HR_IMPORTSETDETAIL" EntitySet="T_HR_IMPORTSETDETAIL" />
-          </AssociationSet>
-          <AssociationSet Name="FK_T_HR_KPI_KPIPOINTDEFINE" Association="Self.FK_T_HR_KPI_KPIPOINTDEFINE">
-            <End Role="T_HR_KPIPOINTDEFINE" EntitySet="T_HR_KPIPOINTDEFINE" />
-            <End Role="T_HR_KPIRECORD" EntitySet="T_HR_KPIRECORD" />
           </AssociationSet>
           <AssociationSet Name="FK_T_HR_KPI_REFERENCE_T_HR_SCO" Association="Self.FK_T_HR_KPI_REFERENCE_T_HR_SCO">
             <End Role="T_HR_SCORETYPE" EntitySet="T_HR_SCORETYPE" />
@@ -14098,7 +14194,8 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <End Role="T_OA_HIRERECORD" EntitySet="T_OA_HIRERECORD" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TM_SaaS_OA_EFModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
@@ -16937,6 +17034,7 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <Property Name="PLATFORM" Type="String" />
           <Property Name="JOINDATE" Type="DateTime" />
           <NavigationProperty Name="T_HR_FAMILYMEMBER" Relationship="Self.FK_REFERENCE_110" FromRole="T_HR_EMPLOYEE" ToRole="T_HR_FAMILYMEMBER" />
+          <NavigationProperty Name="T_HR_EMPLOYEECHANGEHISTORY" Relationship="Self.FK_T_HR_EMP_REFERENCE_T_HR_PC" FromRole="T_HR_EMPLOYEE" ToRole="T_HR_EMPLOYEECHANGEHISTORY" />
           <NavigationProperty Name="T_HR_RESUME" Relationship="Self.FK_T_HR_EMPBASE_T_HR_RES" FromRole="T_HR_EMPLOYEE" ToRole="T_HR_RESUME" />
           <NavigationProperty Name="T_HR_LEFTOFFICE" Relationship="Self.FK_T_HR_EMPCHANGE_T_HR_EMP" FromRole="T_HR_EMPLOYEE" ToRole="T_HR_LEFTOFFICE" />
           <NavigationProperty Name="T_HR_EMPLOYEEPOSTCHANGE" Relationship="Self.FK_T_HR_EMPCHANGE_T_HR_EMPBASE" FromRole="T_HR_EMPLOYEE" ToRole="T_HR_EMPLOYEEPOSTCHANGE" />
@@ -17062,7 +17160,6 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <PropertyRef Name="RECORDID" />
           </Key>
           <Property Name="RECORDID" Type="String" Nullable="false" />
-          <Property Name="EMPLOYEEID" Type="String" Nullable="false" />
           <Property Name="EMPOLYEENAME" Type="String" />
           <Property Name="FINGERPRINTID" Type="String" />
           <Property Name="FORMTYPE" Type="String" />
@@ -17094,6 +17191,7 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <Property Name="OWNERPOSTID" Type="String" />
           <Property Name="OWNERDEPARTMENTID" Type="String" />
           <Property Name="OWNERCOMPANYID" Type="String" />
+          <NavigationProperty Name="T_HR_EMPLOYEE" Relationship="Self.FK_T_HR_EMP_REFERENCE_T_HR_PC" FromRole="T_HR_EMPLOYEECHANGEHISTORY" ToRole="T_HR_EMPLOYEE" />
         </EntityType>
         <EntityType Name="T_HR_EMPLOYEECHECK">
           <Key>
@@ -17880,6 +17978,7 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <Property Name="UPDATEDATE" Type="DateTime" />
           <Property Name="SUMTYPE" Type="String" />
           <NavigationProperty Name="T_HR_SCORETYPE" Relationship="Self.FK_KPIPOINT_REFERENCE_T_HR_SCO" FromRole="T_HR_KPIPOINT" ToRole="T_HR_SCORETYPE" />
+          <NavigationProperty Name="T_HR_KPIRECORD" Relationship="Self.FK_REFERENCE_173" FromRole="T_HR_KPIPOINT" ToRole="T_HR_KPIRECORD" />
         </EntityType>
         <EntityType Name="T_HR_KPIPOINTDEFINE">
           <Key>
@@ -17911,7 +18010,6 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <NavigationProperty Name="T_HR_CHECKCATEGORYSET" Relationship="Self.KPIPOINTDEFINE_CHECKCATEGORY" FromRole="T_HR_KPIPOINTDEFINE" ToRole="T_HR_CHECKCATEGORYSET" />
           <NavigationProperty Name="T_HR_CHECKMODELDEFINE" Relationship="Self.FK_KPIPOINTDEFINE_T_HR_CHE" FromRole="T_HR_KPIPOINTDEFINE" ToRole="T_HR_CHECKMODELDEFINE" />
           <NavigationProperty Name="T_HR_SPOTCHECKGROUP" Relationship="Self.FK_REFERENCE_96" FromRole="T_HR_KPIPOINTDEFINE" ToRole="T_HR_SPOTCHECKGROUP" />
-          <NavigationProperty Name="T_HR_KPIRECORD" Relationship="Self.FK_T_HR_KPI_KPIPOINTDEFINE" FromRole="T_HR_KPIPOINTDEFINE" ToRole="T_HR_KPIRECORD" />
         </EntityType>
         <EntityType Name="T_HR_KPIRECORD">
           <Key>
@@ -17962,9 +18060,11 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <Property Name="KPICATEGORY" Type="String" />
           <Property Name="KPIDESCRIPTION" Type="String" />
           <Property Name="FLOWDESCRIPTION" Type="String" />
-          <NavigationProperty Name="T_HR_KPIPOINTDEFINE" Relationship="Self.FK_T_HR_KPI_KPIPOINTDEFINE" FromRole="T_HR_KPIRECORD" ToRole="T_HR_KPIPOINTDEFINE" />
+          <NavigationProperty Name="T_HR_KPIPOINT" Relationship="Self.FK_REFERENCE_173" FromRole="T_HR_KPIRECORD" ToRole="T_HR_KPIPOINT" />
           <NavigationProperty Name="T_HR_SPOTCHECKER" Relationship="Self.FK_KPIRECORD_SPOTCHECKER" FromRole="T_HR_KPIRECORD" ToRole="T_HR_SPOTCHECKER" />
           <NavigationProperty Name="T_HR_KPIRECORDAPPEAL" Relationship="Self.FK_KPIRECORDAPPEAL_T_HR_KPI" FromRole="T_HR_KPIRECORD" ToRole="T_HR_KPIRECORDAPPEAL" />
+          <NavigationProperty Name="T_HR_PERFORMANCEDETAIL" Relationship="Self.FK_REFERENCE_174" FromRole="T_HR_KPIRECORD" ToRole="T_HR_PERFORMANCEDETAIL" />
+          <NavigationProperty Name="T_HR_KPIRECORDCOMPLAIN" Relationship="Self.FK_REFERENCE_175" FromRole="T_HR_KPIRECORD" ToRole="T_HR_KPIRECORDCOMPLAIN" />
         </EntityType>
         <EntityType Name="T_HR_KPIRECORDAPPEAL">
           <Key>
@@ -17993,7 +18093,6 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <PropertyRef Name="COMPLAINID" />
           </Key>
           <Property Name="COMPLAINID" Type="String" Nullable="false" />
-          <Property Name="KPIRECORDID" Type="String" />
           <Property Name="COMPLAINANTID" Type="String" />
           <Property Name="REVIEWERID" Type="String" />
           <Property Name="COMPLAINREMARK" Type="String" />
@@ -18014,6 +18113,7 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <Property Name="CREATEDATE" Type="DateTime" />
           <Property Name="UPDATEUSERID" Type="String" />
           <Property Name="UPDATEDATE" Type="DateTime" />
+          <NavigationProperty Name="T_HR_KPIRECORD" Relationship="Self.FK_REFERENCE_175" FromRole="T_HR_KPIRECORDCOMPLAIN" ToRole="T_HR_KPIRECORD" />
         </EntityType>
         <EntityType Name="T_HR_KPIRECORDPERSONSUMMARY">
           <Key>
@@ -18493,7 +18593,7 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <PropertyRef Name="PERFORMANCEDETAILID" />
           </Key>
           <Property Name="PERFORMANCEDETAILID" Type="String" Nullable="false" />
-          <Property Name="KPIRCORDID" Type="String" />
+          <NavigationProperty Name="T_HR_KPIRECORD" Relationship="Self.FK_REFERENCE_174" FromRole="T_HR_PERFORMANCEDETAIL" ToRole="T_HR_KPIRECORD" />
           <NavigationProperty Name="T_HR_PERFORMANCERECORD" Relationship="Self.FK_T_HR_PER_REFERENCE_T_HR_PER" FromRole="T_HR_PERFORMANCEDETAIL" ToRole="T_HR_PERFORMANCERECORD" />
         </EntityType>
         <EntityType Name="T_HR_PERFORMANCERECORD">
@@ -19072,6 +19172,7 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <Property Name="MINIMUMSALARY" Type="String" />
           <NavigationProperty Name="T_HR_AREADIFFERENCE" Relationship="Self.FK_SALARYSOLUTION_T_HR_ARE" FromRole="T_HR_SALARYSOLUTION" ToRole="T_HR_AREADIFFERENCE" />
           <NavigationProperty Name="T_HR_SALARYSOLUTIONASSIGN" Relationship="Self.FK_REFERENCE_127" FromRole="T_HR_SALARYSOLUTION" ToRole="T_HR_SALARYSOLUTIONASSIGN" />
+          <NavigationProperty Name="T_HR_SALARYSOLUTIONSTANDARD" Relationship="Self.FK_REFERENCE_171" FromRole="T_HR_SALARYSOLUTION" ToRole="T_HR_SALARYSOLUTIONSTANDARD" />
           <NavigationProperty Name="T_HR_SALARYSYSTEM" Relationship="Self.FK_SALARYSOLUTION_SALARYSYSTEM" FromRole="T_HR_SALARYSOLUTION" ToRole="T_HR_SALARYSYSTEM" />
           <NavigationProperty Name="T_HR_SALARYSOLUTIONITEM" Relationship="Self.FK_SALARYSOLUTIONITEM_SOLUTION" FromRole="T_HR_SALARYSOLUTION" ToRole="T_HR_SALARYSOLUTIONITEM" />
           <NavigationProperty Name="T_HR_SALARYTAXES" Relationship="Self.FK_SALARYTAXES_SALARYSOLUTION" FromRole="T_HR_SALARYSOLUTION" ToRole="T_HR_SALARYTAXES" />
@@ -19121,6 +19222,8 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <Property Name="CREATEDATE" Type="DateTime" />
           <Property Name="UPDATEUSERID" Type="String" />
           <Property Name="UPDATEDATE" Type="DateTime" />
+          <NavigationProperty Name="T_HR_SALARYSOLUTION" Relationship="Self.FK_REFERENCE_171" FromRole="T_HR_SALARYSOLUTIONSTANDARD" ToRole="T_HR_SALARYSOLUTION" />
+          <NavigationProperty Name="T_HR_SALARYSTANDARD" Relationship="Self.FK_REFERENCE_172" FromRole="T_HR_SALARYSOLUTIONSTANDARD" ToRole="T_HR_SALARYSTANDARD" />
         </EntityType>
         <EntityType Name="T_HR_SALARYSTANDARD">
           <Key>
@@ -19160,6 +19263,7 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <NavigationProperty Name="T_HR_CUSTOMGUERDON" Relationship="Self.FK_T_HR_CUSTOMGUERDON_T_HR_SAL" FromRole="T_HR_SALARYSTANDARD" ToRole="T_HR_CUSTOMGUERDON" />
           <NavigationProperty Name="T_HR_SALARYARCHIVE" Relationship="Self.FK_SALARYARCHIVE_T_HR_SAL" FromRole="T_HR_SALARYSTANDARD" ToRole="T_HR_SALARYARCHIVE" />
           <NavigationProperty Name="T_HR_SALARYLEVEL" Relationship="Self.FK_SALARYSTANDARD_SALARYLEVEL" FromRole="T_HR_SALARYSTANDARD" ToRole="T_HR_SALARYLEVEL" />
+          <NavigationProperty Name="T_HR_SALARYSOLUTIONSTANDARD" Relationship="Self.FK_REFERENCE_172" FromRole="T_HR_SALARYSTANDARD" ToRole="T_HR_SALARYSOLUTIONSTANDARD" />
           <NavigationProperty Name="T_HR_SALARYSTANDARDITEM" Relationship="Self.FK_T_HR_SAL_SALARYSTANDARDITEM" FromRole="T_HR_SALARYSTANDARD" ToRole="T_HR_SALARYSTANDARDITEM" />
           <NavigationProperty Name="T_HR_STANDARDPERFORMANCEREWARD" Relationship="Self.FK_T_HR_STAREWARD_T_HR_SAL" FromRole="T_HR_SALARYSTANDARD" ToRole="T_HR_STANDARDPERFORMANCEREWARD" />
         </EntityType>
@@ -21906,6 +22010,92 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <Property Name="UPDATEUSERNAME" Type="String" />
           <Property Name="UPDATEDATE" Type="DateTime" />
         </EntityType>
+        <EntityType Name="T_PF_ATTENTION">
+          <Key>
+            <PropertyRef Name="ATTENTIONID" />
+          </Key>
+          <Property Name="ATTENTIONID" Type="String" Nullable="false" />
+          <Property Name="ORDERTYPE" Type="String" />
+          <Property Name="ORDERTYPENAME" Type="String" />
+          <Property Name="ORDERID" Type="String" />
+          <Property Name="ORDERTITLE" Type="String" />
+          <Property Name="ORDEROWNERID" Type="String" />
+          <Property Name="ORDEROWNERNAME" Type="String" />
+          <Property Name="ORDERURL" Type="String" />
+          <Property Name="ORDERSUBMITDATE" Type="DateTime" />
+          <Property Name="OWNERID" Type="String" />
+          <Property Name="OWNERNAME" Type="String" />
+          <Property Name="OWNERCOMPANYID" Type="String" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" />
+          <Property Name="OWNERPOSTID" Type="String" />
+          <Property Name="CREATEUSERID" Type="String" />
+          <Property Name="CREATEUSERNAME" Type="String" />
+          <Property Name="CREATECOMPANYID" Type="String" />
+          <Property Name="CREATEDEPARTMENTID" Type="String" />
+          <Property Name="CREATEPOSTID" Type="String" />
+          <Property Name="CREATEDATE" Type="DateTime" />
+          <Property Name="UPDATEUSERID" Type="String" />
+          <Property Name="UPDATEUSERNAME" Type="String" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="T_PF_DISTRIBUTEUSER">
+          <Key>
+            <PropertyRef Name="DISTRIBUTEUSERID" />
+          </Key>
+          <Property Name="DISTRIBUTEUSERID" Type="String" Nullable="false" />
+          <Property Name="MODELNAME" Type="String" Nullable="false" />
+          <Property Name="FORMID" Type="String" Nullable="false" />
+          <Property Name="VIEWTYPE" Type="String" Nullable="false" />
+          <Property Name="VIEWER" Type="String" Nullable="false" />
+          <Property Name="OWNERID" Type="String" Nullable="false" />
+          <Property Name="OWNERNAME" Type="String" Nullable="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
+          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
+          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="UPDATEUSERID" Type="String" />
+          <Property Name="UPDATEUSERNAME" Type="String" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="T_PF_FEEDBACK">
+          <Key>
+            <PropertyRef Name="FEEDID" />
+          </Key>
+          <Property Name="FEEDID" Type="String" Nullable="false" />
+          <Property Name="ORDERTYPE" Type="String" />
+          <Property Name="ORDERTYPENAME" Type="String" />
+          <Property Name="ORDERID" Type="String" />
+          <Property Name="ORDERTITLE" Type="String" />
+          <Property Name="ORDEROWNERID" Type="String" />
+          <Property Name="ORDEROWNERNAME" Type="String" />
+          <Property Name="ORDERURL" Type="String" />
+          <Property Name="ORDERSUBMITDATE" Type="DateTime" />
+          <Property Name="OWNERID" Type="String" />
+          <Property Name="OWNERNAME" Type="String" />
+          <Property Name="OWNERCOMPANYID" Type="String" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" />
+          <Property Name="OWNERPOSTID" Type="String" />
+          <Property Name="CREATEUSERID" Type="String" />
+          <Property Name="CREATEUSERNAME" Type="String" />
+          <Property Name="CREATECOMPANYID" Type="String" />
+          <Property Name="CREATEDEPARTMENTID" Type="String" />
+          <Property Name="CREATEPOSTID" Type="String" />
+          <Property Name="CREATEDATE" Type="DateTime" />
+          <Property Name="UPDATEUSERID" Type="String" />
+          <Property Name="UPDATEUSERNAME" Type="String" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+          <Property Name="FEEDBACKCONTENT" Type="String" />
+          <Property Name="CUSTOMCONTENT" Type="String" />
+          <Property Name="CUSTOMDATE" Type="DateTime" />
+          <Property Name="CUSTOMID" Type="String" />
+          <Property Name="CUSTOMNAME" Type="String" />
+          <Property Name="FEEDTYPE" Type="String" />
+        </EntityType>
         <EntityType Name="T_PF_MODULE_RESOURCE">
           <Key>
             <PropertyRef Name="MODULEINFOID" />
@@ -22007,6 +22197,160 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <Property Name="UPDATEUSERNAME" Type="String" />
           <Property Name="UPDATEDATE" Type="DateTime" />
         </EntityType>
+        <EntityType Name="T_PF_NEWS">
+          <Key>
+            <PropertyRef Name="NEWSID" />
+          </Key>
+          <Property Name="NEWSID" Type="String" Nullable="false" />
+          <Property Name="NEWSTYPEID" Type="String" Nullable="false" />
+          <Property Name="NEWSTITEL" Type="String" Nullable="false" />
+          <Property Name="NEWSCONTENT" Type="Binary" Nullable="false" />
+          <Property Name="READCOUNT" Type="String" />
+          <Property Name="COMMENTCOUNT" Type="String" />
+          <Property Name="NEWSSTATE" Type="String" Nullable="false" />
+          <Property Name="OWNERID" Type="String" Nullable="false" />
+          <Property Name="OWNERNAME" Type="String" Nullable="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
+          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
+          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="UPDATEUSERID" Type="String" />
+          <Property Name="UPDATEUSERNAME" Type="String" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+          <Property Name="ISIMAGE" Type="String" />
+          <Property Name="ISPOPUP" Type="String" />
+          <Property Name="ENDDATE" Type="DateTime" />
+          <Property Name="PUTDEPTNAME" Type="String" />
+          <Property Name="PUTDEPTID" Type="String" />
+          <Property Name="ISPARTY" Type="String" />
+        </EntityType>
+        <EntityType Name="T_PF_NEWSCOMMENT">
+          <Key>
+            <PropertyRef Name="COMMENTID" />
+          </Key>
+          <Property Name="COMMENTID" Type="String" Nullable="false" />
+          <Property Name="NEWSID" Type="String" />
+          <Property Name="COMMENTCONTENT" Type="String" />
+          <Property Name="OWNERID" Type="String" Nullable="false" />
+          <Property Name="OWNERNAME" Type="String" Nullable="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
+          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
+          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="UPDATEUSERID" Type="String" />
+          <Property Name="UPDATEUSERNAME" Type="String" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="T_PF_NEWSTYPE">
+          <Key>
+            <PropertyRef Name="NEWSTYPEID" />
+          </Key>
+          <Property Name="NEWSTYPEID" Type="String" Nullable="false" />
+          <Property Name="NEWSTYPENAME" Type="String" />
+          <Property Name="OWNERID" Type="String" Nullable="false" />
+          <Property Name="OWNERNAME" Type="String" Nullable="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
+          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
+          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="UPDATEUSERID" Type="String" />
+          <Property Name="UPDATEUSERNAME" Type="String" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="T_PF_PERSONALRECORD">
+          <Key>
+            <PropertyRef Name="PERSONALRECORDID" />
+          </Key>
+          <Property Name="PERSONALRECORDID" Type="String" Nullable="false" />
+          <Property Name="SYSTYPE" Type="String" />
+          <Property Name="MODELCODE" Type="String" />
+          <Property Name="MODELID" Type="String" />
+          <Property Name="CHECKSTATE" Type="String" />
+          <Property Name="OWNERID" Type="String" />
+          <Property Name="OWNERPOSTID" Type="String" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" />
+          <Property Name="OWNERCOMPANYID" Type="String" />
+          <Property Name="CREATEDATE" Type="DateTime" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+          <Property Name="CONFIGINFO" Type="String" />
+          <Property Name="MODELDESCRIPTION" Type="String" />
+          <Property Name="ISFORWARD" Type="String" />
+          <Property Name="ISVIEW" Type="String" />
+        </EntityType>
+        <EntityType Name="T_PF_PLATFORMCONFIG">
+          <Key>
+            <PropertyRef Name="CONFIGID" />
+          </Key>
+          <Property Name="CONFIGID" Type="String" Nullable="false" />
+          <Property Name="PARENTID" Type="String" />
+          <Property Name="PIOCPATH" Type="String" />
+          <Property Name="ISRESIZABLE" Type="String" Nullable="false" />
+          <Property Name="TITEL" Type="String" Nullable="false" />
+          <Property Name="FULLNAME" Type="String" Nullable="false" />
+          <Property Name="ASSEMPLYNAME" Type="String" Nullable="false" />
+          <Property Name="PROGRAMTYPE" Type="String" />
+          <Property Name="ISSYSSHORTCUT" Type="String" />
+          <Property Name="ISSYSNEED" Type="String" />
+          <Property Name="INITPARAMS" Type="String" />
+          <Property Name="ISWEBPART" Type="String" />
+          <Property Name="USERSTATE" Type="String" Nullable="false" />
+          <Property Name="SYSTEMCODE" Type="String" Nullable="false" />
+          <Property Name="OWNERID" Type="String" Nullable="false" />
+          <Property Name="OWNERNAME" Type="String" Nullable="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
+          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
+          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="UPDATEUSERID" Type="String" />
+          <Property Name="UPDATEUSERNAME" Type="String" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+          <Property Name="ISDEFAULT" Type="String" />
+          <NavigationProperty Name="T_PF_USERCONFIGRELEVANCE" Relationship="Self.FK_T_PF_USERCONFIGRELEVANCE" FromRole="T_PF_PLATFORMCONFIG" ToRole="T_PF_USERCONFIGRELEVANCE" />
+        </EntityType>
+        <EntityType Name="T_PF_PROJECTCONFIG">
+          <Key>
+            <PropertyRef Name="PROJECTID" />
+          </Key>
+          <Property Name="PROJECTID" Type="String" Nullable="false" />
+          <Property Name="SYSTEMCODE" Type="String" Nullable="false" />
+          <Property Name="PROJECTNAME" Type="String" Nullable="false" />
+          <Property Name="VERSIONFILENAME" Type="String" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" />
+          <Property Name="OWNERID" Type="String" Nullable="false" />
+          <Property Name="OWNERNAME" Type="String" Nullable="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
+          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
+          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="UPDATEUSERID" Type="String" />
+          <Property Name="UPDATEUSERNAME" Type="String" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+        </EntityType>
         <EntityType Name="T_PF_PUBLICPART">
           <Key>
             <PropertyRef Name="PARTID" />
@@ -22034,6 +22378,15 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <Property Name="UPDATEUSERID" Type="String" />
           <Property Name="UPDATEUSERNAME" Type="String" />
           <Property Name="UPDATEDATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="T_PF_READRECORD">
+          <Key>
+            <PropertyRef Name="READRECORDID" />
+          </Key>
+          <Property Name="READRECORDID" Type="String" Nullable="false" />
+          <Property Name="EMPLOYEEID" Type="String" />
+          <Property Name="ORDERID" Type="String" />
+          <Property Name="ORDERTYPE" Type="Decimal" />
         </EntityType>
         <EntityType Name="T_PF_RESOURCE">
           <Key>
@@ -22234,6 +22587,53 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <Property Name="UPDATEUSERID" Type="String" />
           <Property Name="UPDATEUSERNAME" Type="String" />
           <Property Name="UPDATEDATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="T_PF_USERCONFIG">
+          <Key>
+            <PropertyRef Name="USERCONFIGID" />
+          </Key>
+          <Property Name="USERCONFIGID" Type="String" Nullable="false" />
+          <Property Name="USERID" Type="String" />
+          <Property Name="CONFIGNAME" Type="String" />
+          <Property Name="CONFIGINFO" Type="String" />
+          <Property Name="OWNERID" Type="String" Nullable="false" />
+          <Property Name="OWNERNAME" Type="String" Nullable="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
+          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
+          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="UPDATEUSERID" Type="String" />
+          <Property Name="UPDATEUSERNAME" Type="String" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="T_PF_USERCONFIGRELEVANCE">
+          <Key>
+            <PropertyRef Name="USERCONFIGRELEVANCEID" />
+          </Key>
+          <Property Name="USERCONFIGRELEVANCEID" Type="String" Nullable="false" />
+          <Property Name="USERID" Type="String" Nullable="false" />
+          <Property Name="TEMPLATENAME" Type="String" Nullable="false" />
+          <Property Name="CUSTOMPARAMS" Type="String" />
+          <Property Name="OWNERID" Type="String" Nullable="false" />
+          <Property Name="OWNERNAME" Type="String" Nullable="false" />
+          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
+          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
+          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
+          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
+          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
+          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
+          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="UPDATEUSERID" Type="String" />
+          <Property Name="UPDATEUSERNAME" Type="String" />
+          <Property Name="UPDATEDATE" Type="DateTime" />
+          <NavigationProperty Name="T_PF_PLATFORMCONFIG" Relationship="Self.FK_T_PF_USERCONFIGRELEVANCE" FromRole="T_PF_USERCONFIGRELEVANCE" ToRole="T_PF_PLATFORMCONFIG" />
         </EntityType>
         <EntityType Name="T_PF_WEBPART">
           <Key>
@@ -23929,6 +24329,10 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <End Role="T_HR_EMPLOYEE" Type="Self.T_HR_EMPLOYEE" Multiplicity="0..1" />
           <End Role="T_HR_FAMILYMEMBER" Type="Self.T_HR_FAMILYMEMBER" Multiplicity="*" />
         </Association>
+        <Association Name="FK_T_HR_EMP_REFERENCE_T_HR_PC">
+          <End Role="T_HR_EMPLOYEE" Type="Self.T_HR_EMPLOYEE" Multiplicity="1" />
+          <End Role="T_HR_EMPLOYEECHANGEHISTORY" Type="Self.T_HR_EMPLOYEECHANGEHISTORY" Multiplicity="*" />
+        </Association>
         <Association Name="FK_T_HR_EMPBASE_T_HR_RES">
           <End Role="T_HR_RESUME" Type="Self.T_HR_RESUME" Multiplicity="0..1" />
           <End Role="T_HR_EMPLOYEE" Type="Self.T_HR_EMPLOYEE" Multiplicity="*" />
@@ -24029,13 +24433,13 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <End Role="T_HR_SCORETYPE" Type="Self.T_HR_SCORETYPE" Multiplicity="0..1" />
           <End Role="T_HR_KPIPOINT" Type="Self.T_HR_KPIPOINT" Multiplicity="*" />
         </Association>
+        <Association Name="FK_REFERENCE_173">
+          <End Role="T_HR_KPIPOINT" Type="Self.T_HR_KPIPOINT" Multiplicity="0..1" />
+          <End Role="T_HR_KPIRECORD" Type="Self.T_HR_KPIRECORD" Multiplicity="*" />
+        </Association>
         <Association Name="FK_REFERENCE_96">
           <End Role="T_HR_SPOTCHECKGROUP" Type="Self.T_HR_SPOTCHECKGROUP" Multiplicity="0..1" />
           <End Role="T_HR_KPIPOINTDEFINE" Type="Self.T_HR_KPIPOINTDEFINE" Multiplicity="*" />
-        </Association>
-        <Association Name="FK_T_HR_KPI_KPIPOINTDEFINE">
-          <End Role="T_HR_KPIPOINTDEFINE" Type="Self.T_HR_KPIPOINTDEFINE" Multiplicity="0..1" />
-          <End Role="T_HR_KPIRECORD" Type="Self.T_HR_KPIRECORD" Multiplicity="*" />
         </Association>
         <Association Name="FK_KPIRECORD_SPOTCHECKER">
           <End Role="T_HR_SPOTCHECKER" Type="Self.T_HR_SPOTCHECKER" Multiplicity="0..1" />
@@ -24044,6 +24448,14 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
         <Association Name="FK_KPIRECORDAPPEAL_T_HR_KPI">
           <End Role="T_HR_KPIRECORD" Type="Self.T_HR_KPIRECORD" Multiplicity="0..1" />
           <End Role="T_HR_KPIRECORDAPPEAL" Type="Self.T_HR_KPIRECORDAPPEAL" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_REFERENCE_174">
+          <End Role="T_HR_KPIRECORD" Type="Self.T_HR_KPIRECORD" Multiplicity="0..1" />
+          <End Role="T_HR_PERFORMANCEDETAIL" Type="Self.T_HR_PERFORMANCEDETAIL" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_REFERENCE_175">
+          <End Role="T_HR_KPIRECORD" Type="Self.T_HR_KPIRECORD" Multiplicity="0..1" />
+          <End Role="T_HR_KPIRECORDCOMPLAIN" Type="Self.T_HR_KPIRECORDCOMPLAIN" Multiplicity="*" />
         </Association>
         <Association Name="FK_T_HR_KPI_REFERENCE_T_HR_SCO">
           <End Role="T_HR_SCORETYPE" Type="Self.T_HR_SCORETYPE" Multiplicity="0..1" />
@@ -24149,6 +24561,10 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <End Role="T_HR_SALARYSOLUTION" Type="Self.T_HR_SALARYSOLUTION" Multiplicity="0..1" />
           <End Role="T_HR_SALARYSOLUTIONASSIGN" Type="Self.T_HR_SALARYSOLUTIONASSIGN" Multiplicity="*" />
         </Association>
+        <Association Name="FK_REFERENCE_171">
+          <End Role="T_HR_SALARYSOLUTION" Type="Self.T_HR_SALARYSOLUTION" Multiplicity="0..1" />
+          <End Role="T_HR_SALARYSOLUTIONSTANDARD" Type="Self.T_HR_SALARYSOLUTIONSTANDARD" Multiplicity="*" />
+        </Association>
         <Association Name="FK_SALARYSOLUTION_SALARYSYSTEM">
           <End Role="T_HR_SALARYSYSTEM" Type="Self.T_HR_SALARYSYSTEM" Multiplicity="0..1" />
           <End Role="T_HR_SALARYSOLUTION" Type="Self.T_HR_SALARYSOLUTION" Multiplicity="*" />
@@ -24160,6 +24576,10 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
         <Association Name="FK_SALARYTAXES_SALARYSOLUTION">
           <End Role="T_HR_SALARYSOLUTION" Type="Self.T_HR_SALARYSOLUTION" Multiplicity="0..1" />
           <End Role="T_HR_SALARYTAXES" Type="Self.T_HR_SALARYTAXES" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_REFERENCE_172">
+          <End Role="T_HR_SALARYSTANDARD" Type="Self.T_HR_SALARYSTANDARD" Multiplicity="0..1" />
+          <End Role="T_HR_SALARYSOLUTIONSTANDARD" Type="Self.T_HR_SALARYSOLUTIONSTANDARD" Multiplicity="*" />
         </Association>
         <Association Name="FK_T_HR_SAL_SALARYSTANDARDITEM">
           <End Role="T_HR_SALARYSTANDARD" Type="Self.T_HR_SALARYSTANDARD" Multiplicity="0..1" />
@@ -24440,6 +24860,10 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
         <Association Name="FK_T_OA_WELFAREDISTRIBUTEUNDO">
           <End Role="T_OA_WELFAREDISTRIBUTEMASTER" Type="Self.T_OA_WELFAREDISTRIBUTEMASTER" Multiplicity="1" />
           <End Role="T_OA_WELFAREDISTRIBUTEUNDO" Type="Self.T_OA_WELFAREDISTRIBUTEUNDO" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_T_PF_USERCONFIGRELEVANCE">
+          <End Role="T_PF_PLATFORMCONFIG" Type="Self.T_PF_PLATFORMCONFIG" Multiplicity="0..1" />
+          <End Role="T_PF_USERCONFIGRELEVANCE" Type="Self.T_PF_USERCONFIGRELEVANCE" Multiplicity="*" />
         </Association>
         <Association Name="FK_REFERENCE_161">
           <End Role="T_SYS_DICTIONARY" Type="Self.T_SYS_DICTIONARY" Multiplicity="0..1" />
@@ -24789,11 +25213,21 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <EntitySet Name="T_OA_WELFAREDISTRIBUTEUNDO" EntityType="Self.T_OA_WELFAREDISTRIBUTEUNDO" />
           <EntitySet Name="T_OA_WELFAREMASERT" EntityType="Self.T_OA_WELFAREMASERT" />
           <EntitySet Name="T_OA_WORKRECORD" EntityType="Self.T_OA_WORKRECORD" />
+          <EntitySet Name="T_PF_ATTENTION" EntityType="Self.T_PF_ATTENTION" />
+          <EntitySet Name="T_PF_DISTRIBUTEUSER" EntityType="Self.T_PF_DISTRIBUTEUSER" />
+          <EntitySet Name="T_PF_FEEDBACK" EntityType="Self.T_PF_FEEDBACK" />
           <EntitySet Name="T_PF_MODULE_RESOURCE" EntityType="Self.T_PF_MODULE_RESOURCE" />
           <EntitySet Name="T_PF_MODULEDEPENDS" EntityType="Self.T_PF_MODULEDEPENDS" />
           <EntitySet Name="T_PF_MODULEINFO" EntityType="Self.T_PF_MODULEINFO" />
           <EntitySet Name="T_PF_MODULEUPDATELOG" EntityType="Self.T_PF_MODULEUPDATELOG" />
+          <EntitySet Name="T_PF_NEWS" EntityType="Self.T_PF_NEWS" />
+          <EntitySet Name="T_PF_NEWSCOMMENT" EntityType="Self.T_PF_NEWSCOMMENT" />
+          <EntitySet Name="T_PF_NEWSTYPE" EntityType="Self.T_PF_NEWSTYPE" />
+          <EntitySet Name="T_PF_PERSONALRECORD" EntityType="Self.T_PF_PERSONALRECORD" />
+          <EntitySet Name="T_PF_PLATFORMCONFIG" EntityType="Self.T_PF_PLATFORMCONFIG" />
+          <EntitySet Name="T_PF_PROJECTCONFIG" EntityType="Self.T_PF_PROJECTCONFIG" />
           <EntitySet Name="T_PF_PUBLICPART" EntityType="Self.T_PF_PUBLICPART" />
+          <EntitySet Name="T_PF_READRECORD" EntityType="Self.T_PF_READRECORD" />
           <EntitySet Name="T_PF_RESOURCE" EntityType="Self.T_PF_RESOURCE" />
           <EntitySet Name="T_PF_RESOURCEHOST" EntityType="Self.T_PF_RESOURCEHOST" />
           <EntitySet Name="T_PF_RESOURCEMAPPING" EntityType="Self.T_PF_RESOURCEMAPPING" />
@@ -24802,6 +25236,8 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <EntitySet Name="T_PF_SYSTEMERROR" EntityType="Self.T_PF_SYSTEMERROR" />
           <EntitySet Name="T_PF_USER_SHORTCUT" EntityType="Self.T_PF_USER_SHORTCUT" />
           <EntitySet Name="T_PF_USER_WEBPART" EntityType="Self.T_PF_USER_WEBPART" />
+          <EntitySet Name="T_PF_USERCONFIG" EntityType="Self.T_PF_USERCONFIG" />
+          <EntitySet Name="T_PF_USERCONFIGRELEVANCE" EntityType="Self.T_PF_USERCONFIGRELEVANCE" />
           <EntitySet Name="T_PF_WEBPART" EntityType="Self.T_PF_WEBPART" />
           <EntitySet Name="T_SYS_COUNTRY" EntityType="Self.T_SYS_COUNTRY" />
           <EntitySet Name="T_SYS_DICTIONARY" EntityType="Self.T_SYS_DICTIONARY" />
@@ -25244,6 +25680,10 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <End Role="T_HR_EMPLOYEE" EntitySet="T_HR_EMPLOYEE" />
             <End Role="T_HR_FAMILYMEMBER" EntitySet="T_HR_FAMILYMEMBER" />
           </AssociationSet>
+          <AssociationSet Name="FK_T_HR_EMP_REFERENCE_T_HR_PC" Association="Self.FK_T_HR_EMP_REFERENCE_T_HR_PC">
+            <End Role="T_HR_EMPLOYEE" EntitySet="T_HR_EMPLOYEE" />
+            <End Role="T_HR_EMPLOYEECHANGEHISTORY" EntitySet="T_HR_EMPLOYEECHANGEHISTORY" />
+          </AssociationSet>
           <AssociationSet Name="FK_T_HR_EMPBASE_T_HR_RES" Association="Self.FK_T_HR_EMPBASE_T_HR_RES">
             <End Role="T_HR_RESUME" EntitySet="T_HR_RESUME" />
             <End Role="T_HR_EMPLOYEE" EntitySet="T_HR_EMPLOYEE" />
@@ -25344,13 +25784,13 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <End Role="T_HR_SCORETYPE" EntitySet="T_HR_SCORETYPE" />
             <End Role="T_HR_KPIPOINT" EntitySet="T_HR_KPIPOINT" />
           </AssociationSet>
+          <AssociationSet Name="FK_REFERENCE_173" Association="Self.FK_REFERENCE_173">
+            <End Role="T_HR_KPIPOINT" EntitySet="T_HR_KPIPOINT" />
+            <End Role="T_HR_KPIRECORD" EntitySet="T_HR_KPIRECORD" />
+          </AssociationSet>
           <AssociationSet Name="FK_REFERENCE_96" Association="Self.FK_REFERENCE_96">
             <End Role="T_HR_SPOTCHECKGROUP" EntitySet="T_HR_SPOTCHECKGROUP" />
             <End Role="T_HR_KPIPOINTDEFINE" EntitySet="T_HR_KPIPOINTDEFINE" />
-          </AssociationSet>
-          <AssociationSet Name="FK_T_HR_KPI_KPIPOINTDEFINE" Association="Self.FK_T_HR_KPI_KPIPOINTDEFINE">
-            <End Role="T_HR_KPIPOINTDEFINE" EntitySet="T_HR_KPIPOINTDEFINE" />
-            <End Role="T_HR_KPIRECORD" EntitySet="T_HR_KPIRECORD" />
           </AssociationSet>
           <AssociationSet Name="FK_KPIRECORD_SPOTCHECKER" Association="Self.FK_KPIRECORD_SPOTCHECKER">
             <End Role="T_HR_SPOTCHECKER" EntitySet="T_HR_SPOTCHECKER" />
@@ -25359,6 +25799,14 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <AssociationSet Name="FK_KPIRECORDAPPEAL_T_HR_KPI" Association="Self.FK_KPIRECORDAPPEAL_T_HR_KPI">
             <End Role="T_HR_KPIRECORD" EntitySet="T_HR_KPIRECORD" />
             <End Role="T_HR_KPIRECORDAPPEAL" EntitySet="T_HR_KPIRECORDAPPEAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REFERENCE_174" Association="Self.FK_REFERENCE_174">
+            <End Role="T_HR_KPIRECORD" EntitySet="T_HR_KPIRECORD" />
+            <End Role="T_HR_PERFORMANCEDETAIL" EntitySet="T_HR_PERFORMANCEDETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REFERENCE_175" Association="Self.FK_REFERENCE_175">
+            <End Role="T_HR_KPIRECORD" EntitySet="T_HR_KPIRECORD" />
+            <End Role="T_HR_KPIRECORDCOMPLAIN" EntitySet="T_HR_KPIRECORDCOMPLAIN" />
           </AssociationSet>
           <AssociationSet Name="FK_T_HR_KPI_REFERENCE_T_HR_SCO" Association="Self.FK_T_HR_KPI_REFERENCE_T_HR_SCO">
             <End Role="T_HR_SCORETYPE" EntitySet="T_HR_SCORETYPE" />
@@ -25464,6 +25912,10 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <End Role="T_HR_SALARYSOLUTION" EntitySet="T_HR_SALARYSOLUTION" />
             <End Role="T_HR_SALARYSOLUTIONASSIGN" EntitySet="T_HR_SALARYSOLUTIONASSIGN" />
           </AssociationSet>
+          <AssociationSet Name="FK_REFERENCE_171" Association="Self.FK_REFERENCE_171">
+            <End Role="T_HR_SALARYSOLUTION" EntitySet="T_HR_SALARYSOLUTION" />
+            <End Role="T_HR_SALARYSOLUTIONSTANDARD" EntitySet="T_HR_SALARYSOLUTIONSTANDARD" />
+          </AssociationSet>
           <AssociationSet Name="FK_SALARYSOLUTION_SALARYSYSTEM" Association="Self.FK_SALARYSOLUTION_SALARYSYSTEM">
             <End Role="T_HR_SALARYSYSTEM" EntitySet="T_HR_SALARYSYSTEM" />
             <End Role="T_HR_SALARYSOLUTION" EntitySet="T_HR_SALARYSOLUTION" />
@@ -25475,6 +25927,10 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <AssociationSet Name="FK_SALARYTAXES_SALARYSOLUTION" Association="Self.FK_SALARYTAXES_SALARYSOLUTION">
             <End Role="T_HR_SALARYSOLUTION" EntitySet="T_HR_SALARYSOLUTION" />
             <End Role="T_HR_SALARYTAXES" EntitySet="T_HR_SALARYTAXES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REFERENCE_172" Association="Self.FK_REFERENCE_172">
+            <End Role="T_HR_SALARYSTANDARD" EntitySet="T_HR_SALARYSTANDARD" />
+            <End Role="T_HR_SALARYSOLUTIONSTANDARD" EntitySet="T_HR_SALARYSOLUTIONSTANDARD" />
           </AssociationSet>
           <AssociationSet Name="FK_T_HR_SAL_SALARYSTANDARDITEM" Association="Self.FK_T_HR_SAL_SALARYSTANDARDITEM">
             <End Role="T_HR_SALARYSTANDARD" EntitySet="T_HR_SALARYSTANDARD" />
@@ -25732,6 +26188,10 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <End Role="T_OA_WELFAREDISTRIBUTEMASTER" EntitySet="T_OA_WELFAREDISTRIBUTEMASTER" />
             <End Role="T_OA_WELFAREDISTRIBUTEUNDO" EntitySet="T_OA_WELFAREDISTRIBUTEUNDO" />
           </AssociationSet>
+          <AssociationSet Name="FK_T_PF_USERCONFIGRELEVANCE" Association="Self.FK_T_PF_USERCONFIGRELEVANCE">
+            <End Role="T_PF_PLATFORMCONFIG" EntitySet="T_PF_PLATFORMCONFIG" />
+            <End Role="T_PF_USERCONFIGRELEVANCE" EntitySet="T_PF_USERCONFIGRELEVANCE" />
+          </AssociationSet>
           <AssociationSet Name="FK_REFERENCE_161" Association="Self.FK_REFERENCE_161">
             <End Role="T_SYS_DICTIONARY" EntitySet="T_SYS_DICTIONARY" />
             <End Role="T_SYS_DICTIONARY1" EntitySet="T_SYS_DICTIONARY" />
@@ -25792,323 +26252,7 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <End Role="T_WF_DOTASKRULE" EntitySet="T_WF_DOTASKRULE" />
             <End Role="T_WF_DOTASKRULEDETAIL" EntitySet="T_WF_DOTASKRULEDETAIL" />
           </AssociationSet>
-          <EntitySet Name="T_PF_ATTENTION" EntityType="TM_SaaS_OA_EFModel.T_PF_ATTENTION" />
-          <EntitySet Name="T_PF_DISTRIBUTEUSER" EntityType="TM_SaaS_OA_EFModel.T_PF_DISTRIBUTEUSER" />
-          <EntitySet Name="T_PF_FEEDBACK" EntityType="TM_SaaS_OA_EFModel.T_PF_FEEDBACK" />
-          <EntitySet Name="T_PF_NEWS" EntityType="TM_SaaS_OA_EFModel.T_PF_NEWS" />
-          <EntitySet Name="T_PF_NEWSCOMMENT" EntityType="TM_SaaS_OA_EFModel.T_PF_NEWSCOMMENT" />
-          <EntitySet Name="T_PF_NEWSTYPE" EntityType="TM_SaaS_OA_EFModel.T_PF_NEWSTYPE" />
-          <EntitySet Name="T_PF_PERSONALRECORD" EntityType="TM_SaaS_OA_EFModel.T_PF_PERSONALRECORD" />
-          <EntitySet Name="T_PF_PLATFORMCONFIG" EntityType="TM_SaaS_OA_EFModel.T_PF_PLATFORMCONFIG" />
-          <EntitySet Name="T_PF_PROJECTCONFIG" EntityType="TM_SaaS_OA_EFModel.T_PF_PROJECTCONFIG" />
-          <EntitySet Name="T_PF_READRECORD" EntityType="TM_SaaS_OA_EFModel.T_PF_READRECORD" />
-          <EntitySet Name="T_PF_USERCONFIG" EntityType="TM_SaaS_OA_EFModel.T_PF_USERCONFIG" />
-          <EntitySet Name="T_PF_USERCONFIGRELEVANCE" EntityType="TM_SaaS_OA_EFModel.T_PF_USERCONFIGRELEVANCE" />
-          <AssociationSet Name="FK_T_PF_USERCONFIGRELEVANCE" Association="TM_SaaS_OA_EFModel.FK_T_PF_USERCONFIGRELEVANCE">
-            <End Role="T_PF_PLATFORMCONFIG" EntitySet="T_PF_PLATFORMCONFIG" />
-            <End Role="T_PF_USERCONFIGRELEVANCE" EntitySet="T_PF_USERCONFIGRELEVANCE" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="T_PF_ATTENTION">
-          <Key>
-            <PropertyRef Name="ATTENTIONID" />
-          </Key>
-          <Property Name="ATTENTIONID" Type="String" Nullable="false" />
-          <Property Name="ORDERTYPE" Type="String" />
-          <Property Name="ORDERTYPENAME" Type="String" />
-          <Property Name="ORDERID" Type="String" />
-          <Property Name="ORDERTITLE" Type="String" />
-          <Property Name="ORDEROWNERID" Type="String" />
-          <Property Name="ORDEROWNERNAME" Type="String" />
-          <Property Name="ORDERURL" Type="String" />
-          <Property Name="ORDERSUBMITDATE" Type="DateTime" />
-          <Property Name="OWNERID" Type="String" />
-          <Property Name="OWNERNAME" Type="String" />
-          <Property Name="OWNERCOMPANYID" Type="String" />
-          <Property Name="OWNERDEPARTMENTID" Type="String" />
-          <Property Name="OWNERPOSTID" Type="String" />
-          <Property Name="CREATEUSERID" Type="String" />
-          <Property Name="CREATEUSERNAME" Type="String" />
-          <Property Name="CREATECOMPANYID" Type="String" />
-          <Property Name="CREATEDEPARTMENTID" Type="String" />
-          <Property Name="CREATEPOSTID" Type="String" />
-          <Property Name="CREATEDATE" Type="DateTime" />
-          <Property Name="UPDATEUSERID" Type="String" />
-          <Property Name="UPDATEUSERNAME" Type="String" />
-          <Property Name="UPDATEDATE" Type="DateTime" />
-        </EntityType>
-        <EntityType Name="T_PF_DISTRIBUTEUSER">
-          <Key>
-            <PropertyRef Name="DISTRIBUTEUSERID" />
-          </Key>
-          <Property Name="DISTRIBUTEUSERID" Type="String" Nullable="false" />
-          <Property Name="MODELNAME" Type="String" Nullable="false" />
-          <Property Name="FORMID" Type="String" Nullable="false" />
-          <Property Name="VIEWTYPE" Type="String" Nullable="false" />
-          <Property Name="VIEWER" Type="String" Nullable="false" />
-          <Property Name="OWNERID" Type="String" Nullable="false" />
-          <Property Name="OWNERNAME" Type="String" Nullable="false" />
-          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
-          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
-          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
-          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
-          <Property Name="UPDATEUSERID" Type="String" />
-          <Property Name="UPDATEUSERNAME" Type="String" />
-          <Property Name="UPDATEDATE" Type="DateTime" />
-        </EntityType>
-        <EntityType Name="T_PF_FEEDBACK">
-          <Key>
-            <PropertyRef Name="FEEDID" />
-          </Key>
-          <Property Name="FEEDID" Type="String" Nullable="false" />
-          <Property Name="ORDERTYPE" Type="String" />
-          <Property Name="ORDERTYPENAME" Type="String" />
-          <Property Name="ORDERID" Type="String" />
-          <Property Name="ORDERTITLE" Type="String" />
-          <Property Name="ORDEROWNERID" Type="String" />
-          <Property Name="ORDEROWNERNAME" Type="String" />
-          <Property Name="ORDERURL" Type="String" />
-          <Property Name="ORDERSUBMITDATE" Type="DateTime" />
-          <Property Name="OWNERID" Type="String" />
-          <Property Name="OWNERNAME" Type="String" />
-          <Property Name="OWNERCOMPANYID" Type="String" />
-          <Property Name="OWNERDEPARTMENTID" Type="String" />
-          <Property Name="OWNERPOSTID" Type="String" />
-          <Property Name="CREATEUSERID" Type="String" />
-          <Property Name="CREATEUSERNAME" Type="String" />
-          <Property Name="CREATECOMPANYID" Type="String" />
-          <Property Name="CREATEDEPARTMENTID" Type="String" />
-          <Property Name="CREATEPOSTID" Type="String" />
-          <Property Name="CREATEDATE" Type="DateTime" />
-          <Property Name="UPDATEUSERID" Type="String" />
-          <Property Name="UPDATEUSERNAME" Type="String" />
-          <Property Name="UPDATEDATE" Type="DateTime" />
-          <Property Name="FEEDBACKCONTENT" Type="String" />
-          <Property Name="CUSTOMCONTENT" Type="String" />
-          <Property Name="CUSTOMDATE" Type="DateTime" />
-          <Property Name="CUSTOMID" Type="String" />
-          <Property Name="CUSTOMNAME" Type="String" />
-          <Property Name="FEEDTYPE" Type="String" />
-        </EntityType>
-        <EntityType Name="T_PF_NEWS">
-          <Key>
-            <PropertyRef Name="NEWSID" />
-          </Key>
-          <Property Name="NEWSID" Type="String" Nullable="false" />
-          <Property Name="NEWSTYPEID" Type="String" Nullable="false" />
-          <Property Name="NEWSTITEL" Type="String" Nullable="false" />
-          <Property Name="NEWSCONTENT" Type="Binary" Nullable="false" />
-          <Property Name="READCOUNT" Type="String" />
-          <Property Name="COMMENTCOUNT" Type="String" />
-          <Property Name="NEWSSTATE" Type="String" Nullable="false" />
-          <Property Name="OWNERID" Type="String" Nullable="false" />
-          <Property Name="OWNERNAME" Type="String" Nullable="false" />
-          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
-          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
-          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
-          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
-          <Property Name="UPDATEUSERID" Type="String" />
-          <Property Name="UPDATEUSERNAME" Type="String" />
-          <Property Name="UPDATEDATE" Type="DateTime" />
-          <Property Name="ISIMAGE" Type="String" />
-          <Property Name="ISPOPUP" Type="String" />
-          <Property Name="ENDDATE" Type="DateTime" />
-          <Property Name="PUTDEPTNAME" Type="String" />
-          <Property Name="PUTDEPTID" Type="String" />
-          <Property Name="ISPARTY" Type="String" />
-        </EntityType>
-        <EntityType Name="T_PF_NEWSCOMMENT">
-          <Key>
-            <PropertyRef Name="COMMENTID" />
-          </Key>
-          <Property Name="COMMENTID" Type="String" Nullable="false" />
-          <Property Name="NEWSID" Type="String" />
-          <Property Name="COMMENTCONTENT" Type="String" />
-          <Property Name="OWNERID" Type="String" Nullable="false" />
-          <Property Name="OWNERNAME" Type="String" Nullable="false" />
-          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
-          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
-          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
-          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
-          <Property Name="UPDATEUSERID" Type="String" />
-          <Property Name="UPDATEUSERNAME" Type="String" />
-          <Property Name="UPDATEDATE" Type="DateTime" />
-        </EntityType>
-        <EntityType Name="T_PF_NEWSTYPE">
-          <Key>
-            <PropertyRef Name="NEWSTYPEID" />
-          </Key>
-          <Property Name="NEWSTYPEID" Type="String" Nullable="false" />
-          <Property Name="NEWSTYPENAME" Type="String" />
-          <Property Name="OWNERID" Type="String" Nullable="false" />
-          <Property Name="OWNERNAME" Type="String" Nullable="false" />
-          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
-          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
-          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
-          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
-          <Property Name="UPDATEUSERID" Type="String" />
-          <Property Name="UPDATEUSERNAME" Type="String" />
-          <Property Name="UPDATEDATE" Type="DateTime" />
-        </EntityType>
-        <EntityType Name="T_PF_PERSONALRECORD">
-          <Key>
-            <PropertyRef Name="PERSONALRECORDID" />
-          </Key>
-          <Property Name="PERSONALRECORDID" Type="String" Nullable="false" />
-          <Property Name="SYSTYPE" Type="String" />
-          <Property Name="MODELCODE" Type="String" />
-          <Property Name="MODELID" Type="String" />
-          <Property Name="CHECKSTATE" Type="String" />
-          <Property Name="OWNERID" Type="String" />
-          <Property Name="OWNERPOSTID" Type="String" />
-          <Property Name="OWNERDEPARTMENTID" Type="String" />
-          <Property Name="OWNERCOMPANYID" Type="String" />
-          <Property Name="CREATEDATE" Type="DateTime" />
-          <Property Name="UPDATEDATE" Type="DateTime" />
-          <Property Name="CONFIGINFO" Type="String" />
-          <Property Name="MODELDESCRIPTION" Type="String" />
-          <Property Name="ISFORWARD" Type="String" />
-          <Property Name="ISVIEW" Type="String" />
-        </EntityType>
-        <EntityType Name="T_PF_PLATFORMCONFIG">
-          <Key>
-            <PropertyRef Name="CONFIGID" />
-          </Key>
-          <Property Name="CONFIGID" Type="String" Nullable="false" />
-          <Property Name="PARENTID" Type="String" />
-          <Property Name="PIOCPATH" Type="String" />
-          <Property Name="ISRESIZABLE" Type="String" Nullable="false" />
-          <Property Name="TITEL" Type="String" Nullable="false" />
-          <Property Name="FULLNAME" Type="String" Nullable="false" />
-          <Property Name="ASSEMPLYNAME" Type="String" Nullable="false" />
-          <Property Name="PROGRAMTYPE" Type="String" />
-          <Property Name="ISSYSSHORTCUT" Type="String" />
-          <Property Name="ISSYSNEED" Type="String" />
-          <Property Name="INITPARAMS" Type="String" />
-          <Property Name="ISWEBPART" Type="String" />
-          <Property Name="USERSTATE" Type="String" Nullable="false" />
-          <Property Name="SYSTEMCODE" Type="String" Nullable="false" />
-          <Property Name="OWNERID" Type="String" Nullable="false" />
-          <Property Name="OWNERNAME" Type="String" Nullable="false" />
-          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
-          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
-          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
-          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
-          <Property Name="UPDATEUSERID" Type="String" />
-          <Property Name="UPDATEUSERNAME" Type="String" />
-          <Property Name="UPDATEDATE" Type="DateTime" />
-          <Property Name="ISDEFAULT" Type="String" />
-          <NavigationProperty Name="T_PF_USERCONFIGRELEVANCE" Relationship="TM_SaaS_OA_EFModel.FK_T_PF_USERCONFIGRELEVANCE" FromRole="T_PF_PLATFORMCONFIG" ToRole="T_PF_USERCONFIGRELEVANCE" />
-        </EntityType>
-        <EntityType Name="T_PF_PROJECTCONFIG">
-          <Key>
-            <PropertyRef Name="PROJECTID" />
-          </Key>
-          <Property Name="PROJECTID" Type="String" Nullable="false" />
-          <Property Name="SYSTEMCODE" Type="String" Nullable="false" />
-          <Property Name="PROJECTNAME" Type="String" Nullable="false" />
-          <Property Name="VERSIONFILENAME" Type="String" Nullable="false" />
-          <Property Name="DESCRIPTION" Type="String" />
-          <Property Name="OWNERID" Type="String" Nullable="false" />
-          <Property Name="OWNERNAME" Type="String" Nullable="false" />
-          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
-          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
-          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
-          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
-          <Property Name="UPDATEUSERID" Type="String" />
-          <Property Name="UPDATEUSERNAME" Type="String" />
-          <Property Name="UPDATEDATE" Type="DateTime" />
-        </EntityType>
-        <EntityType Name="T_PF_READRECORD">
-          <Key>
-            <PropertyRef Name="READRECORDID" />
-          </Key>
-          <Property Name="READRECORDID" Type="String" Nullable="false" />
-          <Property Name="EMPLOYEEID" Type="String" />
-          <Property Name="ORDERID" Type="String" />
-          <Property Name="ORDERTYPE" Type="Decimal" />
-        </EntityType>
-        <EntityType Name="T_PF_USERCONFIG">
-          <Key>
-            <PropertyRef Name="USERCONFIGID" />
-          </Key>
-          <Property Name="USERCONFIGID" Type="String" Nullable="false" />
-          <Property Name="USERID" Type="String" />
-          <Property Name="CONFIGNAME" Type="String" />
-          <Property Name="CONFIGINFO" Type="String" />
-          <Property Name="OWNERID" Type="String" Nullable="false" />
-          <Property Name="OWNERNAME" Type="String" Nullable="false" />
-          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
-          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
-          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
-          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
-          <Property Name="UPDATEUSERID" Type="String" />
-          <Property Name="UPDATEUSERNAME" Type="String" />
-          <Property Name="UPDATEDATE" Type="DateTime" />
-        </EntityType>
-        <EntityType Name="T_PF_USERCONFIGRELEVANCE">
-          <Key>
-            <PropertyRef Name="USERCONFIGRELEVANCEID" />
-          </Key>
-          <Property Name="USERCONFIGRELEVANCEID" Type="String" Nullable="false" />
-          <Property Name="USERID" Type="String" Nullable="false" />
-          <Property Name="TEMPLATENAME" Type="String" Nullable="false" />
-          <Property Name="CUSTOMPARAMS" Type="String" />
-          <Property Name="OWNERID" Type="String" Nullable="false" />
-          <Property Name="OWNERNAME" Type="String" Nullable="false" />
-          <Property Name="OWNERCOMPANYID" Type="String" Nullable="false" />
-          <Property Name="OWNERDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="OWNERPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERID" Type="String" Nullable="false" />
-          <Property Name="CREATEUSERNAME" Type="String" Nullable="false" />
-          <Property Name="CREATECOMPANYID" Type="String" Nullable="false" />
-          <Property Name="CREATEDEPARTMENTID" Type="String" Nullable="false" />
-          <Property Name="CREATEPOSTID" Type="String" Nullable="false" />
-          <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
-          <Property Name="UPDATEUSERID" Type="String" />
-          <Property Name="UPDATEUSERNAME" Type="String" />
-          <Property Name="UPDATEDATE" Type="DateTime" />
-          <NavigationProperty Name="T_PF_PLATFORMCONFIG" Relationship="TM_SaaS_OA_EFModel.FK_T_PF_USERCONFIGRELEVANCE" FromRole="T_PF_USERCONFIGRELEVANCE" ToRole="T_PF_PLATFORMCONFIG" />
-        </EntityType>
-        <Association Name="FK_T_PF_USERCONFIGRELEVANCE">
-          <End Type="TM_SaaS_OA_EFModel.T_PF_PLATFORMCONFIG" Role="T_PF_PLATFORMCONFIG" Multiplicity="0..1" />
-          <End Type="TM_SaaS_OA_EFModel.T_PF_USERCONFIGRELEVANCE" Role="T_PF_USERCONFIGRELEVANCE" Multiplicity="*" />
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -28994,7 +29138,6 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_HR_EMPLOYEECHANGEHISTORY">
               <MappingFragment StoreEntitySet="T_HR_EMPLOYEECHANGEHISTORY">
                 <ScalarProperty Name="RECORDID" ColumnName="RECORDID" />
-                <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
                 <ScalarProperty Name="EMPOLYEENAME" ColumnName="EMPOLYEENAME" />
                 <ScalarProperty Name="FINGERPRINTID" ColumnName="FINGERPRINTID" />
                 <ScalarProperty Name="FORMTYPE" ColumnName="FORMTYPE" />
@@ -29918,7 +30061,6 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_HR_KPIRECORDCOMPLAIN">
               <MappingFragment StoreEntitySet="T_HR_KPIRECORDCOMPLAIN">
                 <ScalarProperty Name="COMPLAINID" ColumnName="COMPLAINID" />
-                <ScalarProperty Name="KPIRECORDID" ColumnName="KPIRECORDID" />
                 <ScalarProperty Name="COMPLAINANTID" ColumnName="COMPLAINANTID" />
                 <ScalarProperty Name="REVIEWERID" ColumnName="REVIEWERID" />
                 <ScalarProperty Name="COMPLAINREMARK" ColumnName="COMPLAINREMARK" />
@@ -30417,7 +30559,6 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_HR_PERFORMANCEDETAIL">
               <MappingFragment StoreEntitySet="T_HR_PERFORMANCEDETAIL">
                 <ScalarProperty Name="PERFORMANCEDETAILID" ColumnName="PERFORMANCEDETAILID" />
-                <ScalarProperty Name="KPIRCORDID" ColumnName="KPIRCORDID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -33761,6 +33902,95 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="T_PF_ATTENTION">
+            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_ATTENTION">
+              <MappingFragment StoreEntitySet="T_PF_ATTENTION">
+                <ScalarProperty Name="ATTENTIONID" ColumnName="ATTENTIONID" />
+                <ScalarProperty Name="ORDERTYPE" ColumnName="ORDERTYPE" />
+                <ScalarProperty Name="ORDERTYPENAME" ColumnName="ORDERTYPENAME" />
+                <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
+                <ScalarProperty Name="ORDERTITLE" ColumnName="ORDERTITLE" />
+                <ScalarProperty Name="ORDEROWNERID" ColumnName="ORDEROWNERID" />
+                <ScalarProperty Name="ORDEROWNERNAME" ColumnName="ORDEROWNERNAME" />
+                <ScalarProperty Name="ORDERURL" ColumnName="ORDERURL" />
+                <ScalarProperty Name="ORDERSUBMITDATE" ColumnName="ORDERSUBMITDATE" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PF_DISTRIBUTEUSER">
+            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_DISTRIBUTEUSER">
+              <MappingFragment StoreEntitySet="T_PF_DISTRIBUTEUSER">
+                <ScalarProperty Name="DISTRIBUTEUSERID" ColumnName="DISTRIBUTEUSERID" />
+                <ScalarProperty Name="MODELNAME" ColumnName="MODELNAME" />
+                <ScalarProperty Name="FORMID" ColumnName="FORMID" />
+                <ScalarProperty Name="VIEWTYPE" ColumnName="VIEWTYPE" />
+                <ScalarProperty Name="VIEWER" ColumnName="VIEWER" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PF_FEEDBACK">
+            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_FEEDBACK">
+              <MappingFragment StoreEntitySet="T_PF_FEEDBACK">
+                <ScalarProperty Name="FEEDID" ColumnName="FEEDID" />
+                <ScalarProperty Name="ORDERTYPE" ColumnName="ORDERTYPE" />
+                <ScalarProperty Name="ORDERTYPENAME" ColumnName="ORDERTYPENAME" />
+                <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
+                <ScalarProperty Name="ORDERTITLE" ColumnName="ORDERTITLE" />
+                <ScalarProperty Name="ORDEROWNERID" ColumnName="ORDEROWNERID" />
+                <ScalarProperty Name="ORDEROWNERNAME" ColumnName="ORDEROWNERNAME" />
+                <ScalarProperty Name="ORDERURL" ColumnName="ORDERURL" />
+                <ScalarProperty Name="ORDERSUBMITDATE" ColumnName="ORDERSUBMITDATE" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="FEEDBACKCONTENT" ColumnName="FEEDBACKCONTENT" />
+                <ScalarProperty Name="CUSTOMCONTENT" ColumnName="CUSTOMCONTENT" />
+                <ScalarProperty Name="CUSTOMDATE" ColumnName="CUSTOMDATE" />
+                <ScalarProperty Name="CUSTOMID" ColumnName="CUSTOMID" />
+                <ScalarProperty Name="CUSTOMNAME" ColumnName="CUSTOMNAME" />
+                <ScalarProperty Name="FEEDTYPE" ColumnName="FEEDTYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="T_PF_MODULE_RESOURCE">
             <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_MODULE_RESOURCE">
               <MappingFragment StoreEntitySet="T_PF_MODULE_RESOURCE">
@@ -33865,6 +34095,165 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="T_PF_NEWS">
+            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_NEWS">
+              <MappingFragment StoreEntitySet="T_PF_NEWS">
+                <ScalarProperty Name="NEWSID" ColumnName="NEWSID" />
+                <ScalarProperty Name="NEWSTYPEID" ColumnName="NEWSTYPEID" />
+                <ScalarProperty Name="NEWSTITEL" ColumnName="NEWSTITEL" />
+                <ScalarProperty Name="NEWSCONTENT" ColumnName="NEWSCONTENT" />
+                <ScalarProperty Name="READCOUNT" ColumnName="READCOUNT" />
+                <ScalarProperty Name="COMMENTCOUNT" ColumnName="COMMENTCOUNT" />
+                <ScalarProperty Name="NEWSSTATE" ColumnName="NEWSSTATE" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="ISIMAGE" ColumnName="ISIMAGE" />
+                <ScalarProperty Name="ISPOPUP" ColumnName="ISPOPUP" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="PUTDEPTNAME" ColumnName="PUTDEPTNAME" />
+                <ScalarProperty Name="PUTDEPTID" ColumnName="PUTDEPTID" />
+                <ScalarProperty Name="ISPARTY" ColumnName="ISPARTY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PF_NEWSCOMMENT">
+            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_NEWSCOMMENT">
+              <MappingFragment StoreEntitySet="T_PF_NEWSCOMMENT">
+                <ScalarProperty Name="COMMENTID" ColumnName="COMMENTID" />
+                <ScalarProperty Name="NEWSID" ColumnName="NEWSID" />
+                <ScalarProperty Name="COMMENTCONTENT" ColumnName="COMMENTCONTENT" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PF_NEWSTYPE">
+            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_NEWSTYPE">
+              <MappingFragment StoreEntitySet="T_PF_NEWSTYPE">
+                <ScalarProperty Name="NEWSTYPEID" ColumnName="NEWSTYPEID" />
+                <ScalarProperty Name="NEWSTYPENAME" ColumnName="NEWSTYPENAME" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PF_PERSONALRECORD">
+            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_PERSONALRECORD">
+              <MappingFragment StoreEntitySet="T_PF_PERSONALRECORD">
+                <ScalarProperty Name="PERSONALRECORDID" ColumnName="PERSONALRECORDID" />
+                <ScalarProperty Name="SYSTYPE" ColumnName="SYSTYPE" />
+                <ScalarProperty Name="MODELCODE" ColumnName="MODELCODE" />
+                <ScalarProperty Name="MODELID" ColumnName="MODELID" />
+                <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="CONFIGINFO" ColumnName="CONFIGINFO" />
+                <ScalarProperty Name="MODELDESCRIPTION" ColumnName="MODELDESCRIPTION" />
+                <ScalarProperty Name="ISFORWARD" ColumnName="ISFORWARD" />
+                <ScalarProperty Name="ISVIEW" ColumnName="ISVIEW" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PF_PLATFORMCONFIG">
+            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_PLATFORMCONFIG">
+              <MappingFragment StoreEntitySet="T_PF_PLATFORMCONFIG">
+                <ScalarProperty Name="CONFIGID" ColumnName="CONFIGID" />
+                <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+                <ScalarProperty Name="PIOCPATH" ColumnName="PIOCPATH" />
+                <ScalarProperty Name="ISRESIZABLE" ColumnName="ISRESIZABLE" />
+                <ScalarProperty Name="TITEL" ColumnName="TITEL" />
+                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+                <ScalarProperty Name="ASSEMPLYNAME" ColumnName="ASSEMPLYNAME" />
+                <ScalarProperty Name="PROGRAMTYPE" ColumnName="PROGRAMTYPE" />
+                <ScalarProperty Name="ISSYSSHORTCUT" ColumnName="ISSYSSHORTCUT" />
+                <ScalarProperty Name="ISSYSNEED" ColumnName="ISSYSNEED" />
+                <ScalarProperty Name="INITPARAMS" ColumnName="INITPARAMS" />
+                <ScalarProperty Name="ISWEBPART" ColumnName="ISWEBPART" />
+                <ScalarProperty Name="USERSTATE" ColumnName="USERSTATE" />
+                <ScalarProperty Name="SYSTEMCODE" ColumnName="SYSTEMCODE" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="ISDEFAULT" ColumnName="ISDEFAULT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PF_PROJECTCONFIG">
+            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_PROJECTCONFIG">
+              <MappingFragment StoreEntitySet="T_PF_PROJECTCONFIG">
+                <ScalarProperty Name="PROJECTID" ColumnName="PROJECTID" />
+                <ScalarProperty Name="SYSTEMCODE" ColumnName="SYSTEMCODE" />
+                <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+                <ScalarProperty Name="VERSIONFILENAME" ColumnName="VERSIONFILENAME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="T_PF_PUBLICPART">
             <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_PUBLICPART">
               <MappingFragment StoreEntitySet="T_PF_PUBLICPART">
@@ -33891,6 +34280,16 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
                 <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
                 <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
                 <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PF_READRECORD">
+            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_READRECORD">
+              <MappingFragment StoreEntitySet="T_PF_READRECORD">
+                <ScalarProperty Name="READRECORDID" ColumnName="READRECORDID" />
+                <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+                <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
+                <ScalarProperty Name="ORDERTYPE" ColumnName="ORDERTYPE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -34085,6 +34484,54 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
                 <ScalarProperty Name="USERID" ColumnName="USERID" />
                 <ScalarProperty Name="TEMPLATENAME" ColumnName="TEMPLATENAME" />
                 <ScalarProperty Name="PARAMS" ColumnName="PARAMS" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PF_USERCONFIG">
+            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_USERCONFIG">
+              <MappingFragment StoreEntitySet="T_PF_USERCONFIG">
+                <ScalarProperty Name="USERCONFIGID" ColumnName="USERCONFIGID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="CONFIGNAME" ColumnName="CONFIGNAME" />
+                <ScalarProperty Name="CONFIGINFO" ColumnName="CONFIGINFO" />
+                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PF_USERCONFIGRELEVANCE">
+            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_USERCONFIGRELEVANCE">
+              <MappingFragment StoreEntitySet="T_PF_USERCONFIGRELEVANCE">
+                <ScalarProperty Name="USERCONFIGRELEVANCEID" ColumnName="USERCONFIGRELEVANCEID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="TEMPLATENAME" ColumnName="TEMPLATENAME" />
+                <ScalarProperty Name="CUSTOMPARAMS" ColumnName="CUSTOMPARAMS" />
                 <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
                 <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
                 <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
@@ -36254,6 +36701,14 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             </EndProperty>
             <Condition IsNull="false" ColumnName="EMPLOYEEID" />
           </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_T_HR_EMP_REFERENCE_T_HR_PC" TypeName="TM_SaaS_OA_EFModel.FK_T_HR_EMP_REFERENCE_T_HR_PC" StoreEntitySet="T_HR_EMPLOYEECHANGEHISTORY">
+            <EndProperty Name="T_HR_EMPLOYEE">
+              <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+            </EndProperty>
+            <EndProperty Name="T_HR_EMPLOYEECHANGEHISTORY">
+              <ScalarProperty Name="RECORDID" ColumnName="RECORDID" />
+            </EndProperty>
+          </AssociationSetMapping>
           <AssociationSetMapping Name="FK_T_HR_EMPBASE_T_HR_RES" TypeName="TM_SaaS_OA_EFModel.FK_T_HR_EMPBASE_T_HR_RES" StoreEntitySet="T_HR_EMPLOYEE">
             <EndProperty Name="T_HR_RESUME">
               <ScalarProperty Name="RESUMEID" ColumnName="RESUMEID" />
@@ -36479,6 +36934,15 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             </EndProperty>
             <Condition IsNull="false" ColumnName="SCORETYPEID" />
           </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_REFERENCE_173" TypeName="TM_SaaS_OA_EFModel.FK_REFERENCE_173" StoreEntitySet="T_HR_KPIRECORD">
+            <EndProperty Name="T_HR_KPIPOINT">
+              <ScalarProperty Name="KPIPOINTID" ColumnName="KPIPOINTID" />
+            </EndProperty>
+            <EndProperty Name="T_HR_KPIRECORD">
+              <ScalarProperty Name="KPIRECORDID" ColumnName="KPIRECORDID" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="KPIPOINTID" />
+          </AssociationSetMapping>
           <AssociationSetMapping Name="FK_REFERENCE_96" TypeName="TM_SaaS_OA_EFModel.FK_REFERENCE_96" StoreEntitySet="T_HR_KPIPOINTDEFINE">
             <EndProperty Name="T_HR_SPOTCHECKGROUP">
               <ScalarProperty Name="SPOTCHECKGROUPID" ColumnName="SPOTCHECKGROUPID" />
@@ -36487,15 +36951,6 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
               <ScalarProperty Name="KPIPOINTID" ColumnName="KPIPOINTID" />
             </EndProperty>
             <Condition IsNull="false" ColumnName="SPOTCHECKGROUPID" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_T_HR_KPI_KPIPOINTDEFINE" TypeName="TM_SaaS_OA_EFModel.FK_T_HR_KPI_KPIPOINTDEFINE" StoreEntitySet="T_HR_KPIRECORD">
-            <EndProperty Name="T_HR_KPIPOINTDEFINE">
-              <ScalarProperty Name="KPIPOINTID" ColumnName="KPIPOINTID" />
-            </EndProperty>
-            <EndProperty Name="T_HR_KPIRECORD">
-              <ScalarProperty Name="KPIRECORDID" ColumnName="KPIRECORDID" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="KPIPOINTID" />
           </AssociationSetMapping>
           <AssociationSetMapping Name="FK_KPIRECORD_SPOTCHECKER" TypeName="TM_SaaS_OA_EFModel.FK_KPIRECORD_SPOTCHECKER" StoreEntitySet="T_HR_KPIRECORD">
             <EndProperty Name="T_HR_SPOTCHECKER">
@@ -36512,6 +36967,24 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             </EndProperty>
             <EndProperty Name="T_HR_KPIRECORDAPPEAL">
               <ScalarProperty Name="KPIAPPEALID" ColumnName="KPIAPPEALID" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="KPIRECORDID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_REFERENCE_174" TypeName="TM_SaaS_OA_EFModel.FK_REFERENCE_174" StoreEntitySet="T_HR_PERFORMANCEDETAIL">
+            <EndProperty Name="T_HR_KPIRECORD">
+              <ScalarProperty Name="KPIRECORDID" ColumnName="KPIRECORDID" />
+            </EndProperty>
+            <EndProperty Name="T_HR_PERFORMANCEDETAIL">
+              <ScalarProperty Name="PERFORMANCEDETAILID" ColumnName="PERFORMANCEDETAILID" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="KPIRECORDID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_REFERENCE_175" TypeName="TM_SaaS_OA_EFModel.FK_REFERENCE_175" StoreEntitySet="T_HR_KPIRECORDCOMPLAIN">
+            <EndProperty Name="T_HR_KPIRECORD">
+              <ScalarProperty Name="KPIRECORDID" ColumnName="KPIRECORDID" />
+            </EndProperty>
+            <EndProperty Name="T_HR_KPIRECORDCOMPLAIN">
+              <ScalarProperty Name="COMPLAINID" ColumnName="COMPLAINID" />
             </EndProperty>
             <Condition IsNull="false" ColumnName="KPIRECORDID" />
           </AssociationSetMapping>
@@ -36751,6 +37224,15 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             </EndProperty>
             <Condition IsNull="false" ColumnName="SALARYSOLUTIONID" />
           </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_REFERENCE_171" TypeName="TM_SaaS_OA_EFModel.FK_REFERENCE_171" StoreEntitySet="T_HR_SALARYSOLUTIONSTANDARD">
+            <EndProperty Name="T_HR_SALARYSOLUTION">
+              <ScalarProperty Name="SALARYSOLUTIONID" ColumnName="T_H_SALARYSOLUTIONID" />
+            </EndProperty>
+            <EndProperty Name="T_HR_SALARYSOLUTIONSTANDARD">
+              <ScalarProperty Name="SOLUTIONSTANDARDID" ColumnName="SOLUTIONSTANDARDID" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="T_H_SALARYSOLUTIONID" />
+          </AssociationSetMapping>
           <AssociationSetMapping Name="FK_SALARYSOLUTION_SALARYSYSTEM" TypeName="TM_SaaS_OA_EFModel.FK_SALARYSOLUTION_SALARYSYSTEM" StoreEntitySet="T_HR_SALARYSOLUTION">
             <EndProperty Name="T_HR_SALARYSYSTEM">
               <ScalarProperty Name="SALARYSYSTEMID" ColumnName="SALARYSYSTEMID" />
@@ -36777,6 +37259,15 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
               <ScalarProperty Name="SALARYTAXESID" ColumnName="SALARYTAXESID" />
             </EndProperty>
             <Condition IsNull="false" ColumnName="SALARYSOLUTIONID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_REFERENCE_172" TypeName="TM_SaaS_OA_EFModel.FK_REFERENCE_172" StoreEntitySet="T_HR_SALARYSOLUTIONSTANDARD">
+            <EndProperty Name="T_HR_SALARYSTANDARD">
+              <ScalarProperty Name="SALARYSTANDARDID" ColumnName="STANDARDID" />
+            </EndProperty>
+            <EndProperty Name="T_HR_SALARYSOLUTIONSTANDARD">
+              <ScalarProperty Name="SOLUTIONSTANDARDID" ColumnName="SOLUTIONSTANDARDID" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="STANDARDID" />
           </AssociationSetMapping>
           <AssociationSetMapping Name="FK_T_HR_SAL_SALARYSTANDARDITEM" TypeName="TM_SaaS_OA_EFModel.FK_T_HR_SAL_SALARYSTANDARDITEM" StoreEntitySet="T_HR_SALARYSTANDARDITEM">
             <EndProperty Name="T_HR_SALARYSTANDARD">
@@ -37318,6 +37809,15 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
               <ScalarProperty Name="WELFAREDISTRIBUTEUNDOID" ColumnName="WELFAREDISTRIBUTEUNDOID" />
             </EndProperty>
           </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_T_PF_USERCONFIGRELEVANCE" TypeName="TM_SaaS_OA_EFModel.FK_T_PF_USERCONFIGRELEVANCE" StoreEntitySet="T_PF_USERCONFIGRELEVANCE">
+            <EndProperty Name="T_PF_PLATFORMCONFIG">
+              <ScalarProperty Name="CONFIGID" ColumnName="CONFIGID" />
+            </EndProperty>
+            <EndProperty Name="T_PF_USERCONFIGRELEVANCE">
+              <ScalarProperty Name="USERCONFIGRELEVANCEID" ColumnName="USERCONFIGRELEVANCEID" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="CONFIGID" />
+          </AssociationSetMapping>
           <AssociationSetMapping Name="FK_REFERENCE_161" TypeName="TM_SaaS_OA_EFModel.FK_REFERENCE_161" StoreEntitySet="T_SYS_DICTIONARY">
             <EndProperty Name="T_SYS_DICTIONARY">
               <ScalarProperty Name="DICTIONARYID" ColumnName="FATHERID" />
@@ -37449,321 +37949,6 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <EndProperty Name="T_WF_DOTASKRULEDETAIL">
               <ScalarProperty Name="DOTASKRULEDETAILID" ColumnName="DOTASKRULEDETAILID" />
             </EndProperty>
-          </AssociationSetMapping>
-          <EntitySetMapping Name="T_PF_ATTENTION">
-            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_ATTENTION">
-              <MappingFragment StoreEntitySet="T_PF_ATTENTION">
-                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
-                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
-                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
-                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
-                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
-                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
-                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
-                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
-                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
-                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
-                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
-                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
-                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
-                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
-                <ScalarProperty Name="ORDERSUBMITDATE" ColumnName="ORDERSUBMITDATE" />
-                <ScalarProperty Name="ORDERURL" ColumnName="ORDERURL" />
-                <ScalarProperty Name="ORDEROWNERNAME" ColumnName="ORDEROWNERNAME" />
-                <ScalarProperty Name="ORDEROWNERID" ColumnName="ORDEROWNERID" />
-                <ScalarProperty Name="ORDERTITLE" ColumnName="ORDERTITLE" />
-                <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
-                <ScalarProperty Name="ORDERTYPENAME" ColumnName="ORDERTYPENAME" />
-                <ScalarProperty Name="ORDERTYPE" ColumnName="ORDERTYPE" />
-                <ScalarProperty Name="ATTENTIONID" ColumnName="ATTENTIONID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_PF_DISTRIBUTEUSER">
-            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_DISTRIBUTEUSER">
-              <MappingFragment StoreEntitySet="T_PF_DISTRIBUTEUSER">
-                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
-                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
-                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
-                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
-                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
-                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
-                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
-                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
-                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
-                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
-                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
-                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
-                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
-                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
-                <ScalarProperty Name="VIEWER" ColumnName="VIEWER" />
-                <ScalarProperty Name="VIEWTYPE" ColumnName="VIEWTYPE" />
-                <ScalarProperty Name="FORMID" ColumnName="FORMID" />
-                <ScalarProperty Name="MODELNAME" ColumnName="MODELNAME" />
-                <ScalarProperty Name="DISTRIBUTEUSERID" ColumnName="DISTRIBUTEUSERID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_PF_FEEDBACK">
-            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_FEEDBACK">
-              <MappingFragment StoreEntitySet="T_PF_FEEDBACK">
-                <ScalarProperty Name="FEEDTYPE" ColumnName="FEEDTYPE" />
-                <ScalarProperty Name="CUSTOMNAME" ColumnName="CUSTOMNAME" />
-                <ScalarProperty Name="CUSTOMID" ColumnName="CUSTOMID" />
-                <ScalarProperty Name="CUSTOMDATE" ColumnName="CUSTOMDATE" />
-                <ScalarProperty Name="CUSTOMCONTENT" ColumnName="CUSTOMCONTENT" />
-                <ScalarProperty Name="FEEDBACKCONTENT" ColumnName="FEEDBACKCONTENT" />
-                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
-                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
-                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
-                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
-                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
-                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
-                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
-                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
-                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
-                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
-                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
-                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
-                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
-                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
-                <ScalarProperty Name="ORDERSUBMITDATE" ColumnName="ORDERSUBMITDATE" />
-                <ScalarProperty Name="ORDERURL" ColumnName="ORDERURL" />
-                <ScalarProperty Name="ORDEROWNERNAME" ColumnName="ORDEROWNERNAME" />
-                <ScalarProperty Name="ORDEROWNERID" ColumnName="ORDEROWNERID" />
-                <ScalarProperty Name="ORDERTITLE" ColumnName="ORDERTITLE" />
-                <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
-                <ScalarProperty Name="ORDERTYPENAME" ColumnName="ORDERTYPENAME" />
-                <ScalarProperty Name="ORDERTYPE" ColumnName="ORDERTYPE" />
-                <ScalarProperty Name="FEEDID" ColumnName="FEEDID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_PF_NEWS">
-            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_NEWS">
-              <MappingFragment StoreEntitySet="T_PF_NEWS">
-                <ScalarProperty Name="ISPARTY" ColumnName="ISPARTY" />
-                <ScalarProperty Name="PUTDEPTID" ColumnName="PUTDEPTID" />
-                <ScalarProperty Name="PUTDEPTNAME" ColumnName="PUTDEPTNAME" />
-                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
-                <ScalarProperty Name="ISPOPUP" ColumnName="ISPOPUP" />
-                <ScalarProperty Name="ISIMAGE" ColumnName="ISIMAGE" />
-                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
-                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
-                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
-                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
-                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
-                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
-                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
-                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
-                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
-                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
-                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
-                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
-                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
-                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
-                <ScalarProperty Name="NEWSSTATE" ColumnName="NEWSSTATE" />
-                <ScalarProperty Name="COMMENTCOUNT" ColumnName="COMMENTCOUNT" />
-                <ScalarProperty Name="READCOUNT" ColumnName="READCOUNT" />
-                <ScalarProperty Name="NEWSCONTENT" ColumnName="NEWSCONTENT" />
-                <ScalarProperty Name="NEWSTITEL" ColumnName="NEWSTITEL" />
-                <ScalarProperty Name="NEWSTYPEID" ColumnName="NEWSTYPEID" />
-                <ScalarProperty Name="NEWSID" ColumnName="NEWSID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_PF_NEWSCOMMENT">
-            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_NEWSCOMMENT">
-              <MappingFragment StoreEntitySet="T_PF_NEWSCOMMENT">
-                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
-                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
-                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
-                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
-                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
-                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
-                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
-                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
-                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
-                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
-                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
-                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
-                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
-                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
-                <ScalarProperty Name="COMMENTCONTENT" ColumnName="COMMENTCONTENT" />
-                <ScalarProperty Name="NEWSID" ColumnName="NEWSID" />
-                <ScalarProperty Name="COMMENTID" ColumnName="COMMENTID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_PF_NEWSTYPE">
-            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_NEWSTYPE">
-              <MappingFragment StoreEntitySet="T_PF_NEWSTYPE">
-                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
-                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
-                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
-                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
-                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
-                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
-                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
-                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
-                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
-                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
-                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
-                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
-                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
-                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
-                <ScalarProperty Name="NEWSTYPENAME" ColumnName="NEWSTYPENAME" />
-                <ScalarProperty Name="NEWSTYPEID" ColumnName="NEWSTYPEID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_PF_PERSONALRECORD">
-            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_PERSONALRECORD">
-              <MappingFragment StoreEntitySet="T_PF_PERSONALRECORD">
-                <ScalarProperty Name="ISVIEW" ColumnName="ISVIEW" />
-                <ScalarProperty Name="ISFORWARD" ColumnName="ISFORWARD" />
-                <ScalarProperty Name="MODELDESCRIPTION" ColumnName="MODELDESCRIPTION" />
-                <ScalarProperty Name="CONFIGINFO" ColumnName="CONFIGINFO" />
-                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
-                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
-                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
-                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
-                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
-                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
-                <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
-                <ScalarProperty Name="MODELID" ColumnName="MODELID" />
-                <ScalarProperty Name="MODELCODE" ColumnName="MODELCODE" />
-                <ScalarProperty Name="SYSTYPE" ColumnName="SYSTYPE" />
-                <ScalarProperty Name="PERSONALRECORDID" ColumnName="PERSONALRECORDID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_PF_PLATFORMCONFIG">
-            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_PLATFORMCONFIG">
-              <MappingFragment StoreEntitySet="T_PF_PLATFORMCONFIG">
-                <ScalarProperty Name="ISDEFAULT" ColumnName="ISDEFAULT" />
-                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
-                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
-                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
-                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
-                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
-                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
-                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
-                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
-                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
-                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
-                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
-                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
-                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
-                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
-                <ScalarProperty Name="SYSTEMCODE" ColumnName="SYSTEMCODE" />
-                <ScalarProperty Name="USERSTATE" ColumnName="USERSTATE" />
-                <ScalarProperty Name="ISWEBPART" ColumnName="ISWEBPART" />
-                <ScalarProperty Name="INITPARAMS" ColumnName="INITPARAMS" />
-                <ScalarProperty Name="ISSYSNEED" ColumnName="ISSYSNEED" />
-                <ScalarProperty Name="ISSYSSHORTCUT" ColumnName="ISSYSSHORTCUT" />
-                <ScalarProperty Name="PROGRAMTYPE" ColumnName="PROGRAMTYPE" />
-                <ScalarProperty Name="ASSEMPLYNAME" ColumnName="ASSEMPLYNAME" />
-                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
-                <ScalarProperty Name="TITEL" ColumnName="TITEL" />
-                <ScalarProperty Name="ISRESIZABLE" ColumnName="ISRESIZABLE" />
-                <ScalarProperty Name="PIOCPATH" ColumnName="PIOCPATH" />
-                <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
-                <ScalarProperty Name="CONFIGID" ColumnName="CONFIGID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_PF_PROJECTCONFIG">
-            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_PROJECTCONFIG">
-              <MappingFragment StoreEntitySet="T_PF_PROJECTCONFIG">
-                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
-                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
-                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
-                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
-                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
-                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
-                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
-                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
-                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
-                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
-                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
-                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
-                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
-                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
-                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
-                <ScalarProperty Name="VERSIONFILENAME" ColumnName="VERSIONFILENAME" />
-                <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
-                <ScalarProperty Name="SYSTEMCODE" ColumnName="SYSTEMCODE" />
-                <ScalarProperty Name="PROJECTID" ColumnName="PROJECTID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_PF_READRECORD">
-            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_READRECORD">
-              <MappingFragment StoreEntitySet="T_PF_READRECORD">
-                <ScalarProperty Name="ORDERTYPE" ColumnName="ORDERTYPE" />
-                <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
-                <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
-                <ScalarProperty Name="READRECORDID" ColumnName="READRECORDID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_PF_USERCONFIG">
-            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_USERCONFIG">
-              <MappingFragment StoreEntitySet="T_PF_USERCONFIG">
-                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
-                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
-                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
-                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
-                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
-                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
-                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
-                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
-                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
-                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
-                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
-                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
-                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
-                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
-                <ScalarProperty Name="CONFIGINFO" ColumnName="CONFIGINFO" />
-                <ScalarProperty Name="CONFIGNAME" ColumnName="CONFIGNAME" />
-                <ScalarProperty Name="USERID" ColumnName="USERID" />
-                <ScalarProperty Name="USERCONFIGID" ColumnName="USERCONFIGID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_PF_USERCONFIGRELEVANCE">
-            <EntityTypeMapping TypeName="TM_SaaS_OA_EFModel.T_PF_USERCONFIGRELEVANCE">
-              <MappingFragment StoreEntitySet="T_PF_USERCONFIGRELEVANCE">
-                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
-                <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
-                <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
-                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
-                <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
-                <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
-                <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
-                <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
-                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
-                <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
-                <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
-                <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
-                <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
-                <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
-                <ScalarProperty Name="CUSTOMPARAMS" ColumnName="CUSTOMPARAMS" />
-                <ScalarProperty Name="TEMPLATENAME" ColumnName="TEMPLATENAME" />
-                <ScalarProperty Name="USERID" ColumnName="USERID" />
-                <ScalarProperty Name="USERCONFIGRELEVANCEID" ColumnName="USERCONFIGRELEVANCEID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="FK_T_PF_USERCONFIGRELEVANCE" TypeName="TM_SaaS_OA_EFModel.FK_T_PF_USERCONFIGRELEVANCE" StoreEntitySet="T_PF_USERCONFIGRELEVANCE">
-            <EndProperty Name="T_PF_USERCONFIGRELEVANCE">
-              <ScalarProperty Name="USERCONFIGRELEVANCEID" ColumnName="USERCONFIGRELEVANCEID" />
-            </EndProperty>
-            <EndProperty Name="T_PF_PLATFORMCONFIG">
-              <ScalarProperty Name="CONFIGID" ColumnName="CONFIGID" />
-            </EndProperty>
-            <Condition ColumnName="CONFIGID" IsNull="false" />
           </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>

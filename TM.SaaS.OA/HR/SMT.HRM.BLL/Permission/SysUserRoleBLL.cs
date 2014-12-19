@@ -5,7 +5,8 @@ using System.Text;
 using SMT.SaaS.Permission.DAL;
 using TM_SaaS_OA_EFModel;
 using SMT.Foundation.Log;
-using SMT.HRM.Services;
+using SMT.HRM.CustomModel;
+using SMT.HRM.BLL;
 
 namespace SMT.SaaS.Permission.BLL
 {
@@ -108,9 +109,13 @@ namespace SMT.SaaS.Permission.BLL
 
                     if (UserIds.Count() > 0)
                     {
-                        PersonnelService client = new PersonnelService();
-                        List<V_EMPLOYEEDETAIL> Employees = client.GetEmployeesPostBriefByEmployeeID(UserIds.ToList());
-                        V_EMPLOYEEPOST[] Employeesq = client.GetEmployeeDetailByIDs(UserIds.ToArray());
+                        EmployeePostBLL empPostbll = new EmployeePostBLL();
+                        //{
+                        //    return bll.GetEmployeePostBriefByEmployeeID(employeeids);
+                        //}
+                        List<V_EMPLOYEEDETAIL> Employees = empPostbll.GetEmployeePostBriefByEmployeeID(UserIds.ToList());
+                        EmployeeBLL empbll = new EmployeeBLL();
+                        List<V_EMPLOYEEPOST> Employeesq = empbll.GetEmployeeDetailByIDs(UserIds.ToArray());
                         Employeesq.ToList().ForEach(item => { 
                             //item.EMPLOYEEPOSTS[0].
                         });

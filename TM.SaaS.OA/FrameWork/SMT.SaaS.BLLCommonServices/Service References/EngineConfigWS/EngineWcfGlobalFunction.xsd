@@ -39,7 +39,6 @@
       <xs:element minOccurs="0" name="CREATEDATE" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CREATETIME" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CREATEUSERID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DoTaskType" type="xs:int" />
       <xs:element minOccurs="0" name="ENGINECODE" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FLOWXML" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ISALARM" nillable="true" type="xs:string" />
@@ -62,8 +61,6 @@
       <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UPDATETIME" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WorkCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WorkCodeCreateType" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="T_FLOW_ENGINEMSGLIST" nillable="true" type="tns:T_FLOW_ENGINEMSGLIST" />

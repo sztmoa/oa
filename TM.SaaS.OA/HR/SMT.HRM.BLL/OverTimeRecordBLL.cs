@@ -709,10 +709,10 @@ namespace SMT.HRM.BLL
 
                     bllLevelDayCount.AddEmployeeLevelDayCount(entLevelDayCount);
                     //审核通过后插入一条定时任务，到期后自动更新假期
-                    TimeTriggerBLL _timeTriggerBll = new TimeTriggerBLL();
-                    _timeTriggerBll.OnceTimingTrigger(entLevelDayCount.TERMINATEDATE.Value, entLevelDayCount.TERMINATEDATE.Value, strOverTimeRecordID, "ExpireOvertimeVacation");
+                    //TimeTriggerBLL _timeTriggerBll = new TimeTriggerBLL();
+                    //_timeTriggerBll.OnceTimingTrigger(entLevelDayCount.TERMINATEDATE.Value, entLevelDayCount.TERMINATEDATE.Value, strOverTimeRecordID, "ExpireOvertimeVacation");
                     //在加班过期时间之前的3天或5天发出提醒邮件
-                    _timeTriggerBll.MailTimingTrigger(entLevelDayCount.TERMINATEDATE.Value, entLevelDayCount.TERMINATEDATE.Value, strOverTimeRecordID, "SendMailForExpireOvertime");
+                    //_timeTriggerBll.MailTimingTrigger(entLevelDayCount.TERMINATEDATE.Value, entLevelDayCount.TERMINATEDATE.Value, strOverTimeRecordID, "SendMailForExpireOvertime");
                 }
 
                 return "{SAVESUCCESSED}";

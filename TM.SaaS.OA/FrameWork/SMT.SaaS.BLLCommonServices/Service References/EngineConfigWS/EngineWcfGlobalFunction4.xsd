@@ -37,12 +37,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="T_WF_TIMINGTRIGGERACTIVITY" nillable="true" type="tns:T_WF_TIMINGTRIGGERACTIVITY" />
-  <xs:complexType name="ArrayOfT_WF_TIMINGTRIGGERACTIVITY">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_WF_TIMINGTRIGGERACTIVITY" nillable="true" type="tns:T_WF_TIMINGTRIGGERACTIVITY" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfT_WF_TIMINGTRIGGERACTIVITY" nillable="true" type="tns:ArrayOfT_WF_TIMINGTRIGGERACTIVITY" />
   <xs:complexType name="T_WF_DOTASK">
     <xs:sequence>
       <xs:element minOccurs="0" name="APPFIELDVALUE" nillable="true" type="xs:string" />
@@ -81,17 +75,8 @@
   <xs:element name="ArrayOfCustomUserMsg" nillable="true" type="tns:ArrayOfCustomUserMsg" />
   <xs:complexType name="CustomUserMsg">
     <xs:sequence>
-      <xs:element minOccurs="0" name="DueDateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FormID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IsValid" type="xs:int" />
-      <xs:element minOccurs="0" name="MessageContent" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MessageID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MsgURL" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ValidEndTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="ValidStartTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="WorkCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WorkCodeCreateType" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CustomUserMsg" nillable="true" type="tns:CustomUserMsg" />

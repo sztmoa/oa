@@ -2231,7 +2231,7 @@ namespace SMT.SaaS.BLLCommonServices
                     TKServicesWS.TKServicesClient tkClient = new TKServicesWS.TKServicesClient();
                     Tracer.Debug("调用了任务系统中的：EntityType:" + EntityType + " EntityKey:" + EntityKey + "\r\n" + " EntityId:" + EntityId + " CheckState:" + CheckState + " URL:" + tkClient.Endpoint.Address + " strXmlParams:" + strXmlParams);
 
-                    int i = tkClient.UpdateCheckState(EntityType, EntityKey, EntityId, ((int)CheckState), strXmlParams, ref message);
+                    int i = 0;// tkClient.UpdateCheckState(EntityType, EntityKey, EntityId, ((int)CheckState), strXmlParams, ref message);
                     Tracer.Debug("调用任务系统返回结果" + i.ToString() + "\r\n" + message);
                     if (i > 0)
                     {

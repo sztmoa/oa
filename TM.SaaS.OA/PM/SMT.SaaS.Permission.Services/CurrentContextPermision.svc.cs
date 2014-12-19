@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using SMT.SaaS.Permission.BLL;
 using System.Collections.Generic;
-using SMT_System_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.Permission.DAL;
 
 namespace SMT.SaaS.Permission.Services

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SMT.EntityFlowSys" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SMT.EntityFlowSys" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://wf.smt-online.net/New/Services/SMTFlow/SMT.FlowWFService.Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
-  <xs:import schemaLocation="http://wf.smt-online.net/New/Services/SMTFlow/SMT.FlowWFService.Service.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/EngineDataModel" />
-  <xs:import schemaLocation="http://wf.smt-online.net/New/Services/SMTFlow/SMT.FlowWFService.Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SMT.EntityFlowSys" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SMT.EntityFlowSys" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://portal.smt-online.net/New/Services/SMTFlow/SMT.FlowWFService.Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
   <xs:complexType name="FLOW_CONSULTATION_T">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:EntityObject">
@@ -105,15 +103,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfFLOW_FLOWRECORDMASTER_T" nillable="true" type="tns:ArrayOfFLOW_FLOWRECORDMASTER_T" />
-  <xs:complexType name="FlowEntity">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="FlowList" nillable="true" type="tns:ArrayOfFLOW_FLOWRECORDDETAIL_T" />
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="ForwardHistoryList" nillable="true" type="q4:ArrayOfT_WF_FORWARDHISTORY" />
-    </xs:sequence>
-    <xs:attribute ref="ser:Id" />
-    <xs:attribute ref="ser:Ref" />
-  </xs:complexType>
-  <xs:element name="FlowEntity" nillable="true" type="tns:FlowEntity" />
   <xs:complexType name="ArrayOfFLOW_MODELFLOWRELATION_T">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="FLOW_MODELFLOWRELATION_T" nillable="true" type="tns:FLOW_MODELFLOWRELATION_T" />
@@ -122,7 +111,7 @@
   <xs:element name="ArrayOfFLOW_MODELFLOWRELATION_T" nillable="true" type="tns:ArrayOfFLOW_MODELFLOWRELATION_T" />
   <xs:complexType name="FLOW_MODELFLOWRELATION_T">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q5:EntityObject">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q4:EntityObject">
         <xs:sequence>
           <xs:element minOccurs="0" name="COMPANYID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CREATECOMPANYID" nillable="true" type="xs:string" />
@@ -138,9 +127,9 @@
           <xs:element minOccurs="0" name="FLAG" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="FLOWTYPE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="FLOW_FLOWDEFINE_T" nillable="true" type="tns:FLOW_FLOWDEFINE_T" />
-          <xs:element minOccurs="0" name="FLOW_FLOWDEFINE_TReference" nillable="true" type="q5:EntityReferenceOfFLOW_FLOWDEFINE_TgZ_PhGfiK" />
+          <xs:element minOccurs="0" name="FLOW_FLOWDEFINE_TReference" nillable="true" type="q4:EntityReferenceOfFLOW_FLOWDEFINE_TgZ_PhGfiK" />
           <xs:element minOccurs="0" name="FLOW_MODELDEFINE_T" nillable="true" type="tns:FLOW_MODELDEFINE_T" />
-          <xs:element minOccurs="0" name="FLOW_MODELDEFINE_TReference" nillable="true" type="q5:EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK" />
+          <xs:element minOccurs="0" name="FLOW_MODELDEFINE_TReference" nillable="true" type="q4:EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK" />
           <xs:element minOccurs="0" name="MODELFLOWRELATIONID" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -149,7 +138,7 @@
   <xs:element name="FLOW_MODELFLOWRELATION_T" nillable="true" type="tns:FLOW_MODELFLOWRELATION_T" />
   <xs:complexType name="FLOW_FLOWDEFINE_T">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q6:EntityObject">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q5:EntityObject">
         <xs:sequence>
           <xs:element minOccurs="0" name="CREATECOMPANYID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CREATEDATE" type="xs:dateTime" />
@@ -175,7 +164,7 @@
   <xs:element name="FLOW_FLOWDEFINE_T" nillable="true" type="tns:FLOW_FLOWDEFINE_T" />
   <xs:complexType name="FLOW_MODELDEFINE_T">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q7:EntityObject">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q6:EntityObject">
         <xs:sequence>
           <xs:element minOccurs="0" name="CREATECOMPANYID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CREATEDATE" type="xs:dateTime" />

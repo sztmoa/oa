@@ -7,7 +7,6 @@ using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Configuration.Assemblies;
 using System.Configuration;
-using SMT.SaaS.BLLCommonServices;
 
 namespace SMT.SaaS.Permission.DAL
 {
@@ -181,24 +180,24 @@ namespace SMT.SaaS.Permission.DAL
         /// <param name="action"></param>
         public void MvcCacheClear(TEntity entity, string action)
         {
-            string strModelCode = entity.GetType().Name;
-            BLLCommonServices.MVCCacheSV.EntityAction act;
-            switch (action)
-            {
-                case "Add": act = BLLCommonServices.MVCCacheSV.EntityAction.Add; break;
-                case "Modify": act = BLLCommonServices.MVCCacheSV.EntityAction.Modify; break;
-                case "Delete": act = BLLCommonServices.MVCCacheSV.EntityAction.Delete; break;
-                default: act = BLLCommonServices.MVCCacheSV.EntityAction.None; break;
-            }
-            if (entity is System.Data.Objects.DataClasses.EntityObject)
-            {
-                System.Data.Objects.DataClasses.EntityObject ent = entity as System.Data.Objects.DataClasses.EntityObject;
-                string strFormId = entity.GetType().GetProperties().FirstOrDefault().GetValue(entity, null).ToString();
-                if (strFormId != "" || strFormId != null)
-                {
-                    BLLCommonServices.Utility.MvcCacheClearAsync(strModelCode, strFormId, act);
-                }
-            }
+            //string strModelCode = entity.GetType().Name;
+            //BLLCommonServices.MVCCacheSV.EntityAction act;
+            //switch (action)
+            //{
+            //    case "Add": act = BLLCommonServices.MVCCacheSV.EntityAction.Add; break;
+            //    case "Modify": act = BLLCommonServices.MVCCacheSV.EntityAction.Modify; break;
+            //    case "Delete": act = BLLCommonServices.MVCCacheSV.EntityAction.Delete; break;
+            //    default: act = BLLCommonServices.MVCCacheSV.EntityAction.None; break;
+            //}
+            //if (entity is System.Data.Objects.DataClasses.EntityObject)
+            //{
+            //    System.Data.Objects.DataClasses.EntityObject ent = entity as System.Data.Objects.DataClasses.EntityObject;
+            //    string strFormId = entity.GetType().GetProperties().FirstOrDefault().GetValue(entity, null).ToString();
+            //    if (strFormId != "" || strFormId != null)
+            //    {
+            //        BLLCommonServices.Utility.MvcCacheClearAsync(strModelCode, strFormId, act);
+            //    }
+            //}
         }
         #endregion
     }

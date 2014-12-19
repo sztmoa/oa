@@ -28,15 +28,15 @@ namespace SMT.HRM.BLL
                     return "REQUIREDFIELDS";
                 }
                 var tmp = from q in dal.GetObjects<T_HR_SALARYSOLUTION>()
-                          where q.SALARYSOLUTIONID == obj.T_HR_SALARYSOLUTION.SALARYSOLUTIONID
+                          where q.SALARYSOLUTIONID == obj.SALARYSOLUTIONID
                           select q;
                 if (tmp.Count() <= 0)
                 {
                     return "ADDSOLUTIONFIRST";
                 }
                 var ents = from c in dal.GetObjects<T_HR_SALARYSOLUTIONSTANDARD>()
-                           where c.T_HR_SALARYSOLUTION.SALARYSOLUTIONID == obj.T_HR_SALARYSOLUTION.SALARYSOLUTIONID
-                            && c.T_HR_SALARYSTANDARD.SALARYSTANDARDID == obj.T_HR_SALARYSTANDARD.SALARYSTANDARDID
+                           where c.SALARYSOLUTIONID == obj.SALARYSOLUTIONID
+                            && c.SALARYSTANDARDID == obj.SALARYSTANDARDID
                            select c;
                 if (ents.Count() > 0)
                 {

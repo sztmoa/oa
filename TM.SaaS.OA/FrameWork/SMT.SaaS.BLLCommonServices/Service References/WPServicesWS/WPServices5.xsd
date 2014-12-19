@@ -510,4 +510,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="TripSubjectSave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strBussinessTripID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/SMT.WP.Model" minOccurs="0" name="listTripBudget" nillable="true" type="q32:ArrayOfBussinessTripBudget" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TripSubjectSaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TripSubjectSaveResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

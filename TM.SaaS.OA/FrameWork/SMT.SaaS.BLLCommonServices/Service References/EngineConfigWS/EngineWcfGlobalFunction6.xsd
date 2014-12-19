@@ -20,24 +20,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="WFAddTimingTriggerList">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="entityList" nillable="true" type="q2:ArrayOfT_WF_TIMINGTRIGGERACTIVITY" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="WFAddTimingTriggerListResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="WFAddTimingTriggerListResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="AddTask">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="dask" nillable="true" type="q3:T_WF_DOTASK" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="dask" nillable="true" type="q2:T_WF_DOTASK" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -59,7 +45,7 @@
   <xs:element name="GetDoTaskEntityResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="GetDoTaskEntityResult" nillable="true" type="q4:T_WF_DOTASK" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="GetDoTaskEntityResult" nillable="true" type="q3:T_WF_DOTASK" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -75,24 +61,6 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="OnlyAddDoDask">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="orderID" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="systemCode" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="modelCode" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="modelName" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="strXML" nillable="true" type="xs:string" />
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q5:MsgType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="OnlyAddDoDaskResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
   <xs:element name="AddDoDask">
     <xs:complexType>
       <xs:sequence>
@@ -102,7 +70,7 @@
         <xs:element minOccurs="0" name="modelCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="modelName" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="strXML" nillable="true" type="xs:string" />
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q6:MsgType" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q4:MsgType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -120,70 +88,26 @@
         <xs:element minOccurs="0" name="modelCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="modelName" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="strXML" nillable="true" type="xs:string" />
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q7:MsgType" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q5:MsgType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ReturnUserInfoDaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SMT.Workflow.Engine.Services.BLL" minOccurs="0" name="ReturnUserInfoDaskResult" nillable="true" type="q8:ArrayOfUserInfo" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SMT.Workflow.Engine.Services.BLL" minOccurs="0" name="ReturnUserInfoDaskResult" nillable="true" type="q6:ArrayOfUserInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ApplicationMsgTriggerNew">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q9:ArrayOfCustomUserMsg" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q7:ArrayOfCustomUserMsg" />
         <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="SystemCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="ModelCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="strXml" nillable="true" type="xs:string" />
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q10:MsgType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ApplicationMsgTriggerNewTime">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q11:ArrayOfCustomUserMsg" />
-        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="SystemCode" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ModelCode" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="strXml" nillable="true" type="xs:string" />
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q12:MsgType" />
-        <xs:element minOccurs="0" name="dueDateTime" type="xs:dateTime" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ApplicationSendDoTask">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q13:ArrayOfCustomUserMsg" />
-        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="SystemCode" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ModelCode" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="strXml" nillable="true" type="xs:string" />
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q14:MsgType" />
-        <xs:element minOccurs="0" name="dueDateTime" type="xs:dateTime" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ApplicationSendDoTaskResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ApplicationSendDoTaskResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="UpdateTaskDueTime">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="formId" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="receiverId" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="SystemCode" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ModelCode" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="dueDateTime" type="xs:dateTime" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q8:MsgType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -218,7 +142,7 @@
   <xs:element name="AddDoTaskEntity">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="dotaskList" nillable="true" type="q15:ArrayOfT_WF_DOTASK" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="dotaskList" nillable="true" type="q9:ArrayOfT_WF_DOTASK" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -232,7 +156,7 @@
   <xs:element name="GetPersonFromDoTaskByTitle">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="receiveuserids" nillable="true" type="q16:ArrayOfstring" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="receiveuserids" nillable="true" type="q10:ArrayOfstring" />
         <xs:element minOccurs="0" name="messagebody" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -240,7 +164,7 @@
   <xs:element name="GetPersonFromDoTaskByTitleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPersonFromDoTaskByTitleResult" nillable="true" type="q17:ArrayOfstring" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPersonFromDoTaskByTitleResult" nillable="true" type="q11:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -255,7 +179,7 @@
   <xs:element name="GetForwardHistoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="GetForwardHistoryResult" nillable="true" type="q18:ArrayOfT_WF_FORWARDHISTORY" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="GetForwardHistoryResult" nillable="true" type="q12:ArrayOfT_WF_FORWARDHISTORY" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -282,14 +206,14 @@
   <xs:element name="GetAuditScopeListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model" minOccurs="0" name="GetAuditScopeListResult" nillable="true" type="q19:ArrayOfT_WF_AUDITSCOPE" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model" minOccurs="0" name="GetAuditScopeListResult" nillable="true" type="q13:ArrayOfT_WF_AUDITSCOPE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddAuditScope">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model" minOccurs="0" name="scopes" nillable="true" type="q20:T_WF_AUDITSCOPE" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model" minOccurs="0" name="scopes" nillable="true" type="q14:T_WF_AUDITSCOPE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -314,51 +238,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetEmployeeDoTask">
+  <xs:element name="AddTaskRule">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="doTaskState" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetEmployeeDoTaskResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="GetEmployeeDoTaskResult" nillable="true" type="q21:ArrayOfT_FLOW_ENGINEMSGLIST" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddDoTaskMessage">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="receiverId" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="messageBody" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="formId" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="systemCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="companyId" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddDoTaskMessageResponse">
+  <xs:element name="AddTaskRuleResponse">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AddDoTaskMessageResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetLastedTaskByFormIds">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="formIds" nillable="true" type="q22:ArrayOfstring" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetLastedTaskByFormIdsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="GetLastedTaskByFormIdsResult" nillable="true" type="q23:ArrayOfT_FLOW_ENGINEMSGLIST" />
-      </xs:sequence>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="TaskCacheReflesh">
@@ -432,7 +321,7 @@
   <xs:element name="PendingTasksParmsPageIndex">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgParams" nillable="true" type="q24:MsgParms" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgParams" nillable="true" type="q15:MsgParms" />
         <xs:element minOccurs="0" name="rowCount" type="xs:int" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
@@ -441,7 +330,7 @@
   <xs:element name="PendingTasksParmsPageIndexResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingTasksParmsPageIndexResult" nillable="true" type="q25:ArrayOfT_FLOW_ENGINEMSGLIST" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingTasksParmsPageIndexResult" nillable="true" type="q16:ArrayOfT_FLOW_ENGINEMSGLIST" />
         <xs:element minOccurs="0" name="rowCount" type="xs:int" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
@@ -450,7 +339,7 @@
   <xs:element name="PendingTasksParmsPageIndexForMobile">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgParams" nillable="true" type="q26:MsgParms" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgParams" nillable="true" type="q17:MsgParms" />
         <xs:element minOccurs="0" name="rowCount" type="xs:int" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
@@ -459,7 +348,7 @@
   <xs:element name="PendingTasksParmsPageIndexForMobileResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingTasksParmsPageIndexForMobileResult" nillable="true" type="q27:ArrayOfT_FLOW_ENGINEMSGLIST" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingTasksParmsPageIndexForMobileResult" nillable="true" type="q18:ArrayOfT_FLOW_ENGINEMSGLIST" />
         <xs:element minOccurs="0" name="rowCount" type="xs:int" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
@@ -468,35 +357,35 @@
   <xs:element name="GetPendingTaskPrevNext">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgParms" nillable="true" type="q28:MsgParms" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgParms" nillable="true" type="q19:MsgParms" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetPendingTaskPrevNextResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPendingTaskPrevNextResult" nillable="true" type="q29:ArrayOfKeyValueOfstringT_FLOW_ENGINEMSGLISTN9HQXtD5" />
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPendingTaskPrevNextResult" nillable="true" type="q20:ArrayOfKeyValueOfstringT_FLOW_ENGINEMSGLISTN9HQXtD5" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetPendingTaskPrevNextForMobile">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgParms" nillable="true" type="q30:MsgParms" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgParms" nillable="true" type="q21:MsgParms" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetPendingTaskPrevNextForMobileResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPendingTaskPrevNextForMobileResult" nillable="true" type="q31:ArrayOfKeyValueOfstringArrayOfT_FLOW_ENGINEMSGLISTN9HQXtD5" />
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPendingTaskPrevNextForMobileResult" nillable="true" type="q22:ArrayOfKeyValueOfstringT_FLOW_ENGINEMSGLISTN9HQXtD5" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PendingCacheTasksParmsPageIndex">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgParams" nillable="true" type="q32:MsgParms" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgParams" nillable="true" type="q23:MsgParms" />
         <xs:element minOccurs="0" name="IsAutofresh" type="xs:boolean" />
         <xs:element minOccurs="0" name="HaveNewTask" type="xs:boolean" />
         <xs:element minOccurs="0" name="rowCount" type="xs:int" />
@@ -507,7 +396,7 @@
   <xs:element name="PendingCacheTasksParmsPageIndexResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingCacheTasksParmsPageIndexResult" nillable="true" type="q33:ArrayOfT_FLOW_ENGINEMSGLIST" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingCacheTasksParmsPageIndexResult" nillable="true" type="q24:ArrayOfT_FLOW_ENGINEMSGLIST" />
         <xs:element minOccurs="0" name="IsAutofresh" type="xs:boolean" />
         <xs:element minOccurs="0" name="HaveNewTask" type="xs:boolean" />
         <xs:element minOccurs="0" name="rowCount" type="xs:int" />
@@ -518,21 +407,21 @@
   <xs:element name="PendingMainTasksParms">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgParams" nillable="true" type="q34:MsgParms" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgParams" nillable="true" type="q25:MsgParms" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PendingMainTasksParmsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingMainTasksParmsResult" nillable="true" type="q35:ArrayOfT_FLOW_ENGINEMSGLIST" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingMainTasksParmsResult" nillable="true" type="q26:ArrayOfT_FLOW_ENGINEMSGLIST" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PendingCacheMainTasksParms">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgParams" nillable="true" type="q36:MsgParms" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgParams" nillable="true" type="q27:MsgParms" />
         <xs:element minOccurs="0" name="IsAutofresh" type="xs:boolean" />
         <xs:element minOccurs="0" name="HaveNewTask" type="xs:boolean" />
       </xs:sequence>
@@ -541,7 +430,7 @@
   <xs:element name="PendingCacheMainTasksParmsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingCacheMainTasksParmsResult" nillable="true" type="q37:ArrayOfT_FLOW_ENGINEMSGLIST" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingCacheMainTasksParmsResult" nillable="true" type="q28:ArrayOfT_FLOW_ENGINEMSGLIST" />
         <xs:element minOccurs="0" name="IsAutofresh" type="xs:boolean" />
         <xs:element minOccurs="0" name="HaveNewTask" type="xs:boolean" />
       </xs:sequence>
@@ -557,7 +446,7 @@
   <xs:element name="PendingDetailByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingDetailByIDResult" nillable="true" type="q38:T_FLOW_ENGINEMSGLIST" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingDetailByIDResult" nillable="true" type="q29:T_FLOW_ENGINEMSGLIST" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -571,7 +460,7 @@
   <xs:element name="PendingDetailTasksResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingDetailTasksResult" nillable="true" type="q39:T_FLOW_ENGINEMSGLIST" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingDetailTasksResult" nillable="true" type="q30:T_FLOW_ENGINEMSGLIST" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -585,7 +474,7 @@
   <xs:element name="PendingDetailTasksByPhoneResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingDetailTasksByPhoneResult" nillable="true" type="q40:T_FLOW_ENGINEMSGLIST" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingDetailTasksByPhoneResult" nillable="true" type="q31:T_FLOW_ENGINEMSGLIST" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -599,7 +488,7 @@
   <xs:element name="PendingDetailTasksByOrderNodeCodeForMobileResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingDetailTasksByOrderNodeCodeForMobileResult" nillable="true" type="q41:T_FLOW_ENGINEMSGLIST" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/EngineDataModel" minOccurs="0" name="PendingDetailTasksByOrderNodeCodeForMobileResult" nillable="true" type="q32:T_FLOW_ENGINEMSGLIST" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -615,7 +504,7 @@
   <xs:element name="EngineNotesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="EngineNotesResult" nillable="true" type="q42:ArrayOfT_FLOW_ENGINENOTES" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="EngineNotesResult" nillable="true" type="q33:ArrayOfT_FLOW_ENGINENOTES" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -643,7 +532,7 @@
   <xs:element name="MsgTrigger">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="recevieUser" nillable="true" type="q43:ArrayOfstring" />
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="recevieUser" nillable="true" type="q34:ArrayOfstring" />
         <xs:element minOccurs="0" name="SystemCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="MsgKey" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
@@ -654,7 +543,7 @@
   <xs:element name="NotesSend">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="List" nillable="true" type="q44:ArrayOfReceiveUserAndContent" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="List" nillable="true" type="q35:ArrayOfReceiveUserAndContent" />
         <xs:element minOccurs="0" name="SystemCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="strFormID" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -672,7 +561,7 @@
   <xs:element name="CloseDoTask">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listOrderID" nillable="true" type="q45:ArrayOfstring" />
+        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listOrderID" nillable="true" type="q36:ArrayOfstring" />
         <xs:element minOccurs="0" name="strModelCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="strReceiveUser" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -687,7 +576,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="strSystemCode" nillable="true" type="xs:string" />
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="List" nillable="true" type="q46:ArrayOfReceiveUserForm" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="List" nillable="true" type="q37:ArrayOfReceiveUserForm" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -723,22 +612,22 @@
   <xs:element name="ApplicationMsgTrigger">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q47:ArrayOfCustomUserMsg" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q38:ArrayOfCustomUserMsg" />
         <xs:element minOccurs="0" name="SystemCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="ModelCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="strXml" nillable="true" type="xs:string" />
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q48:MsgType" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q39:MsgType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ApplicationMsgTriggerCustom">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q49:ArrayOfCustomUserMsg" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q40:ArrayOfCustomUserMsg" />
         <xs:element minOccurs="0" name="SystemCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="ModelCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="strXml" nillable="true" type="xs:string" />
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q50:MsgType" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q41:MsgType" />
         <xs:element minOccurs="0" name="messageBody" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -746,12 +635,12 @@
   <xs:element name="ApplicationEngineTrigger">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q51:ArrayOfCustomUserMsg" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q42:ArrayOfCustomUserMsg" />
         <xs:element minOccurs="0" name="SystemCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="ModelCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="strCompanyID" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="strXml" nillable="true" type="xs:string" />
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q52:MsgType" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/SMT.Global.IEngineContract" minOccurs="0" name="msgType" type="q43:MsgType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -775,7 +664,7 @@
   <xs:element name="ApplicationNotesTrigger">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q53:ArrayOfCustomUserMsg" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q44:ArrayOfCustomUserMsg" />
         <xs:element minOccurs="0" name="SystemCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -788,7 +677,7 @@
         <xs:element minOccurs="0" name="pageSize" type="xs:int" />
         <xs:element minOccurs="0" name="sort" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="filterString" nillable="true" type="xs:string" />
-        <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="paras" nillable="true" type="q54:ArrayOfanyType" />
+        <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="paras" nillable="true" type="q45:ArrayOfanyType" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
         <xs:element minOccurs="0" name="strCompanyID" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -797,7 +686,7 @@
   <xs:element name="CustomFlowDefineListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="CustomFlowDefineListResult" nillable="true" type="q55:ArrayOfT_FLOW_CUSTOMFLOWDEFINE" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="CustomFlowDefineListResult" nillable="true" type="q46:ArrayOfT_FLOW_CUSTOMFLOWDEFINE" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -805,21 +694,21 @@
   <xs:element name="CallCustomFlowTrigger">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="define" nillable="true" type="q56:T_FLOW_CUSTOMFLOWDEFINE" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="define" nillable="true" type="q47:T_FLOW_CUSTOMFLOWDEFINE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendMail">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="mailParams" nillable="true" type="q57:ArrayOfMailParams" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="mailParams" nillable="true" type="q48:ArrayOfMailParams" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendMailParam">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="mailParams" nillable="true" type="q58:ArrayOfMailParams" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="mailParams" nillable="true" type="q49:ArrayOfMailParams" />
         <xs:element minOccurs="0" name="mailType" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="mailParameter" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -850,7 +739,7 @@
   <xs:element name="FlowConsultati">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q59:ArrayOfCustomUserMsg" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q50:ArrayOfCustomUserMsg" />
         <xs:element minOccurs="0" name="strTitle" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="strFlowXML" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="strAppXml" nillable="true" type="xs:string" />
@@ -876,7 +765,7 @@
   <xs:element name="TaskDelete">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q60:ArrayOfCustomUserMsg" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="UserAndForm" nillable="true" type="q51:ArrayOfCustomUserMsg" />
         <xs:element minOccurs="0" name="strSystemCode" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -893,7 +782,7 @@
   <xs:element name="SendTaskMessage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="list" nillable="true" type="q61:ArrayOfCustomUserMsg" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" minOccurs="0" name="list" nillable="true" type="q52:ArrayOfCustomUserMsg" />
         <xs:element minOccurs="0" name="SystemCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="ModelCode" nillable="true" type="xs:string" />
       </xs:sequence>

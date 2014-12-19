@@ -8,10 +8,10 @@ using System.Data.Objects.DataClasses;
 using System.Collections;
 using System.Linq.Dynamic;
 using SMT.Foundation.Log;
-using SMT.SaaS.Permission.BLL.PersonnelWS;
 using SMT.SaaS.Permission.CustomerModel;
 using System.Configuration;
 using SMT.HRM.BLL;
+using SMT.HRM.CustomModel;
 
 
 
@@ -978,13 +978,13 @@ namespace SMT.SaaS.Permission.BLL
                 int maxPerm = -1;
                 T_SYS_USER CacheUser = new T_SYS_USER();
                 T_HR_EMPLOYEE CachePerson = new T_HR_EMPLOYEE();
-                PersonnelServiceClient personclient = new PersonnelServiceClient();
+                EmployeeBLL empbll = new EmployeeBLL();
                 //获取权限管理中用户信息使用缓存
                 //PermissionWS.T_SYS_USER user = PermClient.GetUserByEmployeeID(employeeID);
                 using (SysUserBLL userbll = new SysUserBLL())
                 {
                     CacheUser = userbll.GetUserByEmployeeID(employeeID);
-                    CachePerson = personclient.GetEmployeeByID(employeeID);
+                    CachePerson = empbll.GetEmployeeByID(employeeID);
                     string OwnerCompanyIDs = "";
                     string OwnerDepartmentIDs = "";
                     string OwnerPositionIDs = "";
@@ -1020,10 +1020,16 @@ namespace SMT.SaaS.Permission.BLL
                     
 
                     //取员工岗位
-                    PersonnelServiceClient PersonClient = new PersonnelServiceClient();
-                    V_EMPLOYEEPOST emppost = PersonClient.GetEmployeeDetailByID(employeeID);
+                   // PersonnelServiceClient PersonClient = new PersonnelServiceClient();
+                   
+                    V_EMPLOYEEPOST emppost = empbll.GetEmployeeDetailByID(employeeID);
 
-                    CachePerson.T_HR_EMPLOYEEPOST = emppost.EMPLOYEEPOSTS;
+                    foreach (var item in emppost.EMPLOYEEPOSTS)
+                    {
+                        CachePerson.T_HR_EMPLOYEEPOST.Add(item);
+
+                    }
+                   // CachePerson.T_HR_EMPLOYEEPOST = emppost.EMPLOYEEPOSTS;
 
 
                     //获取自定义权限  20100914注释  目前没使用自定义权限 
@@ -1539,9 +1545,9 @@ namespace SMT.SaaS.Permission.BLL
                         }
                     }
                 }
-                PersonnelServiceClient client = new PersonnelServiceClient();
-                
-                 var Employees = client.GetEmployeeInfosByEmployeeIDs(employeeIDs.ToArray()).ToList();
+                EmployeeBLL empbll = new EmployeeBLL();
+
+                var Employees = empbll.GetEmployeeInfosByEmployeeIDs(employeeIDs.ToList()).ToList();
                  //Employees = Employees.Where(s=>companyIDs.Contains(s.OWNERCOMPANYID)).ToList();
                  foreach (var ent in Employees)
                  {

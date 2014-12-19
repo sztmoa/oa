@@ -208,37 +208,37 @@ namespace SMT.SaaS.Permission.BLL
         private bool changeMailPassword(T_SYS_USER entitys)
         {
             bool result=true;
-            using (MailWS.MailServiceClient mailClient = new MailWS.MailServiceClient())
-            { 
-                try
-                {
-                    MailWS.HREmployee user = new MailWS.HREmployee();
-                    //解密
-                    SMT.SaaS.SmtOlineEn.SmtOlineDES des = new SmtOlineDES();
-                    if (entitys != null && entitys.STATE=="1")
-                    {
-                        //获取更改的用户的id
-                        user.EmployeeId = entitys.EMPLOYEEID;
-                        user.Password = des.getValue(entitys.PASSWORD);
+            //using (MailWS.MailServiceClient mailClient = new MailWS.MailServiceClient())
+            //{ 
+            //    try
+            //    {
+            //        MailWS.HREmployee user = new MailWS.HREmployee();
+            //        //解密
+            //        SMT.SaaS.SmtOlineEn.SmtOlineDES des = new SmtOlineDES();
+            //        if (entitys != null && entitys.STATE=="1")
+            //        {
+            //            //获取更改的用户的id
+            //            user.EmployeeId = entitys.EMPLOYEEID;
+            //            user.Password = des.getValue(entitys.PASSWORD);
                         
-                        List<MailWS.HREmployee> users = new List<MailWS.HREmployee>();
-                        users.Add(user);
-                        //储存明文
-                        Tracer.Debug("修改邮件密码-用户：" + user.EmployeeId + " 密码:" + entitys.PASSWORD);
-                        if (users != null) mailClient.ChangePassword(users.ToArray());
-                    }
-                    else
-                    {
-                        Tracer.Debug("未成功修改邮件密码");
-                        result = false;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Tracer.Debug("修改邮件密码出错：" + ex.ToString());
-                    return false;
-                }
-            }
+            //            List<MailWS.HREmployee> users = new List<MailWS.HREmployee>();
+            //            users.Add(user);
+            //            //储存明文
+            //            Tracer.Debug("修改邮件密码-用户：" + user.EmployeeId + " 密码:" + entitys.PASSWORD);
+            //            if (users != null) mailClient.ChangePassword(users.ToArray());
+            //        }
+            //        else
+            //        {
+            //            Tracer.Debug("未成功修改邮件密码");
+            //            result = false;
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Tracer.Debug("修改邮件密码出错：" + ex.ToString());
+            //        return false;
+            //    }
+            //}
             return result;
         }
 
@@ -2150,7 +2150,7 @@ namespace SMT.SaaS.Permission.BLL
                     loginrecord.LOGINIP = Ip;
                     loginrecord.LOGINMONTH = System.DateTime.Now.Month;
                     loginrecord.LOGINYEAR = System.DateTime.Now.Year;
-                    V_EMPLOYEEDETAIL EmployeDetail = employeeBll.GetEmployeeDetailViewByID(ent.EMPLOYEEID);
+                    V_EMPLOYEEDETAIL EmployeDetail = employeeBll.GetEmployeeDetailView(ent.EMPLOYEEID);
                     
                     if (EmployeDetail != null)
                     {
@@ -2441,7 +2441,7 @@ namespace SMT.SaaS.Permission.BLL
 
                         SMT.Foundation.Log.Tracer.Debug("开始调用员工基本信息");
                         SMT.Foundation.Log.Tracer.Debug("开始调用员工基本信息，开始时间：");
-                        V_EMPLOYEEDETAIL EmployeDetail = employeeBll.GetEmployeePostBriefByEmployeeID(ents.FirstOrDefault().EMPLOYEEID);
+                        V_EMPLOYEEDETAIL EmployeDetail = empPostbll.GetEmployeePostBriefByEmployeeID(ents.FirstOrDefault().EMPLOYEEID);
                         SMT.Foundation.Log.Tracer.Debug("开始调用员工基本信息，结束时间：");
                         if (EmployeDetail != null)
                         {
@@ -2519,7 +2519,7 @@ namespace SMT.SaaS.Permission.BLL
 
                         SMT.Foundation.Log.Tracer.Debug("开始调用员工基本信息");
                         SMT.Foundation.Log.Tracer.Debug("开始调用员工基本信息，开始时间：");
-                        V_EMPLOYEEDETAIL EmployeDetail = employeeBll.GetEmployeePostBriefByEmployeeID(ents.FirstOrDefault().EMPLOYEEID);
+                        V_EMPLOYEEDETAIL EmployeDetail = empPostbll.GetEmployeePostBriefByEmployeeID(ents.FirstOrDefault().EMPLOYEEID);
                         SMT.Foundation.Log.Tracer.Debug("开始调用员工基本信息，结束时间：");
                         if (EmployeDetail != null)
                         {
@@ -2854,9 +2854,9 @@ namespace SMT.SaaS.Permission.BLL
             try
             {
                 int maxPerm = -1;
-                PersonnelServiceClient client = new PersonnelServiceClient();
+                //PersonnelServiceClient client = new PersonnelServiceClient();
 
-                T_HR_EMPLOYEE CachePerson = client.GetEmployeeByID(employeeID);
+                T_HR_EMPLOYEE CachePerson = employeeBll.GetEmployeeByID(employeeID);
                 T_SYS_USER CacheUser = GetUserByEmployeeID(employeeID);
                 string userID = "";
                 if (CachePerson == null)
@@ -2895,11 +2895,12 @@ namespace SMT.SaaS.Permission.BLL
 
 
 
-                //取员工岗位
-                V_EMPLOYEEPOST emppost = client.GetEmployeeDetailByID(CachePerson.EMPLOYEEID);
-
-                CachePerson.T_HR_EMPLOYEEPOST = emppost.EMPLOYEEPOSTS;
-
+                //取员工岗位                
+                V_EMPLOYEEPOST emppost = employeeBll.GetEmployeeDetailByID(CachePerson.EMPLOYEEID);
+                foreach (var item in emppost.EMPLOYEEPOSTS)
+                {
+                    CachePerson.T_HR_EMPLOYEEPOST.Add(item);
+                }
 
                 //获取自定义权限  20100914注释  目前没使用自定义权限 
                 //int custPerm = GetCustomPerms(entityName, CachePerson);
@@ -3072,9 +3073,9 @@ namespace SMT.SaaS.Permission.BLL
             try
             {
                 int maxPerm = -1;
-                PersonnelServiceClient client = new PersonnelServiceClient();
+                //PersonnelServiceClient client = new PersonnelServiceClient();
 
-                T_HR_EMPLOYEE CachePerson = client.GetEmployeeByID(employeeID);
+                T_HR_EMPLOYEE CachePerson = employeeBll.GetEmployeeByID(employeeID);
                 T_SYS_USER CacheUser = GetUserByEmployeeID(employeeID);
                 string userID = "";
                 if (CachePerson == null)
@@ -3105,9 +3106,11 @@ namespace SMT.SaaS.Permission.BLL
 
 
                 //取员工岗位
-                V_EMPLOYEEPOST emppost = client.GetEmployeeDetailByID(CachePerson.EMPLOYEEID);
-
-                CachePerson.T_HR_EMPLOYEEPOST = emppost.EMPLOYEEPOSTS;
+                V_EMPLOYEEPOST emppost = employeeBll.GetEmployeeDetailByID(CachePerson.EMPLOYEEID);
+                foreach (var item in emppost.EMPLOYEEPOSTS)
+                {
+                    CachePerson.T_HR_EMPLOYEEPOST.Add(item);
+                }
 
 
                 //获取自定义权限  20100914注释  目前没使用自定义权限 

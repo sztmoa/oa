@@ -20,6 +20,7 @@ using Enyim.Caching;
 using System.Data;
 using System.Data.Objects;
 using System.Collections.ObjectModel;
+using SMT.SaaS.Permission.BLL;
 namespace SMT.HRM.BLL
 {
     public class EmployeeEntryBLL : BaseBll<T_HR_EMPLOYEEENTRY>, IOperate
@@ -389,7 +390,7 @@ namespace SMT.HRM.BLL
                     int i = 0;
                     foreach (T_HR_EMPLOYEE ent in employees)
                     {
-                        T_SYS_USER userInfo = GetUserInfo(employee.EMPLOYEEID);
+                        TM_SaaS_OA_EFModel.T_SYS_USER userInfo = GetUserInfo(employee.EMPLOYEEID);
                         if (userInfo!=null && !string.IsNullOrEmpty(userInfo.USERNAME))
                         {
                             SMT.SaaS.SmtOlineEn.SmtOlineDES des = new SmtOlineDES();
@@ -422,14 +423,14 @@ namespace SMT.HRM.BLL
         /// </summary>
         /// <param name="EmployeeId">HR系统T_HR_EMPLOYEE的EMPLOYEEID</param>
         /// <returns>登录系统所用的用户信息</returns>
-        private T_SYS_USER GetUserInfo(string EmployeeId)
+        private TM_SaaS_OA_EFModel.T_SYS_USER GetUserInfo(string EmployeeId)
         {
             try
-            {  
-                using (PermissionServiceClient psc = new PermissionServiceClient())
+            {
+                using (SysUserBLL psc = new SysUserBLL())
                 {
                     string UserName = string.Empty;//记录返回的ID
-                    T_SYS_USER userEnt = null;//获取User实体
+                    TM_SaaS_OA_EFModel.T_SYS_USER userEnt = null;//获取User实体
 
                     if (!string.IsNullOrEmpty(EmployeeId))
                     {
@@ -1108,7 +1109,7 @@ namespace SMT.HRM.BLL
                             //编辑状态
                             employee.EDITSTATE = "1";
                             //获取员工用户信息，有则把邮箱信息等传进去
-                            T_SYS_USER userInfo = GetUserInfo(employee.EMPLOYEEID);
+                            TM_SaaS_OA_EFModel.T_SYS_USER userInfo = GetUserInfo(employee.EMPLOYEEID);
                             if (userInfo != null && !string.IsNullOrEmpty(userInfo.USERNAME))
                             {
                                 //employee.EMAIL = userInfo.USERNAME + "@sinomaster.com";
@@ -1182,9 +1183,8 @@ namespace SMT.HRM.BLL
                             T_HR_EMPLOYEECHANGEHISTORY employeeEntity = new T_HR_EMPLOYEECHANGEHISTORY();
                             employeeEntity.RECORDID = Guid.NewGuid().ToString();
                             //员工ID
-                            //employeeEntity.T_HR_EMPLOYEE.EMPLOYEEID = employee.EMPLOYEEID;
-                            employeeEntity.T_HR_EMPLOYEEReference.EntityKey =
-                                              new System.Data.EntityKey(qualifiedEntitySetName + "T_HR_EMPLOYEE", "EMPLOYEEID", employeeID);
+                            employeeEntity.T_HR_EMPLOYEE.EMPLOYEEID = employee.EMPLOYEEID;
+                            //employeeEntity.EMPLOYEEID= employeeID;
                             //员工姓名
                             employeeEntity.EMPOLYEENAME = employee.EMPLOYEECNAME;
                             //指纹编号
@@ -1218,12 +1218,12 @@ namespace SMT.HRM.BLL
                         #endregion
 
                         #region 启用系统用户
-                        SMT.SaaS.BLLCommonServices.PermissionWS.PermissionServiceClient perclient = new SMT.SaaS.BLLCommonServices.PermissionWS.PermissionServiceClient();
-                        SMT.SaaS.BLLCommonServices.PermissionWS.T_SYS_USER user = perclient.GetUserByEmployeeID(employee.EMPLOYEEID);
+                        SysUserBLL UserBll = new SysUserBLL();
+                        TM_SaaS_OA_EFModel.T_SYS_USER user = UserBll.GetUserByEmployeeID(employee.EMPLOYEEID);
                         if (user != null)
                         {
                             user.STATE = "1";
-                            bool flag = PermClient.SysUserInfoUpdate(user);
+                            bool flag = UserBll.UpdateSysUserInfo(user);
                             if (flag)
                             {
                                 this.AddDefaultRole(user,employee,employeePost);//添加员工默认角色
@@ -1321,18 +1321,18 @@ namespace SMT.HRM.BLL
         /// <param name="user"></param>
         /// <param name="employee"></param>
         /// <param name="employeePost"></param>
-        private void AddDefaultRole(T_SYS_USER user,T_HR_EMPLOYEE employee,T_HR_EMPLOYEEPOST employeePost)
+        private void AddDefaultRole(TM_SaaS_OA_EFModel.T_SYS_USER user,T_HR_EMPLOYEE employee,T_HR_EMPLOYEEPOST employeePost)
         {
             try
             {
-                SMT.SaaS.BLLCommonServices.PermissionWS.PermissionServiceClient perclient = new SMT.SaaS.BLLCommonServices.PermissionWS.PermissionServiceClient();
+                SysUserRoleBLL UserBll = new SysUserRoleBLL();
                 string companyName = (from e in dal.GetObjects<T_HR_COMPANY>()
                                       where e.COMPANYID == employee.OWNERCOMPANYID
                                       select e.CNAME).FirstOrDefault();
                 string comID = employee.OWNERCOMPANYID, deptID = employee.OWNERDEPARTMENTID, postID = employee.OWNERPOSTID;
                 string employeeID = employee.EMPLOYEEID;
                 string employeePostID = employeePost.EMPLOYEEPOSTID;
-                bool flag = perclient.EmployeeEntryAddDefaultRole(user, comID, companyName, deptID, postID,employeeID, employeePostID);
+                bool flag = UserBll.EmployeeEntryAddDefaultRole(user, comID, companyName, deptID, postID, employeeID, employeePostID);
                 if (flag)
                 {
                     SMT.Foundation.Log.Tracer.Debug("员工入职添加默认角色成功，员工ID:" + employeeID);
@@ -1351,145 +1351,145 @@ namespace SMT.HRM.BLL
         #region 实现即时通讯接口
         public void AddImInstantMessageForEntry(T_HR_EMPLOYEE employee,T_HR_EMPLOYEEPOST employeepost)
         {
-            //用来记录提醒信息
-            SMT.Foundation.Log.Tracer.Debug("开始调用即时通讯的接口，员工ID" + employee.EMPLOYEEID);
-            string StrMessage="";
-            try
-            {
-                DataSyncServiceClient IMCient = new DataSyncServiceClient();
-                PermissionServiceClient Client = new PermissionServiceClient();
-                T_SYS_DICTIONARY dict = new T_SYS_DICTIONARY();
-                T_SYS_USER userInfo = GetUserInfo(employee.EMPLOYEEID);
-                #region 定义变量               
+            ////用来记录提醒信息
+            //SMT.Foundation.Log.Tracer.Debug("开始调用即时通讯的接口，员工ID" + employee.EMPLOYEEID);
+            //string StrMessage="";
+            //try
+            //{
+            //    DataSyncServiceClient IMCient = new DataSyncServiceClient();
+            //    PermissionServiceClient Client = new PermissionServiceClient();
+            //    T_SYS_DICTIONARY dict = new T_SYS_DICTIONARY();
+            //    T_SYS_USER userInfo = GetUserInfo(employee.EMPLOYEEID);
+            //    #region 定义变量               
                 
-                string StrSex = "";//性别
-                string StrBirthday = "";//生日
-                string StrCompanyName = "";//公司名
-                //string StrJob = "";//职业
-                //string StrEducation = "";//学历
-                //string StrNickName = ""; //昵称
-                //string StrPWd = "";//密码
-                //string StrEmailIsShow = "";//邮箱是否公开
-                //string StrProvince = "";//省
-                //string StrRegion = "";//地区
-                string StrPostName = "";//岗位名称
-                string StrPostID = "";//岗位ID
-                string StrUserID = employee.EMPLOYEEID;//员工ID
-                string StrUserName = userInfo.USERNAME;//改为取系统用户名 而不是 employee.EMPLOYEEENAME;//用户名                
-                string StrEmployeeName =employee.EMPLOYEECNAME;//员工姓名                
-                string StrTel=employee.OFFICEPHONE;//办公电话
-                string StrMobile =employee.MOBILE;//手机号码
-                string StrEmail = employee.EMAIL;//邮箱;//邮箱
-                using (CompanyBLL cmpBLL=new CompanyBLL())
-                {
-                    bool isTopSmt = cmpBLL.IsTopCompanySmt(employee.OWNERCOMPANYID);
-                    if (isTopSmt)
-                    {
-                        StrEmail = userInfo.USERNAME + "@sinomaster.com";
-                    }
-                }
-                string StrStreet =employee.CURRENTADDRESS;//街道地址
-                string StrPostCode =employee.FAMILYZIPCODE;//邮编
-                string StrDeptId = "";
-                #endregion
-                //获取省份  TOPEDUCATION
-                //StrProvince = Client.GetSysDictionaryByCategoryAndValue("PROVINCE", employee.PROVINCE);
-                //最高学历
-                //StrEducation = Client.GetSysDictionaryByCategoryAndValue("TOPEDUCATION", employee.TOPEDUCATION);
-                if (employee.SEX == "0")
-                {
-                    StrSex = "女";
-                }
-                if (employee.SEX == "1")
-                {
-                    StrSex = "男";
-                }
-                if (employee.BIRTHDAY != null)
-                {
-                    StrBirthday = System.Convert.ToDateTime( employee.BIRTHDAY).ToShortDateString();
-                }
+            //    string StrSex = "";//性别
+            //    string StrBirthday = "";//生日
+            //    string StrCompanyName = "";//公司名
+            //    //string StrJob = "";//职业
+            //    //string StrEducation = "";//学历
+            //    //string StrNickName = ""; //昵称
+            //    //string StrPWd = "";//密码
+            //    //string StrEmailIsShow = "";//邮箱是否公开
+            //    //string StrProvince = "";//省
+            //    //string StrRegion = "";//地区
+            //    string StrPostName = "";//岗位名称
+            //    string StrPostID = "";//岗位ID
+            //    string StrUserID = employee.EMPLOYEEID;//员工ID
+            //    string StrUserName = userInfo.USERNAME;//改为取系统用户名 而不是 employee.EMPLOYEEENAME;//用户名                
+            //    string StrEmployeeName =employee.EMPLOYEECNAME;//员工姓名                
+            //    string StrTel=employee.OFFICEPHONE;//办公电话
+            //    string StrMobile =employee.MOBILE;//手机号码
+            //    string StrEmail = employee.EMAIL;//邮箱;//邮箱
+            //    using (CompanyBLL cmpBLL=new CompanyBLL())
+            //    {
+            //        bool isTopSmt = cmpBLL.IsTopCompanySmt(employee.OWNERCOMPANYID);
+            //        if (isTopSmt)
+            //        {
+            //            StrEmail = userInfo.USERNAME + "@sinomaster.com";
+            //        }
+            //    }
+            //    string StrStreet =employee.CURRENTADDRESS;//街道地址
+            //    string StrPostCode =employee.FAMILYZIPCODE;//邮编
+            //    string StrDeptId = "";
+            //    #endregion
+            //    //获取省份  TOPEDUCATION
+            //    //StrProvince = Client.GetSysDictionaryByCategoryAndValue("PROVINCE", employee.PROVINCE);
+            //    //最高学历
+            //    //StrEducation = Client.GetSysDictionaryByCategoryAndValue("TOPEDUCATION", employee.TOPEDUCATION);
+            //    if (employee.SEX == "0")
+            //    {
+            //        StrSex = "女";
+            //    }
+            //    if (employee.SEX == "1")
+            //    {
+            //        StrSex = "男";
+            //    }
+            //    if (employee.BIRTHDAY != null)
+            //    {
+            //        StrBirthday = System.Convert.ToDateTime( employee.BIRTHDAY).ToShortDateString();
+            //    }
 
-                var ents = from c in dal.GetObjects<T_HR_EMPLOYEEPOST>()
-                           where c.EMPLOYEEPOSTID == employeepost.EMPLOYEEPOSTID
-                           select new V_EMPLOYEEPOSTBRIEF
-                           {
-                               EMPLOYEEPOSTID = c.EMPLOYEEPOSTID,
-                               POSTID = c.T_HR_POST.POSTID,
-                               PostName = c.T_HR_POST.T_HR_POSTDICTIONARY.POSTNAME,
-                               DepartmentID = c.T_HR_POST.T_HR_DEPARTMENT.DEPARTMENTID,
-                               DepartmentName = c.T_HR_POST.T_HR_DEPARTMENT.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTNAME,
-                               CompanyID = c.T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.COMPANYID,
-                               CompanyName = c.T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.CNAME,
-                               POSTLEVEL = c.POSTLEVEL,
-                               ISAGENCY = c.ISAGENCY
-                           };
-                if (ents.Count() > 0)
-                {
-                    StrCompanyName = ents.FirstOrDefault().CompanyName;
-                    StrPostName = ents.FirstOrDefault().PostName;
-                    StrPostID = ents.FirstOrDefault().POSTID;
-                    StrDeptId = ents.FirstOrDefault().DepartmentID;
-                }
-                ImUserDataObject EntObj = new ImUserDataObject();
-                EntObj.DeptId = StrDeptId;
-                EntObj.Email = StrEmail;
-                EntObj.CompanyName = StrCompanyName;
-                EntObj.Gender = StrSex;
-                EntObj.Mobile = StrMobile;
-                EntObj.Telephone = StrTel;
-                EntObj.UserId = StrUserID;
-                EntObj.UserName = StrUserName;
-                EntObj.NickName = StrEmployeeName;
-                EntObj.PostId = StrPostID;
-                EntObj.PostName = StrPostName;
-                EntObj.Address = StrStreet;
-                EntObj.Sort = "0";
-                StrMessage = IMCient.EmployeeEntry(EntObj);
+            //    var ents = from c in dal.GetObjects<T_HR_EMPLOYEEPOST>()
+            //               where c.EMPLOYEEPOSTID == employeepost.EMPLOYEEPOSTID
+            //               select new V_EMPLOYEEPOSTBRIEF
+            //               {
+            //                   EMPLOYEEPOSTID = c.EMPLOYEEPOSTID,
+            //                   POSTID = c.T_HR_POST.POSTID,
+            //                   PostName = c.T_HR_POST.T_HR_POSTDICTIONARY.POSTNAME,
+            //                   DepartmentID = c.T_HR_POST.T_HR_DEPARTMENT.DEPARTMENTID,
+            //                   DepartmentName = c.T_HR_POST.T_HR_DEPARTMENT.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTNAME,
+            //                   CompanyID = c.T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.COMPANYID,
+            //                   CompanyName = c.T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.CNAME,
+            //                   POSTLEVEL = c.POSTLEVEL,
+            //                   ISAGENCY = c.ISAGENCY
+            //               };
+            //    if (ents.Count() > 0)
+            //    {
+            //        StrCompanyName = ents.FirstOrDefault().CompanyName;
+            //        StrPostName = ents.FirstOrDefault().PostName;
+            //        StrPostID = ents.FirstOrDefault().POSTID;
+            //        StrDeptId = ents.FirstOrDefault().DepartmentID;
+            //    }
+            //    ImUserDataObject EntObj = new ImUserDataObject();
+            //    EntObj.DeptId = StrDeptId;
+            //    EntObj.Email = StrEmail;
+            //    EntObj.CompanyName = StrCompanyName;
+            //    EntObj.Gender = StrSex;
+            //    EntObj.Mobile = StrMobile;
+            //    EntObj.Telephone = StrTel;
+            //    EntObj.UserId = StrUserID;
+            //    EntObj.UserName = StrUserName;
+            //    EntObj.NickName = StrEmployeeName;
+            //    EntObj.PostId = StrPostID;
+            //    EntObj.PostName = StrPostName;
+            //    EntObj.Address = StrStreet;
+            //    EntObj.Sort = "0";
+            //    StrMessage = IMCient.EmployeeEntry(EntObj);
 
-                //已入职的员工（即有审核通过的入职记录一项以上），则解冻邮箱，而非创建
-                var listEntry = GetAllEmployeeEntryByEmployeeid(employee.EMPLOYEEID);
-                if (listEntry != null && listEntry.Count() > 0)
-                {
-                    UnFreezeMail(employee);
-                }
-                //入职创建邮箱后再修改密码
-                PermissionServiceClient psc = new PermissionServiceClient();      
-                psc.SysUserInfoUpdate(userInfo);
+            //    //已入职的员工（即有审核通过的入职记录一项以上），则解冻邮箱，而非创建
+            //    var listEntry = GetAllEmployeeEntryByEmployeeid(employee.EMPLOYEEID);
+            //    if (listEntry != null && listEntry.Count() > 0)
+            //    {
+            //        UnFreezeMail(employee);
+            //    }
+            //    //入职创建邮箱后再修改密码
+            //    PermissionServiceClient psc = new PermissionServiceClient();      
+            //    psc.SysUserInfoUpdate(userInfo);
 
                 
                 
-                //StrMessage = IMCient.AddOrUpdateImUser(StrUserID, StrUserName, StrPWd,
-                //    StrEmployeeName, StrSex, StrBirthday, StrCompanyName, StrJob, StrEducation,
-                //    StrTel, StrMobile, StrEmail, StrEmailIsShow, StrProvince, StrRegion,
-                //    StrStreet, StrPostCode, StrPostName);
-                //SMT.Foundation.Log.Tracer.Debug("ents.FirstOrDefault().DepartmentID：" + ents.FirstOrDefault().DepartmentID);
-                //StrMessage +="员工入职入职调部门："+ IMCient.AddOrUpdateDepartmentMember(StrUserID, ents.FirstOrDefault().DepartmentID,StrPostID,StrPostName);
-                //SMT.Foundation.Log.Tracer.Debug("StrUserID：" + StrUserID);
-                //SMT.Foundation.Log.Tracer.Debug("StrUserName：" + StrUserName);
-                //SMT.Foundation.Log.Tracer.Debug("StrPWd：" + StrPWd);
-                //SMT.Foundation.Log.Tracer.Debug("StrNickName：" + StrNickName);
-                //SMT.Foundation.Log.Tracer.Debug("StrSex：" + StrSex);
-                //SMT.Foundation.Log.Tracer.Debug("StrBirthday：" + StrBirthday);
-                //SMT.Foundation.Log.Tracer.Debug("StrCompanyName：" + StrCompanyName);
-                //SMT.Foundation.Log.Tracer.Debug("StrJob：" + StrJob);
-                //SMT.Foundation.Log.Tracer.Debug("StrEducation：" + StrEducation);
-                //SMT.Foundation.Log.Tracer.Debug("StrTel：" + StrTel);
-                //SMT.Foundation.Log.Tracer.Debug("StrMobile：" + StrMobile);
-                //SMT.Foundation.Log.Tracer.Debug("StrEmail：" + StrEmail);
-                //SMT.Foundation.Log.Tracer.Debug("StrEmailIsShow：" + StrEmailIsShow);
-                //SMT.Foundation.Log.Tracer.Debug("StrProvince：" + StrProvince);
-                //SMT.Foundation.Log.Tracer.Debug("StrRegion：" + StrRegion);
-                //SMT.Foundation.Log.Tracer.Debug("StrStreet：" + StrStreet);
-                //SMT.Foundation.Log.Tracer.Debug("StrPostCode：" + StrPostCode);
-                //SMT.Foundation.Log.Tracer.Debug("StrPostName：" + StrPostName);
+            //    //StrMessage = IMCient.AddOrUpdateImUser(StrUserID, StrUserName, StrPWd,
+            //    //    StrEmployeeName, StrSex, StrBirthday, StrCompanyName, StrJob, StrEducation,
+            //    //    StrTel, StrMobile, StrEmail, StrEmailIsShow, StrProvince, StrRegion,
+            //    //    StrStreet, StrPostCode, StrPostName);
+            //    //SMT.Foundation.Log.Tracer.Debug("ents.FirstOrDefault().DepartmentID：" + ents.FirstOrDefault().DepartmentID);
+            //    //StrMessage +="员工入职入职调部门："+ IMCient.AddOrUpdateDepartmentMember(StrUserID, ents.FirstOrDefault().DepartmentID,StrPostID,StrPostName);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrUserID：" + StrUserID);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrUserName：" + StrUserName);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrPWd：" + StrPWd);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrNickName：" + StrNickName);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrSex：" + StrSex);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrBirthday：" + StrBirthday);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrCompanyName：" + StrCompanyName);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrJob：" + StrJob);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrEducation：" + StrEducation);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrTel：" + StrTel);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrMobile：" + StrMobile);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrEmail：" + StrEmail);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrEmailIsShow：" + StrEmailIsShow);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrProvince：" + StrProvince);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrRegion：" + StrRegion);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrStreet：" + StrStreet);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrPostCode：" + StrPostCode);
+            //    //SMT.Foundation.Log.Tracer.Debug("StrPostName：" + StrPostName);
 
-                SMT.Foundation.Log.Tracer.Debug("调用即时通讯接口EmployeeEntry结果，" + StrMessage);
-            }
-            catch (Exception ex)
-            {
-                StrMessage = "员工ID"+employee.EMPLOYEEID + "员工姓名："+employee.EMPLOYEECNAME; 
-                SMT.Foundation.Log.Tracer.Debug("AddImInstantMessage产生错误，" + ex.ToString() + StrMessage);
-            }
+            //    SMT.Foundation.Log.Tracer.Debug("调用即时通讯接口EmployeeEntry结果，" + StrMessage);
+            //}
+            //catch (Exception ex)
+            //{
+            //    StrMessage = "员工ID"+employee.EMPLOYEEID + "员工姓名："+employee.EMPLOYEECNAME; 
+            //    SMT.Foundation.Log.Tracer.Debug("AddImInstantMessage产生错误，" + ex.ToString() + StrMessage);
+            //}
         }
 
         /// <summary>
@@ -1761,7 +1761,7 @@ namespace SMT.HRM.BLL
         {
             try
             {
-                T_SYS_USER sysUser = new T_SYS_USER();
+                TM_SaaS_OA_EFModel.T_SYS_USER sysUser = new TM_SaaS_OA_EFModel.T_SYS_USER();
                 sysUser.SYSUSERID = Guid.NewGuid().ToString();
                 sysUser.STATE = "1";//启用
                 sysUser.CREATEDATE = DateTime.Now;
@@ -1774,8 +1774,8 @@ namespace SMT.HRM.BLL
                 sysUser.OWNERDEPARTMENTID = empInfo.DepartmentID;
                 sysUser.OWNERCOMPANYID = empInfo.CompamyID;
                 sysUser.PASSWORD = empInfo.PassWord;
-                PermissionServiceClient perclient = new PermissionServiceClient();
-                perclient.SysUserInfoAddORUpdate(sysUser, ref strMsg);
+                SysUserBLL UserBll = new SysUserBLL();
+                UserBll.SysUserInfoAddORUpdate(sysUser, ref strMsg);
             }
             catch (Exception ex)
             {

@@ -9,6 +9,7 @@ using System.Linq.Dynamic;
 using SMT.HRM.CustomModel;
 using SMT.HRM.IMServices.IMServiceWS;
 using SMT.SaaS.BLLCommonServices.PermissionWS;
+using SMT.SaaS.Permission.BLL;
 namespace SMT.HRM.BLL
 {
     public class LeftOfficeBLL : BaseBll<T_HR_LEFTOFFICE>, IOperate
@@ -176,7 +177,9 @@ namespace SMT.HRM.BLL
             stringBuilder.Append("</tr>");
             if (Collects.Count<V_LEFTOFFICEVIEW>() > 0)
             {
-                T_SYS_DICTIONARY[] sysDictionaryByCategoryList = new PermissionServiceClient().GetSysDictionaryByCategoryList(new string[]
+                SysDictionaryBLL bll = new SysDictionaryBLL();
+
+                List<TM_SaaS_OA_EFModel.T_SYS_DICTIONARY> sysDictionaryByCategoryList = bll.GetSysDictionaryByCategory(new List<string>
 		        {
 			        "LEFTOFFICECATEGORY", 
 			        "CHECKSTATE"

@@ -7,14 +7,13 @@ using System.Collections.Generic;
 using System.Text;
 
 using SMT.SaaS.Permission.BLL;
-using SMT_System_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using System.Collections;
 using SMT.SaaS.Permission.DAL;
 using SMT.SaaS.Permission.DAL.views;
 using SMT.Foundation.Log;
 using InterActiveDirectory;
-using SMT.SaaS.Permission.BLL.PersonnelWS;
 //using SMT.SaaS.BLLCommonServices.FlowWFService;
 using SMT.SaaS.Permission.CustomerModel;
 

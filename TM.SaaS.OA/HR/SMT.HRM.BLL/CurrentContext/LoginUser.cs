@@ -17,7 +17,7 @@ namespace SMT.HRM.BLL
             UserLoginRecord = new T_SYS_USERLOGINRECORD();
         }
         public T_SYS_USER UserInfo { get; set; }
-        public List<V_Permission> PermissionInfo { get; set; }
+        public List<SMT.SaaS.Permission.DAL.V_Permission> PermissionInfo { get; set; }
         public V_EMPLOYEEPOST EmployeeInfo { get; set; }
         public List<T_SYS_ENTITYMENUCUSTOMPERM> CustomPerms { get; set; }
         public T_SYS_USERLOGINRECORD UserLoginRecord { get; set; }

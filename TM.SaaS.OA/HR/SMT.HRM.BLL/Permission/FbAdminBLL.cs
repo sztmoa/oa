@@ -7,7 +7,6 @@ using System.Data.Objects.DataClasses;
 using System.Collections;
 using System.Linq.Dynamic;
 using SMT.Foundation.Log;
-using SMT.SaaS.Permission.BLL.PersonnelWS;
 using SMT.SaaS.Permission.DAL;
 
 namespace SMT.SaaS.Permission.BLL

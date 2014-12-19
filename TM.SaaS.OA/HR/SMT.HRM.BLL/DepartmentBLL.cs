@@ -1382,7 +1382,7 @@ namespace SMT.HRM.BLL
                     post.T_HR_DEPARTMENT.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTDICTIONARYID = orgInfo.DepartmentDictionaryID;
                     post.DEPARTMENTNAME = orgInfo.DepartmentName;
                     post.COMPANYID = companyID;
-                    post.POSTNUMBER =Convert.ToDecimal(orgInfo.PostNumber);
+                    post.POSTNUMBER =Convert.ToInt32(orgInfo.PostNumber);
                     post.CHECKSTATE = Convert.ToInt32(CheckStates.Approved).ToString();
                     post.EDITSTATE = Convert.ToInt32(EditStates.Actived).ToString();
                     post.CREATEDATE = DateTime.Now;

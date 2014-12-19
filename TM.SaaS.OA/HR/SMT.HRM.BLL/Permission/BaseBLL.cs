@@ -7,11 +7,11 @@ using SMT.SaaS.Permission.DAL;
 using TM_SaaS_OA_EFModel;
 using System.Data.Objects;
 using SMT.Foundation.Log;
-using SMT.HRM.Services;
 using SMT.HRM.BLL;
 using SMT.HRM.CustomModel;
-using BLLCommonServices = TM.SaaS.BLLCommonServices;
+using BLLCommonServices = SMT.SaaS.BLLCommonServices;
 using TM_SaaS_OA_EFModel;
+using SMT.SaaS.BLLCommonServices.WFPlatformWS;
 
 
 namespace SMT.SaaS.Permission.BLL
@@ -22,8 +22,10 @@ namespace SMT.SaaS.Permission.BLL
         public CommDAL<TEntity> dal ;
         //protected PermissionWS.PermissionServiceClient permissionclient = new PermissionWS.PermissionServiceClient();
         public static EmployeeBLL employeeBll;
+        public EmployeePostBLL empPostbll = new EmployeePostBLL();
         //public static OrganizationService Orgclinet;
         //protected static SMT.SaaS.BLLCommonServices.WFPlatformWS.OutInterfaceClient outInterfaceClient;
+        public static OutInterfaceClient outInterfaceClient;
         
         public BaseBll()
         {
@@ -39,11 +41,11 @@ namespace SMT.SaaS.Permission.BLL
             //{
             //    Orgclinet = new OrganizationService();
             //} 
-            //if (outInterfaceClient == null)
-            //{
-            //    outInterfaceClient = new BLLCommonServices.WFPlatformWS.OutInterfaceClient();
+            if (outInterfaceClient == null)
+            {
+                outInterfaceClient = new BLLCommonServices.WFPlatformWS.OutInterfaceClient();
 
-            //}       
+            }       
         }
 
 

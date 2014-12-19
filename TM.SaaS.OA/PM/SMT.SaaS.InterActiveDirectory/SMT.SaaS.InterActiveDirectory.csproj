@@ -104,7 +104,7 @@
   <ItemGroup>
     <Reference Include="ADVB, Version=1.0.2111.17632, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SMT.SaaS.CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\ADVB.dll</HintPath>
+      <HintPath>..\..\..\SMT.SaaS.CommonDll\SMT\Server\ADVB.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>

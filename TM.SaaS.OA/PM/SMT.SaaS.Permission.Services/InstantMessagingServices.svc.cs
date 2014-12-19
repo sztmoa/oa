@@ -19,7 +19,7 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using SMT.SaaS.Permission.BLL;
 using SMT.Foundation.Log;
-using SMT_System_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Collections.Generic;
 
 namespace SMT.SaaS.Permission.Services
