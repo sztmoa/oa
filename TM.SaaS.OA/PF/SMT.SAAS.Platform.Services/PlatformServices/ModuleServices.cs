@@ -8,15 +8,7 @@ using SMT.SAAS.Platform.Model;
 using System.Web.Hosting;
 using System.Xml.Linq;
 using System.Collections.ObjectModel;
-//------------------------------------------------------------------------------
-// 版权所有: 版权所有(C)2011 SMT-Online
 // 内容摘要: 为子系统(应用)信息的数据访问提供接口规范
-// 完成日期：2011-04-20 
-// 版    本：V1.0 
-// 作    者：GaoY 
-// 修 改 人：
-// 修改时间： 
-//------------------------------------------------------------------------------
 namespace SMT.SAAS.Platform.Services
 {
     public partial class PlatformServices : IPlatformServices

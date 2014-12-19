@@ -4,16 +4,9 @@ using System.Linq;
 using System.Text;
 using SMT.Foundation.Log;
 using System.Reflection;
-using SMT_Platform_EFModel;
-//------------------------------------------------------------------------------
-// 版权所有: 版权所有(C)2011 SMT-Online
+using TM_SaaS_OA_EFModel;
+using SMT.SAAS.Platform.Model;
 // 内容摘要: 为子系统(应用)信息的数据访问提供接口规范
-// 完成日期：2011-04-08 
-// 版    本：V1.0 
-// 作    者：GaoY 
-// 修 改 人：
-// 修改时间： 
-//------------------------------------------------------------------------------
 namespace SMT.SAAS.Platform
 {
     public static class Utility

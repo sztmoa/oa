@@ -1,8 +1,8 @@
-﻿using SMT.SAAS.Platform.DAL.Interface;
+﻿
 using SMT.SAAS.Platform.Model;
 using System.Collections.Generic;
 using SMT.Foundation.Core;
-using SMT_Platform_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Linq.Dynamic;
 using System.Linq;
 using System;
@@ -11,27 +11,17 @@ using System.Diagnostics;
 using System.Xml.Linq;
 using System.Collections.ObjectModel;
 using SMT.Foundation.Log;
-
-//------------------------------------------------------------------------------
-// 版权所有: 版权所有(C)2011 SMT-Online
-// 内容摘要: 提供基于Oracle数据库的子系统(应用)信息访问实现
-// 完成日期：2011-04-08 
-// 版    本：V1.0 
-// 作    者：GaoY 
-// 修 改 人：
-// 修改时间： 
-//------------------------------------------------------------------------------
-namespace SMT.SAAS.Platform.OracleDAL
+using SMT.SaaS.Permission.BLL;
+using SMT.SaaS.Permission.DAL;
+namespace SMT.SAAS.Platform.DAL
 {
     /// <summary>
     /// 提供基于Oracle数据库的子系统(应用)信息访问实现
-    /// SMT.SAAS.Platform.OracleDAL.AppDAL
+    /// SMT.SAAS.Platform.DAL.AppDAL
     /// </summary>
-    public class ModuleInfoDAL : BaseDAL, IModuleInfoDAL
+    public class ModuleInfoDAL : BaseDAL
     {
         private CommonDAL<T_PF_MODULEINFO> _commonDAL;
-        private SMT.SAAS.Platform.CommonServices.UserLoginWS.MainUIServicesClient _client;
-        private SMT.SAAS.Platform.CommonServices.PermissionWS.PermissionServiceClient _prmClient;
 
         private static string _configFileVersion = "0.0";
         private static List<ModuleInfo> _cacheTaskModuleInfo = null;
@@ -39,8 +29,6 @@ namespace SMT.SAAS.Platform.OracleDAL
         public ModuleInfoDAL()
         {
             _commonDAL = new CommonDAL<T_PF_MODULEINFO>();
-            _client = new CommonServices.UserLoginWS.MainUIServicesClient();
-            _prmClient = new CommonServices.PermissionWS.PermissionServiceClient();
         }
 
         public ModuleInfo GetEntityByKey(string key)
@@ -205,13 +193,17 @@ namespace SMT.SAAS.Platform.OracleDAL
             try
             {
                 string result = string.Empty;
-                string syscodes = _client.GetSystemTypeByUserID(userSysID, ref result);
+                SysUserRoleBLL RoleBll = new SysUserRoleBLL();
+                string syscodes = RoleBll.GetSystemTypeByUserID(userSysID, ref result);
                 string[] codelist = syscodes.Split(',');
 
                 List<ModuleInfo> moduleinfos = GetModulesBySystemCode(codelist);
                 List<ModuleInfo> tempModules = new List<ModuleInfo>();
 
-                var menuList = from ent in _prmClient.GetSysLeftMenuFilterPermissionToNewFrame(userSysID)
+                SysEntityMenuBLL pmbll = new SysEntityMenuBLL();
+
+                List<V_UserMenuPermission> pmList = pmbll.GetSysLeftMenuFilterPermissionToNewFrame(userSysID);
+                var menuList = from ent in pmList
                                orderby ent.SYSTEMTYPE, ent.ORDERNUMBER
                                select ent;
 
@@ -449,7 +441,9 @@ namespace SMT.SAAS.Platform.OracleDAL
 
 
             /// <param name="PermissionValue">权限值：0：新建；1：修改； 2：删除；3:查看；4：公文发布；5：新闻发布；6：转发 </param>
-            var menuList = _prmClient.GetSysLeftMenuFilterPermissionToNewFrameAndPermission(userSysID,"0");
+            SysEntityMenuBLL pmbll = new SysEntityMenuBLL();
+
+            var menuList = pmbll.GetSysLeftMenuFilterPermissionToNewFrameAndPermision(userSysID, "0");
 
             List<string> codes = new List<string>();
             //获取所有的menuCode

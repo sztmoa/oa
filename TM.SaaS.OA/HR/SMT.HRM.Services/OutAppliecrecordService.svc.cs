@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.Text;
 using SMT.HRM.BLL;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.Foundation.Log;
 
 namespace SMT.HRM.Services

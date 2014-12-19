@@ -90,20 +90,11 @@
     <Compile Include="ModuleBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShortCutBLL.cs" />
-    <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SMT.SAAS.Platform.DALFactory\SMT.SAAS.Platform.DALFactory.csproj">
-      <Project>{B17B17C4-3B70-49E6-8B74-A8CA502C9C1A}</Project>
-      <Name>SMT.SAAS.Platform.DALFactory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SMT.SAAS.Platform.DAL\SMT.SAAS.Platform.OracleDAL.csproj">
+    <ProjectReference Include="..\SMT.SAAS.Platform.DAL\SMT.SAAS.Platform.DAL.csproj">
       <Project>{77757498-17E8-4283-BD16-33D7F38E5D15}</Project>
-      <Name>SMT.SAAS.Platform.OracleDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SMT.SAAS.Platform.IDAL\SMT.SAAS.Platform.IDAL.csproj">
-      <Project>{77A41E26-67BA-4F9F-ABFF-551A77DB88AA}</Project>
-      <Name>SMT.SAAS.Platform.IDAL</Name>
+      <Name>SMT.SAAS.Platform.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\SMT.SAAS.Platform.Server.Model\SMT.SAAS.Platform.Server.Model.csproj">
       <Project>{C8A203CA-C6CC-4B59-9E83-92EC3F4E4EE5}</Project>

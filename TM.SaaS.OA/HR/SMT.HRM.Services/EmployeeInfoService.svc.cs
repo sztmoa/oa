@@ -16,7 +16,6 @@ using System.Configuration;
 namespace SMT.HRM.Services
 {
     [ServiceContract(Namespace = "")]
-    [SilverlightFaultBehavior]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class EmployeeInfoService
     {

@@ -1,19 +1,10 @@
 ﻿using System;
 using SMT.SAAS.Platform.DALFactory;
-using SMT.SAAS.Platform.DAL.Interface;
 using SMT.SAAS.Platform.Model;
 using System.Diagnostics;
 using System.IO;
 using System.Collections.Generic;
-//------------------------------------------------------------------------------
-// 版权所有: 版权所有(C)2011 SMT-Online
-// 内容摘要: 应用系统业务操作接口，提供了对数据库、第三方服务、文件系统的访问提供支持。
-// 完成日期：2011-04-20 
-// 版    本：V1.0 
-// 作    者：GaoY 
-// 修 改 人：
-// 修改时间： 
-//------------------------------------------------------------------------------
+using SMT.SAAS.Platform.DAL;
 namespace SMT.SAAS.Platform.BLL
 {
     /// <summary>
@@ -21,7 +12,7 @@ namespace SMT.SAAS.Platform.BLL
     /// </summary>
     public class ModuleBLL:IDisposable
     {
-        private static readonly IModuleInfoDAL dal = DataAccess.CreateModuleInfo();
+        private static readonly ModuleInfoDAL dal = new ModuleInfoDAL();
 
         /// <summary>
         /// 新增一个ModuleInfo到数据库中

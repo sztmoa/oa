@@ -6,7 +6,7 @@ using System.ServiceModel.Activation;
 using SMT.HRM.CustomModel.Reports;
 using System.Collections.Generic;
 using SMT.HRM.BLL.Report;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 namespace SMT.HRM.Services.Report
 {
     [ServiceContract(Namespace = "")]

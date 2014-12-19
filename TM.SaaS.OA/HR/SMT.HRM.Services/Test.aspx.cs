@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SMT.HRM.BLL;
 using System.Xml.Linq;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 
 namespace SMT.HRM.Services
 {

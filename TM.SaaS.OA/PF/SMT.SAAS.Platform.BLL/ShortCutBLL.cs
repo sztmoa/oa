@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SMT.SAAS.Platform.DAL.Interface;
 using SMT.SAAS.Platform.DALFactory;
 using SMT.SAAS.Platform.Model;
 using System.Diagnostics;
+using SMT.SAAS.Platform.DAL;
 
 namespace SMT.SAAS.Platform.BLL
 {
     public class ShortCutBLL
     {
-        private static readonly IShortCutDAL dal = DataAccess.CreateShortCut();
+        private static readonly ShortCutDAL dal = DataAccess.CreateShortCut();
 
         /// <summary>
         /// 新增一个ShortCut到数据库中

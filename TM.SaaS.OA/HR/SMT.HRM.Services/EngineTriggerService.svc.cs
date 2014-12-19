@@ -8,7 +8,7 @@ using System.Text;
 using Smt.Global.IContract;
 using System.Xml.Linq;
 using System.IO;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.BLL.Common;
 using SMT.Foundation.Log;
 using System.Reflection;
@@ -455,7 +455,7 @@ namespace SMT.HRM.Services
                         if (attensolutionAsin.T_HR_ATTENDANCESOLUTION != null)
                         {
                             entity.T_HR_ATTENDANCESOLUTIONReference.EntityKey =
-                            new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCESOLUTION"
+                            new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCESOLUTION"
                             , "ATTENDANCESOLUTIONID", attensolutionAsin.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
 
                         }

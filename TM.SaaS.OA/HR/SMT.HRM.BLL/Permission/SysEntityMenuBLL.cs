@@ -780,7 +780,25 @@ namespace SMT.SaaS.Permission.BLL
             }
 
         }
+        public List<V_UserMenuPermission> GetSysLeftMenuFilterPermissionToNewFrame(string userID)
+        {
+            Tracer.Debug("系统用户SysUserBLL-GetSysLeftMenuFilterPermissionToNewFrame");
+            T_SYS_FBADMIN UserFb = null;
 
+            SysUserBLL bll = new SysUserBLL();
+
+
+            T_SYS_USER Userinfo = bll.GetUserByID(userID);
+            if (Userinfo != null)
+            {
+                FbAdminBLL fbbll = new FbAdminBLL();
+                UserFb = fbbll.getFbAdminBySysUserID(Userinfo.SYSUSERID);
+            }
+
+            IQueryable<V_UserMenuPermission> menuList = UserFb != null ? GetSysLeftMenuFilterPermissionToNewFrame(userID, UserFb) : GetSysLeftMenuFilterPermissionToNewFrameForNotFbAdmin(userID, UserFb);
+
+            return menuList != null ? menuList.ToList() : null;
+        }
         /// <summary>
         /// 根据用户与系统类型获取该用户拥有权限的菜单信息  2010-6-29
         /// </summary>

@@ -6,7 +6,7 @@ using System.ServiceModel.Activation;
 using System.Collections.Generic;
 using System.Text;
 
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.BLL;
 using System.Data.Objects.DataClasses;
 using System.Collections;
@@ -18,6 +18,7 @@ using SMT.HRM.CustomModel;
 using System.Configuration;
 using System.Web;
 using SMT.Foundation.Log;
+using SMT.SaaS.Permission.CustomerModel;
 
 namespace SMT.HRM.Services
 {

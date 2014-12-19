@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonProperty.cs" />
     <Compile Include="ModuleInfo.cs" />
     <Compile Include="ModuleUpdateLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

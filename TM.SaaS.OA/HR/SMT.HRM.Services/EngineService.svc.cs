@@ -8,7 +8,7 @@ using System.Text;
 using Smt.Global.IContract;
 using System.Xml.Linq;
 using System.IO;
-using SMT_HRM_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.HRM.BLL.Common;
 using SMT.Foundation.Log;
 using SMT.HRM.CustomModel;

@@ -100,12 +100,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AttendanceService.svc" />
+    <Content Include="BllCommonPermissionServices.svc" />
     <Content Include="clientaccesspolicy.xml" />
+    <Content Include="CurrentContextPermision.svc" />
+    <Content Include="FileDownload.aspx" />
+    <Content Include="FileUploadManager.svc" />
     <Content Include="HRUpdateCheckStateServices.svc" />
     <Content Include="InstantMessagingService.svc" />
+    <Content Include="InstantMessagingServices.svc" />
+    <Content Include="MainUIServices.svc" />
+    <Content Include="NoShowMenus\NoShowMenus.xml" />
     <Content Include="OrganizationService.svc" />
     <Content Include="OutAppliecrecordService.svc" />
     <Content Include="OutputInterface.svc" />
+    <Content Include="PermissionService.svc" />
     <Content Include="PersonnelService.svc" />
     <Content Include="RecordUIlog.svc" />
     <Content Include="Report\ReportChartService.svc" />
@@ -113,8 +121,10 @@
     <Content Include="SalaryService.svc" />
     <Content Include="EmployeeInfoService.svc" />
     <Content Include="Test.aspx" />
+    <Content Include="TestPermission.aspx" />
     <Content Include="UIXML\UI\T_HR_EMPLOYEESALARYRECORD.xml" />
     <Content Include="UIXML\T_HR_EMPLOYEESALARYRECORD.xml" />
+    <Content Include="UseractLogService.svc" />
     <Content Include="Web93.config">
       <SubType>Designer</SubType>
     </Content>
@@ -176,11 +186,28 @@
     <Compile Include="AttendanceService.svc.cs">
       <DependentUpon>AttendanceService.svc</DependentUpon>
     </Compile>
+    <Compile Include="BllCommonPermissionServices.svc.cs">
+      <DependentUpon>BllCommonPermissionServices.svc</DependentUpon>
+    </Compile>
+    <Compile Include="CacheHelper.cs" />
+    <Compile Include="CurrentContextPermision.svc.cs">
+      <DependentUpon>CurrentContextPermision.svc</DependentUpon>
+    </Compile>
     <Compile Include="EngineService.svc.cs">
       <DependentUpon>EngineService.svc</DependentUpon>
     </Compile>
     <Compile Include="EngineTriggerService.svc.cs">
       <DependentUpon>EngineTriggerService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="FileDownload.aspx.cs">
+      <DependentUpon>FileDownload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileDownload.aspx.designer.cs">
+      <DependentUpon>FileDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileUploadManager.svc.cs">
+      <DependentUpon>FileUploadManager.svc</DependentUpon>
     </Compile>
     <Compile Include="HRUpdateCheckStateServices.svc.cs">
       <DependentUpon>HRUpdateCheckStateServices.svc</DependentUpon>
@@ -188,18 +215,29 @@
     <Compile Include="InstantMessagingService.svc.cs">
       <DependentUpon>InstantMessagingService.svc</DependentUpon>
     </Compile>
+    <Compile Include="InstantMessagingServices.svc.cs">
+      <DependentUpon>InstantMessagingServices.svc</DependentUpon>
+    </Compile>
+    <Compile Include="JsonHelper.cs" />
+    <Compile Include="LoginUserInfo.cs" />
+    <Compile Include="MainUIServices.svc.cs">
+      <DependentUpon>MainUIServices.svc</DependentUpon>
+    </Compile>
     <Compile Include="OrganizationService.svc.cs">
       <DependentUpon>OrganizationService.svc</DependentUpon>
     </Compile>
     <Compile Include="OutAppliecrecordService.svc.cs">
       <DependentUpon>OutAppliecrecordService.svc</DependentUpon>
     </Compile>
-    <Compile Include="OutApply\Class1.cs" />
+    <Compile Include="OutApply\OutApply.cs" />
     <Compile Include="OutputInterface.svc.cs">
       <DependentUpon>OutputInterface.svc</DependentUpon>
     </Compile>
     <Compile Include="PerformanceService.svc.cs">
       <DependentUpon>PerformanceService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionService.svc.cs">
+      <DependentUpon>PermissionService.svc</DependentUpon>
     </Compile>
     <Compile Include="PersonnelService.svc.cs">
       <DependentUpon>PersonnelService.svc</DependentUpon>
@@ -218,7 +256,6 @@
     <Compile Include="HrCommonService.svc.cs">
       <DependentUpon>HrCommonService.svc</DependentUpon>
     </Compile>
-    <Compile Include="SilverlightFaultBehavior.cs" />
     <Compile Include="Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -226,15 +263,32 @@
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UploadFileModel.cs" />
     <Compile Include="EmployeeInfoService.svc.cs">
       <DependentUpon>EmployeeInfoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="TestPermission.aspx.cs">
+      <DependentUpon>TestPermission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPermission.aspx.designer.cs">
+      <DependentUpon>TestPermission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseractLogService.svc.cs">
+      <DependentUpon>UseractLogService.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Framework\SMT.SaaS.BLLCommonServices\SMT.SAAS.BLLCommonServices.csproj">
       <Project>{6673751a-d03d-4d7a-acf3-f363469b73ae}</Project>
       <Name>SMT.SAAS.BLLCommonServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PM\SMT.SaaS.InterActiveDirectory\SMT.SaaS.InterActiveDirectory.csproj">
+      <Project>{b555a23f-65cd-4483-9b80-07c1e32ea338}</Project>
+      <Name>SMT.SaaS.InterActiveDirectory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TM_SaaS_OA_EFModel\TM_SaaS_OA_EFModel.csproj">
+      <Project>{7571bce6-3b80-41c1-af97-9118e7f41845}</Project>
+      <Name>TM_SaaS_OA_EFModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\SMT.HRM.BLL\SMT.HRM.BLL.csproj">
       <Project>{B35234A0-7BF1-49B6-BDF2-4041D0763D9B}</Project>
@@ -243,10 +297,6 @@
     <ProjectReference Include="..\SMT.HRM.CustomModel\SMT.HRM.CustomModel.csproj">
       <Project>{0E45B937-670F-49E1-8EF1-A4BD312B94DA}</Project>
       <Name>SMT.HRM.CustomModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SMT_HRM_EFModel\SMT_HRM_EFModel.csproj">
-      <Project>{c07a351d-305d-4a97-958d-e6449b022f30}</Project>
-      <Name>SMT_HRM_EFModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -262,6 +312,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DebugWeb.config" />
     <None Include="Properties\PublishProfiles\配置文件1.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
