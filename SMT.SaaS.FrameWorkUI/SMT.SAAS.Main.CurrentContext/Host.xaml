@@ -19,7 +19,7 @@
             <Grid>
                 <Button Content="点击隐藏系统信息栏" Width="120" Margin="0,0,200,0" Click="Button_Click"></Button>
                 <Button Content="点击显示系统信息栏" Width="120" Margin="100,0,0,0" Click="Button_Click_1"></Button>
-                <Button Content="检查系统文件工具" Width="120" Margin="400,0,0,0"  Click="Button_Click_2"></Button>
+                <!--<Button Content="检查系统文件工具" Width="120" Margin="400,0,0,0"  Click="Button_Click_2"></Button>-->
             </Grid>
             <TextBox x:Name="txtSystemMessage"  Text="" VerticalScrollBarVisibility = "Auto"
              Visibility="Visible"        TextWrapping="Wrap" AcceptsReturn ="True"></TextBox>

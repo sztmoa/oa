@@ -110,9 +110,9 @@ namespace SMT.SAAS.Main.CurrentContext
             systemMessageArea.Visibility = System.Windows.Visibility.Visible;
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
+        //private void Button_Click_2(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
     }
 }

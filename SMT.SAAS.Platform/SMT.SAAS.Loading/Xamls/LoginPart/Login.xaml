@@ -25,7 +25,8 @@
                 <Button x:Name="btnAddSpace" Width="150" Height="26" HorizontalAlignment="Center" VerticalAlignment="Center" Content="增加系统存储空间" Click="btnAddSpace_Click" />
                 <TextBlock x:Name="txtUserMsg" Width="Auto" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Text="初次访问协同办公系统，请点击上方按钮--增加系统存储空间，以确保系统能正常运行" />
             </StackPanel>
-            <LoginPart:ItemBox x:Name="ibLogin"></LoginPart:ItemBox>
+            <LoginPart:ItemBox x:Name="ibLogin" ></LoginPart:ItemBox>
+            <!--Visibility="Collapsed"-->
         </Grid>
     </Grid>
 </UserControl>

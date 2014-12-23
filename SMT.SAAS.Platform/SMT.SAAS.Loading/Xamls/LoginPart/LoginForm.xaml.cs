@@ -73,6 +73,12 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
             MainPageManeger.dllVersionFilePath = this.dllVersionFilePath;
             MainPageManeger.LoadCompleted += new EventHandler(loadMainPage_LoadCompleted);
             MainPageManeger.UpdateDllCompleted += new EventHandler(MainPageManeger_UpdateDllCompleted);
+
+            if (Application.Current.Resources["username"] != null
+                    && Application.Current.Resources["userpwd"] != null)
+            {
+                Root.Visibility = Visibility.Collapsed;
+            }
         }
 
         #region 页面控件事件
