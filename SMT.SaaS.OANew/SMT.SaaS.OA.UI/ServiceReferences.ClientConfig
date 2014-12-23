@@ -195,13 +195,13 @@
       <endpoint address="http://10.10.0.93:8080/New/Services/SMTEngine/EngineWcfGlobalFunction.svc"
         binding="customBinding" bindingConfiguration="WSHttpBinding_IEngineWcfGlobalFunction"
         contract="EngineWS.IEngineWcfGlobalFunction" name="WSHttpBinding_IEngineWcfGlobalFunction" />
-      <!--<endpoint address="http://localhost:3938/SmtOAPersonOffice.svc"
-        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_SmtOAPersonOffice1"
-        contract="SmtOAPersonOfficeService.SmtOAPersonOffice" name="BasicHttpBinding_SmtOAPersonOffice" />-->
-
- <endpoint address="http://10.10.0.93:8080/New/Services/OA/SmtOAPersonOffice.svc"
+      <endpoint address="http://localhost:3938/SmtOAPersonOffice.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_SmtOAPersonOffice1"
         contract="SmtOAPersonOfficeService.SmtOAPersonOffice" name="BasicHttpBinding_SmtOAPersonOffice" />
+
+ <!--<endpoint address="http://10.10.0.93:8080/New/Services/OA/SmtOAPersonOffice.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_SmtOAPersonOffice1"
+        contract="SmtOAPersonOfficeService.SmtOAPersonOffice" name="BasicHttpBinding_SmtOAPersonOffice" />-->
       
       <endpoint address="http://10.10.0.93:8030/Services/WP/WPServices.svc"
          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IWPServices"

@@ -36,8 +36,8 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         PermissionServiceClient permissionclient = new PermissionServiceClient();
         OrganizationServiceClient OrgClient = new OrganizationServiceClient();
         //交通工具标准
-        private ObservableCollection<T_OA_TAKETHESTANDARDTRANSPORT> StandardList = new ObservableCollection<T_OA_TAKETHESTANDARDTRANSPORT>();
-        private ObservableCollection<T_OA_TAKETHESTANDARDTRANSPORT> AddStandardList = new ObservableCollection<T_OA_TAKETHESTANDARDTRANSPORT>();
+        private List<T_OA_TAKETHESTANDARDTRANSPORT> StandardList = new List<T_OA_TAKETHESTANDARDTRANSPORT>();
+        private ObservableCollection<T_OA_TAKETHESTANDARDTRANSPORT> EditStandardList = new ObservableCollection<T_OA_TAKETHESTANDARDTRANSPORT>();
 
 
         //记录旧的交通工具信息  用来和新的做比较如果不一样 则修改标志为true
@@ -46,7 +46,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         //飞机路线列表
 
         private int ToolBarSolution = 0;
-        private bool IsAddStandard = false;//添加交通工具
+        //private bool IsAddStandard = false;//添加交通工具
         private bool IsAddPlaneLine = false;//添加飞机路线
         private T_OA_TRAVELSOLUTIONS travelObj = new T_OA_TRAVELSOLUTIONS();
         private bool EditFlag = false;//修改标志 修改的时候如果做了改动则传列表 否则只修改解决方案
@@ -223,7 +223,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             this.nuqujiaomindays.IsEnabled = false;
             this.txtSolutionName.IsEnabled = false;
 
-            this.DGVechileStandard.IsEnabled = false;
+            this.DGVechileStandard.IsReadOnly = true;
 
             ToolBar_Vechile.IsEnabled = false;
             this.nubaoxiaomindays.IsEnabled = false;
@@ -443,27 +443,6 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                 };
                 com.SelectionBox(Utility.GetResourceStr("DELETECONFIRM"), Utility.GetResourceStr("DELETEALTER"), ComfirmWindow.titlename, Result);
             }
-            //if (cmbSolution.SelectedItem.Count() > 0)
-            //{
-
-            //    string Result = "";
-            //    //DelInfosList = new ObservableCollection<string>();
-            //    ComfirmWindow com = new ComfirmWindow();
-            //    com.OnSelectionBoxClosed += (obj, result) =>
-            //    {
-
-
-            //        string SoltionID = (DaGr.SelectedItems[0] as T_OA_TRAVELSOLUTIONS).TRAVELSOLUTIONSID;
-            //        client.DeleteTravleSolutionAsync(SoltionID);
-            //        TravelSolution = null;
-
-            //    };
-            //    com.SelectionBox(Utility.GetResourceStr("DELETECONFIRM"), Utility.GetResourceStr("DELETEALTER"), ComfirmWindow.titlename, Result);
-            //}
-            //else
-            //{
-            //    ComfirmWindow.ConfirmationBox(Utility.GetResourceStr("CONFIRMINFO"), Utility.GetResourceStr("SELECTERROR", "DELETE"), Utility.GetResourceStr("CONFIRMBUTTON"));
-            //} 
         }
         /// <summary>
         /// 修改出差方案
@@ -498,7 +477,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             this.nuqujianmax.IsEnabled = true;
             this.nuqujiaomindays.IsEnabled = true;
             this.txtSolutionName.IsEnabled = true;
-            this.DGVechileStandard.IsEnabled = true;
+            this.DGVechileStandard.IsReadOnly = false;
 
             ToolBar_Vechile.IsEnabled = true;
             this.nubaoxiaomindays.IsEnabled = true;
@@ -517,28 +496,22 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
 
 
                 //this.cbxpostlevel.SelectedIndex = 0;
-                if (!IsAddStandard)
-                {
-                    StandardList.Clear();
-                    DGVechileStandard.ItemsSource = null;
-                    //IninAddVechile(true);
-                }
+                //if (!IsAddStandard)
+                //{
+                //    StandardList.Clear();
+                //    DGVechileStandard.ItemsSource = null;
+                //    //IninAddVechile(true);
+                //}
                 IninAddVechile(true);
             }
             else
             {
                 //DGVechileStandard.ItemsSource = null;
                 //StandardList.Clear();
-                if (IsAddStandard)
-                    NewStandardDetail();
-                else
-                    client.GetVechileStandardAndPlaneLineAsync(travelObj.TRAVELSOLUTIONSID, RefPlaneList, RefvechileList);
+                //if (IsAddStandard)
+                //else
+                //    client.GetVechileStandardAndPlaneLineAsync(travelObj.TRAVELSOLUTIONSID, f, RefvechileList);
             }
-
-
-
-
-
         }
 
         void client_UpdateTravleSolutionCompleted(object sender, UpdateTravleSolutionCompletedEventArgs e)
@@ -547,22 +520,15 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             BtnSave.IsEnabled = true;
             try
             {
-                if (e.Result == 0)
-                {
-                    ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("没有修改数据！"), 
-                        Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
-                }
-                else
-                {
+                if(e.Error==null)
+                { 
                     ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("SUCCESSED"), Utility.GetResourceStr("MODIFYSUCCESSED"),
                     Utility.GetResourceStr("CONFIRM"), MessageIcon.Information);
-                    //action = FormTypes.Edit;
-                    //this.BtnSave.IsEnabled = false;
-                    //this.cmbSolution.IsEnabled = false;//禁用选择出差方案控件
-                    //RefreshUI(RefreshedTypes.All);
-                    //isChange = false;
+                }else
+                {
+                    ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("ERROR"),e.Error.Message,
+                                       Utility.GetResourceStr("CONFIRM"), MessageIcon.Error);
                 }
-
             }
             catch (Exception ex)
             {
@@ -590,7 +556,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                         if (e.VechileStandardList.Count() > 0 && (e.UserState=="DefaultSolution" || isChange==true))
                         {
                             //OldStandardList = e.VechileStandardList.ToList();
-                            e.VechileStandardList.ToList().ForEach(item =>
+                            e.VechileStandardList.OrderBy(c => c.TYPEOFTRAVELTOOLS).ThenBy(c => c.TAKETHETOOLLEVEL).ToList().ForEach(item =>
                             {
                                 T_OA_TAKETHESTANDARDTRANSPORT Sport = new T_OA_TAKETHESTANDARDTRANSPORT();
                                 Sport.TAKETHESTANDARDTRANSPORTID = item.TAKETHESTANDARDTRANSPORTID;
@@ -618,7 +584,8 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                                     OldStandardList.Add(Sport);
                                 }
                             });
-                            StandardList = e.VechileStandardList;
+
+                            StandardList = e.VechileStandardList.OrderBy(c => c.TYPEOFTRAVELTOOLS).ThenBy(c => c.TAKETHETOOLLEVEL).ToList();
 
                             StandardBindDataGrid(StandardList, false);
                         }
@@ -814,17 +781,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         /// <param name="e"></param>
         void ToolBar_VechilebtnNew_Click(object sender, RoutedEventArgs e)
         {
-            IsAddStandard = true;
-
-            if (action == FormTypes.New)
-            {
-                //this.cbxpostlevel.SelectedIndex = 0;
-            }
-
-            if (action == FormTypes.Edit)
-                EditFlag = true;
-            SetEnabledIsTrue();
-
+            NewStandardDetail();
         }
         #endregion
 
@@ -834,14 +791,14 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="IsAdd">如果是新建 则添加一行</param>
-        private void StandardBindDataGrid(ObservableCollection<T_OA_TAKETHESTANDARDTRANSPORT> obj, bool IsAdd)
+        private void StandardBindDataGrid(List<T_OA_TAKETHESTANDARDTRANSPORT> obj, bool IsAdd)
         {
             StandardList = obj;
             if (StandardList.Count > 0)
             {
                 StandardList.ForEach(item =>
                 {
-                    item.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(Standard_PropertyChanged);
+                   // item.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(Standard_PropertyChanged);
                 });
                 if (IsAdd)
                     NewStandardDetail();
@@ -860,32 +817,11 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             T_OA_TAKETHESTANDARDTRANSPORT AddStandardObj = new T_OA_TAKETHESTANDARDTRANSPORT();
             AddStandardObj.TAKETHESTANDARDTRANSPORTID = Guid.NewGuid().ToString();
             AddStandardObj.T_OA_TRAVELSOLUTIONS = travelObj;
-
             //StandardObj.ENDPOSTLEVEL = StandardList[DGVechileStandard.SelectedIndex].ENDPOSTLEVEL;//结束岗位级别
-
             //StandardObj.TYPEOFTRAVELTOOLS = StandardList[DGVechileStandard.SelectedIndex].TYPEOFTRAVELTOOLS;//乘坐类型
             //StandardObj.TAKETHETOOLLEVEL = StandardList[DGVechileStandard.SelectedIndex].TAKETHETOOLLEVEL;//乘坐级别
             this.StandardList.Add(AddStandardObj);
             this.DGVechileStandard.ItemsSource = StandardList;
-            AddStandardObj.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(Standard_PropertyChanged);
-
-
-        }
-        void Standard_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-
-            //if (DGVechileStandard.ItemsSource != null)
-            //{
-            //    foreach (Object row in DGVechileStandard.ItemsSource)//判断所选的出发城市是否与目标城市相同
-            //    {
-            //        TravelDictionaryComboBox ComVechile = ((TravelDictionaryComboBox)((StackPanel)DGVechileStandard.Columns[1].GetCellContent(row)).Children.FirstOrDefault()) as TravelDictionaryComboBox;
-            //        TravelDictionaryComboBox ComLevel = ((TravelDictionaryComboBox)((StackPanel)DGVechileStandard.Columns[2].GetCellContent(row)).Children.FirstOrDefault()) as TravelDictionaryComboBox;
-            //        SelectPost EndComPost = ((SelectPost)((StackPanel)DGVechileStandard.Columns[3].GetCellContent(row)).Children.FirstOrDefault()) as SelectPost;
-
-
-            //    }
-
-            //}
         }
         #endregion
 
@@ -895,20 +831,20 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         {
             if (DGVechileStandard.ItemsSource != null)
             {
-                if (IsAddStandard)
-                {
-                    Utility.DataRowAddRowNo(sender, e);
-                    TravelDictionaryComboBox ComVechile = DGVechileStandard.Columns[1].GetCellContent(e.Row).FindName("ComVechileType") as TravelDictionaryComboBox;
-                    TravelDictionaryComboBox ComLevel = DGVechileStandard.Columns[2].GetCellContent(e.Row).FindName("ComVechileTypeLeve") as TravelDictionaryComboBox;
+                //if (IsAddStandard)
+                //{
+                //    //Utility.DataRowAddRowNo(sender, e);
+                //    TravelDictionaryComboBox ComVechile = DGVechileStandard.Columns[1].GetCellContent(e.Row).FindName("ComVechileType") as TravelDictionaryComboBox;
+                //    TravelDictionaryComboBox ComLevel = DGVechileStandard.Columns[2].GetCellContent(e.Row).FindName("ComVechileTypeLeve") as TravelDictionaryComboBox;
 
-                    SelectPost EndComPost = DGVechileStandard.Columns[3].GetCellContent(e.Row).FindName("txtSelectPost") as SelectPost;
+                //    SelectPost EndComPost = DGVechileStandard.Columns[3].GetCellContent(e.Row).FindName("txtSelectPost") as SelectPost;
 
-                    ComVechile.SelectedIndex = 0;
-                    ComLevel.SelectedIndex = 0;
-                    IsAddStandard = false;
-                }
-                else
-                {
+                //    ComVechile.SelectedIndex = 0;
+                //    ComLevel.SelectedIndex = 0;
+                //    IsAddStandard = false;
+                //}
+                //else
+                //{
                     T_OA_TAKETHESTANDARDTRANSPORT Standard = (T_OA_TAKETHESTANDARDTRANSPORT)e.Row.DataContext;
                     TravelDictionaryComboBox ComVechile = DGVechileStandard.Columns[1].GetCellContent(e.Row).FindName("ComVechileType") as TravelDictionaryComboBox;
                     TravelDictionaryComboBox ComLevel = DGVechileStandard.Columns[2].GetCellContent(e.Row).FindName("ComVechileTypeLeve") as TravelDictionaryComboBox;
@@ -981,7 +917,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                         }
                         EndComPost.TxtSelectedPost.Text = PostCode;
                     }
-                }
+                //}
             }
 
 
@@ -1107,33 +1043,25 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
 
                         if (DGVechileStandard.ItemsSource != null)
                         {
-                            AddStandardList.Clear();
+                            EditStandardList.Clear();
                             foreach (Object obj in DGVechileStandard.ItemsSource)
                             {
                                 T_OA_TAKETHESTANDARDTRANSPORT ent = (T_OA_TAKETHESTANDARDTRANSPORT)obj;
                                 ent.TAKETHESTANDARDTRANSPORTID = System.Guid.NewGuid().ToString();
                                 ent.T_OA_TRAVELSOLUTIONS = travelObj;                               
-                                AddStandardList.Add(ent);
+                                EditStandardList.Add(ent);
                             }
                         }
                        
-                        client.AddTravleSolutionAsync(travelObj, AddStandardList, companyids);
+                        client.AddTravleSolutionAsync(travelObj, EditStandardList, companyids);
                     }
                     else
                     {
                         AddVechileStandard();
                         //添加出差方案设置
                         AddSetSolution();
-                        if (EditFlag)
-                        {
-                            client.UpdateTravleSolutionAsync(travelObj, AddStandardList, companyids, EditFlag);
-                            EditFlag = false;
-                        }
-                        else
-                        {
-                            //只对出差方案进行修改  出差路线、出差方案
-                            client.UpdateTravleSolutionAsync(travelObj, null, null, false);
-                        }
+
+                        client.UpdateTravleSolutionAsync(travelObj, EditStandardList, companyids, EditFlag);
                     }
 
                 }
@@ -1151,8 +1079,8 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
 
             try
             {
-                AddStandardList.Clear();
-                List<T_OA_TAKETHESTANDARDTRANSPORT> NowList = new List<T_OA_TAKETHESTANDARDTRANSPORT>();
+                EditStandardList.Clear();
+                //List<T_OA_TAKETHESTANDARDTRANSPORT> NowList = new List<T_OA_TAKETHESTANDARDTRANSPORT>();
                 if (DGVechileStandard.ItemsSource != null)
                 {
 
@@ -1209,84 +1137,81 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                         }
 
                         ent.T_OA_TRAVELSOLUTIONS = travelObj;
-                        NowList.Add(ent);
-                        var standars = from ent1 in AddStandardList
-                                       where ent1.ENDPOSTLEVEL == ent.ENDPOSTLEVEL && ent1.TAKETHETOOLLEVEL == ent.TAKETHETOOLLEVEL && ent1.TYPEOFTRAVELTOOLS == ent.TYPEOFTRAVELTOOLS
-                                       select ent1;
-                        //EditFlag = true;
-                        if (!(standars.Count() > 0))
-                        {
-                            if (action == FormTypes.Edit)
-                            {
-                                if (OldStandardList != null)
-                                {
-                                    if (OldStandardList.Count() > 0)
-                                    {
-                                        var OldEnts = from a in OldStandardList
-                                                      where a.TAKETHETOOLLEVEL == ent.TAKETHETOOLLEVEL && a.TYPEOFTRAVELTOOLS == ent.TYPEOFTRAVELTOOLS
-                                                      && a.ENDPOSTLEVEL == ent.ENDPOSTLEVEL
-                                                      select a;
+                        EditStandardList.Add(ent);
+                        //NowList.Add(ent);
+                        //    var standars = from ent1 in EditStandardList
+                        //                   where ent1.ENDPOSTLEVEL == ent.ENDPOSTLEVEL && ent1.TAKETHETOOLLEVEL == ent.TAKETHETOOLLEVEL && ent1.TYPEOFTRAVELTOOLS == ent.TYPEOFTRAVELTOOLS
+                        //                   select ent1;
+                        //    //EditFlag = true;
+                        //    if (!(standars.Count() > 0))
+                        //    {
+                        //        if (action == FormTypes.Edit)
+                        //        {
+                        //            if (OldStandardList != null)
+                        //            {
+                        //                if (OldStandardList.Count() > 0)
+                        //                {
+                        //                    var OldEnts = from a in OldStandardList
+                        //                                  where a.TAKETHETOOLLEVEL == ent.TAKETHETOOLLEVEL && a.TYPEOFTRAVELTOOLS == ent.TYPEOFTRAVELTOOLS
+                        //                                  && a.ENDPOSTLEVEL == ent.ENDPOSTLEVEL
+                        //                                  select a;
 
-                                        if (!(OldEnts.Count() > 0))
-                                        {
-                                            AddStandardList.Add(ent);//只添加已经修改过或新添加的信息  
-                                        }
+                        //                    if (!(OldEnts.Count() > 0))
+                        //                    {
+                        //                        EditStandardList.Add(ent);//只添加已经修改过或新添加的信息  
+                        //                    }
+                        //                }
+                        //                else
+                        //                {
+                        //                    EditStandardList.Add(ent);
+                        //                }
+                        //            }
+                        //        }
+                        //        else
+                        //        {
+                        //            EditStandardList.Add(ent);//不添加重复的数据
+                        //        }
+                        //    }
+                        //    else
+                        //    {
+                        //    }
+                        //    if (action == FormTypes.Edit)
+                        //    {
+                        //        EditFlag = true;
 
+                        //    }
 
-                                    }
-                                    else
-                                    {
-                                        AddStandardList.Add(ent);
-                                    }
-                                }
-
-                            }
-                            else
-                            {
-                                AddStandardList.Add(ent);//不添加重复的数据
-                            }
-                        }
-                        else
-                        {
-                            //
-                            //return;
-                        }
-                        if (action == FormTypes.Edit)
-                        {
-                            EditFlag = true;
-
-                        }
-
+                        //}
+                        //查找删除的  信息
+                        //if (NowList.Count() > 0)
+                        //{
+                        //    if (OldStandardList.Count() > 0)
+                        //    {
+                        //        OldStandardList.ForEach(item =>
+                        //        {
+                        //            var Exists = from ent in NowList
+                        //                         where ent.ENDPOSTLEVEL == item.ENDPOSTLEVEL && ent.TAKETHETOOLLEVEL == item.TAKETHETOOLLEVEL
+                        //                         && ent.TYPEOFTRAVELTOOLS == item.TYPEOFTRAVELTOOLS && ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == item.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID
+                        //                         select ent;
+                        //            if (Exists.Count() == 0)
+                        //            {
+                        //                item.TAKETHETOOLLEVEL = "";
+                        //                item.ENDPOSTLEVEL = "";
+                        //                item.TYPEOFTRAVELTOOLS = "";
+                        //                var tmps = from ent in EditStandardList
+                        //                           where ent.TAKETHESTANDARDTRANSPORTID == item.TAKETHESTANDARDTRANSPORTID
+                        //                           && ent.ENDPOSTLEVEL == item.ENDPOSTLEVEL && ent.TAKETHETOOLLEVEL == item.TAKETHETOOLLEVEL
+                        //                           && ent.TYPEOFTRAVELTOOLS == item.TYPEOFTRAVELTOOLS && ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == item.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID
+                        //                           select ent;
+                        //                if (tmps.Count() == 0)
+                        //                    EditStandardList.Add(item);//用来作为删除的记录
+                        //            }
+                        //        });
+                        //    }
+                        //}
                     }
-                    //查找删除的  信息
-                    if (NowList.Count() > 0)
-                    {
-                        if (OldStandardList.Count() > 0)
-                        {
-                            OldStandardList.ForEach(item =>
-                            {
-                                var Exists = from ent in NowList
-                                             where ent.ENDPOSTLEVEL == item.ENDPOSTLEVEL && ent.TAKETHETOOLLEVEL == item.TAKETHETOOLLEVEL
-                                             && ent.TYPEOFTRAVELTOOLS == item.TYPEOFTRAVELTOOLS && ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == item.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID
-                                             select ent;
-                                if (Exists.Count() == 0)
-                                {
-                                    item.TAKETHETOOLLEVEL = "";
-                                    item.ENDPOSTLEVEL = "";
-                                    item.TYPEOFTRAVELTOOLS = "";
-                                    var tmps = from ent in AddStandardList
-                                               where ent.TAKETHESTANDARDTRANSPORTID == item.TAKETHESTANDARDTRANSPORTID
-                                               && ent.ENDPOSTLEVEL == item.ENDPOSTLEVEL && ent.TAKETHETOOLLEVEL == item.TAKETHETOOLLEVEL
-                                               && ent.TYPEOFTRAVELTOOLS == item.TYPEOFTRAVELTOOLS && ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == item.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID
-                                               select ent;
-                                    if (tmps.Count() == 0)
-                                        AddStandardList.Add(item);//用来作为删除的记录
-                                }
-                            });
-                        }
-                    }
+                    //}
                 }
-                //}
             }
             catch (Exception ex)
             {
