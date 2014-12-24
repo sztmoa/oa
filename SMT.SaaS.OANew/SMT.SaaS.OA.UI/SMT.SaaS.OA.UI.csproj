@@ -1083,6 +1083,7 @@
     <Compile Include="Form\Travelmanagement\TravelRequestForm.xaml.cs">
       <DependentUpon>TravelRequestForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Travelmanagement\SolutionManagement_Event.cs" />
     <Compile Include="Views\Travelmanagement\TravelapplicationPage.xaml.cs">
       <DependentUpon>TravelapplicationPage.xaml</DependentUpon>
     </Compile>
