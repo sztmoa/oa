@@ -145,25 +145,34 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                                 //ListObj.ToList().Insert(0, nuldict);
                                 ComLevel.ItemsSource = ListObj.ToList();
                                 ComLevel.SelectedIndex = 0;
-                                if (tempDetail != null)
-                                {
-                                    T_SYS_DICTIONARY LevelObj = ComLevel.SelectedItem as T_SYS_DICTIONARY;
-                                    tempDetail.TAKETHETOOLLEVEL = LevelObj.DICTIONARYVALUE.ToString();
-                                }
                             }
                         }
                     }
                 }
             }
         }
+
+
+        private void ComVechileTypeLeve_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var tempDetail = DGVechileStandard.SelectedItem as T_OA_TAKETHESTANDARDTRANSPORT;
+            if (tempDetail != null)
+            {
+                TravelDictionaryComboBox ComLevel = sender as TravelDictionaryComboBox;
+                if (ComLevel.SelectedItem != null)
+                {
+                    T_SYS_DICTIONARY LevelObj = ComLevel.SelectedItem as T_SYS_DICTIONARY;
+                    tempDetail.TAKETHETOOLLEVEL = LevelObj.DICTIONARYVALUE.ToString();
+                }
+            }
+        }
+
+
         #endregion
 
         #region 选择岗位级别
         private void txtSelectPost_SelectClick(object sender, EventArgs e)
         {
-            var tempDetail = DGVechileStandard.SelectedItem as T_OA_TAKETHESTANDARDTRANSPORT;
-
-
             SelectPost txt = (SelectPost)sender;
             string StrOld = txt.TxtSelectedPost.Text.ToString();
 
@@ -176,13 +185,37 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                 if (!string.IsNullOrEmpty(StrPost))
                     txt.TxtSelectedPost.Text = StrPost.Substring(0, StrPost.Length - 1);
                 citycode = SelectCity.Result[SelectCity.Result.Keys.FirstOrDefault()].ToString();
+               
+
                 if (!string.IsNullOrEmpty(citycode))
                     citycode = citycode.Substring(0, citycode.Length - 1);
 
                 if (txt.Name == "txtSelectPost")
                 {
-                    StandardList[DGVechileStandard.SelectedIndex].ENDPOSTLEVEL = citycode;
-                    tempDetail.ENDPOSTLEVEL = citycode;
+                    //控件返回值有问题，这里暂时不修改，直接通过文本获取值
+
+                    if (!string.IsNullOrEmpty(txt.TxtSelectedPost.Text))
+                    {
+                        //添加到数据库中的为数字
+                        string PostCode = txt.TxtSelectedPost.Text;
+                        string PostValue = "";
+                        string[] arrstr = PostCode.Split(',');
+                        foreach (var d in arrstr)
+                        {
+                            var ents = from en in ListPost
+                                       where en.DICTIONARYNAME == d
+                                       select en;
+                            if (ents.Count() > 0)
+                                PostValue += ents.FirstOrDefault().DICTIONARYVALUE.ToString() + ",";
+                        }
+                        if (!(string.IsNullOrEmpty(PostValue)))
+                        {
+                            PostValue = PostValue.Substring(0, PostValue.Length - 1);
+                            StandardList[DGVechileStandard.SelectedIndex].ENDPOSTLEVEL = PostValue;
+                        }
+
+                    }
+                    //tempDetail.ENDPOSTLEVEL = citycode;
                     AAA = citycode;
                 }
             };
@@ -217,6 +250,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                 }
                 else
                 {
+                    loadbar.Start();
                     client.GetTravleSolutionSetBySolutionIDAsync(travelObj.TRAVELSOLUTIONSID);
                 }
                 SetEnabled();

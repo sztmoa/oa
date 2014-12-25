@@ -41,7 +41,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
 
 
         //记录旧的交通工具信息  用来和新的做比较如果不一样 则修改标志为true
-        private List<T_OA_TAKETHESTANDARDTRANSPORT> OldStandardList = new List<T_OA_TAKETHESTANDARDTRANSPORT>();
+        //private List<T_OA_TAKETHESTANDARDTRANSPORT> OldStandardList = new List<T_OA_TAKETHESTANDARDTRANSPORT>();
         private T_OA_TAKETHESTANDARDTRANSPORT StandardObj = new T_OA_TAKETHESTANDARDTRANSPORT();
         //飞机路线列表
 
@@ -75,6 +75,8 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
         #region 构造函数
         public SolutionManagement(FormTypes Action, T_OA_TRAVELSOLUTIONS SolutionObj)
         {
+            loadbar.Stop();
+            LayoutRoot.Children.Add(loadbar);
             action = Action;
             this.BtnSave.IsEnabled = false;//默认禁用保存按钮
             /*
@@ -90,7 +92,7 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                 //IsAddStandard = true;
             }
             //Utility.DisplayGridToolBarButtonUI();
-            OldStandardList.Clear();
+            //OldStandardList.Clear();
             InitializeComponent();
             #region 新增
             this.Loaded += (o, e) =>
@@ -358,8 +360,9 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             ToolBar_Solution.btnEdit.IsEnabled = false;
 
             SecondCompany.Items.Clear();
-            OldStandardList.Clear();
-
+            //OldStandardList.Clear();
+            this.StandardList.Clear();
+            NewStandardDetail();
             //新建后出来复制操作
             if (ToolBarSolution == 1)
             {
@@ -531,13 +534,13 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             this.cmbSolution.IsEnabled = false;//禁用选择出差方案控件
             RefreshUI(RefreshedTypes.All);
             isChange = false;
-            LoadSolutionInfos();
+            //LoadSolutionInfos();
         }
 
         void client_GetVechileStandardAndPlaneLineCompleted(object sender, GetVechileStandardAndPlaneLineCompletedEventArgs e)
         {
             RefreshUI(RefreshedTypes.HideProgressBar);
-            OldStandardList.Clear();
+            //OldStandardList.Clear();
             try
             {
                 if (!e.Cancelled)
@@ -547,34 +550,34 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                         if (e.VechileStandardList.Count() > 0 && (e.UserState=="DefaultSolution" || isChange==true))
                         {
                             //OldStandardList = e.VechileStandardList.ToList();
-                            e.VechileStandardList.OrderBy(c => c.TYPEOFTRAVELTOOLS).ThenBy(c => c.TAKETHETOOLLEVEL).ToList().ForEach(item =>
-                            {
-                                T_OA_TAKETHESTANDARDTRANSPORT Sport = new T_OA_TAKETHESTANDARDTRANSPORT();
-                                Sport.TAKETHESTANDARDTRANSPORTID = item.TAKETHESTANDARDTRANSPORTID;
-                                Sport.T_OA_TRAVELSOLUTIONS = item.T_OA_TRAVELSOLUTIONS;
-                                Sport.TAKETHETOOLLEVEL = item.TAKETHETOOLLEVEL;
-                                Sport.TYPEOFTRAVELTOOLS = item.TYPEOFTRAVELTOOLS;
-                                Sport.ENDPOSTLEVEL = item.ENDPOSTLEVEL;
-                                Sport.CREATEDATE = item.CREATEDATE;
-                                Sport.CREATEUSERID = item.CREATEUSERID;
-                                Sport.UPDATEDATE = item.UPDATEDATE;
-                                Sport.UPDATEUSERID = item.UPDATEUSERID;
-                                Sport.EntityKey = item.EntityKey;
-                                if (OldStandardList.Count() > 0)
-                                {
-                                    var ents = from ent in OldStandardList
-                                               where ent.ENDPOSTLEVEL == item.ENDPOSTLEVEL && ent.TAKETHETOOLLEVEL == item.TAKETHETOOLLEVEL
-                                               && ent.TYPEOFTRAVELTOOLS == item.TYPEOFTRAVELTOOLS && ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == item.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID
-                                               && ent.TAKETHESTANDARDTRANSPORTID == item.TAKETHESTANDARDTRANSPORTID
-                                               select ent;
-                                    if (ents.Count() == 0)
-                                        OldStandardList.Add(Sport);
-                                }
-                                else
-                                {
-                                    OldStandardList.Add(Sport);
-                                }
-                            });
+                            //e.VechileStandardList.OrderBy(c => c.TYPEOFTRAVELTOOLS).ThenBy(c => c.TAKETHETOOLLEVEL).ToList().ForEach(item =>
+                            //{
+                            //    T_OA_TAKETHESTANDARDTRANSPORT Sport = new T_OA_TAKETHESTANDARDTRANSPORT();
+                            //    Sport.TAKETHESTANDARDTRANSPORTID = item.TAKETHESTANDARDTRANSPORTID;
+                            //    Sport.T_OA_TRAVELSOLUTIONS = item.T_OA_TRAVELSOLUTIONS;
+                            //    Sport.TAKETHETOOLLEVEL = item.TAKETHETOOLLEVEL;
+                            //    Sport.TYPEOFTRAVELTOOLS = item.TYPEOFTRAVELTOOLS;
+                            //    Sport.ENDPOSTLEVEL = item.ENDPOSTLEVEL;
+                            //    Sport.CREATEDATE = item.CREATEDATE;
+                            //    Sport.CREATEUSERID = item.CREATEUSERID;
+                            //    Sport.UPDATEDATE = item.UPDATEDATE;
+                            //    Sport.UPDATEUSERID = item.UPDATEUSERID;
+                            //    Sport.EntityKey = item.EntityKey;
+                            //    if (OldStandardList.Count() > 0)
+                            //    {
+                            //        var ents = from ent in OldStandardList
+                            //                   where ent.ENDPOSTLEVEL == item.ENDPOSTLEVEL && ent.TAKETHETOOLLEVEL == item.TAKETHETOOLLEVEL
+                            //                   && ent.TYPEOFTRAVELTOOLS == item.TYPEOFTRAVELTOOLS && ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == item.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID
+                            //                   && ent.TAKETHESTANDARDTRANSPORTID == item.TAKETHESTANDARDTRANSPORTID
+                            //                   select ent;
+                            //        if (ents.Count() == 0)
+                            //            OldStandardList.Add(Sport);
+                            //    }
+                            //    else
+                            //    {
+                            //        OldStandardList.Add(Sport);
+                            //    }
+                            //});
 
                             var listALl=e.VechileStandardList.OrderBy(c => c.TYPEOFTRAVELTOOLS).ThenBy(c => c.TAKETHETOOLLEVEL).ToList();
                             ObservableCollection<T_OA_TAKETHESTANDARDTRANSPORT> tObjectStruct = new ObservableCollection<T_OA_TAKETHESTANDARDTRANSPORT>();
@@ -1275,5 +1278,12 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
             this.Save();
         }
         #endregion
+
+        //private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        //{
+        //    loadbar.Start();
+        //    client.GetTravleSolutionSetBySolutionIDAsync(travelObj.TRAVELSOLUTIONSID);
+        //}
+
     }
 }

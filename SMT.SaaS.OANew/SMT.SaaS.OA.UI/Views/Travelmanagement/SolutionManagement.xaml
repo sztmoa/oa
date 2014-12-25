@@ -37,6 +37,7 @@
                                      Grid.Row="1" />
 									 <smt:ImageButton x:Name="btnCopy" Width="80"></smt:ImageButton>
             <Button x:Name="BtnSave" Click="BtnSave_Click" Content="保存" Width="80" Style="{StaticResource CommonButtonStyle}"></Button>
+            <!--<Button x:Name="BtnRefresh" Click="BtnRefresh_Click" Content="刷新" Width="80" Style="{StaticResource CommonButtonStyle}"></Button>-->
         </StackPanel>
         <validator:ValidatorManager x:Name="Group1" />
         <controls:TabControl Grid.Row="1"
@@ -303,6 +304,7 @@
                                             <appCtr:TravelDictionaryComboBox x:Name="ComVechileTypeLeve"
                                                                        Category="VICHILELEVEL"
                                                                        SelectedValue="{Binding VICHILELEVEL,Mode=TwoWay,NotifyOnValidationError=true, ValidatesOnExceptions=true}"
+                                                                             SelectionChanged="ComVechileTypeLeve_SelectionChanged"
                                                                        Style="{StaticResource ComboBoxStyle}"
                                                                        Grid.Row="2"
                                                                        Grid.Column="1"
