@@ -68,6 +68,7 @@
             this.btbSelect = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPerson = new System.Windows.Forms.TextBox();
+            this.btnSaveLog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -83,7 +84,7 @@
             // 
             // btnReCheck
             // 
-            this.btnReCheck.Location = new System.Drawing.Point(546, 11);
+            this.btnReCheck.Location = new System.Drawing.Point(361, 11);
             this.btnReCheck.Name = "btnReCheck";
             this.btnReCheck.Size = new System.Drawing.Size(75, 23);
             this.btnReCheck.TabIndex = 0;
@@ -109,7 +110,7 @@
             // 
             // btnGetCheckRd
             // 
-            this.btnGetCheckRd.Location = new System.Drawing.Point(652, 11);
+            this.btnGetCheckRd.Location = new System.Drawing.Point(532, 11);
             this.btnGetCheckRd.Name = "btnGetCheckRd";
             this.btnGetCheckRd.Size = new System.Drawing.Size(188, 23);
             this.btnGetCheckRd.TabIndex = 3;
@@ -164,7 +165,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(18, 11);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(494, 23);
+            this.dataGridView1.Size = new System.Drawing.Size(229, 23);
             this.dataGridView1.TabIndex = 9;
             // 
             // tabControl1
@@ -183,6 +184,7 @@
             // 
             this.tabPage1.Controls.Add(this.txtMsg);
             this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.btnSaveLog);
             this.tabPage1.Controls.Add(this.btnReCheck);
             this.tabPage1.Controls.Add(this.btnGetCheckRd);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -476,6 +478,16 @@
             this.txtPerson.Size = new System.Drawing.Size(100, 21);
             this.txtPerson.TabIndex = 8;
             // 
+            // btnSaveLog
+            // 
+            this.btnSaveLog.Location = new System.Drawing.Point(765, 11);
+            this.btnSaveLog.Name = "btnSaveLog";
+            this.btnSaveLog.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveLog.TabIndex = 0;
+            this.btnSaveLog.Text = "保存日志";
+            this.btnSaveLog.UseVisualStyleBackColor = true;
+            this.btnSaveLog.Click += new System.EventHandler(this.btnSaveLog_Click);
+            // 
             // ReCheckForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -556,6 +568,7 @@
         private System.Windows.Forms.Button btbSelect;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPerson;
+        private System.Windows.Forms.Button btnSaveLog;
     }
 }
 

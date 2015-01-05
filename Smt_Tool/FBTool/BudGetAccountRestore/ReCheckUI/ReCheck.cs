@@ -150,20 +150,89 @@ namespace ReCheckUI
 
 private void StarCheck()
 {
+    try { 
             Tracer.Debug("结算开始");
             using (SMT_FB_EFModelContext context = new SMT_FB_EFModelContext())
             {
-                var q = from ent in context.T_FB_BUDGETACCOUNT
+                DateTime thisYear = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                SetLog("开始获取总账数据，请稍等......");
+                List<T_FB_BUDGETACCOUNT> allItem = new List<T_FB_BUDGETACCOUNT>();
+                var q = from ent in context.T_FB_BUDGETACCOUNT.Include("T_FB_SUBJECT")
+                         where ent.BUDGETYEAR>=DateTime.Now.Year
                         orderby ent.OWNERCOMPANYID, ent.OWNERDEPARTMENTID, ent.OWNERPOSTID
                         select ent;
-                            ;
-                foreach (var item in q)
+                allItem=q.ToList();
+
+                SetLog("获取总账数据完毕,开始获取年度预算");
+                //年度预算
+                List<T_FB_COMPANYBUDGETAPPLYMASTER> T_FB_COMPANYBUDGETAPPLYMASTERList = 
+                    (from ent in context.T_FB_COMPANYBUDGETAPPLYMASTER
+                        where ent.BUDGETYEAR>=DateTime.Now.Year
+                        select ent).ToList();
+                List<T_FB_COMPANYBUDGETAPPLYDETAIL> T_FB_COMPANYBUDGETAPPLYDETAILList =
+                    (from ent in context.T_FB_COMPANYBUDGETAPPLYDETAIL.Include("T_FB_COMPANYBUDGETAPPLYMASTER").Include("T_FB_SUBJECT")
+                        where ent.T_FB_COMPANYBUDGETAPPLYMASTER.BUDGETYEAR>=DateTime.Now.Year
+                        select ent).ToList();
+                SetLog("获取年度预算完毕，开始获取年底增补");
+                //年度增补
+                List<T_FB_COMPANYBUDGETMODMASTER> T_FB_COMPANYBUDGETMODMASTERList =
+                    (from ent in context.T_FB_COMPANYBUDGETMODMASTER
+                     where ent.BUDGETYEAR >= DateTime.Now.Year
+                     select ent).ToList();
+                List<T_FB_COMPANYBUDGETMODDETAIL> T_FB_COMPANYBUDGETMODDETAILList =
+                    (from ent in context.T_FB_COMPANYBUDGETMODDETAIL.Include("T_FB_COMPANYBUDGETMODMASTER").Include("T_FB_SUBJECT")
+                        where ent.T_FB_COMPANYBUDGETMODMASTER.BUDGETYEAR>= DateTime.Now.Year
+                     select ent).ToList();
+                SetLog("获取年度增补数据完毕，开始获取月度预算");
+                //月度预算
+                List<T_FB_DEPTBUDGETAPPLYMASTER> T_FB_DEPTBUDGETAPPLYMASTERList =
+                    (from ent in context.T_FB_DEPTBUDGETAPPLYMASTER
+                     where ent.BUDGETARYMONTH >= thisYear
+                     select ent).ToList();
+                List<T_FB_DEPTBUDGETAPPLYDETAIL> T_FB_DEPTBUDGETAPPLYDETAILList =
+                    (from ent in context.T_FB_DEPTBUDGETAPPLYDETAIL.Include("T_FB_DEPTBUDGETAPPLYMASTER").Include("T_FB_SUBJECT")
+                     where ent.T_FB_DEPTBUDGETAPPLYMASTER.BUDGETARYMONTH >= thisYear
+                     select ent).ToList();
+                SetLog("获取月度预算完毕，开始获取月度增补");
+                //月度增补
+                List<T_FB_DEPTBUDGETADDMASTER> T_FB_DEPTBUDGETADDMASTERList =
+                    (from ent in context.T_FB_DEPTBUDGETADDMASTER
+                     where ent.BUDGETARYMONTH >= thisYear
+                     select ent).ToList();
+                List<T_FB_DEPTBUDGETADDDETAIL> T_FB_DEPTBUDGETADDDETAILList 
+                    = (from ent in context.T_FB_DEPTBUDGETADDDETAIL.Include("T_FB_DEPTBUDGETADDMASTER").Include("T_FB_SUBJECT")
+                       where ent.T_FB_DEPTBUDGETADDMASTER.BUDGETARYMONTH >= thisYear
+                     select ent).ToList();
+                SetLog("获取月度增补完毕，开始获取个人预算申请及增补");
+                List<T_FB_PERSONBUDGETAPPLYDETAIL> T_FB_PERSONBUDGETAPPLYDETAILList =
+                    (from ent in context.T_FB_PERSONBUDGETAPPLYDETAIL.Include("T_FB_DEPTBUDGETAPPLYDETAIL").Include("T_FB_SUBJECT")
+                     where ent.T_FB_DEPTBUDGETAPPLYDETAIL.T_FB_DEPTBUDGETAPPLYMASTER.BUDGETARYMONTH >= thisYear
+                     select ent).ToList();
+                List<T_FB_PERSONBUDGETADDDETAIL> T_FB_PERSONBUDGETADDDETAILList =
+                    (from ent in context.T_FB_PERSONBUDGETADDDETAIL.Include("T_FB_DEPTBUDGETADDDETAIL").Include("T_FB_SUBJECT")
+                     where ent.T_FB_DEPTBUDGETADDDETAIL.T_FB_DEPTBUDGETADDMASTER.BUDGETARYMONTH >= thisYear
+                     select ent).ToList();
+                SetLog("获取个人预算申请及增补完毕，开始获取费用报销");
+                //个人费用报销
+                List<T_FB_CHARGEAPPLYMASTER> T_FB_CHARGEAPPLYMASTERList = 
+                    (from ent in context.T_FB_CHARGEAPPLYMASTER
+                     where ent.BUDGETARYMONTH >= thisYear
+                     select ent).ToList();
+                List<T_FB_CHARGEAPPLYDETAIL> T_FB_CHARGEAPPLYDETAILList = 
+                    (from ent in context.T_FB_CHARGEAPPLYDETAIL.Include("T_FB_CHARGEAPPLYMASTER").Include("T_FB_SUBJECT")
+                     where ent.T_FB_CHARGEAPPLYMASTER.BUDGETARYMONTH >= thisYear
+                     select ent).ToList();
+                SetLog("获取费用报销完毕，开始处理......");
+                int allCount = allItem.Count;
+                int i = 0;
+                foreach (var item in allItem)
                 {
-                    if (!item.T_FB_SUBJECTReference.IsLoaded)
-                    {
-                        item.T_FB_SUBJECTReference.Load();
-                    }
-                    if (item.T_FB_SUBJECT.SUBJECTNAME == "部门经费")
+                    i++;
+                    //if (!item.T_FB_SUBJECTReference.IsLoaded)
+                    //{
+                    //    item.T_FB_SUBJECTReference.Load();
+                    //}
+                    if (item.T_FB_SUBJECT.SUBJECTID=="08c1d9c6-2396-43c3-99f9-227e4a7eb417")// == "部门经费")
                     {
                         continue;
                     }
@@ -186,7 +255,19 @@ private void StarCheck()
                     decimal F = 0;//个人费用报销审核中-部门公共
                     decimal G = 0;//个人费用报销已终审-个人
                     decimal H = 0;//个人费用报销审核中-个人
-                    GetABCD(context, item, 
+                    GetABCD(T_FB_COMPANYBUDGETAPPLYMASTERList,
+                        T_FB_COMPANYBUDGETAPPLYDETAILList,
+                        T_FB_COMPANYBUDGETMODMASTERList,
+                        T_FB_COMPANYBUDGETMODDETAILList,
+                        T_FB_DEPTBUDGETAPPLYMASTERList,
+                        T_FB_DEPTBUDGETAPPLYDETAILList,
+                        T_FB_DEPTBUDGETADDMASTERList,
+                        T_FB_DEPTBUDGETADDDETAILList,
+                        T_FB_CHARGEAPPLYMASTERList,
+                        T_FB_CHARGEAPPLYDETAILList,
+                        T_FB_PERSONBUDGETAPPLYDETAILList,
+                        T_FB_PERSONBUDGETADDDETAILList,
+                        item, 
                         ref A, ref B, ref C, 
                         ref C1, ref D1,
                         ref C2, ref D2, 
@@ -218,16 +299,19 @@ private void StarCheck()
                             item.PAIEDMONEY = G;//已用额度
                             break;
                     }
+                    string msg = string.Empty;
+                    msg = "总 " + allCount + " 第 " + i + " 条:";
                     if (BUDGETMONEY != item.BUDGETMONEY.Value)
                     {
-                        string msg = " BUDGETMONEY 不对，公司：" + item.OWNERCOMPANYID
-                            + " 部门：" + item.OWNERDEPARTMENTID
-                            + " 岗位：" + item.OWNERPOSTID
-                            + " 科目id：" + item.T_FB_SUBJECT.SUBJECTID
+                         msg += " BUDGETMONEY 不对，公司：" + item.OWNERCOMPANYID
+                            //+ " 部门：" + item.OWNERDEPARTMENTID
+                            //+ " 岗位：" + item.OWNERPOSTID
+                            //+ " 科目id：" + item.T_FB_SUBJECT.SUBJECTID
+                            +" 总账id"+item.BUDGETACCOUNTID
                             + " 预算类型：" + item.ACCOUNTOBJECTTYPE.Value.ToString()
                             + " 科目：" + item.T_FB_SUBJECT.SUBJECTNAME
                             + " 修改前 BUDGETMONEY:" + BUDGETMONEY
-                            + " 修改后 BUDGETMONEY" + item.BUDGETMONEY.Value
+                            + " 修改后 BUDGETMONEY    ->    " + item.BUDGETMONEY.Value
                             + " A:" + A
                             + " B:" + B
                             + " C:" + C
@@ -240,19 +324,18 @@ private void StarCheck()
                             + " F:" + F
                             + " G:" + G
                             + " H:" + H;
-                        Tracer.Debug(msg);
-                        SetLog(msg);
                     }
                     if (USABLEMONEY != item.USABLEMONEY.Value)
                     {
-                        string msg = " USABLEMONEY 不对，公司：" + item.OWNERCOMPANYID
-                              + " 部门：" + item.OWNERDEPARTMENTID
-                              + " 岗位：" + item.OWNERPOSTID
-                              + " 科目id：" + item.T_FB_SUBJECT.SUBJECTID
+                        msg += " USABLEMONEY 不对，公司：" + item.OWNERCOMPANYID
+                              //+ " 部门：" + item.OWNERDEPARTMENTID
+                              //+ " 岗位：" + item.OWNERPOSTID
+                              //+ " 科目id：" + item.T_FB_SUBJECT.SUBJECTID
+                              + " 总账id" + item.BUDGETACCOUNTID
                               + " 预算类型：" + item.ACCOUNTOBJECTTYPE.Value.ToString()
                               + " 科目：" + item.T_FB_SUBJECT.SUBJECTNAME
                               + " 修改前 USABLEMONEY:" + USABLEMONEY
-                              + " 修改后 USABLEMONEY" + item.USABLEMONEY.Value
+                              + " 修改后 USABLEMONEY    ->    " + item.USABLEMONEY.Value
                               + " A:" + A
                             + " B:" + B
                             + " C:" + C
@@ -265,19 +348,18 @@ private void StarCheck()
                             + " F:" + F
                             + " G:" + G
                             + " H:" + H;
-                        Tracer.Debug(msg);
-                        SetLog(msg);
                     }
                     if (ACTUALMONEY != item.ACTUALMONEY.Value)
                     {
-                        string msg = " ACTUALMONEY 不对，公司：" + item.OWNERCOMPANYID
-                              + " 部门：" + item.OWNERDEPARTMENTID
-                              + " 岗位：" + item.OWNERPOSTID
-                              + " 科目id：" + item.T_FB_SUBJECT.SUBJECTID
+                        msg += " ACTUALMONEY 不对，公司：" + item.OWNERCOMPANYID
+                              //+ " 部门：" + item.OWNERDEPARTMENTID
+                              //+ " 岗位：" + item.OWNERPOSTID
+                              //+ " 科目id：" + item.T_FB_SUBJECT.SUBJECTID
+                              + " 总账id" + item.BUDGETACCOUNTID
                               + " 预算类型：" + item.ACCOUNTOBJECTTYPE.Value.ToString()
                               + " 科目：" + item.T_FB_SUBJECT.SUBJECTNAME
                               + " 修改前 ACTUALMONEY:" + ACTUALMONEY
-                              + " 修改后 ACTUALMONEY" + item.ACTUALMONEY.Value
+                              + " 修改后 ACTUALMONEY    ->    " + item.ACTUALMONEY.Value
                                + " A:" + A
                             + " B:" + B
                             + " C:" + C
@@ -290,19 +372,18 @@ private void StarCheck()
                             + " F:" + F
                             + " G:" + G
                             + " H:" + H;
-                        Tracer.Debug(msg);
-                        SetLog(msg);
                     }
                     if (PAIEDMONEY != item.PAIEDMONEY.Value)
                     {
-                        string msg=" PAIEDMONEY 不对，公司：" + item.OWNERCOMPANYID
-                                + " 部门id：" + item.OWNERDEPARTMENTID
-                                + " 岗位id：" + item.OWNERPOSTID
-                                + " 科目id："+item.T_FB_SUBJECT.SUBJECTID
+                       msg +=" PAIEDMONEY 不对，公司：" + item.OWNERCOMPANYID
+                                //+ " 部门id：" + item.OWNERDEPARTMENTID
+                                //+ " 岗位id：" + item.OWNERPOSTID
+                                //+ " 科目id："+item.T_FB_SUBJECT.SUBJECTID
+                                + " 总账id" + item.BUDGETACCOUNTID
                                 + " 预算类型：" + item.ACCOUNTOBJECTTYPE.Value.ToString()
                                 + " 科目：" + item.T_FB_SUBJECT.SUBJECTNAME
                                 + " 修改前 PAIEDMONEY:" + PAIEDMONEY
-                                + " 修改后 PAIEDMONEY" + item.PAIEDMONEY.Value
+                                + " 修改后 PAIEDMONEY    ->    " + item.PAIEDMONEY.Value
                                  + " A:" + A
                             + " B:" + B
                             + " C:" + C
@@ -315,16 +396,47 @@ private void StarCheck()
                             + " F:" + F
                             + " G:" + G
                             + " H:" + H;
-                        Tracer.Debug(msg);
-                        SetLog(msg);
                     }
+                    if (!msg.Contains("修改"))
+                    {
+                        msg += " 总账id" + item.BUDGETACCOUNTID + " 正常。";
+                    }
+                    SetLog(msg);
                 }
+
+                MessageBox.Show("处理完毕！");
+                return;
                 context.SaveChanges();
+                i = 0;
             }
+        
             MessageBox.Show("处理完毕！");
+        
+    }catch(Exception ex)
+    {
+        MessageBox.Show("异常："+ex.ToString());
+        SetLog(ex.ToString());
+    }
 }
 
-        private void GetABCD(SMT_FB_EFModelContext context,T_FB_BUDGETACCOUNT item,
+        private void GetABCD( List<T_FB_COMPANYBUDGETAPPLYMASTER> T_FB_COMPANYBUDGETAPPLYMASTERList,
+       
+            List<T_FB_COMPANYBUDGETAPPLYDETAIL> T_FB_COMPANYBUDGETAPPLYDETAILList,
+             List<T_FB_COMPANYBUDGETMODMASTER> T_FB_COMPANYBUDGETMODMASTERList ,
+            List<T_FB_COMPANYBUDGETMODDETAIL> T_FB_COMPANYBUDGETMODDETAILList,
+            List<T_FB_DEPTBUDGETAPPLYMASTER> T_FB_DEPTBUDGETAPPLYMASTERList,
+
+            List<T_FB_DEPTBUDGETAPPLYDETAIL> T_FB_DEPTBUDGETAPPLYDETAILList ,
+             List<T_FB_DEPTBUDGETADDMASTER> T_FB_DEPTBUDGETADDMASTERList,
+            List<T_FB_DEPTBUDGETADDDETAIL> T_FB_DEPTBUDGETADDDETAILList,
+             List<T_FB_CHARGEAPPLYMASTER> T_FB_CHARGEAPPLYMASTERList,
+
+            List<T_FB_CHARGEAPPLYDETAIL> T_FB_CHARGEAPPLYDETAILList,
+
+            List<T_FB_PERSONBUDGETAPPLYDETAIL> T_FB_PERSONBUDGETAPPLYDETAILList,
+            List<T_FB_PERSONBUDGETADDDETAIL> T_FB_PERSONBUDGETADDDETAILList,
+
+            T_FB_BUDGETACCOUNT item,
             ref decimal A,ref decimal B,
             ref decimal C, 
             ref decimal C1, ref decimal D1,
@@ -333,9 +445,10 @@ private void StarCheck()
             ref decimal F, ref decimal H, 
             ref decimal G)
         {
-                #region//年度预算
-            var YearMoney = from a in context.T_FB_COMPANYBUDGETAPPLYMASTER
-                         join b in context.T_FB_COMPANYBUDGETAPPLYDETAIL
+
+            #region//年度预算A
+            var YearMoney = from a in T_FB_COMPANYBUDGETAPPLYMASTERList
+                            join b in T_FB_COMPANYBUDGETAPPLYDETAILList
                          on a.COMPANYBUDGETAPPLYMASTERID equals b.T_FB_COMPANYBUDGETAPPLYMASTER.COMPANYBUDGETAPPLYMASTERID
                          where a.OWNERCOMPANYID == item.OWNERCOMPANYID
                          && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
@@ -352,9 +465,9 @@ private void StarCheck()
                 }
             #endregion
 
-                #region//年度增补
-                var YearAddMoney = from a in context.T_FB_COMPANYBUDGETMODMASTER
-                         join b in context.T_FB_COMPANYBUDGETMODDETAIL
+                #region//年度增补B
+                var YearAddMoney = from a in T_FB_COMPANYBUDGETMODMASTERList
+                                   join b in T_FB_COMPANYBUDGETMODDETAILList
                          on a.COMPANYBUDGETMODMASTERID equals b.T_FB_COMPANYBUDGETMODMASTER.COMPANYBUDGETMODMASTERID
                          where a.OWNERCOMPANYID == item.OWNERCOMPANYID
                          && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
@@ -371,9 +484,9 @@ private void StarCheck()
                 }
                 #endregion
 
-                #region//月度预算部门
-                var MonthMoeny = from a in context.T_FB_DEPTBUDGETAPPLYMASTER
-                         join b in context.T_FB_DEPTBUDGETAPPLYDETAIL
+                #region//月度预算部门C
+                var MonthMoeny = from a in T_FB_DEPTBUDGETAPPLYMASTERList
+                                 join b in T_FB_DEPTBUDGETAPPLYDETAILList
                          on a.DEPTBUDGETAPPLYMASTERID equals b.T_FB_DEPTBUDGETAPPLYMASTER.DEPTBUDGETAPPLYMASTERID
                          where a.OWNERCOMPANYID == item.OWNERCOMPANYID
                          && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
@@ -390,9 +503,9 @@ private void StarCheck()
                 }
                 #endregion
 
-                #region//月度预算增补部门
-                var MonthAddMoeny = from a in context.T_FB_DEPTBUDGETADDMASTER
-                         join b in context.T_FB_DEPTBUDGETADDDETAIL
+                #region//月度预算增补部门D
+                var MonthAddMoeny = from a in T_FB_DEPTBUDGETADDMASTERList
+                                    join b in T_FB_DEPTBUDGETADDDETAILList
                          on a.DEPTBUDGETADDMASTERID equals b.T_FB_DEPTBUDGETADDMASTER.DEPTBUDGETADDMASTERID
                          where a.OWNERCOMPANYID == item.OWNERCOMPANYID
                          && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
@@ -409,9 +522,9 @@ private void StarCheck()
                 }
                 #endregion
 
-                #region//月度预算-部门公共
-                var DepartmentCommonMonthMoeny = from a in context.T_FB_DEPTBUDGETAPPLYMASTER
-                                 join b in context.T_FB_DEPTBUDGETAPPLYDETAIL
+                #region//月度预算-部门公共C1
+                var DepartmentCommonMonthMoeny = from a in T_FB_DEPTBUDGETAPPLYMASTERList
+                                                 join b in T_FB_DEPTBUDGETAPPLYDETAILList
                                  on a.DEPTBUDGETAPPLYMASTERID equals b.T_FB_DEPTBUDGETAPPLYMASTER.DEPTBUDGETAPPLYMASTERID
                                  where a.OWNERCOMPANYID == item.OWNERCOMPANYID
                                  && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
@@ -428,9 +541,9 @@ private void StarCheck()
                 }
                 #endregion
 
-                #region//月度预算增补-部门公共
-                var DepartmentMonthAddMoeny = from a in context.T_FB_DEPTBUDGETADDMASTER
-                                    join b in context.T_FB_DEPTBUDGETADDDETAIL
+                #region//月度预算增补-部门公共D1
+                var DepartmentMonthAddMoeny = from a in T_FB_DEPTBUDGETADDMASTERList
+                                              join b in T_FB_DEPTBUDGETADDDETAILList
                                     on a.DEPTBUDGETADDMASTERID equals b.T_FB_DEPTBUDGETADDMASTER.DEPTBUDGETADDMASTERID
                                     where a.OWNERCOMPANYID == item.OWNERCOMPANYID
                                     && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
@@ -447,11 +560,11 @@ private void StarCheck()
                 }
                 #endregion
 
-                #region//月度预算-个人
-                var PersonCommonMonthMoeny = from a in context.T_FB_DEPTBUDGETAPPLYMASTER
-                                                 join b in context.T_FB_DEPTBUDGETAPPLYDETAIL
+                #region//月度预算-个人C2
+                var PersonCommonMonthMoeny = from a in T_FB_DEPTBUDGETAPPLYMASTERList
+                                             join b in T_FB_DEPTBUDGETAPPLYDETAILList
                                                  on a.DEPTBUDGETAPPLYMASTERID equals b.T_FB_DEPTBUDGETAPPLYMASTER.DEPTBUDGETAPPLYMASTERID
-                                                 join c in context.T_FB_PERSONBUDGETAPPLYDETAIL 
+                                             join c in T_FB_PERSONBUDGETAPPLYDETAILList
                                                  on b.DEPTBUDGETAPPLYDETAILID equals c.T_FB_DEPTBUDGETAPPLYDETAIL.DEPTBUDGETAPPLYDETAILID
                                                  where a.OWNERCOMPANYID == item.OWNERCOMPANYID
                                                  && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
@@ -469,11 +582,11 @@ private void StarCheck()
                 }
                 #endregion
 
-                #region//月度预算增补-个人
-                var PersonMonthAddMoeny = from a in context.T_FB_DEPTBUDGETADDMASTER
-                                              join b in context.T_FB_DEPTBUDGETADDDETAIL
+                #region//月度预算增补-个人D2
+                var PersonMonthAddMoeny = from a in T_FB_DEPTBUDGETADDMASTERList
+                                          join b in T_FB_DEPTBUDGETADDDETAILList
                                               on a.DEPTBUDGETADDMASTERID equals b.T_FB_DEPTBUDGETADDMASTER.DEPTBUDGETADDMASTERID
-                                              join c in context.T_FB_PERSONBUDGETADDDETAIL 
+                                          join c in T_FB_PERSONBUDGETADDDETAILList
                                               on b.DEPTBUDGETADDDETAILID equals c.T_FB_DEPTBUDGETADDDETAIL.DEPTBUDGETADDDETAILID
                                               where a.OWNERCOMPANYID == item.OWNERCOMPANYID
                                               && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
@@ -491,82 +604,94 @@ private void StarCheck()
                 }
                 #endregion
 
-                #region//个人费用部门科目报销已终审
-                var ChargeMoenyChecked = from a in context.T_FB_CHARGEAPPLYMASTER
-                                    join b in context.T_FB_CHARGEAPPLYDETAIL
-                                    on a.CHARGEAPPLYMASTERID equals b.T_FB_CHARGEAPPLYMASTER.CHARGEAPPLYMASTERID
-                                    where a.OWNERCOMPANYID == item.OWNERCOMPANYID
-                                    && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
-                                    && a.OWNERDEPARTMENTID == item.OWNERDEPARTMENTID
-                                    && a.BUDGETARYMONTH.Year == item.BUDGETYEAR
-                                    && a.CHECKSTATES == 2
-                                    && b.CHARGETYPE==2//部门
-                                    select b.CHARGEMONEY;
-                if (ChargeMoenyChecked.Count() > 0)
-                {
-                    foreach (var va in ChargeMoenyChecked)
+                #region//个人费用部门科目报销已终审E
+                if(T_FB_CHARGEAPPLYDETAILList!=null)
+                { 
+                    var ChargeMoenyChecked = from a in T_FB_CHARGEAPPLYMASTERList
+                                             join b in T_FB_CHARGEAPPLYDETAILList
+                                        on a.CHARGEAPPLYMASTERID equals b.T_FB_CHARGEAPPLYMASTER.CHARGEAPPLYMASTERID
+                                        where a.OWNERCOMPANYID == item.OWNERCOMPANYID
+                                        && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
+                                        && a.OWNERDEPARTMENTID == item.OWNERDEPARTMENTID
+                                        && a.BUDGETARYMONTH.Year == item.BUDGETYEAR
+                                        && a.CHECKSTATES == 2
+                                        && b.CHARGETYPE==2//部门
+                                        select b.CHARGEMONEY;
+                    if (ChargeMoenyChecked.Count() > 0)
                     {
-                        E = E + va;
+                        foreach (var va in ChargeMoenyChecked)
+                        {
+                            E = E + va;
+                        }
                     }
                 }
                 #endregion
 
-                #region//个人费用部门科目报销终审中
-                var ChargeingMoeny = from a in context.T_FB_CHARGEAPPLYMASTER
-                                  join b in context.T_FB_CHARGEAPPLYDETAIL
-                                  on a.CHARGEAPPLYMASTERID equals b.T_FB_CHARGEAPPLYMASTER.CHARGEAPPLYMASTERID
-                                  where a.OWNERCOMPANYID == item.OWNERCOMPANYID
-                                  && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
-                                  && a.OWNERDEPARTMENTID == item.OWNERDEPARTMENTID
-                                  && a.BUDGETARYMONTH.Year == item.BUDGETYEAR
-                                  && a.CHECKSTATES == 1
-                                  && b.CHARGETYPE == 2//部门
-                                  select b.CHARGEMONEY;
-                if (ChargeingMoeny.Count() > 0)
+                #region//个人费用部门科目报销终审中F
+                if (T_FB_CHARGEAPPLYDETAILList != null)
                 {
-                    foreach (var va in ChargeingMoeny)
-                    {
-                        F = F + va;
-                    }
-                }
-                #endregion
-
-                #region//个人费用个人科目报销已终审
-                var ChargeMoenyPersonChecked = from a in context.T_FB_CHARGEAPPLYMASTER
-                                         join b in context.T_FB_CHARGEAPPLYDETAIL
-                                         on a.CHARGEAPPLYMASTERID equals b.T_FB_CHARGEAPPLYMASTER.CHARGEAPPLYMASTERID
+                    var ChargeingMoeny = from a in T_FB_CHARGEAPPLYMASTERList
+                                         join b in T_FB_CHARGEAPPLYDETAILList
+                                      on a.CHARGEAPPLYMASTERID equals b.T_FB_CHARGEAPPLYMASTER.CHARGEAPPLYMASTERID
                                          where a.OWNERCOMPANYID == item.OWNERCOMPANYID
                                          && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
-                                         && a.OWNERPOSTID == item.OWNERPOSTID
+                                         && a.OWNERDEPARTMENTID == item.OWNERDEPARTMENTID
                                          && a.BUDGETARYMONTH.Year == item.BUDGETYEAR
-                                         && a.CHECKSTATES == 2
-                                         && b.CHARGETYPE == 1//个人
+                                         && a.CHECKSTATES == 1
+                                         && b.CHARGETYPE == 2//部门
                                          select b.CHARGEMONEY;
-                if (ChargeMoenyPersonChecked.Count() > 0)
-                {
-                    foreach (var va in ChargeMoenyPersonChecked)
+                    if (ChargeingMoeny.Count() > 0)
                     {
-                        G = G + va;
+                        foreach (var va in ChargeingMoeny)
+                        {
+                            F = F + va;
+                        }
                     }
                 }
                 #endregion
 
-                #region//个人费用个人科目报销终审中
-                var ChargeingPersonMoeny = from a in context.T_FB_CHARGEAPPLYMASTER
-                                     join b in context.T_FB_CHARGEAPPLYDETAIL
-                                     on a.CHARGEAPPLYMASTERID equals b.T_FB_CHARGEAPPLYMASTER.CHARGEAPPLYMASTERID
-                                     where a.OWNERCOMPANYID == item.OWNERCOMPANYID
-                                     && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
-                                     && a.OWNERPOSTID == item.OWNERPOSTID
-                                     && a.BUDGETARYMONTH.Year == item.BUDGETYEAR
-                                     && a.CHECKSTATES == 1
-                                     && b.CHARGETYPE == 1//个人
-                                     select b.CHARGEMONEY;
-                if (ChargeingPersonMoeny.Count() > 0)
+                #region//个人费用个人科目报销已终审G
+                if (T_FB_CHARGEAPPLYDETAILList != null)
                 {
-                    foreach (var va in ChargeingPersonMoeny)
+                    var ChargeMoenyPersonChecked = from a in T_FB_CHARGEAPPLYMASTERList
+                                                   join b in T_FB_CHARGEAPPLYDETAILList
+                                             on a.CHARGEAPPLYMASTERID equals b.T_FB_CHARGEAPPLYMASTER.CHARGEAPPLYMASTERID
+                                                   where a.OWNERCOMPANYID == item.OWNERCOMPANYID
+                                                   && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
+                                                   && a.OWNERPOSTID == item.OWNERPOSTID
+                                                   && a.BUDGETARYMONTH.Year == item.BUDGETYEAR
+                                                   && a.CHECKSTATES == 2
+                                                   && b.CHARGETYPE == 1//个人
+                                                   select b.CHARGEMONEY;
+                    if (ChargeMoenyPersonChecked.Count() > 0)
                     {
-                        H = H + va;
+                        foreach (var va in ChargeMoenyPersonChecked)
+                        {
+                            G = G + va;
+                        }
+                    }
+                }
+                #endregion
+
+                #region//个人费用个人科目报销终审中H
+                if (T_FB_CHARGEAPPLYDETAILList != null)
+                {
+                    var ChargeingPersonMoeny = from a in T_FB_CHARGEAPPLYMASTERList
+                                               join b in T_FB_CHARGEAPPLYDETAILList
+                                         on a.CHARGEAPPLYMASTERID equals b.T_FB_CHARGEAPPLYMASTER.CHARGEAPPLYMASTERID
+                                               where a.OWNERCOMPANYID == item.OWNERCOMPANYID
+                                               && b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
+                                               && a.OWNERPOSTID == item.OWNERPOSTID
+                                               && a.BUDGETARYMONTH.Year == item.BUDGETYEAR
+                                               && a.CHECKSTATES == 1
+                                               && b.CHARGETYPE == 1//个人
+                                               select b.CHARGEMONEY;
+                    if (ChargeingPersonMoeny.Count() > 0)
+                    {
+                        foreach (var va in ChargeingPersonMoeny)
+                        {
+                            H = H + va;
+                        }
                     }
                 }
                 #endregion
@@ -1219,6 +1344,11 @@ private void StarCheck()
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnSaveLog_Click(object sender, EventArgs e)
+        {
+            Tracer.Debug(txtMsg.Text);
         }
     }
 }
