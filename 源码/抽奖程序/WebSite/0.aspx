@@ -92,8 +92,8 @@ to { -webkit-transform: skew(40deg) ; }
             var theEvent = window.event || e;
             var code = theEvent.keyCode || theEvent.which;
             //alert(event.keyCode);
-
             if (code == 32) {//按空格键
+                debugger;
                 if (!open) {
                     open = true;
                     stage(); //Default.js
@@ -142,9 +142,17 @@ to { -webkit-transform: skew(40deg) ; }
         }
         window.onresize = function () { resize(cur_lev) };
         window.onload = function () { resize(cur_lev) };
+
+
     </script>
 </head>
 <body>
+  
+<div id="musicdiv">    
+<%--必须使用支持html5的网页才能播放背景声音，以下html标签只能在html5的浏览器中受支持，如google--%>  
+        <embed id='myaudio' src='mp3/kamen.mp3'; loop=true autostart=true name=bgss width=0 height=0 />
+    </div>
+
 <img src="images/page_back_award0.jpg" style="width:100%; position:absolute; z-index:-1;" id="back_img" />
     <ul id="roll_num" class="list_num"></ul>
     <ul id="num_award" class="list_num"></ul>

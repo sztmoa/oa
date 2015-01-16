@@ -13,6 +13,7 @@
               background: -webkit-gradient(linear, left top, left bottom, from(#00ccff), to(#0095fe));
               }
   </style>
+ 
     <h2>
         初始化
     </h2>
@@ -38,4 +39,8 @@
             <asp:Button ID="ButtonClearTicket" runat="server" Text="清空入场卷" OnClick="ButtonClearTicket_Click" />
         </div>
     </div>
+<%--       <script type="text/javascript">
+
+           document.getElementById("ButtonClearTicket").Attributes.Add("OnClick", "javascript:return confirm('您确定删除吗？一旦删除将无法恢复！');");
+    </script>--%>
 </asp:Content>

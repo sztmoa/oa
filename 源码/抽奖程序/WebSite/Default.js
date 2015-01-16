@@ -9,6 +9,8 @@ function creat_rd_arry() {
 
 //开始滚动
 function stop(level, number) {
+    PlayBGSound(false);
+
      clearInterval(m);
     //获取得奖号
     var obj = lucky.GenerateAward(level, number);
@@ -44,6 +46,7 @@ function stop(level, number) {
     }
 }
 function start() {
+    PlayBGSound(true);
     $("#roll_num").css("display", "block");
     $("#num_award").css("display", "none").empty();
     mov(cur_num); //Default.js
@@ -285,8 +288,25 @@ function movNumber(cur_num) {
 }
 
 function startNumber() {
+    PlayBGSound(true);
     $("#roll_num").css("display", "block");
 
     $("#num_award").css("display", "none").empty();
     movNumber(cur_num); //Default.js
+}
+
+
+
+function PlayBGSound(isPlay) {
+    var myAuto = document.getElementById('musicdiv');
+    if (isPlay) {
+        var node = "<embed id='myaudio' src='mp3/kamen.mp3'; loop=true autostart=true name=bgss width=0 height=0 />";
+        myAuto.innerHTML = node;
+        isPlay = false;
+    }
+    else {
+        var node = "<embed id='myaudio' src='mp3/zhongjiang.mp3'; loop=false autostart=true name=bgss width=0 height=0 />";
+        myAuto.innerHTML = node;
+        isPlay = true;
+    }
 }
