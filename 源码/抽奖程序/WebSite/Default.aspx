@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2>
-        欢迎使用 神州通抽奖程序
+        欢迎使用 神州通 抽奖程序
     </h2>
     <p>
     </p>
