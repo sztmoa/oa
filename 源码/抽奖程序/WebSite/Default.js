@@ -13,16 +13,18 @@ function stop(level, number) {
 
      clearInterval(m);
     //获取得奖号
+     debugger;
     var obj = lucky.GenerateAward(level, number);
     $("#roll_num").css("display", "none");
     $("#num_award").css("display", "block");
     if (level == 3) {
         if (obj[0] != null) {
             $("#num_award")[0].innerHTML = "<li>" + obj[0] + "</li>";
-        }
-        if (obj[2].length > 0) {
-            //show_3Info(obj); //三等奖显示
-            dbProxy.AddAwardMany(obj[2]);
+
+            if (obj[2].length > 0) {
+                //show_3Info(obj); //三等奖显示
+                dbProxy.AddAwardMany(obj[2]);
+            }
         }
     }
     else {
@@ -185,7 +187,7 @@ function resize(cur_lev) {
 //            height: max_width * 0.439,
             marginLeft: 0 - max_width * 0.39 / 2,
             //            fontSize: max_width * 0.4766 * 0.175 + "px",
-            fontSize: 80 + "px",
+            fontSize: 40 + "px",
             lineHeight: max_width * 0.4766 * 0.17 + "px",
             letterSpacing: max_width * 0.4766 * 0.01 + "px"
         });
@@ -220,8 +222,8 @@ function resize(cur_lev) {
                 //width: max_width * 0.2,
                 //height: max_width * 0.439,
                 //marginLeft: 0 - max_width * 0.39 / 2,
-                fontSize: 82 + "px",
-                lineHeight: 60+ "px",
+                fontSize: 45 + "px",
+                lineHeight: 30+ "px",
                 letterSpacing: max_width * 0.4766 * 0.01 + "px",
 
             })

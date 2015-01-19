@@ -91,7 +91,6 @@
     <Content Include="images\page_back_awardyg.jpg" />
     <Content Include="mp3\kamen.mp3" />
     <Content Include="mp3\zhongjiang.mp3" />
-    <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="sz.aspx" />
     <Content Include="AwardService.asmx" />
     <Content Include="2.aspx" />
@@ -115,7 +114,6 @@
     <Content Include="images\stage_top.png" />
     <Content Include="Lucky.htm" />
     <Content Include="Option.aspx" />
-    <Content Include="Scripts\json.js" />
     <Content Include="Scripts\json2.js" />
     <Content Include="Scripts\Lucky.js" />
     <Content Include="Scripts\DBProxy.js" />

@@ -47,7 +47,10 @@ function Lucky() {
              }
          }
          else if (level == 3) {
-             result = this.GenerateAwardThird(level, qty);
+             var ro = this.GenerateAwardThird(level, qty);
+             if (ro != "0000") {
+                 result = ro;
+             }
          }
          else {
              result[result.length] = this.generateOneAward(level); //要是传进来一个没等级的值那么就随便抽一个
@@ -62,6 +65,7 @@ function Lucky() {
          var awardLevel1 = new Array();
          var countSZ1 = 0; //一等奖6名
          var countSZ2 = 0; //一等奖20名
+         var countSZ3 = 100; //三等奖100名
          var countYG = 0; //阳光奖10名
          for (var i = 0; i < awardExisted.length; i++) {
              if (awardExisted[i].Level == "1") {
@@ -73,6 +77,9 @@ function Lucky() {
              if (awardExisted[i].Level == "4") {
                  countYG++;
              }
+             if (awardExisted[i].Level == "3") {
+                 countSZ3++;
+             }
 
          }
          if (typeof (isSupply) == "undefined") {
@@ -83,6 +90,9 @@ function Lucky() {
                  result[result.length] = this.generateOneAward(level);
                  return result;
              }
+         }
+         if (level == 3 && countSZ3 >= 100) {//如果是一等奖大于6个（一等奖只有6个）则返回，如果添加不限制，去掉判断即可
+             return "0000";
          }
 
          if (level == 1 && countSZ1 >= 6) {//如果是一等奖大于6个（一等奖只有6个）则返回，如果添加不限制，去掉判断即可
@@ -101,7 +111,7 @@ function Lucky() {
              return result;
          }
          if (level == 2 || level == 4) {//二等奖或阳光奖生成5个
-             for (var i = 0; i < 5; i++) {
+             for (var i = 0; i < 10; i++) {
                  result[result.length] = this.generateOneAward(level);
              }
              return result;
@@ -131,6 +141,20 @@ function Lucky() {
      //var bjcount = 1;
      var randomCountArray = new Array();
      this.GenerateAwardThird = function (level, number) {
+
+         var awardExisted = dbProxy.GetAwardObj(); //获取所有中奖的号码
+         var countSZ3 = 0; //三等奖20名
+         for (var i = 0; i < awardExisted.length; i++) {
+
+             if (awardExisted[i].Level == "3") {
+                 countSZ3++;
+             }
+
+         }
+         if (level == 3 && countSZ3 >= 100) {//如果是一等奖大于6个（一等奖只有6个）则返回，如果添加不限制，去掉判断即可
+             return "0000";
+         }
+
          var result = new Array(); //存总共信息（有总中奖人员号码，两地中奖人数及产生的中奖号码）
          var szArray = new Array(); //存深圳号码信息
          // var bjArray = new Array(); //存北京号码信息

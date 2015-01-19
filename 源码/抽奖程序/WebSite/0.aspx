@@ -93,7 +93,6 @@ to { -webkit-transform: skew(40deg) ; }
             var code = theEvent.keyCode || theEvent.which;
             //alert(event.keyCode);
             if (code == 32) {//按空格键
-                debugger;
                 if (!open) {
                     open = true;
                     stage(); //Default.js
