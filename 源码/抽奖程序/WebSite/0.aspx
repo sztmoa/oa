@@ -153,7 +153,7 @@ to { -webkit-transform: skew(40deg) ; }
         <embed id='myaudio' src='mp3/kamen.mp3'; loop=true autostart=true name=bgss width=0 height=0 />
     </div>
 
-<img src="images/page_back_award0.jpg" style="width:100%; position:absolute; z-index:-1;" id="back_img" />
+<img src="images/0.jpg" style="width:100%; position:absolute; z-index:-1;" id="back_img" />
     <ul id="roll_num" class="list_num"></ul>
     <ul id="num_award" class="list_num"></ul>
    
