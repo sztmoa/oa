@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{EE7A77EC-2000-442D-BF6F-7AF376C61F3C}"
+	ProjectSection(SolutionItems) = preProject
+		Asd.Award DB Scripts.sql = Asd.Award DB Scripts.sql
+		User Guide.txt = User Guide.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite", "WebSite\WebSite.csproj", "{3C9FAA05-E3EF-420B-A4A6-15C8236F8127}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFMysql", "EFMysql\EFMysql.csproj", "{2950CE94-5EBF-4446-A479-8C01675B3991}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C9FAA05-E3EF-420B-A4A6-15C8236F8127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C9FAA05-E3EF-420B-A4A6-15C8236F8127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C9FAA05-E3EF-420B-A4A6-15C8236F8127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C9FAA05-E3EF-420B-A4A6-15C8236F8127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2950CE94-5EBF-4446-A479-8C01675B3991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2950CE94-5EBF-4446-A479-8C01675B3991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2950CE94-5EBF-4446-A479-8C01675B3991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2950CE94-5EBF-4446-A479-8C01675B3991}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
