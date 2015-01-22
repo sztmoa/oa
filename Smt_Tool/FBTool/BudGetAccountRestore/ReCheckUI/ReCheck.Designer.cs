@@ -40,6 +40,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnSaveLog = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtMsgUdOrg = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.btnChangeActualmoney = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.cmbAcountType = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtMoneyReslut = new System.Windows.Forms.TextBox();
             this.dataGridCompany = new System.Windows.Forms.DataGridView();
@@ -63,12 +63,19 @@
             this.dataGridErrAcData = new System.Windows.Forms.DataGridView();
             this.btnCompany = new System.Windows.Forms.Button();
             this.btnSelectErrData = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnCheckJF = new System.Windows.Forms.Button();
+            this.btnGetJF = new System.Windows.Forms.Button();
+            this.txtEmployeeName = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbAcountType = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDepartment = new System.Windows.Forms.TextBox();
             this.btbSelect = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPerson = new System.Windows.Forms.TextBox();
-            this.btnSaveLog = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtEmployee = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -80,13 +87,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSequence)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridErrAcData)).BeginInit();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReCheck
             // 
-            this.btnReCheck.Location = new System.Drawing.Point(361, 11);
+            this.btnReCheck.Location = new System.Drawing.Point(268, 11);
             this.btnReCheck.Name = "btnReCheck";
-            this.btnReCheck.Size = new System.Drawing.Size(75, 23);
+            this.btnReCheck.Size = new System.Drawing.Size(81, 23);
             this.btnReCheck.TabIndex = 0;
             this.btnReCheck.Text = "重新结算";
             this.btnReCheck.UseVisualStyleBackColor = true;
@@ -174,10 +182,11 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(14, 131);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Location = new System.Drawing.Point(14, 70);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(863, 473);
+            this.tabControl1.Size = new System.Drawing.Size(863, 534);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
@@ -190,10 +199,20 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(855, 447);
+            this.tabPage1.Size = new System.Drawing.Size(855, 508);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveLog
+            // 
+            this.btnSaveLog.Location = new System.Drawing.Point(765, 11);
+            this.btnSaveLog.Name = "btnSaveLog";
+            this.btnSaveLog.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveLog.TabIndex = 0;
+            this.btnSaveLog.Text = "保存日志";
+            this.btnSaveLog.UseVisualStyleBackColor = true;
+            this.btnSaveLog.Click += new System.EventHandler(this.btnSaveLog_Click);
             // 
             // tabPage2
             // 
@@ -205,7 +224,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(855, 447);
+            this.tabPage2.Size = new System.Drawing.Size(855, 508);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -265,7 +284,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(855, 447);
+            this.tabPage3.Size = new System.Drawing.Size(855, 508);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -301,7 +320,6 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.cmbAcountType);
             this.tabPage4.Controls.Add(this.label7);
             this.tabPage4.Controls.Add(this.txtMoneyReslut);
             this.tabPage4.Controls.Add(this.dataGridCompany);
@@ -315,24 +333,10 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(855, 447);
+            this.tabPage4.Size = new System.Drawing.Size(855, 508);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // cmbAcountType
-            // 
-            this.cmbAcountType.FormattingEnabled = true;
-            this.cmbAcountType.Items.AddRange(new object[] {
-            "请选择处理的费用类型",
-            "公司",
-            "部门",
-            "个人"});
-            this.cmbAcountType.Location = new System.Drawing.Point(692, 297);
-            this.cmbAcountType.Name = "cmbAcountType";
-            this.cmbAcountType.Size = new System.Drawing.Size(146, 20);
-            this.cmbAcountType.TabIndex = 8;
-            this.cmbAcountType.SelectedIndexChanged += new System.EventHandler(this.cmbAcountType_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -418,7 +422,7 @@
             // 
             // btnCompany
             // 
-            this.btnCompany.Location = new System.Drawing.Point(691, 341);
+            this.btnCompany.Location = new System.Drawing.Point(689, 297);
             this.btnCompany.Name = "btnCompany";
             this.btnCompany.Size = new System.Drawing.Size(149, 23);
             this.btnCompany.TabIndex = 0;
@@ -428,13 +432,78 @@
             // 
             // btnSelectErrData
             // 
-            this.btnSelectErrData.Location = new System.Drawing.Point(691, 370);
+            this.btnSelectErrData.Location = new System.Drawing.Point(691, 346);
             this.btnSelectErrData.Name = "btnSelectErrData";
             this.btnSelectErrData.Size = new System.Drawing.Size(149, 23);
             this.btnSelectErrData.TabIndex = 0;
             this.btnSelectErrData.Text = "查出可用额度为负的科目";
             this.btnSelectErrData.UseVisualStyleBackColor = true;
             this.btnSelectErrData.Click += new System.EventHandler(this.btnSelectErrData_Click);
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.btnCheckJF);
+            this.tabPage5.Controls.Add(this.btnGetJF);
+            this.tabPage5.Controls.Add(this.txtEmployee);
+            this.tabPage5.Controls.Add(this.txtEmployeeName);
+            this.tabPage5.Controls.Add(this.label10);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(855, 508);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "活动经费调整";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // btnCheckJF
+            // 
+            this.btnCheckJF.Location = new System.Drawing.Point(259, 131);
+            this.btnCheckJF.Name = "btnCheckJF";
+            this.btnCheckJF.Size = new System.Drawing.Size(116, 23);
+            this.btnCheckJF.TabIndex = 0;
+            this.btnCheckJF.Text = "活动经费调整";
+            this.btnCheckJF.UseVisualStyleBackColor = true;
+            this.btnCheckJF.Click += new System.EventHandler(this.btnCheckJF_Click);
+            // 
+            // btnGetJF
+            // 
+            this.btnGetJF.Location = new System.Drawing.Point(259, 26);
+            this.btnGetJF.Name = "btnGetJF";
+            this.btnGetJF.Size = new System.Drawing.Size(100, 23);
+            this.btnGetJF.TabIndex = 11;
+            this.btnGetJF.Text = "查询";
+            this.btnGetJF.UseVisualStyleBackColor = true;
+            this.btnGetJF.Click += new System.EventHandler(this.btnGetJF_Click);
+            // 
+            // txtEmployeeName
+            // 
+            this.txtEmployeeName.Location = new System.Drawing.Point(77, 23);
+            this.txtEmployeeName.Name = "txtEmployeeName";
+            this.txtEmployeeName.Size = new System.Drawing.Size(100, 21);
+            this.txtEmployeeName.TabIndex = 8;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(27, 26);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 12);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "员工";
+            // 
+            // cmbAcountType
+            // 
+            this.cmbAcountType.FormattingEnabled = true;
+            this.cmbAcountType.Items.AddRange(new object[] {
+            "请选择处理的费用类型",
+            "公司",
+            "部门",
+            "个人"});
+            this.cmbAcountType.Location = new System.Drawing.Point(72, 44);
+            this.cmbAcountType.Name = "cmbAcountType";
+            this.cmbAcountType.Size = new System.Drawing.Size(146, 20);
+            this.cmbAcountType.TabIndex = 8;
+            this.cmbAcountType.SelectedIndexChanged += new System.EventHandler(this.cmbAcountType_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -478,21 +547,28 @@
             this.txtPerson.Size = new System.Drawing.Size(100, 21);
             this.txtPerson.TabIndex = 8;
             // 
-            // btnSaveLog
+            // label9
             // 
-            this.btnSaveLog.Location = new System.Drawing.Point(765, 11);
-            this.btnSaveLog.Name = "btnSaveLog";
-            this.btnSaveLog.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveLog.TabIndex = 0;
-            this.btnSaveLog.Text = "保存日志";
-            this.btnSaveLog.UseVisualStyleBackColor = true;
-            this.btnSaveLog.Click += new System.EventHandler(this.btnSaveLog_Click);
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 52);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 12);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "查询类型";
+            // 
+            // txtEmployee
+            // 
+            this.txtEmployee.Location = new System.Drawing.Point(411, 23);
+            this.txtEmployee.Name = "txtEmployee";
+            this.txtEmployee.Size = new System.Drawing.Size(100, 21);
+            this.txtEmployee.TabIndex = 8;
             // 
             // ReCheckForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 616);
+            this.Controls.Add(this.cmbAcountType);
             this.Controls.Add(this.btbSelect);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txtPerson);
@@ -504,6 +580,7 @@
             this.Controls.Add(this.txtCompany);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCurMonth);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
             this.Name = "ReCheckForm";
             this.Text = "Main";
@@ -521,6 +598,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSequence)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridErrAcData)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,6 +648,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPerson;
         private System.Windows.Forms.Button btnSaveLog;
+        private System.Windows.Forms.Button btnCheckJF;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button btnGetJF;
+        private System.Windows.Forms.TextBox txtEmployeeName;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtEmployee;
     }
 }
 

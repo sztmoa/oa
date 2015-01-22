@@ -141,6 +141,8 @@ namespace ReCheckUI
             }));
         }
 
+
+        #region 重新调整总账金额
         private void btnGetCheckRd_Click(object sender, EventArgs e)
         {
             Thread d = new Thread(StarCheck);
@@ -148,7 +150,7 @@ namespace ReCheckUI
             //StarCheck();
         }
 
-private void StarCheck()
+        private void StarCheck()
 {
     try { 
             Tracer.Debug("结算开始");
@@ -159,6 +161,8 @@ private void StarCheck()
                 List<T_FB_BUDGETACCOUNT> allItem = new List<T_FB_BUDGETACCOUNT>();
                 var q = from ent in context.T_FB_BUDGETACCOUNT.Include("T_FB_SUBJECT")
                          where ent.BUDGETYEAR>=DateTime.Now.Year
+                         && ent.T_FB_SUBJECT.SUBJECTNAME!="活动经费"
+                         && ent.T_FB_SUBJECT.SUBJECTNAME != "部门经费"
                         orderby ent.OWNERCOMPANYID, ent.OWNERDEPARTMENTID, ent.OWNERPOSTID
                         select ent;
                 allItem=q.ToList();
@@ -168,59 +172,76 @@ private void StarCheck()
                 List<T_FB_COMPANYBUDGETAPPLYMASTER> T_FB_COMPANYBUDGETAPPLYMASTERList = 
                     (from ent in context.T_FB_COMPANYBUDGETAPPLYMASTER
                         where ent.BUDGETYEAR>=DateTime.Now.Year
+                        && ent.CHECKSTATES==2
+                        && ent.EDITSTATES==1
                         select ent).ToList();
                 List<T_FB_COMPANYBUDGETAPPLYDETAIL> T_FB_COMPANYBUDGETAPPLYDETAILList =
                     (from ent in context.T_FB_COMPANYBUDGETAPPLYDETAIL.Include("T_FB_COMPANYBUDGETAPPLYMASTER").Include("T_FB_SUBJECT")
                         where ent.T_FB_COMPANYBUDGETAPPLYMASTER.BUDGETYEAR>=DateTime.Now.Year
+                        && ent.T_FB_COMPANYBUDGETAPPLYMASTER.CHECKSTATES==2
+                        && ent.T_FB_COMPANYBUDGETAPPLYMASTER.EDITSTATES==1
                         select ent).ToList();
                 SetLog("获取年度预算完毕，开始获取年底增补");
                 //年度增补
                 List<T_FB_COMPANYBUDGETMODMASTER> T_FB_COMPANYBUDGETMODMASTERList =
                     (from ent in context.T_FB_COMPANYBUDGETMODMASTER
                      where ent.BUDGETYEAR >= DateTime.Now.Year
+                     && ent.CHECKSTATES==2
                      select ent).ToList();
                 List<T_FB_COMPANYBUDGETMODDETAIL> T_FB_COMPANYBUDGETMODDETAILList =
                     (from ent in context.T_FB_COMPANYBUDGETMODDETAIL.Include("T_FB_COMPANYBUDGETMODMASTER").Include("T_FB_SUBJECT")
                         where ent.T_FB_COMPANYBUDGETMODMASTER.BUDGETYEAR>= DateTime.Now.Year
+                        && ent.T_FB_COMPANYBUDGETMODMASTER.CHECKSTATES==2
                      select ent).ToList();
                 SetLog("获取年度增补数据完毕，开始获取月度预算");
                 //月度预算
                 List<T_FB_DEPTBUDGETAPPLYMASTER> T_FB_DEPTBUDGETAPPLYMASTERList =
                     (from ent in context.T_FB_DEPTBUDGETAPPLYMASTER
                      where ent.BUDGETARYMONTH >= thisYear
+                     && ent.CHECKSTATES==2
+                     && ent.EDITSTATES==1
                      select ent).ToList();
                 List<T_FB_DEPTBUDGETAPPLYDETAIL> T_FB_DEPTBUDGETAPPLYDETAILList =
                     (from ent in context.T_FB_DEPTBUDGETAPPLYDETAIL.Include("T_FB_DEPTBUDGETAPPLYMASTER").Include("T_FB_SUBJECT")
                      where ent.T_FB_DEPTBUDGETAPPLYMASTER.BUDGETARYMONTH >= thisYear
+                     && ent.T_FB_DEPTBUDGETAPPLYMASTER.CHECKSTATES==2
+                     && ent.T_FB_DEPTBUDGETAPPLYMASTER.EDITSTATES==1
                      select ent).ToList();
                 SetLog("获取月度预算完毕，开始获取月度增补");
                 //月度增补
                 List<T_FB_DEPTBUDGETADDMASTER> T_FB_DEPTBUDGETADDMASTERList =
                     (from ent in context.T_FB_DEPTBUDGETADDMASTER
                      where ent.BUDGETARYMONTH >= thisYear
+                     && ent.CHECKSTATES==2
                      select ent).ToList();
                 List<T_FB_DEPTBUDGETADDDETAIL> T_FB_DEPTBUDGETADDDETAILList 
                     = (from ent in context.T_FB_DEPTBUDGETADDDETAIL.Include("T_FB_DEPTBUDGETADDMASTER").Include("T_FB_SUBJECT")
                        where ent.T_FB_DEPTBUDGETADDMASTER.BUDGETARYMONTH >= thisYear
+                       && ent.T_FB_DEPTBUDGETADDMASTER.CHECKSTATES==2
                      select ent).ToList();
                 SetLog("获取月度增补完毕，开始获取个人预算申请及增补");
                 List<T_FB_PERSONBUDGETAPPLYDETAIL> T_FB_PERSONBUDGETAPPLYDETAILList =
                     (from ent in context.T_FB_PERSONBUDGETAPPLYDETAIL.Include("T_FB_DEPTBUDGETAPPLYDETAIL").Include("T_FB_SUBJECT")
                      where ent.T_FB_DEPTBUDGETAPPLYDETAIL.T_FB_DEPTBUDGETAPPLYMASTER.BUDGETARYMONTH >= thisYear
+                     && ent.T_FB_DEPTBUDGETAPPLYDETAIL.T_FB_DEPTBUDGETAPPLYMASTER.CHECKSTATES==2
+                     && ent.T_FB_DEPTBUDGETAPPLYDETAIL.T_FB_DEPTBUDGETAPPLYMASTER.EDITSTATES==1
                      select ent).ToList();
                 List<T_FB_PERSONBUDGETADDDETAIL> T_FB_PERSONBUDGETADDDETAILList =
                     (from ent in context.T_FB_PERSONBUDGETADDDETAIL.Include("T_FB_DEPTBUDGETADDDETAIL").Include("T_FB_SUBJECT")
                      where ent.T_FB_DEPTBUDGETADDDETAIL.T_FB_DEPTBUDGETADDMASTER.BUDGETARYMONTH >= thisYear
+                     && ent.T_FB_DEPTBUDGETADDDETAIL.T_FB_DEPTBUDGETADDMASTER.CHECKSTATES==2
                      select ent).ToList();
                 SetLog("获取个人预算申请及增补完毕，开始获取费用报销");
                 //个人费用报销
                 List<T_FB_CHARGEAPPLYMASTER> T_FB_CHARGEAPPLYMASTERList = 
                     (from ent in context.T_FB_CHARGEAPPLYMASTER
                      where ent.BUDGETARYMONTH >= thisYear
+                     && ent.CHECKSTATES==2
                      select ent).ToList();
                 List<T_FB_CHARGEAPPLYDETAIL> T_FB_CHARGEAPPLYDETAILList = 
                     (from ent in context.T_FB_CHARGEAPPLYDETAIL.Include("T_FB_CHARGEAPPLYMASTER").Include("T_FB_SUBJECT")
                      where ent.T_FB_CHARGEAPPLYMASTER.BUDGETARYMONTH >= thisYear
+                     && ent.T_FB_CHARGEAPPLYMASTER.CHECKSTATES==2
                      select ent).ToList();
                 SetLog("获取费用报销完毕，开始处理......");
                 int allCount = allItem.Count;
@@ -228,11 +249,11 @@ private void StarCheck()
                 foreach (var item in allItem)
                 {
                     i++;
-                    //if (!item.T_FB_SUBJECTReference.IsLoaded)
-                    //{
-                    //    item.T_FB_SUBJECTReference.Load();
-                    //}
                     if (item.T_FB_SUBJECT.SUBJECTID=="08c1d9c6-2396-43c3-99f9-227e4a7eb417")// == "部门经费")
+                    {
+                        continue;
+                    }
+                    if (item.T_FB_SUBJECT.SUBJECTID == "d5134466-c207-44f2-8a36-cf7b96d5851f")//活动经费
                     {
                         continue;
                     }
@@ -397,16 +418,16 @@ private void StarCheck()
                             + " G:" + G
                             + " H:" + H;
                     }
-                    if (!msg.Contains("修改"))
-                    {
-                        msg += " 总账id" + item.BUDGETACCOUNTID + " 正常。";
-                    }
                     SetLog(msg);
                 }
 
-                MessageBox.Show("处理完毕！");
-                return;
-                context.SaveChanges();
+                MessageBoxButtons messButton = MessageBoxButtons.OKCancel;
+                DialogResult dr = MessageBox.Show("确定要更新异常的数据吗?", "确认", messButton);
+                if (dr == DialogResult.OK)//如果点击“确定”按钮
+                {
+                    int j = context.SaveChanges();
+                    MessageBox.Show("处理完毕,共处理了: " + j + " 条数据");
+                }
                 i = 0;
             }
         
@@ -445,7 +466,7 @@ private void StarCheck()
             ref decimal F, ref decimal H, 
             ref decimal G)
         {
-
+            
             #region//年度预算A
             var YearMoney = from a in T_FB_COMPANYBUDGETAPPLYMASTERList
                             join b in T_FB_COMPANYBUDGETAPPLYDETAILList
@@ -697,10 +718,8 @@ private void StarCheck()
                 #endregion
         }
 
-
-
-
-
+        #endregion
+        
 
         #region 跨线程调用UI控件显示消息
         delegate void DelShow(String Msg); //代理
@@ -1349,6 +1368,319 @@ private void StarCheck()
         private void btnSaveLog_Click(object sender, EventArgs e)
         {
             Tracer.Debug(txtMsg.Text);
+        }
+
+        #region 活动经费调整
+        private void btnCheckJF_Click(object sender, EventArgs e)
+        {
+            Thread d = new Thread(starChechHDJF);
+            d.Start();
+           
+        }
+
+        /// <summary>
+        /// 检查活动经费流水，调整额度
+        /// </summary>
+        private void starChechHDJF()
+        {
+            try
+            {
+                Tracer.Debug("结算开始");
+                using (SMT_FB_EFModelContext context = new SMT_FB_EFModelContext())
+                {
+                    DateTime thisYear = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                    SetLog("开始获取总账数据，请稍等......");
+                    List<T_FB_BUDGETACCOUNT> allItem = new List<T_FB_BUDGETACCOUNT>();
+                    List<T_FB_PERSONMONEYASSIGNMASTER> T_FB_PERSONMONEYASSIGNMASTERList = new List<T_FB_PERSONMONEYASSIGNMASTER>();
+                    List<T_FB_PERSONMONEYASSIGNDETAIL> T_FB_PERSONMONEYASSIGNDETAILList = new List<T_FB_PERSONMONEYASSIGNDETAIL>();
+                    List<T_FB_CHARGEAPPLYMASTER> T_FB_CHARGEAPPLYMASTERList = new List<T_FB_CHARGEAPPLYMASTER>();
+                    List<T_FB_CHARGEAPPLYDETAIL> T_FB_CHARGEAPPLYDETAILList = new List<T_FB_CHARGEAPPLYDETAIL>();
+                    if (allItem.Count < 1)
+                    {
+
+                        List<string> employeeALl = (from ent in context.T_FB_BUDGETACCOUNT.Include("T_FB_SUBJECT")
+                                                    where ent.T_FB_SUBJECT.SUBJECTID == "d5134466-c207-44f2-8a36-cf7b96d5851f"//活动经费
+                                                    && ent.ACCOUNTOBJECTTYPE == 3
+                                                    select ent.OWNERID).Distinct().ToList();
+
+                        if (!string.IsNullOrEmpty(txtEmployee.Text))
+                        {
+                            employeeALl.Clear();
+                            employeeALl.Add(txtEmployee.Text);
+
+                        }
+
+
+                        int allCount = employeeALl.Count;
+                        int i = 0;
+                        string msg = string.Empty;
+
+                        //经费下拨额度
+                        T_FB_PERSONMONEYASSIGNMASTERList
+                            = (from ent in context.T_FB_PERSONMONEYASSIGNMASTER.Include("T_FB_PERSONMONEYASSIGNDETAIL")
+                               where ent.CHECKSTATES == 2
+                               select ent).ToList();
+
+                        foreach (var employeeid in employeeALl)
+                        {
+                            i++;
+                            var q = from ent in context.T_FB_BUDGETACCOUNT.Include("T_FB_SUBJECT")
+                                    where ent.T_FB_SUBJECT.SUBJECTID == "d5134466-c207-44f2-8a36-cf7b96d5851f"//活动经费
+                                    && ent.ACCOUNTOBJECTTYPE == 3
+                                    && ent.OWNERID == employeeid
+                                    select ent;
+                            allItem = q.ToList();
+                            if (allItem.Count > 1)
+                            {
+                                //MessageBox.Show("活动经费总账大于1，请手动处理，可能是异动导致");
+                                foreach (var itm in allItem)
+                                {
+                                    SetLog("活动经费总账多条：id:" + itm.BUDGETACCOUNTID+" ownerid="+itm.OWNERID+" ownerPostId="+itm.OWNERPOSTID);
+                                }
+                                continue;
+                            }
+                            SetLog("获取总账数据完毕,开始获取下拨经费");
+                            T_FB_PERSONMONEYASSIGNDETAILList
+                                = (from ent in context.T_FB_PERSONMONEYASSIGNDETAIL.Include("T_FB_PERSONMONEYASSIGNMASTER").Include("T_FB_SUBJECT")
+                                   where ent.T_FB_PERSONMONEYASSIGNMASTER.CHECKSTATES == 2
+                                   && ent.OWNERID == employeeid
+                                   select ent).ToList();
+                            SetLog("获取个人预算申请及增补完毕，开始获取费用报销");
+                            //个人费用报销
+                            T_FB_CHARGEAPPLYMASTERList =
+                                (from ent in context.T_FB_CHARGEAPPLYMASTER
+                                 join b in context.T_FB_CHARGEAPPLYDETAIL on ent.CHARGEAPPLYMASTERID equals b.T_FB_CHARGEAPPLYMASTER.CHARGEAPPLYMASTERID
+                                 where ent.CHECKSTATES == 2 && b.T_FB_SUBJECT.SUBJECTID == "d5134466-c207-44f2-8a36-cf7b96d5851f"
+                                 && ent.OWNERID == employeeid
+                                 select ent).ToList();
+                            T_FB_CHARGEAPPLYDETAILList =
+                                (from ent in context.T_FB_CHARGEAPPLYDETAIL.Include("T_FB_CHARGEAPPLYMASTER").Include("T_FB_SUBJECT")
+                                 join b in context.T_FB_CHARGEAPPLYMASTER on ent.T_FB_CHARGEAPPLYMASTER.CHARGEAPPLYMASTERID equals b.CHARGEAPPLYMASTERID
+                                 where ent.T_FB_SUBJECT.SUBJECTID == "d5134466-c207-44f2-8a36-cf7b96d5851f" && b.CHECKSTATES == 2
+                                 && ent.T_FB_CHARGEAPPLYMASTER.OWNERID == employeeid
+                                 select ent).ToList();
+
+                            SetLog("获取费用报销完毕，开始处理......");
+                           var item = allItem.FirstOrDefault();
+                            
+                                string id = item.T_FB_SUBJECT.SUBJECTID;
+                                decimal A = 0;//年度预算
+                                decimal B = 0;//年度增补
+                                decimal C = 0;//部门月度预算=公共+个人
+                                decimal D = 0;//部门月度增补=公共+个人
+                                decimal C1 = 0;//月度预算-部门公共
+                                decimal D1 = 0;//月度增补-部门公共
+                                decimal C2 = 0;//月度预算-个人
+                                decimal D2 = 0;//月度增补-个人
+                                decimal E = 0;//个人费用报销已终审-部门公共
+                                decimal F = 0;//个人费用报销审核中-部门公共
+                                decimal G = 0;//个人费用报销已终审-个人
+                                decimal H = 0;//个人费用报销审核中-个人
+                                string ownerName = string.Empty;
+                                GetJFABCD(T_FB_PERSONMONEYASSIGNMASTERList,
+                                    T_FB_PERSONMONEYASSIGNDETAILList,
+                                    T_FB_CHARGEAPPLYMASTERList,
+                                    T_FB_CHARGEAPPLYDETAILList,
+                                    item,
+                                    ref A, ref B, ref C,
+                                    ref C1, ref D1,
+                                    ref C2, ref D2,
+                                    ref D, ref E,
+                                    ref F, ref G,
+                                    ref H,
+                                    ref ownerName);
+                                msg = "总 " + allCount + " 第 " + i + " 条:";
+
+                                decimal USABLEMONEY = 0;
+                                if (item.USABLEMONEY != null)
+                                {
+                                    USABLEMONEY = item.USABLEMONEY.Value;
+                                }
+                                decimal ACTUALMONEY = 0;
+                                if (item.ACTUALMONEY != null)
+                                {
+                                    ACTUALMONEY = item.ACTUALMONEY.Value;
+                                }
+                                //decimal PAIEDMONEY = item.PAIEDMONEY.Value;
+                                switch (item.ACCOUNTOBJECTTYPE.Value.ToString())
+                                {
+                                    case "3"://部门月度预算--个人月度预算
+                                        //item.BUDGETMONEY = C2 + D2;//预算金额
+                                        item.USABLEMONEY = C2 - E - F;//可用额度
+                                        item.ACTUALMONEY = C2 - E;//实际额度
+                                        //item.PAIEDMONEY = G;//已用额度
+                                        break;
+                                }
+
+
+                                if (item.USABLEMONEY == null
+                                    || USABLEMONEY != item.USABLEMONEY.Value)
+                                {
+                                    if (item.USABLEMONEY == null)
+                                    {
+                                        msg += " 总账id" + item.BUDGETACCOUNTID + " USABLEMONEY==Null";
+                                    }
+                                    if (USABLEMONEY != item.USABLEMONEY.Value)
+                                    {
+                                        
+                                        msg += " 总账id" + item.BUDGETACCOUNTID + " USABLEMONEY 不对，员工：" + ownerName
+                                              + " 科目：" + item.T_FB_SUBJECT.SUBJECTNAME
+                                              + " 修改前 USABLEMONEY:" + USABLEMONEY
+                                              + " 修改后 USABLEMONEY    ->    " + item.USABLEMONEY.Value
+                                            + " C2:" + C2
+                                            + " E:" + E
+                                            + " F:" + F;
+                                        if (USABLEMONEY > item.USABLEMONEY.Value)
+                                        {
+                                            msg +=System.Environment.NewLine+ "总账金额大于实际金额，可能导致报超，请重点关注---------------------------------->";
+                                        }
+
+                                    }
+                                }
+                                //if (item.ACTUALMONEY==null || ACTUALMONEY != item.ACTUALMONEY.Value)
+                                //{
+                                //    if (item.ACTUALMONEY == null)
+                                //    {
+                                //        msg += " 总账id" + item.BUDGETACCOUNTID + " ACTUALMONEY==Null";
+                                //    }
+                                //    if (ACTUALMONEY != item.ACTUALMONEY.Value)
+                                //    {
+                                //        msg += " 总账id" + item.BUDGETACCOUNTID +" ACTUALMONEY 不对，员工：" + ownerName
+                                //              + " 预算类型：" + item.ACCOUNTOBJECTTYPE.Value.ToString()
+                                //              + " 科目：" + item.T_FB_SUBJECT.SUBJECTNAME
+                                //              + " 修改前 ACTUALMONEY:" + ACTUALMONEY
+                                //              + " 修改后 ACTUALMONEY    ->    " + item.ACTUALMONEY.Value
+                                //            + " C2:" + C2
+                                //            + " E:" + E
+                                //            + " F:" + F;
+                                //    }
+                                //}   
+                                SetLog(msg); 
+                        }
+                        i = 0;
+                        if (msg.Contains("不对"))
+                        {
+                            MessageBoxButtons messButton = MessageBoxButtons.OKCancel;
+                            DialogResult dr = MessageBox.Show("确定要更新异常的数据吗?", "确认", messButton);
+                            if (dr == DialogResult.OK)//如果点击“确定”按钮
+                            {
+                                int j = context.SaveChanges();
+                                MessageBox.Show("处理完毕,共处理了: " + j + " 条数据");
+                            }
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("异常：" + ex.ToString());
+                SetLog(ex.ToString());
+            }
+        }
+
+        private void GetJFABCD(
+            List<T_FB_PERSONMONEYASSIGNMASTER> T_FB_PERSONMONEYASSIGNMASTERList,
+            List<T_FB_PERSONMONEYASSIGNDETAIL> T_FB_PERSONMONEYASSIGNDETAILList,
+
+            List<T_FB_CHARGEAPPLYMASTER> T_FB_CHARGEAPPLYMASTERList,
+           List<T_FB_CHARGEAPPLYDETAIL> T_FB_CHARGEAPPLYDETAILList,
+
+           T_FB_BUDGETACCOUNT item,
+           ref decimal A, ref decimal B,
+           ref decimal C,
+           ref decimal C1, ref decimal D1,
+           ref decimal C2, ref decimal D2,
+           ref decimal D, ref decimal E,
+           ref decimal F, ref decimal H,
+           ref decimal G,
+            ref string OwnerName)
+        {
+
+            #region "活动经费"
+            if (item.T_FB_SUBJECT.SUBJECTID == "d5134466-c207-44f2-8a36-cf7b96d5851f")
+            {
+                var YearMoney = (from a in T_FB_PERSONMONEYASSIGNMASTERList
+                                join b in T_FB_PERSONMONEYASSIGNDETAILList
+                             on a.PERSONMONEYASSIGNMASTERID equals b.T_FB_PERSONMONEYASSIGNMASTER.PERSONMONEYASSIGNMASTERID
+                                where b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
+                                && b.OWNERID == item.OWNERID
+                                && a.CHECKSTATES == 2
+                                select new
+                                {
+                                    b.PERSONBUDGETAPPLYDETAILID,
+                                    b.BUDGETMONEY,
+                                    OwnerName=b.OWNERCOMPANYNAME+"-"+b.OWNERNAME
+                                }).ToList().Distinct();
+                if (YearMoney.Count() > 0)
+                {
+                    foreach (var va in YearMoney)
+                    {
+                        OwnerName = va.OwnerName;
+                        if (OwnerName.Contains("田少林"))
+                        {
+
+                        }
+                        C2 = C2 + va.BUDGETMONEY.Value;
+                    }
+                }
+
+            }
+            #endregion
+
+
+            #region//个人费用部门科目报销已终审E
+            if (T_FB_CHARGEAPPLYDETAILList != null)
+            {
+                var ChargeMoenyChecked = (from a in T_FB_CHARGEAPPLYMASTERList
+                                         join b in T_FB_CHARGEAPPLYDETAILList
+                                    on a.CHARGEAPPLYMASTERID equals b.T_FB_CHARGEAPPLYMASTER.CHARGEAPPLYMASTERID
+                                         where b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
+                                         && a.OWNERID == item.OWNERID
+                                         && a.CHECKSTATES == 2
+                                         select new { b.CHARGEAPPLYDETAILID, b.CHARGEMONEY }).ToList().Distinct();
+                if (ChargeMoenyChecked.Count() > 0)
+                {
+                    foreach (var va in ChargeMoenyChecked)
+                    {
+                        E = E + va.CHARGEMONEY;
+                    }
+                }
+            }
+            #endregion
+
+            #region//个人费用部门科目报销终审中F
+            if (T_FB_CHARGEAPPLYDETAILList != null)
+            {
+                var ChargeingMoeny = (from a in T_FB_CHARGEAPPLYMASTERList
+                                     join b in T_FB_CHARGEAPPLYDETAILList
+                                  on a.CHARGEAPPLYMASTERID equals b.T_FB_CHARGEAPPLYMASTER.CHARGEAPPLYMASTERID
+                                     where b.T_FB_SUBJECT.SUBJECTID == item.T_FB_SUBJECT.SUBJECTID
+                                     && a.OWNERID == item.OWNERID
+                                     && a.CHECKSTATES == 1
+                                     select  new { b.CHARGEAPPLYDETAILID, b.CHARGEMONEY }).ToList().Distinct();
+                if (ChargeingMoeny.Count() > 0)
+                {
+                    foreach (var va in ChargeingMoeny)
+                    {
+                        F = F + va.CHARGEMONEY;
+                    }
+                }
+            }
+            #endregion
+        }
+
+        #endregion
+
+        private void btnGetJF_Click(object sender, EventArgs e)
+        {
+            string sql=@"select employeeid from smthrm.t_hr_employee 
+                        where employeecname='"+txtEmployeeName.Text+"'";
+            DataTable dt = dal.GetDataTable(sql) as DataTable;
+            if(dt.Rows.Count>0)
+            {
+                txtEmployee.Text = dt.Rows[0][0].ToString();
+            }
         }
     }
 }
