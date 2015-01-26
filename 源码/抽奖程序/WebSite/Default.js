@@ -13,7 +13,6 @@ function stop(level, number) {
 
      clearInterval(m);
     //获取得奖号
-     debugger;
     var obj = lucky.GenerateAward(level, number);
     $("#roll_num").css("display", "none");
     $("#num_award").css("display", "block");
@@ -43,7 +42,7 @@ function stop(level, number) {
             $("#num_award")[0].innerHTML = award_li_html;
             //上传保存获奖号
             dbProxy.AddAwardMany(obj);
-            show_award(cur_lev, batch);
+            //show_award(cur_lev, batch);
         }
     }
 }
@@ -75,15 +74,21 @@ function show_award(cur_lev, batch) {
         awards_sz_all.sort(); //排序
         var num = awards_sz_all.length;
         var total = num;
-        if (cur_lev == 2 || cur_lev == 4) {//二等奖,因为只有一二等奖走这个方法
-            total = 10;//二等奖20人，一边显示10人
-            if (num < 10) {
+        if (cur_lev == 2) {//二等奖,因为只有一二等奖走这个方法
+            total = 3;//二等奖20人，一边显示10人
+            if (num < 3) {
+                total = num;
+            }
+        }
+        else if (cur_lev == 4) {//3等奖,因为只有一二等奖走这个方法
+            total = 20;//二等奖20人，一边显示10人
+            if (num < 20) {
                 total = num;
             }
         }
         else {//一等奖
-            total = 3; //一等奖6人，一边显示3人
-            if (num < 3) {
+            total = 1; //一等奖1人，一边显示1人
+            if (num < 1) {
                 total = num;
             }
         }
@@ -207,16 +212,16 @@ function resize(cur_lev) {
             lineHeight: max_width * 0.4766 * 0.05 + "px",
             right: max_height * 0.015
         });
-        if (cur_lev == 1) {
+        if (cur_lev == 2) {
             $("#roll_num,#num_award").css({
-                top: max_height * 0.32,
+                top: max_height * 0.35,
                 //                fontSize: max_width * 0.4766 * 0.19 + "px",
-                fontSize: 82 + "px",
+                fontSize: 80 + "px",
                 letterSpacing: 0,
-                lineHeight: max_width * 0.4766 * 0.26 + "px"
+                lineHeight: 85 + "px",
             })
         }
-        else if (cur_lev == 2 || cur_lev == 4) {
+        else if (cur_lev == 4) {
             $("#roll_num,#num_award").css({
                 top: max_height * 0.30,
                 //width: max_width * 0.2,
@@ -228,7 +233,7 @@ function resize(cur_lev) {
 
             })
         }
-        else if (cur_lev == 0) {
+        else if (cur_lev == 0 || cur_lev == 1) {
             $("#roll_num,#num_award").css({
                 top: max_height * 0.38,
                 width: max_width * 0.7,
@@ -308,7 +313,7 @@ function PlayBGSound(isPlay) {
     }
     else {
         var node = "<embed id='myaudio' src='mp3/zhongjiang.mp3'; loop=false autostart=true name=bgss width=0 height=0 />";
-        myAuto.innerHTML = node;
+        myAuto.innerHTML = "";
         isPlay = true;
     }
 }

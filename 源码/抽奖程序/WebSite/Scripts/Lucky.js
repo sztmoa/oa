@@ -95,33 +95,41 @@ function Lucky() {
              return "0000";
          }
 
-         if (level == 1 && countSZ1 >= 6) {//如果是一等奖大于6个（一等奖只有6个）则返回，如果添加不限制，去掉判断即可
+         if (level == 1 && countSZ1 >= 1) {//如果是一等奖大于6个（一等奖只有6个）则返回，如果添加不限制，去掉判断即可
              return "0000";
          }
-         if (level == 2 && countSZ2 >= 20) {//如果是二等奖大于20个（二等奖只有20个）则返回，如果添加不限制，去掉判断即可
+         if (level == 2 && countSZ2 >= 3) {//如果是二等奖大于20个（二等奖只有20个）则返回，如果添加不限制，去掉判断即可
              return "0000";
          }
-         if (level == 4 && countYG >= 10) {//如果是阳光奖大于20个（二等奖只有20个）则返回，如果添加不限制，去掉判断即可
+         if (level == 4 && countYG >= 40) {//如果是阳光奖大于20个（二等奖只有20个）则返回，如果添加不限制，去掉判断即可
              return "0000";
          }
 
          if (countSZ1 == 5 || countSZ2 == 19 || level == 0) {
-             //result[result.length] = this.generateOneAward(level); //产生一个号码;
              result[result.length] = this.generateOneAward(level);
-             return result;
          }
-         if (level == 2 || level == 4) {//二等奖或阳光奖生成5个
+         if (level == 2 ) {//二等奖或阳光奖生成3个
+             for (var i = 0; i < 3; i++) {
+                 result[result.length] = this.generateOneAward(level);
+             }
+         }
+         else if(level==1)
+         {
+             for (var i = 0; i < 1; i++) {
+                 result[result.length] = this.generateOneAward(level);
+             }
+         }
+         else if (level == 4) {
              for (var i = 0; i < 10; i++) {
                  result[result.length] = this.generateOneAward(level);
              }
-             return result;
          }
          else {
              for (var i = 0; i < 2; i++) {
                  result[result.length] = this.generateOneAward(level);
              }
-             return result;
          }
+         return result;
      }
 
 

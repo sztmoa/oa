@@ -82,7 +82,7 @@ to { -webkit-transform: skew(40deg) ; }
         })
         var playing = true;
         var cur_lev = 1;
-        var cur_num = 2;
+        var cur_num = 1;
         var open = false;
         var batch = 0;  //当前奖项和奖票数目
         $(function () {
@@ -158,11 +158,12 @@ to { -webkit-transform: skew(40deg) ; }
     </ul>
     <div id="stage" style="width: 100%; height:100%; position: absolute; z-index: 9999;">  
         <div style="position:absolute;left:0;top:0;width:100%;height:100%;background-color:#000" id="black_mask"></div>      
-        <img src="images/stage_left02.jpg" width="50%" id="stage_left02" style=" position:absolute; left:0;top:0;" /> 
-        <img src="images/stage_right02.jpg" width="50%" id="stage_right02" style=" position:absolute; right:0;top:0;"/>
-        <img src="images/stage_left01.png" width="16.85%" id="stage_left01" style=" position:absolute; left:0; top:0;" /> 
+        <img src="images/2015/1_stage_left.jpg" width="50%" id="stage_left02" style=" position:absolute; left:0;top:0;" /> 
+        <img src="images/2015/1_stage_right.jpg" width="50%" id="stage_right02" style=" position:absolute; right:0;top:0;"/>
+        
+      <%--  <img src="images/stage_left01.png" width="16.85%" id="stage_left01" style=" position:absolute; left:0; top:0;" /> 
         <img src="images/stage_right01.png" width="16.85%" id="stage_right01" style=" position:absolute; right:0;top:0;"/>
-        <img src="images/stage_top.png" width="100%" id="stage_top" style=" position:absolute; top:0;"/>
+        <img src="images/stage_top.png" width="100%" id="stage_top" style=" position:absolute; top:0;"/>--%>
     </div>
 
 </body>

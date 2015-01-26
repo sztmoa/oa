@@ -17,6 +17,20 @@
         a:visited{ color:#333; text-decoration:none; }
 
         #biaoge li{  
+             margin-top:30;
+        list-style-type:none;  
+        width:150px;  
+        height:30px;  
+        line-height:30px;  
+        text-align:center;  
+        float:left;  
+        margin-left:1px;  
+        margin-bottom:1px;  
+        background:#ccc;  
+        } 
+
+          #biaoge2 li{  
+              margin-top:60;
         list-style-type:none;  
         width:150px;  
         height:30px;  
@@ -75,19 +89,22 @@
            <div id="info" style="font-size: 20px;color:#a79f9f;">
                
             <ul id="biaoge">
-                <li><a  href="/Default.aspx">主页</a></li>
-                <li><a style="color:black" href="/Init.aspx">初始化</a></li>
-                <li><a style="color:black" href="/Ticket.aspx">浏览入场卷</a></li>                
+              <%--  <li><a  href="/Default.aspx">主页</a></li>--%>
+                <li><a style="color:black" href="/Init.aspx">清空中奖号码</a></li>
+                <li><a style="color:black" href="/Ticket.aspx">设置抽奖号码</a></li>                
                 <li><a style="color:black" href="/sz.aspx">打印中奖</a></li>
-                <li><a style="color:black" href="/4a.aspx">阳光保险奖</a></li>
-                <li><a style="color:black" href="/b4.aspx">阳光保险补抽</a></li>
+                <%--<li><a style="color:black" href="/b4.aspx">阳光保险补抽</a></li>--%>
+            </ul>
 
-                <li><a style="color:black" href="/3.aspx">三等奖</a></li>
-                <li><a style="color:black" href="/2.aspx">二等奖</a></li>
-                <li><a style="color:black" href="/1.aspx">一等奖</a></li>
+            <ul id="biaoge2">
+            
+             <%--   <li><a style="color:black" href="/3.aspx">三等奖</a></li>--%>
                 <li><a style="color:black" href="/0.aspx">特等奖</a></li>
+                <li><a style="color:black" href="/1.aspx">一等奖</a></li>
+                <li><a style="color:black" href="/2.aspx">二等奖</a></li>
+                <li><a style="color:black" href="/4a.aspx">三等奖</a></li>
                 <li><a style="color:black" href="/b1.aspx">一等奖补抽</a></li>
-                <li><a style="color:black" href="/b2.aspx">二等奖补抽</a></li>
+                <%--<li><a style="color:black" href="/b2.aspx">二等奖补抽</a></li>--%>
             </ul>
         </div>
 

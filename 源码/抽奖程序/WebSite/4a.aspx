@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>阳光保险抽奖</title>
+    <title>三等奖（每次抽10个）</title>
     <script type="text/javascript" src="Scripts/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="Scripts/json2.js"></script>
     <script type="text/javascript" src="Scripts/Lucky.js"></script>
@@ -83,7 +83,7 @@ to { -webkit-transform: skew(40deg) ; }
         var playing = true;
         lucky.PublishBatch = "Batch1";
         var cur_lev = 4;//奖品类型
-        var cur_num = 5;
+        var cur_num = 10;
         var open = false;
         var batch = 20;//用以在两边显示时区分
         $(function () {
@@ -149,7 +149,7 @@ to { -webkit-transform: skew(40deg) ; }
 <%--必须使用支持html5的网页才能播放背景声音，以下html标签只能在html5的浏览器中受支持，如google--%>  
         <embed id='myaudio' src='mp3/kamen.mp3'; loop=true autostart=true name=bgss width=0 height=0 />
     </div>
-<img src="images/page_back_awardyg.jpg" style="width:100%; position:absolute; z-index:-1;" id="back_img" />
+<img src="images/3.jpg" style="width:100%; position:absolute; z-index:-1;" id="back_img" />
     <ul id="roll_num" class="list_num"></ul>
     <ul id="num_award" class="list_num"></ul>
     <ul class="sz_award">
@@ -158,11 +158,12 @@ to { -webkit-transform: skew(40deg) ; }
     </ul>
     <div id="stage" style="width: 100%; height:100%; position: absolute; z-index: 9999; top: 0px; left: 5px;">  
         <div style="position:absolute;left:0;top:0;width:100%;height:100%;background-color:#000" id="black_mask"></div>      
-        <img src="images/stage_left02.jpg" width="50%" id="stage_left02" style=" position:absolute; left:0;top:0;" /> 
-        <img src="images/stage_right02.jpg" width="50%" id="stage_right02" style=" position:absolute; right:0;top:0;"/>
-        <img src="images/stage_left01.png" width="16.85%" id="stage_left01" style=" position:absolute; left:0; top:0;" /> 
+        <img src="images/2015/3_stage_left.jpg" width="50%" id="stage_left02" style=" position:absolute; left:0;top:0;" /> 
+        <img src="images/2015/3_stage_right.jpg" width="50%" id="stage_right02" style=" position:absolute; right:0;top:0;"/>
+        
+      <%--  <img src="images/stage_left01.png" width="16.85%" id="stage_left01" style=" position:absolute; left:0; top:0;" /> 
         <img src="images/stage_right01.png" width="16.85%" id="stage_right01" style=" position:absolute; right:0;top:0;"/>
-        <img src="images/stage_top.png" width="100%" id="stage_top" style=" position:absolute; top:0; left: 20px;"/>
+        <img src="images/stage_top.png" width="100%" id="stage_top" style=" position:absolute; top:0; left: 20px;"/>--%>
     </div>
 
 </body>

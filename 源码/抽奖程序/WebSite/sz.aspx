@@ -137,11 +137,11 @@
         <%--<li class="act">三等奖（第一轮）</li>
         <li>三等奖（第二轮）</li>
         <li>三等奖（第三轮）</li>--%>
-        <li class="act">三等奖</li>
+        <li class="act"></li>
         <li>二等奖</li>
         <li>一等奖</li>
         <li>特等奖</li>
-        <li>阳光保险奖</li>
+        <li>三等奖</li>
     </ul>
     <ul id="tab_content">
         <li class="act">
@@ -149,7 +149,7 @@
                 <tr>
                     <th colspan="2">
                         <%--深圳 三等奖（第一轮）--%>
-                        深圳 三等奖
+                      <%--  深圳 三等奖--%>
                     </th>
                 </tr>
             </table>
@@ -246,7 +246,7 @@
             <table id="tableYG" runat="server">
                 <tr>
                     <th colspan="2">
-                        阳光保险奖
+                        三等奖
                     </th>
                 </tr>
             </table>

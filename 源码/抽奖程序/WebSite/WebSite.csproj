@@ -87,6 +87,12 @@
     <Content Include="bj.aspx" />
     <Content Include="4a.aspx" />
     <Content Include="images\0.jpg" />
+    <Content Include="images\2015\1_stage_left.jpg" />
+    <Content Include="images\2015\1_stage_right.jpg" />
+    <Content Include="images\2015\2_stage_left.jpg" />
+    <Content Include="images\2015\2_stage_right.jpg" />
+    <Content Include="images\2015\3_stage_left.jpg" />
+    <Content Include="images\2015\3_stage_right.jpg" />
     <Content Include="images\page_back_award3new.jpg" />
     <Content Include="images\page_back_awardyg.jpg" />
     <Content Include="mp3\kamen.mp3" />
@@ -105,12 +111,8 @@
     <Content Include="images\1.jpg" />
     <Content Include="images\2.jpg" />
     <Content Include="images\3.jpg" />
-    <Content Include="images\stage_left.jpg" />
     <Content Include="images\stage_left01.png" />
-    <Content Include="images\stage_left02.jpg" />
-    <Content Include="images\stage_right.jpg" />
     <Content Include="images\stage_right01.png" />
-    <Content Include="images\stage_right02.jpg" />
     <Content Include="images\stage_top.png" />
     <Content Include="Lucky.htm" />
     <Content Include="Option.aspx" />

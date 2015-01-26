@@ -15,7 +15,7 @@
   </style>
  
     <h2>
-        初始化
+      <%--  初始化--%>
     </h2>
     <div style="padding-bottom:500px">
          <asp:Button ID="ButtonClearAward" runat="server"   CssClass="btn"
