@@ -214,11 +214,11 @@ function resize(cur_lev) {
         });
         if (cur_lev == 2) {
             $("#roll_num,#num_award").css({
-                top: max_height * 0.35,
+                top: max_height * 0.38,
                 //                fontSize: max_width * 0.4766 * 0.19 + "px",
                 fontSize: 80 + "px",
                 letterSpacing: 0,
-                lineHeight: 85 + "px",
+                lineHeight: 90 + "px",
             })
         }
         else if (cur_lev == 4) {
@@ -254,6 +254,7 @@ function resize(cur_lev) {
 }
 //开场动画
 function stage() {
+    PlayBGSound(true);
     creat_rd_arry(); //Default.js
     all_sn();
     show_award(cur_lev, batch);

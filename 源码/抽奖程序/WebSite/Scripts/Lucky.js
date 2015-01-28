@@ -430,7 +430,7 @@ function loadData(lucky, awardExisted) {
     var data = new Array();
     this.getTicketCount();
     //生成所有抽奖号码
-    for (var i = szCount; i >= 1; i--) {
+    for (var i = 1; i < szCount; i++) {
         var paded = "";
         if (i < 10) {
             paded = "000" + i.toString();
