@@ -45,33 +45,6 @@ namespace SMT.HRM.UI.Form.Salary
             loadbar.Stop();
         }
 
-        void salaryClient_ExportSalarySummaryCompleted(object sender, ExportSalarySummaryCompletedEventArgs e)
-        {
-            if (result == true)
-            {
-                if (e.Error == null)
-                {
-                    if (e.Result != null)
-                    {
-                        using (Stream stream = dialog.OpenFile())
-                        {
-                            stream.Write(e.Result, 0, e.Result.Length);
-                            ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("SUCCESSED"), Utility.GetResourceStr("导出成功"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Information);
-                        }
-                    }
-                    else
-                    {
-                        ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("CAUTION"), Utility.GetResourceStr("没有数据可导出"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
-                    }
-                }
-                else
-                {
-                    ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("ERROR"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Error);
-                }
-            }
-            loadbar.Stop();
-        }
-
         void salaryClient_GetSalarySummaryCompleted(object sender, GetSalarySummaryCompletedEventArgs e)
         {
             if (e.Error == null)
@@ -177,7 +150,7 @@ namespace SMT.HRM.UI.Form.Salary
 
             loadbar.Start();
             salaryClient.GetSalarySummaryAsync(dataPager.PageIndex, dataPager.PageSize, "EMPLOYEENAME",
-        filter, paras, pageCount, SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID, this.years.Value.ToString(), this.months.Value.ToString(), false);
+        filter, paras, pageCount, SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID, this.years.Value.ToString(), this.months.Value.ToString(), true);
         }
 
         private void lkSelectObj_FindClick(object sender, EventArgs e)
@@ -205,6 +178,16 @@ namespace SMT.HRM.UI.Form.Salary
             LoadData();
         }
 
+
+        #region 导出csv
+
+        IEnumerable<V_SalarySummary> OutCsventList;
+        private bool outExcell = false;
+        /// <summary>
+        /// 导出所有数据
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
             ispaging = false;
@@ -212,32 +195,104 @@ namespace SMT.HRM.UI.Form.Salary
             dialog.FilterIndex = 1;
             result = dialog.ShowDialog();
             loadbar.Start();
-            int pageCount = 0;
             string filter = "";
             System.Collections.ObjectModel.ObservableCollection<object> paras = new System.Collections.ObjectModel.ObservableCollection<object>();
 
-            string month = months.Value.ToString();
-            string year = years.Value.ToString();
 
-            if (!string.IsNullOrEmpty(year))
+            int year = Convert.ToInt32(this.years.Value);
+            int month = Convert.ToInt32(this.months.Value);
+            string employeeName = this.txtName.Text;
+            int endYear = Convert.ToInt32(this.endyears.Value);
+            int endMonth = Convert.ToInt32(this.endmonths.Value);
+
+            DateTime startDate = DateTime.Parse(year + "-" + month);
+            DateTime endDate = DateTime.Parse(endYear + "-" + endMonth);
+            if (startDate > endDate)
             {
-                filter = " salaryyear==@" + paras.Count.ToString();
-                paras.Add(year);
+                ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("CAUTION"), Utility.GetResourceStr("结束时间要大于开始时间"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
+                return;
             }
+            for (int j = year; j <= endYear; j++)
+            {
+                int tempMonth = endMonth;//如果跨年查询，则最大为12月
+                if (j != endYear)
+                {
+                    tempMonth = 12;
+                }
+                for (int i = month; i <= tempMonth; i++)
+                {
+                    if (!string.IsNullOrEmpty(filter))
+                    {
+                        filter += " or ";//&&操作优先级大于||，不用括号
+                    }
+                    else
+                    {
+                        filter += " ( ";//括号包含薪资年月
+                    }
+                    filter += " salaryyear==@" + paras.Count.ToString();
+                    paras.Add(j.ToString());
 
-            if (!string.IsNullOrEmpty(month))
+                    if (!string.IsNullOrEmpty(filter))
+                        filter += " and ";
+                    filter += " salarymonth==@" + paras.Count.ToString();
+                    paras.Add(i.ToString());
+
+                }
+            }
+            filter += " ) ";//括号包含薪资年月
+            if (!string.IsNullOrEmpty(employeeName))//员工姓名
             {
                 if (!string.IsNullOrEmpty(filter))
                     filter += " and ";
-                filter += " salarymonth==@" + paras.Count.ToString();
-                paras.Add(month);
+                filter += " EmployeeName==@" + paras.Count.ToString();
+                paras.Add(employeeName);
             }
-            salaryClient.ExportSalarySummaryAsync(dataPager.PageIndex, dataPager.PageSize, "EMPLOYEENAME",
-        filter, paras, pageCount, SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID, year, month, false);
+
+            int pageIndex = 0, pageSize = 0, pageCount = 0;
+            pageIndex = 1;
+            pageSize = 1000000;//导出所有  
+            salaryClient.ExportSalarySummaryAsync(pageIndex, pageSize, "EMPLOYEENAME",
+            filter, paras, pageCount, SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID, year.ToString(), month.ToString(), false);
+            loadbar.Start();
+        }
+
+
+        void salaryClient_ExportSalarySummaryCompleted(object sender, ExportSalarySummaryCompletedEventArgs e)
+        {
+            try { 
+            if (result == true)
+            {
+                if (e.Error == null)
+                {
+                    if (e.Result != null)
+                    {
+                        using (Stream stream = dialog.OpenFile())
+                        {
+                            stream.Write(e.Result, 0, e.Result.Length);
+                            ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("SUCCESSED"), Utility.GetResourceStr("导出成功"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Information);
+                        }
+                    }
+                    else
+                    {
+                        ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("CAUTION"), Utility.GetResourceStr("没有数据可导出"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
+                    }
+                }
+                else
+                {
+                    ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("ERROR"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Error);
+                }
+            }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }finally
+            {
+                loadbar.Stop();
+            }
         }
 
         /// <summary>
-        ///  导出查询出页面的数据
+        ///  导出当前页的数据
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -245,5 +300,6 @@ namespace SMT.HRM.UI.Form.Salary
         {
             ExportToCSV.ExportDataGridSaveAs(DtGrid);
         }
+        #endregion
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.HRM.DAL;
-using TM_SaaS_OA_EFModel;
+using SMT_HRM_EFModel;
 using System.Data.Objects.DataClasses;
 using System.Collections;
 using System.Linq.Expressions;
@@ -514,10 +514,6 @@ namespace SMT.HRM.BLL
                 ents = ents.Where(filterString, queryParas.ToArray());
             }
             ents = ents.OrderBy(sort);
-            if (IsPageing)
-            {
-                ents = Utility.Pager<SalryRecordView>(ents, pageIndex, pageSize, ref pageCount);
-            }
             //var addsums = from f in dal.GetObjects<T_HR_EMPLOYEEADDSUM>()
             //              where f.CHECKSTATE == "2" && f.DEALMONTH == month && f.DEALYEAR == year
             //              select f;
@@ -528,13 +524,15 @@ namespace SMT.HRM.BLL
             List<V_SalarySummary> V_SalarySum = new List<V_SalarySummary>();
             foreach (var ent in ents)
             {
-                if (V_SalarySum.Where(c => c.EmployeeID == ent.EmployeeID).Count() > 0)
+                if (V_SalarySum.Where(c => c.EmployeeID == ent.EmployeeID)
+                    .Where(c => c.SalaryDate == (ent.salaryYear + "年" + ent.salaryMonth + "月")).Count() > 0)
                 {
                     if (ent.PostEditState == "1" && ent.PostCheckState == "2")
                     {
                         var salary = V_SalarySum.Where(c => c.EmployeeID == ent.EmployeeID).FirstOrDefault();
                         V_SalarySum.Remove(salary);
-                    }else
+                    }
+                    else
                     {
                         continue;
                     }
@@ -834,6 +832,14 @@ namespace SMT.HRM.BLL
                 V_SalarySum.Add(tmp);
             }
             V_SalarySum = V_SalarySum.OrderBy(t => t.CompanyName).ThenBy(t => t.DeptName).ThenBy(t => t.PostName).ToList();
+
+
+            if (IsPageing)
+            {
+                IQueryable<V_SalarySummary> vent = V_SalarySum.AsQueryable();
+                V_SalarySum = Utility.Pager<V_SalarySummary>(vent, pageIndex, pageSize, ref pageCount).ToList();
+            }
+
             return V_SalarySum;
         }
 

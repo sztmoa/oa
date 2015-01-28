@@ -32,7 +32,7 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
         /// <summary>
         /// 本地xap保存的文件夹名称
         /// </summary>
-        private string strApplicationPath = SMT.SAAS.Main.CurrentContext.Common.HostIP.Replace(":", "").Replace(".","");
+        private string strApplicationPath ="SMT";// SMT.SAAS.Main.CurrentContext.Common.HostIP.Replace(":", "").Replace(".","");
         /// <summary>
         /// 本地版本文件路径
         /// </summary>

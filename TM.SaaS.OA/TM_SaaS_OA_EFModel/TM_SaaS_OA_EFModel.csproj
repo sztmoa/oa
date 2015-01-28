@@ -52,6 +52,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TM_SaaS_OA_EFModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="TM_SaaS_OA_EFModelContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

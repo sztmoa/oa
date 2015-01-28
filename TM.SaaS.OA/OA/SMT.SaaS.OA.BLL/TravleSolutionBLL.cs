@@ -182,16 +182,14 @@ namespace SMT.SaaS.OA.BLL
         /// 修改出差方案  
         /// </summary>
         /// <param name="EntTravle"></param>
-        /// <param name="TransportObj">交通工具列表</param>
+        /// <param name="NewTransportObj">交通工具列表</param>
         /// <param name="PlaneObj">飞机路线列表</param>
         /// <param name="IsChange">如果为假 则表示交通工具、飞机路线没做改动 为真则做了改动</param>
         /// <returns></returns>
-        public int UpdateTravleSolutionInfo(T_OA_TRAVELSOLUTIONS EntTravle, List<T_OA_TAKETHESTANDARDTRANSPORT> TransportObj, List<string> companyids, bool IsChange)
+        public int UpdateTravleSolutionInfo(T_OA_TRAVELSOLUTIONS EntTravle, List<T_OA_TAKETHESTANDARDTRANSPORT> NewTransportObj, List<string> companyids, bool IsChange)
         {
             try
             {
-                bool IsAdd = false;//是否添加动作
-                BeginTransaction();
                 int result = 0;
                 EntTravle.UPDATEDATE = DateTime.Now;
                 var users = from ent in dal.GetObjects<T_OA_TRAVELSOLUTIONS>()
@@ -205,29 +203,9 @@ namespace SMT.SaaS.OA.BLL
                         EntTravle.EntityKey = user.EntityKey;
                     }
                 }
-                if (!IsChange)
-                {
 
-                    int i = dal.Update(EntTravle);
-                    if (i > 0)
-                    {
-                        CommitTransaction();
-                        return i;
-                    }
-                    else
-                    {
-                        RollbackTransaction();
-                        return -1;
-                    }
-                }
-                else
-                {
-                    int ed = Update(EntTravle);
-                    if (ed > 0)
-                    {
-                        IsAdd = true;
-                    }
-                    var standards = from ent in dal.GetObjects<T_OA_TAKETHESTANDARDTRANSPORT>().Include("T_OA_TRAVELSOLUTIONS")
+                result = Update(EntTravle);
+                    var Oldstandards = from ent in dal.GetObjects<T_OA_TAKETHESTANDARDTRANSPORT>().Include("T_OA_TRAVELSOLUTIONS")
                                     where ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == EntTravle.TRAVELSOLUTIONSID
                                     select ent;
                     var EntObjs = from ent in dal.GetObjects<T_OA_PROGRAMAPPLICATIONS>().Include("T_OA_TRAVELSOLUTIONS")
@@ -257,40 +235,47 @@ namespace SMT.SaaS.OA.BLL
                         }
                     }
 
-                    //删除被删除或修改的数据
-                    if (TransportObj.Count() > 0)
+                    //修改设置的交通工具及级别
+                    if (NewTransportObj.Count() > 0)
                     {
-                        TransportObj.ForEach(item =>
+                        //如果数据库中的已不存在，删除
+                        foreach (var item in Oldstandards)
                         {
-                            if (item.ENDPOSTLEVEL == "" && item.TYPEOFTRAVELTOOLS == "" && item.TAKETHETOOLLEVEL == "")
+                            var q = from ent in NewTransportObj
+                                    where ent.TAKETHESTANDARDTRANSPORTID == item.TAKETHESTANDARDTRANSPORTID
+                                    select ent;
+                            if (q.FirstOrDefault() == null)
                             {
-                                dal.DeleteFromContext(item);
+                                Tracer.Debug("删除出差工具设置项目"+item.TYPEOFTRAVELTOOLS);
+                                dal.Delete(item);
                             }
-                        });
+
+                        }
+                        //如果数据库中不存在，添加
+                       foreach(var item in NewTransportObj)
+                       {
+                           var q = from ent in Oldstandards
+                                   where ent.TAKETHESTANDARDTRANSPORTID == item.TAKETHESTANDARDTRANSPORTID
+                                   select ent;
+                           if(q.FirstOrDefault()==null)
+                           {
+                               Tracer.Debug("添加出差工具设置项目" + item.TYPEOFTRAVELTOOLS);
+                               item.T_OA_TRAVELSOLUTIONSReference.EntityKey =
+                               new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntTravle.TRAVELSOLUTIONSID);
+                               Utility.RefreshEntity(item);
+                               dal.AddToContext(item);
+                               item.CREATEDATE = DateTime.Now;
+                               item.UPDATEDATE = DateTime.Now;
+                           }
+                           else
+                           {
+                               Tracer.Debug("修改出差工具设置项目" + item.TYPEOFTRAVELTOOLS);
+                               item.UPDATEDATE = DateTime.Now;
+                               dal.Update(item);
+                           }
+                       }
+
                     }
-
-                    int m = dal.SaveContextChanges();
-
-                    if (TransportObj.Count() > 0)
-                    {
-                        TransportObj.ForEach(item =>
-                            {
-                                //三个都不为空则表示不是被删除的对象
-                                if (item.TAKETHETOOLLEVEL != "" && item.TYPEOFTRAVELTOOLS != "" && item.ENDPOSTLEVEL != "")
-                                {
-                                    if (item.T_OA_TRAVELSOLUTIONS != null)
-                                    {
-                                        if (item.T_OA_TRAVELSOLUTIONS.EntityKey == null)
-                                            item.T_OA_TRAVELSOLUTIONS.EntityKey = EntTravle.EntityKey;
-                                    }
-                                    Utility.RefreshEntity(item);
-                                    dal.AddToContext(item);
-                                    IsAdd = true;
-                                }
-                            }
-                            );
-                    }
-
                     if (companyids.Count() > 0)
                     {
                         for (int i = 0; i < companyids.Count(); i++)
@@ -315,61 +300,19 @@ namespace SMT.SaaS.OA.BLL
 
                                 Utility.RefreshEntity(ent);
                                 dal.AddToContext(ent);
-                                IsAdd = true;
+                                //IsAdd = true;
                             }
                         }
-                        //同出差方案下，删除已经不需要的城市
-                        //var delEnts = from a in dal.GetObjects<T_OA_PROGRAMAPPLICATIONS>()
-                        //              where a.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == EntTravle.TRAVELSOLUTIONSID && !companyids.Contains(a.COMPANYID)
-                        //              select a;
-                        //var delEnts1 = from a in dal.GetObjects<T_OA_PROGRAMAPPLICATIONS>().Include("T_OA_TRAVELSOLUTIONID")
-                        //              where a.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID == EntTravle.TRAVELSOLUTIONSID
-                        //              select a;
-                        //var delEnts2 = from a in dal.GetObjects<T_OA_PROGRAMAPPLICATIONS>()
-                        //              where !companyids.Contains(a.COMPANYID)
-                        //              select a;
-                        //if (delEnts.Count() > 0)
-                        //{
-                        //    foreach (var de in delEnts)
-                        //    {
-                        //        dal.DeleteFromContext(de);
-                        //    }
-                        //    IsAdd = true;
-                        //}
                     }
-                    if (IsAdd)
-                    {
-                        result = dal.SaveContextChanges();
-                        if (result > 0 || m > 0)
-                        {
-                            dal.CommitTransaction();
-                            result = result == 0 ? m : result;
-                        }
-                        else
-                        {
-                            dal.RollbackTransaction();
-                        }
-                    }
-                    else
-                    {
-                        //只删除了数据  给没有添加数据
-                        if (m > 0)
-                        {
-                            result = m;//将结果传递出来
-                            dal.CommitTransaction();
-                        }
-                        else
-                        {
-                            dal.RollbackTransaction();
-                        }
-                    }
-                }
+
+                    result = dal.SaveContextChanges();
+                    Tracer.Debug("修改出差方案设置项目，受影响的记录：" + result);
+                
                 return result;
             }
             catch (Exception ex)
             {
-                Tracer.Debug("出差方案TravleSolutionBLL-UpdateTravleSolutionInfo" + System.DateTime.Now.ToString() + " " + ex.ToString());
-                RollbackTransaction();
+                Tracer.Debug("出差方案TravleSolutionBLL-UpdateTravleSolutionInfo"  + ex.ToString());
                 return -1;
             }
         }

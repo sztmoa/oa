@@ -25,26 +25,21 @@
     <Grid x:Name="LayoutRoot"
           Margin="2">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
             <RowDefinition Height="30"  />
             <RowDefinition />
             
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button x:Name="BtnSave" Click="BtnSave_Click" Content="保存" Width="80" Style="{StaticResource CommonButtonStyle}"></Button>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
             <TextBlock Text="出差方案" Margin="2,8,2,8"></TextBlock>
             <ComboBox Grid.Row="0" MinWidth="120" x:Name="cmbSolution" SelectionChanged="cmbSolution_SelectionChanged" Style="{StaticResource ComboBoxStyle}"/>
             <smt:FormToolBar x:Name="ToolBar_Solution"
                                      Width="auto"
                                      Grid.Row="1" />
 									 <smt:ImageButton x:Name="btnCopy" Width="80"></smt:ImageButton>
+            <Button x:Name="BtnSave" Click="BtnSave_Click" Content="保存" Width="80" Style="{StaticResource CommonButtonStyle}"></Button>
         </StackPanel>
-
-
         <validator:ValidatorManager x:Name="Group1" />
-        <controls:TabControl Grid.Row="2"
+        <controls:TabControl Grid.Row="1"
                              VerticalAlignment="Stretch"
                              x:Name="senddoctab"
                              Margin="0,8,0,8"
@@ -249,36 +244,7 @@
                         <RowDefinition Height="30"></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <controlsToolkit:Expander Style="{StaticResource ExpanderStyle}"
-                                              x:Name="ControlVechile"
-                                              Grid.Row="0"
-                                              Header="{Binding Converter={StaticResource ResourceConveter}, Source=SEARCH}"
-                                              VerticalAlignment="top"
-                                              Margin="0,1,0,2">
-                        <StackPanel Orientation="Vertical">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="岗位级别"
-                                           Margin="2,4" />
-                                <appCtr:TravelDictionaryComboBox x:Name="SearchComVechile"
-                                                           Category="POSTLEVEL"
-                                                           SelectedValue="{Binding POSTLEVELA,Mode=TwoWay,NotifyOnValidationError=true, ValidatesOnExceptions=true}"
-                                                           Style="{StaticResource ComboBoxStyle}"
-                                                           MinWidth="150"
-                                                           Height="24"
-                                                           
-                                                           HorizontalAlignment="Stretch"
-                                                           VerticalAlignment="Stretch"
-                                                           Margin="5,1,8,0"></appCtr:TravelDictionaryComboBox>
-
-                                <Button x:Name="SearchBtn"
-                                        Content="{Binding Converter={StaticResource ResourceConveter}, Source=SEARCH}"
-                                        Click="SearchBtn_Click"
-                                        Margin="4,1,10,1"
-                                        Style="{StaticResource CommonButtonStyle}" />
-                            </StackPanel>
-
-                        </StackPanel>
-                    </controlsToolkit:Expander>
+                    <TextBlock Foreground="Red">如需修改，请先点击修改，修改完毕后点击保存</TextBlock>
                     <smt:FormToolBar x:Name="ToolBar_Vechile"
                                      Width="auto"
                                      Grid.Row="1" />
@@ -286,9 +252,9 @@
                                    AutoGenerateColumns="False"
                                    ItemsSource="{Binding Collection}"
                                    RenderTransformOrigin="0.5,0.5"
-                                   IsReadOnly="True"
+                                   ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                   ScrollViewer.HorizontalScrollBarVisibility="Auto"
                                    ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}"
-                                   SelectionChanged="DGVechileStandard_SelectionChanged"
                                    HorizontalAlignment="Stretch"
                                    VerticalAlignment="Stretch"
                                    LoadingRow="DgVechileStandard_LoadingRow"

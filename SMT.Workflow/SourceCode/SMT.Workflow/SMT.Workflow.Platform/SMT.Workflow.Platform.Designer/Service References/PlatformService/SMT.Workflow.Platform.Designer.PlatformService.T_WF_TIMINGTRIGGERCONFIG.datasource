@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="T_WF_TIMINGTRIGGERCONFIG" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>SMT.Workflow.Platform.Designer.PlatformService.T_WF_TIMINGTRIGGERCONFIG</TypeInfo>
+   <TypeInfo>SMT.Workflow.Platform.Designer.PlatformService.T_WF_TIMINGTRIGGERCONFIG, Service References.PlatformService.Reference.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

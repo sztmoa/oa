@@ -100,6 +100,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attend\FormAttendRecordCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attend\FormAttendRecordCheck.Designer.cs">
+      <DependentUpon>FormAttendRecordCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFB.Designer.cs">
+      <DependentUpon>FormFB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFlowInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFlowInfo.Designer.cs">
+      <DependentUpon>FormFlowInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchFBAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +212,15 @@
     <Compile Include="打卡机导入打卡记录\AttendLog%28汉王%29.Designer.cs">
       <DependentUpon>AttendLog%28汉王%29.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Attend\FormAttendRecordCheck.resx">
+      <DependentUpon>FormAttendRecordCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFB.resx">
+      <DependentUpon>FormFB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFlowInfo.resx">
+      <DependentUpon>FormFlowInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchFBAccount.resx">
       <DependentUpon>SearchFBAccount.cs</DependentUpon>
     </EmbeddedResource>

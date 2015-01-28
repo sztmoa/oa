@@ -150,12 +150,14 @@ namespace Asd.Award
             using (TMAwardEntities context = new TMAwardEntities())
             {
 
-                var dt = from ent in context.TmpAward
+                var dt = (from ent in context.TmpAward
                          where ent.TicketNO==ticketNO
-                         select ent;
-                context.DeleteObject(dt);
-                context.SaveChanges();
-
+                         select ent).FirstOrDefault();
+                if (dt != null)
+                {
+                    context.DeleteObject(dt);
+                    context.SaveChanges();
+                }
             }
         }
 

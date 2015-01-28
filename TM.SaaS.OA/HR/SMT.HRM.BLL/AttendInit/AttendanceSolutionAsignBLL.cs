@@ -18,7 +18,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using TM_SaaS_OA_EFModel;
+using SMT_HRM_EFModel;
 using SMT.HRM.DAL;
 using SMT.HRM.CustomModel;
 using SMT.Foundation.Log;
@@ -877,40 +877,35 @@ namespace SMT.HRM.BLL
 
                 string strCheckStates = Convert.ToInt32(Common.CheckStates.Approved).ToString();
 
-                var ent = from en in dal.GetObjects().Include("T_HR_ATTENDANCESOLUTION")
-                          where en.OWNERCOMPANYID == strCompanyID
-                          && strEmployeeID.Contains(en.ASSIGNEDOBJECTID)
-                          && en.STARTDATE <= dtStart &&
-                          en.ENDDATE >= dtStart
-                          && en.CHECKSTATE == strCheckStates
+                var attendSolutionList = (from en in dal.GetObjects().Include("T_HR_ATTENDANCESOLUTION")
+                                          where en.OWNERCOMPANYID == strCompanyID
+                                          && en.STARTDATE <= dtStart &&
+                                          en.ENDDATE >= dtStart
+                                          && en.CHECKSTATE == strCheckStates
+                                          select en);
+
+                var ent = from en in attendSolutionList
+                          where strEmployeeID.Contains(en.ASSIGNEDOBJECTID)
+                          orderby en.STARTDATE,en.UPDATEDATE descending
                           select en; 
                 if (ent.FirstOrDefault() == null)
                 {
-                    ent = from en in dal.GetObjects().Include("T_HR_ATTENDANCESOLUTION")
-                          where en.OWNERCOMPANYID == strCompanyID
-                          && strPostID.Contains(en.ASSIGNEDOBJECTID)//linq反写，表示en.ASSIGNEDOBJECTID 包含strPostID
-                          && en.STARTDATE <= dtStart &&
-                          en.ENDDATE >= dtStart
-                          && en.CHECKSTATE == strCheckStates
+                    ent = from en in attendSolutionList
+                          where strPostID.Contains(en.ASSIGNEDOBJECTID)//linq反写，表示en.ASSIGNEDOBJECTID 包含strPostID
+                          orderby en.STARTDATE, en.UPDATEDATE descending
                           select en;
                     if (ent.FirstOrDefault() == null)
                     {
-                        ent = from en in dal.GetObjects().Include("T_HR_ATTENDANCESOLUTION")
-                              where en.OWNERCOMPANYID == strCompanyID
-                              && strDepartmentID.Contains(en.ASSIGNEDOBJECTID)
-                              && en.STARTDATE <= dtStart &&
-                              en.ENDDATE >= dtStart
-                              && en.CHECKSTATE == strCheckStates
+                        ent = from en in attendSolutionList
+                              where strDepartmentID.Contains(en.ASSIGNEDOBJECTID)
+                              orderby en.STARTDATE, en.UPDATEDATE descending
                               select en;
 
                         if (ent.FirstOrDefault() == null)
                         {
-                            ent = from en in dal.GetObjects().Include("T_HR_ATTENDANCESOLUTION")
-                                  where en.OWNERCOMPANYID == strCompanyID
-                                  && strCompanyID.Contains(en.ASSIGNEDOBJECTID)
-                                  && en.STARTDATE <= dtStart &&
-                                  en.ENDDATE >= dtStart
-                                  && en.CHECKSTATE == strCheckStates
+                            ent = from en in attendSolutionList
+                                  where strCompanyID.Contains(en.ASSIGNEDOBJECTID)
+                                  orderby en.STARTDATE, en.UPDATEDATE descending
                                   select en;
                         }
                     }
@@ -1138,7 +1133,7 @@ namespace SMT.HRM.BLL
                     entTemp.CREATECOMPANYID = gPKId;
                     Utility.CloneEntity<T_HR_ATTENDANCESOLUTIONASIGN>(entTemp, ent);
                     ent.T_HR_ATTENDANCESOLUTIONReference.EntityKey =
-                        new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
+                        new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
 
                     Utility.RefreshEntity(ent);
                     dalAttendanceSolutionAsign.Add(ent);
@@ -1157,7 +1152,7 @@ namespace SMT.HRM.BLL
                             ent.CREATECOMPANYID = gPKId;
 
                             ent.T_HR_ATTENDANCESOLUTIONReference.EntityKey =
-                                new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
+                                new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
 
                             Utility.RefreshEntity(ent);
                             dalAttendanceSolutionAsign.Add(ent);
@@ -1172,7 +1167,7 @@ namespace SMT.HRM.BLL
                     T_HR_ATTENDANCESOLUTIONASIGN ent = new T_HR_ATTENDANCESOLUTIONASIGN();
                     Utility.CloneEntity<T_HR_ATTENDANCESOLUTIONASIGN>(entTemp, ent);
                     ent.T_HR_ATTENDANCESOLUTIONReference.EntityKey =
-                        new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
+                        new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
                     ent.REMARK = "1";
                     Utility.RefreshEntity(ent);
 
@@ -1305,11 +1300,11 @@ namespace SMT.HRM.BLL
                     //T_HR_ATTENDANCESOLUTIONASIGN entUpdate = dalAttendanceSolutionAsign.GetAttendanceSolutionAsignRdByMultSearch(strFilter.ToString(), objArgs.ToArray());
                     //Utility.CloneEntity(entTemp, entUpdate);
                     //entUpdate.T_HR_ATTENDANCESOLUTIONReference.EntityKey =
-                    //    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
+                    //    new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
                     entTemp.T_HR_ATTENDANCESOLUTIONReference.EntityKey =
-                           new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
+                           new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
                     entTemp.T_HR_ATTENDANCESOLUTION.EntityKey =
-                           new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
+                           new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_ATTENDANCESOLUTION", "ATTENDANCESOLUTIONID", entTemp.T_HR_ATTENDANCESOLUTION.ATTENDANCESOLUTIONID);
 
 
                     dalAttendanceSolutionAsign.Update(entTemp);

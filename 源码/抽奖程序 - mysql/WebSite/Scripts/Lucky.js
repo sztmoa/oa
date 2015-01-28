@@ -101,7 +101,7 @@ function Lucky() {
          if (level == 2 && countSZ2 >= 20) {//如果是二等奖大于20个（二等奖只有20个）则返回，如果添加不限制，去掉判断即可
              return "0000";
          }
-         if (level == 4 && countYG >= 10) {//如果是阳光奖大于20个（二等奖只有20个）则返回，如果添加不限制，去掉判断即可
+         if (level == 4 && countYG >= 100) {//如果是阳光奖大于20个（二等奖只有20个）则返回，如果添加不限制，去掉判断即可
              return "0000";
          }
 
@@ -110,8 +110,14 @@ function Lucky() {
              result[result.length] = this.generateOneAward(level);
              return result;
          }
-         if (level == 2 || level == 4) {//二等奖或阳光奖生成5个
+         if (level == 2) {//二等奖生成10个
              for (var i = 0; i < 10; i++) {
+                 result[result.length] = this.generateOneAward(level);
+             }
+             return result;
+         }
+         if (level == 4) {//三等奖每次生成20个
+             for (var i = 0; i < 20; i++) {
                  result[result.length] = this.generateOneAward(level);
              }
              return result;

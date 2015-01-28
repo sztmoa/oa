@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>阳光保险抽奖</title>
+    <title>三等奖（每次抽20个号码）</title>
     <script type="text/javascript" src="Scripts/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="Scripts/json2.js"></script>
     <script type="text/javascript" src="Scripts/Lucky.js"></script>
@@ -54,13 +54,19 @@
             text-shadow: 0px 2px 1px rgba(255,255,255,0.5);
         }
         .sz_award,.bj_award{  position:absolute;   list-style-type:none; padding:10px 0;  /*background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.1), rgba(0,0,0,0.5))*/;}
-       .sz_award li,.bj_award li{  float:left;color:#FFF1B4; text-align:center; width:49%;border-radius: 14px; margin:0 0 4px 2px; padding:2px 0;
-                                    text-shadow: 0px 1px 2px #000; font-weight:bold; box-shadow: 0px 2px 4px #000; border-top:1px solid rgba(252,252,162,0.4);
-                                   background:#a60000;background: -webkit-gradient(linear, left top, left bottom, from(#c40e00), to(#a60000));}
+        .sz_award li,.bj_award li{  width:20%; margin:0 0 0px 0px; 
+                                   float:left;color:#FFF1B4; text-align:center;
+                                   border-radius: 14px;
+                                   padding:2px 0;
+                                   text-shadow: 0px 1px 2px #000; font-weight:bold; box-shadow: 0px 2px 4px #000;
+                                   border-top:1px solid rgba(252,252,162,0.4);
+                                   background:#a60000;
+                                   background: -webkit-gradient(linear, left top, left bottom, from(#c40e00), to(#a60000));}
         #roll_num,#num_award{  margin: auto; position: absolute;z-index: 9999; left:50%;}
+        .roll_num li{float:left;display:inline;line-height:24px;height:80%;word-break:break-all;word-wrap : break-word ;}
         .num_mask_top{ background:url(images/num_mask_top.png) no-repeat; width:571px; height:20px; position:absolute; top:203px; left:50%; margin-left:-285px; z-index:9999;}
         .num_mask_bottom{ background:url(images/num_mask_bottom.png) no-repeat; width:571px; height:20px; position:absolute; top:618px; left:50%; margin-left:-285px; z-index:9999;}
-         .stage_left {
+        .stage_left {
 -webkit-animation: sl 2s 1 linear;
 }
 @-webkit-keyframes sl {
@@ -83,7 +89,7 @@ to { -webkit-transform: skew(40deg) ; }
         var playing = true;
         lucky.PublishBatch = "Batch1";
         var cur_lev = 4;//奖品类型
-        var cur_num = 5;
+        var cur_num = 20;
         var open = false;
         var batch = 20;//用以在两边显示时区分
         $(function () {

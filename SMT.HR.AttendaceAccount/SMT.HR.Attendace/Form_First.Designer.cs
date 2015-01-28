@@ -33,6 +33,9 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
+            this.btnFb = new System.Windows.Forms.Button();
+            this.btnGetFlowInfo = new System.Windows.Forms.Button();
+            this.btnAttRecordCheck = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFirst
@@ -64,7 +67,7 @@
             this.label1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(364, 61);
+            this.label1.Size = new System.Drawing.Size(559, 61);
             this.label1.TabIndex = 2;
             this.label1.Text = "神州通在线考勤处理工具";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -82,15 +85,51 @@
             this.comboBoxType.TabIndex = 3;
             this.comboBoxType.Text = "请选择处理的类型";
             // 
+            // btnFb
+            // 
+            this.btnFb.BackColor = System.Drawing.Color.Silver;
+            this.btnFb.Location = new System.Drawing.Point(12, 259);
+            this.btnFb.Name = "btnFb";
+            this.btnFb.Size = new System.Drawing.Size(132, 34);
+            this.btnFb.TabIndex = 0;
+            this.btnFb.Text = "处理预算";
+            this.btnFb.UseVisualStyleBackColor = false;
+            this.btnFb.Click += new System.EventHandler(this.btnFb_Click);
+            // 
+            // btnGetFlowInfo
+            // 
+            this.btnGetFlowInfo.BackColor = System.Drawing.Color.Silver;
+            this.btnGetFlowInfo.Location = new System.Drawing.Point(220, 259);
+            this.btnGetFlowInfo.Name = "btnGetFlowInfo";
+            this.btnGetFlowInfo.Size = new System.Drawing.Size(132, 34);
+            this.btnGetFlowInfo.TabIndex = 0;
+            this.btnGetFlowInfo.Text = "查询流程信息";
+            this.btnGetFlowInfo.UseVisualStyleBackColor = false;
+            this.btnGetFlowInfo.Click += new System.EventHandler(this.btnGetFlowInfo_Click);
+            // 
+            // btnAttRecordCheck
+            // 
+            this.btnAttRecordCheck.BackColor = System.Drawing.Color.Silver;
+            this.btnAttRecordCheck.Location = new System.Drawing.Point(220, 315);
+            this.btnAttRecordCheck.Name = "btnAttRecordCheck";
+            this.btnAttRecordCheck.Size = new System.Drawing.Size(163, 34);
+            this.btnAttRecordCheck.TabIndex = 0;
+            this.btnAttRecordCheck.Text = "处理重复的考勤记录";
+            this.btnAttRecordCheck.UseVisualStyleBackColor = false;
+            this.btnAttRecordCheck.Click += new System.EventHandler(this.btnAttRecordCheck_Click);
+            // 
             // Form_First
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(364, 307);
+            this.ClientSize = new System.Drawing.Size(559, 407);
             this.Controls.Add(this.comboBoxType);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAttRecordCheck);
+            this.Controls.Add(this.btnGetFlowInfo);
+            this.Controls.Add(this.btnFb);
             this.Controls.Add(this.btnFirst);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -108,6 +147,9 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxType;
+        private System.Windows.Forms.Button btnFb;
+        private System.Windows.Forms.Button btnGetFlowInfo;
+        private System.Windows.Forms.Button btnAttRecordCheck;
     }
 }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using AttendaceAccount;
+using AttendaceAccount.Attend;
 
 namespace SmtPortalSetUp
 {
@@ -45,6 +46,35 @@ namespace SmtPortalSetUp
         private void Form_First_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnFb_Click(object sender, EventArgs e)
+        {
+            Form form = null;
+            form = GlobalParameters.fromFb;
+            if (form == null) form = new FormFB();
+            form.Show();
+            this.Hide();
+
+        }
+
+        private void btnGetFlowInfo_Click(object sender, EventArgs e)
+        {
+            FormFlowInfo form = null;
+            form = GlobalParameters.formFlow;
+            if (form == null) form = new FormFlowInfo();
+            form.Show();
+            this.Hide();
+        }
+
+        private void btnAttRecordCheck_Click(object sender, EventArgs e)
+        {
+
+            FormAttendRecordCheck form = null;
+            form = GlobalParameters.AttendRecordCheckForm;
+            if (form == null) form = new FormAttendRecordCheck();
+            form.Show();
+            this.Hide();
         }
     }
 }

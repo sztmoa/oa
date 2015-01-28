@@ -25,7 +25,7 @@ namespace SMT.SAAS.Platform.Xamls.LoginPart
         /// <summary>
         /// 本地缓存的文件夹名称
         /// </summary>
-        private string strApplicationPath =SMT.SAAS.Main.CurrentContext.Common.HostIP.Replace(":", "").Replace(".","");
+        private string strApplicationPath ="SMT";//SMT.SAAS.Main.CurrentContext.Common.HostIP.Replace(":", "").Replace(".","");
 
         /// <summary>
         /// 登录验证接口

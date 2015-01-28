@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SmtPortalSetUp;
+using AttendaceAccount.Attend;
 
 namespace AttendaceAccount
 {
@@ -27,6 +28,10 @@ namespace AttendaceAccount
         public static AttendLogForm attendLogForm;
         public static SendDocForm sendDocForm;
         public static SearchFBAccount SearchFBAccountFrom;
+
+        public static FormFB fromFb;
+        public static FormFlowInfo formFlow;
+        public static FormAttendRecordCheck AttendRecordCheckForm;
     }
      
 }

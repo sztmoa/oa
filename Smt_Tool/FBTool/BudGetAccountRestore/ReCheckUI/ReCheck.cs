@@ -1373,9 +1373,19 @@ namespace ReCheckUI
         #region 活动经费调整
         private void btnCheckJF_Click(object sender, EventArgs e)
         {
+            jinFeiId = "d5134466-c207-44f2-8a36-cf7b96d5851f";//活动经费
             Thread d = new Thread(starChechHDJF);
             d.Start();
            
+        }
+
+        public string jinFeiId = string.Empty;
+
+        private void btnBMJF_Click(object sender, EventArgs e)
+        {
+            jinFeiId = "08c1d9c6-2396-43c3-99f9-227e4a7eb417";//部门经费
+            ReCheck_BMJF bmjf = new ReCheck_BMJF();
+            bmjf.checkBMJF();
         }
 
         /// <summary>
@@ -1409,8 +1419,6 @@ namespace ReCheckUI
                             employeeALl.Add(txtEmployee.Text);
 
                         }
-
-
                         int allCount = employeeALl.Count;
                         int i = 0;
                         string msg = string.Empty;
@@ -1568,6 +1576,7 @@ namespace ReCheckUI
                                 MessageBox.Show("处理完毕,共处理了: " + j + " 条数据");
                             }
                         }
+                        SetLog("处理完毕！");
                     }
                 }
 
@@ -1681,6 +1690,12 @@ namespace ReCheckUI
             {
                 txtEmployee.Text = dt.Rows[0][0].ToString();
             }
+        }
+
+        private void btnYUsuan_Click(object sender, EventArgs e)
+        {
+            FBTrans tran = new FBTrans();
+            tran.start();
         }
     }
 }

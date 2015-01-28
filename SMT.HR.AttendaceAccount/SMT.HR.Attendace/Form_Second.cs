@@ -196,24 +196,24 @@ namespace SmtPortalSetUp
                                et.checkstate 入职业审核状态,
                                e.idnumber
                           from smthrm.t_hr_employee e
-                         inner join smthrm.t_hr_employeepost ep
+                         left join smthrm.t_hr_employeepost ep
                             on e.employeeid = ep.employeeid
-                         inner join smthrm.t_hr_employeeentry et
+                         left join smthrm.t_hr_employeeentry et
                             on e.employeeid=et.employeeid
-                         inner join smthrm.t_hr_post p
+                         left join smthrm.t_hr_post p
                             on ep.postid = p.postid
-                         inner join smthrm.t_hr_postdictionary pd
+                         left join smthrm.t_hr_postdictionary pd
                             on p.postdictionaryid = pd.postdictionaryid
-                         inner join smthrm.t_hr_company c
+                         left join smthrm.t_hr_company c
                             on p.companyid = c.companyid
-                         inner join smthrm.t_hr_department d
+                         left join smthrm.t_hr_department d
                             on p.departmentid = d.departmentid
-                         inner join smthrm.t_hr_departmentdictionary dp
+                         left join smthrm.t_hr_departmentdictionary dp
                             on d.departmentdictionaryid = dp.departmentdictionaryid
                          where  
                          e.employeecname like '%" + txtEmployeeName.Text +@"%'
                          --and ep.editstate=1
-                         and ep.checkstate=2
+                         --and ep.checkstate=2
                          order by ep.isagency,ep.editstate desc ";
             OracleHelp.Connect();
             DataTable dt = OracleHelp.getTable(sql);

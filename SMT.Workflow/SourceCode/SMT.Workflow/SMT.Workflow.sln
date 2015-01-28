@@ -1,13 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMT.Workflow.Engine", "SMT.Workflow.Engine", "{8EC487AC-1896-46C4-A4B7-18641F3DCBCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Engine.DAL", "SMT.Workflow.Engine\SMT.Workflow.Engine.DAL\SMT.Workflow.Engine.DAL.csproj", "{AA5D10E0-B6A9-42D2-BEED-8615921BB1FE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMT.Workflow.Message", "SMT.Workflow.Message", "{DA667BA5-7351-4DD9-9529-664867FAE846}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Message.DAL", "SMT.Workflow.Message\SMT.Workflow.Message.DAL\SMT.Workflow.Message.DAL.csproj", "{D61A2080-1FFD-4308-9551-DD6491C3E6E3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMT.Workflow.Platform", "SMT.Workflow.Platform", "{A9B2EF2B-E975-4515-A8BC-FC5CA49F4714}"
 EndProject
@@ -19,17 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMT.Workflow.Platform.Monit
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMT.Workflow.Platfomr.Tools", "SMT.Workflow.Platfomr.Tools", "{13160E07-A6C4-4757-B6AA-0C9C0D55393D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Platform.Designer", "SMT.Workflow.Platform\SMT.Workflow.Platform.Designer\SMT.Workflow.Platform.Designer.csproj", "{060003E7-5A4D-4B47-91D1-32D1A356014A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{CD948523-9F33-43E7-AB12-6F9BBD7F4104} = {CD948523-9F33-43E7-AB12-6F9BBD7F4104}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Platform.Designer.Web", "SMT.Workflow.Platform\SMT.Workflow.Platform.Designer.Web\SMT.Workflow.Platform.Designer.Web.csproj", "{39ABFA15-5EFF-4AC5-895B-343A2F5469A2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Platform.UI", "SMT.Workflow.Platform\SMT.Workflow.Platform.UI\SMT.Workflow.Platform.UI.csproj", "{B3879FE5-6C37-4B94-8E82-A2646415BDEF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Platform.UI.Web", "SMT.Workflow.Platform\SMT.Workflow.Platform.UI.Web\SMT.Workflow.Platform.UI.Web.csproj", "{7196359E-FE29-40A2-87C2-79A108C0CFD0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMT.Workflow.Services", "SMT.Workflow.Services", "{09C9792A-9838-4094-B2BC-CBB3BA42CD7A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMT.Workflow.Services.Engine", "SMT.Workflow.Services.Engine", "{91BC8C1C-DB9C-48D2-BCAA-5D1D2C7F4776}"
@@ -39,20 +26,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMT.Workflow.Services.Platform", "SMT.Workflow.Services.Platform", "{17316E6C-30F2-4F6A-A4AC-38BD5E516772}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMT.Workflow.Common", "SMT.Workflow.Common", "{79F4D87B-1DD7-48EE-8FA9-1C92B6F30DE3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Common.DataAccess", "SMT.Workflow.Common\SMT.Workflow.Common.DataAccess\SMT.Workflow.Common.DataAccess.csproj", "{D080370C-EE36-4E5A-B761-FAE6A078C7E4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Common.Utility", "SMT.Workflow.Common\SMT.Workflow.Common.Utility\SMT.Workflow.Common.Utility.csproj", "{FD36B875-C933-4CF4-BABF-5350D5EB6DCA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Common.Model", "SMT.Workflow.Common\SMT.Workflow.Common.Model\SMT.Workflow.Common.Model.csproj", "{AA1B3B25-A276-4B58-A255-79B71B01B048}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Engine.Services", "SMT.Workflow.Services\SMT.Workflow.Services.Engine\SMT.Workflow.Engine.Services\SMT.Workflow.Engine.Services.csproj", "{8F3DBFF0-D1D6-4C1E-A11C-6D4C730E9E3B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Platform.DAL", "SMT.Workflow.Services\SMT.Workflow.Services.Platform\SMT.Workflow.Platform.DAL\SMT.Workflow.Platform.DAL.csproj", "{03383FE0-2C9E-41CA-B693-8949F79AE0BB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Platform.BLL", "SMT.Workflow.Services\SMT.Workflow.Services.Platform\SMT.Workflow.Platform.BLL\SMT.Workflow.Platform.BLL.csproj", "{6424D743-8F3C-48D1-8969-B7D382C84017}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Platform.Services", "SMT.Workflow.Services\SMT.Workflow.Services.Platform\SMT.Workflow.Platform.Services\SMT.Workflow.Platform.Services.csproj", "{CD948523-9F33-43E7-AB12-6F9BBD7F4104}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "业务系统", "业务系统", "{379B0614-FFAF-46AB-B816-EF5CB7B1AFB0}"
 EndProject
@@ -74,9 +47,40 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMT.FlowWatch", "SMT.FlowWa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMT.Flow.WFService", "SMT.Flow.WFService", "{E005B207-CFB9-4BC7-96C4-178F61723510}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "进销存", "进销存", "{A8F1FB68-F10B-4908-840D-4C4A76928C48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Engine.DAL", "SMT.Workflow.Engine\SMT.Workflow.Engine.DAL\SMT.Workflow.Engine.DAL.csproj", "{AA5D10E0-B6A9-42D2-BEED-8615921BB1FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Message.DAL", "SMT.Workflow.Message\SMT.Workflow.Message.DAL\SMT.Workflow.Message.DAL.csproj", "{D61A2080-1FFD-4308-9551-DD6491C3E6E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Platform.Designer", "SMT.Workflow.Platform\SMT.Workflow.Platform.Designer\SMT.Workflow.Platform.Designer.csproj", "{060003E7-5A4D-4B47-91D1-32D1A356014A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD948523-9F33-43E7-AB12-6F9BBD7F4104} = {CD948523-9F33-43E7-AB12-6F9BBD7F4104}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Platform.Designer.Web", "SMT.Workflow.Platform\SMT.Workflow.Platform.Designer.Web\SMT.Workflow.Platform.Designer.Web.csproj", "{39ABFA15-5EFF-4AC5-895B-343A2F5469A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Platform.UI", "SMT.Workflow.Platform\SMT.Workflow.Platform.UI\SMT.Workflow.Platform.UI.csproj", "{B3879FE5-6C37-4B94-8E82-A2646415BDEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Platform.UI.Web", "SMT.Workflow.Platform\SMT.Workflow.Platform.UI.Web\SMT.Workflow.Platform.UI.Web.csproj", "{7196359E-FE29-40A2-87C2-79A108C0CFD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Common.DataAccess", "SMT.Workflow.Common\SMT.Workflow.Common.DataAccess\SMT.Workflow.Common.DataAccess.csproj", "{D080370C-EE36-4E5A-B761-FAE6A078C7E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Common.Utility", "SMT.Workflow.Common\SMT.Workflow.Common.Utility\SMT.Workflow.Common.Utility.csproj", "{FD36B875-C933-4CF4-BABF-5350D5EB6DCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Common.Model", "SMT.Workflow.Common\SMT.Workflow.Common.Model\SMT.Workflow.Common.Model.csproj", "{AA1B3B25-A276-4B58-A255-79B71B01B048}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Engine.Services", "SMT.Workflow.Services\SMT.Workflow.Services.Engine\SMT.Workflow.Engine.Services\SMT.Workflow.Engine.Services.csproj", "{8F3DBFF0-D1D6-4C1E-A11C-6D4C730E9E3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Platform.DAL", "SMT.Workflow.Services\SMT.Workflow.Services.Platform\SMT.Workflow.Platform.DAL\SMT.Workflow.Platform.DAL.csproj", "{03383FE0-2C9E-41CA-B693-8949F79AE0BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Platform.BLL", "SMT.Workflow.Services\SMT.Workflow.Services.Platform\SMT.Workflow.Platform.BLL\SMT.Workflow.Platform.BLL.csproj", "{6424D743-8F3C-48D1-8969-B7D382C84017}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Workflow.Platform.Services", "SMT.Workflow.Services\SMT.Workflow.Services.Platform\SMT.Workflow.Platform.Services\SMT.Workflow.Platform.Services.csproj", "{CD948523-9F33-43E7-AB12-6F9BBD7F4104}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFTools.Activities", "..\SMT.SaaS.FlowSystem\WFTools\Activities\WFTools.Activities.csproj", "{60841268-076B-4A7F-A5DE-B8A1EA3EEC97}"
 EndProject
-Project("{C8D11400-126E-41CD-887F-60BD40844F9E}") = "WFTools.DB", "..\SMT.SaaS.FlowSystem\WFTools\DB\WFTools.DB.dbproj", "{67CBC824-A49E-4E9B-A947-360F3DFE65C3}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WFTools.DB", "..\SMT.SaaS.FlowSystem\WFTools\DB\WFTools.DB.sqlproj", "{ABF93F93-4F0C-46B5-968E-2753FE88A33B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFTools.Resources", "..\SMT.SaaS.FlowSystem\WFTools\Resources\WFTools.Resources.csproj", "{6485DC3F-08A9-4BC9-AEC0-FD37E2717604}"
 EndProject
@@ -109,8 +113,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFlowTest", "..\SMT.SaaS.FlowSystem\WinFlowTest\WinFlowTest.csproj", "{F4DCD0A7-520B-41AC-9688-F5EA14345A78}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.FlowWFService.Host", "..\SMT.SaaS.FlowSystem\SMT.FlowWFService.Host\SMT.FlowWFService.Host.csproj", "{31EA4738-0BEE-4ACC-B1AA-0CC422F08078}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "进销存", "进销存", "{A8F1FB68-F10B-4908-840D-4C4A76928C48}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.EDM.UI.Web", "..\SMT.EDM\SMT.EDM.UI.Web\SMT.EDM.UI.Web.csproj", "{1175F14F-5C1A-4A1E-AD90-13E12DD5D6CE}"
 EndProject
@@ -284,20 +286,20 @@ Global
 		{60841268-076B-4A7F-A5DE-B8A1EA3EEC97}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{60841268-076B-4A7F-A5DE-B8A1EA3EEC97}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{60841268-076B-4A7F-A5DE-B8A1EA3EEC97}.Release|x86.ActiveCfg = Release|Any CPU
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Mixed Platforms.Deploy.0 = Release|Any CPU
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|x86.ActiveCfg = Release|Any CPU
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B}.Release|Mixed Platforms.Deploy.0 = Release|Any CPU
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B}.Release|x86.ActiveCfg = Release|Any CPU
 		{6485DC3F-08A9-4BC9-AEC0-FD37E2717604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6485DC3F-08A9-4BC9-AEC0-FD37E2717604}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6485DC3F-08A9-4BC9-AEC0-FD37E2717604}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -586,7 +588,7 @@ Global
 		{2428D13B-34C8-45A5-A0E5-FD04D73380FA} = {379B0614-FFAF-46AB-B816-EF5CB7B1AFB0}
 		{E005B207-CFB9-4BC7-96C4-178F61723510} = {379B0614-FFAF-46AB-B816-EF5CB7B1AFB0}
 		{60841268-076B-4A7F-A5DE-B8A1EA3EEC97} = {1CB6E96B-BB47-447C-A808-81E22985DE72}
-		{67CBC824-A49E-4E9B-A947-360F3DFE65C3} = {1CB6E96B-BB47-447C-A808-81E22985DE72}
+		{ABF93F93-4F0C-46B5-968E-2753FE88A33B} = {1CB6E96B-BB47-447C-A808-81E22985DE72}
 		{6485DC3F-08A9-4BC9-AEC0-FD37E2717604} = {1CB6E96B-BB47-447C-A808-81E22985DE72}
 		{530AB894-3B5E-44E4-AA39-5104ECE8ED6A} = {1CB6E96B-BB47-447C-A808-81E22985DE72}
 		{B243A7EA-6D71-4B9D-A8F9-38650B15C0FC} = {1CB6E96B-BB47-447C-A808-81E22985DE72}

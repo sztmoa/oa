@@ -64,8 +64,10 @@
             this.btnCompany = new System.Windows.Forms.Button();
             this.btnSelectErrData = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnBMJF = new System.Windows.Forms.Button();
             this.btnCheckJF = new System.Windows.Forms.Button();
             this.btnGetJF = new System.Windows.Forms.Button();
+            this.txtEmployee = new System.Windows.Forms.TextBox();
             this.txtEmployeeName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbAcountType = new System.Windows.Forms.ComboBox();
@@ -75,7 +77,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtPerson = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtEmployee = new System.Windows.Forms.TextBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.btnYUsuan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -88,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSequence)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridErrAcData)).BeginInit();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReCheck
@@ -183,6 +187,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(14, 70);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -442,6 +447,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.btnBMJF);
             this.tabPage5.Controls.Add(this.btnCheckJF);
             this.tabPage5.Controls.Add(this.btnGetJF);
             this.tabPage5.Controls.Add(this.txtEmployee);
@@ -455,9 +461,19 @@
             this.tabPage5.Text = "活动经费调整";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // btnBMJF
+            // 
+            this.btnBMJF.Location = new System.Drawing.Point(77, 123);
+            this.btnBMJF.Name = "btnBMJF";
+            this.btnBMJF.Size = new System.Drawing.Size(116, 23);
+            this.btnBMJF.TabIndex = 0;
+            this.btnBMJF.Text = "部门经费调整";
+            this.btnBMJF.UseVisualStyleBackColor = true;
+            this.btnBMJF.Click += new System.EventHandler(this.btnBMJF_Click);
+            // 
             // btnCheckJF
             // 
-            this.btnCheckJF.Location = new System.Drawing.Point(259, 131);
+            this.btnCheckJF.Location = new System.Drawing.Point(77, 72);
             this.btnCheckJF.Name = "btnCheckJF";
             this.btnCheckJF.Size = new System.Drawing.Size(116, 23);
             this.btnCheckJF.TabIndex = 0;
@@ -474,6 +490,13 @@
             this.btnGetJF.Text = "查询";
             this.btnGetJF.UseVisualStyleBackColor = true;
             this.btnGetJF.Click += new System.EventHandler(this.btnGetJF_Click);
+            // 
+            // txtEmployee
+            // 
+            this.txtEmployee.Location = new System.Drawing.Point(411, 23);
+            this.txtEmployee.Name = "txtEmployee";
+            this.txtEmployee.Size = new System.Drawing.Size(100, 21);
+            this.txtEmployee.TabIndex = 8;
             // 
             // txtEmployeeName
             // 
@@ -556,12 +579,26 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "查询类型";
             // 
-            // txtEmployee
+            // tabPage6
             // 
-            this.txtEmployee.Location = new System.Drawing.Point(411, 23);
-            this.txtEmployee.Name = "txtEmployee";
-            this.txtEmployee.Size = new System.Drawing.Size(100, 21);
-            this.txtEmployee.TabIndex = 8;
+            this.tabPage6.Controls.Add(this.btnYUsuan);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(855, 508);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "tabPage6";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // btnYUsuan
+            // 
+            this.btnYUsuan.Location = new System.Drawing.Point(351, 36);
+            this.btnYUsuan.Name = "btnYUsuan";
+            this.btnYUsuan.Size = new System.Drawing.Size(100, 23);
+            this.btnYUsuan.TabIndex = 12;
+            this.btnYUsuan.Text = "开始";
+            this.btnYUsuan.UseVisualStyleBackColor = true;
+            this.btnYUsuan.Click += new System.EventHandler(this.btnYUsuan_Click);
             // 
             // ReCheckForm
             // 
@@ -600,6 +637,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridErrAcData)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -655,6 +693,9 @@
         private System.Windows.Forms.TextBox txtEmployeeName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtEmployee;
+        private System.Windows.Forms.Button btnBMJF;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button btnYUsuan;
     }
 }
 

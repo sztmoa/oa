@@ -3,19 +3,15 @@ function creat_rd_arry() {
     if (lucky.Ticket.length == 0) {
         var awardExisted = dbProxy.GetAwardObj(); //DBProxy.js
         loadData(lucky, awardExisted); //Lucky.js
-    }
-    
+    }    
 }
 
 //开始滚动
 function stop(level, number) {
+    clearInterval(m);
     PlayBGSound(false);
-
-     clearInterval(m);
     //获取得奖号
     var obj = lucky.GenerateAward(level, number);
-    $("#roll_num").css("display", "none");
-    $("#num_award").css("display", "block");
     if (level == 3) {
         if (obj[0] != null) {
             $("#num_award")[0].innerHTML = "<li>" + obj[0] + "</li>";
@@ -26,12 +22,8 @@ function stop(level, number) {
             }
         }
     }
-    else {
-        //if (level == 0) {
-        //    $("#num_award")[0].innerHTML = "<li>" + obj.TicketNO + "</li>";
-        //    //上传保存获奖号
-        //    dbProxy.AddAward(obj[0].TicketNO, obj[0].Level, ""); //DBProxy.js
-        //}
+    else
+    {
         if (obj.length > 0) { //要有数才行
             //插入获奖号
             var award_li_html = '';
@@ -39,13 +31,16 @@ function stop(level, number) {
                 award_li_html += "<li>" + obj[i].TicketNO + "</li>";
                 if (i == obj.length - 1) break;
             }
+            $("#num_award").css("display", "block");
             $("#num_award")[0].innerHTML = award_li_html;
+            $("#roll_num").css("display", "none");
             //上传保存获奖号
             dbProxy.AddAwardMany(obj);
             show_award(cur_lev, batch);
         }
     }
 }
+
 function start() {
     PlayBGSound(true);
     $("#roll_num").css("display", "block");
@@ -74,11 +69,19 @@ function show_award(cur_lev, batch) {
         awards_sz_all.sort(); //排序
         var num = awards_sz_all.length;
         var total = num;
-        if (cur_lev == 2 || cur_lev == 4) {//二等奖,因为只有一二等奖走这个方法
+        if (cur_lev == 2 ) {//二等奖,因为只有一二等奖走这个方法
             total = 10;//二等奖20人，一边显示10人
             if (num < 10) {
                 total = num;
             }
+        }
+        else if(cur_lev == 4)
+        { 
+            total = 50;//三等奖100人，一边显示50人
+            if (num < 50) {
+                total = num;
+            }
+
         }
         else {//一等奖
             total = 3; //一等奖6人，一边显示3人
@@ -177,6 +180,7 @@ function mov(cur_num) {
         $("#roll_num")[0].innerHTML = m_li;
     }, 50)
 }
+
 function resize(cur_lev) {
     var max_height = $("#back_img").height();
     var max_width = $("#back_img").width();
@@ -215,18 +219,6 @@ function resize(cur_lev) {
                 lineHeight: max_width * 0.4766 * 0.26 + "px"
             })
         }
-        else if (cur_lev == 2 || cur_lev == 4) {
-            $("#roll_num,#num_award").css({
-                top: max_height * 0.30,
-                //width: max_width * 0.2,
-                //height: max_width * 0.439,
-                //marginLeft: 0 - max_width * 0.39 / 2,
-                fontSize: 45 + "px",
-                lineHeight: 30+ "px",
-                letterSpacing: max_width * 0.4766 * 0.01 + "px",
-
-            })
-        }
         else if (cur_lev == 0) {
             $("#roll_num,#num_award").css({
                 top: max_height * 0.38,
@@ -237,12 +229,36 @@ function resize(cur_lev) {
                 lineHeight: max_width * 0.4766 * 0.328 + "px",
                 letterSpacing: "-5px"
             })
-        } else if (cur_lev == 3) {//三等奖
+        }
+        else if (cur_lev == 2) {
+            $("#roll_num,#num_award").css({
+                top: max_height * 0.30,
+                //width: max_width * 0.2,
+                //height: max_width * 0.439,
+                //marginLeft: 0 - max_width * 0.39 / 2,
+                fontSize: 45 + "px",
+                lineHeight: 30+ "px",
+                letterSpacing: max_width * 0.4766 * 0.01 + "px",
+
+            })
+        }else if (cur_lev == 3) {//三等奖抽尾号
             $("#roll_num,#num_award").css({
                 top: max_height * 0.42,
                 fontSize: 150 + "px",
                 letterSpacing: 0,
                 lineHeight: max_width * 0.4766 * 0.26 + "px"
+            })
+        }
+        else if (cur_lev == 4) {//三等奖抽号码
+            $("#roll_num,#num_award").css({
+                top: max_height * 0.30,
+                //width: max_width * 0.2,
+                //height: max_width * 0.439,
+                //marginLeft: 0 - max_width * 0.39 / 2,
+                fontSize: 20 + "px",
+                lineHeight: 20 + "px",
+                letterSpacing: max_width * 0.4766 * 0.01 + "px",
+
             })
         }
 }

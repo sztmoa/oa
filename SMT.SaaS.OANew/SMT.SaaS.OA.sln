@@ -36,6 +36,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.Saas.Tools", "..\..\Smt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.SAAS.Main.CurrentContext", "..\SMT.SaaS.FrameWorkUI\SMT.SAAS.Main.CurrentContext\SMT.SAAS.Main.CurrentContext.csproj", "{4B5991D6-D3C6-4BCF-B788-95AFC5323523}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMT.SAAS.Globalization", "..\SMT.SaaS.FrameWorkUI\SMT.SaaS.Globalization\SMT.SAAS.Globalization.csproj", "{7C8EB5BC-8C15-41BC-B4AC-4AEB046D692C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -183,6 +185,16 @@ Global
 		{4B5991D6-D3C6-4BCF-B788-95AFC5323523}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{4B5991D6-D3C6-4BCF-B788-95AFC5323523}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{4B5991D6-D3C6-4BCF-B788-95AFC5323523}.Release|x86.ActiveCfg = Release|Any CPU
+		{7C8EB5BC-8C15-41BC-B4AC-4AEB046D692C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C8EB5BC-8C15-41BC-B4AC-4AEB046D692C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C8EB5BC-8C15-41BC-B4AC-4AEB046D692C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7C8EB5BC-8C15-41BC-B4AC-4AEB046D692C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7C8EB5BC-8C15-41BC-B4AC-4AEB046D692C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7C8EB5BC-8C15-41BC-B4AC-4AEB046D692C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C8EB5BC-8C15-41BC-B4AC-4AEB046D692C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C8EB5BC-8C15-41BC-B4AC-4AEB046D692C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7C8EB5BC-8C15-41BC-B4AC-4AEB046D692C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7C8EB5BC-8C15-41BC-B4AC-4AEB046D692C}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -197,6 +209,7 @@ Global
 		{3B32FB59-A762-4E76-880F-3BD4721A4D27} = {F998EBE3-7DAC-420B-8811-02AA650FA12C}
 		{36E9D744-4747-4F92-8ABE-D747ADBC811A} = {F998EBE3-7DAC-420B-8811-02AA650FA12C}
 		{4B5991D6-D3C6-4BCF-B788-95AFC5323523} = {F998EBE3-7DAC-420B-8811-02AA650FA12C}
+		{7C8EB5BC-8C15-41BC-B4AC-4AEB046D692C} = {F998EBE3-7DAC-420B-8811-02AA650FA12C}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = SMT.SaaS.OA.vsmdi

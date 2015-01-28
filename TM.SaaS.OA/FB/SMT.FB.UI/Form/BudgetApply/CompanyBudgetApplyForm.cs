@@ -276,7 +276,7 @@ namespace SMT.FB.UI.Form.BudgetApply
 
             foreach (var item in details)
             {
-                var q = (T_FB_COMPANYBUDGETMODDETAIL)item.Entity;
+                var q = (T_FB_COMPANYBUDGETAPPLYDETAIL)item.Entity;
                 if (string.IsNullOrEmpty(q.CREATEUSERID))
                 {
                     MessageBox.Show("T_FB_COMPANYBUDGETAPPLYDETAIL CREATEUSERID == null");

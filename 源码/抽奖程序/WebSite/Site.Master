@@ -99,7 +99,7 @@
             <ul id="biaoge2">
             
              <%--   <li><a style="color:black" href="/3.aspx">三等奖</a></li>--%>
-                <li><a style="color:black" href="/0.aspx">特等奖</a></li>
+              <%--  <li><a style="color:black" href="/0.aspx">特等奖</a></li>--%>
                 <li><a style="color:black" href="/1.aspx">一等奖</a></li>
                 <li><a style="color:black" href="/2.aspx">二等奖</a></li>
                 <li><a style="color:black" href="/4a.aspx">三等奖</a></li>
