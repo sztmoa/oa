@@ -104,7 +104,7 @@
                 <li><a style="color:black" href="/2.aspx">二等奖</a></li>
                 <li><a style="color:black" href="/4a.aspx">三等奖</a></li>
                 <li><a style="color:black" href="/b1.aspx">一等奖补抽</a></li>
-                <%--<li><a style="color:black" href="/b2.aspx">二等奖补抽</a></li>--%>
+                <li><a style="color:black" href="/b2.aspx">二等奖补抽</a></li>
             </ul>
         </div>
 

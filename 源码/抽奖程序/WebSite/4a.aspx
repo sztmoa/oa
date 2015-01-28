@@ -156,7 +156,7 @@ to { -webkit-transform: skew(40deg) ; }
     </ul>
     <ul class="bj_award">
     </ul>
-    <div id="stage" style="width: 100%; height:100%; position: absolute; z-index: 9999; top: 0px; left: 5px;">  
+    <div id="stage" style="width: 100%; height:100%; position: absolute; z-index: 9999; top: 0px; left: 0px;">  
         <div style="position:absolute;left:0;top:0;width:100%;height:100%;background-color:#000" id="black_mask"></div>      
         <img src="images/2015/3_stage_left.jpg" width="50%" id="stage_left02" style=" position:absolute; left:0;top:0;" /> 
         <img src="images/2015/3_stage_right.jpg" width="50%" id="stage_right02" style=" position:absolute; right:0;top:0;"/>

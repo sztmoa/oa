@@ -227,8 +227,8 @@ function resize(cur_lev) {
                 //width: max_width * 0.2,
                 //height: max_width * 0.439,
                 //marginLeft: 0 - max_width * 0.39 / 2,
-                fontSize: 45 + "px",
-                lineHeight: 30+ "px",
+                fontSize: 40 + "px",
+                lineHeight: 31+ "px",
                 letterSpacing: max_width * 0.4766 * 0.01 + "px",
 
             })
@@ -245,7 +245,7 @@ function resize(cur_lev) {
             })
         } else if (cur_lev == 3) {//三等奖
             $("#roll_num,#num_award").css({
-                top: max_height * 0.42,
+                top: max_height * 0.38,
                 fontSize: 150 + "px",
                 letterSpacing: 0,
                 lineHeight: max_width * 0.4766 * 0.26 + "px"
