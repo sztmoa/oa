@@ -158,6 +158,10 @@ namespace SmtPortalSetUp
         //将对控件的操作写到一个函数中 
         public void ShowProgress(int para)
         {
+            if(para>=progressBar.Maximum)
+            {
+                para = progressBar.Maximum;
+            }
             if (!progressBar.InvokeRequired) //不需要唤醒，就是创建控件的线程
             //如果是创建控件的线程，直接正常操作 
             {
