@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Xml;
 using ICSharpCode.SharpZipLib.Zip;
 using ICSharpCode.SharpZipLib.Checksums;
+using System.Text.RegularExpressions;
 
 namespace SmtPortalSetUp
 {
@@ -54,10 +55,12 @@ namespace SmtPortalSetUp
                         || files[i].Name.IndexOf(@".log") > -1
                         || files[i].Name.IndexOf(@".bak") > -1
                         || files[i].Name.IndexOf("备份") > -1
-                        || files[i].Name.IndexOf("复制") > -1)
+                        || files[i].Name.IndexOf("复制") > -1
+                        || files[i].Name.ToLower().IndexOf("tmp") > -1)
                     {
                         MaxProgreesValue = MaxProgreesValue - 1;
                         from.SetProgressMaxValue(MaxProgreesValue);
+                        from.ShowMessage("复制文件被跳过：" + files[i].Name);
                         continue;
                     }
 
@@ -249,13 +252,14 @@ namespace SmtPortalSetUp
                     }
                     progreesValue++;
                     from.ShowProgress(progreesValue);
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
-                    from.ShowMessage("1拷贝文件异常："+ex.ToString());
+                    from.ShowMessage("1拷贝文件异常：" + ex.ToString());
                     continue;
                 }
             }
-                #endregion
+            #endregion
 
             #region "拷贝子文件夹"
             DirectoryInfo[] dirs = source.GetDirectories();
@@ -265,27 +269,54 @@ namespace SmtPortalSetUp
                 try
                 {
 
-                    if (dirs[j].Name.ToLower().IndexOf("ErrorLog") > -1
+                    if (dirs[j].Name.ToLower().IndexOf("errorlog") > -1
                         || dirs[j].Name.ToLower().IndexOf("back") > -1
                         || dirs[j].Name.ToLower().IndexOf("bak") > -1
                         || dirs[j].Name.ToLower().IndexOf("log") > -1
                         || dirs[j].Name.ToLower().IndexOf("upload") > -1
                         || dirs[j].Name.IndexOf("备份") > -1
-                        || dirs[j].Name.IndexOf("复制") > -1)
+                        || dirs[j].Name.IndexOf("复制") > -1
+                        || dirs[j].Name.IndexOf("副本") > -1
+                        || dirs[j].Name.ToLower().IndexOf("download") > -1
+                        || dirs[j].Name.ToLower().IndexOf("log") > -1
+                        || dirs[j].Name.ToLower().IndexOf("log") > -1
+                        || dirs[j].Name.ToLower().IndexOf("businesscustomer") > -1
+                        || dirs[j].Name.ToLower().IndexOf("debug") > -1
+                        || dirs[j].Name.ToLower().IndexOf("old") > -1
+                        || dirs[j].Name.ToLower().IndexOf("文件上传") > -1
+                        || dirs[j].Name.ToLower().IndexOf("temp") > -1
+                        || IsGUID(dirs[j].Name))
                     {
                         string[] filesAll = System.IO.Directory.GetFiles(dirs[j].FullName, "*", System.IO.SearchOption.AllDirectories);
                         MaxProgreesValue = MaxProgreesValue - filesAll.Length;
                         from.SetProgressMaxValue(MaxProgreesValue);
+                        from.ShowMessage("文件夹被跳过：" + dirs[j].Name);
                         continue;
                     }
                     CopyDirectory(dirs[j].FullName, target.FullName + @"\" + dirs[j].Name, repalceContext);
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     from.ShowMessage("2拷贝文件夹异常：" + ex.ToString());
                     continue;
                 }
             }
             #endregion
+        }
+        public static bool IsGUID(string str)
+        {
+            Match m = Regex.Match(str, @"^[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}$", RegexOptions.IgnoreCase);
+            if (m.Success)
+            {
+                //可以转换 
+                //Guid guid = new Guid(str);
+                return true;
+            }
+            else
+            {
+                //不可转换 
+                return false;
+            }
         }
 
         
