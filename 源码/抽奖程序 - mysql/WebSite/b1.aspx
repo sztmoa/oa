@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>一等奖补抽</title>
+    <title>补抽</title>
     <script type="text/javascript" src="Scripts/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="Scripts/json2.js"></script>
     <script type="text/javascript" src="Scripts/Lucky.js?date=<%System.DateTime.Now.Millisecond.ToString()%>"></script>
@@ -76,7 +76,7 @@ to { -webkit-transform: skew(40deg) ; }
     </style>
     <script type="text/javascript">
         var playing = true;
-        var cur_lev = 1, cur_num = 1, open = false, batch = "1";  //当前奖项和奖票数目
+        var cur_lev = 6, cur_num = 1, open = false, batch = "1";  //当前奖项和奖票数目
         var isSupply = true;//补抽模式
         $(function () {
             //点击备选号
@@ -149,9 +149,8 @@ to { -webkit-transform: skew(40deg) ; }
 
     <div id="musicdiv">    
 <%--必须使用支持html5的网页才能播放背景声音，以下html标签只能在html5的浏览器中受支持，如google--%>  
-        <embed id='myaudio' src='mp3/kamen.mp3'; loop=true autostart=true name=bgss width=0 height=0 />
     </div>
-<img src="images/1.jpg" style="width:100%; position:absolute; z-index:-1;" id="back_img" />
+<img src="images/6.jpg" style="width:100%; position:absolute; z-index:-1;" id="back_img" />
     <ul id="roll_num" class="list_num"></ul>
     <ul id="num_award" class="list_num"></ul>
     <ul class="sz_award">

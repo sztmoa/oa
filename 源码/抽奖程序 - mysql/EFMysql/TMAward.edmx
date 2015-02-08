@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TMAwardModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+    <Schema Namespace="TMAwardModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
         <EntityType Name="TmpAward">
           <Key>
             <PropertyRef Name="TicketNO" />
@@ -12,7 +12,7 @@
           <Property Name="Level" Type="varchar" MaxLength="50" />
           <Property Name="TicketNO" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Remark" Type="varchar" MaxLength="50" />
-          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateTime" Type="datetime" Precision="0" />
         </EntityType>
         <EntityType Name="TmpOption">
           <Key>
@@ -40,6 +40,8 @@
           </Key>
           <Property Name="TicketNO" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TicketCount" Type="varchar" MaxLength="50" />
+          <Property Name="TicketStart" Type="varchar" MaxLength="50" />
+          <Property Name="TicketEnd" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="TMAwardModelStoreContainer">
           <EntitySet Name="TmpAward" EntityType="Self.TmpAward" Schema="tmaward" store:Type="Tables" />
@@ -47,8 +49,7 @@
           <EntitySet Name="TmpSetting" EntityType="Self.TmpSetting" Schema="tmaward" store:Type="Tables" />
           <EntitySet Name="TmpTicket" EntityType="Self.TmpTicket" Schema="tmaward" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TMAwardModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
@@ -87,6 +88,8 @@
           </Key>
           <Property Name="TicketNO" Type="String" Nullable="false" />
           <Property Name="TicketCount" Type="String" />
+          <Property Name="TicketStart" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TicketEnd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="TMAwardEntities">
           <EntitySet Name="TmpAward" EntityType="Self.TmpAward" />
@@ -133,6 +136,8 @@
           <EntitySetMapping Name="TmpTicket">
             <EntityTypeMapping TypeName="TMAwardModel.TmpTicket">
               <MappingFragment StoreEntitySet="TmpTicket">
+                <ScalarProperty Name="TicketEnd" ColumnName="TicketEnd" />
+                <ScalarProperty Name="TicketStart" ColumnName="TicketStart" />
                 <ScalarProperty Name="TicketNO" ColumnName="TicketNO" />
                 <ScalarProperty Name="TicketCount" ColumnName="TicketCount" />
               </MappingFragment>

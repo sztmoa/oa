@@ -37,6 +37,10 @@ function stop(level, number) {
             //上传保存获奖号
             dbProxy.AddAwardMany(obj);
             show_award(cur_lev, batch);
+        }else
+        {
+            $("#num_award").css("display", "none");
+            $("#roll_num").css("display", "none");
         }
     }
 }
@@ -169,7 +173,8 @@ var szCount = 0;
 this.getTicketCount = function() {
     var ticketCount = dbProxy.getTicketCount(); //DBProxy.js
         //bjCount = ticketCount[0];
-        szCount = ticketCount[0]
+    szCount = ticketCount[0]
+    return ticketCount; 
 }
 //生成深圳、北京序号
 function all_sn() {
@@ -273,6 +278,16 @@ function resize(cur_lev) {
                  fontSize: 45 + "px",
                  letterSpacing: 0,
                  lineHeight: max_width * 0.1 * 0.35 + "px"
+             })
+         }
+         if (cur_lev == 6) {
+             $("#roll_num,#num_award").css({
+                 top: max_height * 0.38,
+                 width: max_width * 0.7,
+                 marginLeft: 0 - max_width * 0.7 / 2,
+                 fontSize: 80 + "px",
+                 lineHeight: max_width * 0.4766 * 0.328 + "px",
+                 letterSpacing: "-5px"
              })
          }
 }

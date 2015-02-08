@@ -140,6 +140,7 @@
         <li>三等奖</li>
         <li>四等奖</li>
         <li>五等奖</li>
+        <li>补抽奖</li>
     </ul>
     <ul id="tab_content">
         <li class="act">
@@ -192,6 +193,15 @@
                 <tr>
                     <th colspan="2">
                         五等奖
+                    </th>
+                </tr>
+            </table>
+        </li>
+         <li>
+            <table id="table6" runat="server">
+                <tr>
+                    <th colspan="2">
+                        补抽奖
                     </th>
                 </tr>
             </table>

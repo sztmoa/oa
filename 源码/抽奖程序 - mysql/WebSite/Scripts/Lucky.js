@@ -16,6 +16,7 @@ function Lucky() {
 
     this.PublishBatch = "";
     this.Init = function (tickets, awardExisted) {
+        debugger;
         this.Ticket = tickets;
         this.Award = awardExisted;
     }
@@ -79,7 +80,6 @@ function Lucky() {
                  return result;
              }
          }
-         debugger;
          if (level == 0 && sumAward >= 1) {//如果是一等奖大于6个（一等奖只有6个）则返回，如果添加不限制，去掉判断即可
              return "0000";
          }
@@ -100,7 +100,7 @@ function Lucky() {
          }
 
 
-
+         debugger;
          if (level == 0) { //特等奖产生一个号码;
              result[result.length] = this.generateOneAward(level);
              return result;
@@ -133,6 +133,10 @@ function Lucky() {
              for (var i = 0; i < 10; i++) {
                  result[result.length] = this.generateOneAward(level);
              }
+             return result;
+         }
+         if (level == 6) { //补抽奖产生一个号码;
+             result[result.length] = this.generateOneAward(level);
              return result;
          }
      }
@@ -428,26 +432,28 @@ var szCount = 0;
 this.getTicketCount = function () {
     var ticketCount = dbProxy.getTicketCount(); //DBProxy.js
     //bjCount = ticketCount[0];
-    szCount = ticketCount[1]
+    szCount = ticketCount.length;
+    return ticketCount;
 }
 
 function loadData(lucky, awardExisted) {
+    debugger;
     var data = new Array();
-    this.getTicketCount();
+    var ticketCount=this.getTicketCount();
     //生成所有抽奖号码
-    for (var i = szCount; i >= 1; i--) {
+    for (var i = 0; i <ticketCount.length; i++) {
         var paded = "";
-        if (i < 10) {
-            paded = "000" + i.toString();
+        if (ticketCount[i] < 10) {
+            paded = "000" + ticketCount[i].toString();
         }
-        else if (i >= 10 && i < 100) {
-            paded = "00" + i.toString();
+        else if (ticketCount[i] >= 10 && ticketCount[i] < 100) {
+            paded = "00" + ticketCount[i].toString();
         }
-        else if (i >= 100 && i < 1000) {
-            paded = "0" + i.toString();
+        else if (ticketCount[i] >= 100 && ticketCount[i] < 1000) {
+            paded = "0" + ticketCount[i].toString();
         }
-        else if (i >= 1000) {
-            paded = i.toString();
+        else if (ticketCount[i] >= 1000) {
+            paded = ticketCount[i].toString();
         }
         //paded = "SZ-" + paded;
         // paded =  paded;

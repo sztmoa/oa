@@ -10,7 +10,7 @@
 namespace Asd.Award {
     
     
-    public partial class WebForm1 {
+    public partial class NumberSet {
         
         /// <summary>
         /// form1 控件。
@@ -22,30 +22,39 @@ namespace Asd.Award {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ObjectDataSource1 控件。
+        /// txtStartNumber 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.TextBox txtStartNumber;
         
         /// <summary>
-        /// GridView1 控件。
+        /// txtEndNumber 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.TextBox txtEndNumber;
         
         /// <summary>
-        /// DetailsView1 控件。
+        /// numberSum 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl numberSum;
+        
+        /// <summary>
+        /// btnsz 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnsz;
     }
 }

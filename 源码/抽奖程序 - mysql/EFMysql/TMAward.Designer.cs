@@ -11,7 +11,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
 
 // 原始文件名:
-// 生成日期: 2015/1/20 10:43:53
+// 生成日期: 2015/2/8 15:40:41
 namespace EFMysql
 {
     
@@ -492,6 +492,60 @@ namespace EFMysql
         partial void OnTicketCountChanging(string value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnTicketCountChanged();
+        /// <summary>
+        /// 架构中不存在属性 TicketStart 的任何注释。
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string TicketStart
+        {
+            get
+            {
+                return this._TicketStart;
+            }
+            set
+            {
+                this.OnTicketStartChanging(value);
+                this.ReportPropertyChanging("TicketStart");
+                this._TicketStart = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("TicketStart");
+                this.OnTicketStartChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _TicketStart;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnTicketStartChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnTicketStartChanged();
+        /// <summary>
+        /// 架构中不存在属性 TicketEnd 的任何注释。
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string TicketEnd
+        {
+            get
+            {
+                return this._TicketEnd;
+            }
+            set
+            {
+                this.OnTicketEndChanging(value);
+                this.ReportPropertyChanging("TicketEnd");
+                this._TicketEnd = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("TicketEnd");
+                this.OnTicketEndChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _TicketEnd;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnTicketEndChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnTicketEndChanged();
     }
     /// <summary>
     /// 架构中不存在 TMAwardEntities 的注释。

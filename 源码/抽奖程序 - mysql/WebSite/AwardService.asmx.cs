@@ -49,13 +49,16 @@ namespace Asd.Award
             using (TMAwardEntities context = new TMAwardEntities())
             {
                 var dt = from ent in  context.TmpTicket
-                         select ent; 
+                         select ent;              
+                var entity = dt.FirstOrDefault();
+                int iStart = int.Parse(entity.TicketStart);
+                int iEnd = int.Parse(entity.TicketEnd);
 
-                var ar = new int[dt.Count()];
                 var index = 0;
-                foreach (var item in dt)
+                var ar = new int[int.Parse(entity.TicketCount)];
+                for (int i = iStart; i < iEnd;i++ )
                 {
-                    ar[index] = int.Parse(item.TicketCount);
+                    ar[index] = i;
                     index++;
                 }
                 return ar;

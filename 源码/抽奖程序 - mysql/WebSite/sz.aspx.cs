@@ -56,6 +56,9 @@ namespace Asd.Award
                         case "5":
                             BuildTableRow(this.table5, item);
                             break;
+                        case "6":
+                            BuildTableRow(this.table6, item);
+                            break;
                     }
             }
         }
