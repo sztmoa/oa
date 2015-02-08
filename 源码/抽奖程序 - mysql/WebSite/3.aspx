@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>三等奖抽奖</title>
+    <title>探花奖（三等奖抽奖12个1次抽完）</title>
     <script type="text/javascript" src="Scripts/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="Scripts/json2.js"></script>
-    <script type="text/javascript" src="Scripts/Lucky.js"></script>
+    <script type="text/javascript" src="Scripts/Lucky.js?date=<%System.DateTime.Now.Millisecond.ToString()%>"></script>
     <script type="text/javascript" src="Scripts/DBProxy.js"></script>
-    <script type="text/javascript" src="default.js"></script>
-    <style>
+    <script type="text/javascript" src="Scripts/default.js?date=<%System.DateTime.Now.Millisecond.ToString()%>"></script>
+     <style>
         body, html
         {
             padding: 0;
@@ -45,6 +45,12 @@
             border-bottom:1px solid rgba(177,96,1,0.5);
             border-top:1px solid rgba(255,255,255,0.5);
             color: #a20000;
+            float:left;
+            margin:2px 60px;
+            list-style:none;
+            display:block; 
+            white-space: nowrap;
+            border:0;
         }
         .list_num li:first-child { border-top:0;}
         .list_num li:last-child { border-bottom:0;}
@@ -54,13 +60,19 @@
             text-shadow: 0px 2px 1px rgba(255,255,255,0.5);
         }
         .sz_award,.bj_award{  position:absolute;   list-style-type:none; padding:10px 0;  /*background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.1), rgba(0,0,0,0.5))*/;}
-       .sz_award li,.bj_award li{  float:left;color:#FFF1B4; text-align:center; width:49%;border-radius: 14px; margin:0 0 4px 2px; padding:2px 0;
-                                    text-shadow: 0px 1px 2px #000; font-weight:bold; box-shadow: 0px 2px 4px #000; border-top:1px solid rgba(252,252,162,0.4);
-                                   background:#a60000; background: -webkit-gradient(linear, left top, left bottom, from(#c40e00), to(#a60000));}
+        .sz_award li,.bj_award li{  width:20%; margin:0 0 0px 0px; 
+                                   float:left;color:#FFF1B4; text-align:center;
+                                   border-radius: 14px;
+                                   padding:2px 0;
+                                   text-shadow: 0px 1px 2px #000; font-weight:bold; box-shadow: 0px 2px 4px #000;
+                                   border-top:1px solid rgba(252,252,162,0.4);
+                                   background:#a60000;
+                                   background: -webkit-gradient(linear, left top, left bottom, from(#c40e00), to(#a60000));}
         #roll_num,#num_award{  margin: auto; position: absolute;z-index: 9999; left:50%;}
+        .roll_num li{float:left;display:inline;line-height:24px;height:80%;word-break:break-all;word-wrap : break-word ;}
         .num_mask_top{ background:url(images/num_mask_top.png) no-repeat; width:571px; height:20px; position:absolute; top:203px; left:50%; margin-left:-285px; z-index:9999;}
         .num_mask_bottom{ background:url(images/num_mask_bottom.png) no-repeat; width:571px; height:20px; position:absolute; top:618px; left:50%; margin-left:-285px; z-index:9999;}
-         .stage_left {
+        .stage_left {
 -webkit-animation: sl 2s 1 linear;
 }
 @-webkit-keyframes sl {
@@ -78,49 +90,53 @@ to { -webkit-transform: skew(40deg) ; }
     </style>
     <script type="text/javascript">
         $(function () {
-            all_sn();
+            all_sn();//Default.js
         })
-        lucky.PublishBatch = "Batch1";
         var playing = true;
-        var cur_lev = 3;
-        var cur_num = 1;
+        lucky.PublishBatch = "Batch1";
+        var cur_lev = 3;//奖品类型
+        var cur_num = 12;
         var open = false;
-        var batch = "Batch1";  //当前奖项和奖票数目
+        var batch = 20;//用以在两边显示时区分
+        $(function () {
 
+            // $("#roll_num").css("top",50);
+        })
         document.onkeyup = function (e) {
             var theEvent = window.event || e;
             var code = theEvent.keyCode || theEvent.which;
-            // alert(event.keyCode);
+            //alert(event.keyCode);
             if (code == 32) {//按空格键
                 if (!open) {
                     open = true;
-                    stageNumber();
+                    stage();
+
                 } else {
                     if (playing) {
                         stop(cur_lev, cur_num); //停止动画，显示获奖号
                         playing = false;
                     } else {
-                        startNumber(); //开始
+                        start(); //开始 Default.js
                         playing = true;
                     }
                 }
                 return false
             }
-            //            if (code == 83 && open) {//按s键
-            //                if (playing) {
-            //                    stopOne('SZ', cur_lev); //停止动画，显示获奖号 Default.js
-            //                    playing = false;
-            //                }
-            //                return false
-            //            }
-            //            if (code == 66 && open) {//按b键
+            if (code == 83 && open) {//按s键
+                if (playing) {
+                    stopOne('SZ', cur_lev); //停止动画，显示获奖号 Default.js
+                    playing = false;
+                }
+                return false
+            }
+            if (code == 66 && open) {//按b键
 
-            //                if (playing) {
-            //                    stopOne('BJ', cur_lev); //停止动画，显示获奖号                    
-            //                    playing = false;
-            //                }
-            //                return false
-            //            }
+                if (playing) {
+                    stopOne('BJ', cur_lev); //停止动画，显示获奖号                    
+                    playing = false;
+                }
+                return false
+            }
             if (code == 46 && !playing) {//按删除键
                 var $children_li = $("#num_award").children();
                 $children_li.each(function () {
@@ -141,22 +157,23 @@ to { -webkit-transform: skew(40deg) ; }
     </script>
 </head>
 <body>
-<div id="musicdiv">    
+  <div id="musicdiv">    
 <%--必须使用支持html5的网页才能播放背景声音，以下html标签只能在html5的浏览器中受支持，如google--%>  
-        <embed id='myaudio' src='mp3/kamen.mp3'; loop=true autostart=true name=bgss width=0 height=0 />
     </div>
 <img src="images/3.jpg" style="width:100%; position:absolute; z-index:-1;" id="back_img" />
     <ul id="roll_num" class="list_num"></ul>
     <ul id="num_award" class="list_num"></ul>
-    <ul class="sz_award"></ul>
-    <ul class="bj_award"></ul>
+    <ul class="sz_award">
+    </ul>
+    <ul class="bj_award">
+    </ul>
     <div id="stage" style="width: 100%; height:100%; position: absolute; z-index: 9999;">  
         <div style="position:absolute;left:0;top:0;width:100%;height:100%;background-color:#000" id="black_mask"></div>      
         <img src="images/stage_left02.jpg" width="50%" id="stage_left02" style=" position:absolute; left:0;top:0;" /> 
         <img src="images/stage_right02.jpg" width="50%" id="stage_right02" style=" position:absolute; right:0;top:0;"/>
         <img src="images/stage_left01.png" width="16.85%" id="stage_left01" style=" position:absolute; left:0; top:0;" /> 
         <img src="images/stage_right01.png" width="16.85%" id="stage_right01" style=" position:absolute; right:0;top:0;"/>
-        <img src="images/stage_top.png" width="100%" id="stage_top" style=" position:absolute; top:0;"/>
+        <img src="images/stage_top.png" width="100%" id="stage_top" style=" position:absolute; top:0; left: 20px;"/>
     </div>
 
 </body>

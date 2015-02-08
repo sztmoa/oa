@@ -79,15 +79,15 @@
                 <li><a style="color:black" href="/Ticket.aspx">设置抽奖号码</a></li>   
                 <li><a style="color:black" href="/Init.aspx">清空中奖记录</a></li>             
                 <li><a style="color:black" href="/sz.aspx">打印中奖</a></li>
-                <li><a style="color:black" href="/4a.aspx">三等奖抽20个号码</a></li>
-                <li><a style="color:black" href="/b4.aspx">阳光保险补抽</a></li>
+                <li><a style="color:black" href="/0.aspx">一飞冲天奖</a></li>
+                <li><a style="color:black" href="/1.aspx">状元奖</a></li>
+                <li><a style="color:black" href="/2.aspx">榜眼奖</a></li>
+                <li><a style="color:black" href="/3.aspx">探花奖</a></li>
+                <li><a style="color:black" href="/4.aspx">屌丝逆袭奖</a></li>
+                <li><a style="color:black" href="/5.aspx">现金奖</a></li>
 
-                <li><a style="color:black" href="/3.aspx">三等奖抽尾号</a></li>
-                <li><a style="color:black" href="/2.aspx">二等奖</a></li>
-                <li><a style="color:black" href="/1.aspx">一等奖</a></li>
-                <li><a style="color:black" href="/0.aspx">特等奖</a></li>
-                <li><a style="color:black" href="/b1.aspx">一等奖补抽</a></li>
-                <li><a style="color:black" href="/b2.aspx">二等奖补抽</a></li>
+<%--                <li><a style="color:black" href="/b1.aspx">一等奖补抽</a></li>
+                <li><a style="color:black" href="/b2.aspx">二等奖补抽</a></li>--%>
             </ul>
         </div>
 

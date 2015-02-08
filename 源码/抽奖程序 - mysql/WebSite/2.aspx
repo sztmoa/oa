@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>二等奖抽奖</title>
+    <title>榜眼奖（二等奖抽奖5个1次抽完）</title>
     <script type="text/javascript" src="Scripts/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="Scripts/json2.js"></script>
-    <script type="text/javascript" src="Scripts/Lucky.js"></script>
+    <script type="text/javascript" src="Scripts/Lucky.js?date=<%System.DateTime.Now.Millisecond.ToString()%>"></script>
     <script type="text/javascript" src="Scripts/DBProxy.js"></script>
-    <script type="text/javascript" src="default.js"></script>
+    <script type="text/javascript" src="Scripts/default.js?date=<%System.DateTime.Now.Millisecond.ToString()%>"></script>
      <style>
         body, html
         {
@@ -83,7 +83,7 @@ to { -webkit-transform: skew(40deg) ; }
         var playing = true;
         lucky.PublishBatch = "Batch1";
         var cur_lev = 2;
-        var cur_num = 10;
+        var cur_num = 5;
         var open = false;
         var batch = 20;//用以在两边显示时区分
         $(function () {
@@ -147,7 +147,6 @@ to { -webkit-transform: skew(40deg) ; }
 <body>
 <div id="musicdiv">    
 <%--必须使用支持html5的网页才能播放背景声音，以下html标签只能在html5的浏览器中受支持，如google--%>  
-        <embed id='myaudio' src='mp3/kamen.mp3'; loop=true autostart=true name=bgss width=0 height=0 />
     </div>
 <img src="images/2.jpg" style="width:100%; position:absolute; z-index:-1;" id="back_img" />
     <ul id="roll_num" class="list_num"></ul>
@@ -156,7 +155,7 @@ to { -webkit-transform: skew(40deg) ; }
     </ul>
     <ul class="bj_award">
     </ul>
-    <div id="stage" style="width: 100%; height:100%; position: absolute; z-index: 9999; top: 0px; left: 5px;">  
+    <div id="stage" style="width: 100%; height:100%; position: absolute; z-index: 9999;">  
         <div style="position:absolute;left:0;top:0;width:100%;height:100%;background-color:#000" id="black_mask"></div>      
         <img src="images/stage_left02.jpg" width="50%" id="stage_left02" style=" position:absolute; left:0;top:0;" /> 
         <img src="images/stage_right02.jpg" width="50%" id="stage_right02" style=" position:absolute; right:0;top:0;"/>

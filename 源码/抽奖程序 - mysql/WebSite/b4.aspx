@@ -4,9 +4,9 @@
     <title>阳光保险补抽</title>
     <script type="text/javascript" src="Scripts/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="Scripts/json2.js"></script>
-    <script type="text/javascript" src="Scripts/Lucky.js"></script>
+    <script type="text/javascript" src="Scripts/Lucky.js?date=<%System.DateTime.Now.Millisecond.ToString()%>"></script>
     <script type="text/javascript" src="Scripts/DBProxy.js"></script>
-    <script type="text/javascript" src="default.js"></script>
+    <script type="text/javascript" src="Scripts/default.js?date=<%System.DateTime.Now.Millisecond.ToString()%>"></script>
    <style>
         body, html
         {

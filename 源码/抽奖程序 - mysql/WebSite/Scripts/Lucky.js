@@ -40,13 +40,13 @@ function Lucky() {
      this.GenerateAward = function (level, qty) {
          var result = new Array();
          this.getArray();
-         if (level == 0 || level == 1 || level == 2 || level == 4) {
+         if (level != 30) {
              var ro = this.GetTheAward(level);
              if (ro != "0000") {
                  result = ro;
              }
          }
-         else if (level == 3) {
+         else if (level == 30) {
              var ro = this.GenerateAwardThird(level, qty);
              if (ro != "0000") {
                  result = ro;
@@ -63,22 +63,10 @@ function Lucky() {
          var result = new Array();
          var awardExisted = dbProxy.GetAwardObj(); //获取所有中奖的号码
          var awardLevel1 = new Array();
-         var countSZ1 = 0; //一等奖6名
-         var countSZ2 = 0; //一等奖20名
-         var countSZ3 = 100; //三等奖100名
-         var countYG = 0; //阳光奖10名
+         var sumAward = 0; //中奖额
          for (var i = 0; i < awardExisted.length; i++) {
-             if (awardExisted[i].Level == "1") {
-                 countSZ1++;
-             }
-             if (awardExisted[i].Level == "2") {
-                 countSZ2++;
-             }
-             if (awardExisted[i].Level == "4") {
-                 countYG++;
-             }
-             if (awardExisted[i].Level == "3") {
-                 countSZ3++;
+             if (awardExisted[i].Level == level) {
+                 sumAward++;
              }
 
          }
@@ -91,39 +79,58 @@ function Lucky() {
                  return result;
              }
          }
-         if (level == 3 && countSZ3 >= 100) {//如果是一等奖大于6个（一等奖只有6个）则返回，如果添加不限制，去掉判断即可
+         debugger;
+         if (level == 0 && sumAward >= 1) {//如果是一等奖大于6个（一等奖只有6个）则返回，如果添加不限制，去掉判断即可
+             return "0000";
+         }
+         if (level == 1 && sumAward >= 3) {//如果是一等奖大于6个（一等奖只有6个）则返回，如果添加不限制，去掉判断即可
+             return "0000";
+         }
+         if (level == 2 && sumAward >= 5) {//如果是一等奖大于6个（一等奖只有6个）则返回，如果添加不限制，去掉判断即可
+             return "0000";
+         }
+         if (level == 3 && sumAward >= 12) {//如果是二等奖大于20个（二等奖只有20个）则返回，如果添加不限制，去掉判断即可
+             return "0000";
+         }
+         if (level == 4 && sumAward >= 100) {//如果是一等奖大于6个（一等奖只有6个）则返回，如果添加不限制，去掉判断即可
+             return "0000";
+         }
+         if (level == 5 && sumAward >= 1000) {//如果是阳光奖大于20个（二等奖只有20个）则返回，如果添加不限制，去掉判断即可
              return "0000";
          }
 
-         if (level == 1 && countSZ1 >= 6) {//如果是一等奖大于6个（一等奖只有6个）则返回，如果添加不限制，去掉判断即可
-             return "0000";
-         }
-         if (level == 2 && countSZ2 >= 20) {//如果是二等奖大于20个（二等奖只有20个）则返回，如果添加不限制，去掉判断即可
-             return "0000";
-         }
-         if (level == 4 && countYG >= 100) {//如果是阳光奖大于20个（二等奖只有20个）则返回，如果添加不限制，去掉判断即可
-             return "0000";
-         }
 
-         if (countSZ1 == 5 || countSZ2 == 19 || level == 0) {
-             //result[result.length] = this.generateOneAward(level); //产生一个号码;
+
+         if (level == 0) { //特等奖产生一个号码;
              result[result.length] = this.generateOneAward(level);
              return result;
          }
-         if (level == 2) {//二等奖生成10个
-             for (var i = 0; i < 10; i++) {
+         if (level == 1) {//一等奖生成3个
+             for (var i = 0; i < 3; i++) {
                  result[result.length] = this.generateOneAward(level);
              }
              return result;
          }
-         if (level == 4) {//三等奖每次生成20个
+         if (level == 2) {//2等奖生成5个
+             for (var i = 0; i < 5; i++) {
+                 result[result.length] = this.generateOneAward(level);
+             }
+             return result;
+         }
+         if (level == 3) {//3等奖生成10个
+             for (var i = 0; i < 12; i++) {
+                 result[result.length] = this.generateOneAward(level);
+             }
+             return result;
+         }
+         if (level == 4) {//4等奖每次生成20个
              for (var i = 0; i < 20; i++) {
                  result[result.length] = this.generateOneAward(level);
              }
              return result;
          }
-         else {
-             for (var i = 0; i < 2; i++) {
+         if (level == 5) {//5等奖每次生成10个
+             for (var i = 0; i < 10; i++) {
                  result[result.length] = this.generateOneAward(level);
              }
              return result;

@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>三等奖抽奖</title>
+    <title>（三等奖抽奖-抽尾号）</title>
     <script type="text/javascript" src="Scripts/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="Scripts/json2.js"></script>
-    <script type="text/javascript" src="Scripts/Lucky.js"></script>
+    <script type="text/javascript" src="Scripts/Lucky.js?date=<%System.DateTime.Now.Millisecond.ToString()%>"></script>
     <script type="text/javascript" src="Scripts/DBProxy.js"></script>
-    <script type="text/javascript" src="default.js"></script>
+    <script type="text/javascript" src="Scripts/default.js?date=<%System.DateTime.Now.Millisecond.ToString()%>"></script>
     <style>
         body, html
         {
@@ -82,7 +82,7 @@ to { -webkit-transform: skew(40deg) ; }
         })
         lucky.PublishBatch = "Batch1";
         var playing = true;
-        var cur_lev = 3;
+        var cur_lev = 30;
         var cur_num = 1;
         var open = false;
         var batch = "Batch1";  //当前奖项和奖票数目
@@ -106,21 +106,21 @@ to { -webkit-transform: skew(40deg) ; }
                 }
                 return false
             }
-//            if (code == 83 && open) {//按s键
-//                if (playing) {
-//                    stopOne('SZ', cur_lev); //停止动画，显示获奖号 Default.js
-//                    playing = false;
-//                }
-//                return false
-//            }
-//            if (code == 66 && open) {//按b键
+            //            if (code == 83 && open) {//按s键
+            //                if (playing) {
+            //                    stopOne('SZ', cur_lev); //停止动画，显示获奖号 Default.js
+            //                    playing = false;
+            //                }
+            //                return false
+            //            }
+            //            if (code == 66 && open) {//按b键
 
-//                if (playing) {
-//                    stopOne('BJ', cur_lev); //停止动画，显示获奖号                    
-//                    playing = false;
-//                }
-//                return false
-//            }
+            //                if (playing) {
+            //                    stopOne('BJ', cur_lev); //停止动画，显示获奖号                    
+            //                    playing = false;
+            //                }
+            //                return false
+            //            }
             if (code == 46 && !playing) {//按删除键
                 var $children_li = $("#num_award").children();
                 $children_li.each(function () {
@@ -141,6 +141,9 @@ to { -webkit-transform: skew(40deg) ; }
     </script>
 </head>
 <body>
+<div id="musicdiv">    
+<%--必须使用支持html5的网页才能播放背景声音，以下html标签只能在html5的浏览器中受支持，如google--%>  
+    </div>
 <img src="images/3.jpg" style="width:100%; position:absolute; z-index:-1;" id="back_img" />
     <ul id="roll_num" class="list_num"></ul>
     <ul id="num_award" class="list_num"></ul>

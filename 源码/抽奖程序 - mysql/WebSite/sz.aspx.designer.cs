@@ -22,84 +22,57 @@ namespace Asd.Award {
         protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
         
         /// <summary>
-        /// tableSZ31 控件。
+        /// table0 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable tableSZ31;
+        protected global::System.Web.UI.HtmlControls.HtmlTable table0;
         
         /// <summary>
-        /// tableBJ31 控件。
+        /// table1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable tableBJ31;
+        protected global::System.Web.UI.HtmlControls.HtmlTable table1;
         
         /// <summary>
-        /// tableSZ2 控件。
+        /// table2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable tableSZ2;
+        protected global::System.Web.UI.HtmlControls.HtmlTable table2;
         
         /// <summary>
-        /// tableBJ2 控件。
+        /// table3 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable tableBJ2;
+        protected global::System.Web.UI.HtmlControls.HtmlTable table3;
         
         /// <summary>
-        /// tableSZ1 控件。
+        /// table4 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable tableSZ1;
+        protected global::System.Web.UI.HtmlControls.HtmlTable table4;
         
         /// <summary>
-        /// tableBJ1 控件。
+        /// table5 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable tableBJ1;
-        
-        /// <summary>
-        /// tableSZ0 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable tableSZ0;
-        
-        /// <summary>
-        /// tableBJ0 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable tableBJ0;
-        
-        /// <summary>
-        /// tableYG 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable tableYG;
+        protected global::System.Web.UI.HtmlControls.HtmlTable table5;
     }
 }

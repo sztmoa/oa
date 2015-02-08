@@ -12,7 +12,7 @@ function stop(level, number) {
     PlayBGSound(false);
     //获取得奖号
     var obj = lucky.GenerateAward(level, number);
-    if (level == 3) {
+    if (level == 30) {
         if (obj[0] != null) {
             $("#num_award")[0].innerHTML = "<li>" + obj[0] + "</li>";
 
@@ -42,7 +42,6 @@ function stop(level, number) {
 }
 
 function start() {
-    PlayBGSound(true);
     $("#roll_num").css("display", "block");
     $("#num_award").css("display", "none").empty();
     mov(cur_num); //Default.js
@@ -63,29 +62,39 @@ function show_3Info(obj) {
 
 //两边显示获奖号
 function show_award(cur_lev, batch) {
-    if (cur_lev == 1 || cur_lev == 2 || cur_lev == 4) {//一二等级才显示
         var sz_li = '', bj_li = '', $sz = $(".sz_award"), $bj = $(".bj_award");
         var awards_sz_all = lucky.GetAwardBy("", cur_lev); //获取该等奖的号码
         awards_sz_all.sort(); //排序
         var num = awards_sz_all.length;
         var total = num;
-        if (cur_lev == 2 ) {//二等奖,因为只有一二等奖走这个方法
+        if (cur_lev == 0)
+        {//1个
+        }
+        if (cur_lev == 1)
+        {//3个
+        }
+        if (cur_lev == 2 ) {//二等奖5个
             total = 10;//二等奖20人，一边显示10人
             if (num < 10) {
                 total = num;
             }
         }
-        else if(cur_lev == 4)
+        if (cur_lev == 3) {//3个
+            total = 6;//二等奖20人，一边显示10人
+            if (num < 6) {
+                total = num;
+            }
+        }
+        if(cur_lev == 4)
         { 
             total = 50;//三等奖100人，一边显示50人
             if (num < 50) {
                 total = num;
             }
-
         }
-        else {//一等奖
-            total = 3; //一等奖6人，一边显示3人
-            if (num < 3) {
+        if (cur_lev == 4) {
+            total = 50;//三等奖100人，一边显示50人
+            if (num < 50) {
                 total = num;
             }
         }
@@ -95,9 +104,10 @@ function show_award(cur_lev, batch) {
         for (i = total; i < num; i++) {
             bj_li += "<li>" + awards_sz_all[i] + "</li>";
         }
-        $sz[0].innerHTML = sz_li;
-        $bj[0].innerHTML = bj_li;
-    }
+        //显示中奖号
+        //$sz[0].innerHTML = sz_li;
+        //$bj[0].innerHTML = bj_li;
+    
 }
 
 ///S键产生一个中奖号码
@@ -171,6 +181,7 @@ function all_sn() {
 
 var m;
 function mov(cur_num) {
+    PlayBGSound(true);
     m = setInterval(function () {
         var m_li = ''
         for (i = 0; i < cur_num; i++) {
@@ -210,57 +221,60 @@ function resize(cur_lev) {
             lineHeight: max_width * 0.4766 * 0.05 + "px",
             right: max_height * 0.015
         });
-        if (cur_lev == 1) {
-            $("#roll_num,#num_award").css({
-                top: max_height * 0.32,
-                //                fontSize: max_width * 0.4766 * 0.19 + "px",
-                fontSize: 82 + "px",
-                letterSpacing: 0,
-                lineHeight: max_width * 0.4766 * 0.26 + "px"
-            })
-        }
-        else if (cur_lev == 0) {
+        if (cur_lev == 0) {
             $("#roll_num,#num_award").css({
                 top: max_height * 0.38,
                 width: max_width * 0.7,
                 marginLeft: 0 - max_width * 0.7 / 2,
-                //            fontSize: max_width * 0.4766 * 0.328 + "px",
                 fontSize: 80 + "px",
                 lineHeight: max_width * 0.4766 * 0.328 + "px",
                 letterSpacing: "-5px"
             })
         }
-        else if (cur_lev == 2) {
+        if (cur_lev == 1) {
+            $("#roll_num,#num_award").css({
+                top: max_height * 0.30,
+                fontSize: 50 + "px",
+                letterSpacing: 0,
+                lineHeight: max_width * 0.4766 * 0.2 + "px"
+            })
+        }
+        if (cur_lev == 2) {
             $("#roll_num,#num_award").css({
                 top: max_height * 0.30,
                 //width: max_width * 0.2,
                 //height: max_width * 0.439,
                 //marginLeft: 0 - max_width * 0.39 / 2,
                 fontSize: 45 + "px",
-                lineHeight: 30+ "px",
-                letterSpacing: max_width * 0.4766 * 0.01 + "px",
+                lineHeight: max_width * 0.4766 * 0.1 + "px",
+                letterSpacing: 0
 
             })
-        }else if (cur_lev == 3) {//三等奖抽尾号
+        } if (cur_lev == 3) {//三等奖
             $("#roll_num,#num_award").css({
-                top: max_height * 0.42,
-                fontSize: 150 + "px",
+                top: max_height * 0.3,
+                fontSize: 45 + "px",
                 letterSpacing: 0,
-                lineHeight: max_width * 0.4766 * 0.26 + "px"
-            })
+                lineHeight: max_width * 0.1 * 0.35 + "px"
+            });
         }
-        else if (cur_lev == 4) {//三等奖抽号码
+         if (cur_lev == 4) {//三等奖抽号码
             $("#roll_num,#num_award").css({
                 top: max_height * 0.30,
-                //width: max_width * 0.2,
-                //height: max_width * 0.439,
-                //marginLeft: 0 - max_width * 0.39 / 2,
-                fontSize: 20 + "px",
-                lineHeight: 20 + "px",
+                fontSize: 35 + "px",
+                lineHeight: max_width * 0.1 * 0.22 + "px",
                 letterSpacing: max_width * 0.4766 * 0.01 + "px",
 
             })
-        }
+         }
+         if (cur_lev == 5) {//三等奖抽尾号
+             $("#roll_num,#num_award").css({
+                 top: max_height * 0.35,
+                 fontSize: 45 + "px",
+                 letterSpacing: 0,
+                 lineHeight: max_width * 0.1 * 0.35 + "px"
+             })
+         }
 }
 //开场动画
 function stage() {
@@ -305,9 +319,7 @@ function movNumber(cur_num) {
 }
 
 function startNumber() {
-    PlayBGSound(true);
     $("#roll_num").css("display", "block");
-
     $("#num_award").css("display", "none").empty();
     movNumber(cur_num); //Default.js
 }
@@ -319,11 +331,9 @@ function PlayBGSound(isPlay) {
     if (isPlay) {
         var node = "<embed id='myaudio' src='mp3/kamen.mp3'; loop=true autostart=true name=bgss width=0 height=0 />";
         myAuto.innerHTML = node;
-        isPlay = false;
     }
     else {
-        var node = "<embed id='myaudio' src='mp3/zhongjiang.mp3'; loop=false autostart=true name=bgss width=0 height=0 />";
+        var node = "<embed id='myaudio' src=''; loop=false autostart=true name=bgss width=0 height=0 />";
         myAuto.innerHTML = node;
-        isPlay = true;
     }
 }

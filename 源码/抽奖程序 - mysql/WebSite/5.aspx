@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>三等奖（每次抽10个）</title>
+    <title>现金奖-五等奖（不定量 每次抽10个号码）</title>
     <script type="text/javascript" src="Scripts/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="Scripts/json2.js"></script>
-    <script type="text/javascript" src="Scripts/Lucky.js"></script>
+    <script type="text/javascript" src="Scripts/Lucky.js?date=<%System.DateTime.Now.Millisecond.ToString()%>"></script>
     <script type="text/javascript" src="Scripts/DBProxy.js"></script>
-    <script type="text/javascript" src="default.js"></script>
+    <script type="text/javascript" src="Scripts/default.js?date=<%System.DateTime.Now.Millisecond.ToString()%>"></script>
      <style>
         body, html
         {
@@ -45,6 +45,12 @@
             border-bottom:1px solid rgba(177,96,1,0.5);
             border-top:1px solid rgba(255,255,255,0.5);
             color: #a20000;
+            float:left;
+            margin:2px 60px;
+            list-style:none;
+            display:block; 
+            white-space: nowrap;
+            border:0;
         }
         .list_num li:first-child { border-top:0;}
         .list_num li:last-child { border-bottom:0;}
@@ -54,13 +60,19 @@
             text-shadow: 0px 2px 1px rgba(255,255,255,0.5);
         }
         .sz_award,.bj_award{  position:absolute;   list-style-type:none; padding:10px 0;  /*background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.1), rgba(0,0,0,0.5))*/;}
-       .sz_award li,.bj_award li{  float:left;color:#FFF1B4; text-align:center; width:49%;border-radius: 14px; margin:0 0 4px 2px; padding:2px 0;
-                                    text-shadow: 0px 1px 2px #000; font-weight:bold; box-shadow: 0px 2px 4px #000; border-top:1px solid rgba(252,252,162,0.4);
-                                   background:#a60000;background: -webkit-gradient(linear, left top, left bottom, from(#c40e00), to(#a60000));}
+        .sz_award li,.bj_award li{  width:20%; margin:0 0 0px 0px; 
+                                   float:left;color:#FFF1B4; text-align:center;
+                                   border-radius: 14px;
+                                   padding:2px 0;
+                                   text-shadow: 0px 1px 2px #000; font-weight:bold; box-shadow: 0px 2px 4px #000;
+                                   border-top:1px solid rgba(252,252,162,0.4);
+                                   background:#a60000;
+                                   background: -webkit-gradient(linear, left top, left bottom, from(#c40e00), to(#a60000));}
         #roll_num,#num_award{  margin: auto; position: absolute;z-index: 9999; left:50%;}
+        .roll_num li{float:left;display:inline;line-height:24px;height:80%;word-break:break-all;word-wrap : break-word ;}
         .num_mask_top{ background:url(images/num_mask_top.png) no-repeat; width:571px; height:20px; position:absolute; top:203px; left:50%; margin-left:-285px; z-index:9999;}
         .num_mask_bottom{ background:url(images/num_mask_bottom.png) no-repeat; width:571px; height:20px; position:absolute; top:618px; left:50%; margin-left:-285px; z-index:9999;}
-         .stage_left {
+        .stage_left {
 -webkit-animation: sl 2s 1 linear;
 }
 @-webkit-keyframes sl {
@@ -82,7 +94,7 @@ to { -webkit-transform: skew(40deg) ; }
         })
         var playing = true;
         lucky.PublishBatch = "Batch1";
-        var cur_lev = 4;//奖品类型
+        var cur_lev = 5;//奖品类型
         var cur_num = 10;
         var open = false;
         var batch = 20;//用以在两边显示时区分
@@ -147,23 +159,21 @@ to { -webkit-transform: skew(40deg) ; }
 <body>
   <div id="musicdiv">    
 <%--必须使用支持html5的网页才能播放背景声音，以下html标签只能在html5的浏览器中受支持，如google--%>  
-        <%--<embed id='myaudio' src='mp3/kamen.mp3' volume="0" loop=true autostart=true name=bgss width=0 height=0 />--%>
     </div>
-<img src="images/3.jpg" style="width:100%; position:absolute; z-index:-1;" id="back_img" />
+<img src="images/5.jpg" style="width:100%; position:absolute; z-index:-1;" id="back_img" />
     <ul id="roll_num" class="list_num"></ul>
     <ul id="num_award" class="list_num"></ul>
     <ul class="sz_award">
     </ul>
     <ul class="bj_award">
     </ul>
-    <div id="stage" style="width: 100%; height:100%; position: absolute; z-index: 9999; top: 0px; left: 0px;">  
+    <div id="stage" style="width: 100%; height:100%; position: absolute; z-index: 9999;">  
         <div style="position:absolute;left:0;top:0;width:100%;height:100%;background-color:#000" id="black_mask"></div>      
-        <img src="images/2015/3_stage_left.jpg" width="50%" id="stage_left02" style=" position:absolute; left:0;top:0;" /> 
-        <img src="images/2015/3_stage_right.jpg" width="50%" id="stage_right02" style=" position:absolute; right:0;top:0;"/>
-        
-      <%--  <img src="images/stage_left01.png" width="16.85%" id="stage_left01" style=" position:absolute; left:0; top:0;" /> 
+        <img src="images/stage_left02.jpg" width="50%" id="stage_left02" style=" position:absolute; left:0;top:0;" /> 
+        <img src="images/stage_right02.jpg" width="50%" id="stage_right02" style=" position:absolute; right:0;top:0;"/>
+        <img src="images/stage_left01.png" width="16.85%" id="stage_left01" style=" position:absolute; left:0; top:0;" /> 
         <img src="images/stage_right01.png" width="16.85%" id="stage_right01" style=" position:absolute; right:0;top:0;"/>
-        <img src="images/stage_top.png" width="100%" id="stage_top" style=" position:absolute; top:0; left: 20px;"/>--%>
+        <img src="images/stage_top.png" width="100%" id="stage_top" style=" position:absolute; top:0; left: 20px;"/>
     </div>
 
 </body>

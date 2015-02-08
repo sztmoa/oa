@@ -23,12 +23,12 @@ namespace Asd.Award
                     this.bindingData(dt);
                 }
 
-                this.tableBJ0.Visible = false;
-                this.tableBJ1.Visible = false;
-                this.tableBJ2.Visible = false;
-                this.tableBJ31.Visible = false;
-                //this.tableBJ32.Visible = false;
-                //this.tableBJ33.Visible = false;
+                //this.table0.Visible = false;
+                //this.table1.Visible = false;
+                //this.table2.Visible = false;
+                //this.table3.Visible = false;
+                //this.table4.Visible = false;
+                //this.table5.Visible = false;
             }
         }
 
@@ -36,25 +36,25 @@ namespace Asd.Award
         {
             foreach (var item in dt)
             {
-                //var city = item.TicketNO.Substring(0, 2);
-                //if (city == "SZ")
-                //{
                     switch (item.Level)
                     {
-                        case "4":
-                            BuildTableRow(this.tableYG, item);
-                            break;
-                        case "3":
-                            BuildTableRow(this.tableSZ31, item);
-                            break;
-                        case "2":
-                            BuildTableRow(this.tableSZ2, item);
+                        case "0":
+                            BuildTableRow(this.table0, item);
                             break;
                         case "1":
-                            BuildTableRow(this.tableSZ1, item);
+                            BuildTableRow(this.table1, item);
                             break;
-                        case "0":
-                            BuildTableRow(this.tableSZ0, item);
+                        case "2":
+                            BuildTableRow(this.table2, item);
+                            break;
+                        case "3":
+                            BuildTableRow(this.table3, item);
+                            break;
+                        case "4":
+                            BuildTableRow(this.table4, item);
+                            break;
+                        case "5":
+                            BuildTableRow(this.table5, item);
                             break;
                     }
             }

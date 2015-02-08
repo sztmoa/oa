@@ -1,4 +1,4 @@
-﻿/// <reference path="/Scripts/Lucky.js" />
+﻿/// <reference path="/Scripts/Lucky.js?date=<%System.DateTime.Now.Millisecond.ToString()%>" />
 /// <reference path="/Scripts/jquery-1.7.min.js" />
 
 function DBProxy() {

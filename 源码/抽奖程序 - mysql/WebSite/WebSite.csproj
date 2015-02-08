@@ -74,6 +74,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="3.aspx" />
+    <Content Include="5.aspx" />
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
@@ -83,8 +85,10 @@
     <Content Include="b2.aspx" />
     <Content Include="b4.aspx" />
     <Content Include="bj.aspx" />
-    <Content Include="4a.aspx" />
+    <Content Include="4.aspx" />
     <Content Include="images\0.jpg" />
+    <Content Include="images\4.jpg" />
+    <Content Include="images\5.jpg" />
     <Content Include="images\page_back_award3new.jpg" />
     <Content Include="images\page_back_awardyg.jpg" />
     <Content Include="mp3\kamen.mp3" />
@@ -94,7 +98,7 @@
     <Content Include="2.aspx" />
     <Content Include="1.aspx" />
     <Content Include="0.aspx" />
-    <Content Include="Default.js" />
+    <Content Include="Scripts\Default.js" />
     <Content Include="demo.htm" />
     <Content Include="images\del_cur.cur" />
     <Content Include="images\num_mask_bottom.png" />
@@ -128,7 +132,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Init.aspx" />
-    <Content Include="3.aspx" />
+    <Content Include="3-尾号.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\ChangePassword.aspx.cs">

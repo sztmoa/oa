@@ -134,119 +134,64 @@
 <body>
     <form id="Form1" runat="server">
     <ul id="tab_menu">
-        <%--<li class="act">三等奖（第一轮）</li>
-        <li>三等奖（第二轮）</li>
-        <li>三等奖（第三轮）</li>--%>
-        <li class="act">三等奖（抽尾号）</li>
-        <li>二等奖</li>
-        <li>一等奖</li>
         <li>特等奖</li>
-        <li>三等奖（每次抽20个号码）</li>
+        <li>一等奖</li>
+        <li>二等奖</li>
+        <li>三等奖</li>
+        <li>四等奖</li>
+        <li>五等奖</li>
     </ul>
     <ul id="tab_content">
         <li class="act">
-            <table id="tableSZ31" runat="server">
+            <table id="table0" runat="server">
                 <tr>
                     <th colspan="2">
-                        <%--深圳 三等奖（第一轮）--%>
-                        深圳 三等奖
-                    </th>
-                </tr>
-            </table>
-            <table id="tableBJ31" runat="server">
-                <tr>
-                    <th colspan="2">
-                        <%--北京 三等奖（第一轮）--%>
-                        北京 三等奖
+                        特等奖
                     </th>
                 </tr>
             </table>
         </li>
-        <%--<li>
-            <table id="tableSZ32" runat="server">
+        <li>            
+            <table id="table1" runat="server">
                 <tr>
                     <th colspan="2">
-                        深圳 三等奖（第二轮）
-                    </th>
-                </tr>
-            </table>
-            <table id="tableBJ32" runat="server">
-                <tr>
-                    <th colspan="2">
-                        北京 三等奖（第二轮）
+                        一等奖
                     </th>
                 </tr>
             </table>
         </li>
         <li>
-            <table id="tableSZ33" runat="server">
+            <table id="table2" runat="server">
                 <tr>
                     <th colspan="2">
-                        深圳 三等奖（第三轮）
+                        二等奖
                     </th>
                 </tr>
             </table>
-            <table id="tableBJ33" runat="server">
+        </li>
+        <li>            
+            <table id="table3" runat="server">
                 <tr>
                     <th colspan="2">
-                        北京 三等奖（第三轮）
-                    </th>
-                </tr>
-            </table>
-        </li>--%>
-        <li>
-            <table id="tableSZ2" runat="server">
-                <tr>
-                    <th colspan="2">
-                        深圳 二等奖
-                    </th>
-                </tr>
-            </table>
-            <table id="tableBJ2" runat="server">
-                <tr>
-                    <th colspan="2">
-                        北京 二等奖
+                       三等奖
                     </th>
                 </tr>
             </table>
         </li>
         <li>
-            <table id="tableSZ1" runat="server">
+            <table id="table4" runat="server">
                 <tr>
                     <th colspan="2">
-                        深圳 一等奖
+                        四等奖
                     </th>
                 </tr>
             </table>
-            <table id="tableBJ1" runat="server">
-                <tr>
-                    <th colspan="2">
-                        北京 一等奖
-                    </th>
-                </tr>
-            </table>
-        </li>
+            </li>
         <li>
-            <table id="tableSZ0" runat="server">
+            <table id="table5" runat="server">
                 <tr>
                     <th colspan="2">
-                        深圳 特等奖
-                    </th>
-                </tr>
-            </table>
-            <table id="tableBJ0" runat="server">
-                <tr>
-                    <th colspan="2">
-                        北京 特等奖
-                    </th>
-                </tr>
-            </table>
-        </li>
-         <li>
-            <table id="tableYG" runat="server">
-                <tr>
-                    <th colspan="2">
-                        三等奖（每次抽20个号码）
+                        五等奖
                     </th>
                 </tr>
             </table>

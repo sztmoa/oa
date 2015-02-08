@@ -17,7 +17,7 @@ namespace Asd.Award
             {
                 using (TMAwardEntities context = new TMAwardEntities())
                 {
-
+                    
                     var dt = from ent in context.TmpAward
                              select ent;
                     this.bindingData(dt);
