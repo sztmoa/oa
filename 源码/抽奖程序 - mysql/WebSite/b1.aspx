@@ -93,16 +93,11 @@ to { -webkit-transform: skew(40deg) ; }
             var theEvent = window.event || e;
             var code = theEvent.keyCode || theEvent.which;
             //alert(event.keyCode);
-
             if (code == 32) {//按空格键
                 if (!open) {
                     open = true;
                     stage(); //Default.js
                 } else {
-//                    if (!playing) {
-//                        start(); //Default.js
-//                        playing = true;
-                    //                    }
                     if (playing) {
                         stop(cur_lev, cur_num); //停止动画，显示获奖号
                         playing = false;

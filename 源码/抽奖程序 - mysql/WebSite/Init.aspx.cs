@@ -12,7 +12,9 @@ namespace Asd.Award
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            { 
+            }
         }
 
         //protected void ButtonBatch_Click(object sender, EventArgs e)
@@ -67,6 +69,7 @@ namespace Asd.Award
                     context.SaveChanges();
                 }
             }
+            Response.Write("清空中奖号码完成！");
         }
     }
 }

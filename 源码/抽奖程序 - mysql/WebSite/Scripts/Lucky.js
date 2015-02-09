@@ -16,7 +16,6 @@ function Lucky() {
 
     this.PublishBatch = "";
     this.Init = function (tickets, awardExisted) {
-        debugger;
         this.Ticket = tickets;
         this.Award = awardExisted;
     }
@@ -100,7 +99,6 @@ function Lucky() {
          }
 
 
-         debugger;
          if (level == 0) { //特等奖产生一个号码;
              result[result.length] = this.generateOneAward(level);
              return result;
@@ -437,7 +435,7 @@ this.getTicketCount = function () {
 }
 
 function loadData(lucky, awardExisted) {
-    debugger;
+
     var data = new Array();
     var ticketCount=this.getTicketCount();
     //生成所有抽奖号码

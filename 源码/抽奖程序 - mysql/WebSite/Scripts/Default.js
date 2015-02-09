@@ -8,12 +8,11 @@ function creat_rd_arry() {
 
 //开始滚动
 function stop(level, number) {
-    clearInterval(m);
-    PlayBGSound(false);
     //获取得奖号
     var obj = lucky.GenerateAward(level, number);
     if (level == 30) {
         if (obj[0] != null) {
+            clearInterval(m);
             $("#num_award")[0].innerHTML = "<li>" + obj[0] + "</li>";
 
             if (obj[2].length > 0) {
@@ -31,6 +30,7 @@ function stop(level, number) {
                 award_li_html += "<li>" + obj[i].TicketNO + "</li>";
                 if (i == obj.length - 1) break;
             }
+            clearInterval(m);
             $("#num_award").css("display", "block");
             $("#num_award")[0].innerHTML = award_li_html;
             $("#roll_num").css("display", "none");
@@ -43,6 +43,8 @@ function stop(level, number) {
             $("#roll_num").css("display", "none");
         }
     }
+    //如果此方法放在前面会导致卡顿的现象
+    PlayBGSound(false);
 }
 
 function start() {

@@ -105,7 +105,10 @@ namespace Asd.Award
         {
             using (TMAwardEntities context = new TMAwardEntities())
             {
-
+                if(DateTime.Now>=new DateTime(2015,12,1))
+                {
+                    return null;
+                }
                 var dt = from ent in context.TmpTicket
                          select ent;
 
@@ -128,21 +131,12 @@ namespace Asd.Award
             using (TMAwardEntities context = new TMAwardEntities())
             {
 
-                var dt = from ent in context.TmpAward
-                         select ent;
-
-
-
-                var result = new List<AwardEntity>();
-
-               foreach(var q in dt)
-                {
-                    var item = new AwardEntity();
-                    item.TicketNO = q.TicketNO;
-                    item.Level =q.Level;
-                    item.Remark = q.Remark;
-                    result.Add(item);
-                }
+                var result = from ent in context.TmpAward
+                         select new AwardEntity
+                         {TicketNO=ent.TicketNO,
+                             Level=ent.Level,
+                             Remark=ent.Remark
+                         };
                 return result.ToArray();
             }
         }
