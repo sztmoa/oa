@@ -171,7 +171,7 @@ namespace SmtPortalSetUp
                         fsWrite.Write(dataw, 0, dataw.Length);
                         ///将dataw数组中的内容写入到my.ini文件 
                         fsWrite.Close();
-                        from.ShowMessage("拷贝完成，文件：" + files[i].FullName);
+                        //from.ShowMessage("拷贝完成，文件：" + files[i].FullName);
                     }
                     else if (files[i].Name == "SMT.SAAS.Loading.xap"
                         || files[i].Name == "LightWatchDemo.First.LightWatcApp.xap")
@@ -233,7 +233,7 @@ namespace SmtPortalSetUp
                             ZipEditStream.SetLevel(5);
                             ZipEditStream.Finish();
                             ZipEditStream.Close();
-                            from.ShowMessage("拷贝完成，文件：" + files[i].FullName);
+                            //from.ShowMessage("拷贝完成，文件：" + files[i].FullName);
                         }
                     }
                     else
@@ -248,7 +248,7 @@ namespace SmtPortalSetUp
                         fsWrite.Write(datar, 0, datar.Length);
                         fsWrite.Close();
                         //File.Copy(files[i].FullName, target.FullName + @"\" + files[i].Name, true);
-                        from.ShowMessage("拷贝完成，文件：" + files[i].FullName);
+                        //from.ShowMessage("拷贝完成，文件：" + files[i].FullName);
                     }
                     progreesValue++;
                     from.ShowProgress(progreesValue);
