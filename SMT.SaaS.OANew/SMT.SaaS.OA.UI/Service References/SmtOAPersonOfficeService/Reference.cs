@@ -17,38 +17,98 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StructuralObject", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses", IsReference=true)]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDETAIL))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONREQUIRE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDISTRIBUTE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFO))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFOTEMPLET))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREAALLOWANCE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREADIFFERENCE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREACITY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CANTAKETHEPLANELINE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_PROGRAMAPPLICATIONS))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TAKETHESTANDARDTRANSPORT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-    public partial class StructuralObject : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.Runtime.Serialization.DataContractAttribute(Name="V_SystemNotice", Namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.OA.DAL")]
+    public partial class V_SystemNotice : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.DateTime FormDateField;
+        
+        private string FormIdField;
+        
+        private string FormTitleField;
+        
+        private string FormtypeField;
+        
+        private string IsTopField;
+        
+        private string TitleNotesField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime FormDate {
+            get {
+                return this.FormDateField;
+            }
+            set {
+                if ((this.FormDateField.Equals(value) != true)) {
+                    this.FormDateField = value;
+                    this.RaisePropertyChanged("FormDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FormId {
+            get {
+                return this.FormIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FormIdField, value) != true)) {
+                    this.FormIdField = value;
+                    this.RaisePropertyChanged("FormId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FormTitle {
+            get {
+                return this.FormTitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FormTitleField, value) != true)) {
+                    this.FormTitleField = value;
+                    this.RaisePropertyChanged("FormTitle");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Formtype {
+            get {
+                return this.FormtypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FormtypeField, value) != true)) {
+                    this.FormtypeField = value;
+                    this.RaisePropertyChanged("Formtype");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IsTop {
+            get {
+                return this.IsTopField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IsTopField, value) != true)) {
+                    this.IsTopField = value;
+                    this.RaisePropertyChanged("IsTop");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TitleNotes {
+            get {
+                return this.TitleNotesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleNotesField, value) != true)) {
+                    this.TitleNotesField = value;
+                    this.RaisePropertyChanged("TitleNotes");
+                }
+            }
+        }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
@@ -62,260 +122,181 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityObject", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses", IsReference=true)]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDETAIL))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONREQUIRE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDISTRIBUTE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFO))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFOTEMPLET))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREAALLOWANCE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREADIFFERENCE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREACITY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CANTAKETHEPLANELINE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_PROGRAMAPPLICATIONS))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TAKETHESTANDARDTRANSPORT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-    public partial class EntityObject : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject {
+    [System.Runtime.Serialization.DataContractAttribute(Name="LoginUserInfo", Namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.OA.Services")]
+    public partial class LoginUserInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey EntityKeyField;
+        private string companyIDField;
+        
+        private string companyNameField;
+        
+        private string departmentIDField;
+        
+        private string departmentNameField;
+        
+        private string postIDField;
+        
+        private string postNameField;
+        
+        private string userIDField;
+        
+        private string userNameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey EntityKey {
+        public string companyID {
             get {
-                return this.EntityKeyField;
+                return this.companyIDField;
             }
             set {
-                if ((object.ReferenceEquals(this.EntityKeyField, value) != true)) {
-                    this.EntityKeyField = value;
-                    this.RaisePropertyChanged("EntityKey");
+                if ((object.ReferenceEquals(this.companyIDField, value) != true)) {
+                    this.companyIDField = value;
+                    this.RaisePropertyChanged("companyID");
                 }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string companyName {
+            get {
+                return this.companyNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.companyNameField, value) != true)) {
+                    this.companyNameField = value;
+                    this.RaisePropertyChanged("companyName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string departmentID {
+            get {
+                return this.departmentIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.departmentIDField, value) != true)) {
+                    this.departmentIDField = value;
+                    this.RaisePropertyChanged("departmentID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string departmentName {
+            get {
+                return this.departmentNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.departmentNameField, value) != true)) {
+                    this.departmentNameField = value;
+                    this.RaisePropertyChanged("departmentName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string postID {
+            get {
+                return this.postIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.postIDField, value) != true)) {
+                    this.postIDField = value;
+                    this.RaisePropertyChanged("postID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string postName {
+            get {
+                return this.postNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.postNameField, value) != true)) {
+                    this.postNameField = value;
+                    this.RaisePropertyChanged("postName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string userID {
+            get {
+                return this.userIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.userIDField, value) != true)) {
+                    this.userIDField = value;
+                    this.RaisePropertyChanged("userID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string userName {
+            get {
+                return this.userNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.userNameField, value) != true)) {
+                    this.userNameField = value;
+                    this.RaisePropertyChanged("userName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_TRAVELREIMBURSEMENT", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
-    public partial class T_OA_TRAVELREIMBURSEMENT : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
-        
-        private string BUSINESSREPORTIDField;
-        
-        private string CHECKSTATEField;
-        
-        private string CLAIMSWEREField;
-        
-        private string CLAIMSWERENAMEField;
-        
-        private string COMPUTINGTIMEField;
-        
-        private string CONTENTField;
-        
-        private string CREATECOMPANYIDField;
-        
-        private System.Nullable<System.DateTime> CREATEDATEField;
-        
-        private string CREATEDEPARTMENTIDField;
-        
-        private string CREATEPOSTIDField;
+    [System.Runtime.Serialization.DataContractAttribute(Name="V_Travelmanagement", Namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.OA.DAL.Views")]
+    public partial class V_Travelmanagement : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string CREATEUSERIDField;
         
-        private string CREATEUSERNAMEField;
+        private string CictyField;
         
-        private string ENDCITYNAMEField;
+        private string CictysField;
         
-        private string ISFROMWPField;
+        private string EndtimeField;
         
-        private string NOBUDGETCLAIMSField;
+        private string GuidsField;
+        
+        private string NoClaimsField;
         
         private string OWNERCOMPANYIDField;
         
-        private string OWNERCOMPANYNAMEField;
-        
         private string OWNERDEPARTMENTIDField;
-        
-        private string OWNERDEPARTMENTNAMEField;
         
         private string OWNERIDField;
         
-        private string OWNERNAMEField;
-        
         private string OWNERPOSTIDField;
         
-        private string OWNERPOSTNAMEField;
+        private string ReportCheckStateField;
         
-        private string POSTLEVELField;
+        private string ReportIdField;
         
-        private System.Nullable<decimal> REIMBURSEMENTOFCOSTSField;
+        private string StartdateField;
         
-        private System.Nullable<System.DateTime> REIMBURSEMENTTIMEField;
+        private string StateReimbursementField;
         
-        private string REMARKSField;
+        private int TdetailField;
         
-        private string STARTCITYNAMEField;
+        private string TrCheckStateField;
         
-        private string TELField;
+        private string TrIdField;
         
-        private System.Nullable<decimal> THETOTALCOSTField;
+        private string TraveAppCheckStateField;
         
-        private string TRAVELREIMBURSEMENTIDField;
-        
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP T_OA_BUSINESSTRIPField;
-        
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk T_OA_BUSINESSTRIPReferenceField;
-        
-        private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL> T_OA_REIMBURSEMENTDETAILField;
-        
-        private System.Nullable<System.DateTime> UPDATEDATEField;
-        
-        private string UPDATEUSERIDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BUSINESSREPORTID {
-            get {
-                return this.BUSINESSREPORTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BUSINESSREPORTIDField, value) != true)) {
-                    this.BUSINESSREPORTIDField = value;
-                    this.RaisePropertyChanged("BUSINESSREPORTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CHECKSTATE {
-            get {
-                return this.CHECKSTATEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CHECKSTATEField, value) != true)) {
-                    this.CHECKSTATEField = value;
-                    this.RaisePropertyChanged("CHECKSTATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CLAIMSWERE {
-            get {
-                return this.CLAIMSWEREField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CLAIMSWEREField, value) != true)) {
-                    this.CLAIMSWEREField = value;
-                    this.RaisePropertyChanged("CLAIMSWERE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CLAIMSWERENAME {
-            get {
-                return this.CLAIMSWERENAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CLAIMSWERENAMEField, value) != true)) {
-                    this.CLAIMSWERENAMEField = value;
-                    this.RaisePropertyChanged("CLAIMSWERENAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string COMPUTINGTIME {
-            get {
-                return this.COMPUTINGTIMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.COMPUTINGTIMEField, value) != true)) {
-                    this.COMPUTINGTIMEField = value;
-                    this.RaisePropertyChanged("COMPUTINGTIME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CONTENT {
-            get {
-                return this.CONTENTField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CONTENTField, value) != true)) {
-                    this.CONTENTField = value;
-                    this.RaisePropertyChanged("CONTENT");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATECOMPANYID {
-            get {
-                return this.CREATECOMPANYIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATECOMPANYIDField, value) != true)) {
-                    this.CREATECOMPANYIDField = value;
-                    this.RaisePropertyChanged("CREATECOMPANYID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> CREATEDATE {
-            get {
-                return this.CREATEDATEField;
-            }
-            set {
-                if ((this.CREATEDATEField.Equals(value) != true)) {
-                    this.CREATEDATEField = value;
-                    this.RaisePropertyChanged("CREATEDATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEDEPARTMENTID {
-            get {
-                return this.CREATEDEPARTMENTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEDEPARTMENTIDField, value) != true)) {
-                    this.CREATEDEPARTMENTIDField = value;
-                    this.RaisePropertyChanged("CREATEDEPARTMENTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEPOSTID {
-            get {
-                return this.CREATEPOSTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEPOSTIDField, value) != true)) {
-                    this.CREATEPOSTIDField = value;
-                    this.RaisePropertyChanged("CREATEPOSTID");
-                }
-            }
-        }
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP TravelmanagementField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string CREATEUSERID {
@@ -331,53 +312,66 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEUSERNAME {
+        public string Cicty {
             get {
-                return this.CREATEUSERNAMEField;
+                return this.CictyField;
             }
             set {
-                if ((object.ReferenceEquals(this.CREATEUSERNAMEField, value) != true)) {
-                    this.CREATEUSERNAMEField = value;
-                    this.RaisePropertyChanged("CREATEUSERNAME");
+                if ((object.ReferenceEquals(this.CictyField, value) != true)) {
+                    this.CictyField = value;
+                    this.RaisePropertyChanged("Cicty");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ENDCITYNAME {
+        public string Cictys {
             get {
-                return this.ENDCITYNAMEField;
+                return this.CictysField;
             }
             set {
-                if ((object.ReferenceEquals(this.ENDCITYNAMEField, value) != true)) {
-                    this.ENDCITYNAMEField = value;
-                    this.RaisePropertyChanged("ENDCITYNAME");
+                if ((object.ReferenceEquals(this.CictysField, value) != true)) {
+                    this.CictysField = value;
+                    this.RaisePropertyChanged("Cictys");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ISFROMWP {
+        public string Endtime {
             get {
-                return this.ISFROMWPField;
+                return this.EndtimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.ISFROMWPField, value) != true)) {
-                    this.ISFROMWPField = value;
-                    this.RaisePropertyChanged("ISFROMWP");
+                if ((object.ReferenceEquals(this.EndtimeField, value) != true)) {
+                    this.EndtimeField = value;
+                    this.RaisePropertyChanged("Endtime");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NOBUDGETCLAIMS {
+        public string Guids {
             get {
-                return this.NOBUDGETCLAIMSField;
+                return this.GuidsField;
             }
             set {
-                if ((object.ReferenceEquals(this.NOBUDGETCLAIMSField, value) != true)) {
-                    this.NOBUDGETCLAIMSField = value;
-                    this.RaisePropertyChanged("NOBUDGETCLAIMS");
+                if ((object.ReferenceEquals(this.GuidsField, value) != true)) {
+                    this.GuidsField = value;
+                    this.RaisePropertyChanged("Guids");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NoClaims {
+            get {
+                return this.NoClaimsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NoClaimsField, value) != true)) {
+                    this.NoClaimsField = value;
+                    this.RaisePropertyChanged("NoClaims");
                 }
             }
         }
@@ -396,19 +390,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERCOMPANYNAME {
-            get {
-                return this.OWNERCOMPANYNAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OWNERCOMPANYNAMEField, value) != true)) {
-                    this.OWNERCOMPANYNAMEField = value;
-                    this.RaisePropertyChanged("OWNERCOMPANYNAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string OWNERDEPARTMENTID {
             get {
                 return this.OWNERDEPARTMENTIDField;
@@ -417,19 +398,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 if ((object.ReferenceEquals(this.OWNERDEPARTMENTIDField, value) != true)) {
                     this.OWNERDEPARTMENTIDField = value;
                     this.RaisePropertyChanged("OWNERDEPARTMENTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERDEPARTMENTNAME {
-            get {
-                return this.OWNERDEPARTMENTNAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OWNERDEPARTMENTNAMEField, value) != true)) {
-                    this.OWNERDEPARTMENTNAMEField = value;
-                    this.RaisePropertyChanged("OWNERDEPARTMENTNAME");
                 }
             }
         }
@@ -448,19 +416,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERNAME {
-            get {
-                return this.OWNERNAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OWNERNAMEField, value) != true)) {
-                    this.OWNERNAMEField = value;
-                    this.RaisePropertyChanged("OWNERNAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string OWNERPOSTID {
             get {
                 return this.OWNERPOSTIDField;
@@ -474,184 +429,128 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERPOSTNAME {
+        public string ReportCheckState {
             get {
-                return this.OWNERPOSTNAMEField;
+                return this.ReportCheckStateField;
             }
             set {
-                if ((object.ReferenceEquals(this.OWNERPOSTNAMEField, value) != true)) {
-                    this.OWNERPOSTNAMEField = value;
-                    this.RaisePropertyChanged("OWNERPOSTNAME");
+                if ((object.ReferenceEquals(this.ReportCheckStateField, value) != true)) {
+                    this.ReportCheckStateField = value;
+                    this.RaisePropertyChanged("ReportCheckState");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string POSTLEVEL {
+        public string ReportId {
             get {
-                return this.POSTLEVELField;
+                return this.ReportIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.POSTLEVELField, value) != true)) {
-                    this.POSTLEVELField = value;
-                    this.RaisePropertyChanged("POSTLEVEL");
+                if ((object.ReferenceEquals(this.ReportIdField, value) != true)) {
+                    this.ReportIdField = value;
+                    this.RaisePropertyChanged("ReportId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> REIMBURSEMENTOFCOSTS {
+        public string Startdate {
             get {
-                return this.REIMBURSEMENTOFCOSTSField;
+                return this.StartdateField;
             }
             set {
-                if ((this.REIMBURSEMENTOFCOSTSField.Equals(value) != true)) {
-                    this.REIMBURSEMENTOFCOSTSField = value;
-                    this.RaisePropertyChanged("REIMBURSEMENTOFCOSTS");
+                if ((object.ReferenceEquals(this.StartdateField, value) != true)) {
+                    this.StartdateField = value;
+                    this.RaisePropertyChanged("Startdate");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> REIMBURSEMENTTIME {
+        public string StateReimbursement {
             get {
-                return this.REIMBURSEMENTTIMEField;
+                return this.StateReimbursementField;
             }
             set {
-                if ((this.REIMBURSEMENTTIMEField.Equals(value) != true)) {
-                    this.REIMBURSEMENTTIMEField = value;
-                    this.RaisePropertyChanged("REIMBURSEMENTTIME");
+                if ((object.ReferenceEquals(this.StateReimbursementField, value) != true)) {
+                    this.StateReimbursementField = value;
+                    this.RaisePropertyChanged("StateReimbursement");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string REMARKS {
+        public int Tdetail {
             get {
-                return this.REMARKSField;
+                return this.TdetailField;
             }
             set {
-                if ((object.ReferenceEquals(this.REMARKSField, value) != true)) {
-                    this.REMARKSField = value;
-                    this.RaisePropertyChanged("REMARKS");
+                if ((this.TdetailField.Equals(value) != true)) {
+                    this.TdetailField = value;
+                    this.RaisePropertyChanged("Tdetail");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string STARTCITYNAME {
+        public string TrCheckState {
             get {
-                return this.STARTCITYNAMEField;
+                return this.TrCheckStateField;
             }
             set {
-                if ((object.ReferenceEquals(this.STARTCITYNAMEField, value) != true)) {
-                    this.STARTCITYNAMEField = value;
-                    this.RaisePropertyChanged("STARTCITYNAME");
+                if ((object.ReferenceEquals(this.TrCheckStateField, value) != true)) {
+                    this.TrCheckStateField = value;
+                    this.RaisePropertyChanged("TrCheckState");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TEL {
+        public string TrId {
             get {
-                return this.TELField;
+                return this.TrIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.TELField, value) != true)) {
-                    this.TELField = value;
-                    this.RaisePropertyChanged("TEL");
+                if ((object.ReferenceEquals(this.TrIdField, value) != true)) {
+                    this.TrIdField = value;
+                    this.RaisePropertyChanged("TrId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> THETOTALCOST {
+        public string TraveAppCheckState {
             get {
-                return this.THETOTALCOSTField;
+                return this.TraveAppCheckStateField;
             }
             set {
-                if ((this.THETOTALCOSTField.Equals(value) != true)) {
-                    this.THETOTALCOSTField = value;
-                    this.RaisePropertyChanged("THETOTALCOST");
+                if ((object.ReferenceEquals(this.TraveAppCheckStateField, value) != true)) {
+                    this.TraveAppCheckStateField = value;
+                    this.RaisePropertyChanged("TraveAppCheckState");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TRAVELREIMBURSEMENTID {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP Travelmanagement {
             get {
-                return this.TRAVELREIMBURSEMENTIDField;
+                return this.TravelmanagementField;
             }
             set {
-                if ((object.ReferenceEquals(this.TRAVELREIMBURSEMENTIDField, value) != true)) {
-                    this.TRAVELREIMBURSEMENTIDField = value;
-                    this.RaisePropertyChanged("TRAVELREIMBURSEMENTID");
+                if ((object.ReferenceEquals(this.TravelmanagementField, value) != true)) {
+                    this.TravelmanagementField = value;
+                    this.RaisePropertyChanged("Travelmanagement");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP T_OA_BUSINESSTRIP {
-            get {
-                return this.T_OA_BUSINESSTRIPField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.T_OA_BUSINESSTRIPField, value) != true)) {
-                    this.T_OA_BUSINESSTRIPField = value;
-                    this.RaisePropertyChanged("T_OA_BUSINESSTRIP");
-                }
-            }
-        }
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk T_OA_BUSINESSTRIPReference {
-            get {
-                return this.T_OA_BUSINESSTRIPReferenceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.T_OA_BUSINESSTRIPReferenceField, value) != true)) {
-                    this.T_OA_BUSINESSTRIPReferenceField = value;
-                    this.RaisePropertyChanged("T_OA_BUSINESSTRIPReference");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL> T_OA_REIMBURSEMENTDETAIL {
-            get {
-                return this.T_OA_REIMBURSEMENTDETAILField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.T_OA_REIMBURSEMENTDETAILField, value) != true)) {
-                    this.T_OA_REIMBURSEMENTDETAILField = value;
-                    this.RaisePropertyChanged("T_OA_REIMBURSEMENTDETAIL");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> UPDATEDATE {
-            get {
-                return this.UPDATEDATEField;
-            }
-            set {
-                if ((this.UPDATEDATEField.Equals(value) != true)) {
-                    this.UPDATEDATEField = value;
-                    this.RaisePropertyChanged("UPDATEDATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UPDATEUSERID {
-            get {
-                return this.UPDATEUSERIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UPDATEUSERIDField, value) != true)) {
-                    this.UPDATEUSERIDField = value;
-                    this.RaisePropertyChanged("UPDATEUSERID");
-                }
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -1234,6 +1133,101 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StructuralObject", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses", IsReference=true)]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONREQUIRE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDISTRIBUTE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFO))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFOTEMPLET))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREAALLOWANCE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREADIFFERENCE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREACITY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CANTAKETHEPLANELINE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_PROGRAMAPPLICATIONS))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TAKETHESTANDARDTRANSPORT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+    public partial class StructuralObject : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityObject", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses", IsReference=true)]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONREQUIRE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDISTRIBUTE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFO))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFOTEMPLET))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREAALLOWANCE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREADIFFERENCE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREACITY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CANTAKETHEPLANELINE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_PROGRAMAPPLICATIONS))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TAKETHESTANDARDTRANSPORT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+    public partial class EntityObject : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject {
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey EntityKeyField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey EntityKey {
+            get {
+                return this.EntityKeyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EntityKeyField, value) != true)) {
+                    this.EntityKeyField = value;
+                    this.RaisePropertyChanged("EntityKey");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_BUSINESSTRIPDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
     public partial class T_OA_BUSINESSTRIPDETAIL : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
@@ -1458,6 +1452,567 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 if ((object.ReferenceEquals(this.T_OA_BUSINESSTRIPReferenceField, value) != true)) {
                     this.T_OA_BUSINESSTRIPReferenceField = value;
                     this.RaisePropertyChanged("T_OA_BUSINESSTRIPReference");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_TRAVELREIMBURSEMENT", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    public partial class T_OA_TRAVELREIMBURSEMENT : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
+        
+        private string BUSINESSREPORTIDField;
+        
+        private string CHECKSTATEField;
+        
+        private string CLAIMSWEREField;
+        
+        private string CLAIMSWERENAMEField;
+        
+        private string COMPUTINGTIMEField;
+        
+        private string CONTENTField;
+        
+        private string CREATECOMPANYIDField;
+        
+        private System.Nullable<System.DateTime> CREATEDATEField;
+        
+        private string CREATEDEPARTMENTIDField;
+        
+        private string CREATEPOSTIDField;
+        
+        private string CREATEUSERIDField;
+        
+        private string CREATEUSERNAMEField;
+        
+        private string ENDCITYNAMEField;
+        
+        private string ISFROMWPField;
+        
+        private string NOBUDGETCLAIMSField;
+        
+        private string OWNERCOMPANYIDField;
+        
+        private string OWNERCOMPANYNAMEField;
+        
+        private string OWNERDEPARTMENTIDField;
+        
+        private string OWNERDEPARTMENTNAMEField;
+        
+        private string OWNERIDField;
+        
+        private string OWNERNAMEField;
+        
+        private string OWNERPOSTIDField;
+        
+        private string OWNERPOSTNAMEField;
+        
+        private string PAYINFOField;
+        
+        private string POSTLEVELField;
+        
+        private System.Nullable<decimal> REIMBURSEMENTOFCOSTSField;
+        
+        private System.Nullable<System.DateTime> REIMBURSEMENTTIMEField;
+        
+        private string REMARKSField;
+        
+        private string STARTCITYNAMEField;
+        
+        private string TELField;
+        
+        private System.Nullable<decimal> THETOTALCOSTField;
+        
+        private string TRAVELREIMBURSEMENTIDField;
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP T_OA_BUSINESSTRIPField;
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk T_OA_BUSINESSTRIPReferenceField;
+        
+        private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL> T_OA_REIMBURSEMENTDETAILField;
+        
+        private System.Nullable<System.DateTime> UPDATEDATEField;
+        
+        private string UPDATEUSERIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BUSINESSREPORTID {
+            get {
+                return this.BUSINESSREPORTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BUSINESSREPORTIDField, value) != true)) {
+                    this.BUSINESSREPORTIDField = value;
+                    this.RaisePropertyChanged("BUSINESSREPORTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CHECKSTATE {
+            get {
+                return this.CHECKSTATEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CHECKSTATEField, value) != true)) {
+                    this.CHECKSTATEField = value;
+                    this.RaisePropertyChanged("CHECKSTATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CLAIMSWERE {
+            get {
+                return this.CLAIMSWEREField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CLAIMSWEREField, value) != true)) {
+                    this.CLAIMSWEREField = value;
+                    this.RaisePropertyChanged("CLAIMSWERE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CLAIMSWERENAME {
+            get {
+                return this.CLAIMSWERENAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CLAIMSWERENAMEField, value) != true)) {
+                    this.CLAIMSWERENAMEField = value;
+                    this.RaisePropertyChanged("CLAIMSWERENAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string COMPUTINGTIME {
+            get {
+                return this.COMPUTINGTIMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.COMPUTINGTIMEField, value) != true)) {
+                    this.COMPUTINGTIMEField = value;
+                    this.RaisePropertyChanged("COMPUTINGTIME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CONTENT {
+            get {
+                return this.CONTENTField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CONTENTField, value) != true)) {
+                    this.CONTENTField = value;
+                    this.RaisePropertyChanged("CONTENT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATECOMPANYID {
+            get {
+                return this.CREATECOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATECOMPANYIDField, value) != true)) {
+                    this.CREATECOMPANYIDField = value;
+                    this.RaisePropertyChanged("CREATECOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> CREATEDATE {
+            get {
+                return this.CREATEDATEField;
+            }
+            set {
+                if ((this.CREATEDATEField.Equals(value) != true)) {
+                    this.CREATEDATEField = value;
+                    this.RaisePropertyChanged("CREATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEDEPARTMENTID {
+            get {
+                return this.CREATEDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEDEPARTMENTIDField, value) != true)) {
+                    this.CREATEDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("CREATEDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEPOSTID {
+            get {
+                return this.CREATEPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEPOSTIDField, value) != true)) {
+                    this.CREATEPOSTIDField = value;
+                    this.RaisePropertyChanged("CREATEPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERID {
+            get {
+                return this.CREATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
+                    this.CREATEUSERIDField = value;
+                    this.RaisePropertyChanged("CREATEUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERNAME {
+            get {
+                return this.CREATEUSERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERNAMEField, value) != true)) {
+                    this.CREATEUSERNAMEField = value;
+                    this.RaisePropertyChanged("CREATEUSERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ENDCITYNAME {
+            get {
+                return this.ENDCITYNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ENDCITYNAMEField, value) != true)) {
+                    this.ENDCITYNAMEField = value;
+                    this.RaisePropertyChanged("ENDCITYNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ISFROMWP {
+            get {
+                return this.ISFROMWPField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ISFROMWPField, value) != true)) {
+                    this.ISFROMWPField = value;
+                    this.RaisePropertyChanged("ISFROMWP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NOBUDGETCLAIMS {
+            get {
+                return this.NOBUDGETCLAIMSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOBUDGETCLAIMSField, value) != true)) {
+                    this.NOBUDGETCLAIMSField = value;
+                    this.RaisePropertyChanged("NOBUDGETCLAIMS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERCOMPANYID {
+            get {
+                return this.OWNERCOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERCOMPANYIDField, value) != true)) {
+                    this.OWNERCOMPANYIDField = value;
+                    this.RaisePropertyChanged("OWNERCOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERCOMPANYNAME {
+            get {
+                return this.OWNERCOMPANYNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERCOMPANYNAMEField, value) != true)) {
+                    this.OWNERCOMPANYNAMEField = value;
+                    this.RaisePropertyChanged("OWNERCOMPANYNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERDEPARTMENTID {
+            get {
+                return this.OWNERDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERDEPARTMENTIDField, value) != true)) {
+                    this.OWNERDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("OWNERDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERDEPARTMENTNAME {
+            get {
+                return this.OWNERDEPARTMENTNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERDEPARTMENTNAMEField, value) != true)) {
+                    this.OWNERDEPARTMENTNAMEField = value;
+                    this.RaisePropertyChanged("OWNERDEPARTMENTNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERID {
+            get {
+                return this.OWNERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERIDField, value) != true)) {
+                    this.OWNERIDField = value;
+                    this.RaisePropertyChanged("OWNERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERNAME {
+            get {
+                return this.OWNERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERNAMEField, value) != true)) {
+                    this.OWNERNAMEField = value;
+                    this.RaisePropertyChanged("OWNERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERPOSTID {
+            get {
+                return this.OWNERPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERPOSTIDField, value) != true)) {
+                    this.OWNERPOSTIDField = value;
+                    this.RaisePropertyChanged("OWNERPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERPOSTNAME {
+            get {
+                return this.OWNERPOSTNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERPOSTNAMEField, value) != true)) {
+                    this.OWNERPOSTNAMEField = value;
+                    this.RaisePropertyChanged("OWNERPOSTNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PAYINFO {
+            get {
+                return this.PAYINFOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PAYINFOField, value) != true)) {
+                    this.PAYINFOField = value;
+                    this.RaisePropertyChanged("PAYINFO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string POSTLEVEL {
+            get {
+                return this.POSTLEVELField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.POSTLEVELField, value) != true)) {
+                    this.POSTLEVELField = value;
+                    this.RaisePropertyChanged("POSTLEVEL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> REIMBURSEMENTOFCOSTS {
+            get {
+                return this.REIMBURSEMENTOFCOSTSField;
+            }
+            set {
+                if ((this.REIMBURSEMENTOFCOSTSField.Equals(value) != true)) {
+                    this.REIMBURSEMENTOFCOSTSField = value;
+                    this.RaisePropertyChanged("REIMBURSEMENTOFCOSTS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> REIMBURSEMENTTIME {
+            get {
+                return this.REIMBURSEMENTTIMEField;
+            }
+            set {
+                if ((this.REIMBURSEMENTTIMEField.Equals(value) != true)) {
+                    this.REIMBURSEMENTTIMEField = value;
+                    this.RaisePropertyChanged("REIMBURSEMENTTIME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string REMARKS {
+            get {
+                return this.REMARKSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.REMARKSField, value) != true)) {
+                    this.REMARKSField = value;
+                    this.RaisePropertyChanged("REMARKS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string STARTCITYNAME {
+            get {
+                return this.STARTCITYNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.STARTCITYNAMEField, value) != true)) {
+                    this.STARTCITYNAMEField = value;
+                    this.RaisePropertyChanged("STARTCITYNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TEL {
+            get {
+                return this.TELField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TELField, value) != true)) {
+                    this.TELField = value;
+                    this.RaisePropertyChanged("TEL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> THETOTALCOST {
+            get {
+                return this.THETOTALCOSTField;
+            }
+            set {
+                if ((this.THETOTALCOSTField.Equals(value) != true)) {
+                    this.THETOTALCOSTField = value;
+                    this.RaisePropertyChanged("THETOTALCOST");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TRAVELREIMBURSEMENTID {
+            get {
+                return this.TRAVELREIMBURSEMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TRAVELREIMBURSEMENTIDField, value) != true)) {
+                    this.TRAVELREIMBURSEMENTIDField = value;
+                    this.RaisePropertyChanged("TRAVELREIMBURSEMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP T_OA_BUSINESSTRIP {
+            get {
+                return this.T_OA_BUSINESSTRIPField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_BUSINESSTRIPField, value) != true)) {
+                    this.T_OA_BUSINESSTRIPField = value;
+                    this.RaisePropertyChanged("T_OA_BUSINESSTRIP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk T_OA_BUSINESSTRIPReference {
+            get {
+                return this.T_OA_BUSINESSTRIPReferenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_BUSINESSTRIPReferenceField, value) != true)) {
+                    this.T_OA_BUSINESSTRIPReferenceField = value;
+                    this.RaisePropertyChanged("T_OA_BUSINESSTRIPReference");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL> T_OA_REIMBURSEMENTDETAIL {
+            get {
+                return this.T_OA_REIMBURSEMENTDETAILField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_REIMBURSEMENTDETAILField, value) != true)) {
+                    this.T_OA_REIMBURSEMENTDETAILField = value;
+                    this.RaisePropertyChanged("T_OA_REIMBURSEMENTDETAIL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> UPDATEDATE {
+            get {
+                return this.UPDATEDATEField;
+            }
+            set {
+                if ((this.UPDATEDATEField.Equals(value) != true)) {
+                    this.UPDATEDATEField = value;
+                    this.RaisePropertyChanged("UPDATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UPDATEUSERID {
+            get {
+                return this.UPDATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UPDATEUSERIDField, value) != true)) {
+                    this.UPDATEUSERIDField = value;
+                    this.RaisePropertyChanged("UPDATEUSERID");
                 }
             }
         }
@@ -1839,6 +2394,312 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 if ((object.ReferenceEquals(this.UPDATEUSERIDField, value) != true)) {
                     this.UPDATEUSERIDField = value;
                     this.RaisePropertyChanged("UPDATEUSERID");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_ORDERMEAL", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    public partial class T_OA_ORDERMEAL : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
+        
+        private string CONTENTField;
+        
+        private string CREATECOMPANYIDField;
+        
+        private System.DateTime CREATEDATEField;
+        
+        private string CREATEDEPARTMENTIDField;
+        
+        private string CREATEPOSTIDField;
+        
+        private string CREATEUSERIDField;
+        
+        private string CREATEUSERNAMEField;
+        
+        private string ORDERMEALFLAGField;
+        
+        private string ORDERMEALIDField;
+        
+        private string ORDERMEALTITLEField;
+        
+        private string OWNERCOMPANYIDField;
+        
+        private string OWNERDEPARTMENTIDField;
+        
+        private string OWNERIDField;
+        
+        private string OWNERNAMEField;
+        
+        private string OWNERPOSTIDField;
+        
+        private string REMARKField;
+        
+        private string TELField;
+        
+        private System.Nullable<System.DateTime> UPDATEDATEField;
+        
+        private string UPDATEUSERIDField;
+        
+        private string UPDATEUSERNAMEField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CONTENT {
+            get {
+                return this.CONTENTField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CONTENTField, value) != true)) {
+                    this.CONTENTField = value;
+                    this.RaisePropertyChanged("CONTENT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATECOMPANYID {
+            get {
+                return this.CREATECOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATECOMPANYIDField, value) != true)) {
+                    this.CREATECOMPANYIDField = value;
+                    this.RaisePropertyChanged("CREATECOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CREATEDATE {
+            get {
+                return this.CREATEDATEField;
+            }
+            set {
+                if ((this.CREATEDATEField.Equals(value) != true)) {
+                    this.CREATEDATEField = value;
+                    this.RaisePropertyChanged("CREATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEDEPARTMENTID {
+            get {
+                return this.CREATEDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEDEPARTMENTIDField, value) != true)) {
+                    this.CREATEDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("CREATEDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEPOSTID {
+            get {
+                return this.CREATEPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEPOSTIDField, value) != true)) {
+                    this.CREATEPOSTIDField = value;
+                    this.RaisePropertyChanged("CREATEPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERID {
+            get {
+                return this.CREATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
+                    this.CREATEUSERIDField = value;
+                    this.RaisePropertyChanged("CREATEUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERNAME {
+            get {
+                return this.CREATEUSERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERNAMEField, value) != true)) {
+                    this.CREATEUSERNAMEField = value;
+                    this.RaisePropertyChanged("CREATEUSERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ORDERMEALFLAG {
+            get {
+                return this.ORDERMEALFLAGField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ORDERMEALFLAGField, value) != true)) {
+                    this.ORDERMEALFLAGField = value;
+                    this.RaisePropertyChanged("ORDERMEALFLAG");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ORDERMEALID {
+            get {
+                return this.ORDERMEALIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ORDERMEALIDField, value) != true)) {
+                    this.ORDERMEALIDField = value;
+                    this.RaisePropertyChanged("ORDERMEALID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ORDERMEALTITLE {
+            get {
+                return this.ORDERMEALTITLEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ORDERMEALTITLEField, value) != true)) {
+                    this.ORDERMEALTITLEField = value;
+                    this.RaisePropertyChanged("ORDERMEALTITLE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERCOMPANYID {
+            get {
+                return this.OWNERCOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERCOMPANYIDField, value) != true)) {
+                    this.OWNERCOMPANYIDField = value;
+                    this.RaisePropertyChanged("OWNERCOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERDEPARTMENTID {
+            get {
+                return this.OWNERDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERDEPARTMENTIDField, value) != true)) {
+                    this.OWNERDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("OWNERDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERID {
+            get {
+                return this.OWNERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERIDField, value) != true)) {
+                    this.OWNERIDField = value;
+                    this.RaisePropertyChanged("OWNERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERNAME {
+            get {
+                return this.OWNERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERNAMEField, value) != true)) {
+                    this.OWNERNAMEField = value;
+                    this.RaisePropertyChanged("OWNERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERPOSTID {
+            get {
+                return this.OWNERPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERPOSTIDField, value) != true)) {
+                    this.OWNERPOSTIDField = value;
+                    this.RaisePropertyChanged("OWNERPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string REMARK {
+            get {
+                return this.REMARKField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.REMARKField, value) != true)) {
+                    this.REMARKField = value;
+                    this.RaisePropertyChanged("REMARK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TEL {
+            get {
+                return this.TELField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TELField, value) != true)) {
+                    this.TELField = value;
+                    this.RaisePropertyChanged("TEL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> UPDATEDATE {
+            get {
+                return this.UPDATEDATEField;
+            }
+            set {
+                if ((this.UPDATEDATEField.Equals(value) != true)) {
+                    this.UPDATEDATEField = value;
+                    this.RaisePropertyChanged("UPDATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UPDATEUSERID {
+            get {
+                return this.UPDATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UPDATEUSERIDField, value) != true)) {
+                    this.UPDATEUSERIDField = value;
+                    this.RaisePropertyChanged("UPDATEUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UPDATEUSERNAME {
+            get {
+                return this.UPDATEUSERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UPDATEUSERNAMEField, value) != true)) {
+                    this.UPDATEUSERNAMEField = value;
+                    this.RaisePropertyChanged("UPDATEUSERNAME");
                 }
             }
         }
@@ -4093,10 +4954,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIREDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
-    public partial class T_OA_REQUIREDETAIL : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
-        
-        private string CODEField;
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIREDETAIL2", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    public partial class T_OA_REQUIREDETAIL2 : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CONTENTField;
         
@@ -4122,30 +4981,21 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private string OWNERPOSTIDField;
         
-        private string REQUIREDETAILIDField;
+        private string REQUIREDETAIL2IDField;
         
         private string REQUIREMASTERIDField;
         
         private decimal SUBJECTIDField;
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER T_OA_REQUIREMASTERField;
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk T_OA_REQUIREMASTERReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
         private string UPDATEUSERIDField;
         
         private string UPDATEUSERNAMEField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CODE {
-            get {
-                return this.CODEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CODEField, value) != true)) {
-                    this.CODEField = value;
-                    this.RaisePropertyChanged("CODE");
-                }
-            }
-        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string CONTENT {
@@ -4304,14 +5154,14 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string REQUIREDETAILID {
+        public string REQUIREDETAIL2ID {
             get {
-                return this.REQUIREDETAILIDField;
+                return this.REQUIREDETAIL2IDField;
             }
             set {
-                if ((object.ReferenceEquals(this.REQUIREDETAILIDField, value) != true)) {
-                    this.REQUIREDETAILIDField = value;
-                    this.RaisePropertyChanged("REQUIREDETAILID");
+                if ((object.ReferenceEquals(this.REQUIREDETAIL2IDField, value) != true)) {
+                    this.REQUIREDETAIL2IDField = value;
+                    this.RaisePropertyChanged("REQUIREDETAIL2ID");
                 }
             }
         }
@@ -4338,6 +5188,32 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 if ((this.SUBJECTIDField.Equals(value) != true)) {
                     this.SUBJECTIDField = value;
                     this.RaisePropertyChanged("SUBJECTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER T_OA_REQUIREMASTER {
+            get {
+                return this.T_OA_REQUIREMASTERField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_REQUIREMASTERField, value) != true)) {
+                    this.T_OA_REQUIREMASTERField = value;
+                    this.RaisePropertyChanged("T_OA_REQUIREMASTER");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk T_OA_REQUIREMASTERReference {
+            get {
+                return this.T_OA_REQUIREMASTERReferenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_REQUIREMASTERReferenceField, value) != true)) {
+                    this.T_OA_REQUIREMASTERReferenceField = value;
+                    this.RaisePropertyChanged("T_OA_REQUIREMASTERReference");
                 }
             }
         }
@@ -4384,10 +5260,10 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIRERESULT", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
-    public partial class T_OA_REQUIRERESULT : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIREMASTER", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    public partial class T_OA_REQUIREMASTER : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
-        private string CODEField;
+        private string CHECKSTATEField;
         
         private string CONTENTField;
         
@@ -4413,19 +5289,15 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private string OWNERPOSTIDField;
         
-        private string REQUIRERESULTIDField;
+        private string REQUIREMASTERIDField;
         
-        private string RESULTField;
+        private string REQUIRETITLEField;
         
-        private decimal SUBJECTIDField;
+        private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE> T_OA_REQUIREField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE T_OA_REQUIREField;
+        private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> T_OA_REQUIREDETAIL2Field;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER T_OA_REQUIREMASTERField;
-        
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk T_OA_REQUIREMASTERReferenceField;
-        
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk T_OA_REQUIREReferenceField;
+        private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT> T_OA_REQUIRERESULTField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -4434,14 +5306,14 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         private string UPDATEUSERNAMEField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CODE {
+        public string CHECKSTATE {
             get {
-                return this.CODEField;
+                return this.CHECKSTATEField;
             }
             set {
-                if ((object.ReferenceEquals(this.CODEField, value) != true)) {
-                    this.CODEField = value;
-                    this.RaisePropertyChanged("CODE");
+                if ((object.ReferenceEquals(this.CHECKSTATEField, value) != true)) {
+                    this.CHECKSTATEField = value;
+                    this.RaisePropertyChanged("CHECKSTATE");
                 }
             }
         }
@@ -4603,46 +5475,33 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string REQUIRERESULTID {
+        public string REQUIREMASTERID {
             get {
-                return this.REQUIRERESULTIDField;
+                return this.REQUIREMASTERIDField;
             }
             set {
-                if ((object.ReferenceEquals(this.REQUIRERESULTIDField, value) != true)) {
-                    this.REQUIRERESULTIDField = value;
-                    this.RaisePropertyChanged("REQUIRERESULTID");
+                if ((object.ReferenceEquals(this.REQUIREMASTERIDField, value) != true)) {
+                    this.REQUIREMASTERIDField = value;
+                    this.RaisePropertyChanged("REQUIREMASTERID");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RESULT {
+        public string REQUIRETITLE {
             get {
-                return this.RESULTField;
+                return this.REQUIRETITLEField;
             }
             set {
-                if ((object.ReferenceEquals(this.RESULTField, value) != true)) {
-                    this.RESULTField = value;
-                    this.RaisePropertyChanged("RESULT");
+                if ((object.ReferenceEquals(this.REQUIRETITLEField, value) != true)) {
+                    this.REQUIRETITLEField = value;
+                    this.RaisePropertyChanged("REQUIRETITLE");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal SUBJECTID {
-            get {
-                return this.SUBJECTIDField;
-            }
-            set {
-                if ((this.SUBJECTIDField.Equals(value) != true)) {
-                    this.SUBJECTIDField = value;
-                    this.RaisePropertyChanged("SUBJECTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE T_OA_REQUIRE {
+        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE> T_OA_REQUIRE {
             get {
                 return this.T_OA_REQUIREField;
             }
@@ -4655,40 +5514,27 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER T_OA_REQUIREMASTER {
+        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> T_OA_REQUIREDETAIL2 {
             get {
-                return this.T_OA_REQUIREMASTERField;
+                return this.T_OA_REQUIREDETAIL2Field;
             }
             set {
-                if ((object.ReferenceEquals(this.T_OA_REQUIREMASTERField, value) != true)) {
-                    this.T_OA_REQUIREMASTERField = value;
-                    this.RaisePropertyChanged("T_OA_REQUIREMASTER");
+                if ((object.ReferenceEquals(this.T_OA_REQUIREDETAIL2Field, value) != true)) {
+                    this.T_OA_REQUIREDETAIL2Field = value;
+                    this.RaisePropertyChanged("T_OA_REQUIREDETAIL2");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk T_OA_REQUIREMASTERReference {
+        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT> T_OA_REQUIRERESULT {
             get {
-                return this.T_OA_REQUIREMASTERReferenceField;
+                return this.T_OA_REQUIRERESULTField;
             }
             set {
-                if ((object.ReferenceEquals(this.T_OA_REQUIREMASTERReferenceField, value) != true)) {
-                    this.T_OA_REQUIREMASTERReferenceField = value;
-                    this.RaisePropertyChanged("T_OA_REQUIREMASTERReference");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk T_OA_REQUIREReference {
-            get {
-                return this.T_OA_REQUIREReferenceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.T_OA_REQUIREReferenceField, value) != true)) {
-                    this.T_OA_REQUIREReferenceField = value;
-                    this.RaisePropertyChanged("T_OA_REQUIREReference");
+                if ((object.ReferenceEquals(this.T_OA_REQUIRERESULTField, value) != true)) {
+                    this.T_OA_REQUIRERESULTField = value;
+                    this.RaisePropertyChanged("T_OA_REQUIRERESULT");
                 }
             }
         }
@@ -5437,10 +6283,10 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIREMASTER", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
-    public partial class T_OA_REQUIREMASTER : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIRERESULT", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    public partial class T_OA_REQUIRERESULT : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
-        private string CHECKSTATEField;
+        private string CODEField;
         
         private string CONTENTField;
         
@@ -5466,15 +6312,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private string OWNERPOSTIDField;
         
-        private string REQUIREMASTERIDField;
+        private string REQUIRERESULTIDField;
         
-        private string REQUIRETITLEField;
+        private string RESULTField;
         
-        private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE> T_OA_REQUIREField;
+        private decimal SUBJECTIDField;
         
-        private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> T_OA_REQUIREDETAIL2Field;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE T_OA_REQUIREField;
         
-        private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT> T_OA_REQUIRERESULTField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER T_OA_REQUIREMASTERField;
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk T_OA_REQUIREMASTERReferenceField;
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk T_OA_REQUIREReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -5483,14 +6333,14 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         private string UPDATEUSERNAMEField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CHECKSTATE {
+        public string CODE {
             get {
-                return this.CHECKSTATEField;
+                return this.CODEField;
             }
             set {
-                if ((object.ReferenceEquals(this.CHECKSTATEField, value) != true)) {
-                    this.CHECKSTATEField = value;
-                    this.RaisePropertyChanged("CHECKSTATE");
+                if ((object.ReferenceEquals(this.CODEField, value) != true)) {
+                    this.CODEField = value;
+                    this.RaisePropertyChanged("CODE");
                 }
             }
         }
@@ -5652,33 +6502,46 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string REQUIREMASTERID {
+        public string REQUIRERESULTID {
             get {
-                return this.REQUIREMASTERIDField;
+                return this.REQUIRERESULTIDField;
             }
             set {
-                if ((object.ReferenceEquals(this.REQUIREMASTERIDField, value) != true)) {
-                    this.REQUIREMASTERIDField = value;
-                    this.RaisePropertyChanged("REQUIREMASTERID");
+                if ((object.ReferenceEquals(this.REQUIRERESULTIDField, value) != true)) {
+                    this.REQUIRERESULTIDField = value;
+                    this.RaisePropertyChanged("REQUIRERESULTID");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string REQUIRETITLE {
+        public string RESULT {
             get {
-                return this.REQUIRETITLEField;
+                return this.RESULTField;
             }
             set {
-                if ((object.ReferenceEquals(this.REQUIRETITLEField, value) != true)) {
-                    this.REQUIRETITLEField = value;
-                    this.RaisePropertyChanged("REQUIRETITLE");
+                if ((object.ReferenceEquals(this.RESULTField, value) != true)) {
+                    this.RESULTField = value;
+                    this.RaisePropertyChanged("RESULT");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE> T_OA_REQUIRE {
+        public decimal SUBJECTID {
+            get {
+                return this.SUBJECTIDField;
+            }
+            set {
+                if ((this.SUBJECTIDField.Equals(value) != true)) {
+                    this.SUBJECTIDField = value;
+                    this.RaisePropertyChanged("SUBJECTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE T_OA_REQUIRE {
             get {
                 return this.T_OA_REQUIREField;
             }
@@ -5691,27 +6554,40 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> T_OA_REQUIREDETAIL2 {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER T_OA_REQUIREMASTER {
             get {
-                return this.T_OA_REQUIREDETAIL2Field;
+                return this.T_OA_REQUIREMASTERField;
             }
             set {
-                if ((object.ReferenceEquals(this.T_OA_REQUIREDETAIL2Field, value) != true)) {
-                    this.T_OA_REQUIREDETAIL2Field = value;
-                    this.RaisePropertyChanged("T_OA_REQUIREDETAIL2");
+                if ((object.ReferenceEquals(this.T_OA_REQUIREMASTERField, value) != true)) {
+                    this.T_OA_REQUIREMASTERField = value;
+                    this.RaisePropertyChanged("T_OA_REQUIREMASTER");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT> T_OA_REQUIRERESULT {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk T_OA_REQUIREMASTERReference {
             get {
-                return this.T_OA_REQUIRERESULTField;
+                return this.T_OA_REQUIREMASTERReferenceField;
             }
             set {
-                if ((object.ReferenceEquals(this.T_OA_REQUIRERESULTField, value) != true)) {
-                    this.T_OA_REQUIRERESULTField = value;
-                    this.RaisePropertyChanged("T_OA_REQUIRERESULT");
+                if ((object.ReferenceEquals(this.T_OA_REQUIREMASTERReferenceField, value) != true)) {
+                    this.T_OA_REQUIREMASTERReferenceField = value;
+                    this.RaisePropertyChanged("T_OA_REQUIREMASTERReference");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk T_OA_REQUIREReference {
+            get {
+                return this.T_OA_REQUIREReferenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_REQUIREReferenceField, value) != true)) {
+                    this.T_OA_REQUIREReferenceField = value;
+                    this.RaisePropertyChanged("T_OA_REQUIREReference");
                 }
             }
         }
@@ -5758,8 +6634,10 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIREDETAIL2", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
-    public partial class T_OA_REQUIREDETAIL2 : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIREDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    public partial class T_OA_REQUIREDETAIL : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
+        
+        private string CODEField;
         
         private string CONTENTField;
         
@@ -5785,21 +6663,30 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private string OWNERPOSTIDField;
         
-        private string REQUIREDETAIL2IDField;
+        private string REQUIREDETAILIDField;
         
         private string REQUIREMASTERIDField;
         
         private decimal SUBJECTIDField;
-        
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER T_OA_REQUIREMASTERField;
-        
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk T_OA_REQUIREMASTERReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
         private string UPDATEUSERIDField;
         
         private string UPDATEUSERNAMEField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CODE {
+            get {
+                return this.CODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CODEField, value) != true)) {
+                    this.CODEField = value;
+                    this.RaisePropertyChanged("CODE");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string CONTENT {
@@ -5958,14 +6845,14 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string REQUIREDETAIL2ID {
+        public string REQUIREDETAILID {
             get {
-                return this.REQUIREDETAIL2IDField;
+                return this.REQUIREDETAILIDField;
             }
             set {
-                if ((object.ReferenceEquals(this.REQUIREDETAIL2IDField, value) != true)) {
-                    this.REQUIREDETAIL2IDField = value;
-                    this.RaisePropertyChanged("REQUIREDETAIL2ID");
+                if ((object.ReferenceEquals(this.REQUIREDETAILIDField, value) != true)) {
+                    this.REQUIREDETAILIDField = value;
+                    this.RaisePropertyChanged("REQUIREDETAILID");
                 }
             }
         }
@@ -5992,32 +6879,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 if ((this.SUBJECTIDField.Equals(value) != true)) {
                     this.SUBJECTIDField = value;
                     this.RaisePropertyChanged("SUBJECTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER T_OA_REQUIREMASTER {
-            get {
-                return this.T_OA_REQUIREMASTERField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.T_OA_REQUIREMASTERField, value) != true)) {
-                    this.T_OA_REQUIREMASTERField = value;
-                    this.RaisePropertyChanged("T_OA_REQUIREMASTER");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk T_OA_REQUIREMASTERReference {
-            get {
-                return this.T_OA_REQUIREMASTERReferenceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.T_OA_REQUIREMASTERReferenceField, value) != true)) {
-                    this.T_OA_REQUIREMASTERReferenceField = value;
-                    this.RaisePropertyChanged("T_OA_REQUIREMASTERReference");
                 }
             }
         }
@@ -6508,6 +7369,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_APPROVALTYPESET", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
     public partial class T_OA_APPROVALTYPESET : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
+        private string APPROVALNAMEField;
+        
         private string CREATECOMPANYIDField;
         
         private System.DateTime CREATEDATEField;
@@ -6519,6 +7382,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         private string CREATEUSERIDField;
         
         private string CREATEUSERNAMEField;
+        
+        private string ISCOSTField;
         
         private string ORGANIZATIONIDField;
         
@@ -6539,6 +7404,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         private string UPDATEUSERIDField;
         
         private string UPDATEUSERNAMEField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string APPROVALNAME {
+            get {
+                return this.APPROVALNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.APPROVALNAMEField, value) != true)) {
+                    this.APPROVALNAMEField = value;
+                    this.RaisePropertyChanged("APPROVALNAME");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string CREATECOMPANYID {
@@ -6614,6 +7492,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 if ((object.ReferenceEquals(this.CREATEUSERNAMEField, value) != true)) {
                     this.CREATEUSERNAMEField = value;
                     this.RaisePropertyChanged("CREATEUSERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ISCOST {
+            get {
+                return this.ISCOSTField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ISCOSTField, value) != true)) {
+                    this.ISCOSTField = value;
+                    this.RaisePropertyChanged("ISCOST");
                 }
             }
         }
@@ -9145,312 +10036,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_ORDERMEAL", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
-    public partial class T_OA_ORDERMEAL : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
-        
-        private string CONTENTField;
-        
-        private string CREATECOMPANYIDField;
-        
-        private System.DateTime CREATEDATEField;
-        
-        private string CREATEDEPARTMENTIDField;
-        
-        private string CREATEPOSTIDField;
-        
-        private string CREATEUSERIDField;
-        
-        private string CREATEUSERNAMEField;
-        
-        private string ORDERMEALFLAGField;
-        
-        private string ORDERMEALIDField;
-        
-        private string ORDERMEALTITLEField;
-        
-        private string OWNERCOMPANYIDField;
-        
-        private string OWNERDEPARTMENTIDField;
-        
-        private string OWNERIDField;
-        
-        private string OWNERNAMEField;
-        
-        private string OWNERPOSTIDField;
-        
-        private string REMARKField;
-        
-        private string TELField;
-        
-        private System.Nullable<System.DateTime> UPDATEDATEField;
-        
-        private string UPDATEUSERIDField;
-        
-        private string UPDATEUSERNAMEField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CONTENT {
-            get {
-                return this.CONTENTField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CONTENTField, value) != true)) {
-                    this.CONTENTField = value;
-                    this.RaisePropertyChanged("CONTENT");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATECOMPANYID {
-            get {
-                return this.CREATECOMPANYIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATECOMPANYIDField, value) != true)) {
-                    this.CREATECOMPANYIDField = value;
-                    this.RaisePropertyChanged("CREATECOMPANYID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CREATEDATE {
-            get {
-                return this.CREATEDATEField;
-            }
-            set {
-                if ((this.CREATEDATEField.Equals(value) != true)) {
-                    this.CREATEDATEField = value;
-                    this.RaisePropertyChanged("CREATEDATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEDEPARTMENTID {
-            get {
-                return this.CREATEDEPARTMENTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEDEPARTMENTIDField, value) != true)) {
-                    this.CREATEDEPARTMENTIDField = value;
-                    this.RaisePropertyChanged("CREATEDEPARTMENTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEPOSTID {
-            get {
-                return this.CREATEPOSTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEPOSTIDField, value) != true)) {
-                    this.CREATEPOSTIDField = value;
-                    this.RaisePropertyChanged("CREATEPOSTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEUSERID {
-            get {
-                return this.CREATEUSERIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
-                    this.CREATEUSERIDField = value;
-                    this.RaisePropertyChanged("CREATEUSERID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEUSERNAME {
-            get {
-                return this.CREATEUSERNAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEUSERNAMEField, value) != true)) {
-                    this.CREATEUSERNAMEField = value;
-                    this.RaisePropertyChanged("CREATEUSERNAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ORDERMEALFLAG {
-            get {
-                return this.ORDERMEALFLAGField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ORDERMEALFLAGField, value) != true)) {
-                    this.ORDERMEALFLAGField = value;
-                    this.RaisePropertyChanged("ORDERMEALFLAG");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ORDERMEALID {
-            get {
-                return this.ORDERMEALIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ORDERMEALIDField, value) != true)) {
-                    this.ORDERMEALIDField = value;
-                    this.RaisePropertyChanged("ORDERMEALID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ORDERMEALTITLE {
-            get {
-                return this.ORDERMEALTITLEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ORDERMEALTITLEField, value) != true)) {
-                    this.ORDERMEALTITLEField = value;
-                    this.RaisePropertyChanged("ORDERMEALTITLE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERCOMPANYID {
-            get {
-                return this.OWNERCOMPANYIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OWNERCOMPANYIDField, value) != true)) {
-                    this.OWNERCOMPANYIDField = value;
-                    this.RaisePropertyChanged("OWNERCOMPANYID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERDEPARTMENTID {
-            get {
-                return this.OWNERDEPARTMENTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OWNERDEPARTMENTIDField, value) != true)) {
-                    this.OWNERDEPARTMENTIDField = value;
-                    this.RaisePropertyChanged("OWNERDEPARTMENTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERID {
-            get {
-                return this.OWNERIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OWNERIDField, value) != true)) {
-                    this.OWNERIDField = value;
-                    this.RaisePropertyChanged("OWNERID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERNAME {
-            get {
-                return this.OWNERNAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OWNERNAMEField, value) != true)) {
-                    this.OWNERNAMEField = value;
-                    this.RaisePropertyChanged("OWNERNAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERPOSTID {
-            get {
-                return this.OWNERPOSTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OWNERPOSTIDField, value) != true)) {
-                    this.OWNERPOSTIDField = value;
-                    this.RaisePropertyChanged("OWNERPOSTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string REMARK {
-            get {
-                return this.REMARKField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.REMARKField, value) != true)) {
-                    this.REMARKField = value;
-                    this.RaisePropertyChanged("REMARK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TEL {
-            get {
-                return this.TELField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TELField, value) != true)) {
-                    this.TELField = value;
-                    this.RaisePropertyChanged("TEL");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> UPDATEDATE {
-            get {
-                return this.UPDATEDATEField;
-            }
-            set {
-                if ((this.UPDATEDATEField.Equals(value) != true)) {
-                    this.UPDATEDATEField = value;
-                    this.RaisePropertyChanged("UPDATEDATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UPDATEUSERID {
-            get {
-                return this.UPDATEUSERIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UPDATEUSERIDField, value) != true)) {
-                    this.UPDATEUSERIDField = value;
-                    this.RaisePropertyChanged("UPDATEUSERID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UPDATEUSERNAME {
-            get {
-                return this.UPDATEUSERNAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UPDATEUSERNAMEField, value) != true)) {
-                    this.UPDATEUSERNAMEField = value;
-                    this.RaisePropertyChanged("UPDATEUSERNAME");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EntityKey", Namespace="http://schemas.datacontract.org/2004/07/System.Data", IsReference=true)]
     public partial class EntityKey : object, System.ComponentModel.INotifyPropertyChanged {
         
@@ -9512,6 +10097,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EntityKeyMember", Namespace="http://schemas.datacontract.org/2004/07/System.Data")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -9524,6 +10114,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -9531,8 +10123,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -9543,42 +10133,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -9591,17 +10158,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -9627,6 +10194,24 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
     public partial class EntityKeyMember : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string KeyField;
@@ -10331,6 +10916,111 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="V_EmployeeSurveySubject", Namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.OA.DAL.Views")]
+    public partial class V_EmployeeSurveySubject : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL AnswerField;
+        
+        private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL> AnswerListField;
+        
+        private bool IsAddField;
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER MasterField;
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 QuestionField;
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 SubjectInfoField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL Answer {
+            get {
+                return this.AnswerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AnswerField, value) != true)) {
+                    this.AnswerField = value;
+                    this.RaisePropertyChanged("Answer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL> AnswerList {
+            get {
+                return this.AnswerListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AnswerListField, value) != true)) {
+                    this.AnswerListField = value;
+                    this.RaisePropertyChanged("AnswerList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsAdd {
+            get {
+                return this.IsAddField;
+            }
+            set {
+                if ((this.IsAddField.Equals(value) != true)) {
+                    this.IsAddField = value;
+                    this.RaisePropertyChanged("IsAdd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER Master {
+            get {
+                return this.MasterField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MasterField, value) != true)) {
+                    this.MasterField = value;
+                    this.RaisePropertyChanged("Master");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 Question {
+            get {
+                return this.QuestionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.QuestionField, value) != true)) {
+                    this.QuestionField = value;
+                    this.RaisePropertyChanged("Question");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 SubjectInfo {
+            get {
+                return this.SubjectInfoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubjectInfoField, value) != true)) {
+                    this.SubjectInfoField = value;
+                    this.RaisePropertyChanged("SubjectInfo");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="V_EmployeeSurveysModel", Namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.OA.DAL.Views")]
     public partial class V_EmployeeSurveysModel : object, System.ComponentModel.INotifyPropertyChanged {
         
@@ -10855,111 +11545,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 if ((object.ReferenceEquals(this.SubjectViewListField, value) != true)) {
                     this.SubjectViewListField = value;
                     this.RaisePropertyChanged("SubjectViewList");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="V_EmployeeSurveySubject", Namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.OA.DAL.Views")]
-    public partial class V_EmployeeSurveySubject : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL AnswerField;
-        
-        private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL> AnswerListField;
-        
-        private bool IsAddField;
-        
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER MasterField;
-        
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 QuestionField;
-        
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 SubjectInfoField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL Answer {
-            get {
-                return this.AnswerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AnswerField, value) != true)) {
-                    this.AnswerField = value;
-                    this.RaisePropertyChanged("Answer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL> AnswerList {
-            get {
-                return this.AnswerListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AnswerListField, value) != true)) {
-                    this.AnswerListField = value;
-                    this.RaisePropertyChanged("AnswerList");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsAdd {
-            get {
-                return this.IsAddField;
-            }
-            set {
-                if ((this.IsAddField.Equals(value) != true)) {
-                    this.IsAddField = value;
-                    this.RaisePropertyChanged("IsAdd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER Master {
-            get {
-                return this.MasterField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MasterField, value) != true)) {
-                    this.MasterField = value;
-                    this.RaisePropertyChanged("Master");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 Question {
-            get {
-                return this.QuestionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.QuestionField, value) != true)) {
-                    this.QuestionField = value;
-                    this.RaisePropertyChanged("Question");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 SubjectInfo {
-            get {
-                return this.SubjectInfoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SubjectInfoField, value) != true)) {
-                    this.SubjectInfoField = value;
-                    this.RaisePropertyChanged("SubjectInfo");
                 }
             }
         }
@@ -11831,306 +12416,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="V_Travelmanagement", Namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.OA.DAL.Views")]
-    public partial class V_Travelmanagement : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string CREATEUSERIDField;
-        
-        private string CictyField;
-        
-        private string CictysField;
-        
-        private string EndtimeField;
-        
-        private string GuidsField;
-        
-        private string NoClaimsField;
-        
-        private string OWNERCOMPANYIDField;
-        
-        private string OWNERDEPARTMENTIDField;
-        
-        private string OWNERIDField;
-        
-        private string OWNERPOSTIDField;
-        
-        private string ReportCheckStateField;
-        
-        private string ReportIdField;
-        
-        private string StartdateField;
-        
-        private string StateReimbursementField;
-        
-        private int TdetailField;
-        
-        private string TrCheckStateField;
-        
-        private string TrIdField;
-        
-        private string TraveAppCheckStateField;
-        
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP TravelmanagementField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEUSERID {
-            get {
-                return this.CREATEUSERIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
-                    this.CREATEUSERIDField = value;
-                    this.RaisePropertyChanged("CREATEUSERID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Cicty {
-            get {
-                return this.CictyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CictyField, value) != true)) {
-                    this.CictyField = value;
-                    this.RaisePropertyChanged("Cicty");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Cictys {
-            get {
-                return this.CictysField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CictysField, value) != true)) {
-                    this.CictysField = value;
-                    this.RaisePropertyChanged("Cictys");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Endtime {
-            get {
-                return this.EndtimeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EndtimeField, value) != true)) {
-                    this.EndtimeField = value;
-                    this.RaisePropertyChanged("Endtime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Guids {
-            get {
-                return this.GuidsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GuidsField, value) != true)) {
-                    this.GuidsField = value;
-                    this.RaisePropertyChanged("Guids");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NoClaims {
-            get {
-                return this.NoClaimsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NoClaimsField, value) != true)) {
-                    this.NoClaimsField = value;
-                    this.RaisePropertyChanged("NoClaims");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERCOMPANYID {
-            get {
-                return this.OWNERCOMPANYIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OWNERCOMPANYIDField, value) != true)) {
-                    this.OWNERCOMPANYIDField = value;
-                    this.RaisePropertyChanged("OWNERCOMPANYID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERDEPARTMENTID {
-            get {
-                return this.OWNERDEPARTMENTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OWNERDEPARTMENTIDField, value) != true)) {
-                    this.OWNERDEPARTMENTIDField = value;
-                    this.RaisePropertyChanged("OWNERDEPARTMENTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERID {
-            get {
-                return this.OWNERIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OWNERIDField, value) != true)) {
-                    this.OWNERIDField = value;
-                    this.RaisePropertyChanged("OWNERID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERPOSTID {
-            get {
-                return this.OWNERPOSTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OWNERPOSTIDField, value) != true)) {
-                    this.OWNERPOSTIDField = value;
-                    this.RaisePropertyChanged("OWNERPOSTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReportCheckState {
-            get {
-                return this.ReportCheckStateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportCheckStateField, value) != true)) {
-                    this.ReportCheckStateField = value;
-                    this.RaisePropertyChanged("ReportCheckState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReportId {
-            get {
-                return this.ReportIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportIdField, value) != true)) {
-                    this.ReportIdField = value;
-                    this.RaisePropertyChanged("ReportId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Startdate {
-            get {
-                return this.StartdateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StartdateField, value) != true)) {
-                    this.StartdateField = value;
-                    this.RaisePropertyChanged("Startdate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StateReimbursement {
-            get {
-                return this.StateReimbursementField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateReimbursementField, value) != true)) {
-                    this.StateReimbursementField = value;
-                    this.RaisePropertyChanged("StateReimbursement");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Tdetail {
-            get {
-                return this.TdetailField;
-            }
-            set {
-                if ((this.TdetailField.Equals(value) != true)) {
-                    this.TdetailField = value;
-                    this.RaisePropertyChanged("Tdetail");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TrCheckState {
-            get {
-                return this.TrCheckStateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TrCheckStateField, value) != true)) {
-                    this.TrCheckStateField = value;
-                    this.RaisePropertyChanged("TrCheckState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TrId {
-            get {
-                return this.TrIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TrIdField, value) != true)) {
-                    this.TrIdField = value;
-                    this.RaisePropertyChanged("TrId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TraveAppCheckState {
-            get {
-                return this.TraveAppCheckStateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TraveAppCheckStateField, value) != true)) {
-                    this.TraveAppCheckStateField = value;
-                    this.RaisePropertyChanged("TraveAppCheckState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP Travelmanagement {
-            get {
-                return this.TravelmanagementField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TravelmanagementField, value) != true)) {
-                    this.TravelmanagementField = value;
-                    this.RaisePropertyChanged("Travelmanagement");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="V_DepartmentWithCompany", Namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.OA.DAL.Views")]
     public partial class V_DepartmentWithCompany : object, System.ComponentModel.INotifyPropertyChanged {
         
@@ -12228,6 +12513,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private string APPROVALTYPENAMEField;
         
+        private string ApprovalTypeIDField;
+        
         private string COMPANYIDField;
         
         private string COMPANYNAMEField;
@@ -12241,6 +12528,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         private string FATHERAPPROVALIDField;
         
         private string FATHERVALUEField;
+        
+        private string ISCOSTField;
         
         private string POSTIDField;
         
@@ -12268,6 +12557,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 if ((object.ReferenceEquals(this.APPROVALTYPENAMEField, value) != true)) {
                     this.APPROVALTYPENAMEField = value;
                     this.RaisePropertyChanged("APPROVALTYPENAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ApprovalTypeID {
+            get {
+                return this.ApprovalTypeIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ApprovalTypeIDField, value) != true)) {
+                    this.ApprovalTypeIDField = value;
+                    this.RaisePropertyChanged("ApprovalTypeID");
                 }
             }
         }
@@ -12364,6 +12666,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ISCOST {
+            get {
+                return this.ISCOSTField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ISCOSTField, value) != true)) {
+                    this.ISCOSTField = value;
+                    this.RaisePropertyChanged("ISCOST");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string POSTID {
             get {
                 return this.POSTIDField;
@@ -12385,111 +12700,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 if ((object.ReferenceEquals(this.POSTNAMEField, value) != true)) {
                     this.POSTNAMEField = value;
                     this.RaisePropertyChanged("POSTNAME");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="V_SystemNotice", Namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.OA.DAL")]
-    public partial class V_SystemNotice : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.DateTime FormDateField;
-        
-        private string FormIdField;
-        
-        private string FormTitleField;
-        
-        private string FormtypeField;
-        
-        private string IsTopField;
-        
-        private string TitleNotesField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime FormDate {
-            get {
-                return this.FormDateField;
-            }
-            set {
-                if ((this.FormDateField.Equals(value) != true)) {
-                    this.FormDateField = value;
-                    this.RaisePropertyChanged("FormDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FormId {
-            get {
-                return this.FormIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FormIdField, value) != true)) {
-                    this.FormIdField = value;
-                    this.RaisePropertyChanged("FormId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FormTitle {
-            get {
-                return this.FormTitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FormTitleField, value) != true)) {
-                    this.FormTitleField = value;
-                    this.RaisePropertyChanged("FormTitle");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Formtype {
-            get {
-                return this.FormtypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FormtypeField, value) != true)) {
-                    this.FormtypeField = value;
-                    this.RaisePropertyChanged("Formtype");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string IsTop {
-            get {
-                return this.IsTopField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IsTopField, value) != true)) {
-                    this.IsTopField = value;
-                    this.RaisePropertyChanged("IsTop");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TitleNotes {
-            get {
-                return this.TitleNotesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitleNotesField, value) != true)) {
-                    this.TitleNotesField = value;
-                    this.RaisePropertyChanged("TitleNotes");
                 }
             }
         }
@@ -12605,144 +12815,155 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     public partial class EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LoginUserInfo", Namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.OA.Services")]
-    public partial class LoginUserInfo : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string companyIDField;
-        
-        private string companyNameField;
-        
-        private string departmentIDField;
-        
-        private string departmentNameField;
-        
-        private string postIDField;
-        
-        private string postNameField;
-        
-        private string userIDField;
-        
-        private string userNameField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string companyID {
-            get {
-                return this.companyIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.companyIDField, value) != true)) {
-                    this.companyIDField = value;
-                    this.RaisePropertyChanged("companyID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string companyName {
-            get {
-                return this.companyNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.companyNameField, value) != true)) {
-                    this.companyNameField = value;
-                    this.RaisePropertyChanged("companyName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string departmentID {
-            get {
-                return this.departmentIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.departmentIDField, value) != true)) {
-                    this.departmentIDField = value;
-                    this.RaisePropertyChanged("departmentID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string departmentName {
-            get {
-                return this.departmentNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.departmentNameField, value) != true)) {
-                    this.departmentNameField = value;
-                    this.RaisePropertyChanged("departmentName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string postID {
-            get {
-                return this.postIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.postIDField, value) != true)) {
-                    this.postIDField = value;
-                    this.RaisePropertyChanged("postID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string postName {
-            get {
-                return this.postNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.postNameField, value) != true)) {
-                    this.postNameField = value;
-                    this.RaisePropertyChanged("postName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string userID {
-            get {
-                return this.userIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.userIDField, value) != true)) {
-                    this.userIDField = value;
-                    this.RaisePropertyChanged("userID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string userName {
-            get {
-                return this.userNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.userNameField, value) != true)) {
-                    this.userNameField = value;
-                    this.RaisePropertyChanged("userName");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="", ConfigurationName="SmtOAPersonOfficeService.SmtOAPersonOffice")]
     public interface SmtOAPersonOffice {
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/IsContractCanBrowser", ReplyAction="urn:SmtOAPersonOffice/IsContractCanBrowserResponse")]
+        System.IAsyncResult BeginIsContractCanBrowser(string TravelmanagementID, System.AsyncCallback callback, object asyncState);
+        
+        bool EndIsContractCanBrowser(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetTravelmanagementListByUserId", ReplyAction="urn:SmtOAPersonOffice/GetTravelmanagementListByUserIdResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyStaticfaction>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyStaticfaction))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SatisfactionResult>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SatisfactionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyApp>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveying))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyRequireDistribute))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONREQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONREQUIRE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDISTRIBUTE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDISTRIBUTE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFO>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFOTEMPLET))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFOTEMPLET>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREAALLOWANCE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREADIFFERENCE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREAALLOWANCE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREACITY>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREACITY))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREADIFFERENCE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CANTAKETHEPLANELINE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CANTAKETHEPLANELINE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_PROGRAMAPPLICATIONS>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_PROGRAMAPPLICATIONS))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TAKETHESTANDARDTRANSPORT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TAKETHESTANDARDTRANSPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
+        System.IAsyncResult BeginGetTravelmanagementListByUserId(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string checkState, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement> EndGetTravelmanagementListByUserId(ref int pageCount, System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetUnderwayTravelmanagement", ReplyAction="urn:SmtOAPersonOffice/GetUnderwayTravelmanagementResponse")]
+        System.IAsyncResult BeginGetUnderwayTravelmanagement(string employeeid, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.Generic.Dictionary<string, string> EndGetUnderwayTravelmanagement(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/OrderMealInfoAdd", ReplyAction="urn:SmtOAPersonOffice/OrderMealInfoAddResponse")]
+        System.IAsyncResult BeginOrderMealInfoAdd(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj, System.AsyncCallback callback, object asyncState);
+        
+        string EndOrderMealInfoAdd(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/IsExistOrderMealInfoByAdd", ReplyAction="urn:SmtOAPersonOffice/IsExistOrderMealInfoByAddResponse")]
+        System.IAsyncResult BeginIsExistOrderMealInfoByAdd(string StrTitle, string StrDepart, string StrCreatUser, System.DateTime startdt, System.AsyncCallback callback, object asyncState);
+        
+        bool EndIsExistOrderMealInfoByAdd(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/OrderMealInfoDel", ReplyAction="urn:SmtOAPersonOffice/OrderMealInfoDelResponse")]
+        System.IAsyncResult BeginOrderMealInfoDel(System.Collections.ObjectModel.ObservableCollection<string> MealIDs, System.AsyncCallback callback, object asyncState);
+        
+        bool EndOrderMealInfoDel(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/OrderMealInfoUpdate", ReplyAction="urn:SmtOAPersonOffice/OrderMealInfoUpdateResponse")]
         System.IAsyncResult BeginOrderMealInfoUpdate(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj, System.AsyncCallback callback, object asyncState);
@@ -12755,6 +12976,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL EndGetOrderMealSingleInfoById(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetOrderMealInfos", ReplyAction="urn:SmtOAPersonOffice/GetOrderMealInfosResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -12767,6 +12993,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -12774,8 +13002,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -12786,43 +13012,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -12835,17 +13037,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -12871,11 +13073,35 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetOrderMealInfos(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL> EndGetOrderMealInfos(ref int pageCount, System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetOrderMealInfosListByTitleTimeSearch", ReplyAction="urn:SmtOAPersonOffice/GetOrderMealInfosListByTitleTimeSearchResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -12888,6 +13114,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -12895,8 +13123,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -12907,43 +13133,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -12956,17 +13158,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -12992,6 +13194,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetOrderMealInfosListByTitleTimeSearch(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL> EndGetOrderMealInfosListByTitleTimeSearch(ref int pageCount, System.IAsyncResult result);
@@ -13062,6 +13283,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL> EndGetTravelReimbursementDetail(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetTravelReimbursementListByUserId", ReplyAction="urn:SmtOAPersonOffice/GetTravelReimbursementListByUserIdResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -13074,6 +13300,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -13081,8 +13309,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -13093,43 +13319,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -13142,17 +13344,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -13178,11 +13380,35 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetTravelReimbursementListByUserId(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string checkState, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement> EndGetTravelReimbursementListByUserId(ref int pageCount, System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetWorkerCordListByUserId", ReplyAction="urn:SmtOAPersonOffice/GetWorkerCordListByUserIdResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -13195,6 +13421,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -13202,8 +13430,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -13214,43 +13440,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -13263,17 +13465,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -13299,6 +13501,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetWorkerCordListByUserId(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string userId, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD> EndGetWorkerCordListByUserId(ref int pageCount, System.IAsyncResult result);
@@ -13374,6 +13595,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction> EndGetSurvey(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Get_SSurveys", ReplyAction="urn:SmtOAPersonOffice/Get_SSurveysResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -13386,6 +13612,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -13393,8 +13621,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -13405,43 +13631,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -13454,17 +13656,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -13490,6 +13692,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGet_SSurveys(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string companyId, string userId, string checkState, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction> EndGet_SSurveys(ref int pageCount, System.IAsyncResult result);
@@ -13500,6 +13721,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction EndGet_SSurvey(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Get_SSurveyChecked", ReplyAction="urn:SmtOAPersonOffice/Get_SSurveyCheckedResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -13512,6 +13738,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -13519,8 +13747,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -13531,43 +13757,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -13580,17 +13782,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -13616,6 +13818,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGet_SSurveyChecked(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string companyId, string userId, string checkState, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction> EndGet_SSurveyChecked(ref int pageCount, System.IAsyncResult result);
@@ -13646,6 +13867,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONREQUIRE EndGet_SSurveyApp(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Get_SSurveyApps", ReplyAction="urn:SmtOAPersonOffice/Get_SSurveyAppsResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -13658,6 +13884,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -13665,8 +13893,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -13677,43 +13903,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -13726,17 +13928,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -13762,11 +13964,35 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGet_SSurveyApps(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string companyId, string userId, string checkState, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONREQUIRE> EndGet_SSurveyApps(ref int pageCount, System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Get_SSurveyAppChecked", ReplyAction="urn:SmtOAPersonOffice/Get_SSurveyAppCheckedResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -13779,6 +14005,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -13786,8 +14014,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -13798,43 +14024,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -13847,17 +14049,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -13883,11 +14085,35 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGet_SSurveyAppChecked(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string companyId, string userId, string checkState, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONREQUIRE> EndGet_SSurveyAppChecked(ref int pageCount, System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Get_StaticfactionSurveyAppChecked", ReplyAction="urn:SmtOAPersonOffice/Get_StaticfactionSurveyAppCheckedResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -13900,6 +14126,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -13907,8 +14135,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -13919,43 +14145,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -13968,17 +14170,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -14004,6 +14206,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGet_StaticfactionSurveyAppChecked(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string companyId, string userId, string checkState, string postID, [System.ServiceModel.MessageParameterAttribute(Name="companyID")] string companyID1, string departmentID, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyStaticfaction> EndGet_StaticfactionSurveyAppChecked(ref int pageCount, System.IAsyncResult result);
@@ -14029,6 +14250,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDISTRIBUTE EndGet_SSurveyResult(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Get_SSurveyResults", ReplyAction="urn:SmtOAPersonOffice/Get_SSurveyResultsResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -14041,6 +14267,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -14048,8 +14276,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -14060,43 +14286,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -14109,17 +14311,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -14145,6 +14347,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGet_SSurveyResults(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string companyId, string userId, string checkState, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDISTRIBUTE> EndGet_SSurveyResults(ref int pageCount, System.IAsyncResult result);
@@ -14194,6 +14415,36 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         void EndDoWork(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/AddEmpSurveysSubject", ReplyAction="urn:SmtOAPersonOffice/AddEmpSurveysSubjectResponse")]
+        System.IAsyncResult BeginAddEmpSurveysSubject(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 obj, System.AsyncCallback callback, object asyncState);
+        
+        int EndAddEmpSurveysSubject(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/AddEmpSurveysSubjectList", ReplyAction="urn:SmtOAPersonOffice/AddEmpSurveysSubjectListResponse")]
+        System.IAsyncResult BeginAddEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState);
+        
+        int EndAddEmpSurveysSubjectList(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Save_SubjectAnswer", ReplyAction="urn:SmtOAPersonOffice/Save_SubjectAnswerResponse")]
+        System.IAsyncResult BeginSave_SubjectAnswer(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstAdd, System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstUpd, System.AsyncCallback callback, object asyncState);
+        
+        int EndSave_SubjectAnswer(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/DelEmpSurveysSubjectList", ReplyAction="urn:SmtOAPersonOffice/DelEmpSurveysSubjectListResponse")]
+        System.IAsyncResult BeginDelEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState);
+        
+        int EndDelEmpSurveysSubjectList(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/UpdateEmpSurveysSubject", ReplyAction="urn:SmtOAPersonOffice/UpdateEmpSurveysSubjectResponse")]
+        System.IAsyncResult BeginUpdateEmpSurveysSubject(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 objSubject, System.AsyncCallback callback, object asyncState);
+        
+        int EndUpdateEmpSurveysSubject(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/UpdateEmpSurveysSubjectList", ReplyAction="urn:SmtOAPersonOffice/UpdateEmpSurveysSubjectListResponse")]
+        System.IAsyncResult BeginUpdateEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState);
+        
+        int EndUpdateEmpSurveysSubjectList(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/AddEmpSurveysAnswer", ReplyAction="urn:SmtOAPersonOffice/AddEmpSurveysAnswerResponse")]
         System.IAsyncResult BeginAddEmpSurveysAnswer(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL obj, System.AsyncCallback callback, object asyncState);
         
@@ -14225,6 +14476,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         int EndAddEmpSurveysResultList(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetEmployeeSurveys", ReplyAction="urn:SmtOAPersonOffice/GetEmployeeSurveysResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -14237,6 +14493,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -14244,8 +14502,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -14256,43 +14512,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -14305,17 +14537,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -14341,6 +14573,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetEmployeeSurveys(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string userId, string checkState, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER> EndGetEmployeeSurveys(ref int pageCount, System.IAsyncResult result);
@@ -14376,6 +14627,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         bool EndCheckRequire(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetRequireDistribute", ReplyAction="urn:SmtOAPersonOffice/GetRequireDistributeResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -14388,6 +14644,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -14395,8 +14653,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -14407,43 +14663,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -14456,17 +14688,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -14492,6 +14724,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetRequireDistribute(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string userId, string checkState, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE> EndGetRequireDistribute(ref int pageCount, System.IAsyncResult result);
@@ -14507,6 +14758,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         int EndAddEmployeeSurveyView(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetEmployeeSurveyViewList", ReplyAction="urn:SmtOAPersonOffice/GetEmployeeSurveyViewListResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -14519,6 +14775,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -14526,8 +14784,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -14538,43 +14794,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -14587,17 +14819,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -14623,6 +14855,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetEmployeeSurveyViewList(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string companyId, string userId, string checkState, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey> EndGetEmployeeSurveyViewList(ref int pageCount, System.IAsyncResult result);
@@ -14633,6 +14884,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey EndGet_ESurvey(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Get_ESurveyChecked", ReplyAction="urn:SmtOAPersonOffice/Get_ESurveyCheckedResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -14645,6 +14901,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -14652,8 +14910,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -14664,43 +14920,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -14713,17 +14945,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -14749,6 +14981,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGet_ESurveyChecked(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string companyId, string userId, string checkState, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey> EndGet_ESurveyChecked(ref int pageCount, System.IAsyncResult result);
@@ -14794,6 +15045,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE EndGet_ESurveyApp(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Get_ESurveyApps", ReplyAction="urn:SmtOAPersonOffice/Get_ESurveyAppsResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -14806,6 +15062,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -14813,8 +15071,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -14825,43 +15081,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -14874,17 +15106,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -14910,11 +15142,35 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGet_ESurveyApps(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string companyId, string userId, string checkState, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE> EndGet_ESurveyApps(ref int pageCount, System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Get_ESurveyAppChecked", ReplyAction="urn:SmtOAPersonOffice/Get_ESurveyAppCheckedResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -14927,6 +15183,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -14934,8 +15192,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -14946,43 +15202,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -14995,17 +15227,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -15031,11 +15263,35 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGet_ESurveyAppChecked(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string companyId, string userId, string checkState, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE> EndGet_ESurveyAppChecked(ref int pageCount, System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Get_MyVisistedSurvey", ReplyAction="urn:SmtOAPersonOffice/Get_MyVisistedSurveyResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -15048,6 +15304,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -15055,8 +15313,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -15067,43 +15323,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -15116,17 +15348,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -15152,6 +15384,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGet_MyVisistedSurvey(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string companyId, string userId, string checkState, string postID, [System.ServiceModel.MessageParameterAttribute(Name="companyID")] string companyID1, string departmentID, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey> EndGet_MyVisistedSurvey(ref int pageCount, System.IAsyncResult result);
@@ -15182,6 +15433,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE EndGet_ESurveyResult(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Get_ESurveyResults", ReplyAction="urn:SmtOAPersonOffice/Get_ESurveyResultsResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -15194,6 +15450,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -15201,8 +15459,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -15213,43 +15469,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -15262,17 +15494,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -15298,6 +15530,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGet_ESurveyResults(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string companyId, string userId, string checkState, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE> EndGet_ESurveyResults(ref int pageCount, System.IAsyncResult result);
@@ -15463,6 +15714,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER EndGetSatisfactionMasterChild(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetTravelmanagementInfo", ReplyAction="urn:SmtOAPersonOffice/GetTravelmanagementInfoResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -15475,6 +15731,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -15482,8 +15740,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -15494,43 +15750,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -15543,17 +15775,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -15579,6 +15811,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetTravelmanagementInfo(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string userID, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP> EndGetTravelmanagementInfo(ref int pageCount, System.IAsyncResult result);
@@ -15633,158 +15884,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL> EndGetBusinesstripDetail(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/IsContractCanBrowser", ReplyAction="urn:SmtOAPersonOffice/IsContractCanBrowserResponse")]
-        System.IAsyncResult BeginIsContractCanBrowser(string TravelmanagementID, System.AsyncCallback callback, object asyncState);
-        
-        bool EndIsContractCanBrowser(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetTravelmanagementListByUserId", ReplyAction="urn:SmtOAPersonOffice/GetTravelmanagementListByUserIdResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyStaticfaction>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyStaticfaction))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SatisfactionResult>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SatisfactionResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyApp>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveying))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyRequireDistribute))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONREQUIRE>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONREQUIRE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDISTRIBUTE>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFO))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFO>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFOTEMPLET))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFOTEMPLET>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREAALLOWANCE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREADIFFERENCE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREAALLOWANCE>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREACITY>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREACITY))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREADIFFERENCE>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CANTAKETHEPLANELINE>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CANTAKETHEPLANELINE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_PROGRAMAPPLICATIONS>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_PROGRAMAPPLICATIONS))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TAKETHESTANDARDTRANSPORT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TAKETHESTANDARDTRANSPORT))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
-        System.IAsyncResult BeginGetTravelmanagementListByUserId(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string checkState, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, System.AsyncCallback callback, object asyncState);
-        
-        System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement> EndGetTravelmanagementListByUserId(ref int pageCount, System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetUnderwayTravelmanagement", ReplyAction="urn:SmtOAPersonOffice/GetUnderwayTravelmanagementResponse")]
-        System.IAsyncResult BeginGetUnderwayTravelmanagement(string employeeid, System.AsyncCallback callback, object asyncState);
-        
-        System.Collections.Generic.Dictionary<string, string> EndGetUnderwayTravelmanagement(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/OrderMealInfoAdd", ReplyAction="urn:SmtOAPersonOffice/OrderMealInfoAddResponse")]
-        System.IAsyncResult BeginOrderMealInfoAdd(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj, System.AsyncCallback callback, object asyncState);
-        
-        string EndOrderMealInfoAdd(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/IsExistOrderMealInfoByAdd", ReplyAction="urn:SmtOAPersonOffice/IsExistOrderMealInfoByAddResponse")]
-        System.IAsyncResult BeginIsExistOrderMealInfoByAdd(string StrTitle, string StrDepart, string StrCreatUser, System.DateTime startdt, System.AsyncCallback callback, object asyncState);
-        
-        bool EndIsExistOrderMealInfoByAdd(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/OrderMealInfoDel", ReplyAction="urn:SmtOAPersonOffice/OrderMealInfoDelResponse")]
-        System.IAsyncResult BeginOrderMealInfoDel(System.Collections.ObjectModel.ObservableCollection<string> MealIDs, System.AsyncCallback callback, object asyncState);
-        
-        bool EndOrderMealInfoDel(System.IAsyncResult result);
-        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Get_Apporval", ReplyAction="urn:SmtOAPersonOffice/Get_ApporvalResponse")]
         System.IAsyncResult BeginGet_Apporval(string id, System.AsyncCallback callback, object asyncState);
         
         SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFO EndGet_Apporval(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetApporvalList", ReplyAction="urn:SmtOAPersonOffice/GetApporvalListResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -15797,6 +15907,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -15804,8 +15916,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -15816,43 +15926,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -15865,17 +15951,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -15901,11 +15987,35 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetApporvalList(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string flagState, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFO> EndGetApporvalList(ref int pageCount, System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetApporvalListforMVC", ReplyAction="urn:SmtOAPersonOffice/GetApporvalListforMVCResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -15918,6 +16028,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -15925,8 +16037,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -15937,43 +16047,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -15986,17 +16072,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -16022,6 +16108,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetApporvalListforMVC(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string flagState, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, ref int recordTotals, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFO> EndGetApporvalListforMVC(ref int pageCount, ref int recordTotals, System.IAsyncResult result);
@@ -16076,6 +16181,36 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType> EndGetApprovalTypesByUserID(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/IsExistApprovalSet", ReplyAction="urn:SmtOAPersonOffice/IsExistApprovalSetResponse")]
+        System.IAsyncResult BeginIsExistApprovalSet(string setID, System.AsyncCallback callback, object asyncState);
+        
+        bool EndIsExistApprovalSet(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/DelSingleApprovalSet", ReplyAction="urn:SmtOAPersonOffice/DelSingleApprovalSetResponse")]
+        System.IAsyncResult BeginDelSingleApprovalSet(string setID, System.AsyncCallback callback, object asyncState);
+        
+        bool EndDelSingleApprovalSet(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/BatchAddApprovalSets", ReplyAction="urn:SmtOAPersonOffice/BatchAddApprovalSetsResponse")]
+        System.IAsyncResult BeginBatchAddApprovalSets(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET> listSets, System.AsyncCallback callback, object asyncState);
+        
+        bool EndBatchAddApprovalSets(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/BatchDelApprovalSets", ReplyAction="urn:SmtOAPersonOffice/BatchDelApprovalSetsResponse")]
+        System.IAsyncResult BeginBatchDelApprovalSets(System.Collections.ObjectModel.ObservableCollection<string> SetIDs, System.AsyncCallback callback, object asyncState);
+        
+        bool EndBatchDelApprovalSets(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/ApprovalTypeIsCost", ReplyAction="urn:SmtOAPersonOffice/ApprovalTypeIsCostResponse")]
+        System.IAsyncResult BeginApprovalTypeIsCost(string approvalValue, string departmentID, string companyID, System.AsyncCallback callback, object asyncState);
+        
+        string EndApprovalTypeIsCost(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetApprovalSetsByOrg", ReplyAction="urn:SmtOAPersonOffice/GetApprovalSetsByOrgResponse")]
+        System.IAsyncResult BeginGetApprovalSetsByOrg(string orgID, string orgType, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET> EndGetApprovalSetsByOrg(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Get_ApporvalTemplet", ReplyAction="urn:SmtOAPersonOffice/Get_ApporvalTempletResponse")]
         System.IAsyncResult BeginGet_ApporvalTemplet(string id, System.AsyncCallback callback, object asyncState);
         
@@ -16087,6 +16222,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFOTEMPLET EndGet_ApporvalTempletByApporvalType(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetApporvalTempletList", ReplyAction="urn:SmtOAPersonOffice/GetApporvalTempletListResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -16099,6 +16239,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -16106,8 +16248,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -16118,43 +16258,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -16167,17 +16283,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -16203,6 +16319,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetApporvalTempletList(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string flagState, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALINFOTEMPLET> EndGetApporvalTempletList(ref int pageCount, System.IAsyncResult result);
@@ -16348,6 +16483,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         bool EndDeleteTravleSolution(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetTravelSolutionFlow", ReplyAction="urn:SmtOAPersonOffice/GetTravelSolutionFlowResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -16360,6 +16500,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -16367,8 +16509,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -16379,43 +16519,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -16428,17 +16544,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -16464,6 +16580,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetTravelSolutionFlow(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS> EndGetTravelSolutionFlow(ref int pageCount, System.IAsyncResult result);
@@ -16519,6 +16654,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         string EndGetCopyTravleSolution(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetCalendarListByUserID", ReplyAction="urn:SmtOAPersonOffice/GetCalendarListByUserIDResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -16531,6 +16671,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -16538,8 +16680,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -16550,43 +16690,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -16599,17 +16715,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -16635,6 +16751,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetCalendarListByUserID(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string userID, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR> EndGetCalendarListByUserID(ref int pageCount, System.IAsyncResult result);
@@ -16660,6 +16795,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         int EndUpdateCalendar(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetApporvalList22", ReplyAction="urn:SmtOAPersonOffice/GetApporvalList22Response")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -16672,6 +16812,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -16679,8 +16821,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -16691,43 +16831,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -16740,17 +16856,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -16776,6 +16892,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetApporvalList22(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR> EndGetApporvalList22(ref int pageCount, System.IAsyncResult result);
@@ -16826,6 +16961,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         bool EndAddEmployeeSurveyQuestion(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/GetInfoListByOptFlag", ReplyAction="urn:SmtOAPersonOffice/GetInfoListByOptFlagResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_TravelReimbursement))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfaction))]
@@ -16838,6 +16978,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SSubjectAnswerResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveysModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_REQUIRERESULTMODE))]
@@ -16845,8 +16987,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_MyEusurvey))]
@@ -16857,43 +16997,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveyMaster>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Satisfactions>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_DepartmentWithCompany))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_WORKRECORD))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER))]
@@ -16906,17 +17022,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDISTRIBUTE))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_DISTRIBUTEUSER>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP>))]
@@ -16942,6 +17058,25 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_CALENDAR))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<System.DateTime>))]
         System.IAsyncResult BeginGetInfoListByOptFlag(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string checkState, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER> EndGetInfoListByOptFlag(ref int pageCount, System.IAsyncResult result);
@@ -16985,40 +17120,131 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         System.IAsyncResult BeginDelEmpSurveysSubject(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 obj, System.AsyncCallback callback, object asyncState);
         
         int EndDelEmpSurveysSubject(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/AddEmpSurveysSubject", ReplyAction="urn:SmtOAPersonOffice/AddEmpSurveysSubjectResponse")]
-        System.IAsyncResult BeginAddEmpSurveysSubject(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 obj, System.AsyncCallback callback, object asyncState);
-        
-        int EndAddEmpSurveysSubject(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/AddEmpSurveysSubjectList", ReplyAction="urn:SmtOAPersonOffice/AddEmpSurveysSubjectListResponse")]
-        System.IAsyncResult BeginAddEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState);
-        
-        int EndAddEmpSurveysSubjectList(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/Save_SubjectAnswer", ReplyAction="urn:SmtOAPersonOffice/Save_SubjectAnswerResponse")]
-        System.IAsyncResult BeginSave_SubjectAnswer(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstAdd, System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstUpd, System.AsyncCallback callback, object asyncState);
-        
-        int EndSave_SubjectAnswer(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/DelEmpSurveysSubjectList", ReplyAction="urn:SmtOAPersonOffice/DelEmpSurveysSubjectListResponse")]
-        System.IAsyncResult BeginDelEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState);
-        
-        int EndDelEmpSurveysSubjectList(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/UpdateEmpSurveysSubject", ReplyAction="urn:SmtOAPersonOffice/UpdateEmpSurveysSubjectResponse")]
-        System.IAsyncResult BeginUpdateEmpSurveysSubject(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 objSubject, System.AsyncCallback callback, object asyncState);
-        
-        int EndUpdateEmpSurveysSubject(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:SmtOAPersonOffice/UpdateEmpSurveysSubjectList", ReplyAction="urn:SmtOAPersonOffice/UpdateEmpSurveysSubjectListResponse")]
-        System.IAsyncResult BeginUpdateEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState);
-        
-        int EndUpdateEmpSurveysSubjectList(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface SmtOAPersonOfficeChannel : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class IsContractCanBrowserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public IsContractCanBrowserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetTravelmanagementListByUserIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetTravelmanagementListByUserIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int pageCount {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>)(this.results[1]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetUnderwayTravelmanagementCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetUnderwayTravelmanagementCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.Generic.Dictionary<string, string> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.Generic.Dictionary<string, string>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class OrderMealInfoAddCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public OrderMealInfoAddCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class IsExistOrderMealInfoByAddCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public IsExistOrderMealInfoByAddCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class OrderMealInfoDelCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public OrderMealInfoDelCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18172,6 +18398,120 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeID>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddEmpSurveysSubjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddEmpSurveysSubjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddEmpSurveysSubjectListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddEmpSurveysSubjectListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Save_SubjectAnswerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Save_SubjectAnswerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DelEmpSurveysSubjectListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public DelEmpSurveysSubjectListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class UpdateEmpSurveysSubjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public UpdateEmpSurveysSubjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class UpdateEmpSurveysSubjectListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public UpdateEmpSurveysSubjectListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
             }
         }
     }
@@ -19749,127 +20089,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class IsContractCanBrowserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public IsContractCanBrowserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public bool Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetTravelmanagementListByUserIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetTravelmanagementListByUserIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public int pageCount {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>)(this.results[1]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetUnderwayTravelmanagementCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetUnderwayTravelmanagementCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public System.Collections.Generic.Dictionary<string, string> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((System.Collections.Generic.Dictionary<string, string>)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class OrderMealInfoAddCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public OrderMealInfoAddCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public string Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class IsExistOrderMealInfoByAddCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public IsExistOrderMealInfoByAddCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public bool Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class OrderMealInfoDelCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public OrderMealInfoDelCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public bool Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Get_ApporvalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -20139,6 +20358,120 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class IsExistApprovalSetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public IsExistApprovalSetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DelSingleApprovalSetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public DelSingleApprovalSetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class BatchAddApprovalSetsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public BatchAddApprovalSetsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class BatchDelApprovalSetsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public BatchDelApprovalSetsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ApprovalTypeIsCostCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public ApprovalTypeIsCostCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetApprovalSetsByOrgCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetApprovalSetsByOrgCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET>)(this.results[0]));
             }
         }
     }
@@ -21390,121 +21723,43 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddEmpSurveysSubjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public AddEmpSurveysSubjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public int Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddEmpSurveysSubjectListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public AddEmpSurveysSubjectListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public int Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Save_SubjectAnswerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public Save_SubjectAnswerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public int Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class DelEmpSurveysSubjectListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public DelEmpSurveysSubjectListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public int Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UpdateEmpSurveysSubjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public UpdateEmpSurveysSubjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public int Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UpdateEmpSurveysSubjectListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public UpdateEmpSurveysSubjectListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public int Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class SmtOAPersonOfficeClient : System.ServiceModel.ClientBase<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice>, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice {
+        
+        private BeginOperationDelegate onBeginIsContractCanBrowserDelegate;
+        
+        private EndOperationDelegate onEndIsContractCanBrowserDelegate;
+        
+        private System.Threading.SendOrPostCallback onIsContractCanBrowserCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetTravelmanagementListByUserIdDelegate;
+        
+        private EndOperationDelegate onEndGetTravelmanagementListByUserIdDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetTravelmanagementListByUserIdCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetUnderwayTravelmanagementDelegate;
+        
+        private EndOperationDelegate onEndGetUnderwayTravelmanagementDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetUnderwayTravelmanagementCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginOrderMealInfoAddDelegate;
+        
+        private EndOperationDelegate onEndOrderMealInfoAddDelegate;
+        
+        private System.Threading.SendOrPostCallback onOrderMealInfoAddCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginIsExistOrderMealInfoByAddDelegate;
+        
+        private EndOperationDelegate onEndIsExistOrderMealInfoByAddDelegate;
+        
+        private System.Threading.SendOrPostCallback onIsExistOrderMealInfoByAddCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginOrderMealInfoDelDelegate;
+        
+        private EndOperationDelegate onEndOrderMealInfoDelDelegate;
+        
+        private System.Threading.SendOrPostCallback onOrderMealInfoDelCompletedDelegate;
         
         private BeginOperationDelegate onBeginOrderMealInfoUpdateDelegate;
         
@@ -21853,6 +22108,42 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         private EndOperationDelegate onEndDoWorkDelegate;
         
         private System.Threading.SendOrPostCallback onDoWorkCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddEmpSurveysSubjectDelegate;
+        
+        private EndOperationDelegate onEndAddEmpSurveysSubjectDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddEmpSurveysSubjectCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddEmpSurveysSubjectListDelegate;
+        
+        private EndOperationDelegate onEndAddEmpSurveysSubjectListDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddEmpSurveysSubjectListCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginSave_SubjectAnswerDelegate;
+        
+        private EndOperationDelegate onEndSave_SubjectAnswerDelegate;
+        
+        private System.Threading.SendOrPostCallback onSave_SubjectAnswerCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginDelEmpSurveysSubjectListDelegate;
+        
+        private EndOperationDelegate onEndDelEmpSurveysSubjectListDelegate;
+        
+        private System.Threading.SendOrPostCallback onDelEmpSurveysSubjectListCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginUpdateEmpSurveysSubjectDelegate;
+        
+        private EndOperationDelegate onEndUpdateEmpSurveysSubjectDelegate;
+        
+        private System.Threading.SendOrPostCallback onUpdateEmpSurveysSubjectCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginUpdateEmpSurveysSubjectListDelegate;
+        
+        private EndOperationDelegate onEndUpdateEmpSurveysSubjectListDelegate;
+        
+        private System.Threading.SendOrPostCallback onUpdateEmpSurveysSubjectListCompletedDelegate;
         
         private BeginOperationDelegate onBeginAddEmpSurveysAnswerDelegate;
         
@@ -22328,42 +22619,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private System.Threading.SendOrPostCallback onGetBusinesstripDetailCompletedDelegate;
         
-        private BeginOperationDelegate onBeginIsContractCanBrowserDelegate;
-        
-        private EndOperationDelegate onEndIsContractCanBrowserDelegate;
-        
-        private System.Threading.SendOrPostCallback onIsContractCanBrowserCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetTravelmanagementListByUserIdDelegate;
-        
-        private EndOperationDelegate onEndGetTravelmanagementListByUserIdDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetTravelmanagementListByUserIdCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetUnderwayTravelmanagementDelegate;
-        
-        private EndOperationDelegate onEndGetUnderwayTravelmanagementDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetUnderwayTravelmanagementCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginOrderMealInfoAddDelegate;
-        
-        private EndOperationDelegate onEndOrderMealInfoAddDelegate;
-        
-        private System.Threading.SendOrPostCallback onOrderMealInfoAddCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginIsExistOrderMealInfoByAddDelegate;
-        
-        private EndOperationDelegate onEndIsExistOrderMealInfoByAddDelegate;
-        
-        private System.Threading.SendOrPostCallback onIsExistOrderMealInfoByAddCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginOrderMealInfoDelDelegate;
-        
-        private EndOperationDelegate onEndOrderMealInfoDelDelegate;
-        
-        private System.Threading.SendOrPostCallback onOrderMealInfoDelCompletedDelegate;
-        
         private BeginOperationDelegate onBeginGet_ApporvalDelegate;
         
         private EndOperationDelegate onEndGet_ApporvalDelegate;
@@ -22441,6 +22696,42 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         private EndOperationDelegate onEndGetApprovalTypesByUserIDDelegate;
         
         private System.Threading.SendOrPostCallback onGetApprovalTypesByUserIDCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginIsExistApprovalSetDelegate;
+        
+        private EndOperationDelegate onEndIsExistApprovalSetDelegate;
+        
+        private System.Threading.SendOrPostCallback onIsExistApprovalSetCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginDelSingleApprovalSetDelegate;
+        
+        private EndOperationDelegate onEndDelSingleApprovalSetDelegate;
+        
+        private System.Threading.SendOrPostCallback onDelSingleApprovalSetCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginBatchAddApprovalSetsDelegate;
+        
+        private EndOperationDelegate onEndBatchAddApprovalSetsDelegate;
+        
+        private System.Threading.SendOrPostCallback onBatchAddApprovalSetsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginBatchDelApprovalSetsDelegate;
+        
+        private EndOperationDelegate onEndBatchDelApprovalSetsDelegate;
+        
+        private System.Threading.SendOrPostCallback onBatchDelApprovalSetsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginApprovalTypeIsCostDelegate;
+        
+        private EndOperationDelegate onEndApprovalTypeIsCostDelegate;
+        
+        private System.Threading.SendOrPostCallback onApprovalTypeIsCostCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetApprovalSetsByOrgDelegate;
+        
+        private EndOperationDelegate onEndGetApprovalSetsByOrgDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetApprovalSetsByOrgCompletedDelegate;
         
         private BeginOperationDelegate onBeginGet_ApporvalTempletDelegate;
         
@@ -22838,42 +23129,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private System.Threading.SendOrPostCallback onDelEmpSurveysSubjectCompletedDelegate;
         
-        private BeginOperationDelegate onBeginAddEmpSurveysSubjectDelegate;
-        
-        private EndOperationDelegate onEndAddEmpSurveysSubjectDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddEmpSurveysSubjectCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginAddEmpSurveysSubjectListDelegate;
-        
-        private EndOperationDelegate onEndAddEmpSurveysSubjectListDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddEmpSurveysSubjectListCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginSave_SubjectAnswerDelegate;
-        
-        private EndOperationDelegate onEndSave_SubjectAnswerDelegate;
-        
-        private System.Threading.SendOrPostCallback onSave_SubjectAnswerCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginDelEmpSurveysSubjectListDelegate;
-        
-        private EndOperationDelegate onEndDelEmpSurveysSubjectListDelegate;
-        
-        private System.Threading.SendOrPostCallback onDelEmpSurveysSubjectListCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginUpdateEmpSurveysSubjectDelegate;
-        
-        private EndOperationDelegate onEndUpdateEmpSurveysSubjectDelegate;
-        
-        private System.Threading.SendOrPostCallback onUpdateEmpSurveysSubjectCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginUpdateEmpSurveysSubjectListDelegate;
-        
-        private EndOperationDelegate onEndUpdateEmpSurveysSubjectListDelegate;
-        
-        private System.Threading.SendOrPostCallback onUpdateEmpSurveysSubjectListCompletedDelegate;
-        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -22925,6 +23180,18 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 }
             }
         }
+        
+        public event System.EventHandler<IsContractCanBrowserCompletedEventArgs> IsContractCanBrowserCompleted;
+        
+        public event System.EventHandler<GetTravelmanagementListByUserIdCompletedEventArgs> GetTravelmanagementListByUserIdCompleted;
+        
+        public event System.EventHandler<GetUnderwayTravelmanagementCompletedEventArgs> GetUnderwayTravelmanagementCompleted;
+        
+        public event System.EventHandler<OrderMealInfoAddCompletedEventArgs> OrderMealInfoAddCompleted;
+        
+        public event System.EventHandler<IsExistOrderMealInfoByAddCompletedEventArgs> IsExistOrderMealInfoByAddCompleted;
+        
+        public event System.EventHandler<OrderMealInfoDelCompletedEventArgs> OrderMealInfoDelCompleted;
         
         public event System.EventHandler<OrderMealInfoUpdateCompletedEventArgs> OrderMealInfoUpdateCompleted;
         
@@ -23041,6 +23308,18 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         public event System.EventHandler<Result_EmployeeByRequireIDCompletedEventArgs> Result_EmployeeByRequireIDCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DoWorkCompleted;
+        
+        public event System.EventHandler<AddEmpSurveysSubjectCompletedEventArgs> AddEmpSurveysSubjectCompleted;
+        
+        public event System.EventHandler<AddEmpSurveysSubjectListCompletedEventArgs> AddEmpSurveysSubjectListCompleted;
+        
+        public event System.EventHandler<Save_SubjectAnswerCompletedEventArgs> Save_SubjectAnswerCompleted;
+        
+        public event System.EventHandler<DelEmpSurveysSubjectListCompletedEventArgs> DelEmpSurveysSubjectListCompleted;
+        
+        public event System.EventHandler<UpdateEmpSurveysSubjectCompletedEventArgs> UpdateEmpSurveysSubjectCompleted;
+        
+        public event System.EventHandler<UpdateEmpSurveysSubjectListCompletedEventArgs> UpdateEmpSurveysSubjectListCompleted;
         
         public event System.EventHandler<AddEmpSurveysAnswerCompletedEventArgs> AddEmpSurveysAnswerCompleted;
         
@@ -23200,18 +23479,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         public event System.EventHandler<GetBusinesstripDetailCompletedEventArgs> GetBusinesstripDetailCompleted;
         
-        public event System.EventHandler<IsContractCanBrowserCompletedEventArgs> IsContractCanBrowserCompleted;
-        
-        public event System.EventHandler<GetTravelmanagementListByUserIdCompletedEventArgs> GetTravelmanagementListByUserIdCompleted;
-        
-        public event System.EventHandler<GetUnderwayTravelmanagementCompletedEventArgs> GetUnderwayTravelmanagementCompleted;
-        
-        public event System.EventHandler<OrderMealInfoAddCompletedEventArgs> OrderMealInfoAddCompleted;
-        
-        public event System.EventHandler<IsExistOrderMealInfoByAddCompletedEventArgs> IsExistOrderMealInfoByAddCompleted;
-        
-        public event System.EventHandler<OrderMealInfoDelCompletedEventArgs> OrderMealInfoDelCompleted;
-        
         public event System.EventHandler<Get_ApporvalCompletedEventArgs> Get_ApporvalCompleted;
         
         public event System.EventHandler<GetApporvalListCompletedEventArgs> GetApporvalListCompleted;
@@ -23237,6 +23504,18 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         public event System.EventHandler<GetApprovalTypesByCompanyIDsCompletedEventArgs> GetApprovalTypesByCompanyIDsCompleted;
         
         public event System.EventHandler<GetApprovalTypesByUserIDCompletedEventArgs> GetApprovalTypesByUserIDCompleted;
+        
+        public event System.EventHandler<IsExistApprovalSetCompletedEventArgs> IsExistApprovalSetCompleted;
+        
+        public event System.EventHandler<DelSingleApprovalSetCompletedEventArgs> DelSingleApprovalSetCompleted;
+        
+        public event System.EventHandler<BatchAddApprovalSetsCompletedEventArgs> BatchAddApprovalSetsCompleted;
+        
+        public event System.EventHandler<BatchDelApprovalSetsCompletedEventArgs> BatchDelApprovalSetsCompleted;
+        
+        public event System.EventHandler<ApprovalTypeIsCostCompletedEventArgs> ApprovalTypeIsCostCompleted;
+        
+        public event System.EventHandler<GetApprovalSetsByOrgCompletedEventArgs> GetApprovalSetsByOrgCompleted;
         
         public event System.EventHandler<Get_ApporvalTempletCompletedEventArgs> Get_ApporvalTempletCompleted;
         
@@ -23370,21 +23649,307 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         public event System.EventHandler<DelEmpSurveysSubjectCompletedEventArgs> DelEmpSurveysSubjectCompleted;
         
-        public event System.EventHandler<AddEmpSurveysSubjectCompletedEventArgs> AddEmpSurveysSubjectCompleted;
-        
-        public event System.EventHandler<AddEmpSurveysSubjectListCompletedEventArgs> AddEmpSurveysSubjectListCompleted;
-        
-        public event System.EventHandler<Save_SubjectAnswerCompletedEventArgs> Save_SubjectAnswerCompleted;
-        
-        public event System.EventHandler<DelEmpSurveysSubjectListCompletedEventArgs> DelEmpSurveysSubjectListCompleted;
-        
-        public event System.EventHandler<UpdateEmpSurveysSubjectCompletedEventArgs> UpdateEmpSurveysSubjectCompleted;
-        
-        public event System.EventHandler<UpdateEmpSurveysSubjectListCompletedEventArgs> UpdateEmpSurveysSubjectListCompleted;
-        
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginIsContractCanBrowser(string TravelmanagementID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginIsContractCanBrowser(TravelmanagementID, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndIsContractCanBrowser(System.IAsyncResult result) {
+            return base.Channel.EndIsContractCanBrowser(result);
+        }
+        
+        private System.IAsyncResult OnBeginIsContractCanBrowser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string TravelmanagementID = ((string)(inValues[0]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginIsContractCanBrowser(TravelmanagementID, callback, asyncState);
+        }
+        
+        private object[] OnEndIsContractCanBrowser(System.IAsyncResult result) {
+            bool retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndIsContractCanBrowser(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnIsContractCanBrowserCompleted(object state) {
+            if ((this.IsContractCanBrowserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.IsContractCanBrowserCompleted(this, new IsContractCanBrowserCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void IsContractCanBrowserAsync(string TravelmanagementID) {
+            this.IsContractCanBrowserAsync(TravelmanagementID, null);
+        }
+        
+        public void IsContractCanBrowserAsync(string TravelmanagementID, object userState) {
+            if ((this.onBeginIsContractCanBrowserDelegate == null)) {
+                this.onBeginIsContractCanBrowserDelegate = new BeginOperationDelegate(this.OnBeginIsContractCanBrowser);
+            }
+            if ((this.onEndIsContractCanBrowserDelegate == null)) {
+                this.onEndIsContractCanBrowserDelegate = new EndOperationDelegate(this.OnEndIsContractCanBrowser);
+            }
+            if ((this.onIsContractCanBrowserCompletedDelegate == null)) {
+                this.onIsContractCanBrowserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnIsContractCanBrowserCompleted);
+            }
+            base.InvokeAsync(this.onBeginIsContractCanBrowserDelegate, new object[] {
+                        TravelmanagementID}, this.onEndIsContractCanBrowserDelegate, this.onIsContractCanBrowserCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginGetTravelmanagementListByUserId(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string checkState, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetTravelmanagementListByUserId(pageIndex, pageSize, sort, filterString, paras, ref pageCount, checkState, loginUserInfo, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement> SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndGetTravelmanagementListByUserId(ref int pageCount, System.IAsyncResult result) {
+            return base.Channel.EndGetTravelmanagementListByUserId(ref pageCount, result);
+        }
+        
+        private System.IAsyncResult OnBeginGetTravelmanagementListByUserId(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int pageIndex = ((int)(inValues[0]));
+            int pageSize = ((int)(inValues[1]));
+            string sort = ((string)(inValues[2]));
+            string filterString = ((string)(inValues[3]));
+            System.Collections.ObjectModel.ObservableCollection<object> paras = ((System.Collections.ObjectModel.ObservableCollection<object>)(inValues[4]));
+            int pageCount = ((int)(inValues[5]));
+            string checkState = ((string)(inValues[6]));
+            SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo)(inValues[7]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginGetTravelmanagementListByUserId(pageIndex, pageSize, sort, filterString, paras, ref pageCount, checkState, loginUserInfo, callback, asyncState);
+        }
+        
+        private object[] OnEndGetTravelmanagementListByUserId(System.IAsyncResult result) {
+            int pageCount = this.GetDefaultValueForInitialization<int>();
+            System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement> retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndGetTravelmanagementListByUserId(ref pageCount, result);
+            return new object[] {
+                    pageCount,
+                    retVal};
+        }
+        
+        private void OnGetTravelmanagementListByUserIdCompleted(object state) {
+            if ((this.GetTravelmanagementListByUserIdCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetTravelmanagementListByUserIdCompleted(this, new GetTravelmanagementListByUserIdCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetTravelmanagementListByUserIdAsync(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, int pageCount, string checkState, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo) {
+            this.GetTravelmanagementListByUserIdAsync(pageIndex, pageSize, sort, filterString, paras, pageCount, checkState, loginUserInfo, null);
+        }
+        
+        public void GetTravelmanagementListByUserIdAsync(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, int pageCount, string checkState, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, object userState) {
+            if ((this.onBeginGetTravelmanagementListByUserIdDelegate == null)) {
+                this.onBeginGetTravelmanagementListByUserIdDelegate = new BeginOperationDelegate(this.OnBeginGetTravelmanagementListByUserId);
+            }
+            if ((this.onEndGetTravelmanagementListByUserIdDelegate == null)) {
+                this.onEndGetTravelmanagementListByUserIdDelegate = new EndOperationDelegate(this.OnEndGetTravelmanagementListByUserId);
+            }
+            if ((this.onGetTravelmanagementListByUserIdCompletedDelegate == null)) {
+                this.onGetTravelmanagementListByUserIdCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetTravelmanagementListByUserIdCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetTravelmanagementListByUserIdDelegate, new object[] {
+                        pageIndex,
+                        pageSize,
+                        sort,
+                        filterString,
+                        paras,
+                        pageCount,
+                        checkState,
+                        loginUserInfo}, this.onEndGetTravelmanagementListByUserIdDelegate, this.onGetTravelmanagementListByUserIdCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginGetUnderwayTravelmanagement(string employeeid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetUnderwayTravelmanagement(employeeid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.Generic.Dictionary<string, string> SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndGetUnderwayTravelmanagement(System.IAsyncResult result) {
+            return base.Channel.EndGetUnderwayTravelmanagement(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetUnderwayTravelmanagement(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string employeeid = ((string)(inValues[0]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginGetUnderwayTravelmanagement(employeeid, callback, asyncState);
+        }
+        
+        private object[] OnEndGetUnderwayTravelmanagement(System.IAsyncResult result) {
+            System.Collections.Generic.Dictionary<string, string> retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndGetUnderwayTravelmanagement(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetUnderwayTravelmanagementCompleted(object state) {
+            if ((this.GetUnderwayTravelmanagementCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetUnderwayTravelmanagementCompleted(this, new GetUnderwayTravelmanagementCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetUnderwayTravelmanagementAsync(string employeeid) {
+            this.GetUnderwayTravelmanagementAsync(employeeid, null);
+        }
+        
+        public void GetUnderwayTravelmanagementAsync(string employeeid, object userState) {
+            if ((this.onBeginGetUnderwayTravelmanagementDelegate == null)) {
+                this.onBeginGetUnderwayTravelmanagementDelegate = new BeginOperationDelegate(this.OnBeginGetUnderwayTravelmanagement);
+            }
+            if ((this.onEndGetUnderwayTravelmanagementDelegate == null)) {
+                this.onEndGetUnderwayTravelmanagementDelegate = new EndOperationDelegate(this.OnEndGetUnderwayTravelmanagement);
+            }
+            if ((this.onGetUnderwayTravelmanagementCompletedDelegate == null)) {
+                this.onGetUnderwayTravelmanagementCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetUnderwayTravelmanagementCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetUnderwayTravelmanagementDelegate, new object[] {
+                        employeeid}, this.onEndGetUnderwayTravelmanagementDelegate, this.onGetUnderwayTravelmanagementCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginOrderMealInfoAdd(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginOrderMealInfoAdd(obj, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        string SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndOrderMealInfoAdd(System.IAsyncResult result) {
+            return base.Channel.EndOrderMealInfoAdd(result);
+        }
+        
+        private System.IAsyncResult OnBeginOrderMealInfoAdd(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL)(inValues[0]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginOrderMealInfoAdd(obj, callback, asyncState);
+        }
+        
+        private object[] OnEndOrderMealInfoAdd(System.IAsyncResult result) {
+            string retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndOrderMealInfoAdd(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnOrderMealInfoAddCompleted(object state) {
+            if ((this.OrderMealInfoAddCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.OrderMealInfoAddCompleted(this, new OrderMealInfoAddCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void OrderMealInfoAddAsync(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj) {
+            this.OrderMealInfoAddAsync(obj, null);
+        }
+        
+        public void OrderMealInfoAddAsync(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj, object userState) {
+            if ((this.onBeginOrderMealInfoAddDelegate == null)) {
+                this.onBeginOrderMealInfoAddDelegate = new BeginOperationDelegate(this.OnBeginOrderMealInfoAdd);
+            }
+            if ((this.onEndOrderMealInfoAddDelegate == null)) {
+                this.onEndOrderMealInfoAddDelegate = new EndOperationDelegate(this.OnEndOrderMealInfoAdd);
+            }
+            if ((this.onOrderMealInfoAddCompletedDelegate == null)) {
+                this.onOrderMealInfoAddCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnOrderMealInfoAddCompleted);
+            }
+            base.InvokeAsync(this.onBeginOrderMealInfoAddDelegate, new object[] {
+                        obj}, this.onEndOrderMealInfoAddDelegate, this.onOrderMealInfoAddCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginIsExistOrderMealInfoByAdd(string StrTitle, string StrDepart, string StrCreatUser, System.DateTime startdt, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginIsExistOrderMealInfoByAdd(StrTitle, StrDepart, StrCreatUser, startdt, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndIsExistOrderMealInfoByAdd(System.IAsyncResult result) {
+            return base.Channel.EndIsExistOrderMealInfoByAdd(result);
+        }
+        
+        private System.IAsyncResult OnBeginIsExistOrderMealInfoByAdd(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string StrTitle = ((string)(inValues[0]));
+            string StrDepart = ((string)(inValues[1]));
+            string StrCreatUser = ((string)(inValues[2]));
+            System.DateTime startdt = ((System.DateTime)(inValues[3]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginIsExistOrderMealInfoByAdd(StrTitle, StrDepart, StrCreatUser, startdt, callback, asyncState);
+        }
+        
+        private object[] OnEndIsExistOrderMealInfoByAdd(System.IAsyncResult result) {
+            bool retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndIsExistOrderMealInfoByAdd(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnIsExistOrderMealInfoByAddCompleted(object state) {
+            if ((this.IsExistOrderMealInfoByAddCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.IsExistOrderMealInfoByAddCompleted(this, new IsExistOrderMealInfoByAddCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void IsExistOrderMealInfoByAddAsync(string StrTitle, string StrDepart, string StrCreatUser, System.DateTime startdt) {
+            this.IsExistOrderMealInfoByAddAsync(StrTitle, StrDepart, StrCreatUser, startdt, null);
+        }
+        
+        public void IsExistOrderMealInfoByAddAsync(string StrTitle, string StrDepart, string StrCreatUser, System.DateTime startdt, object userState) {
+            if ((this.onBeginIsExistOrderMealInfoByAddDelegate == null)) {
+                this.onBeginIsExistOrderMealInfoByAddDelegate = new BeginOperationDelegate(this.OnBeginIsExistOrderMealInfoByAdd);
+            }
+            if ((this.onEndIsExistOrderMealInfoByAddDelegate == null)) {
+                this.onEndIsExistOrderMealInfoByAddDelegate = new EndOperationDelegate(this.OnEndIsExistOrderMealInfoByAdd);
+            }
+            if ((this.onIsExistOrderMealInfoByAddCompletedDelegate == null)) {
+                this.onIsExistOrderMealInfoByAddCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnIsExistOrderMealInfoByAddCompleted);
+            }
+            base.InvokeAsync(this.onBeginIsExistOrderMealInfoByAddDelegate, new object[] {
+                        StrTitle,
+                        StrDepart,
+                        StrCreatUser,
+                        startdt}, this.onEndIsExistOrderMealInfoByAddDelegate, this.onIsExistOrderMealInfoByAddCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginOrderMealInfoDel(System.Collections.ObjectModel.ObservableCollection<string> MealIDs, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginOrderMealInfoDel(MealIDs, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndOrderMealInfoDel(System.IAsyncResult result) {
+            return base.Channel.EndOrderMealInfoDel(result);
+        }
+        
+        private System.IAsyncResult OnBeginOrderMealInfoDel(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            System.Collections.ObjectModel.ObservableCollection<string> MealIDs = ((System.Collections.ObjectModel.ObservableCollection<string>)(inValues[0]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginOrderMealInfoDel(MealIDs, callback, asyncState);
+        }
+        
+        private object[] OnEndOrderMealInfoDel(System.IAsyncResult result) {
+            bool retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndOrderMealInfoDel(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnOrderMealInfoDelCompleted(object state) {
+            if ((this.OrderMealInfoDelCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.OrderMealInfoDelCompleted(this, new OrderMealInfoDelCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void OrderMealInfoDelAsync(System.Collections.ObjectModel.ObservableCollection<string> MealIDs) {
+            this.OrderMealInfoDelAsync(MealIDs, null);
+        }
+        
+        public void OrderMealInfoDelAsync(System.Collections.ObjectModel.ObservableCollection<string> MealIDs, object userState) {
+            if ((this.onBeginOrderMealInfoDelDelegate == null)) {
+                this.onBeginOrderMealInfoDelDelegate = new BeginOperationDelegate(this.OnBeginOrderMealInfoDel);
+            }
+            if ((this.onEndOrderMealInfoDelDelegate == null)) {
+                this.onEndOrderMealInfoDelDelegate = new EndOperationDelegate(this.OnEndOrderMealInfoDel);
+            }
+            if ((this.onOrderMealInfoDelCompletedDelegate == null)) {
+                this.onOrderMealInfoDelCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnOrderMealInfoDelCompleted);
+            }
+            base.InvokeAsync(this.onBeginOrderMealInfoDelDelegate, new object[] {
+                        MealIDs}, this.onEndOrderMealInfoDelDelegate, this.onOrderMealInfoDelCompletedDelegate, userState);
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginOrderMealInfoUpdate(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj, System.AsyncCallback callback, object asyncState) {
@@ -26272,6 +26837,284 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 this.onDoWorkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDoWorkCompleted);
             }
             base.InvokeAsync(this.onBeginDoWorkDelegate, null, this.onEndDoWorkDelegate, this.onDoWorkCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginAddEmpSurveysSubject(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 obj, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddEmpSurveysSubject(obj, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        int SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndAddEmpSurveysSubject(System.IAsyncResult result) {
+            return base.Channel.EndAddEmpSurveysSubject(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddEmpSurveysSubject(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 obj = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2)(inValues[0]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginAddEmpSurveysSubject(obj, callback, asyncState);
+        }
+        
+        private object[] OnEndAddEmpSurveysSubject(System.IAsyncResult result) {
+            int retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndAddEmpSurveysSubject(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddEmpSurveysSubjectCompleted(object state) {
+            if ((this.AddEmpSurveysSubjectCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddEmpSurveysSubjectCompleted(this, new AddEmpSurveysSubjectCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddEmpSurveysSubjectAsync(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 obj) {
+            this.AddEmpSurveysSubjectAsync(obj, null);
+        }
+        
+        public void AddEmpSurveysSubjectAsync(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 obj, object userState) {
+            if ((this.onBeginAddEmpSurveysSubjectDelegate == null)) {
+                this.onBeginAddEmpSurveysSubjectDelegate = new BeginOperationDelegate(this.OnBeginAddEmpSurveysSubject);
+            }
+            if ((this.onEndAddEmpSurveysSubjectDelegate == null)) {
+                this.onEndAddEmpSurveysSubjectDelegate = new EndOperationDelegate(this.OnEndAddEmpSurveysSubject);
+            }
+            if ((this.onAddEmpSurveysSubjectCompletedDelegate == null)) {
+                this.onAddEmpSurveysSubjectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddEmpSurveysSubjectCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddEmpSurveysSubjectDelegate, new object[] {
+                        obj}, this.onEndAddEmpSurveysSubjectDelegate, this.onAddEmpSurveysSubjectCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginAddEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddEmpSurveysSubjectList(objList, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        int SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndAddEmpSurveysSubjectList(System.IAsyncResult result) {
+            return base.Channel.EndAddEmpSurveysSubjectList(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddEmpSurveysSubjectList(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>)(inValues[0]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginAddEmpSurveysSubjectList(objList, callback, asyncState);
+        }
+        
+        private object[] OnEndAddEmpSurveysSubjectList(System.IAsyncResult result) {
+            int retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndAddEmpSurveysSubjectList(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddEmpSurveysSubjectListCompleted(object state) {
+            if ((this.AddEmpSurveysSubjectListCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddEmpSurveysSubjectListCompleted(this, new AddEmpSurveysSubjectListCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddEmpSurveysSubjectListAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList) {
+            this.AddEmpSurveysSubjectListAsync(objList, null);
+        }
+        
+        public void AddEmpSurveysSubjectListAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, object userState) {
+            if ((this.onBeginAddEmpSurveysSubjectListDelegate == null)) {
+                this.onBeginAddEmpSurveysSubjectListDelegate = new BeginOperationDelegate(this.OnBeginAddEmpSurveysSubjectList);
+            }
+            if ((this.onEndAddEmpSurveysSubjectListDelegate == null)) {
+                this.onEndAddEmpSurveysSubjectListDelegate = new EndOperationDelegate(this.OnEndAddEmpSurveysSubjectList);
+            }
+            if ((this.onAddEmpSurveysSubjectListCompletedDelegate == null)) {
+                this.onAddEmpSurveysSubjectListCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddEmpSurveysSubjectListCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddEmpSurveysSubjectListDelegate, new object[] {
+                        objList}, this.onEndAddEmpSurveysSubjectListDelegate, this.onAddEmpSurveysSubjectListCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginSave_SubjectAnswer(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstAdd, System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstUpd, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginSave_SubjectAnswer(lstAdd, lstUpd, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        int SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndSave_SubjectAnswer(System.IAsyncResult result) {
+            return base.Channel.EndSave_SubjectAnswer(result);
+        }
+        
+        private System.IAsyncResult OnBeginSave_SubjectAnswer(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstAdd = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>)(inValues[0]));
+            System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstUpd = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>)(inValues[1]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginSave_SubjectAnswer(lstAdd, lstUpd, callback, asyncState);
+        }
+        
+        private object[] OnEndSave_SubjectAnswer(System.IAsyncResult result) {
+            int retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndSave_SubjectAnswer(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnSave_SubjectAnswerCompleted(object state) {
+            if ((this.Save_SubjectAnswerCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Save_SubjectAnswerCompleted(this, new Save_SubjectAnswerCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Save_SubjectAnswerAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstAdd, System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstUpd) {
+            this.Save_SubjectAnswerAsync(lstAdd, lstUpd, null);
+        }
+        
+        public void Save_SubjectAnswerAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstAdd, System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstUpd, object userState) {
+            if ((this.onBeginSave_SubjectAnswerDelegate == null)) {
+                this.onBeginSave_SubjectAnswerDelegate = new BeginOperationDelegate(this.OnBeginSave_SubjectAnswer);
+            }
+            if ((this.onEndSave_SubjectAnswerDelegate == null)) {
+                this.onEndSave_SubjectAnswerDelegate = new EndOperationDelegate(this.OnEndSave_SubjectAnswer);
+            }
+            if ((this.onSave_SubjectAnswerCompletedDelegate == null)) {
+                this.onSave_SubjectAnswerCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnSave_SubjectAnswerCompleted);
+            }
+            base.InvokeAsync(this.onBeginSave_SubjectAnswerDelegate, new object[] {
+                        lstAdd,
+                        lstUpd}, this.onEndSave_SubjectAnswerDelegate, this.onSave_SubjectAnswerCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginDelEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDelEmpSurveysSubjectList(objList, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        int SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndDelEmpSurveysSubjectList(System.IAsyncResult result) {
+            return base.Channel.EndDelEmpSurveysSubjectList(result);
+        }
+        
+        private System.IAsyncResult OnBeginDelEmpSurveysSubjectList(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>)(inValues[0]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginDelEmpSurveysSubjectList(objList, callback, asyncState);
+        }
+        
+        private object[] OnEndDelEmpSurveysSubjectList(System.IAsyncResult result) {
+            int retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndDelEmpSurveysSubjectList(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnDelEmpSurveysSubjectListCompleted(object state) {
+            if ((this.DelEmpSurveysSubjectListCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DelEmpSurveysSubjectListCompleted(this, new DelEmpSurveysSubjectListCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DelEmpSurveysSubjectListAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList) {
+            this.DelEmpSurveysSubjectListAsync(objList, null);
+        }
+        
+        public void DelEmpSurveysSubjectListAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, object userState) {
+            if ((this.onBeginDelEmpSurveysSubjectListDelegate == null)) {
+                this.onBeginDelEmpSurveysSubjectListDelegate = new BeginOperationDelegate(this.OnBeginDelEmpSurveysSubjectList);
+            }
+            if ((this.onEndDelEmpSurveysSubjectListDelegate == null)) {
+                this.onEndDelEmpSurveysSubjectListDelegate = new EndOperationDelegate(this.OnEndDelEmpSurveysSubjectList);
+            }
+            if ((this.onDelEmpSurveysSubjectListCompletedDelegate == null)) {
+                this.onDelEmpSurveysSubjectListCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDelEmpSurveysSubjectListCompleted);
+            }
+            base.InvokeAsync(this.onBeginDelEmpSurveysSubjectListDelegate, new object[] {
+                        objList}, this.onEndDelEmpSurveysSubjectListDelegate, this.onDelEmpSurveysSubjectListCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginUpdateEmpSurveysSubject(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 objSubject, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginUpdateEmpSurveysSubject(objSubject, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        int SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndUpdateEmpSurveysSubject(System.IAsyncResult result) {
+            return base.Channel.EndUpdateEmpSurveysSubject(result);
+        }
+        
+        private System.IAsyncResult OnBeginUpdateEmpSurveysSubject(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 objSubject = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2)(inValues[0]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginUpdateEmpSurveysSubject(objSubject, callback, asyncState);
+        }
+        
+        private object[] OnEndUpdateEmpSurveysSubject(System.IAsyncResult result) {
+            int retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndUpdateEmpSurveysSubject(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnUpdateEmpSurveysSubjectCompleted(object state) {
+            if ((this.UpdateEmpSurveysSubjectCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.UpdateEmpSurveysSubjectCompleted(this, new UpdateEmpSurveysSubjectCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void UpdateEmpSurveysSubjectAsync(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 objSubject) {
+            this.UpdateEmpSurveysSubjectAsync(objSubject, null);
+        }
+        
+        public void UpdateEmpSurveysSubjectAsync(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 objSubject, object userState) {
+            if ((this.onBeginUpdateEmpSurveysSubjectDelegate == null)) {
+                this.onBeginUpdateEmpSurveysSubjectDelegate = new BeginOperationDelegate(this.OnBeginUpdateEmpSurveysSubject);
+            }
+            if ((this.onEndUpdateEmpSurveysSubjectDelegate == null)) {
+                this.onEndUpdateEmpSurveysSubjectDelegate = new EndOperationDelegate(this.OnEndUpdateEmpSurveysSubject);
+            }
+            if ((this.onUpdateEmpSurveysSubjectCompletedDelegate == null)) {
+                this.onUpdateEmpSurveysSubjectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateEmpSurveysSubjectCompleted);
+            }
+            base.InvokeAsync(this.onBeginUpdateEmpSurveysSubjectDelegate, new object[] {
+                        objSubject}, this.onEndUpdateEmpSurveysSubjectDelegate, this.onUpdateEmpSurveysSubjectCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginUpdateEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginUpdateEmpSurveysSubjectList(objList, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        int SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndUpdateEmpSurveysSubjectList(System.IAsyncResult result) {
+            return base.Channel.EndUpdateEmpSurveysSubjectList(result);
+        }
+        
+        private System.IAsyncResult OnBeginUpdateEmpSurveysSubjectList(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>)(inValues[0]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginUpdateEmpSurveysSubjectList(objList, callback, asyncState);
+        }
+        
+        private object[] OnEndUpdateEmpSurveysSubjectList(System.IAsyncResult result) {
+            int retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndUpdateEmpSurveysSubjectList(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnUpdateEmpSurveysSubjectListCompleted(object state) {
+            if ((this.UpdateEmpSurveysSubjectListCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.UpdateEmpSurveysSubjectListCompleted(this, new UpdateEmpSurveysSubjectListCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void UpdateEmpSurveysSubjectListAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList) {
+            this.UpdateEmpSurveysSubjectListAsync(objList, null);
+        }
+        
+        public void UpdateEmpSurveysSubjectListAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, object userState) {
+            if ((this.onBeginUpdateEmpSurveysSubjectListDelegate == null)) {
+                this.onBeginUpdateEmpSurveysSubjectListDelegate = new BeginOperationDelegate(this.OnBeginUpdateEmpSurveysSubjectList);
+            }
+            if ((this.onEndUpdateEmpSurveysSubjectListDelegate == null)) {
+                this.onEndUpdateEmpSurveysSubjectListDelegate = new EndOperationDelegate(this.OnEndUpdateEmpSurveysSubjectList);
+            }
+            if ((this.onUpdateEmpSurveysSubjectListCompletedDelegate == null)) {
+                this.onUpdateEmpSurveysSubjectListCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateEmpSurveysSubjectListCompleted);
+            }
+            base.InvokeAsync(this.onBeginUpdateEmpSurveysSubjectListDelegate, new object[] {
+                        objList}, this.onEndUpdateEmpSurveysSubjectListDelegate, this.onUpdateEmpSurveysSubjectListCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -30147,304 +30990,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginIsContractCanBrowser(string TravelmanagementID, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginIsContractCanBrowser(TravelmanagementID, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        bool SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndIsContractCanBrowser(System.IAsyncResult result) {
-            return base.Channel.EndIsContractCanBrowser(result);
-        }
-        
-        private System.IAsyncResult OnBeginIsContractCanBrowser(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string TravelmanagementID = ((string)(inValues[0]));
-            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginIsContractCanBrowser(TravelmanagementID, callback, asyncState);
-        }
-        
-        private object[] OnEndIsContractCanBrowser(System.IAsyncResult result) {
-            bool retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndIsContractCanBrowser(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnIsContractCanBrowserCompleted(object state) {
-            if ((this.IsContractCanBrowserCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.IsContractCanBrowserCompleted(this, new IsContractCanBrowserCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void IsContractCanBrowserAsync(string TravelmanagementID) {
-            this.IsContractCanBrowserAsync(TravelmanagementID, null);
-        }
-        
-        public void IsContractCanBrowserAsync(string TravelmanagementID, object userState) {
-            if ((this.onBeginIsContractCanBrowserDelegate == null)) {
-                this.onBeginIsContractCanBrowserDelegate = new BeginOperationDelegate(this.OnBeginIsContractCanBrowser);
-            }
-            if ((this.onEndIsContractCanBrowserDelegate == null)) {
-                this.onEndIsContractCanBrowserDelegate = new EndOperationDelegate(this.OnEndIsContractCanBrowser);
-            }
-            if ((this.onIsContractCanBrowserCompletedDelegate == null)) {
-                this.onIsContractCanBrowserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnIsContractCanBrowserCompleted);
-            }
-            base.InvokeAsync(this.onBeginIsContractCanBrowserDelegate, new object[] {
-                        TravelmanagementID}, this.onEndIsContractCanBrowserDelegate, this.onIsContractCanBrowserCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginGetTravelmanagementListByUserId(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string checkState, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetTravelmanagementListByUserId(pageIndex, pageSize, sort, filterString, paras, ref pageCount, checkState, loginUserInfo, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement> SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndGetTravelmanagementListByUserId(ref int pageCount, System.IAsyncResult result) {
-            return base.Channel.EndGetTravelmanagementListByUserId(ref pageCount, result);
-        }
-        
-        private System.IAsyncResult OnBeginGetTravelmanagementListByUserId(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int pageIndex = ((int)(inValues[0]));
-            int pageSize = ((int)(inValues[1]));
-            string sort = ((string)(inValues[2]));
-            string filterString = ((string)(inValues[3]));
-            System.Collections.ObjectModel.ObservableCollection<object> paras = ((System.Collections.ObjectModel.ObservableCollection<object>)(inValues[4]));
-            int pageCount = ((int)(inValues[5]));
-            string checkState = ((string)(inValues[6]));
-            SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo)(inValues[7]));
-            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginGetTravelmanagementListByUserId(pageIndex, pageSize, sort, filterString, paras, ref pageCount, checkState, loginUserInfo, callback, asyncState);
-        }
-        
-        private object[] OnEndGetTravelmanagementListByUserId(System.IAsyncResult result) {
-            int pageCount = this.GetDefaultValueForInitialization<int>();
-            System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement> retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndGetTravelmanagementListByUserId(ref pageCount, result);
-            return new object[] {
-                    pageCount,
-                    retVal};
-        }
-        
-        private void OnGetTravelmanagementListByUserIdCompleted(object state) {
-            if ((this.GetTravelmanagementListByUserIdCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetTravelmanagementListByUserIdCompleted(this, new GetTravelmanagementListByUserIdCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetTravelmanagementListByUserIdAsync(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, int pageCount, string checkState, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo) {
-            this.GetTravelmanagementListByUserIdAsync(pageIndex, pageSize, sort, filterString, paras, pageCount, checkState, loginUserInfo, null);
-        }
-        
-        public void GetTravelmanagementListByUserIdAsync(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, int pageCount, string checkState, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, object userState) {
-            if ((this.onBeginGetTravelmanagementListByUserIdDelegate == null)) {
-                this.onBeginGetTravelmanagementListByUserIdDelegate = new BeginOperationDelegate(this.OnBeginGetTravelmanagementListByUserId);
-            }
-            if ((this.onEndGetTravelmanagementListByUserIdDelegate == null)) {
-                this.onEndGetTravelmanagementListByUserIdDelegate = new EndOperationDelegate(this.OnEndGetTravelmanagementListByUserId);
-            }
-            if ((this.onGetTravelmanagementListByUserIdCompletedDelegate == null)) {
-                this.onGetTravelmanagementListByUserIdCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetTravelmanagementListByUserIdCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetTravelmanagementListByUserIdDelegate, new object[] {
-                        pageIndex,
-                        pageSize,
-                        sort,
-                        filterString,
-                        paras,
-                        pageCount,
-                        checkState,
-                        loginUserInfo}, this.onEndGetTravelmanagementListByUserIdDelegate, this.onGetTravelmanagementListByUserIdCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginGetUnderwayTravelmanagement(string employeeid, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetUnderwayTravelmanagement(employeeid, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Collections.Generic.Dictionary<string, string> SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndGetUnderwayTravelmanagement(System.IAsyncResult result) {
-            return base.Channel.EndGetUnderwayTravelmanagement(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetUnderwayTravelmanagement(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string employeeid = ((string)(inValues[0]));
-            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginGetUnderwayTravelmanagement(employeeid, callback, asyncState);
-        }
-        
-        private object[] OnEndGetUnderwayTravelmanagement(System.IAsyncResult result) {
-            System.Collections.Generic.Dictionary<string, string> retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndGetUnderwayTravelmanagement(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetUnderwayTravelmanagementCompleted(object state) {
-            if ((this.GetUnderwayTravelmanagementCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetUnderwayTravelmanagementCompleted(this, new GetUnderwayTravelmanagementCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetUnderwayTravelmanagementAsync(string employeeid) {
-            this.GetUnderwayTravelmanagementAsync(employeeid, null);
-        }
-        
-        public void GetUnderwayTravelmanagementAsync(string employeeid, object userState) {
-            if ((this.onBeginGetUnderwayTravelmanagementDelegate == null)) {
-                this.onBeginGetUnderwayTravelmanagementDelegate = new BeginOperationDelegate(this.OnBeginGetUnderwayTravelmanagement);
-            }
-            if ((this.onEndGetUnderwayTravelmanagementDelegate == null)) {
-                this.onEndGetUnderwayTravelmanagementDelegate = new EndOperationDelegate(this.OnEndGetUnderwayTravelmanagement);
-            }
-            if ((this.onGetUnderwayTravelmanagementCompletedDelegate == null)) {
-                this.onGetUnderwayTravelmanagementCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetUnderwayTravelmanagementCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetUnderwayTravelmanagementDelegate, new object[] {
-                        employeeid}, this.onEndGetUnderwayTravelmanagementDelegate, this.onGetUnderwayTravelmanagementCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginOrderMealInfoAdd(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginOrderMealInfoAdd(obj, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        string SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndOrderMealInfoAdd(System.IAsyncResult result) {
-            return base.Channel.EndOrderMealInfoAdd(result);
-        }
-        
-        private System.IAsyncResult OnBeginOrderMealInfoAdd(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL)(inValues[0]));
-            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginOrderMealInfoAdd(obj, callback, asyncState);
-        }
-        
-        private object[] OnEndOrderMealInfoAdd(System.IAsyncResult result) {
-            string retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndOrderMealInfoAdd(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnOrderMealInfoAddCompleted(object state) {
-            if ((this.OrderMealInfoAddCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.OrderMealInfoAddCompleted(this, new OrderMealInfoAddCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void OrderMealInfoAddAsync(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj) {
-            this.OrderMealInfoAddAsync(obj, null);
-        }
-        
-        public void OrderMealInfoAddAsync(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj, object userState) {
-            if ((this.onBeginOrderMealInfoAddDelegate == null)) {
-                this.onBeginOrderMealInfoAddDelegate = new BeginOperationDelegate(this.OnBeginOrderMealInfoAdd);
-            }
-            if ((this.onEndOrderMealInfoAddDelegate == null)) {
-                this.onEndOrderMealInfoAddDelegate = new EndOperationDelegate(this.OnEndOrderMealInfoAdd);
-            }
-            if ((this.onOrderMealInfoAddCompletedDelegate == null)) {
-                this.onOrderMealInfoAddCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnOrderMealInfoAddCompleted);
-            }
-            base.InvokeAsync(this.onBeginOrderMealInfoAddDelegate, new object[] {
-                        obj}, this.onEndOrderMealInfoAddDelegate, this.onOrderMealInfoAddCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginIsExistOrderMealInfoByAdd(string StrTitle, string StrDepart, string StrCreatUser, System.DateTime startdt, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginIsExistOrderMealInfoByAdd(StrTitle, StrDepart, StrCreatUser, startdt, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        bool SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndIsExistOrderMealInfoByAdd(System.IAsyncResult result) {
-            return base.Channel.EndIsExistOrderMealInfoByAdd(result);
-        }
-        
-        private System.IAsyncResult OnBeginIsExistOrderMealInfoByAdd(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string StrTitle = ((string)(inValues[0]));
-            string StrDepart = ((string)(inValues[1]));
-            string StrCreatUser = ((string)(inValues[2]));
-            System.DateTime startdt = ((System.DateTime)(inValues[3]));
-            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginIsExistOrderMealInfoByAdd(StrTitle, StrDepart, StrCreatUser, startdt, callback, asyncState);
-        }
-        
-        private object[] OnEndIsExistOrderMealInfoByAdd(System.IAsyncResult result) {
-            bool retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndIsExistOrderMealInfoByAdd(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnIsExistOrderMealInfoByAddCompleted(object state) {
-            if ((this.IsExistOrderMealInfoByAddCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.IsExistOrderMealInfoByAddCompleted(this, new IsExistOrderMealInfoByAddCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void IsExistOrderMealInfoByAddAsync(string StrTitle, string StrDepart, string StrCreatUser, System.DateTime startdt) {
-            this.IsExistOrderMealInfoByAddAsync(StrTitle, StrDepart, StrCreatUser, startdt, null);
-        }
-        
-        public void IsExistOrderMealInfoByAddAsync(string StrTitle, string StrDepart, string StrCreatUser, System.DateTime startdt, object userState) {
-            if ((this.onBeginIsExistOrderMealInfoByAddDelegate == null)) {
-                this.onBeginIsExistOrderMealInfoByAddDelegate = new BeginOperationDelegate(this.OnBeginIsExistOrderMealInfoByAdd);
-            }
-            if ((this.onEndIsExistOrderMealInfoByAddDelegate == null)) {
-                this.onEndIsExistOrderMealInfoByAddDelegate = new EndOperationDelegate(this.OnEndIsExistOrderMealInfoByAdd);
-            }
-            if ((this.onIsExistOrderMealInfoByAddCompletedDelegate == null)) {
-                this.onIsExistOrderMealInfoByAddCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnIsExistOrderMealInfoByAddCompleted);
-            }
-            base.InvokeAsync(this.onBeginIsExistOrderMealInfoByAddDelegate, new object[] {
-                        StrTitle,
-                        StrDepart,
-                        StrCreatUser,
-                        startdt}, this.onEndIsExistOrderMealInfoByAddDelegate, this.onIsExistOrderMealInfoByAddCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginOrderMealInfoDel(System.Collections.ObjectModel.ObservableCollection<string> MealIDs, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginOrderMealInfoDel(MealIDs, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        bool SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndOrderMealInfoDel(System.IAsyncResult result) {
-            return base.Channel.EndOrderMealInfoDel(result);
-        }
-        
-        private System.IAsyncResult OnBeginOrderMealInfoDel(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            System.Collections.ObjectModel.ObservableCollection<string> MealIDs = ((System.Collections.ObjectModel.ObservableCollection<string>)(inValues[0]));
-            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginOrderMealInfoDel(MealIDs, callback, asyncState);
-        }
-        
-        private object[] OnEndOrderMealInfoDel(System.IAsyncResult result) {
-            bool retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndOrderMealInfoDel(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnOrderMealInfoDelCompleted(object state) {
-            if ((this.OrderMealInfoDelCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.OrderMealInfoDelCompleted(this, new OrderMealInfoDelCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void OrderMealInfoDelAsync(System.Collections.ObjectModel.ObservableCollection<string> MealIDs) {
-            this.OrderMealInfoDelAsync(MealIDs, null);
-        }
-        
-        public void OrderMealInfoDelAsync(System.Collections.ObjectModel.ObservableCollection<string> MealIDs, object userState) {
-            if ((this.onBeginOrderMealInfoDelDelegate == null)) {
-                this.onBeginOrderMealInfoDelDelegate = new BeginOperationDelegate(this.OnBeginOrderMealInfoDel);
-            }
-            if ((this.onEndOrderMealInfoDelDelegate == null)) {
-                this.onEndOrderMealInfoDelDelegate = new EndOperationDelegate(this.OnEndOrderMealInfoDel);
-            }
-            if ((this.onOrderMealInfoDelCompletedDelegate == null)) {
-                this.onOrderMealInfoDelCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnOrderMealInfoDelCompleted);
-            }
-            base.InvokeAsync(this.onBeginOrderMealInfoDelDelegate, new object[] {
-                        MealIDs}, this.onEndOrderMealInfoDelDelegate, this.onOrderMealInfoDelCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginGet_Apporval(string id, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGet_Apporval(id, callback, asyncState);
         }
@@ -31088,6 +31633,288 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
             }
             base.InvokeAsync(this.onBeginGetApprovalTypesByUserIDDelegate, new object[] {
                         employeeID}, this.onEndGetApprovalTypesByUserIDDelegate, this.onGetApprovalTypesByUserIDCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginIsExistApprovalSet(string setID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginIsExistApprovalSet(setID, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndIsExistApprovalSet(System.IAsyncResult result) {
+            return base.Channel.EndIsExistApprovalSet(result);
+        }
+        
+        private System.IAsyncResult OnBeginIsExistApprovalSet(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string setID = ((string)(inValues[0]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginIsExistApprovalSet(setID, callback, asyncState);
+        }
+        
+        private object[] OnEndIsExistApprovalSet(System.IAsyncResult result) {
+            bool retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndIsExistApprovalSet(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnIsExistApprovalSetCompleted(object state) {
+            if ((this.IsExistApprovalSetCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.IsExistApprovalSetCompleted(this, new IsExistApprovalSetCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void IsExistApprovalSetAsync(string setID) {
+            this.IsExistApprovalSetAsync(setID, null);
+        }
+        
+        public void IsExistApprovalSetAsync(string setID, object userState) {
+            if ((this.onBeginIsExistApprovalSetDelegate == null)) {
+                this.onBeginIsExistApprovalSetDelegate = new BeginOperationDelegate(this.OnBeginIsExistApprovalSet);
+            }
+            if ((this.onEndIsExistApprovalSetDelegate == null)) {
+                this.onEndIsExistApprovalSetDelegate = new EndOperationDelegate(this.OnEndIsExistApprovalSet);
+            }
+            if ((this.onIsExistApprovalSetCompletedDelegate == null)) {
+                this.onIsExistApprovalSetCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnIsExistApprovalSetCompleted);
+            }
+            base.InvokeAsync(this.onBeginIsExistApprovalSetDelegate, new object[] {
+                        setID}, this.onEndIsExistApprovalSetDelegate, this.onIsExistApprovalSetCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginDelSingleApprovalSet(string setID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDelSingleApprovalSet(setID, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndDelSingleApprovalSet(System.IAsyncResult result) {
+            return base.Channel.EndDelSingleApprovalSet(result);
+        }
+        
+        private System.IAsyncResult OnBeginDelSingleApprovalSet(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string setID = ((string)(inValues[0]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginDelSingleApprovalSet(setID, callback, asyncState);
+        }
+        
+        private object[] OnEndDelSingleApprovalSet(System.IAsyncResult result) {
+            bool retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndDelSingleApprovalSet(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnDelSingleApprovalSetCompleted(object state) {
+            if ((this.DelSingleApprovalSetCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DelSingleApprovalSetCompleted(this, new DelSingleApprovalSetCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DelSingleApprovalSetAsync(string setID) {
+            this.DelSingleApprovalSetAsync(setID, null);
+        }
+        
+        public void DelSingleApprovalSetAsync(string setID, object userState) {
+            if ((this.onBeginDelSingleApprovalSetDelegate == null)) {
+                this.onBeginDelSingleApprovalSetDelegate = new BeginOperationDelegate(this.OnBeginDelSingleApprovalSet);
+            }
+            if ((this.onEndDelSingleApprovalSetDelegate == null)) {
+                this.onEndDelSingleApprovalSetDelegate = new EndOperationDelegate(this.OnEndDelSingleApprovalSet);
+            }
+            if ((this.onDelSingleApprovalSetCompletedDelegate == null)) {
+                this.onDelSingleApprovalSetCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDelSingleApprovalSetCompleted);
+            }
+            base.InvokeAsync(this.onBeginDelSingleApprovalSetDelegate, new object[] {
+                        setID}, this.onEndDelSingleApprovalSetDelegate, this.onDelSingleApprovalSetCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginBatchAddApprovalSets(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET> listSets, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginBatchAddApprovalSets(listSets, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndBatchAddApprovalSets(System.IAsyncResult result) {
+            return base.Channel.EndBatchAddApprovalSets(result);
+        }
+        
+        private System.IAsyncResult OnBeginBatchAddApprovalSets(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET> listSets = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET>)(inValues[0]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginBatchAddApprovalSets(listSets, callback, asyncState);
+        }
+        
+        private object[] OnEndBatchAddApprovalSets(System.IAsyncResult result) {
+            bool retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndBatchAddApprovalSets(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnBatchAddApprovalSetsCompleted(object state) {
+            if ((this.BatchAddApprovalSetsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.BatchAddApprovalSetsCompleted(this, new BatchAddApprovalSetsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void BatchAddApprovalSetsAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET> listSets) {
+            this.BatchAddApprovalSetsAsync(listSets, null);
+        }
+        
+        public void BatchAddApprovalSetsAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET> listSets, object userState) {
+            if ((this.onBeginBatchAddApprovalSetsDelegate == null)) {
+                this.onBeginBatchAddApprovalSetsDelegate = new BeginOperationDelegate(this.OnBeginBatchAddApprovalSets);
+            }
+            if ((this.onEndBatchAddApprovalSetsDelegate == null)) {
+                this.onEndBatchAddApprovalSetsDelegate = new EndOperationDelegate(this.OnEndBatchAddApprovalSets);
+            }
+            if ((this.onBatchAddApprovalSetsCompletedDelegate == null)) {
+                this.onBatchAddApprovalSetsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnBatchAddApprovalSetsCompleted);
+            }
+            base.InvokeAsync(this.onBeginBatchAddApprovalSetsDelegate, new object[] {
+                        listSets}, this.onEndBatchAddApprovalSetsDelegate, this.onBatchAddApprovalSetsCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginBatchDelApprovalSets(System.Collections.ObjectModel.ObservableCollection<string> SetIDs, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginBatchDelApprovalSets(SetIDs, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndBatchDelApprovalSets(System.IAsyncResult result) {
+            return base.Channel.EndBatchDelApprovalSets(result);
+        }
+        
+        private System.IAsyncResult OnBeginBatchDelApprovalSets(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            System.Collections.ObjectModel.ObservableCollection<string> SetIDs = ((System.Collections.ObjectModel.ObservableCollection<string>)(inValues[0]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginBatchDelApprovalSets(SetIDs, callback, asyncState);
+        }
+        
+        private object[] OnEndBatchDelApprovalSets(System.IAsyncResult result) {
+            bool retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndBatchDelApprovalSets(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnBatchDelApprovalSetsCompleted(object state) {
+            if ((this.BatchDelApprovalSetsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.BatchDelApprovalSetsCompleted(this, new BatchDelApprovalSetsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void BatchDelApprovalSetsAsync(System.Collections.ObjectModel.ObservableCollection<string> SetIDs) {
+            this.BatchDelApprovalSetsAsync(SetIDs, null);
+        }
+        
+        public void BatchDelApprovalSetsAsync(System.Collections.ObjectModel.ObservableCollection<string> SetIDs, object userState) {
+            if ((this.onBeginBatchDelApprovalSetsDelegate == null)) {
+                this.onBeginBatchDelApprovalSetsDelegate = new BeginOperationDelegate(this.OnBeginBatchDelApprovalSets);
+            }
+            if ((this.onEndBatchDelApprovalSetsDelegate == null)) {
+                this.onEndBatchDelApprovalSetsDelegate = new EndOperationDelegate(this.OnEndBatchDelApprovalSets);
+            }
+            if ((this.onBatchDelApprovalSetsCompletedDelegate == null)) {
+                this.onBatchDelApprovalSetsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnBatchDelApprovalSetsCompleted);
+            }
+            base.InvokeAsync(this.onBeginBatchDelApprovalSetsDelegate, new object[] {
+                        SetIDs}, this.onEndBatchDelApprovalSetsDelegate, this.onBatchDelApprovalSetsCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginApprovalTypeIsCost(string approvalValue, string departmentID, string companyID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginApprovalTypeIsCost(approvalValue, departmentID, companyID, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        string SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndApprovalTypeIsCost(System.IAsyncResult result) {
+            return base.Channel.EndApprovalTypeIsCost(result);
+        }
+        
+        private System.IAsyncResult OnBeginApprovalTypeIsCost(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string approvalValue = ((string)(inValues[0]));
+            string departmentID = ((string)(inValues[1]));
+            string companyID = ((string)(inValues[2]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginApprovalTypeIsCost(approvalValue, departmentID, companyID, callback, asyncState);
+        }
+        
+        private object[] OnEndApprovalTypeIsCost(System.IAsyncResult result) {
+            string retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndApprovalTypeIsCost(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnApprovalTypeIsCostCompleted(object state) {
+            if ((this.ApprovalTypeIsCostCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ApprovalTypeIsCostCompleted(this, new ApprovalTypeIsCostCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ApprovalTypeIsCostAsync(string approvalValue, string departmentID, string companyID) {
+            this.ApprovalTypeIsCostAsync(approvalValue, departmentID, companyID, null);
+        }
+        
+        public void ApprovalTypeIsCostAsync(string approvalValue, string departmentID, string companyID, object userState) {
+            if ((this.onBeginApprovalTypeIsCostDelegate == null)) {
+                this.onBeginApprovalTypeIsCostDelegate = new BeginOperationDelegate(this.OnBeginApprovalTypeIsCost);
+            }
+            if ((this.onEndApprovalTypeIsCostDelegate == null)) {
+                this.onEndApprovalTypeIsCostDelegate = new EndOperationDelegate(this.OnEndApprovalTypeIsCost);
+            }
+            if ((this.onApprovalTypeIsCostCompletedDelegate == null)) {
+                this.onApprovalTypeIsCostCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnApprovalTypeIsCostCompleted);
+            }
+            base.InvokeAsync(this.onBeginApprovalTypeIsCostDelegate, new object[] {
+                        approvalValue,
+                        departmentID,
+                        companyID}, this.onEndApprovalTypeIsCostDelegate, this.onApprovalTypeIsCostCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginGetApprovalSetsByOrg(string orgID, string orgType, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetApprovalSetsByOrg(orgID, orgType, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET> SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndGetApprovalSetsByOrg(System.IAsyncResult result) {
+            return base.Channel.EndGetApprovalSetsByOrg(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetApprovalSetsByOrg(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string orgID = ((string)(inValues[0]));
+            string orgType = ((string)(inValues[1]));
+            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginGetApprovalSetsByOrg(orgID, orgType, callback, asyncState);
+        }
+        
+        private object[] OnEndGetApprovalSetsByOrg(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET> retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndGetApprovalSetsByOrg(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetApprovalSetsByOrgCompleted(object state) {
+            if ((this.GetApprovalSetsByOrgCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetApprovalSetsByOrgCompleted(this, new GetApprovalSetsByOrgCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetApprovalSetsByOrgAsync(string orgID, string orgType) {
+            this.GetApprovalSetsByOrgAsync(orgID, orgType, null);
+        }
+        
+        public void GetApprovalSetsByOrgAsync(string orgID, string orgType, object userState) {
+            if ((this.onBeginGetApprovalSetsByOrgDelegate == null)) {
+                this.onBeginGetApprovalSetsByOrgDelegate = new BeginOperationDelegate(this.OnBeginGetApprovalSetsByOrg);
+            }
+            if ((this.onEndGetApprovalSetsByOrgDelegate == null)) {
+                this.onEndGetApprovalSetsByOrgDelegate = new EndOperationDelegate(this.OnEndGetApprovalSetsByOrg);
+            }
+            if ((this.onGetApprovalSetsByOrgCompletedDelegate == null)) {
+                this.onGetApprovalSetsByOrgCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetApprovalSetsByOrgCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetApprovalSetsByOrgDelegate, new object[] {
+                        orgID,
+                        orgType}, this.onEndGetApprovalSetsByOrgDelegate, this.onGetApprovalSetsByOrgCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -34335,284 +35162,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                         obj}, this.onEndDelEmpSurveysSubjectDelegate, this.onDelEmpSurveysSubjectCompletedDelegate, userState);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginAddEmpSurveysSubject(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 obj, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddEmpSurveysSubject(obj, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        int SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndAddEmpSurveysSubject(System.IAsyncResult result) {
-            return base.Channel.EndAddEmpSurveysSubject(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddEmpSurveysSubject(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 obj = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2)(inValues[0]));
-            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginAddEmpSurveysSubject(obj, callback, asyncState);
-        }
-        
-        private object[] OnEndAddEmpSurveysSubject(System.IAsyncResult result) {
-            int retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndAddEmpSurveysSubject(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnAddEmpSurveysSubjectCompleted(object state) {
-            if ((this.AddEmpSurveysSubjectCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddEmpSurveysSubjectCompleted(this, new AddEmpSurveysSubjectCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddEmpSurveysSubjectAsync(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 obj) {
-            this.AddEmpSurveysSubjectAsync(obj, null);
-        }
-        
-        public void AddEmpSurveysSubjectAsync(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 obj, object userState) {
-            if ((this.onBeginAddEmpSurveysSubjectDelegate == null)) {
-                this.onBeginAddEmpSurveysSubjectDelegate = new BeginOperationDelegate(this.OnBeginAddEmpSurveysSubject);
-            }
-            if ((this.onEndAddEmpSurveysSubjectDelegate == null)) {
-                this.onEndAddEmpSurveysSubjectDelegate = new EndOperationDelegate(this.OnEndAddEmpSurveysSubject);
-            }
-            if ((this.onAddEmpSurveysSubjectCompletedDelegate == null)) {
-                this.onAddEmpSurveysSubjectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddEmpSurveysSubjectCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddEmpSurveysSubjectDelegate, new object[] {
-                        obj}, this.onEndAddEmpSurveysSubjectDelegate, this.onAddEmpSurveysSubjectCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginAddEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddEmpSurveysSubjectList(objList, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        int SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndAddEmpSurveysSubjectList(System.IAsyncResult result) {
-            return base.Channel.EndAddEmpSurveysSubjectList(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddEmpSurveysSubjectList(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>)(inValues[0]));
-            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginAddEmpSurveysSubjectList(objList, callback, asyncState);
-        }
-        
-        private object[] OnEndAddEmpSurveysSubjectList(System.IAsyncResult result) {
-            int retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndAddEmpSurveysSubjectList(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnAddEmpSurveysSubjectListCompleted(object state) {
-            if ((this.AddEmpSurveysSubjectListCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddEmpSurveysSubjectListCompleted(this, new AddEmpSurveysSubjectListCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddEmpSurveysSubjectListAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList) {
-            this.AddEmpSurveysSubjectListAsync(objList, null);
-        }
-        
-        public void AddEmpSurveysSubjectListAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, object userState) {
-            if ((this.onBeginAddEmpSurveysSubjectListDelegate == null)) {
-                this.onBeginAddEmpSurveysSubjectListDelegate = new BeginOperationDelegate(this.OnBeginAddEmpSurveysSubjectList);
-            }
-            if ((this.onEndAddEmpSurveysSubjectListDelegate == null)) {
-                this.onEndAddEmpSurveysSubjectListDelegate = new EndOperationDelegate(this.OnEndAddEmpSurveysSubjectList);
-            }
-            if ((this.onAddEmpSurveysSubjectListCompletedDelegate == null)) {
-                this.onAddEmpSurveysSubjectListCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddEmpSurveysSubjectListCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddEmpSurveysSubjectListDelegate, new object[] {
-                        objList}, this.onEndAddEmpSurveysSubjectListDelegate, this.onAddEmpSurveysSubjectListCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginSave_SubjectAnswer(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstAdd, System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstUpd, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginSave_SubjectAnswer(lstAdd, lstUpd, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        int SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndSave_SubjectAnswer(System.IAsyncResult result) {
-            return base.Channel.EndSave_SubjectAnswer(result);
-        }
-        
-        private System.IAsyncResult OnBeginSave_SubjectAnswer(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstAdd = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>)(inValues[0]));
-            System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstUpd = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject>)(inValues[1]));
-            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginSave_SubjectAnswer(lstAdd, lstUpd, callback, asyncState);
-        }
-        
-        private object[] OnEndSave_SubjectAnswer(System.IAsyncResult result) {
-            int retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndSave_SubjectAnswer(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnSave_SubjectAnswerCompleted(object state) {
-            if ((this.Save_SubjectAnswerCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.Save_SubjectAnswerCompleted(this, new Save_SubjectAnswerCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void Save_SubjectAnswerAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstAdd, System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstUpd) {
-            this.Save_SubjectAnswerAsync(lstAdd, lstUpd, null);
-        }
-        
-        public void Save_SubjectAnswerAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstAdd, System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstUpd, object userState) {
-            if ((this.onBeginSave_SubjectAnswerDelegate == null)) {
-                this.onBeginSave_SubjectAnswerDelegate = new BeginOperationDelegate(this.OnBeginSave_SubjectAnswer);
-            }
-            if ((this.onEndSave_SubjectAnswerDelegate == null)) {
-                this.onEndSave_SubjectAnswerDelegate = new EndOperationDelegate(this.OnEndSave_SubjectAnswer);
-            }
-            if ((this.onSave_SubjectAnswerCompletedDelegate == null)) {
-                this.onSave_SubjectAnswerCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnSave_SubjectAnswerCompleted);
-            }
-            base.InvokeAsync(this.onBeginSave_SubjectAnswerDelegate, new object[] {
-                        lstAdd,
-                        lstUpd}, this.onEndSave_SubjectAnswerDelegate, this.onSave_SubjectAnswerCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginDelEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginDelEmpSurveysSubjectList(objList, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        int SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndDelEmpSurveysSubjectList(System.IAsyncResult result) {
-            return base.Channel.EndDelEmpSurveysSubjectList(result);
-        }
-        
-        private System.IAsyncResult OnBeginDelEmpSurveysSubjectList(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>)(inValues[0]));
-            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginDelEmpSurveysSubjectList(objList, callback, asyncState);
-        }
-        
-        private object[] OnEndDelEmpSurveysSubjectList(System.IAsyncResult result) {
-            int retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndDelEmpSurveysSubjectList(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnDelEmpSurveysSubjectListCompleted(object state) {
-            if ((this.DelEmpSurveysSubjectListCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.DelEmpSurveysSubjectListCompleted(this, new DelEmpSurveysSubjectListCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void DelEmpSurveysSubjectListAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList) {
-            this.DelEmpSurveysSubjectListAsync(objList, null);
-        }
-        
-        public void DelEmpSurveysSubjectListAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, object userState) {
-            if ((this.onBeginDelEmpSurveysSubjectListDelegate == null)) {
-                this.onBeginDelEmpSurveysSubjectListDelegate = new BeginOperationDelegate(this.OnBeginDelEmpSurveysSubjectList);
-            }
-            if ((this.onEndDelEmpSurveysSubjectListDelegate == null)) {
-                this.onEndDelEmpSurveysSubjectListDelegate = new EndOperationDelegate(this.OnEndDelEmpSurveysSubjectList);
-            }
-            if ((this.onDelEmpSurveysSubjectListCompletedDelegate == null)) {
-                this.onDelEmpSurveysSubjectListCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDelEmpSurveysSubjectListCompleted);
-            }
-            base.InvokeAsync(this.onBeginDelEmpSurveysSubjectListDelegate, new object[] {
-                        objList}, this.onEndDelEmpSurveysSubjectListDelegate, this.onDelEmpSurveysSubjectListCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginUpdateEmpSurveysSubject(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 objSubject, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginUpdateEmpSurveysSubject(objSubject, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        int SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndUpdateEmpSurveysSubject(System.IAsyncResult result) {
-            return base.Channel.EndUpdateEmpSurveysSubject(result);
-        }
-        
-        private System.IAsyncResult OnBeginUpdateEmpSurveysSubject(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 objSubject = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2)(inValues[0]));
-            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginUpdateEmpSurveysSubject(objSubject, callback, asyncState);
-        }
-        
-        private object[] OnEndUpdateEmpSurveysSubject(System.IAsyncResult result) {
-            int retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndUpdateEmpSurveysSubject(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnUpdateEmpSurveysSubjectCompleted(object state) {
-            if ((this.UpdateEmpSurveysSubjectCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.UpdateEmpSurveysSubjectCompleted(this, new UpdateEmpSurveysSubjectCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void UpdateEmpSurveysSubjectAsync(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 objSubject) {
-            this.UpdateEmpSurveysSubjectAsync(objSubject, null);
-        }
-        
-        public void UpdateEmpSurveysSubjectAsync(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 objSubject, object userState) {
-            if ((this.onBeginUpdateEmpSurveysSubjectDelegate == null)) {
-                this.onBeginUpdateEmpSurveysSubjectDelegate = new BeginOperationDelegate(this.OnBeginUpdateEmpSurveysSubject);
-            }
-            if ((this.onEndUpdateEmpSurveysSubjectDelegate == null)) {
-                this.onEndUpdateEmpSurveysSubjectDelegate = new EndOperationDelegate(this.OnEndUpdateEmpSurveysSubject);
-            }
-            if ((this.onUpdateEmpSurveysSubjectCompletedDelegate == null)) {
-                this.onUpdateEmpSurveysSubjectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateEmpSurveysSubjectCompleted);
-            }
-            base.InvokeAsync(this.onBeginUpdateEmpSurveysSubjectDelegate, new object[] {
-                        objSubject}, this.onEndUpdateEmpSurveysSubjectDelegate, this.onUpdateEmpSurveysSubjectCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.BeginUpdateEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginUpdateEmpSurveysSubjectList(objList, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        int SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice.EndUpdateEmpSurveysSubjectList(System.IAsyncResult result) {
-            return base.Channel.EndUpdateEmpSurveysSubjectList(result);
-        }
-        
-        private System.IAsyncResult OnBeginUpdateEmpSurveysSubjectList(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2>)(inValues[0]));
-            return ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).BeginUpdateEmpSurveysSubjectList(objList, callback, asyncState);
-        }
-        
-        private object[] OnEndUpdateEmpSurveysSubjectList(System.IAsyncResult result) {
-            int retVal = ((SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice)(this)).EndUpdateEmpSurveysSubjectList(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnUpdateEmpSurveysSubjectListCompleted(object state) {
-            if ((this.UpdateEmpSurveysSubjectListCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.UpdateEmpSurveysSubjectListCompleted(this, new UpdateEmpSurveysSubjectListCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void UpdateEmpSurveysSubjectListAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList) {
-            this.UpdateEmpSurveysSubjectListAsync(objList, null);
-        }
-        
-        public void UpdateEmpSurveysSubjectListAsync(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, object userState) {
-            if ((this.onBeginUpdateEmpSurveysSubjectListDelegate == null)) {
-                this.onBeginUpdateEmpSurveysSubjectListDelegate = new BeginOperationDelegate(this.OnBeginUpdateEmpSurveysSubjectList);
-            }
-            if ((this.onEndUpdateEmpSurveysSubjectListDelegate == null)) {
-                this.onEndUpdateEmpSurveysSubjectListDelegate = new EndOperationDelegate(this.OnEndUpdateEmpSurveysSubjectList);
-            }
-            if ((this.onUpdateEmpSurveysSubjectListCompletedDelegate == null)) {
-                this.onUpdateEmpSurveysSubjectListCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateEmpSurveysSubjectListCompleted);
-            }
-            base.InvokeAsync(this.onBeginUpdateEmpSurveysSubjectListDelegate, new object[] {
-                        objList}, this.onEndUpdateEmpSurveysSubjectListDelegate, this.onUpdateEmpSurveysSubjectListCompletedDelegate, userState);
-        }
-        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -34687,6 +35236,97 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
             
             public SmtOAPersonOfficeClientChannel(System.ServiceModel.ClientBase<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.SmtOAPersonOffice> client) : 
                     base(client) {
+            }
+            
+            public System.IAsyncResult BeginIsContractCanBrowser(string TravelmanagementID, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = TravelmanagementID;
+                System.IAsyncResult _result = base.BeginInvoke("IsContractCanBrowser", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndIsContractCanBrowser(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("IsContractCanBrowser", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetTravelmanagementListByUserId(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string checkState, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[8];
+                _args[0] = pageIndex;
+                _args[1] = pageSize;
+                _args[2] = sort;
+                _args[3] = filterString;
+                _args[4] = paras;
+                _args[5] = pageCount;
+                _args[6] = checkState;
+                _args[7] = loginUserInfo;
+                System.IAsyncResult _result = base.BeginInvoke("GetTravelmanagementListByUserId", _args, callback, asyncState);
+                pageCount = ((int)(_args[5]));
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement> EndGetTravelmanagementListByUserId(ref int pageCount, System.IAsyncResult result) {
+                object[] _args = new object[1];
+                _args[0] = pageCount;
+                System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement> _result = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>)(base.EndInvoke("GetTravelmanagementListByUserId", _args, result)));
+                pageCount = ((int)(_args[0]));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetUnderwayTravelmanagement(string employeeid, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = employeeid;
+                System.IAsyncResult _result = base.BeginInvoke("GetUnderwayTravelmanagement", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.Generic.Dictionary<string, string> EndGetUnderwayTravelmanagement(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.Generic.Dictionary<string, string> _result = ((System.Collections.Generic.Dictionary<string, string>)(base.EndInvoke("GetUnderwayTravelmanagement", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginOrderMealInfoAdd(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = obj;
+                System.IAsyncResult _result = base.BeginInvoke("OrderMealInfoAdd", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public string EndOrderMealInfoAdd(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                string _result = ((string)(base.EndInvoke("OrderMealInfoAdd", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginIsExistOrderMealInfoByAdd(string StrTitle, string StrDepart, string StrCreatUser, System.DateTime startdt, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[4];
+                _args[0] = StrTitle;
+                _args[1] = StrDepart;
+                _args[2] = StrCreatUser;
+                _args[3] = startdt;
+                System.IAsyncResult _result = base.BeginInvoke("IsExistOrderMealInfoByAdd", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndIsExistOrderMealInfoByAdd(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("IsExistOrderMealInfoByAdd", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginOrderMealInfoDel(System.Collections.ObjectModel.ObservableCollection<string> MealIDs, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = MealIDs;
+                System.IAsyncResult _result = base.BeginInvoke("OrderMealInfoDel", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndOrderMealInfoDel(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("OrderMealInfoDel", _args, result)));
+                return _result;
             }
             
             public System.IAsyncResult BeginOrderMealInfoUpdate(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj, System.AsyncCallback callback, object asyncState) {
@@ -35576,6 +36216,85 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
             public void EndDoWork(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 base.EndInvoke("DoWork", _args, result);
+            }
+            
+            public System.IAsyncResult BeginAddEmpSurveysSubject(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 obj, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = obj;
+                System.IAsyncResult _result = base.BeginInvoke("AddEmpSurveysSubject", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public int EndAddEmpSurveysSubject(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                int _result = ((int)(base.EndInvoke("AddEmpSurveysSubject", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginAddEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = objList;
+                System.IAsyncResult _result = base.BeginInvoke("AddEmpSurveysSubjectList", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public int EndAddEmpSurveysSubjectList(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                int _result = ((int)(base.EndInvoke("AddEmpSurveysSubjectList", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginSave_SubjectAnswer(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstAdd, System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstUpd, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = lstAdd;
+                _args[1] = lstUpd;
+                System.IAsyncResult _result = base.BeginInvoke("Save_SubjectAnswer", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public int EndSave_SubjectAnswer(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                int _result = ((int)(base.EndInvoke("Save_SubjectAnswer", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginDelEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = objList;
+                System.IAsyncResult _result = base.BeginInvoke("DelEmpSurveysSubjectList", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public int EndDelEmpSurveysSubjectList(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                int _result = ((int)(base.EndInvoke("DelEmpSurveysSubjectList", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginUpdateEmpSurveysSubject(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 objSubject, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = objSubject;
+                System.IAsyncResult _result = base.BeginInvoke("UpdateEmpSurveysSubject", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public int EndUpdateEmpSurveysSubject(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                int _result = ((int)(base.EndInvoke("UpdateEmpSurveysSubject", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginUpdateEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = objList;
+                System.IAsyncResult _result = base.BeginInvoke("UpdateEmpSurveysSubjectList", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public int EndUpdateEmpSurveysSubjectList(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                int _result = ((int)(base.EndInvoke("UpdateEmpSurveysSubjectList", _args, result)));
+                return _result;
             }
             
             public System.IAsyncResult BeginAddEmpSurveysAnswer(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL obj, System.AsyncCallback callback, object asyncState) {
@@ -36744,97 +37463,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 return _result;
             }
             
-            public System.IAsyncResult BeginIsContractCanBrowser(string TravelmanagementID, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = TravelmanagementID;
-                System.IAsyncResult _result = base.BeginInvoke("IsContractCanBrowser", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public bool EndIsContractCanBrowser(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                bool _result = ((bool)(base.EndInvoke("IsContractCanBrowser", _args, result)));
-                return _result;
-            }
-            
-            public System.IAsyncResult BeginGetTravelmanagementListByUserId(int pageIndex, int pageSize, string sort, string filterString, System.Collections.ObjectModel.ObservableCollection<object> paras, ref int pageCount, string checkState, SMT.SaaS.OA.UI.SmtOAPersonOfficeService.LoginUserInfo loginUserInfo, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[8];
-                _args[0] = pageIndex;
-                _args[1] = pageSize;
-                _args[2] = sort;
-                _args[3] = filterString;
-                _args[4] = paras;
-                _args[5] = pageCount;
-                _args[6] = checkState;
-                _args[7] = loginUserInfo;
-                System.IAsyncResult _result = base.BeginInvoke("GetTravelmanagementListByUserId", _args, callback, asyncState);
-                pageCount = ((int)(_args[5]));
-                return _result;
-            }
-            
-            public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement> EndGetTravelmanagementListByUserId(ref int pageCount, System.IAsyncResult result) {
-                object[] _args = new object[1];
-                _args[0] = pageCount;
-                System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement> _result = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_Travelmanagement>)(base.EndInvoke("GetTravelmanagementListByUserId", _args, result)));
-                pageCount = ((int)(_args[0]));
-                return _result;
-            }
-            
-            public System.IAsyncResult BeginGetUnderwayTravelmanagement(string employeeid, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = employeeid;
-                System.IAsyncResult _result = base.BeginInvoke("GetUnderwayTravelmanagement", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public System.Collections.Generic.Dictionary<string, string> EndGetUnderwayTravelmanagement(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                System.Collections.Generic.Dictionary<string, string> _result = ((System.Collections.Generic.Dictionary<string, string>)(base.EndInvoke("GetUnderwayTravelmanagement", _args, result)));
-                return _result;
-            }
-            
-            public System.IAsyncResult BeginOrderMealInfoAdd(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL obj, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = obj;
-                System.IAsyncResult _result = base.BeginInvoke("OrderMealInfoAdd", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public string EndOrderMealInfoAdd(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                string _result = ((string)(base.EndInvoke("OrderMealInfoAdd", _args, result)));
-                return _result;
-            }
-            
-            public System.IAsyncResult BeginIsExistOrderMealInfoByAdd(string StrTitle, string StrDepart, string StrCreatUser, System.DateTime startdt, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[4];
-                _args[0] = StrTitle;
-                _args[1] = StrDepart;
-                _args[2] = StrCreatUser;
-                _args[3] = startdt;
-                System.IAsyncResult _result = base.BeginInvoke("IsExistOrderMealInfoByAdd", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public bool EndIsExistOrderMealInfoByAdd(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                bool _result = ((bool)(base.EndInvoke("IsExistOrderMealInfoByAdd", _args, result)));
-                return _result;
-            }
-            
-            public System.IAsyncResult BeginOrderMealInfoDel(System.Collections.ObjectModel.ObservableCollection<string> MealIDs, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = MealIDs;
-                System.IAsyncResult _result = base.BeginInvoke("OrderMealInfoDel", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public bool EndOrderMealInfoDel(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                bool _result = ((bool)(base.EndInvoke("OrderMealInfoDel", _args, result)));
-                return _result;
-            }
-            
             public System.IAsyncResult BeginGet_Apporval(string id, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
                 _args[0] = id;
@@ -37033,6 +37661,87 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
             public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType> EndGetApprovalTypesByUserID(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType> _result = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_ApprovalType>)(base.EndInvoke("GetApprovalTypesByUserID", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginIsExistApprovalSet(string setID, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = setID;
+                System.IAsyncResult _result = base.BeginInvoke("IsExistApprovalSet", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndIsExistApprovalSet(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("IsExistApprovalSet", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginDelSingleApprovalSet(string setID, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = setID;
+                System.IAsyncResult _result = base.BeginInvoke("DelSingleApprovalSet", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndDelSingleApprovalSet(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("DelSingleApprovalSet", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginBatchAddApprovalSets(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET> listSets, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = listSets;
+                System.IAsyncResult _result = base.BeginInvoke("BatchAddApprovalSets", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndBatchAddApprovalSets(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("BatchAddApprovalSets", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginBatchDelApprovalSets(System.Collections.ObjectModel.ObservableCollection<string> SetIDs, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = SetIDs;
+                System.IAsyncResult _result = base.BeginInvoke("BatchDelApprovalSets", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndBatchDelApprovalSets(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("BatchDelApprovalSets", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginApprovalTypeIsCost(string approvalValue, string departmentID, string companyID, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[3];
+                _args[0] = approvalValue;
+                _args[1] = departmentID;
+                _args[2] = companyID;
+                System.IAsyncResult _result = base.BeginInvoke("ApprovalTypeIsCost", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public string EndApprovalTypeIsCost(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                string _result = ((string)(base.EndInvoke("ApprovalTypeIsCost", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetApprovalSetsByOrg(string orgID, string orgType, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = orgID;
+                _args[1] = orgType;
+                System.IAsyncResult _result = base.BeginInvoke("GetApprovalSetsByOrg", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET> EndGetApprovalSetsByOrg(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET> _result = ((System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_APPROVALTYPESET>)(base.EndInvoke("GetApprovalSetsByOrg", _args, result)));
                 return _result;
             }
             
@@ -38024,85 +38733,6 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
             public int EndDelEmpSurveysSubject(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 int _result = ((int)(base.EndInvoke("DelEmpSurveysSubject", _args, result)));
-                return _result;
-            }
-            
-            public System.IAsyncResult BeginAddEmpSurveysSubject(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 obj, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = obj;
-                System.IAsyncResult _result = base.BeginInvoke("AddEmpSurveysSubject", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public int EndAddEmpSurveysSubject(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                int _result = ((int)(base.EndInvoke("AddEmpSurveysSubject", _args, result)));
-                return _result;
-            }
-            
-            public System.IAsyncResult BeginAddEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = objList;
-                System.IAsyncResult _result = base.BeginInvoke("AddEmpSurveysSubjectList", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public int EndAddEmpSurveysSubjectList(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                int _result = ((int)(base.EndInvoke("AddEmpSurveysSubjectList", _args, result)));
-                return _result;
-            }
-            
-            public System.IAsyncResult BeginSave_SubjectAnswer(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstAdd, System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_EmployeeSurveySubject> lstUpd, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[2];
-                _args[0] = lstAdd;
-                _args[1] = lstUpd;
-                System.IAsyncResult _result = base.BeginInvoke("Save_SubjectAnswer", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public int EndSave_SubjectAnswer(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                int _result = ((int)(base.EndInvoke("Save_SubjectAnswer", _args, result)));
-                return _result;
-            }
-            
-            public System.IAsyncResult BeginDelEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = objList;
-                System.IAsyncResult _result = base.BeginInvoke("DelEmpSurveysSubjectList", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public int EndDelEmpSurveysSubjectList(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                int _result = ((int)(base.EndInvoke("DelEmpSurveysSubjectList", _args, result)));
-                return _result;
-            }
-            
-            public System.IAsyncResult BeginUpdateEmpSurveysSubject(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2 objSubject, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = objSubject;
-                System.IAsyncResult _result = base.BeginInvoke("UpdateEmpSurveysSubject", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public int EndUpdateEmpSurveysSubject(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                int _result = ((int)(base.EndInvoke("UpdateEmpSurveysSubject", _args, result)));
-                return _result;
-            }
-            
-            public System.IAsyncResult BeginUpdateEmpSurveysSubjectList(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREDETAIL2> objList, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = objList;
-                System.IAsyncResult _result = base.BeginInvoke("UpdateEmpSurveysSubjectList", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public int EndUpdateEmpSurveysSubjectList(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                int _result = ((int)(base.EndInvoke("UpdateEmpSurveysSubjectList", _args, result)));
                 return _result;
             }
         }

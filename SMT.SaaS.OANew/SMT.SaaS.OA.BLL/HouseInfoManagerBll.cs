@@ -490,11 +490,11 @@ namespace SMT.SaaS.OA.BLL
                         }
                     }
                 }
-                Tracer.Debug("newNotices记录1"+ newNotices.Count().ToString());
+                //Tracer.Debug("newNotices记录1"+ newNotices.Count().ToString());
                 newNotices = newNotices.Where(s => !"爱施德".Contains(s.FormTitle)).ToList();
-                Tracer.Debug("newNotices记录2" + newNotices.Count().ToString());
+                //Tracer.Debug("newNotices记录2" + newNotices.Count().ToString());
                 newNotices = newNotices.Where(s => !s.FormTitle.Contains("爱施德")).ToList();
-                Tracer.Debug("newNotices记录3" + newNotices.Count().ToString());
+                //Tracer.Debug("newNotices记录3" + newNotices.Count().ToString());
                 //Tracer.Debug("公司发文中查询的内容-结果：" + entity.Count().ToString());
                 //return entity;
                 

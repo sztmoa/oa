@@ -12,10 +12,61 @@
     <EntitySet Name="T_OA_ARCHIVES" EntityType="SMT_OA_EFModel.Store.T_OA_ARCHIVES" store:Type="Tables" />
     <EntitySet Name="T_OA_AREAALLOWANCE" EntityType="SMT_OA_EFModel.Store.T_OA_AREAALLOWANCE" store:Type="Tables" />
     <EntitySet Name="T_OA_AREACITY" EntityType="SMT_OA_EFModel.Store.T_OA_AREACITY" store:Type="Tables" />
+    <EntitySet Name="T_OA_AREACITY201411041112" EntityType="SMT_OA_EFModel.Store.T_OA_AREACITY201411041112" store:Type="Tables" store:Name="T_OA_AREACITY201411041112">
+      <DefiningQuery>SELECT 
+"T_OA_AREACITY201411041112"."AREACITYID" AS "AREACITYID", 
+"T_OA_AREACITY201411041112"."AREADIFFERENCEID" AS "AREADIFFERENCEID", 
+"T_OA_AREACITY201411041112"."CITY" AS "CITY", 
+"T_OA_AREACITY201411041112"."CREATEUSERID" AS "CREATEUSERID", 
+"T_OA_AREACITY201411041112"."CREATEDATE" AS "CREATEDATE", 
+"T_OA_AREACITY201411041112"."UPDATEUSERID" AS "UPDATEUSERID", 
+"T_OA_AREACITY201411041112"."UPDATEDATE" AS "UPDATEDATE"
+FROM "dbo"."T_OA_AREACITY201411041112" "T_OA_AREACITY201411041112"</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="T_OA_AREADIFFERENCE" EntityType="SMT_OA_EFModel.Store.T_OA_AREADIFFERENCE" store:Type="Tables" />
     <EntitySet Name="T_OA_BUSINESSREPORT" EntityType="SMT_OA_EFModel.Store.T_OA_BUSINESSREPORT" store:Type="Tables" />
     <EntitySet Name="T_OA_BUSINESSREPORTDETAIL" EntityType="SMT_OA_EFModel.Store.T_OA_BUSINESSREPORTDETAIL" store:Type="Tables" />
     <EntitySet Name="T_OA_BUSINESSTRIP" EntityType="SMT_OA_EFModel.Store.T_OA_BUSINESSTRIP" store:Type="Tables" />
+    <EntitySet Name="T_OA_BUSINESSTRIP0201" EntityType="SMT_OA_EFModel.Store.T_OA_BUSINESSTRIP0201" store:Type="Tables" store:Name="T_OA_BUSINESSTRIP0201">
+      <DefiningQuery>SELECT 
+"T_OA_BUSINESSTRIP0201"."BUSINESSTRIPID" AS "BUSINESSTRIPID", 
+"T_OA_BUSINESSTRIP0201"."TEL" AS "TEL", 
+"T_OA_BUSINESSTRIP0201"."ISAGENT" AS "ISAGENT", 
+"T_OA_BUSINESSTRIP0201"."CHARGEMONEY" AS "CHARGEMONEY", 
+"T_OA_BUSINESSTRIP0201"."CHECKSTATE" AS "CHECKSTATE", 
+"T_OA_BUSINESSTRIP0201"."CONTENT" AS "CONTENT", 
+"T_OA_BUSINESSTRIP0201"."REMARKS" AS "REMARKS", 
+"T_OA_BUSINESSTRIP0201"."OWNERID" AS "OWNERID", 
+"T_OA_BUSINESSTRIP0201"."OWNERNAME" AS "OWNERNAME", 
+"T_OA_BUSINESSTRIP0201"."OWNERCOMPANYID" AS "OWNERCOMPANYID", 
+"T_OA_BUSINESSTRIP0201"."OWNERDEPARTMENTID" AS "OWNERDEPARTMENTID", 
+"T_OA_BUSINESSTRIP0201"."OWNERPOSTID" AS "OWNERPOSTID", 
+"T_OA_BUSINESSTRIP0201"."CREATEUSERID" AS "CREATEUSERID", 
+"T_OA_BUSINESSTRIP0201"."CREATEUSERNAME" AS "CREATEUSERNAME", 
+"T_OA_BUSINESSTRIP0201"."CREATECOMPANYID" AS "CREATECOMPANYID", 
+"T_OA_BUSINESSTRIP0201"."CREATEDEPARTMENTID" AS "CREATEDEPARTMENTID", 
+"T_OA_BUSINESSTRIP0201"."CREATEPOSTID" AS "CREATEPOSTID", 
+"T_OA_BUSINESSTRIP0201"."CREATEDATE" AS "CREATEDATE", 
+"T_OA_BUSINESSTRIP0201"."UPDATEUSERID" AS "UPDATEUSERID", 
+"T_OA_BUSINESSTRIP0201"."UPDATEUSERNAME" AS "UPDATEUSERNAME", 
+"T_OA_BUSINESSTRIP0201"."UPDATEDATE" AS "UPDATEDATE", 
+"T_OA_BUSINESSTRIP0201"."STARTDATE" AS "STARTDATE", 
+"T_OA_BUSINESSTRIP0201"."ENDDATE" AS "ENDDATE", 
+"T_OA_BUSINESSTRIP0201"."DEPCITY" AS "DEPCITY", 
+"T_OA_BUSINESSTRIP0201"."DESTCITY" AS "DESTCITY", 
+"T_OA_BUSINESSTRIP0201"."OWNERPOSTNAME" AS "OWNERPOSTNAME", 
+"T_OA_BUSINESSTRIP0201"."OWNERDEPARTMENTNAME" AS "OWNERDEPARTMENTNAME", 
+"T_OA_BUSINESSTRIP0201"."OWNERCOMPANYNAME" AS "OWNERCOMPANYNAME", 
+"T_OA_BUSINESSTRIP0201"."POSTLEVEL" AS "POSTLEVEL", 
+"T_OA_BUSINESSTRIP0201"."STARTCITYNAME" AS "STARTCITYNAME", 
+"T_OA_BUSINESSTRIP0201"."ENDCITYNAME" AS "ENDCITYNAME", 
+"T_OA_BUSINESSTRIP0201"."ISALTERTRAVE" AS "ISALTERTRAVE", 
+"T_OA_BUSINESSTRIP0201"."ALTERDETAILBASE" AS "ALTERDETAILBASE", 
+"T_OA_BUSINESSTRIP0201"."ALTERDETAILBEFORE" AS "ALTERDETAILBEFORE", 
+"T_OA_BUSINESSTRIP0201"."ALTERDETAILATFER" AS "ALTERDETAILATFER", 
+"T_OA_BUSINESSTRIP0201"."ISFROMWP" AS "ISFROMWP"
+FROM "dbo"."T_OA_BUSINESSTRIP0201" "T_OA_BUSINESSTRIP0201"</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="T_OA_BUSINESSTRIPDETAIL" EntityType="SMT_OA_EFModel.Store.T_OA_BUSINESSTRIPDETAIL" store:Type="Tables" />
     <EntitySet Name="T_OA_BUSINESSTRIPDETAIL_BAK" EntityType="SMT_OA_EFModel.Store.T_OA_BUSINESSTRIPDETAIL_BAK" store:Type="Tables" store:Name="T_OA_BUSINESSTRIPDETAIL_BAK">
       <DefiningQuery>SELECT 
@@ -127,7 +178,79 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <EntitySet Name="T_OA_SENDDOCTEMPLATE" EntityType="SMT_OA_EFModel.Store.T_OA_SENDDOCTEMPLATE" store:Type="Tables" />
     <EntitySet Name="T_OA_SENDDOCTYPE" EntityType="SMT_OA_EFModel.Store.T_OA_SENDDOCTYPE" store:Type="Tables" />
     <EntitySet Name="T_OA_TAKETHESTANDARDTRANSPORT" EntityType="SMT_OA_EFModel.Store.T_OA_TAKETHESTANDARDTRANSPORT" store:Type="Tables" />
+    <EntitySet Name="T_OA_TAKETHESTAND_1219" EntityType="SMT_OA_EFModel.Store.T_OA_TAKETHESTAND_1219" store:Type="Tables" store:Name="T_OA_TAKETHESTAND_1219">
+      <DefiningQuery>SELECT 
+"T_OA_TAKETHESTAND_1219"."TAKETHESTANDARDTRANSPORTID" AS "TAKETHESTANDARDTRANSPORTID", 
+"T_OA_TAKETHESTAND_1219"."TRAVELSOLUTIONSID" AS "TRAVELSOLUTIONSID", 
+"T_OA_TAKETHESTAND_1219"."ENDPOSTLEVEL" AS "ENDPOSTLEVEL", 
+"T_OA_TAKETHESTAND_1219"."TYPEOFTRAVELTOOLS" AS "TYPEOFTRAVELTOOLS", 
+"T_OA_TAKETHESTAND_1219"."TAKETHETOOLLEVEL" AS "TAKETHETOOLLEVEL", 
+"T_OA_TAKETHESTAND_1219"."CREATEUSERID" AS "CREATEUSERID", 
+"T_OA_TAKETHESTAND_1219"."CREATEDATE" AS "CREATEDATE", 
+"T_OA_TAKETHESTAND_1219"."UPDATEUSERID" AS "UPDATEUSERID", 
+"T_OA_TAKETHESTAND_1219"."UPDATEDATE" AS "UPDATEDATE", 
+"T_OA_TAKETHESTAND_1219"."OWNERID" AS "OWNERID", 
+"T_OA_TAKETHESTAND_1219"."OWNERPOSTID" AS "OWNERPOSTID", 
+"T_OA_TAKETHESTAND_1219"."OWNERDEPARTMENTID" AS "OWNERDEPARTMENTID", 
+"T_OA_TAKETHESTAND_1219"."OWNERCOMPANYID" AS "OWNERCOMPANYID"
+FROM "dbo"."T_OA_TAKETHESTAND_1219" "T_OA_TAKETHESTAND_1219"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="T_OA_TAKETHESTAND_TMP" EntityType="SMT_OA_EFModel.Store.T_OA_TAKETHESTAND_TMP" store:Type="Tables" store:Name="T_OA_TAKETHESTAND_TMP">
+      <DefiningQuery>SELECT 
+"T_OA_TAKETHESTAND_TMP"."TAKETHESTANDARDTRANSPORTID" AS "TAKETHESTANDARDTRANSPORTID", 
+"T_OA_TAKETHESTAND_TMP"."TRAVELSOLUTIONSID" AS "TRAVELSOLUTIONSID", 
+"T_OA_TAKETHESTAND_TMP"."ENDPOSTLEVEL" AS "ENDPOSTLEVEL", 
+"T_OA_TAKETHESTAND_TMP"."TYPEOFTRAVELTOOLS" AS "TYPEOFTRAVELTOOLS", 
+"T_OA_TAKETHESTAND_TMP"."TAKETHETOOLLEVEL" AS "TAKETHETOOLLEVEL", 
+"T_OA_TAKETHESTAND_TMP"."CREATEUSERID" AS "CREATEUSERID", 
+"T_OA_TAKETHESTAND_TMP"."CREATEDATE" AS "CREATEDATE", 
+"T_OA_TAKETHESTAND_TMP"."UPDATEUSERID" AS "UPDATEUSERID", 
+"T_OA_TAKETHESTAND_TMP"."UPDATEDATE" AS "UPDATEDATE", 
+"T_OA_TAKETHESTAND_TMP"."OWNERID" AS "OWNERID", 
+"T_OA_TAKETHESTAND_TMP"."OWNERPOSTID" AS "OWNERPOSTID", 
+"T_OA_TAKETHESTAND_TMP"."OWNERDEPARTMENTID" AS "OWNERDEPARTMENTID", 
+"T_OA_TAKETHESTAND_TMP"."OWNERCOMPANYID" AS "OWNERCOMPANYID"
+FROM "dbo"."T_OA_TAKETHESTAND_TMP" "T_OA_TAKETHESTAND_TMP"</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="T_OA_TRAVELREIMBURSEMENT" EntityType="SMT_OA_EFModel.Store.T_OA_TRAVELREIMBURSEMENT" store:Type="Tables" />
+    <EntitySet Name="T_OA_TRAVELREIMBURSEMENT0201" EntityType="SMT_OA_EFModel.Store.T_OA_TRAVELREIMBURSEMENT0201" store:Type="Tables" store:Name="T_OA_TRAVELREIMBURSEMENT0201">
+      <DefiningQuery>SELECT 
+"T_OA_TRAVELREIMBURSEMENT0201"."TRAVELREIMBURSEMENTID" AS "TRAVELREIMBURSEMENTID", 
+"T_OA_TRAVELREIMBURSEMENT0201"."BUSINESSREPORTID" AS "BUSINESSREPORTID", 
+"T_OA_TRAVELREIMBURSEMENT0201"."CLAIMSWERE" AS "CLAIMSWERE", 
+"T_OA_TRAVELREIMBURSEMENT0201"."CLAIMSWERENAME" AS "CLAIMSWERENAME", 
+"T_OA_TRAVELREIMBURSEMENT0201"."REIMBURSEMENTTIME" AS "REIMBURSEMENTTIME", 
+"T_OA_TRAVELREIMBURSEMENT0201"."COMPUTINGTIME" AS "COMPUTINGTIME", 
+"T_OA_TRAVELREIMBURSEMENT0201"."TEL" AS "TEL", 
+"T_OA_TRAVELREIMBURSEMENT0201"."THETOTALCOST" AS "THETOTALCOST", 
+"T_OA_TRAVELREIMBURSEMENT0201"."REIMBURSEMENTOFCOSTS" AS "REIMBURSEMENTOFCOSTS", 
+"T_OA_TRAVELREIMBURSEMENT0201"."CHECKSTATE" AS "CHECKSTATE", 
+"T_OA_TRAVELREIMBURSEMENT0201"."REMARKS" AS "REMARKS", 
+"T_OA_TRAVELREIMBURSEMENT0201"."OWNERID" AS "OWNERID", 
+"T_OA_TRAVELREIMBURSEMENT0201"."OWNERNAME" AS "OWNERNAME", 
+"T_OA_TRAVELREIMBURSEMENT0201"."OWNERCOMPANYID" AS "OWNERCOMPANYID", 
+"T_OA_TRAVELREIMBURSEMENT0201"."OWNERDEPARTMENTID" AS "OWNERDEPARTMENTID", 
+"T_OA_TRAVELREIMBURSEMENT0201"."OWNERPOSTID" AS "OWNERPOSTID", 
+"T_OA_TRAVELREIMBURSEMENT0201"."CREATEUSERID" AS "CREATEUSERID", 
+"T_OA_TRAVELREIMBURSEMENT0201"."CREATEUSERNAME" AS "CREATEUSERNAME", 
+"T_OA_TRAVELREIMBURSEMENT0201"."CREATECOMPANYID" AS "CREATECOMPANYID", 
+"T_OA_TRAVELREIMBURSEMENT0201"."CREATEDEPARTMENTID" AS "CREATEDEPARTMENTID", 
+"T_OA_TRAVELREIMBURSEMENT0201"."CREATEPOSTID" AS "CREATEPOSTID", 
+"T_OA_TRAVELREIMBURSEMENT0201"."CREATEDATE" AS "CREATEDATE", 
+"T_OA_TRAVELREIMBURSEMENT0201"."UPDATEUSERID" AS "UPDATEUSERID", 
+"T_OA_TRAVELREIMBURSEMENT0201"."UPDATEDATE" AS "UPDATEDATE", 
+"T_OA_TRAVELREIMBURSEMENT0201"."NOBUDGETCLAIMS" AS "NOBUDGETCLAIMS", 
+"T_OA_TRAVELREIMBURSEMENT0201"."BUSINESSTRIPID" AS "BUSINESSTRIPID", 
+"T_OA_TRAVELREIMBURSEMENT0201"."CONTENT" AS "CONTENT", 
+"T_OA_TRAVELREIMBURSEMENT0201"."OWNERPOSTNAME" AS "OWNERPOSTNAME", 
+"T_OA_TRAVELREIMBURSEMENT0201"."OWNERDEPARTMENTNAME" AS "OWNERDEPARTMENTNAME", 
+"T_OA_TRAVELREIMBURSEMENT0201"."OWNERCOMPANYNAME" AS "OWNERCOMPANYNAME", 
+"T_OA_TRAVELREIMBURSEMENT0201"."POSTLEVEL" AS "POSTLEVEL", 
+"T_OA_TRAVELREIMBURSEMENT0201"."STARTCITYNAME" AS "STARTCITYNAME", 
+"T_OA_TRAVELREIMBURSEMENT0201"."ENDCITYNAME" AS "ENDCITYNAME", 
+"T_OA_TRAVELREIMBURSEMENT0201"."ISFROMWP" AS "ISFROMWP"
+FROM "dbo"."T_OA_TRAVELREIMBURSEMENT0201" "T_OA_TRAVELREIMBURSEMENT0201"</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="T_OA_TRAVELSOLUTIONS" EntityType="SMT_OA_EFModel.Store.T_OA_TRAVELSOLUTIONS" store:Type="Tables" />
     <EntitySet Name="T_OA_VEHICLE" EntityType="SMT_OA_EFModel.Store.T_OA_VEHICLE" store:Type="Tables" />
     <EntitySet Name="T_OA_VEHICLECARD" EntityType="SMT_OA_EFModel.Store.T_OA_VEHICLECARD" store:Type="Tables" />
@@ -520,6 +643,8 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
     <Property Name="UPDATEUSERNAME" Type="nvarchar2" MaxLength="100" />
     <Property Name="UPDATEDATE" Type="date" />
+    <Property Name="APPROVALNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="ISCOST" Type="nvarchar2" MaxLength="2" />
   </EntityType>
   <EntityType Name="T_OA_ARCHIVES">
     <Key>
@@ -568,6 +693,21 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <Property Name="TRAVELSOLUTIONSID" Type="nvarchar2" MaxLength="100" />
   </EntityType>
   <EntityType Name="T_OA_AREACITY">
+    <Key>
+      <PropertyRef Name="AREACITYID" />
+    </Key>
+    <Property Name="AREACITYID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="AREADIFFERENCEID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CITY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="CREATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEDATE" Type="date" />
+    <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="UPDATEDATE" Type="date" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“dbo.T_OA_AREACITY201411041112”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+-->
+  <EntityType Name="T_OA_AREACITY201411041112">
     <Key>
       <PropertyRef Name="AREACITYID" />
     </Key>
@@ -645,6 +785,50 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <Property Name="COMPANYCAR" Type="nvarchar2" MaxLength="2" />
   </EntityType>
   <EntityType Name="T_OA_BUSINESSTRIP">
+    <Key>
+      <PropertyRef Name="BUSINESSTRIPID" />
+    </Key>
+    <Property Name="BUSINESSTRIPID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="TEL" Type="nvarchar2" MaxLength="100" />
+    <Property Name="ISAGENT" Type="nvarchar2" MaxLength="2" />
+    <Property Name="CHARGEMONEY" Type="number" />
+    <Property Name="CHECKSTATE" Type="nvarchar2" MaxLength="2" />
+    <Property Name="CONTENT" Type="varchar2" MaxLength="2000" />
+    <Property Name="REMARKS" Type="nvarchar2" MaxLength="400" />
+    <Property Name="OWNERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERCOMPANYID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERPOSTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEUSERNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATECOMPANYID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEPOSTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEDATE" Type="date" />
+    <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="UPDATEUSERNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="UPDATEDATE" Type="date" />
+    <Property Name="STARTDATE" Type="date" />
+    <Property Name="ENDDATE" Type="date" />
+    <Property Name="DEPCITY" Type="nvarchar2" MaxLength="100" />
+    <Property Name="DESTCITY" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERPOSTNAME" Type="nvarchar2" />
+    <Property Name="OWNERDEPARTMENTNAME" Type="nvarchar2" />
+    <Property Name="OWNERCOMPANYNAME" Type="nvarchar2" />
+    <Property Name="POSTLEVEL" Type="nvarchar2" />
+    <Property Name="STARTCITYNAME" Type="nvarchar2" />
+    <Property Name="ENDCITYNAME" Type="nvarchar2" />
+    <Property Name="ISALTERTRAVE" Type="nvarchar2" />
+    <Property Name="ALTERDETAILBASE" Type="nvarchar2" />
+    <Property Name="ALTERDETAILBEFORE" Type="nvarchar2" />
+    <Property Name="ALTERDETAILATFER" Type="nvarchar2" />
+    <Property Name="ISFROMWP" Type="nvarchar2" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“dbo.T_OA_BUSINESSTRIP0201”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+-->
+  <EntityType Name="T_OA_BUSINESSTRIP0201">
     <Key>
       <PropertyRef Name="BUSINESSTRIPID" />
     </Key>
@@ -2274,7 +2458,96 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <Property Name="OWNERDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
     <Property Name="OWNERCOMPANYID" Type="nvarchar2" MaxLength="100" />
   </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“dbo.T_OA_TAKETHESTAND_1219”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+-->
+  <EntityType Name="T_OA_TAKETHESTAND_1219">
+    <Key>
+      <PropertyRef Name="TAKETHESTANDARDTRANSPORTID" />
+      <PropertyRef Name="CREATEUSERID" />
+      <PropertyRef Name="CREATEDATE" />
+    </Key>
+    <Property Name="TAKETHESTANDARDTRANSPORTID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="TRAVELSOLUTIONSID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="ENDPOSTLEVEL" Type="nvarchar2" MaxLength="200" />
+    <Property Name="TYPEOFTRAVELTOOLS" Type="nvarchar2" MaxLength="100" />
+    <Property Name="TAKETHETOOLLEVEL" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEUSERID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="UPDATEDATE" Type="date" />
+    <Property Name="OWNERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERPOSTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERCOMPANYID" Type="nvarchar2" MaxLength="100" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“dbo.T_OA_TAKETHESTAND_TMP”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+-->
+  <EntityType Name="T_OA_TAKETHESTAND_TMP">
+    <Key>
+      <PropertyRef Name="TAKETHESTANDARDTRANSPORTID" />
+      <PropertyRef Name="CREATEUSERID" />
+      <PropertyRef Name="CREATEDATE" />
+    </Key>
+    <Property Name="TAKETHESTANDARDTRANSPORTID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="TRAVELSOLUTIONSID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="ENDPOSTLEVEL" Type="nvarchar2" MaxLength="200" />
+    <Property Name="TYPEOFTRAVELTOOLS" Type="nvarchar2" MaxLength="100" />
+    <Property Name="TAKETHETOOLLEVEL" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEUSERID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="CREATEDATE" Type="date" Nullable="false" />
+    <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="UPDATEDATE" Type="date" />
+    <Property Name="OWNERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERPOSTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERCOMPANYID" Type="nvarchar2" MaxLength="100" />
+  </EntityType>
   <EntityType Name="T_OA_TRAVELREIMBURSEMENT">
+    <Key>
+      <PropertyRef Name="TRAVELREIMBURSEMENTID" />
+    </Key>
+    <Property Name="TRAVELREIMBURSEMENTID" Type="nvarchar2" Nullable="false" MaxLength="100" />
+    <Property Name="BUSINESSREPORTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CLAIMSWERE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CLAIMSWERENAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="REIMBURSEMENTTIME" Type="date" />
+    <Property Name="COMPUTINGTIME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="TEL" Type="nvarchar2" MaxLength="100" />
+    <Property Name="THETOTALCOST" Type="number" />
+    <Property Name="REIMBURSEMENTOFCOSTS" Type="number" />
+    <Property Name="CHECKSTATE" Type="nvarchar2" MaxLength="2" />
+    <Property Name="REMARKS" Type="nvarchar2" MaxLength="2000" />
+    <Property Name="OWNERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERCOMPANYID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="OWNERPOSTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEUSERNAME" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATECOMPANYID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEDEPARTMENTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEPOSTID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CREATEDATE" Type="date" />
+    <Property Name="UPDATEUSERID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="UPDATEDATE" Type="date" />
+    <Property Name="NOBUDGETCLAIMS" Type="nvarchar2" MaxLength="100" />
+    <Property Name="BUSINESSTRIPID" Type="nvarchar2" MaxLength="100" />
+    <Property Name="CONTENT" Type="varchar2" MaxLength="2000" />
+    <Property Name="OWNERPOSTNAME" Type="nvarchar2" />
+    <Property Name="OWNERDEPARTMENTNAME" Type="nvarchar2" />
+    <Property Name="OWNERCOMPANYNAME" Type="nvarchar2" />
+    <Property Name="POSTLEVEL" Type="nvarchar2" />
+    <Property Name="STARTCITYNAME" Type="nvarchar2" />
+    <Property Name="ENDCITYNAME" Type="nvarchar2" />
+    <Property Name="ISFROMWP" Type="nvarchar2" />
+    <Property Name="PAYINFO" Type="nvarchar2" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“dbo.T_OA_TRAVELREIMBURSEMENT0201”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+-->
+  <EntityType Name="T_OA_TRAVELREIMBURSEMENT0201">
     <Key>
       <PropertyRef Name="TRAVELREIMBURSEMENTID" />
     </Key>
@@ -3360,10 +3633,12 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <EntitySet Name="T_OA_ARCHIVES" EntityType="SMT_OA_EFModel.T_OA_ARCHIVES" />
     <EntitySet Name="T_OA_AREAALLOWANCE" EntityType="SMT_OA_EFModel.T_OA_AREAALLOWANCE" />
     <EntitySet Name="T_OA_AREACITY" EntityType="SMT_OA_EFModel.T_OA_AREACITY" />
+    <EntitySet Name="T_OA_AREACITY201411041112" EntityType="SMT_OA_EFModel.T_OA_AREACITY201411041112" />
     <EntitySet Name="T_OA_AREADIFFERENCE" EntityType="SMT_OA_EFModel.T_OA_AREADIFFERENCE" />
     <EntitySet Name="T_OA_BUSINESSREPORT" EntityType="SMT_OA_EFModel.T_OA_BUSINESSREPORT" />
     <EntitySet Name="T_OA_BUSINESSREPORTDETAIL" EntityType="SMT_OA_EFModel.T_OA_BUSINESSREPORTDETAIL" />
     <EntitySet Name="T_OA_BUSINESSTRIP" EntityType="SMT_OA_EFModel.T_OA_BUSINESSTRIP" />
+    <EntitySet Name="T_OA_BUSINESSTRIP0201" EntityType="SMT_OA_EFModel.T_OA_BUSINESSTRIP0201" />
     <EntitySet Name="T_OA_BUSINESSTRIPDETAIL" EntityType="SMT_OA_EFModel.T_OA_BUSINESSTRIPDETAIL" />
     <EntitySet Name="T_OA_BUSINESSTRIPDETAIL_BAK" EntityType="SMT_OA_EFModel.T_OA_BUSINESSTRIPDETAIL_BAK" />
     <EntitySet Name="T_OA_BUSINESSTRIP_BAK" EntityType="SMT_OA_EFModel.T_OA_BUSINESSTRIP_BAK" />
@@ -3423,7 +3698,10 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <EntitySet Name="T_OA_SENDDOCTEMPLATE" EntityType="SMT_OA_EFModel.T_OA_SENDDOCTEMPLATE" />
     <EntitySet Name="T_OA_SENDDOCTYPE" EntityType="SMT_OA_EFModel.T_OA_SENDDOCTYPE" />
     <EntitySet Name="T_OA_TAKETHESTANDARDTRANSPORT" EntityType="SMT_OA_EFModel.T_OA_TAKETHESTANDARDTRANSPORT" />
+    <EntitySet Name="T_OA_TAKETHESTAND_1219" EntityType="SMT_OA_EFModel.T_OA_TAKETHESTAND_1219" />
+    <EntitySet Name="T_OA_TAKETHESTAND_TMP" EntityType="SMT_OA_EFModel.T_OA_TAKETHESTAND_TMP" />
     <EntitySet Name="T_OA_TRAVELREIMBURSEMENT" EntityType="SMT_OA_EFModel.T_OA_TRAVELREIMBURSEMENT" />
+    <EntitySet Name="T_OA_TRAVELREIMBURSEMENT0201" EntityType="SMT_OA_EFModel.T_OA_TRAVELREIMBURSEMENT0201" />
     <EntitySet Name="T_OA_TRAVELSOLUTIONS" EntityType="SMT_OA_EFModel.T_OA_TRAVELSOLUTIONS" />
     <EntitySet Name="T_OA_VEHICLE" EntityType="SMT_OA_EFModel.T_OA_VEHICLE" />
     <EntitySet Name="T_OA_VEHICLECARD" EntityType="SMT_OA_EFModel.T_OA_VEHICLECARD" />
@@ -3816,6 +4094,8 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="UPDATEUSERNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="UPDATEDATE" Type="DateTime" />
+    <Property Name="APPROVALNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ISCOST" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="T_OA_ARCHIVES">
     <Key>
@@ -3875,6 +4155,18 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="UPDATEDATE" Type="DateTime" />
     <NavigationProperty Name="T_OA_AREADIFFERENCE" Relationship="SMT_OA_EFModel.FK_T_OA_ARE_AREACITY" FromRole="T_OA_AREACITY" ToRole="T_OA_AREADIFFERENCE" />
+  </EntityType>
+  <EntityType Name="T_OA_AREACITY201411041112">
+    <Key>
+      <PropertyRef Name="AREACITYID" />
+    </Key>
+    <Property Name="AREACITYID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="AREADIFFERENCEID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CITY" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEDATE" Type="DateTime" />
+    <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UPDATEDATE" Type="DateTime" />
   </EntityType>
   <EntityType Name="T_OA_AREADIFFERENCE">
     <Key>
@@ -3986,6 +4278,47 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <Property Name="ISFROMWP" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="T_OA_TRAVELREIMBURSEMENT" Relationship="SMT_OA_EFModel.FK_BUSINESSTRIP_T_OA_BUS" FromRole="T_OA_BUSINESSTRIP" ToRole="T_OA_TRAVELREIMBURSEMENT" />
     <NavigationProperty Name="T_OA_BUSINESSTRIPDETAIL" Relationship="SMT_OA_EFModel.FK_T_OA_BUS_T_OA_BUSDETAIL" FromRole="T_OA_BUSINESSTRIP" ToRole="T_OA_BUSINESSTRIPDETAIL" />
+  </EntityType>
+  <EntityType Name="T_OA_BUSINESSTRIP0201">
+    <Key>
+      <PropertyRef Name="BUSINESSTRIPID" />
+    </Key>
+    <Property Name="BUSINESSTRIPID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="TEL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ISAGENT" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="CHARGEMONEY" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CHECKSTATE" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="CONTENT" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="REMARKS" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERCOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEUSERNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATECOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEDATE" Type="DateTime" />
+    <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UPDATEUSERNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UPDATEDATE" Type="DateTime" />
+    <Property Name="STARTDATE" Type="DateTime" />
+    <Property Name="ENDDATE" Type="DateTime" />
+    <Property Name="DEPCITY" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="DESTCITY" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERPOSTNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERDEPARTMENTNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERCOMPANYNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="POSTLEVEL" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="STARTCITYNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="ENDCITYNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="ISALTERTRAVE" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="ALTERDETAILBASE" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="ALTERDETAILBEFORE" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="ALTERDETAILATFER" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="ISFROMWP" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="T_OA_BUSINESSTRIPDETAIL">
     <Key>
@@ -5597,6 +5930,46 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <Property Name="OWNERCOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="T_OA_TRAVELSOLUTIONS" Relationship="SMT_OA_EFModel.FK_T_OA_TAK_REFERENCE_T_OA_TRA" FromRole="T_OA_TAKETHESTANDARDTRANSPORT" ToRole="T_OA_TRAVELSOLUTIONS" />
   </EntityType>
+  <EntityType Name="T_OA_TAKETHESTAND_1219">
+    <Key>
+      <PropertyRef Name="TAKETHESTANDARDTRANSPORTID" />
+      <PropertyRef Name="CREATEUSERID" />
+      <PropertyRef Name="CREATEDATE" />
+    </Key>
+    <Property Name="TAKETHESTANDARDTRANSPORTID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="TRAVELSOLUTIONSID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ENDPOSTLEVEL" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="TYPEOFTRAVELTOOLS" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="TAKETHETOOLLEVEL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEUSERID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UPDATEDATE" Type="DateTime" />
+    <Property Name="OWNERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERCOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="T_OA_TAKETHESTAND_TMP">
+    <Key>
+      <PropertyRef Name="TAKETHESTANDARDTRANSPORTID" />
+      <PropertyRef Name="CREATEUSERID" />
+      <PropertyRef Name="CREATEDATE" />
+    </Key>
+    <Property Name="TAKETHESTANDARDTRANSPORTID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="TRAVELSOLUTIONSID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ENDPOSTLEVEL" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="TYPEOFTRAVELTOOLS" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="TAKETHETOOLLEVEL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEUSERID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEDATE" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UPDATEDATE" Type="DateTime" />
+    <Property Name="OWNERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERCOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
   <EntityType Name="T_OA_TRAVELREIMBURSEMENT">
     <Key>
       <PropertyRef Name="TRAVELREIMBURSEMENTID" />
@@ -5634,8 +6007,48 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <Property Name="STARTCITYNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
     <Property Name="ENDCITYNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
     <Property Name="ISFROMWP" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="PAYINFO" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="T_OA_BUSINESSTRIP" Relationship="SMT_OA_EFModel.FK_BUSINESSTRIP_T_OA_BUS" FromRole="T_OA_TRAVELREIMBURSEMENT" ToRole="T_OA_BUSINESSTRIP" />
     <NavigationProperty Name="T_OA_REIMBURSEMENTDETAIL" Relationship="SMT_OA_EFModel.FK_T_OA_REI_REFERENCE_T_OA_TRA" FromRole="T_OA_TRAVELREIMBURSEMENT" ToRole="T_OA_REIMBURSEMENTDETAIL" />
+  </EntityType>
+  <EntityType Name="T_OA_TRAVELREIMBURSEMENT0201">
+    <Key>
+      <PropertyRef Name="TRAVELREIMBURSEMENTID" />
+    </Key>
+    <Property Name="TRAVELREIMBURSEMENTID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="BUSINESSREPORTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CLAIMSWERE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CLAIMSWERENAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="REIMBURSEMENTTIME" Type="DateTime" />
+    <Property Name="COMPUTINGTIME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="TEL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="THETOTALCOST" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="REIMBURSEMENTOFCOSTS" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CHECKSTATE" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="REMARKS" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERCOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEUSERNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATECOMPANYID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEDEPARTMENTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEPOSTID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CREATEDATE" Type="DateTime" />
+    <Property Name="UPDATEUSERID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UPDATEDATE" Type="DateTime" />
+    <Property Name="NOBUDGETCLAIMS" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="BUSINESSTRIPID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CONTENT" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="OWNERPOSTNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERDEPARTMENTNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="OWNERCOMPANYNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="POSTLEVEL" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="STARTCITYNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="ENDCITYNAME" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="ISFROMWP" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="T_OA_TRAVELSOLUTIONS">
     <Key>
@@ -6427,6 +6840,8 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
           <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
           <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
           <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+          <ScalarProperty Name="APPROVALNAME" ColumnName="APPROVALNAME" />
+          <ScalarProperty Name="ISCOST" ColumnName="ISCOST" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -6480,6 +6895,19 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
       <EntityTypeMapping TypeName="SMT_OA_EFModel.T_OA_AREACITY">
         <MappingFragment StoreEntitySet="T_OA_AREACITY">
           <ScalarProperty Name="AREACITYID" ColumnName="AREACITYID" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+          <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_AREACITY201411041112">
+      <EntityTypeMapping TypeName="SMT_OA_EFModel.T_OA_AREACITY201411041112">
+        <MappingFragment StoreEntitySet="T_OA_AREACITY201411041112">
+          <ScalarProperty Name="AREACITYID" ColumnName="AREACITYID" />
+          <ScalarProperty Name="AREADIFFERENCEID" ColumnName="AREADIFFERENCEID" />
           <ScalarProperty Name="CITY" ColumnName="CITY" />
           <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
           <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
@@ -6557,6 +6985,48 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
     <EntitySetMapping Name="T_OA_BUSINESSTRIP">
       <EntityTypeMapping TypeName="SMT_OA_EFModel.T_OA_BUSINESSTRIP">
         <MappingFragment StoreEntitySet="T_OA_BUSINESSTRIP">
+          <ScalarProperty Name="BUSINESSTRIPID" ColumnName="BUSINESSTRIPID" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="ISAGENT" ColumnName="ISAGENT" />
+          <ScalarProperty Name="CHARGEMONEY" ColumnName="CHARGEMONEY" />
+          <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+          <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+          <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+          <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+          <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+          <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+          <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+          <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+          <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+          <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+          <ScalarProperty Name="UPDATEUSERNAME" ColumnName="UPDATEUSERNAME" />
+          <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="DEPCITY" ColumnName="DEPCITY" />
+          <ScalarProperty Name="DESTCITY" ColumnName="DESTCITY" />
+          <ScalarProperty Name="OWNERPOSTNAME" ColumnName="OWNERPOSTNAME" />
+          <ScalarProperty Name="OWNERDEPARTMENTNAME" ColumnName="OWNERDEPARTMENTNAME" />
+          <ScalarProperty Name="OWNERCOMPANYNAME" ColumnName="OWNERCOMPANYNAME" />
+          <ScalarProperty Name="POSTLEVEL" ColumnName="POSTLEVEL" />
+          <ScalarProperty Name="STARTCITYNAME" ColumnName="STARTCITYNAME" />
+          <ScalarProperty Name="ENDCITYNAME" ColumnName="ENDCITYNAME" />
+          <ScalarProperty Name="ISALTERTRAVE" ColumnName="ISALTERTRAVE" />
+          <ScalarProperty Name="ALTERDETAILBASE" ColumnName="ALTERDETAILBASE" />
+          <ScalarProperty Name="ALTERDETAILBEFORE" ColumnName="ALTERDETAILBEFORE" />
+          <ScalarProperty Name="ALTERDETAILATFER" ColumnName="ALTERDETAILATFER" />
+          <ScalarProperty Name="ISFROMWP" ColumnName="ISFROMWP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_BUSINESSTRIP0201">
+      <EntityTypeMapping TypeName="SMT_OA_EFModel.T_OA_BUSINESSTRIP0201">
+        <MappingFragment StoreEntitySet="T_OA_BUSINESSTRIP0201">
           <ScalarProperty Name="BUSINESSTRIPID" ColumnName="BUSINESSTRIPID" />
           <ScalarProperty Name="TEL" ColumnName="TEL" />
           <ScalarProperty Name="ISAGENT" ColumnName="ISAGENT" />
@@ -8187,6 +8657,44 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_TAKETHESTAND_1219">
+      <EntityTypeMapping TypeName="SMT_OA_EFModel.T_OA_TAKETHESTAND_1219">
+        <MappingFragment StoreEntitySet="T_OA_TAKETHESTAND_1219">
+          <ScalarProperty Name="TAKETHESTANDARDTRANSPORTID" ColumnName="TAKETHESTANDARDTRANSPORTID" />
+          <ScalarProperty Name="TRAVELSOLUTIONSID" ColumnName="TRAVELSOLUTIONSID" />
+          <ScalarProperty Name="ENDPOSTLEVEL" ColumnName="ENDPOSTLEVEL" />
+          <ScalarProperty Name="TYPEOFTRAVELTOOLS" ColumnName="TYPEOFTRAVELTOOLS" />
+          <ScalarProperty Name="TAKETHETOOLLEVEL" ColumnName="TAKETHETOOLLEVEL" />
+          <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+          <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+          <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+          <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+          <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+          <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_TAKETHESTAND_TMP">
+      <EntityTypeMapping TypeName="SMT_OA_EFModel.T_OA_TAKETHESTAND_TMP">
+        <MappingFragment StoreEntitySet="T_OA_TAKETHESTAND_TMP">
+          <ScalarProperty Name="TAKETHESTANDARDTRANSPORTID" ColumnName="TAKETHESTANDARDTRANSPORTID" />
+          <ScalarProperty Name="TRAVELSOLUTIONSID" ColumnName="TRAVELSOLUTIONSID" />
+          <ScalarProperty Name="ENDPOSTLEVEL" ColumnName="ENDPOSTLEVEL" />
+          <ScalarProperty Name="TYPEOFTRAVELTOOLS" ColumnName="TYPEOFTRAVELTOOLS" />
+          <ScalarProperty Name="TAKETHETOOLLEVEL" ColumnName="TAKETHETOOLLEVEL" />
+          <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+          <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+          <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+          <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+          <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+          <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="T_OA_TRAVELREIMBURSEMENT">
       <EntityTypeMapping TypeName="SMT_OA_EFModel.T_OA_TRAVELREIMBURSEMENT">
         <MappingFragment StoreEntitySet="T_OA_TRAVELREIMBURSEMENT">
@@ -8215,6 +8723,47 @@ FROM "dbo"."T_OA_BUSINESSTRIP_BAK" "T_OA_BUSINESSTRIP_BAK"</DefiningQuery>
           <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
           <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
           <ScalarProperty Name="NOBUDGETCLAIMS" ColumnName="NOBUDGETCLAIMS" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="OWNERPOSTNAME" ColumnName="OWNERPOSTNAME" />
+          <ScalarProperty Name="OWNERDEPARTMENTNAME" ColumnName="OWNERDEPARTMENTNAME" />
+          <ScalarProperty Name="OWNERCOMPANYNAME" ColumnName="OWNERCOMPANYNAME" />
+          <ScalarProperty Name="POSTLEVEL" ColumnName="POSTLEVEL" />
+          <ScalarProperty Name="STARTCITYNAME" ColumnName="STARTCITYNAME" />
+          <ScalarProperty Name="ENDCITYNAME" ColumnName="ENDCITYNAME" />
+          <ScalarProperty Name="ISFROMWP" ColumnName="ISFROMWP" />
+          <ScalarProperty Name="PAYINFO" ColumnName="PAYINFO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OA_TRAVELREIMBURSEMENT0201">
+      <EntityTypeMapping TypeName="SMT_OA_EFModel.T_OA_TRAVELREIMBURSEMENT0201">
+        <MappingFragment StoreEntitySet="T_OA_TRAVELREIMBURSEMENT0201">
+          <ScalarProperty Name="TRAVELREIMBURSEMENTID" ColumnName="TRAVELREIMBURSEMENTID" />
+          <ScalarProperty Name="BUSINESSREPORTID" ColumnName="BUSINESSREPORTID" />
+          <ScalarProperty Name="CLAIMSWERE" ColumnName="CLAIMSWERE" />
+          <ScalarProperty Name="CLAIMSWERENAME" ColumnName="CLAIMSWERENAME" />
+          <ScalarProperty Name="REIMBURSEMENTTIME" ColumnName="REIMBURSEMENTTIME" />
+          <ScalarProperty Name="COMPUTINGTIME" ColumnName="COMPUTINGTIME" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="THETOTALCOST" ColumnName="THETOTALCOST" />
+          <ScalarProperty Name="REIMBURSEMENTOFCOSTS" ColumnName="REIMBURSEMENTOFCOSTS" />
+          <ScalarProperty Name="CHECKSTATE" ColumnName="CHECKSTATE" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="OWNERID" ColumnName="OWNERID" />
+          <ScalarProperty Name="OWNERNAME" ColumnName="OWNERNAME" />
+          <ScalarProperty Name="OWNERCOMPANYID" ColumnName="OWNERCOMPANYID" />
+          <ScalarProperty Name="OWNERDEPARTMENTID" ColumnName="OWNERDEPARTMENTID" />
+          <ScalarProperty Name="OWNERPOSTID" ColumnName="OWNERPOSTID" />
+          <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+          <ScalarProperty Name="CREATEUSERNAME" ColumnName="CREATEUSERNAME" />
+          <ScalarProperty Name="CREATECOMPANYID" ColumnName="CREATECOMPANYID" />
+          <ScalarProperty Name="CREATEDEPARTMENTID" ColumnName="CREATEDEPARTMENTID" />
+          <ScalarProperty Name="CREATEPOSTID" ColumnName="CREATEPOSTID" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="UPDATEUSERID" ColumnName="UPDATEUSERID" />
+          <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+          <ScalarProperty Name="NOBUDGETCLAIMS" ColumnName="NOBUDGETCLAIMS" />
+          <ScalarProperty Name="BUSINESSTRIPID" ColumnName="BUSINESSTRIPID" />
           <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
           <ScalarProperty Name="OWNERPOSTNAME" ColumnName="OWNERPOSTNAME" />
           <ScalarProperty Name="OWNERDEPARTMENTNAME" ColumnName="OWNERDEPARTMENTNAME" />

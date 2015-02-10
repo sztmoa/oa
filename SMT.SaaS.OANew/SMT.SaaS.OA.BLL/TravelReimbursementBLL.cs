@@ -97,7 +97,7 @@ namespace SMT.SaaS.OA.BLL
                 //    if (AddTravelReimbursement.ISFROMWP == "1")
                 //    {
                 //生成单据编号
-               AddTravelReimbursement.NOBUDGETCLAIMS = this.GetAutoOrderCode();
+               AddTravelReimbursement.NOBUDGETCLAIMS = this.GetAutoOrderCode();               
                 //    }
 
                 //}

@@ -323,14 +323,7 @@ namespace SMT.SaaS.OA.Services
         {
             using (ApprovalManagementBll approvalBll = new ApprovalManagementBll())
             {
-                //if (orgtype == "Company")
-                //{
-                //    return approvalBll.GetApprovalSetByOrgType(orgid, "0");
-                //}
-                //else
-                //{
-                //    return approvalBll.GetApprovalSetByOrgType(orgid, "1");
-                //}
+                
                 return approvalBll.GetApprovalSetByOrgType(orgid, orgtype);
             }
         }
@@ -392,7 +385,93 @@ namespace SMT.SaaS.OA.Services
                 return approvalBll.GetApprovalTypesByUserID(employeeID);
             }
         }
+        
+        /// <summary>
+        /// 是否存在事项审批设置
+        /// </summary>
+        /// <param name="setID">事项审批设置ID</param>
+        /// <returns>返回布尔值</returns>
+        [OperationContract]
+        public bool IsExistApprovalSet(string setID)
+        {
+            using (ApprovalManagementBll approvalBll = new ApprovalManagementBll())
+            {
+                return approvalBll.IsExistApprovalSet(setID);
+            }
+        }
+        /// <summary>
+        /// 删除单条事项审批设置值
+        /// </summary>
+        /// <param name="setID">事项审批设置ID</param>
+        /// <returns>返回布尔值</returns>
+        [OperationContract]
+        public bool DelSingleApprovalSet(string setID)
+        {
+            using (ApprovalManagementBll approvalBll = new ApprovalManagementBll())
+            {
+                return approvalBll.DelSingleApprovalSet(setID);
+            }
+        }
+        /// <summary>
+        /// 批量添加事项审批设置信息
+        /// </summary>
+        /// <param name="listSets">事项审批设置集合</param>
+        /// <returns>返回集合</returns>
+        [OperationContract]
+        public bool BatchAddApprovalSets(List<T_OA_APPROVALTYPESET> listSets)
+        {
+            using (ApprovalManagementBll approvalBll = new ApprovalManagementBll())
+            {
+                return approvalBll.BatchAddApprovalSets(listSets);
+            }
+        }
+        /// <summary>
+        /// 批量删除事项审批设置集合
+        /// </summary>
+        /// <param name="SetIDs">事项审批设置ID集合</param>
+        /// <returns>返回布尔值</returns>
+        [OperationContract]
+        public bool BatchDelApprovalSets(List<string> SetIDs)
+        {
+            using (ApprovalManagementBll approvalBll = new ApprovalManagementBll())
+            {
+                return approvalBll.BatchDelApprovalSets(SetIDs);
+            }
+        }
+
+        /// <summary>
+        /// 根据公司iD 部门ID 事项审批值
+        /// 获取费用是否必填项
+        /// </summary>
+        /// <param name="approvalValue">事项审批值</param>
+        /// <param name="departmentID">公司ID</param>
+        /// <param name="companyID">部门ID</param>
+        /// <returns>返回字符串 0：非必填  1：必填</returns>
+        [OperationContract]
+        public string ApprovalTypeIsCost(string approvalValue, string departmentID, string companyID)
+        {
+            using (ApprovalManagementBll approvalBll = new ApprovalManagementBll())
+            {
+                return approvalBll.ApprovalTypeIsCost(approvalValue, departmentID, companyID);
+            }
+        }
+
         #endregion
+
+        /// <summary>
+        /// 根据组织架构ID和类型获取事项审批的设置信息
+        /// </summary>
+        /// <param name="orgID">组织架构ID</param>
+        /// <param name="orgType">类型 0：公司1：部门</param>
+        /// <returns>返回集合</returns>
+        [OperationContract]
+        public List<T_OA_APPROVALTYPESET> GetApprovalSetsByOrg(string orgID, string orgType)
+        {
+            using (ApprovalManagementBll approvalBll = new ApprovalManagementBll())
+            {
+                return approvalBll.GetApprovalSetsByOrg(orgID,orgType);
+            }
+        }
 
        
     }

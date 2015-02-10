@@ -58,6 +58,9 @@ namespace SMT.SaaS.OA.DAL.Views
         /// 事项审批类型ID
         /// </summary>
         public string ApprovalTypeID { get; set; }
-
+        /// <summary>
+        /// 费用是否必填
+        /// </summary>
+        public string ISCOST { get; set; }
     }
 }

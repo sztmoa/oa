@@ -234,6 +234,10 @@ namespace SMT.SaaS.OA.Services
                 entity.POSTLEVEL = buip.POSTLEVEL;
                 entity.STARTCITYNAME = buip.STARTCITYNAME;
                 entity.ENDCITYNAME = buip.ENDCITYNAME;
+                if (buip.REMARKS == "工作计划生成" || buip.ISFROMWP=="1")
+                {
+                    entity.ISFROMWP = "1";
+                }
                 Tracer.Debug("出差终审自动生成出差报销：" + entity.OWNERNAME
                     + "-" + entity.OWNERPOSTNAME
                     + "-" + entity.OWNERDEPARTMENTNAME

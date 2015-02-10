@@ -3703,7 +3703,9 @@ namespace SMT.SaaS.OA.BLL
                     
                     if (dal.Update(entitys) > 0)
                     {
-                        BumfCompanySendDocManagementBll.CloseDotask(entitys.VIEWSENDDOCID, entitys.OWNERID);
+                        //BumfCompanySendDocManagementBll.CloseDotask(entitys.VIEWSENDDOCID, entitys.OWNERID);
+                        BumfCompanySendDocManagementBll.CloseDotask(entitys.SENDDOCID, entitys.OWNERID);
+
                         return true;
                     }
                 }
