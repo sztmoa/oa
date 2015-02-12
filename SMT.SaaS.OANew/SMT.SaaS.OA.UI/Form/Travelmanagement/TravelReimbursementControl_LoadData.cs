@@ -96,7 +96,10 @@ namespace SMT.SaaS.OA.UI.UserControls
                                 isFromWP = true;
                                 //不显示支付信息
                                 //labPAYMENTINFO.Visibility = Visibility.Collapsed;
-                                txtPAYMENTINFO.Text = TravelReimbursement_Golbal.PAYINFO;
+                                if(!string.IsNullOrEmpty(TravelReimbursement_Golbal.PAYINFO))
+                                { 
+                                    txtPAYMENTINFO.Text = TravelReimbursement_Golbal.PAYINFO;
+                                }
                             }
                         }
                         InitFBControl(TravelReimbursement_Golbal,isFromWP);

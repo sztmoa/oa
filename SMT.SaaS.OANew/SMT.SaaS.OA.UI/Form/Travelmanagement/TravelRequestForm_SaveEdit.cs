@@ -467,6 +467,10 @@ namespace SMT.SaaS.OA.UI.Views.Travelmanagement
                         Utility.ShowCustomMessage(MessageTypes.Message, Utility.GetResourceStr("SUCCESSED"), Utility.GetResourceStr("SUCCESSSUBMITAUDIT"));
                         isSubmit = false;
                     }
+                    if (e.UserState == null)
+                    {
+                        Utility.ShowCustomMessage(MessageTypes.Message, Utility.GetResourceStr("SUCCESSED"), "修改成功");
+                    }
 
                     RefreshUI(RefreshedTypes.AuditInfo);
                     if (needsubmit == true)
