@@ -43,6 +43,10 @@
           maxReceivedMessageSize="2147483647">
           <security mode="None" />
         </binding>
+        <binding name="BasicHttpBinding_PermissionService" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
       </basicHttpBinding>
       <customBinding>
         <binding name="CustomBinding_OrganizationService">
@@ -69,10 +73,6 @@
           <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
         </binding>
         <binding name="CustomBinding_FileUploadManager">
-          <binaryMessageEncoding />
-          <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
-        </binding>
-        <binding name="CustomBinding_PermissionService1">
           <binaryMessageEncoding />
           <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
         </binding>
@@ -169,9 +169,6 @@
       <endpoint address="http://localhost:3938/SmtOACommonOffice.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_SmtOACommonOffice1"
         contract="SmtOACommonOfficeService.SmtOACommonOffice" name="CustomBinding_SmtOACommonOffice1" />
-      <endpoint address="http://localhost:1604/PermissionService.svc"
-        binding="customBinding" bindingConfiguration="CustomBinding_PermissionService"
-        contract="PermissionWS.PermissionService" name="CustomBinding_PermissionService" />
       <endpoint address="http://portal.smt-online.net/SmtOnline/develop/Services/HR/PersonnelService.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PersonnelService"
         contract="PersonnelWS.PersonnelService" name="BasicHttpBinding_PersonnelService" />
@@ -193,6 +190,9 @@
       <endpoint address="http://10.10.0.93:8030/Services/WP/WPServices.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IWPServices"
         contract="WpServiceWS.IWPServices" name="BasicHttpBinding_IWPServices" />
+      <endpoint address="http://localhost:12168/PermissionService.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PermissionService"
+        contract="PermissionWS.PermissionService" name="BasicHttpBinding_PermissionService" />
     </client>
 
   </system.serviceModel>

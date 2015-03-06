@@ -13,7 +13,7 @@
       <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/SMT_System_EFModel" />
       <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/SMT.EntityFlowSys" />
       <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/SMT.FB.Services" />
-      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="FBService_FetchSalaryBudget_InputMessage">

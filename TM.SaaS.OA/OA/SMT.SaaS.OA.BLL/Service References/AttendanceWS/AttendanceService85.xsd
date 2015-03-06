@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:12168/AttendanceService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT.HRM.Services" />
-  <xs:import schemaLocation="http://localhost:12168/AttendanceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+  <xs:import schemaLocation="http://localhost:12168/AttendanceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
   <xs:import schemaLocation="http://localhost:12168/AttendanceService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:import schemaLocation="http://localhost:12168/AttendanceService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SMT.HRM.CustomModel.Reports" />
   <xs:import schemaLocation="http://localhost:12168/AttendanceService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SMT.HRM.CustomModel" />
@@ -15,14 +15,14 @@
   <xs:element name="ImportAttendMonthlyBalanceForShowResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="ImportAttendMonthlyBalanceForShowResult" nillable="true" type="q2:ArrayOfT_HR_ATTENDMONTHLYBALANCE" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="ImportAttendMonthlyBalanceForShowResult" nillable="true" type="q2:ArrayOfT_HR_ATTENDMONTHLYBALANCE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddAttendMonthlyBalance">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q3:T_HR_ATTENDMONTHLYBALANCE" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q3:T_HR_ATTENDMONTHLYBALANCE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -36,7 +36,7 @@
   <xs:element name="ModifyAttendMonthlyBalance">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q4:T_HR_ATTENDMONTHLYBALANCE" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q4:T_HR_ATTENDMONTHLYBALANCE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -137,7 +137,7 @@
   <xs:element name="GetAttendMonthlyBatchBalanceByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendMonthlyBatchBalanceByIDResult" nillable="true" type="q5:T_HR_ATTENDMONTHLYBATCHBALANCE" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendMonthlyBatchBalanceByIDResult" nillable="true" type="q5:T_HR_ATTENDMONTHLYBATCHBALANCE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -151,7 +151,7 @@
   <xs:element name="GetAttendMonthlyBatchBalanceByMonthlyBalanceIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendMonthlyBatchBalanceByMonthlyBalanceIdResult" nillable="true" type="q6:T_HR_ATTENDMONTHLYBATCHBALANCE" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendMonthlyBatchBalanceByMonthlyBalanceIdResult" nillable="true" type="q6:T_HR_ATTENDMONTHLYBATCHBALANCE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -170,14 +170,14 @@
   <xs:element name="GetAttendMonthlyBatchBalanceByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendMonthlyBatchBalanceByMultSearchResult" nillable="true" type="q7:T_HR_ATTENDMONTHLYBATCHBALANCE" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendMonthlyBatchBalanceByMultSearchResult" nillable="true" type="q7:T_HR_ATTENDMONTHLYBATCHBALANCE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddAttendMonthlyBatchBalance">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q8:T_HR_ATTENDMONTHLYBATCHBALANCE" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q8:T_HR_ATTENDMONTHLYBATCHBALANCE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -191,7 +191,7 @@
   <xs:element name="ModifyAttendMonthlyBatchBalance">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q9:T_HR_ATTENDMONTHLYBATCHBALANCE" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q9:T_HR_ATTENDMONTHLYBATCHBALANCE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -219,7 +219,7 @@
   <xs:element name="AuditMonthlyBatchBalance">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q10:T_HR_ATTENDMONTHLYBATCHBALANCE" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q10:T_HR_ATTENDMONTHLYBATCHBALANCE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -240,7 +240,7 @@
   <xs:element name="GetAttendYearlyBalanceByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendYearlyBalanceByIDResult" nillable="true" type="q11:T_HR_ATTENDYEARLYBALANCE" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendYearlyBalanceByIDResult" nillable="true" type="q11:T_HR_ATTENDYEARLYBALANCE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -260,7 +260,7 @@
   <xs:element name="GetAttendYearlyBalanceListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendYearlyBalanceListByMultSearchResult" nillable="true" type="q12:ArrayOfT_HR_ATTENDYEARLYBALANCE" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendYearlyBalanceListByMultSearchResult" nillable="true" type="q12:ArrayOfT_HR_ATTENDYEARLYBALANCE" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -268,7 +268,7 @@
   <xs:element name="AddAttendYearlyBalance">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q13:T_HR_ATTENDYEARLYBALANCE" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q13:T_HR_ATTENDYEARLYBALANCE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -282,7 +282,7 @@
   <xs:element name="ModifyAttendYearlyBalance">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q14:T_HR_ATTENDYEARLYBALANCE" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q14:T_HR_ATTENDYEARLYBALANCE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -399,7 +399,7 @@
   <xs:element name="EmployeeCancelLeavePagingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="EmployeeCancelLeavePagingResult" nillable="true" type="q16:ArrayOfT_HR_EMPLOYEECANCELLEAVE" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="EmployeeCancelLeavePagingResult" nillable="true" type="q16:ArrayOfT_HR_EMPLOYEECANCELLEAVE" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -407,7 +407,7 @@
   <xs:element name="EmployeeCancelLeaveAdd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="obj" nillable="true" type="q17:T_HR_EMPLOYEECANCELLEAVE" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="obj" nillable="true" type="q17:T_HR_EMPLOYEECANCELLEAVE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -421,7 +421,7 @@
   <xs:element name="EmployeeCancelLeaveUpdate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="obj" nillable="true" type="q18:T_HR_EMPLOYEECANCELLEAVE" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="obj" nillable="true" type="q18:T_HR_EMPLOYEECANCELLEAVE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -456,7 +456,7 @@
   <xs:element name="GetEmployeeCancelLeaveByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetEmployeeCancelLeaveByIDResult" nillable="true" type="q20:T_HR_EMPLOYEECANCELLEAVE" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetEmployeeCancelLeaveByIDResult" nillable="true" type="q20:T_HR_EMPLOYEECANCELLEAVE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -471,7 +471,7 @@
   <xs:element name="GetEmployeeLeaveRdListsByLeaveRecordIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetEmployeeLeaveRdListsByLeaveRecordIDResult" nillable="true" type="q21:ArrayOfT_HR_EMPLOYEECANCELLEAVE" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetEmployeeLeaveRdListsByLeaveRecordIDResult" nillable="true" type="q21:ArrayOfT_HR_EMPLOYEECANCELLEAVE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -492,7 +492,7 @@
   <xs:element name="GetAttendMachineSetPagingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendMachineSetPagingResult" nillable="true" type="q23:ArrayOfT_HR_ATTENDMACHINESET" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendMachineSetPagingResult" nillable="true" type="q23:ArrayOfT_HR_ATTENDMACHINESET" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -500,7 +500,7 @@
   <xs:element name="AttendMachineSetAdd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entity" nillable="true" type="q24:T_HR_ATTENDMACHINESET" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entity" nillable="true" type="q24:T_HR_ATTENDMACHINESET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -519,14 +519,14 @@
   <xs:element name="GetAttendMachineSetByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendMachineSetByIDResult" nillable="true" type="q25:T_HR_ATTENDMACHINESET" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendMachineSetByIDResult" nillable="true" type="q25:T_HR_ATTENDMACHINESET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AttendMachineSetUpdate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entity" nillable="true" type="q26:T_HR_ATTENDMACHINESET" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entity" nillable="true" type="q26:T_HR_ATTENDMACHINESET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -729,7 +729,7 @@
   <xs:element name="GetAttendSolAsignForOutEngineXml">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q32:T_HR_ATTENDANCESOLUTIONASIGN" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q32:T_HR_ATTENDANCESOLUTIONASIGN" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -762,7 +762,7 @@
   <xs:element name="GetVactionSetByCompanyIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetVactionSetByCompanyIdResult" nillable="true" type="q33:T_HR_VACATIONSET" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetVactionSetByCompanyIdResult" nillable="true" type="q33:T_HR_VACATIONSET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -777,7 +777,7 @@
   <xs:element name="GetVactionListSetByCompanyIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetVactionListSetByCompanyIdResult" nillable="true" type="q34:ArrayOfT_HR_VACATIONSET" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetVactionListSetByCompanyIdResult" nillable="true" type="q34:ArrayOfT_HR_VACATIONSET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -805,7 +805,7 @@
   <xs:element name="GetFreeLeaveDaySetByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetFreeLeaveDaySetByIDResult" nillable="true" type="q35:T_HR_FREELEAVEDAYSET" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetFreeLeaveDaySetByIDResult" nillable="true" type="q35:T_HR_FREELEAVEDAYSET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -820,7 +820,7 @@
   <xs:element name="GetFreeLeaveDaySetRdListForAttendanceSolutionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetFreeLeaveDaySetRdListForAttendanceSolutionResult" nillable="true" type="q36:ArrayOfT_HR_FREELEAVEDAYSET" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetFreeLeaveDaySetRdListForAttendanceSolutionResult" nillable="true" type="q36:ArrayOfT_HR_FREELEAVEDAYSET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -840,7 +840,7 @@
   <xs:element name="GetFreeLeaveDaySetRdListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetFreeLeaveDaySetRdListByMultSearchResult" nillable="true" type="q37:ArrayOfT_HR_FREELEAVEDAYSET" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetFreeLeaveDaySetRdListByMultSearchResult" nillable="true" type="q37:ArrayOfT_HR_FREELEAVEDAYSET" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -848,7 +848,7 @@
   <xs:element name="AddFreeLeaveDaySet">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entRd" nillable="true" type="q38:T_HR_FREELEAVEDAYSET" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entRd" nillable="true" type="q38:T_HR_FREELEAVEDAYSET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -862,7 +862,7 @@
   <xs:element name="ModifyFreeLeaveDaySet">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entRd" nillable="true" type="q39:T_HR_FREELEAVEDAYSET" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entRd" nillable="true" type="q39:T_HR_FREELEAVEDAYSET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -911,7 +911,7 @@
   <xs:element name="GetLeaveTypeSetByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetLeaveTypeSetByIDResult" nillable="true" type="q41:T_HR_LEAVETYPESET" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetLeaveTypeSetByIDResult" nillable="true" type="q41:T_HR_LEAVETYPESET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -926,7 +926,7 @@
   <xs:element name="GetLeaveTypeSetRdListForAttendanceSolutionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetLeaveTypeSetRdListForAttendanceSolutionResult" nillable="true" type="q42:ArrayOfT_HR_LEAVETYPESET" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetLeaveTypeSetRdListForAttendanceSolutionResult" nillable="true" type="q42:ArrayOfT_HR_LEAVETYPESET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -940,7 +940,7 @@
   <xs:element name="GetLeaveTypeSetAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetLeaveTypeSetAllResult" nillable="true" type="q43:ArrayOfT_HR_LEAVETYPESET" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetLeaveTypeSetAllResult" nillable="true" type="q43:ArrayOfT_HR_LEAVETYPESET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -959,7 +959,7 @@
   <xs:element name="GetLeaveTypeSetRdListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetLeaveTypeSetRdListByMultSearchResult" nillable="true" type="q44:ArrayOfT_HR_LEAVETYPESET" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetLeaveTypeSetRdListByMultSearchResult" nillable="true" type="q44:ArrayOfT_HR_LEAVETYPESET" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -967,7 +967,7 @@
   <xs:element name="AddLeaveTypeSet">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entLTRd" nillable="true" type="q45:T_HR_LEAVETYPESET" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entLTRd" nillable="true" type="q45:T_HR_LEAVETYPESET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -981,7 +981,7 @@
   <xs:element name="ModifyLeaveTypeSet">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entLTRd" nillable="true" type="q46:T_HR_LEAVETYPESET" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entLTRd" nillable="true" type="q46:T_HR_LEAVETYPESET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1016,7 +1016,7 @@
   <xs:element name="GetOvertimeRewardByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetOvertimeRewardByIDResult" nillable="true" type="q47:T_HR_OVERTIMEREWARD" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetOvertimeRewardByIDResult" nillable="true" type="q47:T_HR_OVERTIMEREWARD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1036,7 +1036,7 @@
   <xs:element name="GetOvertimeRewardRdListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetOvertimeRewardRdListByMultSearchResult" nillable="true" type="q48:ArrayOfT_HR_OVERTIMEREWARD" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetOvertimeRewardRdListByMultSearchResult" nillable="true" type="q48:ArrayOfT_HR_OVERTIMEREWARD" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1044,7 +1044,7 @@
   <xs:element name="AddOvertimeReward">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entRd" nillable="true" type="q49:T_HR_OVERTIMEREWARD" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entRd" nillable="true" type="q49:T_HR_OVERTIMEREWARD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1058,7 +1058,7 @@
   <xs:element name="ModifyOvertimeReward">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entRd" nillable="true" type="q50:T_HR_OVERTIMEREWARD" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entRd" nillable="true" type="q50:T_HR_OVERTIMEREWARD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1093,7 +1093,7 @@
   <xs:element name="GetVacationSetByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetVacationSetByIDResult" nillable="true" type="q51:T_HR_VACATIONSET" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetVacationSetByIDResult" nillable="true" type="q51:T_HR_VACATIONSET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1114,7 +1114,7 @@
   <xs:element name="GetVacationSetRdListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetVacationSetRdListByMultSearchResult" nillable="true" type="q52:ArrayOfT_HR_VACATIONSET" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetVacationSetRdListByMultSearchResult" nillable="true" type="q52:ArrayOfT_HR_VACATIONSET" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1122,7 +1122,7 @@
   <xs:element name="AddVacationSet">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entVacRd" nillable="true" type="q53:T_HR_VACATIONSET" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entVacRd" nillable="true" type="q53:T_HR_VACATIONSET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1136,7 +1136,7 @@
   <xs:element name="ModifyVacationSet">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entVacRd" nillable="true" type="q54:T_HR_VACATIONSET" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entVacRd" nillable="true" type="q54:T_HR_VACATIONSET" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1171,7 +1171,7 @@
   <xs:element name="GetOutPlanDaysByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetOutPlanDaysByIDResult" nillable="true" type="q55:T_HR_OUTPLANDAYS" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetOutPlanDaysByIDResult" nillable="true" type="q55:T_HR_OUTPLANDAYS" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1189,7 +1189,7 @@
   <xs:element name="GetAllOutPlanDaysRdListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAllOutPlanDaysRdListByMultSearchResult" nillable="true" type="q56:ArrayOfT_HR_OUTPLANDAYS" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAllOutPlanDaysRdListByMultSearchResult" nillable="true" type="q56:ArrayOfT_HR_OUTPLANDAYS" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1210,7 +1210,7 @@
   <xs:element name="GetOutPlanDaysRdListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetOutPlanDaysRdListByMultSearchResult" nillable="true" type="q57:ArrayOfT_HR_OUTPLANDAYS" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetOutPlanDaysRdListByMultSearchResult" nillable="true" type="q57:ArrayOfT_HR_OUTPLANDAYS" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1218,7 +1218,7 @@
   <xs:element name="AddOutPlanDays">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entRd" nillable="true" type="q58:T_HR_OUTPLANDAYS" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entRd" nillable="true" type="q58:T_HR_OUTPLANDAYS" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1232,7 +1232,7 @@
   <xs:element name="ModifyOutPlanDays">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entRd" nillable="true" type="q59:T_HR_OUTPLANDAYS" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entRd" nillable="true" type="q59:T_HR_OUTPLANDAYS" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1272,7 +1272,7 @@
   <xs:element name="EmployeeEvectionReportPagingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="EmployeeEvectionReportPagingResult" nillable="true" type="q61:ArrayOfT_HR_EMPLOYEEEVECTIONREPORT" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="EmployeeEvectionReportPagingResult" nillable="true" type="q61:ArrayOfT_HR_EMPLOYEEEVECTIONREPORT" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1280,7 +1280,7 @@
   <xs:element name="EmployeeEvectionReportAdd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entity" nillable="true" type="q62:T_HR_EMPLOYEEEVECTIONREPORT" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entity" nillable="true" type="q62:T_HR_EMPLOYEEEVECTIONREPORT" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1306,7 +1306,7 @@
   <xs:element name="EmployeeEvectionRecordPagingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="EmployeeEvectionRecordPagingResult" nillable="true" type="q63:ArrayOfT_HR_EMPLOYEEEVECTIONRECORD" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="EmployeeEvectionRecordPagingResult" nillable="true" type="q63:ArrayOfT_HR_EMPLOYEEEVECTIONRECORD" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1314,7 +1314,7 @@
   <xs:element name="EmployeeEvectionRecordAdd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entity" nillable="true" type="q64:T_HR_EMPLOYEEEVECTIONRECORD" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entity" nillable="true" type="q64:T_HR_EMPLOYEEEVECTIONRECORD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1326,7 +1326,7 @@
   <xs:element name="AddEmployeeEvectionRdList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTempList" nillable="true" type="q65:ArrayOfT_HR_EMPLOYEEEVECTIONRECORD" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTempList" nillable="true" type="q65:ArrayOfT_HR_EMPLOYEEEVECTIONRECORD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1338,7 +1338,7 @@
   <xs:element name="EmployeeEvectionRecordUpdate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entity" nillable="true" type="q66:T_HR_EMPLOYEEEVECTIONRECORD" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entity" nillable="true" type="q66:T_HR_EMPLOYEEEVECTIONRECORD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1371,7 +1371,7 @@
   <xs:element name="GetEmployeeEvectionRecordByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetEmployeeEvectionRecordByIDResult" nillable="true" type="q68:T_HR_EMPLOYEEEVECTIONRECORD" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetEmployeeEvectionRecordByIDResult" nillable="true" type="q68:T_HR_EMPLOYEEEVECTIONRECORD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1409,7 +1409,7 @@
   <xs:element name="GetAttendanceRdListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendanceRdListByMultSearchResult" nillable="true" type="q70:ArrayOfT_HR_ATTENDANCERECORD" />
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendanceRdListByMultSearchResult" nillable="true" type="q70:ArrayOfT_HR_ATTENDANCERECORD" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1452,7 +1452,7 @@
   <xs:element name="GetLeaveRecordByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetLeaveRecordByIDResult" nillable="true" type="q72:T_HR_EMPLOYEELEAVERECORD" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetLeaveRecordByIDResult" nillable="true" type="q72:T_HR_EMPLOYEELEAVERECORD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1557,7 +1557,7 @@
   <xs:element name="EmployeeLeaveRecordAdd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="LeaveRecord" nillable="true" type="q78:T_HR_EMPLOYEELEAVERECORD" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="LeaveRecord" nillable="true" type="q78:T_HR_EMPLOYEELEAVERECORD" />
         <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/SMT.HRM.CustomModel" minOccurs="0" name="AdjustLeaves" nillable="true" type="q79:ArrayOfV_ADJUSTLEAVE" />
       </xs:sequence>
     </xs:complexType>
@@ -1572,7 +1572,7 @@
   <xs:element name="EmployeeLeaveRecordUpdate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="LeaveRecord" nillable="true" type="q80:T_HR_EMPLOYEELEAVERECORD" />
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="LeaveRecord" nillable="true" type="q80:T_HR_EMPLOYEELEAVERECORD" />
         <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/SMT.HRM.CustomModel" minOccurs="0" name="AdjustLeaves" nillable="true" type="q81:ArrayOfV_ADJUSTLEAVE" />
       </xs:sequence>
     </xs:complexType>
@@ -1675,7 +1675,7 @@
   <xs:element name="EmployeeSignInRecordPagingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="EmployeeSignInRecordPagingResult" nillable="true" type="q86:ArrayOfT_HR_EMPLOYEESIGNINRECORD" />
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="EmployeeSignInRecordPagingResult" nillable="true" type="q86:ArrayOfT_HR_EMPLOYEESIGNINRECORD" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1706,8 +1706,8 @@
   <xs:element name="EmployeeSignInRecordAdd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entity" nillable="true" type="q89:T_HR_EMPLOYEESIGNINRECORD" />
-        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entityList" nillable="true" type="q90:ArrayOfT_HR_EMPLOYEESIGNINDETAIL" />
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entity" nillable="true" type="q89:T_HR_EMPLOYEESIGNINRECORD" />
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entityList" nillable="true" type="q90:ArrayOfT_HR_EMPLOYEESIGNINDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1719,8 +1719,8 @@
   <xs:element name="EmployeeSigninRecordUpdate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entity" nillable="true" type="q91:T_HR_EMPLOYEESIGNINRECORD" />
-        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entityList" nillable="true" type="q92:ArrayOfT_HR_EMPLOYEESIGNINDETAIL" />
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entity" nillable="true" type="q91:T_HR_EMPLOYEESIGNINRECORD" />
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entityList" nillable="true" type="q92:ArrayOfT_HR_EMPLOYEESIGNINDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1739,7 +1739,7 @@
   <xs:element name="GetEmployeeSigninRecordByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetEmployeeSigninRecordByIDResult" nillable="true" type="q93:T_HR_EMPLOYEESIGNINRECORD" />
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetEmployeeSigninRecordByIDResult" nillable="true" type="q93:T_HR_EMPLOYEESIGNINRECORD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1782,7 +1782,7 @@
   <xs:element name="GetAbnormRecordByEmployeeIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAbnormRecordByEmployeeIDResult" nillable="true" type="q95:ArrayOfT_HR_EMPLOYEEABNORMRECORD" />
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAbnormRecordByEmployeeIDResult" nillable="true" type="q95:ArrayOfT_HR_EMPLOYEEABNORMRECORD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1804,7 +1804,7 @@
   <xs:element name="GetAbnormRecordRdListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAbnormRecordRdListByMultSearchResult" nillable="true" type="q96:ArrayOfT_HR_EMPLOYEEABNORMRECORD" />
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAbnormRecordRdListByMultSearchResult" nillable="true" type="q96:ArrayOfT_HR_EMPLOYEEABNORMRECORD" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1866,14 +1866,14 @@
   <xs:element name="GetEmployeeSignInDetailBySigninIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetEmployeeSignInDetailBySigninIDResult" nillable="true" type="q98:ArrayOfT_HR_EMPLOYEESIGNINDETAIL" />
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetEmployeeSignInDetailBySigninIDResult" nillable="true" type="q98:ArrayOfT_HR_EMPLOYEESIGNINDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddEmployeesignindetail">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q99:T_HR_EMPLOYEESIGNINDETAIL" />
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q99:T_HR_EMPLOYEESIGNINDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1887,7 +1887,7 @@
   <xs:element name="ModifyEmployeesignindetail">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q100:T_HR_EMPLOYEESIGNINDETAIL" />
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q100:T_HR_EMPLOYEESIGNINDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1937,7 +1937,7 @@
   <xs:element name="GetEmployeeLevelDayCountRdListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetEmployeeLevelDayCountRdListByMultSearchResult" nillable="true" type="q101:ArrayOfT_HR_EMPLOYEELEVELDAYCOUNT" />
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetEmployeeLevelDayCountRdListByMultSearchResult" nillable="true" type="q101:ArrayOfT_HR_EMPLOYEELEVELDAYCOUNT" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1980,7 +1980,7 @@
   <xs:element name="GetEmployeeleaverecordByMultSearchIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetEmployeeleaverecordByMultSearchIdResult" nillable="true" type="q102:ArrayOfT_HR_EMPLOYEELEAVERECORD" />
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetEmployeeleaverecordByMultSearchIdResult" nillable="true" type="q102:ArrayOfT_HR_EMPLOYEELEAVERECORD" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -2002,7 +2002,7 @@
   <xs:element name="GetEmployeeLevelDayCountRdListByMultSearchByTimeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetEmployeeLevelDayCountRdListByMultSearchByTimeResult" nillable="true" type="q103:ArrayOfT_HR_EMPLOYEELEVELDAYCOUNT" />
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetEmployeeLevelDayCountRdListByMultSearchByTimeResult" nillable="true" type="q103:ArrayOfT_HR_EMPLOYEELEVELDAYCOUNT" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -2010,7 +2010,7 @@
   <xs:element name="AddEmployeeLevelDayCount">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q104:T_HR_EMPLOYEELEVELDAYCOUNT" />
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q104:T_HR_EMPLOYEELEVELDAYCOUNT" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2036,7 +2036,7 @@
   <xs:element name="EmployeeLeaveDetailPagingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="EmployeeLeaveDetailPagingResult" nillable="true" type="q106:ArrayOfT_HR_EMPLOYEELEVELDAYDETAILS" />
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="EmployeeLeaveDetailPagingResult" nillable="true" type="q106:ArrayOfT_HR_EMPLOYEELEVELDAYDETAILS" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -2053,7 +2053,7 @@
   <xs:element name="GetCurLevelDayCountByEmployeeIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetCurLevelDayCountByEmployeeIDResult" nillable="true" type="q107:T_HR_EMPLOYEELEVELDAYCOUNT" />
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetCurLevelDayCountByEmployeeIDResult" nillable="true" type="q107:T_HR_EMPLOYEELEVELDAYCOUNT" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2103,7 +2103,7 @@
   <xs:element name="GetAttendMonthlyBalanceByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendMonthlyBalanceByIDResult" nillable="true" type="q108:T_HR_ATTENDMONTHLYBALANCE" />
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendMonthlyBalanceByIDResult" nillable="true" type="q108:T_HR_ATTENDMONTHLYBALANCE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2126,7 +2126,7 @@
   <xs:element name="GetAttendMonthlyBalanceRdListForAuditResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendMonthlyBalanceRdListForAuditResult" nillable="true" type="q109:ArrayOfT_HR_ATTENDMONTHLYBALANCE" />
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendMonthlyBalanceRdListForAuditResult" nillable="true" type="q109:ArrayOfT_HR_ATTENDMONTHLYBALANCE" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -2151,7 +2151,7 @@
   <xs:element name="GetAttendMonthlyBalanceListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendMonthlyBalanceListByMultSearchResult" nillable="true" type="q110:ArrayOfT_HR_ATTENDMONTHLYBALANCE" />
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendMonthlyBalanceListByMultSearchResult" nillable="true" type="q110:ArrayOfT_HR_ATTENDMONTHLYBALANCE" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -2332,7 +2332,7 @@
   <xs:element name="GetClockInRdListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetClockInRdListByMultSearchResult" nillable="true" type="q119:ArrayOfT_HR_EMPLOYEECLOCKINRECORD" />
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetClockInRdListByMultSearchResult" nillable="true" type="q119:ArrayOfT_HR_EMPLOYEECLOCKINRECORD" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -2341,7 +2341,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="strCompanyId" nillable="true" type="xs:string" />
-        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTempList" nillable="true" type="q120:ArrayOfT_HR_EMPLOYEECLOCKINRECORD" />
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTempList" nillable="true" type="q120:ArrayOfT_HR_EMPLOYEECLOCKINRECORD" />
         <xs:element minOccurs="0" name="dtStart" type="xs:dateTime" />
         <xs:element minOccurs="0" name="dtEnd" type="xs:dateTime" />
         <xs:element minOccurs="0" name="strClientIP" nillable="true" type="xs:string" />
@@ -2417,7 +2417,7 @@
   <xs:element name="AddNewClockInRd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entClockInRd" nillable="true" type="q123:T_HR_EMPLOYEECLOCKINRECORD" />
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entClockInRd" nillable="true" type="q123:T_HR_EMPLOYEECLOCKINRECORD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2476,7 +2476,7 @@
   <xs:element name="GetAttendanceSolutionByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendanceSolutionByIDResult" nillable="true" type="q124:T_HR_ATTENDANCESOLUTION" />
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendanceSolutionByIDResult" nillable="true" type="q124:T_HR_ATTENDANCESOLUTION" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2490,7 +2490,7 @@
   <xs:element name="GetAttendanceSolutionByEmployeeIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendanceSolutionByEmployeeIDResult" nillable="true" type="q125:T_HR_ATTENDANCESOLUTION" />
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendanceSolutionByEmployeeIDResult" nillable="true" type="q125:T_HR_ATTENDANCESOLUTION" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2506,7 +2506,7 @@
   <xs:element name="GetAttendanceSolutionByEmployeeIDAndDateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendanceSolutionByEmployeeIDAndDateResult" nillable="true" type="q126:T_HR_ATTENDANCESOLUTION" />
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendanceSolutionByEmployeeIDAndDateResult" nillable="true" type="q126:T_HR_ATTENDANCESOLUTION" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2527,7 +2527,7 @@
   <xs:element name="GetAttendanceSolutionListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendanceSolutionListByMultSearchResult" nillable="true" type="q127:ArrayOfT_HR_ATTENDANCESOLUTION" />
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendanceSolutionListByMultSearchResult" nillable="true" type="q127:ArrayOfT_HR_ATTENDANCESOLUTION" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -2535,7 +2535,7 @@
   <xs:element name="AddAttendanceSolution">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q128:T_HR_ATTENDANCESOLUTION" />
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q128:T_HR_ATTENDANCESOLUTION" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2549,7 +2549,7 @@
   <xs:element name="ModifyAttendanceSolution">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q129:T_HR_ATTENDANCESOLUTION" />
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q129:T_HR_ATTENDANCESOLUTION" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2592,9 +2592,9 @@
   <xs:element name="AddAttendanceSolutionAndCreateRelation">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q130:T_HR_ATTENDANCESOLUTION" />
-        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entAttendanceSolutionDeducts" nillable="true" type="q131:ArrayOfT_HR_ATTENDANCESOLUTIONDEDUCT" />
-        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entAttendFreeLeaves" nillable="true" type="q132:ArrayOfT_HR_ATTENDFREELEAVE" />
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q130:T_HR_ATTENDANCESOLUTION" />
+        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entAttendanceSolutionDeducts" nillable="true" type="q131:ArrayOfT_HR_ATTENDANCESOLUTIONDEDUCT" />
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entAttendFreeLeaves" nillable="true" type="q132:ArrayOfT_HR_ATTENDFREELEAVE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2608,9 +2608,9 @@
   <xs:element name="ModifyAttendanceSolutionAndChangeRelation">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q133:T_HR_ATTENDANCESOLUTION" />
-        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entAttendanceSolutionDeducts" nillable="true" type="q134:ArrayOfT_HR_ATTENDANCESOLUTIONDEDUCT" />
-        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entAttendFreeLeaves" nillable="true" type="q135:ArrayOfT_HR_ATTENDFREELEAVE" />
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q133:T_HR_ATTENDANCESOLUTION" />
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entAttendanceSolutionDeducts" nillable="true" type="q134:ArrayOfT_HR_ATTENDANCESOLUTIONDEDUCT" />
+        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entAttendFreeLeaves" nillable="true" type="q135:ArrayOfT_HR_ATTENDFREELEAVE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2631,7 +2631,7 @@
   <xs:element name="GetAttendFreeLeaveByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendFreeLeaveByIDResult" nillable="true" type="q136:T_HR_ATTENDFREELEAVE" />
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendFreeLeaveByIDResult" nillable="true" type="q136:T_HR_ATTENDFREELEAVE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2647,7 +2647,7 @@
   <xs:element name="GetAllAttendFreeLeaveListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAllAttendFreeLeaveListByMultSearchResult" nillable="true" type="q137:ArrayOfT_HR_ATTENDFREELEAVE" />
+        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAllAttendFreeLeaveListByMultSearchResult" nillable="true" type="q137:ArrayOfT_HR_ATTENDFREELEAVE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2666,7 +2666,7 @@
   <xs:element name="GetAttendFreeLeaveListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendFreeLeaveListByMultSearchResult" nillable="true" type="q138:ArrayOfT_HR_ATTENDFREELEAVE" />
+        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendFreeLeaveListByMultSearchResult" nillable="true" type="q138:ArrayOfT_HR_ATTENDFREELEAVE" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -2674,7 +2674,7 @@
   <xs:element name="AddAttendFreeLeave">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q139:T_HR_ATTENDFREELEAVE" />
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q139:T_HR_ATTENDFREELEAVE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2688,7 +2688,7 @@
   <xs:element name="ModifyAttendFreeLeave">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q140:T_HR_ATTENDFREELEAVE" />
+        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q140:T_HR_ATTENDFREELEAVE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2723,7 +2723,7 @@
   <xs:element name="GetSchedulingTemplateMasterByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetSchedulingTemplateMasterByIDResult" nillable="true" type="q141:T_HR_SCHEDULINGTEMPLATEMASTER" />
+        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetSchedulingTemplateMasterByIDResult" nillable="true" type="q141:T_HR_SCHEDULINGTEMPLATEMASTER" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2737,7 +2737,7 @@
   <xs:element name="GetSchedulingTemplateMasterByAttSolIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetSchedulingTemplateMasterByAttSolIDResult" nillable="true" type="q142:T_HR_SCHEDULINGTEMPLATEMASTER" />
+        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetSchedulingTemplateMasterByAttSolIDResult" nillable="true" type="q142:T_HR_SCHEDULINGTEMPLATEMASTER" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2757,7 +2757,7 @@
   <xs:element name="GetSchedulingTemplateMasterListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetSchedulingTemplateMasterListByMultSearchResult" nillable="true" type="q143:ArrayOfT_HR_SCHEDULINGTEMPLATEMASTER" />
+        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetSchedulingTemplateMasterListByMultSearchResult" nillable="true" type="q143:ArrayOfT_HR_SCHEDULINGTEMPLATEMASTER" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -2765,7 +2765,7 @@
   <xs:element name="AddSchedulingTemplateMaster">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q144:T_HR_SCHEDULINGTEMPLATEMASTER" />
+        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q144:T_HR_SCHEDULINGTEMPLATEMASTER" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2779,7 +2779,7 @@
   <xs:element name="ModifySchedulingTemplateMaster">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q145:T_HR_SCHEDULINGTEMPLATEMASTER" />
+        <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q145:T_HR_SCHEDULINGTEMPLATEMASTER" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2807,8 +2807,8 @@
   <xs:element name="AddSchedulingTemplateMasterAndDetail">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entMasterTemp" nillable="true" type="q146:T_HR_SCHEDULINGTEMPLATEMASTER" />
-        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entDetailTemps" nillable="true" type="q147:ArrayOfT_HR_SCHEDULINGTEMPLATEDETAIL" />
+        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entMasterTemp" nillable="true" type="q146:T_HR_SCHEDULINGTEMPLATEMASTER" />
+        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entDetailTemps" nillable="true" type="q147:ArrayOfT_HR_SCHEDULINGTEMPLATEDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2822,8 +2822,8 @@
   <xs:element name="ModifySchedulingTemplateMasterAndDetail">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entMasterTemp" nillable="true" type="q148:T_HR_SCHEDULINGTEMPLATEMASTER" />
-        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entDetailTemps" nillable="true" type="q149:ArrayOfT_HR_SCHEDULINGTEMPLATEDETAIL" />
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entMasterTemp" nillable="true" type="q148:T_HR_SCHEDULINGTEMPLATEMASTER" />
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entDetailTemps" nillable="true" type="q149:ArrayOfT_HR_SCHEDULINGTEMPLATEDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2844,7 +2844,7 @@
   <xs:element name="GetSchedulingTemplateDetailByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetSchedulingTemplateDetailByIDResult" nillable="true" type="q150:T_HR_SCHEDULINGTEMPLATEDETAIL" />
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetSchedulingTemplateDetailByIDResult" nillable="true" type="q150:T_HR_SCHEDULINGTEMPLATEDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2859,7 +2859,7 @@
   <xs:element name="GetAllSchedulingTemplateDetailRdListByMasterIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAllSchedulingTemplateDetailRdListByMasterIdResult" nillable="true" type="q151:ArrayOfT_HR_SCHEDULINGTEMPLATEDETAIL" />
+        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAllSchedulingTemplateDetailRdListByMasterIdResult" nillable="true" type="q151:ArrayOfT_HR_SCHEDULINGTEMPLATEDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2877,7 +2877,7 @@
   <xs:element name="GetSchedulingTemplateDetailListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetSchedulingTemplateDetailListByMultSearchResult" nillable="true" type="q152:ArrayOfT_HR_SCHEDULINGTEMPLATEDETAIL" />
+        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetSchedulingTemplateDetailListByMultSearchResult" nillable="true" type="q152:ArrayOfT_HR_SCHEDULINGTEMPLATEDETAIL" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -2885,7 +2885,7 @@
   <xs:element name="AddTemplateDetail">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q153:T_HR_SCHEDULINGTEMPLATEDETAIL" />
+        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q153:T_HR_SCHEDULINGTEMPLATEDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2899,7 +2899,7 @@
   <xs:element name="ModifyTemplateDetail">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q154:T_HR_SCHEDULINGTEMPLATEDETAIL" />
+        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q154:T_HR_SCHEDULINGTEMPLATEDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2942,7 +2942,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="strTemplateMasterID" nillable="true" type="xs:string" />
-        <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemps" nillable="true" type="q155:ArrayOfT_HR_SCHEDULINGTEMPLATEDETAIL" />
+        <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemps" nillable="true" type="q155:ArrayOfT_HR_SCHEDULINGTEMPLATEDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2963,7 +2963,7 @@
   <xs:element name="GetShiftDefineByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q156="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetShiftDefineByIDResult" nillable="true" type="q156:T_HR_SHIFTDEFINE" />
+        <xs:element xmlns:q156="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetShiftDefineByIDResult" nillable="true" type="q156:T_HR_SHIFTDEFINE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2983,7 +2983,7 @@
   <xs:element name="GetShiftDefineListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetShiftDefineListByMultSearchResult" nillable="true" type="q157:ArrayOfT_HR_SHIFTDEFINE" />
+        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetShiftDefineListByMultSearchResult" nillable="true" type="q157:ArrayOfT_HR_SHIFTDEFINE" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -2991,7 +2991,7 @@
   <xs:element name="AddShiftDefine">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q158:T_HR_SHIFTDEFINE" />
+        <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q158:T_HR_SHIFTDEFINE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3005,7 +3005,7 @@
   <xs:element name="ModifyShiftDefine">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q159:T_HR_SHIFTDEFINE" />
+        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q159:T_HR_SHIFTDEFINE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3047,7 +3047,7 @@
   <xs:element name="EmployeeOverTimeRecordPagingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="EmployeeOverTimeRecordPagingResult" nillable="true" type="q161:ArrayOfT_HR_EMPLOYEEOVERTIMERECORD" />
+        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="EmployeeOverTimeRecordPagingResult" nillable="true" type="q161:ArrayOfT_HR_EMPLOYEEOVERTIMERECORD" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -3062,14 +3062,14 @@
   <xs:element name="GetOverTimeRdByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetOverTimeRdByIDResult" nillable="true" type="q162:T_HR_EMPLOYEEOVERTIMERECORD" />
+        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetOverTimeRdByIDResult" nillable="true" type="q162:T_HR_EMPLOYEEOVERTIMERECORD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddOverTimeRd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entOTRd" nillable="true" type="q163:T_HR_EMPLOYEEOVERTIMERECORD" />
+        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entOTRd" nillable="true" type="q163:T_HR_EMPLOYEEOVERTIMERECORD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3083,7 +3083,7 @@
   <xs:element name="ModifyOverTimeRd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entOTRd" nillable="true" type="q164:T_HR_EMPLOYEEOVERTIMERECORD" />
+        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entOTRd" nillable="true" type="q164:T_HR_EMPLOYEEOVERTIMERECORD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3133,7 +3133,7 @@
   <xs:element name="GetAttendanceSolutionAsignByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendanceSolutionAsignByIDResult" nillable="true" type="q166:T_HR_ATTENDANCESOLUTIONASIGN" />
+        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendanceSolutionAsignByIDResult" nillable="true" type="q166:T_HR_ATTENDANCESOLUTIONASIGN" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3186,14 +3186,14 @@
   <xs:element name="GetAttendanceSolutionAsignRdListByCreateCompanyIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendanceSolutionAsignRdListByCreateCompanyIdResult" nillable="true" type="q168:ArrayOfT_HR_ATTENDANCESOLUTIONASIGN" />
+        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendanceSolutionAsignRdListByCreateCompanyIdResult" nillable="true" type="q168:ArrayOfT_HR_ATTENDANCESOLUTIONASIGN" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddAttendanceSolutionAsign">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q169:T_HR_ATTENDANCESOLUTIONASIGN" />
+        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q169:T_HR_ATTENDANCESOLUTIONASIGN" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3207,7 +3207,7 @@
   <xs:element name="ModifyAttendanceSolutionAsign">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q170:T_HR_ATTENDANCESOLUTIONASIGN" />
+        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q170:T_HR_ATTENDANCESOLUTIONASIGN" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3326,7 +3326,7 @@
   <xs:element name="GetAttendanceDeductMasterByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendanceDeductMasterByIDResult" nillable="true" type="q172:T_HR_ATTENDANCEDEDUCTMASTER" />
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendanceDeductMasterByIDResult" nillable="true" type="q172:T_HR_ATTENDANCEDEDUCTMASTER" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3345,7 +3345,7 @@
   <xs:element name="GetAttendanceDeductMasterRdListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q173="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendanceDeductMasterRdListByMultSearchResult" nillable="true" type="q173:ArrayOfT_HR_ATTENDANCEDEDUCTMASTER" />
+        <xs:element xmlns:q173="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendanceDeductMasterRdListByMultSearchResult" nillable="true" type="q173:ArrayOfT_HR_ATTENDANCEDEDUCTMASTER" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -3353,7 +3353,7 @@
   <xs:element name="AddAttendanceDeductMaster">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q174="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entRd" nillable="true" type="q174:T_HR_ATTENDANCEDEDUCTMASTER" />
+        <xs:element xmlns:q174="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entRd" nillable="true" type="q174:T_HR_ATTENDANCEDEDUCTMASTER" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3367,7 +3367,7 @@
   <xs:element name="ModifyAttendanceDeductMaster">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q175="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entRd" nillable="true" type="q175:T_HR_ATTENDANCEDEDUCTMASTER" />
+        <xs:element xmlns:q175="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entRd" nillable="true" type="q175:T_HR_ATTENDANCEDEDUCTMASTER" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3402,7 +3402,7 @@
   <xs:element name="GetAttendanceDeductDetailByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q176="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendanceDeductDetailByIDResult" nillable="true" type="q176:T_HR_ATTENDANCEDEDUCTDETAIL" />
+        <xs:element xmlns:q176="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendanceDeductDetailByIDResult" nillable="true" type="q176:T_HR_ATTENDANCEDEDUCTDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3421,7 +3421,7 @@
   <xs:element name="GetAttendanceDeductDetailRdListByMultSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q177="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendanceDeductDetailRdListByMultSearchResult" nillable="true" type="q177:ArrayOfT_HR_ATTENDANCEDEDUCTDETAIL" />
+        <xs:element xmlns:q177="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendanceDeductDetailRdListByMultSearchResult" nillable="true" type="q177:ArrayOfT_HR_ATTENDANCEDEDUCTDETAIL" />
         <xs:element minOccurs="0" name="pageCount" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -3429,7 +3429,7 @@
   <xs:element name="AddAttendanceDeductDetail">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q178="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entRd" nillable="true" type="q178:T_HR_ATTENDANCEDEDUCTDETAIL" />
+        <xs:element xmlns:q178="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entRd" nillable="true" type="q178:T_HR_ATTENDANCEDEDUCTDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3443,7 +3443,7 @@
   <xs:element name="ModifyAttendanceDeductDetail">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entRd" nillable="true" type="q179:T_HR_ATTENDANCEDEDUCTDETAIL" />
+        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entRd" nillable="true" type="q179:T_HR_ATTENDANCEDEDUCTDETAIL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3478,7 +3478,7 @@
   <xs:element name="GetAttendanceSolutionDeductByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q180="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendanceSolutionDeductByIDResult" nillable="true" type="q180:T_HR_ATTENDANCESOLUTIONDEDUCT" />
+        <xs:element xmlns:q180="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendanceSolutionDeductByIDResult" nillable="true" type="q180:T_HR_ATTENDANCESOLUTIONDEDUCT" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3493,14 +3493,14 @@
   <xs:element name="GetAttendanceSolutionDeductRdListByAttSolIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q181="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetAttendanceSolutionDeductRdListByAttSolIDResult" nillable="true" type="q181:ArrayOfT_HR_ATTENDANCESOLUTIONDEDUCT" />
+        <xs:element xmlns:q181="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetAttendanceSolutionDeductRdListByAttSolIDResult" nillable="true" type="q181:ArrayOfT_HR_ATTENDANCESOLUTIONDEDUCT" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddAttendanceSolutionDeduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q182="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q182:T_HR_ATTENDANCESOLUTIONDEDUCT" />
+        <xs:element xmlns:q182="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q182:T_HR_ATTENDANCESOLUTIONDEDUCT" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3514,7 +3514,7 @@
   <xs:element name="ModifyAttendanceSolutionDeduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q183="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q183:T_HR_ATTENDANCESOLUTIONDEDUCT" />
+        <xs:element xmlns:q183="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="entTemp" nillable="true" type="q183:T_HR_ATTENDANCESOLUTIONDEDUCT" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

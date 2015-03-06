@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:12168/OrganizationService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
   <xs:complexType name="ArrayOfT_HR_DEPARTMENTHISTORY">
     <xs:sequence>
@@ -32,7 +32,7 @@
           <xs:element minOccurs="0" name="RECORDSID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="REUSEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="T_HR_DEPARTMENTDICTIONARY" nillable="true" type="tns:T_HR_DEPARTMENTDICTIONARY" />
-          <xs:element minOccurs="0" name="T_HR_DEPARTMENTDICTIONARYReference" nillable="true" type="q1:EntityReferenceOfT_HR_DEPARTMENTDICTIONARYLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_DEPARTMENTDICTIONARYReference" nillable="true" type="q1:EntityReferenceOfT_HR_DEPARTMENTDICTIONARYNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -100,9 +100,9 @@
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SORTINDEX" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="T_HR_COMPANY" nillable="true" type="tns:T_HR_COMPANY" />
-          <xs:element minOccurs="0" name="T_HR_COMPANYReference" nillable="true" type="q3:EntityReferenceOfT_HR_COMPANYLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_COMPANYReference" nillable="true" type="q3:EntityReferenceOfT_HR_COMPANYNb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_DEPARTMENTDICTIONARY" nillable="true" type="tns:T_HR_DEPARTMENTDICTIONARY" />
-          <xs:element minOccurs="0" name="T_HR_DEPARTMENTDICTIONARYReference" nillable="true" type="q3:EntityReferenceOfT_HR_DEPARTMENTDICTIONARYLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_DEPARTMENTDICTIONARYReference" nillable="true" type="q3:EntityReferenceOfT_HR_DEPARTMENTDICTIONARYNb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_POST" nillable="true" type="tns:ArrayOfT_HR_POST" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
@@ -153,7 +153,7 @@
           <xs:element minOccurs="0" name="TELNUMBER" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_COMPANY1" nillable="true" type="tns:ArrayOfT_HR_COMPANY" />
           <xs:element minOccurs="0" name="T_HR_COMPANY2" nillable="true" type="tns:T_HR_COMPANY" />
-          <xs:element minOccurs="0" name="T_HR_COMPANY2Reference" nillable="true" type="q4:EntityReferenceOfT_HR_COMPANYLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_COMPANY2Reference" nillable="true" type="q4:EntityReferenceOfT_HR_COMPANYNb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_COMPANYHISTORY" nillable="true" type="tns:ArrayOfT_HR_COMPANYHISTORY" />
           <xs:element minOccurs="0" name="T_HR_DEPARTMENT" nillable="true" type="tns:ArrayOfT_HR_DEPARTMENT" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
@@ -215,7 +215,7 @@
           <xs:element minOccurs="0" name="REUSEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="TELNUMBER" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_COMPANY" nillable="true" type="tns:T_HR_COMPANY" />
-          <xs:element minOccurs="0" name="T_HR_COMPANYReference" nillable="true" type="q5:EntityReferenceOfT_HR_COMPANYLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_COMPANYReference" nillable="true" type="q5:EntityReferenceOfT_HR_COMPANYNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ZIPCODE" nillable="true" type="xs:string" />
@@ -234,7 +234,6 @@
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q6:EntityObject">
         <xs:sequence>
-          <xs:element minOccurs="0" name="BACKSTAGE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CHANGEPOST" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CHECKSTATE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="COMPANYID" nillable="true" type="xs:string" />
@@ -246,30 +245,25 @@
           <xs:element minOccurs="0" name="DEPARTMENTNAME" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="EDITSTATE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="FATHERPOSTID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ISCOREPERSONNEL" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="JOBCATEGORY" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OWNERCOMPANYID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OWNERDEPARTMENTID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OWNERID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="POSTBRIEF" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="POSTCOEFFICIENT" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="POSTFUNCTION" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="POSTGOAL" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="POSTID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="POSTLEVEL" nillable="true" type="xs:decimal" />
-          <xs:element minOccurs="0" name="POSTNUMBER" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="POSTNUMBER" nillable="true" type="xs:int" />
           <xs:element minOccurs="0" name="PROMOTEDIRECTION" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="PROSCENIUM" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SALARYLEVEL" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="T_HR_DEPARTMENT" nillable="true" type="tns:T_HR_DEPARTMENT" />
-          <xs:element minOccurs="0" name="T_HR_DEPARTMENTReference" nillable="true" type="q6:EntityReferenceOfT_HR_DEPARTMENTLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_DEPARTMENTReference" nillable="true" type="q6:EntityReferenceOfT_HR_DEPARTMENTNb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEEPOST" nillable="true" type="tns:ArrayOfT_HR_EMPLOYEEPOST" />
           <xs:element minOccurs="0" name="T_HR_POSTDICTIONARY" nillable="true" type="tns:T_HR_POSTDICTIONARY" />
-          <xs:element minOccurs="0" name="T_HR_POSTDICTIONARYReference" nillable="true" type="q6:EntityReferenceOfT_HR_POSTDICTIONARYLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_POSTDICTIONARYReference" nillable="true" type="q6:EntityReferenceOfT_HR_POSTDICTIONARYNb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_RELATIONPOST" nillable="true" type="tns:ArrayOfT_HR_RELATIONPOST" />
-          <xs:element minOccurs="0" name="UNDERNUMBER" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UNDERNUMBER" nillable="true" type="xs:int" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -298,10 +292,10 @@
           <xs:element minOccurs="0" name="REPORTEMPNAME" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SALARYLEVEL" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEE" nillable="true" type="tns:T_HR_EMPLOYEE" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q7:EntityReferenceOfT_HR_EMPLOYEELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q7:EntityReferenceOfT_HR_EMPLOYEENb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_LEFTOFFICE" nillable="true" type="tns:ArrayOfT_HR_LEFTOFFICE" />
           <xs:element minOccurs="0" name="T_HR_POST" nillable="true" type="tns:T_HR_POST" />
-          <xs:element minOccurs="0" name="T_HR_POSTReference" nillable="true" type="q7:EntityReferenceOfT_HR_POSTLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_POSTReference" nillable="true" type="q7:EntityReferenceOfT_HR_POSTNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -381,7 +375,7 @@
           <xs:element minOccurs="0" name="T_HR_LEFTOFFICE" nillable="true" type="tns:ArrayOfT_HR_LEFTOFFICE" />
           <xs:element minOccurs="0" name="T_HR_PENSIONMASTER" nillable="true" type="tns:ArrayOfT_HR_PENSIONMASTER" />
           <xs:element minOccurs="0" name="T_HR_RESUME" nillable="true" type="tns:T_HR_RESUME" />
-          <xs:element minOccurs="0" name="T_HR_RESUMEReference" nillable="true" type="q8:EntityReferenceOfT_HR_RESUMELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_RESUMEReference" nillable="true" type="q8:EntityReferenceOfT_HR_RESUMENb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="URGENCYCONTACT" nillable="true" type="xs:string" />
@@ -435,7 +429,7 @@
           <xs:element minOccurs="0" name="RECORDID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="REMART" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEE" nillable="true" type="tns:T_HR_EMPLOYEE" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q9:EntityReferenceOfT_HR_EMPLOYEELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q9:EntityReferenceOfT_HR_EMPLOYEENb42Hbcw" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -476,7 +470,7 @@
           <xs:element minOccurs="0" name="SELFCHECKRESULT" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_ASSESSMENTFORMMASTER" nillable="true" type="tns:ArrayOfT_HR_ASSESSMENTFORMMASTER" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEE" nillable="true" type="tns:T_HR_EMPLOYEE" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q10:EntityReferenceOfT_HR_EMPLOYEELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q10:EntityReferenceOfT_HR_EMPLOYEENb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -531,9 +525,9 @@
           <xs:element minOccurs="0" name="TOTALSCORE" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="T_HR_ASSESSMENTFORMDETAIL" nillable="true" type="tns:ArrayOfT_HR_ASSESSMENTFORMDETAIL" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEECHECK" nillable="true" type="tns:T_HR_EMPLOYEECHECK" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEECHECKReference" nillable="true" type="q11:EntityReferenceOfT_HR_EMPLOYEECHECKLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEECHECKReference" nillable="true" type="q11:EntityReferenceOfT_HR_EMPLOYEECHECKNb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEEPOSTCHANGE" nillable="true" type="tns:T_HR_EMPLOYEEPOSTCHANGE" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEEPOSTCHANGEReference" nillable="true" type="q11:EntityReferenceOfT_HR_EMPLOYEEPOSTCHANGELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEEPOSTCHANGEReference" nillable="true" type="q11:EntityReferenceOfT_HR_EMPLOYEEPOSTCHANGENb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -561,9 +555,9 @@
           <xs:element minOccurs="0" name="SECONDNIBSGRADE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SECONDSCORE" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="T_HR_ASSESSMENTFORMMASTER" nillable="true" type="tns:T_HR_ASSESSMENTFORMMASTER" />
-          <xs:element minOccurs="0" name="T_HR_ASSESSMENTFORMMASTERReference" nillable="true" type="q12:EntityReferenceOfT_HR_ASSESSMENTFORMMASTERLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_ASSESSMENTFORMMASTERReference" nillable="true" type="q12:EntityReferenceOfT_HR_ASSESSMENTFORMMASTERNb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_CHECKPOINTSET" nillable="true" type="tns:T_HR_CHECKPOINTSET" />
-          <xs:element minOccurs="0" name="T_HR_CHECKPOINTSETReference" nillable="true" type="q12:EntityReferenceOfT_HR_CHECKPOINTSETLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_CHECKPOINTSETReference" nillable="true" type="q12:EntityReferenceOfT_HR_CHECKPOINTSETNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -586,7 +580,7 @@
           <xs:element minOccurs="0" name="T_HR_ASSESSMENTFORMDETAIL" nillable="true" type="tns:ArrayOfT_HR_ASSESSMENTFORMDETAIL" />
           <xs:element minOccurs="0" name="T_HR_CHECKPOINTLEVELSET" nillable="true" type="tns:ArrayOfT_HR_CHECKPOINTLEVELSET" />
           <xs:element minOccurs="0" name="T_HR_CHECKPROJECTSET" nillable="true" type="tns:T_HR_CHECKPROJECTSET" />
-          <xs:element minOccurs="0" name="T_HR_CHECKPROJECTSETReference" nillable="true" type="q13:EntityReferenceOfT_HR_CHECKPROJECTSETLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_CHECKPROJECTSETReference" nillable="true" type="q13:EntityReferenceOfT_HR_CHECKPROJECTSETNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -611,7 +605,7 @@
           <xs:element minOccurs="0" name="POINTSCORE" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_CHECKPOINTSET" nillable="true" type="tns:T_HR_CHECKPOINTSET" />
-          <xs:element minOccurs="0" name="T_HR_CHECKPOINTSETReference" nillable="true" type="q14:EntityReferenceOfT_HR_CHECKPOINTSETLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_CHECKPOINTSETReference" nillable="true" type="q14:EntityReferenceOfT_HR_CHECKPOINTSETNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -680,7 +674,7 @@
           <xs:element minOccurs="0" name="TOSALARYLEVEL" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="T_HR_ASSESSMENTFORMMASTER" nillable="true" type="tns:ArrayOfT_HR_ASSESSMENTFORMMASTER" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEE" nillable="true" type="tns:T_HR_EMPLOYEE" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q16:EntityReferenceOfT_HR_EMPLOYEELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q16:EntityReferenceOfT_HR_EMPLOYEENb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -723,7 +717,7 @@
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="TODATE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEE" nillable="true" type="tns:T_HR_EMPLOYEE" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q17:EntityReferenceOfT_HR_EMPLOYEELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q17:EntityReferenceOfT_HR_EMPLOYEENb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -759,7 +753,7 @@
           <xs:element minOccurs="0" name="PROBATIONPERIOD" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEE" nillable="true" type="tns:T_HR_EMPLOYEE" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q18:EntityReferenceOfT_HR_EMPLOYEELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q18:EntityReferenceOfT_HR_EMPLOYEENb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -801,7 +795,7 @@
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="STARTDATE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEE" nillable="true" type="tns:T_HR_EMPLOYEE" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q19:EntityReferenceOfT_HR_EMPLOYEELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q19:EntityReferenceOfT_HR_EMPLOYEENb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -835,7 +829,7 @@
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SEX" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEE" nillable="true" type="tns:T_HR_EMPLOYEE" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q20:EntityReferenceOfT_HR_EMPLOYEELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q20:EntityReferenceOfT_HR_EMPLOYEENb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -874,8 +868,8 @@
           <xs:element minOccurs="0" name="STOPPAYMENTDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEE" nillable="true" type="tns:T_HR_EMPLOYEE" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEEPOST" nillable="true" type="tns:T_HR_EMPLOYEEPOST" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEEPOSTReference" nillable="true" type="q21:EntityReferenceOfT_HR_EMPLOYEEPOSTLmi1kWPo" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q21:EntityReferenceOfT_HR_EMPLOYEELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEEPOSTReference" nillable="true" type="q21:EntityReferenceOfT_HR_EMPLOYEEPOSTNb42Hbcw" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q21:EntityReferenceOfT_HR_EMPLOYEENb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_LEFTOFFICECONFIRM" nillable="true" type="tns:ArrayOfT_HR_LEFTOFFICECONFIRM" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
@@ -916,7 +910,7 @@
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="STOPPAYMENTDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="T_HR_LEFTOFFICE" nillable="true" type="tns:T_HR_LEFTOFFICE" />
-          <xs:element minOccurs="0" name="T_HR_LEFTOFFICEReference" nillable="true" type="q22:EntityReferenceOfT_HR_LEFTOFFICELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_LEFTOFFICEReference" nillable="true" type="q22:EntityReferenceOfT_HR_LEFTOFFICENb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -957,7 +951,7 @@
           <xs:element minOccurs="0" name="SOCIALSERVICEYEAR" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="STARTDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEE" nillable="true" type="tns:T_HR_EMPLOYEE" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q23:EntityReferenceOfT_HR_EMPLOYEELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEEReference" nillable="true" type="q23:EntityReferenceOfT_HR_EMPLOYEENb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_PENSIONDETAIL" nillable="true" type="tns:ArrayOfT_HR_PENSIONDETAIL" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
@@ -1032,7 +1026,7 @@
           <xs:element minOccurs="0" name="TOTALCOST" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="TOTALPERSONCOST" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="T_HR_PENSIONMASTER" nillable="true" type="tns:T_HR_PENSIONMASTER" />
-          <xs:element minOccurs="0" name="T_HR_PENSIONMASTERReference" nillable="true" type="q24:EntityReferenceOfT_HR_PENSIONMASTERLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_PENSIONMASTERReference" nillable="true" type="q24:EntityReferenceOfT_HR_PENSIONMASTERNb42Hbcw" />
           <xs:element minOccurs="0" name="UNEMPLOYEDBASE" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="UNEMPLOYEDCOMPANYRATIO" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="UNEMPLOYEDINSURANCECOMPANYCOST" nillable="true" type="xs:decimal" />
@@ -1118,7 +1112,7 @@
           <xs:element minOccurs="0" name="SPECIALTY" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="STARTDATE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_RESUME" nillable="true" type="tns:T_HR_RESUME" />
-          <xs:element minOccurs="0" name="T_HR_RESUMEReference" nillable="true" type="q26:EntityReferenceOfT_HR_RESUMELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_RESUMEReference" nillable="true" type="q26:EntityReferenceOfT_HR_RESUMENb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -1153,7 +1147,7 @@
           <xs:element minOccurs="0" name="SALARY" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="STARTDATE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_RESUME" nillable="true" type="tns:T_HR_RESUME" />
-          <xs:element minOccurs="0" name="T_HR_RESUMEReference" nillable="true" type="q27:EntityReferenceOfT_HR_RESUMELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_RESUMEReference" nillable="true" type="q27:EntityReferenceOfT_HR_RESUMENb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -1182,7 +1176,7 @@
           <xs:element minOccurs="0" name="PROMOTEDIRECTION" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SALARYLEVEL" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_DEPARTMENTDICTIONARY" nillable="true" type="tns:T_HR_DEPARTMENTDICTIONARY" />
-          <xs:element minOccurs="0" name="T_HR_DEPARTMENTDICTIONARYReference" nillable="true" type="q28:EntityReferenceOfT_HR_DEPARTMENTDICTIONARYLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_DEPARTMENTDICTIONARYReference" nillable="true" type="q28:EntityReferenceOfT_HR_DEPARTMENTDICTIONARYNb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_POST" nillable="true" type="tns:ArrayOfT_HR_POST" />
           <xs:element minOccurs="0" name="T_HR_POSTHISTORY" nillable="true" type="tns:ArrayOfT_HR_POSTHISTORY" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
@@ -1230,7 +1224,7 @@
           <xs:element minOccurs="0" name="RECORDSID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="REUSEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="T_HR_POSTDICTIONARY" nillable="true" type="tns:T_HR_POSTDICTIONARY" />
-          <xs:element minOccurs="0" name="T_HR_POSTDICTIONARYReference" nillable="true" type="q29:EntityReferenceOfT_HR_POSTDICTIONARYLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_POSTDICTIONARYReference" nillable="true" type="q29:EntityReferenceOfT_HR_POSTDICTIONARYNb42Hbcw" />
           <xs:element minOccurs="0" name="UNDERNUMBER" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
@@ -1251,10 +1245,11 @@
         <xs:sequence>
           <xs:element minOccurs="0" name="CREATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="CREATEUSERID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RECORDID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="RELATEPOSTID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="RELATIONPOSTID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_POST" nillable="true" type="tns:T_HR_POST" />
-          <xs:element minOccurs="0" name="T_HR_POSTReference" nillable="true" type="q30:EntityReferenceOfT_HR_POSTLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_POSTReference" nillable="true" type="q30:EntityReferenceOfT_HR_POSTNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -1321,7 +1316,7 @@
           <xs:element minOccurs="0" name="PARAMETERVALUE" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_ATTENDANCEDEDUCTMASTER" nillable="true" type="tns:T_HR_ATTENDANCEDEDUCTMASTER" />
-          <xs:element minOccurs="0" name="T_HR_ATTENDANCEDEDUCTMASTERReference" nillable="true" type="q32:EntityReferenceOfT_HR_ATTENDANCEDEDUCTMASTERLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_ATTENDANCEDEDUCTMASTERReference" nillable="true" type="q32:EntityReferenceOfT_HR_ATTENDANCEDEDUCTMASTERNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -1344,9 +1339,9 @@
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SOLUTIONDEDUCTID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_ATTENDANCEDEDUCTMASTER" nillable="true" type="tns:T_HR_ATTENDANCEDEDUCTMASTER" />
-          <xs:element minOccurs="0" name="T_HR_ATTENDANCEDEDUCTMASTERReference" nillable="true" type="q33:EntityReferenceOfT_HR_ATTENDANCEDEDUCTMASTERLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_ATTENDANCEDEDUCTMASTERReference" nillable="true" type="q33:EntityReferenceOfT_HR_ATTENDANCEDEDUCTMASTERNb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_ATTENDANCESOLUTION" nillable="true" type="tns:T_HR_ATTENDANCESOLUTION" />
-          <xs:element minOccurs="0" name="T_HR_ATTENDANCESOLUTIONReference" nillable="true" type="q33:EntityReferenceOfT_HR_ATTENDANCESOLUTIONLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_ATTENDANCESOLUTIONReference" nillable="true" type="q33:EntityReferenceOfT_HR_ATTENDANCESOLUTIONNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -1394,9 +1389,9 @@
           <xs:element minOccurs="0" name="T_HR_ATTENDANCESOLUTIONDEDUCT" nillable="true" type="tns:ArrayOfT_HR_ATTENDANCESOLUTIONDEDUCT" />
           <xs:element minOccurs="0" name="T_HR_ATTENDFREELEAVE" nillable="true" type="tns:ArrayOfT_HR_ATTENDFREELEAVE" />
           <xs:element minOccurs="0" name="T_HR_OVERTIMEREWARD" nillable="true" type="tns:T_HR_OVERTIMEREWARD" />
-          <xs:element minOccurs="0" name="T_HR_OVERTIMEREWARDReference" nillable="true" type="q34:EntityReferenceOfT_HR_OVERTIMEREWARDLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_OVERTIMEREWARDReference" nillable="true" type="q34:EntityReferenceOfT_HR_OVERTIMEREWARDNb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_SCHEDULINGTEMPLATEMASTER" nillable="true" type="tns:T_HR_SCHEDULINGTEMPLATEMASTER" />
-          <xs:element minOccurs="0" name="T_HR_SCHEDULINGTEMPLATEMASTERReference" nillable="true" type="q34:EntityReferenceOfT_HR_SCHEDULINGTEMPLATEMASTERLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_SCHEDULINGTEMPLATEMASTERReference" nillable="true" type="q34:EntityReferenceOfT_HR_SCHEDULINGTEMPLATEMASTERNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="WORKDAYS" nillable="true" type="xs:decimal" />
@@ -1439,7 +1434,7 @@
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="STARTDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="T_HR_ATTENDANCESOLUTION" nillable="true" type="tns:T_HR_ATTENDANCESOLUTION" />
-          <xs:element minOccurs="0" name="T_HR_ATTENDANCESOLUTIONReference" nillable="true" type="q35:EntityReferenceOfT_HR_ATTENDANCESOLUTIONLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_ATTENDANCESOLUTIONReference" nillable="true" type="q35:EntityReferenceOfT_HR_ATTENDANCESOLUTIONNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -1462,9 +1457,9 @@
           <xs:element minOccurs="0" name="CREATEUSERID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_ATTENDANCESOLUTION" nillable="true" type="tns:T_HR_ATTENDANCESOLUTION" />
-          <xs:element minOccurs="0" name="T_HR_ATTENDANCESOLUTIONReference" nillable="true" type="q36:EntityReferenceOfT_HR_ATTENDANCESOLUTIONLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_ATTENDANCESOLUTIONReference" nillable="true" type="q36:EntityReferenceOfT_HR_ATTENDANCESOLUTIONNb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_LEAVETYPESET" nillable="true" type="tns:T_HR_LEAVETYPESET" />
-          <xs:element minOccurs="0" name="T_HR_LEAVETYPESETReference" nillable="true" type="q36:EntityReferenceOfT_HR_LEAVETYPESETLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_LEAVETYPESETReference" nillable="true" type="q36:EntityReferenceOfT_HR_LEAVETYPESETNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -1543,7 +1538,7 @@
           <xs:element minOccurs="0" name="T_HR_ADJUSTLEAVE" nillable="true" type="tns:ArrayOfT_HR_ADJUSTLEAVE" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEECANCELLEAVE" nillable="true" type="tns:ArrayOfT_HR_EMPLOYEECANCELLEAVE" />
           <xs:element minOccurs="0" name="T_HR_LEAVETYPESET" nillable="true" type="tns:T_HR_LEAVETYPESET" />
-          <xs:element minOccurs="0" name="T_HR_LEAVETYPESETReference" nillable="true" type="q38:EntityReferenceOfT_HR_LEAVETYPESETLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_LEAVETYPESETReference" nillable="true" type="q38:EntityReferenceOfT_HR_LEAVETYPESETNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="USEABLEDAYS" nillable="true" type="xs:decimal" />
@@ -1584,7 +1579,7 @@
           <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEELEAVERECORD" nillable="true" type="tns:T_HR_EMPLOYEELEAVERECORD" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEELEAVERECORDReference" nillable="true" type="q39:EntityReferenceOfT_HR_EMPLOYEELEAVERECORDLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEELEAVERECORDReference" nillable="true" type="q39:EntityReferenceOfT_HR_EMPLOYEELEAVERECORDNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -1624,7 +1619,7 @@
           <xs:element minOccurs="0" name="STARTDATETIME" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="TOTALHOURS" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEELEAVERECORD" nillable="true" type="tns:T_HR_EMPLOYEELEAVERECORD" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEELEAVERECORDReference" nillable="true" type="q40:EntityReferenceOfT_HR_EMPLOYEELEAVERECORDLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEELEAVERECORDReference" nillable="true" type="q40:EntityReferenceOfT_HR_EMPLOYEELEAVERECORDNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -1659,7 +1654,7 @@
           <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_LEAVETYPESET" nillable="true" type="tns:T_HR_LEAVETYPESET" />
-          <xs:element minOccurs="0" name="T_HR_LEAVETYPESETReference" nillable="true" type="q41:EntityReferenceOfT_HR_LEAVETYPESETLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_LEAVETYPESETReference" nillable="true" type="q41:EntityReferenceOfT_HR_LEAVETYPESETNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -1743,9 +1738,9 @@
           <xs:element minOccurs="0" name="SCHEDULINGINDEX" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="TEMPLATEDETAILID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_SCHEDULINGTEMPLATEMASTER" nillable="true" type="tns:T_HR_SCHEDULINGTEMPLATEMASTER" />
-          <xs:element minOccurs="0" name="T_HR_SCHEDULINGTEMPLATEMASTERReference" nillable="true" type="q44:EntityReferenceOfT_HR_SCHEDULINGTEMPLATEMASTERLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_SCHEDULINGTEMPLATEMASTERReference" nillable="true" type="q44:EntityReferenceOfT_HR_SCHEDULINGTEMPLATEMASTERNb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_SHIFTDEFINE" nillable="true" type="tns:T_HR_SHIFTDEFINE" />
-          <xs:element minOccurs="0" name="T_HR_SHIFTDEFINEReference" nillable="true" type="q44:EntityReferenceOfT_HR_SHIFTDEFINELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_SHIFTDEFINEReference" nillable="true" type="q44:EntityReferenceOfT_HR_SHIFTDEFINENb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -1860,7 +1855,7 @@
           <xs:element minOccurs="0" name="THIRDSTARTTIME" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEEABNORMRECORD" nillable="true" type="tns:ArrayOfT_HR_EMPLOYEEABNORMRECORD" />
           <xs:element minOccurs="0" name="T_HR_SHIFTDEFINE" nillable="true" type="tns:T_HR_SHIFTDEFINE" />
-          <xs:element minOccurs="0" name="T_HR_SHIFTDEFINEReference" nillable="true" type="q46:EntityReferenceOfT_HR_SHIFTDEFINELmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_SHIFTDEFINEReference" nillable="true" type="q46:EntityReferenceOfT_HR_SHIFTDEFINENb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -1895,7 +1890,7 @@
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SINGINSTATE" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_ATTENDANCERECORD" nillable="true" type="tns:T_HR_ATTENDANCERECORD" />
-          <xs:element minOccurs="0" name="T_HR_ATTENDANCERECORDReference" nillable="true" type="q47:EntityReferenceOfT_HR_ATTENDANCERECORDLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_ATTENDANCERECORDReference" nillable="true" type="q47:EntityReferenceOfT_HR_ATTENDANCERECORDNb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEESIGNINDETAIL" nillable="true" type="tns:ArrayOfT_HR_EMPLOYEESIGNINDETAIL" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
@@ -1932,9 +1927,9 @@
           <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SIGNINDETAILID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEEABNORMRECORD" nillable="true" type="tns:T_HR_EMPLOYEEABNORMRECORD" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEEABNORMRECORDReference" nillable="true" type="q48:EntityReferenceOfT_HR_EMPLOYEEABNORMRECORDLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEEABNORMRECORDReference" nillable="true" type="q48:EntityReferenceOfT_HR_EMPLOYEEABNORMRECORDNb42Hbcw" />
           <xs:element minOccurs="0" name="T_HR_EMPLOYEESIGNINRECORD" nillable="true" type="tns:T_HR_EMPLOYEESIGNINRECORD" />
-          <xs:element minOccurs="0" name="T_HR_EMPLOYEESIGNINRECORDReference" nillable="true" type="q48:EntityReferenceOfT_HR_EMPLOYEESIGNINRECORDLmi1kWPo" />
+          <xs:element minOccurs="0" name="T_HR_EMPLOYEESIGNINRECORDReference" nillable="true" type="q48:EntityReferenceOfT_HR_EMPLOYEESIGNINRECORDNb42Hbcw" />
           <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
         </xs:sequence>

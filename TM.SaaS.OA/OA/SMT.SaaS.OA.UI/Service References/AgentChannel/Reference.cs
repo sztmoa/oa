@@ -114,7 +114,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECHANGEHISTORY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECHANGEHISTORY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_EMPLOYEECHANGEHISTORY : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string CHANGEREASONField;
@@ -630,7 +630,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECHECK", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECHECK", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_EMPLOYEECHECK : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private System.Nullable<System.DateTime> BEREGULARDATEField;
@@ -1056,7 +1056,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ASSESSMENTFORMMASTER", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ASSESSMENTFORMMASTER", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_ASSESSMENTFORMMASTER : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string ASSESSMENTFORMMASTERIDField;
@@ -1692,7 +1692,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ASSESSMENTFORMDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ASSESSMENTFORMDETAIL", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_ASSESSMENTFORMDETAIL : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string ASSESSMENTFORMDETAILIDField;
@@ -1923,7 +1923,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_CHECKPOINTSET", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_CHECKPOINTSET", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_CHECKPOINTSET : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string CHECKEMPLOYEETYPEField;
@@ -2139,7 +2139,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_CHECKPOINTLEVELSET", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_CHECKPOINTLEVELSET", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_CHECKPOINTLEVELSET : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private System.Nullable<System.DateTime> CREATEDATEField;
@@ -2295,7 +2295,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_CHECKPROJECTSET", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_CHECKPROJECTSET", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_CHECKPROJECTSET : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string CHECKPROJECTField;
@@ -2436,7 +2436,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEPOSTCHANGE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEPOSTCHANGE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_EMPLOYEEPOSTCHANGE : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string CHANGEDATEField;
@@ -2982,7 +2982,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECONTRACT", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECONTRACT", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_EMPLOYEECONTRACT : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string ALARMDAYField;
@@ -3408,7 +3408,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEENTRY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEENTRY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_EMPLOYEEENTRY : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string CHECKSTATEField;
@@ -3729,7 +3729,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEINSURANCE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEINSURANCE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_EMPLOYEEINSURANCE : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string ALARMDAYField;
@@ -4140,7 +4140,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEPOST", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEPOST", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_EMPLOYEEPOST : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string CHECKSTATEField;
@@ -4371,7 +4371,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_LEFTOFFICE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_LEFTOFFICE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_LEFTOFFICE : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private System.Nullable<System.DateTime> APPLYDATEField;
@@ -4767,7 +4767,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_LEFTOFFICECONFIRM", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_LEFTOFFICECONFIRM", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_LEFTOFFICECONFIRM : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private System.Nullable<System.DateTime> APPLYDATEField;
@@ -5148,7 +5148,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_POST", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_POST", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_POST : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string BACKSTAGEField;
@@ -5709,7 +5709,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_DEPARTMENT", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_DEPARTMENT", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_DEPARTMENT : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string CHECKSTATEField;
@@ -6105,7 +6105,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_COMPANY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_COMPANY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_COMPANY : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string ACCOUNTCODEField;
@@ -6771,7 +6771,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_COMPANYHISTORY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_COMPANYHISTORY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_COMPANYHISTORY : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string ACCOUNTCODEField;
@@ -7362,7 +7362,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_DEPARTMENTDICTIONARY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_DEPARTMENTDICTIONARY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_DEPARTMENTDICTIONARY : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string CHECKSTATEField;
@@ -7653,7 +7653,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_DEPARTMENTHISTORY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_DEPARTMENTHISTORY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_DEPARTMENTHISTORY : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private System.Nullable<System.DateTime> CANCELDATEField;
@@ -8019,7 +8019,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_POSTDICTIONARY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_POSTDICTIONARY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_POSTDICTIONARY : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string CHANGEPOSTField;
@@ -8355,7 +8355,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_POSTHISTORY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_POSTHISTORY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_POSTHISTORY : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private System.Nullable<System.DateTime> CANCELDATEField;
@@ -8841,7 +8841,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_RELATIONPOST", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_RELATIONPOST", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_RELATIONPOST : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private System.Nullable<System.DateTime> CREATEDATEField;
@@ -8967,7 +8967,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_FAMILYMEMBER", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_FAMILYMEMBER", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_FAMILYMEMBER : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string AGEField;
@@ -9168,7 +9168,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_PENSIONMASTER", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_PENSIONMASTER", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_PENSIONMASTER : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string CARDIDField;
@@ -9579,7 +9579,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_PENSIONDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_PENSIONDETAIL", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_PENSIONDETAIL : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private System.Nullable<decimal> BIRTHBASEField;
@@ -10545,7 +10545,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_RESUME", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_RESUME", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_RESUME : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string COMRELATIONINFOField;
@@ -11181,7 +11181,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EDUCATEHISTORY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EDUCATEHISTORY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_EDUCATEHISTORY : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private System.Nullable<System.DateTime> CREATEDATEField;
@@ -11412,7 +11412,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EXPERIENCE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EXPERIENCE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_EXPERIENCE : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string COMPANYNAMEField;
@@ -11628,7 +11628,7 @@ namespace SMT.SaaS.OA.UI.AgentChannel {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_HR_EMPLOYEE : SMT.SaaS.OA.UI.AgentChannel.EntityObject {
         
         private string BANKCARDNUMBERField;

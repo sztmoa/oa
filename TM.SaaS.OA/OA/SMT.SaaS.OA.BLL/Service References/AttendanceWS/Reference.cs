@@ -76,7 +76,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDMONTHLYBALANCE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDMONTHLYBALANCE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_ATTENDMONTHLYBALANCE : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -1048,7 +1048,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDMONTHLYBATCHBALANCE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDMONTHLYBATCHBALANCE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_ATTENDMONTHLYBATCHBALANCE : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -1407,7 +1407,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDYEARLYBALANCE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDYEARLYBALANCE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_ATTENDYEARLYBALANCE : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -2022,7 +2022,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECANCELLEAVE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECANCELLEAVE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEECANCELLEAVE : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -2429,7 +2429,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEELEAVERECORD", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEELEAVERECORD", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEELEAVERECORD : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -2884,7 +2884,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ADJUSTLEAVE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ADJUSTLEAVE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_ADJUSTLEAVE : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -3275,7 +3275,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_LEAVETYPESET", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_LEAVETYPESET", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_LEAVETYPESET : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -3682,7 +3682,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDFREELEAVE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDFREELEAVE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_ATTENDFREELEAVE : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -3849,7 +3849,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDANCESOLUTION", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDANCESOLUTION", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_ATTENDANCESOLUTION : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -4608,7 +4608,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDANCESOLUTIONASIGN", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDANCESOLUTIONASIGN", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_ATTENDANCESOLUTIONASIGN : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -4935,7 +4935,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDANCESOLUTIONDEDUCT", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDANCESOLUTIONDEDUCT", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_ATTENDANCESOLUTIONDEDUCT : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -5102,7 +5102,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDANCEDEDUCTMASTER", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDANCEDEDUCTMASTER", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_ATTENDANCEDEDUCTMASTER : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -5477,7 +5477,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDANCEDEDUCTDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDANCEDEDUCTDETAIL", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_ATTENDANCEDEDUCTDETAIL : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -5708,7 +5708,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_OVERTIMEREWARD", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_OVERTIMEREWARD", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_OVERTIMEREWARD : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -6003,7 +6003,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_SCHEDULINGTEMPLATEMASTER", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_SCHEDULINGTEMPLATEMASTER", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_SCHEDULINGTEMPLATEMASTER : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -6282,7 +6282,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_SCHEDULINGTEMPLATEDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_SCHEDULINGTEMPLATEDETAIL", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_SCHEDULINGTEMPLATEDETAIL : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -6481,7 +6481,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_SHIFTDEFINE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_SHIFTDEFINE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_SHIFTDEFINE : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -7272,7 +7272,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDANCERECORD", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDANCERECORD", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_ATTENDANCERECORD : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -7951,7 +7951,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEABNORMRECORD", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEABNORMRECORD", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEEABNORMRECORD : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -8294,7 +8294,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEESIGNINDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEESIGNINDETAIL", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEESIGNINDETAIL : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -8669,7 +8669,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEESIGNINRECORD", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEESIGNINRECORD", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEESIGNINRECORD : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -8996,7 +8996,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_FREELEAVEDAYSET", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_FREELEAVEDAYSET", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_FREELEAVEDAYSET : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -9323,7 +9323,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDMACHINESET", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ATTENDMACHINESET", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_ATTENDMACHINESET : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -9650,7 +9650,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_VACATIONSET", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_VACATIONSET", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_VACATIONSET : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -9961,7 +9961,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_OUTPLANDAYS", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_OUTPLANDAYS", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_OUTPLANDAYS : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -10144,7 +10144,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEEVECTIONREPORT", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEEVECTIONREPORT", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEEEVECTIONREPORT : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -10631,7 +10631,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEEVECTIONRECORD", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEEVECTIONRECORD", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEEEVECTIONRECORD : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -11102,7 +11102,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEELEVELDAYCOUNT", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEELEVELDAYCOUNT", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEELEVELDAYCOUNT : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -11461,7 +11461,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEELEVELDAYDETAILS", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEELEVELDAYDETAILS", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEELEVELDAYDETAILS : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -11804,7 +11804,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECLOCKINRECORD", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECLOCKINRECORD", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEECLOCKINRECORD : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -12131,7 +12131,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEOVERTIMERECORD", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEOVERTIMERECORD", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEEOVERTIMERECORD : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         
@@ -12650,7 +12650,7 @@ namespace SMT.SaaS.OA.BLL.AttendanceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEOVERTIMEDETAILRD", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEOVERTIMEDETAILRD", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEEOVERTIMEDETAILRD : SMT.SaaS.OA.BLL.AttendanceWS.EntityObject {
         

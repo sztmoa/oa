@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:3938/AgentServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+  <xs:import schemaLocation="http://localhost:3938/AgentServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
   <xs:element name="GetQueryAgent">
     <xs:complexType>
       <xs:sequence>
@@ -12,7 +12,7 @@
   <xs:element name="GetQueryAgentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" minOccurs="0" name="GetQueryAgentResult" nillable="true" type="q1:T_HR_EMPLOYEE" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="GetQueryAgentResult" nillable="true" type="q1:T_HR_EMPLOYEE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

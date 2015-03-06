@@ -75,8 +75,6 @@ namespace SMT.SaaS.Permission.UI.UserControls
             myoaBtn.Tag = e;
 
         }
-<<<<<<< .mine
-=======
 
         #region 检查预算菜单的权限
         
@@ -89,109 +87,105 @@ namespace SMT.SaaS.Permission.UI.UserControls
         private string CheckFbMenuPermission(DataGrid Dtgrid, string rateName)
         {
             string strReturn = string.Empty;
-            if (Dtgrid.ItemsSource != null)
-            {
-                FbMenuPermission fbMenuDataRange = new FbMenuPermission();
-                foreach (object obj in Dtgrid.ItemsSource)
-                {                    
-                    if (Dtgrid.Columns[0].GetCellContent(obj) != null)
-                    {
-                        string StrMenuID = ""; //菜单ID
-                        menu = Dtgrid.Columns[0].GetCellContent(obj).DataContext as V_MenuSetRole;
-                        StrMenuID = menu.ENTITYMENUID;
-                        var ents = from ent in listFbPermissions
-                                   where ent.menuID == StrMenuID
-                                   select ent;
-                        if (ents.Count() > 0)
-                        {
-                            fbMenuDataRange = ents.FirstOrDefault();
-                            string StrPermissionID = "";//权限ID
-                            int PermCount = 0;
-                            PermCount = tmpPermission.Count;
-                            int IndexCount = 1;                            
-                            for (int i = 1; i < PermCount + 1; i++)
-                            {
-                                IndexCount = IndexCount + i;
-                                if (Dtgrid.Columns[i].GetCellContent(obj) != null)
-                                {
-                                    string NewDataRange = "";
-                                    /* 
-                                     * 首先根据菜单ID和角色ID获取  角色菜单表的记录 存在则获取ROLEENTITYID
-                                     * 然后再根据 ROLEENTITYID和权限ID 获取角色菜单权限表中的记录，取得对应的权限和现在的权限值比较
-                                     * 如果相同则不处理  不同则处理
-                                     */
-                                    StrPermissionID = tmpPermission[i - 1].PERMISSIONID;  //权限ID
-                                    //var q = from a in EntityPermissionInfosList//权限视图集合
-                                    //        where a.EntityRole.T_SYS_ENTITYMENU.ENTITYMENUID == StrMenuID
-                                    //        && a.EntityRole.T_SYS_ROLE.ROLEID == tmprole.ROLEID
-                                    //        select a;
-                                    var q = from a in EntityPermissionInfosListSecond//权限视图集合
-                                            where a.EntityMenuID == StrMenuID
-                                            && a.RoleID == tmprole.ROLEID
-                                            select a;
-                                    string RoleEntityID = "";
-                                    if (q.Count() > 0)
-                                    {
-                                        RoleEntityID = q.ToList().FirstOrDefault().RoleEntityMenuID.ToString(); //获取角色菜单ID
-                                    }                                    
-                                    var k = from b in EntityPermissionInfosListSecond//权限视图集合
-                                            where b.PermissionID == StrPermissionID && b.RoleEntityMenuID == RoleEntityID
-                                            select b;
-                                    string OldRangeValue = ""; //获取数据库中 权限对应的值
+            //if (Dtgrid.ItemsSource != null)
+            //{
+            //    FbMenuPermission fbMenuDataRange = new FbMenuPermission();
+            //    foreach (object obj in Dtgrid.ItemsSource)
+            //    {                    
+            //        if (Dtgrid.Columns[0].GetCellContent(obj) != null)
+            //        {
+            //            string StrMenuID = ""; //菜单ID
+            //            menu = Dtgrid.Columns[0].GetCellContent(obj).DataContext as V_MenuSetRole;
+            //            StrMenuID = menu.ENTITYMENUID;
+            //            var ents = from ent in listFbPermissions
+            //                       where ent.menuID == StrMenuID
+            //                       select ent;
+            //            if (ents.Count() > 0)
+            //            {
+            //                fbMenuDataRange = ents.FirstOrDefault();
+            //                string StrPermissionID = "";//权限ID
+            //                int PermCount = 0;
+            //                PermCount = tmpPermission.Count;
+            //                int IndexCount = 1;                            
+            //                for (int i = 1; i < PermCount + 1; i++)
+            //                {
+            //                    IndexCount = IndexCount + i;
+            //                    if (Dtgrid.Columns[i].GetCellContent(obj) != null)
+            //                    {
+            //                        string NewDataRange = "";
+            //                        /* 
+            //                         * 首先根据菜单ID和角色ID获取  角色菜单表的记录 存在则获取ROLEENTITYID
+            //                         * 然后再根据 ROLEENTITYID和权限ID 获取角色菜单权限表中的记录，取得对应的权限和现在的权限值比较
+            //                         * 如果相同则不处理  不同则处理
+            //                         */
+            //                        StrPermissionID = tmpPermission[i - 1].PERMISSIONID;  //权限ID
+            //                        //var q = from a in EntityPermissionInfosList//权限视图集合
+            //                        //        where a.EntityRole.T_SYS_ENTITYMENU.ENTITYMENUID == StrMenuID
+            //                        //        && a.EntityRole.T_SYS_ROLE.ROLEID == tmprole.ROLEID
+            //                        //        select a;
+            //                        var q = from a in EntityPermissionInfosListSecond//权限视图集合
+            //                                where a.EntityMenuID == StrMenuID
+            //                                && a.RoleID == tmprole.ROLEID
+            //                                select a;
+            //                        string RoleEntityID = "";
+            //                        if (q.Count() > 0)
+            //                        {
+            //                            RoleEntityID = q.ToList().FirstOrDefault().RoleEntityMenuID.ToString(); //获取角色菜单ID
+            //                        }                                    
+            //                        var k = from b in EntityPermissionInfosListSecond//权限视图集合
+            //                                where b.PermissionID == StrPermissionID && b.RoleEntityMenuID == RoleEntityID
+            //                                select b;
+            //                        string OldRangeValue = ""; //获取数据库中 权限对应的值
 
-                                    if (k.Count() > 0)
-                                    {
-                                        OldRangeValue = k.ToList().FirstOrDefault().PermissionDataRange.ToString();
-                                    }
-                                    //Rating hrrate = DaGrHR.Columns[i].GetCellContent(obj).FindName("HRrating") as Rating;
-                                    Button hrrate = Dtgrid.Columns[i].GetCellContent(obj).FindName(rateName) as Button;
+            //                        if (k.Count() > 0)
+            //                        {
+            //                            OldRangeValue = k.ToList().FirstOrDefault().PermissionDataRange.ToString();
+            //                        }
+            //                        //Rating hrrate = DaGrHR.Columns[i].GetCellContent(obj).FindName("HRrating") as Rating;
+            //                        Button hrrate = Dtgrid.Columns[i].GetCellContent(obj).FindName(rateName) as Button;
 
-                                    switch (hrrate.Content.ToString())
-                                    {
-                                        case "★"://员工 0.2 ×10
-                                            NewDataRange = "4";
-                                            break;
-                                        case "★★"://岗位 0.4×10
-                                            NewDataRange = "3";
-                                            break;
-                                        case "★★★"://部门 0.6*10
-                                            NewDataRange = "2";
-                                            break;
-                                        case "★★★★"://公司 0.8*10
-                                            NewDataRange = "1";
-                                            break;
-                                        //case "★★★★★"://集团 1.0*10
-                                        //    NewDataRange = "0";
-                                        //    break;
-                                        case ""://权限
-                                            NewDataRange = "";
-                                            break;
-                                    }
-                                    if (!string.IsNullOrEmpty(NewDataRange))
-                                    {
-                                        if (!string.IsNullOrEmpty(fbMenuDataRange.permissionVlaue))
-                                        {
-                                            int fbValue = System.Convert.ToInt16(fbMenuDataRange.permissionVlaue);
-                                            int newValue = System.Convert.ToInt16(NewDataRange);
-                                            if (newValue > fbValue)                                            
-                                            {
-                                                strReturn = fbMenuDataRange.menuName + "必须设为：" + fbMenuDataRange.permissionText + "权限";
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+            //                        switch (hrrate.Content.ToString())
+            //                        {
+            //                            case "★"://员工 0.2 ×10
+            //                                NewDataRange = "4";
+            //                                break;
+            //                            case "★★"://岗位 0.4×10
+            //                                NewDataRange = "3";
+            //                                break;
+            //                            case "★★★"://部门 0.6*10
+            //                                NewDataRange = "2";
+            //                                break;
+            //                            case "★★★★"://公司 0.8*10
+            //                                NewDataRange = "1";
+            //                                break;
+            //                            //case "★★★★★"://集团 1.0*10
+            //                            //    NewDataRange = "0";
+            //                            //    break;
+            //                            case ""://权限
+            //                                NewDataRange = "";
+            //                                break;
+            //                        }
+            //                        if (!string.IsNullOrEmpty(NewDataRange))
+            //                        {
+            //                            if (!string.IsNullOrEmpty(fbMenuDataRange.permissionVlaue))
+            //                            {
+            //                                int fbValue = System.Convert.ToInt16(fbMenuDataRange.permissionVlaue);
+            //                                int newValue = System.Convert.ToInt16(NewDataRange);
+            //                                if (newValue > fbValue)                                            
+            //                                {
+            //                                    strReturn = fbMenuDataRange.menuName + "必须设为：" + fbMenuDataRange.permissionText + "权限";
+            //                                }
+            //                            }
+            //                        }
+            //                    }
+            //                }
+            //            }
+            //        }
+            //    }
                 
-            }
+            //}
             return strReturn;
         }
         #endregion
-
-
-
->>>>>>> .r24729
     }
 }

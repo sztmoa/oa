@@ -370,21 +370,21 @@ namespace SMT.HRM.UI.Form
                         //}
 
                     }
-                    if (Post.PROSCENIUM == "1")
-                    {
-                        this.RbtNo.IsChecked = false;
-                        this.rbtYes.IsChecked = true;
-                    }
-                    if (Post.BACKSTAGE == "1")
-                    {
-                        this.RbtNo.IsChecked = true;
-                        this.rbtYes.IsChecked = false;
-                    }
-                    if (Post.ISCOREPERSONNEL.ToInt32() <= 0)
-                    {
-                        rbtYesCore.IsChecked = true;
-                        rbtNoCore.IsChecked = false;
-                    }
+                    //if (Post.PROSCENIUM == "1")
+                    //{
+                    //    this.RbtNo.IsChecked = false;
+                    //    this.rbtYes.IsChecked = true;
+                    //}
+                    //if (Post.BACKSTAGE == "1")
+                    //{
+                    //    this.RbtNo.IsChecked = true;
+                    //    this.rbtYes.IsChecked = false;
+                    //}
+                    //if (Post.ISCOREPERSONNEL.ToInt32() <= 0)
+                    //{
+                    //    rbtYesCore.IsChecked = true;
+                    //    rbtNoCore.IsChecked = false;
+                    //}
                     //是否为撤销，2为撤销中，3为已撤销
                     //if (Post.EDITSTATE == "3" || Post.EDITSTATE == "2")
                     //{
@@ -1066,32 +1066,32 @@ namespace SMT.HRM.UI.Form
                 RefreshUI(RefreshedTypes.HideProgressBar);
                 return false;
             }
-            if (this.rbtYes.IsChecked == true)
-            {
-                Post.PROSCENIUM = "1";
-            }
-            else
-            {
-                Post.PROSCENIUM = "0";
-            }
-            if (this.RbtNo.IsChecked == true)
-            {
-                Post.BACKSTAGE = "1";
-            }
-            else
-            {
-                Post.BACKSTAGE = "0";
-            }
+            //if (this.rbtYes.IsChecked == true)
+            //{
+            //    Post.PROSCENIUM = "1";
+            //}
+            //else
+            //{
+            //    Post.PROSCENIUM = "0";
+            //}
+            //if (this.RbtNo.IsChecked == true)
+            //{
+            //    Post.BACKSTAGE = "1";
+            //}
+            //else
+            //{
+            //    Post.BACKSTAGE = "0";
+            //}
 
             //是否为核心人员
-            if (rbtYesCore.IsChecked == true)
-            {
-                Post.ISCOREPERSONNEL = "0";
-            }
-            else
-            {
-                Post.ISCOREPERSONNEL = "1";
-            }
+            //if (rbtYesCore.IsChecked == true)
+            //{
+            //    Post.ISCOREPERSONNEL = "0";
+            //}
+            //else
+            //{
+            //    Post.ISCOREPERSONNEL = "1";
+            //}
 
             if (FormType == FormTypes.New)
             {

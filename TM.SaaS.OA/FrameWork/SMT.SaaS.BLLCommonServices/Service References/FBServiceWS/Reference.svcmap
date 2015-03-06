@@ -39,7 +39,7 @@
     <MetadataFile FileName="SMT.EntityFlowSys.xsd" MetadataType="Schema" ID="a5b3f972-fe0c-4401-b160-c0e8db2c3288" SourceId="1" SourceUrl="http://localhost:23938/FBService.svc/mex" />
     <MetadataFile FileName="service8.xsd" MetadataType="Schema" ID="5f352fd0-d87f-4363-8b2e-8d5e53f3df24" SourceId="1" SourceUrl="http://localhost:23938/FBService.svc/mex" />
     <MetadataFile FileName="SMT.FB.Services1.xsd" MetadataType="Schema" ID="f2583f47-3e02-43f1-a501-f3e02454ca9c" SourceId="1" SourceUrl="http://localhost:23938/FBService.svc/mex" />
-    <MetadataFile FileName="SMT_HRM_EFModel13.xsd" MetadataType="Schema" ID="e1ec20c2-e46c-418d-a44b-29ba431f97f5" SourceId="1" SourceUrl="http://localhost:23938/FBService.svc/mex" />
+    <MetadataFile FileName="TM_SaaS_OA_EFModel13.xsd" MetadataType="Schema" ID="e1ec20c2-e46c-418d-a44b-29ba431f97f5" SourceId="1" SourceUrl="http://localhost:23938/FBService.svc/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

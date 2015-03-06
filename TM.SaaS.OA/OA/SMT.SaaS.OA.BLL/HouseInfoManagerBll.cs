@@ -73,7 +73,7 @@ namespace SMT.SaaS.OA.BLL
             try
             {
                 //ent.T_HR_DEPARTMENTDICTIONARYReference.EntityKey =
-                //        new System.Data.EntityKey("SMT_HRM_EFModelContext.T_HR_DEPARTMENTDICTIONARY", "DEPARTMENTDICTIONARYID", entity.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTDICTIONARYID);
+                //        new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_HR_DEPARTMENTDICTIONARY", "DEPARTMENTDICTIONARYID", entity.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTDICTIONARYID);
 
                 if (dal.Add(houseObj) == 1)
                 {

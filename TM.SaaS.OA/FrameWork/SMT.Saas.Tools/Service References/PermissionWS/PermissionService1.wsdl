@@ -1,35 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PermissionService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsp:Policy wsu:Id="CustomBinding_PermissionService_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
-        <wsaw:UsingAddressing />
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PermissionService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://localhost:1604/PermissionService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:1604/PermissionService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:1604/PermissionService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.CustomerModel" />
-      <xsd:import schemaLocation="http://localhost:1604/PermissionService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMT_System_EFModel" />
-      <xsd:import schemaLocation="http://localhost:1604/PermissionService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
-      <xsd:import schemaLocation="http://localhost:1604/PermissionService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
-      <xsd:import schemaLocation="http://localhost:1604/PermissionService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL" />
-      <xsd:import schemaLocation="http://localhost:1604/PermissionService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL.views" />
-      <xsd:import schemaLocation="http://localhost:1604/PermissionService.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://localhost:1604/PermissionService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.BLL" />
-      <xsd:import schemaLocation="http://localhost:1604/PermissionService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.Services" />
-      <xsd:import schemaLocation="http://localhost:1604/PermissionService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/SMT.HRM.Services" />
+      <xsd:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
+      <xsd:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+      <xsd:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL" />
+      <xsd:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL.views" />
+      <xsd:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.BLL" />
+      <xsd:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.Services" />
+      <xsd:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.CustomerModel" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="PermissionService_GetEmployeeInfosByRoleID_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetEmployeeInfosByRoleID" />
-  </wsdl:message>
-  <wsdl:message name="PermissionService_GetEmployeeInfosByRoleID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetEmployeeInfosByRoleIDResponse" />
-  </wsdl:message>
   <wsdl:message name="PermissionService_GetCustomCompanyMenuPerms_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCustomCompanyMenuPerms" />
   </wsdl:message>
@@ -522,17 +507,17 @@
   <wsdl:message name="PermissionService_GetManagers_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetManagersResponse" />
   </wsdl:message>
-  <wsdl:message name="PermissionService_GetFbMenuPermissions_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetFbMenuPermissions" />
-  </wsdl:message>
-  <wsdl:message name="PermissionService_GetFbMenuPermissions_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetFbMenuPermissionsResponse" />
-  </wsdl:message>
   <wsdl:message name="PermissionService_GetSupperAdmins_InputMessage">
     <wsdl:part name="parameters" element="tns:GetSupperAdmins" />
   </wsdl:message>
   <wsdl:message name="PermissionService_GetSupperAdmins_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSupperAdminsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_GetEmployeeInfosByRoleID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeInfosByRoleID" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_GetEmployeeInfosByRoleID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeInfosByRoleIDResponse" />
   </wsdl:message>
   <wsdl:message name="PermissionService_GetSysLeftMenu_InputMessage">
     <wsdl:part name="parameters" element="tns:GetSysLeftMenu" />
@@ -1039,10 +1024,6 @@
     <wsdl:part name="parameters" element="tns:GetCustomDepartMenuPermsResponse" />
   </wsdl:message>
   <wsdl:portType name="PermissionService">
-    <wsdl:operation name="GetEmployeeInfosByRoleID">
-      <wsdl:input wsaw:Action="http://tempuri.org/PermissionService/GetEmployeeInfosByRoleID" message="tns:PermissionService_GetEmployeeInfosByRoleID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/PermissionService/GetEmployeeInfosByRoleIDResponse" message="tns:PermissionService_GetEmployeeInfosByRoleID_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetCustomCompanyMenuPerms">
       <wsdl:input wsaw:Action="http://tempuri.org/PermissionService/GetCustomCompanyMenuPerms" message="tns:PermissionService_GetCustomCompanyMenuPerms_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/PermissionService/GetCustomCompanyMenuPermsResponse" message="tns:PermissionService_GetCustomCompanyMenuPerms_OutputMessage" />
@@ -1371,13 +1352,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/PermissionService/GetManagers" message="tns:PermissionService_GetManagers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/PermissionService/GetManagersResponse" message="tns:PermissionService_GetManagers_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetFbMenuPermissions">
-      <wsdl:input wsaw:Action="http://tempuri.org/PermissionService/GetFbMenuPermissions" message="tns:PermissionService_GetFbMenuPermissions_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/PermissionService/GetFbMenuPermissionsResponse" message="tns:PermissionService_GetFbMenuPermissions_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetSupperAdmins">
       <wsdl:input wsaw:Action="http://tempuri.org/PermissionService/GetSupperAdmins" message="tns:PermissionService_GetSupperAdmins_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/PermissionService/GetSupperAdminsResponse" message="tns:PermissionService_GetSupperAdmins_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeInfosByRoleID">
+      <wsdl:input wsaw:Action="http://tempuri.org/PermissionService/GetEmployeeInfosByRoleID" message="tns:PermissionService_GetEmployeeInfosByRoleID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/PermissionService/GetEmployeeInfosByRoleIDResponse" message="tns:PermissionService_GetEmployeeInfosByRoleID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetSysLeftMenu">
       <wsdl:input wsaw:Action="http://tempuri.org/PermissionService/GetSysLeftMenu" message="tns:PermissionService_GetSysLeftMenu_InputMessage" />
@@ -1716,1537 +1697,1524 @@
       <wsdl:output wsaw:Action="http://tempuri.org/PermissionService/GetCustomDepartMenuPermsResponse" message="tns:PermissionService_GetCustomDepartMenuPerms_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="CustomBinding_PermissionService" type="tns:PermissionService">
-    <wsp:PolicyReference URI="#CustomBinding_PermissionService_policy" />
-    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetEmployeeInfosByRoleID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetEmployeeInfosByRoleID" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
+  <wsdl:binding name="BasicHttpBinding_PermissionService" type="tns:PermissionService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetCustomCompanyMenuPerms">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetCustomCompanyMenuPerms" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetCustomCompanyMenuPerms" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysUserRoleByType">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysUserRoleByType" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysUserRoleByType" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysUserRoleByID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysUserRoleByID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysUserRoleByID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysUserRoleByUser">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysUserRoleByUser" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysUserRoleByUser" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysUserByRole">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysUserByRole" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysUserByRole" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysUserByRoleToEmployeeLeave">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysUserByRoleToEmployeeLeave" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysUserByRoleToEmployeeLeave" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UserRoleBatchAddInfos">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/UserRoleBatchAddInfos" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/UserRoleBatchAddInfos" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="BatchAddUserRole">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/BatchAddUserRole" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/BatchAddUserRole" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UserRoleUpdateInfo">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/UserRoleUpdateInfo" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/UserRoleUpdateInfo" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserRoleUpdate">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserRoleUpdate" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserRoleUpdate" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserRoleDelete">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserRoleDelete" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserRoleDelete" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserInfo">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetUserInfo" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetUserInfo" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserByID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetUserByID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetUserByID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserByEmployeeID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetUserByEmployeeID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetUserByEmployeeID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserPermissionByUser">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetUserPermissionByUser" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetUserPermissionByUser" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateFbAdmin">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/UpdateFbAdmin" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/UpdateFbAdmin" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserPermissionByUserToUI">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetUserPermissionByUserToUI" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetUserPermissionByUserToUI" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetEntityPermissionByUser">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetEntityPermissionByUser" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetEntityPermissionByUser" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserMenuPerms">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetUserMenuPerms" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetUserMenuPerms" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserMenuPermsByUserPermission">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetUserMenuPermsByUserPermission" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetUserMenuPermsByUserPermission" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetPermissionByRoleID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetPermissionByRoleID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetPermissionByRoleID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetPermissionByRoleIDSecond">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetPermissionByRoleIDSecond" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetPermissionByRoleIDSecond" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserPermissionAll">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetUserPermissionAll" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetUserPermissionAll" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UserLogin">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/UserLogin" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/UserLogin" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetOnLineUsers">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetOnLineUsers" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetOnLineUsers" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetLookupOjbects">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetLookupOjbects" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetLookupOjbects" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserInfoAdd">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserInfoAdd" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserInfoAdd" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserInfoAddORUpdate">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserInfoAddORUpdate" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserInfoAddORUpdate" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="EmployeeEntryAddDefaultRole">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/EmployeeEntryAddDefaultRole" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/EmployeeEntryAddDefaultRole" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="IsExistSysUserInfo">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/IsExistSysUserInfo" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/IsExistSysUserInfo" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserInfoUpdate">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserInfoUpdate" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserInfoUpdate" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserInfoUpdateNew">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserInfoUpdateNew" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserInfoUpdateNew" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserInfoUpdateForEmployeeLeft">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserInfoUpdateForEmployeeLeft" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserInfoUpdateForEmployeeLeft" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserInfoUpdateByUserIdandUsername">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserInfoUpdateByUserIdandUsername" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserInfoUpdateByUserIdandUsername" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserInfoUpdateToRtxAndEmail">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserInfoUpdateToRtxAndEmail" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserInfoUpdateToRtxAndEmail" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysUserAllInfos">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysUserAllInfos" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysUserAllInfos" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysUserAllInfosPaging">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysUserAllInfosPaging" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysUserAllInfosPaging" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysUserAllInfosPagingByCompanyIDs">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysUserAllInfosPagingByCompanyIDs" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysUserAllInfosPagingByCompanyIDs" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserBatchDel">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserBatchDel" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserBatchDel" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserBatchUpdate">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserBatchUpdate" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserBatchUpdate" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserLoginRecordInfoAdd">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserLoginRecordInfoAdd" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserLoginRecordInfoAdd" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserLoginRecordInfoUpdate">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserLoginRecordInfoUpdate" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserLoginRecordInfoUpdate" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysUserLoginRecordInfos">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysUserLoginRecordInfos" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysUserLoginRecordInfos" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UserLoginOut">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/UserLoginOut" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/UserLoginOut" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UserLoginOperation">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/UserLoginOperation" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/UserLoginOperation" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysUserLoginRecordInfosPaging">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysUserLoginRecordInfosPaging" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysUserLoginRecordInfosPaging" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysUserLoginRecordInfosBySearch">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysUserLoginRecordInfosBySearch" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysUserLoginRecordInfosBySearch" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserLoginRecordByEmployeeIDAndDate">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetUserLoginRecordByEmployeeIDAndDate" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetUserLoginRecordByEmployeeIDAndDate" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserLoginHistoryRecordInfoAdd">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserLoginHistoryRecordInfoAdd" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserLoginHistoryRecordInfoAdd" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysUserLoginHistoryRecordInfoUpdate">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysUserLoginHistoryRecordInfoUpdate" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysUserLoginHistoryRecordInfoUpdate" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysUserLoginHistoryRecordAllInfos">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysUserLoginHistoryRecordAllInfos" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysUserLoginHistoryRecordAllInfos" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysUserLoginHistoryRecordAllInfosPaging">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysUserLoginHistoryRecordAllInfosPaging" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysUserLoginHistoryRecordAllInfosPaging" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetRoleEntityPermissionByRoleEntityID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetRoleEntityPermissionByRoleEntityID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetRoleEntityPermissionByRoleEntityID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetRolePerms">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetRolePerms" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetRolePerms" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSystemTypeByUserID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSystemTypeByUserID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSystemTypeByUserID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ReturnIpAddress">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/ReturnIpAddress" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/ReturnIpAddress" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserPermissionBySysCodeAndUserAndModelCode">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetUserPermissionBySysCodeAndUserAndModelCode" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetUserPermissionBySysCodeAndUserAndModelCode" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetCompanyidsAndDepartmentidsByUserid">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetCompanyidsAndDepartmentidsByUserid" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetCompanyidsAndDepartmentidsByUserid" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysDictionaryByCategoryByUpdateDate">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByCategoryByUpdateDate" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByCategoryByUpdateDate" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserOperationPermission">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetUserOperationPermission" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetUserOperationPermission" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserNameIsExistNameAddOne">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetUserNameIsExistNameAddOne" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetUserNameIsExistNameAddOne" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetCustomerPermissionMenus">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetCustomerPermissionMenus" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetCustomerPermissionMenus" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetDictionaryByCategoryArray">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetDictionaryByCategoryArray" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetDictionaryByCategoryArray" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetRoleInfosByUser">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetRoleInfosByUser" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetRoleInfosByUser" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetCountry">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetCountry" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetCountry" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetProvinceCity">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetProvinceCity" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetProvinceCity" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="BatchAddFBAdmins">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/BatchAddFBAdmins" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/BatchAddFBAdmins" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getFbAdmins">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/getFbAdmins" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/getFbAdmins" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getFbAdmin">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/getFbAdmin" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/getFbAdmin" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteFbAdmin">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/DeleteFbAdmin" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/DeleteFbAdmin" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getFbAdminByEmployeeID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/getFbAdminByEmployeeID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/getFbAdminByEmployeeID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetFlowUserInfoByRoleID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetFlowUserInfoByRoleID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetFlowUserInfoByRoleID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetDepartmentHeadByDepartmentID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetDepartmentHeadByDepartmentID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetDepartmentHeadByDepartmentID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSuperiorByPostID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSuperiorByPostID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSuperiorByPostID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserByRoleIDAndCompanyID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetUserByRoleIDAndCompanyID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetUserByRoleIDAndCompanyID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetFlowUserByUserID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetFlowUserByUserID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetFlowUserByUserID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdatePwdByUserNameAndPwd">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/UpdatePwdByUserNameAndPwd" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/UpdatePwdByUserNameAndPwd" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetEntityMenuByName">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetEntityMenuByName" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetEntityMenuByName" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetChildCompanyRoles">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetChildCompanyRoles" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetChildCompanyRoles" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetLatestTimeOfPermission">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetLatestTimeOfPermission" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetLatestTimeOfPermission" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetFlowManagers">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetFlowManagers" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetFlowManagers" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetManagers">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetManagers" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetManagers" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetFbMenuPermissions">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetFbMenuPermissions" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSupperAdmins">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSupperAdmins" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSupperAdmins" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeInfosByRoleID">
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetEmployeeInfosByRoleID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysLeftMenu">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysLeftMenu" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysLeftMenu" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysLeftMenuFilterPermission">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysLeftMenuFilterPermission" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysLeftMenuFilterPermission" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysLeftMenuFilterPermissionToNewFrame">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysLeftMenuFilterPermissionToNewFrame" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysLeftMenuFilterPermissionToNewFrame" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysLeftMenuFilterPermissionToNewFrameAndPermission">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysLeftMenuFilterPermissionToNewFrameAndPermission" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysLeftMenuFilterPermissionToNewFrameAndPermission" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetEntityMenuByUser">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetEntityMenuByUser" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetEntityMenuByUser" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetEntityMenuAll">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetEntityMenuAll" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetEntityMenuAll" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysMenuByType">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByType" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByType" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysMenuByTypeTOFbAdmin">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByTypeTOFbAdmin" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByTypeTOFbAdmin" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysMenuByPermission">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByPermission" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByPermission" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysMenuByTypeToLookUp">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByTypeToLookUp" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByTypeToLookUp" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysMenuByTypeToLookUpForFbAdmin">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByTypeToLookUpForFbAdmin" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByTypeToLookUpForFbAdmin" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysMenuByTypePaging">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByTypePaging" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByTypePaging" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysMenuByEntityCode">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByEntityCode" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByEntityCode" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetOASysMenuByType">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetOASysMenuByType" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetOASysMenuByType" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetHRSysMenuByType">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetHRSysMenuByType" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetHRSysMenuByType" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetFBSysMenuByType">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetFBSysMenuByType" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetFBSysMenuByType" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetLMSysMenuByType">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetLMSysMenuByType" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetLMSysMenuByType" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetPMSysMenuByType">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetPMSysMenuByType" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetPMSysMenuByType" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetEDMSysMenuByType">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetEDMSysMenuByType" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetEDMSysMenuByType" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysMenuByID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuByID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysMenuInfosListByParentID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuInfosListByParentID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysMenuInfosListByParentID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysMenuAdd">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysMenuAdd" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysMenuAdd" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysMenuUpdate">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysMenuUpdate" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysMenuUpdate" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysMenuDelete">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysMenuDelete" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysMenuDelete" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetEntityMenuByMenuIDs">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetEntityMenuByMenuIDs" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetEntityMenuByMenuIDs" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetRoleEntityMenuByType">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetRoleEntityMenuByType" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetRoleEntityMenuByType" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetRoleEntityMenuByID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetRoleEntityMenuByID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetRoleEntityMenuByID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="RoleEntityMenuAdd">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/RoleEntityMenuAdd" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/RoleEntityMenuAdd" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="RoleEntityMenuUpdate">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/RoleEntityMenuUpdate" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/RoleEntityMenuUpdate" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="BatchAddRoleEntityPermissionInfos">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/BatchAddRoleEntityPermissionInfos" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/BatchAddRoleEntityPermissionInfos" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UserRoleApplyBatchAddRoleEntityPermissionInfos">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/UserRoleApplyBatchAddRoleEntityPermissionInfos" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/UserRoleApplyBatchAddRoleEntityPermissionInfos" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="RoleEntityMenuDelete">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/RoleEntityMenuDelete" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/RoleEntityMenuDelete" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetRoleEntityIDListInfosByRoleID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetRoleEntityIDListInfosByRoleID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetRoleEntityIDListInfosByRoleID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetRoleEntityIDListInfosByRoleIDNew">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetRoleEntityIDListInfosByRoleIDNew" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetRoleEntityIDListInfosByRoleIDNew" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetRoleEntityIDListInfosByRoleIDNewToUserRoleApp">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetRoleEntityIDListInfosByRoleIDNewToUserRoleApp" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetRoleEntityIDListInfosByRoleIDNewToUserRoleApp" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysPermissionAll">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysPermissionAll" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysPermissionAll" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysCommonPermissionAll">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysCommonPermissionAll" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysCommonPermissionAll" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysPermissionByEntityID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysPermissionByEntityID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysPermissionByEntityID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysPermissionAllPaging">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysPermissionAllPaging" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysPermissionAllPaging" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="FindSysPermissionByType">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/FindSysPermissionByType" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/FindSysPermissionByType" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysPermissionByID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysPermissionByID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysPermissionByID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysPermissionAdd">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysPermissionAdd" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysPermissionAdd" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysPermissionUpdate">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysPermissionUpdate" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysPermissionUpdate" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysPermissionDelete">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysPermissionDelete" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysPermissionDelete" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="FindSysPermissionByStr">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/FindSysPermissionByStr" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/FindSysPermissionByStr" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CopyRoleInfo">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/CopyRoleInfo" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/CopyRoleInfo" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysRoleInfoAdd">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysRoleInfoAdd" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysRoleInfoAdd" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="IsExistSysRoleInfo">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/IsExistSysRoleInfo" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/IsExistSysRoleInfo" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="IsExistSysRoleInfoByRoleNameAndCompanyAndDepartmentid">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/IsExistSysRoleInfoByRoleNameAndCompanyAndDepartmentid" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/IsExistSysRoleInfoByRoleNameAndCompanyAndDepartmentid" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysRoleInfoUpdate">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysRoleInfoUpdate" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysRoleInfoUpdate" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysRoleSingleInfoById">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysRoleSingleInfoById" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysRoleSingleInfoById" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysRoleInfos">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysRoleInfos" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysRoleInfos" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysRoleInfosByCompanyIdAndDepartmentId">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysRoleInfosByCompanyIdAndDepartmentId" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysRoleInfosByCompanyIdAndDepartmentId" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysRoleInfosPaging">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysRoleInfosPaging" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysRoleInfosPaging" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysRoleInfosPagingByCompanyIDs">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysRoleInfosPagingByCompanyIDs" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysRoleInfosPagingByCompanyIDs" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetRoleView">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetRoleView" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetRoleView" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysRoleBatchDel">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysRoleBatchDel" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysRoleBatchDel" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysDictionaryByCategory">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByCategory" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByCategory" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetAllSysDictionary">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetAllSysDictionary" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetAllSysDictionary" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysDictionaryByCategoryAndValue">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByCategoryAndValue" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByCategoryAndValue" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysDictionaryByFatherID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByFatherID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByFatherID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysDictionaryByCategoryList">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByCategoryList" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByCategoryList" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysDictionaryAdd">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysDictionaryAdd" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysDictionaryAdd" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysDictionaryUpdate">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysDictionaryUpdate" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysDictionaryUpdate" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SysDictionaryDelete">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SysDictionaryDelete" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SysDictionaryDelete" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ImportCityCSV">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/ImportCityCSV" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/ImportCityCSV" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveFile">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SaveFile" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SaveFile" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysDictionaryCategory">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryCategory" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryCategory" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysDictionarySysType">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionarySysType" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionarySysType" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysDictionaryByID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysDictionaryByFilter">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByFilter" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByFilter" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSysDictionaryByFilterPaging">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByFilterPaging" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSysDictionaryByFilterPaging" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSystemDictioanryVersion">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetSystemDictioanryVersion" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetSystemDictioanryVersion" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetCutomterPermissionObj">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetCutomterPermissionObj" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetCutomterPermissionObj" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SetCutomterPermissionObj">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/SetCutomterPermissionObj" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/SetCutomterPermissionObj" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateCutomterPermissionObj">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/UpdateCutomterPermissionObj" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/UpdateCutomterPermissionObj" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetEntityMenuCustomPermByType">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetEntityMenuCustomPermByType" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetEntityMenuCustomPermByType" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetEntityMenuCustomPermByID">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetEntityMenuCustomPermByID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetEntityMenuCustomPermByID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="EntityMenuCustomPermAdd">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/EntityMenuCustomPermAdd" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/EntityMenuCustomPermAdd" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="EntityMenuCustomPermUpdate">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/EntityMenuCustomPermUpdate" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/EntityMenuCustomPermUpdate" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="EntityMenuCustomPermDelete">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/EntityMenuCustomPermDelete" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/EntityMenuCustomPermDelete" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetCustomerPermissionByUserIDAndEntityCode">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetCustomerPermissionByUserIDAndEntityCode" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetCustomerPermissionByUserIDAndEntityCode" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetCustomPostMenuPerms">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetCustomPostMenuPerms" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetCustomPostMenuPerms" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetCustomDepartMenuPerms">
-      <soap12:operation soapAction="http://tempuri.org/PermissionService/GetCustomDepartMenuPerms" style="document" />
+      <soap:operation soapAction="http://tempuri.org/PermissionService/GetCustomDepartMenuPerms" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="PermissionService">
-    <wsdl:port name="CustomBinding_PermissionService" binding="tns:CustomBinding_PermissionService">
-      <soap12:address location="http://localhost:1604/PermissionService.svc" />
-      <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:1604/PermissionService.svc</wsa10:Address>
-      </wsa10:EndpointReference>
+    <wsdl:port name="BasicHttpBinding_PermissionService" binding="tns:BasicHttpBinding_PermissionService">
+      <soap:address location="http://localhost:12168/PermissionService.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

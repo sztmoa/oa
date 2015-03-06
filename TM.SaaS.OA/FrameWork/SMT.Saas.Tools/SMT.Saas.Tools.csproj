@@ -1173,9 +1173,6 @@
     <None Include="Service References\PermissionWS\PermissionService20.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PermissionWS\PermissionService21.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\PermissionWS\PermissionService3.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1196,96 +1193,6 @@
     </None>
     <None Include="Service References\PermissionWS\PermissionService9.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.CustomerPermission.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.FlowUserInfo.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_COUNTRY1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_DICTIONARY.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ENTITYMENU.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ENTITYMENUCUSTOMPERM.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_FBADMIN.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_PERMISSION.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ROLE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ROLEENTITYMENU.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ROLEMENUPERMISSION.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ROLE_V.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_USER.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_USERLOGINRECORD.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_USERROLE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_Dictionary.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_EntityMenu.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_FBAdmin.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_MenuSetRole.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_OnlineUser.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_Permission.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_PermissionUpdateState.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_ProvinceCity1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_RoleEntity.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserLoginRecord.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserLoginRecordHistory.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserMenuPermission.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserPermission.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserPermissionRoleID.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserPermissionUI.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\EngineWS\configuration91.svcinfo" />
     <None Include="Service References\EngineWS\configuration.svcinfo" />
@@ -1311,6 +1218,186 @@
     <None Include="Service References\AttendanceWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.CustomerPermission.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.CustomerPermission1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.FlowUserInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.FlowUserInfo1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_COUNTRY.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_DICTIONARY.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_DICTIONARY1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ENTITYMENU.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ENTITYMENU1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ENTITYMENUCUSTOMPERM.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ENTITYMENUCUSTOMPERM1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_FBADMIN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_FBADMIN1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_PERMISSION.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_PERMISSION1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ROLE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ROLE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ROLEENTITYMENU.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ROLEENTITYMENU1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ROLEMENUPERMISSION.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ROLEMENUPERMISSION1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ROLE_V.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_ROLE_V1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_USER.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_USER1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_USERLOGINRECORD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_USERLOGINRECORD1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_USERROLE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.T_SYS_USERROLE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_Dictionary.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_Dictionary1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_EntityMenu.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_EntityMenu1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_FBAdmin.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_FBAdmin1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_MenuSetRole.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_MenuSetRole1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_OnlineUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_OnlineUser1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_Permission.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_Permission1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_PermissionUpdateState.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_PermissionUpdateState1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_ProvinceCity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_RoleEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_RoleEntity1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_RoleUserInfo3.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_SupperFbAdmin3.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserLoginRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserLoginRecord1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserLoginRecordHistory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserLoginRecordHistory1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserMenuPermission.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserMenuPermission1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserPermission.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserPermission1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserPermissionRoleID.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserPermissionRoleID1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserPermissionUI.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PermissionWS\SMT.Saas.Tools.PermissionWS.V_UserPermissionUI1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PersonalRecordWS\PersonalRecordService.wsdl" />
     <None Include="Service References\PersonalRecordWS\PersonalRecordService.xsd">
@@ -1837,7 +1924,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\PermissionWS\PermissionService1.disco" />
     <None Include="Service References\DailyManagementWS\DailyManagementServices1.disco" />
     <None Include="Service References\WpServiceWS\SMT.Saas.Tools.WpServiceWS.BussinessTripBudget.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -1897,6 +1983,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\PermissionWS\PermissionService1.disco" />
     <Content Include="ServiceReferences.ClientConfig">
       <SubType>Designer</SubType>
     </Content>

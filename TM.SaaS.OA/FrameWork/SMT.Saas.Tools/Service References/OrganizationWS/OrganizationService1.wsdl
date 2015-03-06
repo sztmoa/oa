@@ -121,15 +121,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetDepartmentFatherIsForWP">
-      <soap12:operation soapAction="urn:OrganizationService/GetDepartmentFatherIsForWP" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="DoWork">
       <soap12:operation soapAction="urn:OrganizationService/DoWork" style="document" />
       <wsdl:input>

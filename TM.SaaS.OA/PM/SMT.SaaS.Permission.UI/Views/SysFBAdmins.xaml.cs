@@ -655,15 +655,15 @@ namespace SMT.SaaS.Permission.UI.Views
             loadbar.Stop();
         }
 
-        private List<V_EMPLOYEEVIEW> addList(V_EMPLOYEEVIEW view,List<V_EMPLOYEEVIEW> list)
-        {
-            var temp = list.Where(t=>t.OWNERCOMPANYID==view.OWNERCOMPANYID&&t.EMPLOYEEID==view.EMPLOYEEID).FirstOrDefault();
-            if (temp == null)
-            {
-                list.Add(view);
-            }
-            return list;
-        }
+        //private List<V_EMPLOYEEVIEW> addList(V_EMPLOYEEVIEW view,List<V_EMPLOYEEVIEW> list)
+        //{
+        //    var temp = list.Where(t=>t.OWNERCOMPANYID==view.OWNERCOMPANYID&&t.EMPLOYEEID==view.EMPLOYEEID).FirstOrDefault();
+        //    if (temp == null)
+        //    {
+        //        list.Add(view);
+        //    }
+        //    return list;
+        //}
 
         void client_GetEmployeesWithOutPermissionsCompleted(object sender, GetEmployeesWithOutPermissionsCompletedEventArgs e)
         {
@@ -834,7 +834,7 @@ namespace SMT.SaaS.Permission.UI.Views
             {
                 if (this.DtGrid.SelectedItems != null)
                 {
-                    V_EMPLOYEEVIEW employee = DtGrid.SelectedItem as V_EMPLOYEEVIEW;
+                    SMT.Saas.Tools.PersonnelWS.V_EMPLOYEEVIEW employee = DtGrid.SelectedItem as SMT.Saas.Tools.PersonnelWS.V_EMPLOYEEVIEW;
                     //var Ents = from ent in LstFbAdmin
                     //           where ent.OWNERCOMPANYID == employee.OWNERCOMPANYID && ent.OWNERPOSTID == employee.OWNERPOSTID
                     //           && ent.OWNERDEPARTMENTID == employee.OWNERDEPARTMENTID

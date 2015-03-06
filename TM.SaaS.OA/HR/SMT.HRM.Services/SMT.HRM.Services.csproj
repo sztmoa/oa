@@ -305,12 +305,7 @@
     <Content Include="HrCommonService.svc" />
     <Content Include="PerformanceService.svc" />
   </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DebugWeb.config" />
     <None Include="Properties\PublishProfiles\配置文件1.pubxml" />

@@ -102,9 +102,6 @@
     <Reference Include="SMT.SAAS.Application">
       <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Application.dll</HintPath>
     </Reference>
-    <Reference Include="SMT.SAAS.Behaviors">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.Behaviors.dll</HintPath>
-    </Reference>
     <Reference Include="SMT.SAAS.ClientServices">
       <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SAAS.ClientServices.dll</HintPath>
     </Reference>
@@ -145,45 +142,27 @@
       <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SaaS.Window.dll</HintPath>
     </Reference>
     <Reference Include="system" />
-    <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.ComponentModel.DataAnnotations.dll</HintPath>
-    </Reference>
     <Reference Include="mscorlib" />
-    <Reference Include="System.Json, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Json.dll</HintPath>
-    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
+    <Reference Include="System.Json, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Browser" />
-    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.Data.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\OA\SMT.SaaS.CommonDll\MicroSoft Lib\Client\System.Windows.Controls.Data.DataForm.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.Data.Input.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Toolkit\dec11\Bin\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Controls.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.Input.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Windows.Controls.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Input.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\OA\SMT.SaaS.CommonDll\MicroSoft Lib\Client\System.Windows.Controls.Input.Toolkit.dll</HintPath>
@@ -192,10 +171,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\OA\SMT.SaaS.CommonDll\silverlight4.0lib\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Controls.Navigation, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.Navigation.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Windows.Controls.Navigation, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Theming.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\OA\SMT.SaaS.CommonDll\silverlight4.0lib\System.Windows.Controls.Theming.Toolkit.dll</HintPath>
@@ -204,23 +180,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\OA\SMT.SaaS.CommonDll\silverlight4.0lib\System.Windows.Controls.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Data.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\OA\SMT.SaaS.CommonDll\MicroSoft Lib\Client\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Xml.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Serialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Xml.Serialization.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Serialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Active\IContainer.cs" />
@@ -741,11 +708,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\ReportChartServiceWS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\WelfareStandardWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -3077,12 +3039,6 @@
     <None Include="Service References\ReportChartServiceWS\SMT.HRM.UI.ReportChartServiceWS.PieEmployeece.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WelfareStandardWS\configuration91.svcinfo" />
-    <None Include="Service References\WelfareStandardWS\configuration.svcinfo" />
-    <None Include="Service References\WelfareStandardWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Service References\ReportChartServiceWS\ReportChartService.disco" />
     <None Include="Service References\ReportChartServiceWS\configuration91.svcinfo" />
     <None Include="Service References\ReportChartServiceWS\configuration.svcinfo" />
@@ -3109,38 +3065,11 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\OutApplyWS\" />
     <WCFMetadataStorage Include="Service References\ReportChartServiceWS\" />
-    <WCFMetadataStorage Include="Service References\WelfareStandardWS\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram2.cd" />
     <None Include="Properties\DataSources\SMT.SaaS.FrameworkUI.AuditService.Flow_FlowRecord_T.datasource" />
     <None Include="Properties\DataSources\System.Uri.datasource" />
-    <None Include="Service References\WelfareStandardWS\Arrays.xsd" />
-    <None Include="Service References\WelfareStandardWS\service.wsdl" />
-    <None Include="Service References\WelfareStandardWS\service.xsd" />
-    <None Include="Service References\WelfareStandardWS\service1.wsdl" />
-    <None Include="Service References\WelfareStandardWS\service1.xsd" />
-    <None Include="Service References\WelfareStandardWS\SMT.EntityFlowSys.xsd" />
-    <None Include="Service References\WelfareStandardWS\SMT.HRM.UI.WelfareStandardWS.T_OA_WELFARE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\WelfareStandardWS\SMT.HRM.UI.WelfareStandardWS.T_OA_WELFAREDISTRIBUTEDETAIL.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\WelfareStandardWS\SMT.HRM.UI.WelfareStandardWS.T_OA_WELFAREDISTRIBUTEMASTER.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\WelfareStandardWS\SMT.HRM.UI.WelfareStandardWS.V_WelfareProvision.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\WelfareStandardWS\SMT.HRM.UI.WelfareStandardWS.V_WelfareStandard.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\WelfareStandardWS\SMT.SaaS.OA.DAL.Views1.xsd" />
-    <None Include="Service References\WelfareStandardWS\SMT.SaaS.OA.Services1.xsd" />
-    <None Include="Service References\WelfareStandardWS\SMT_OA_EFModel.xsd" />
-    <None Include="Service References\WelfareStandardWS\System.Data.Objects.DataClasses.xsd" />
-    <None Include="Service References\WelfareStandardWS\System.Data.xsd" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -3160,6 +3089,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\FrameWork\SMT.SAAS.Behaviors\SMT.SAAS.Behaviors.csproj">
+      <Project>{7a6afd3c-4870-442c-9a77-d7f480ba8e26}</Project>
+      <Name>SMT.SAAS.Behaviors</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Framework\SMT.SaaS.FrameworkUI\SMT.SAAS.FrameworkUI.csproj">
       <Project>{9a42135a-11f2-4210-a41b-3ac06ac0d835}</Project>
       <Name>SMT.SAAS.FrameworkUI</Name>

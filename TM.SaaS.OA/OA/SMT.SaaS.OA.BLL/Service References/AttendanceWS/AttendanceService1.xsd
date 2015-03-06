@@ -22,7 +22,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_EMPLOYEELEAVERECORD" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_EMPLOYEELEAVERECORD" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
@@ -51,7 +51,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_ATTENDANCESOLUTION" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_ATTENDANCESOLUTION" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
@@ -66,7 +66,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_ATTENDANCEDEDUCTMASTER" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_ATTENDANCEDEDUCTMASTER" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
@@ -81,7 +81,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_OVERTIMEREWARD" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_OVERTIMEREWARD" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
@@ -96,7 +96,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_SCHEDULINGTEMPLATEMASTER" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_SCHEDULINGTEMPLATEMASTER" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
@@ -111,7 +111,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_ATTENDANCERECORD" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_ATTENDANCERECORD" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
@@ -126,7 +126,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_EMPLOYEEABNORMRECORD" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_EMPLOYEEABNORMRECORD" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
@@ -141,7 +141,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_EMPLOYEESIGNINRECORD" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_EMPLOYEESIGNINRECORD" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
@@ -156,7 +156,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_SHIFTDEFINE" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_SHIFTDEFINE" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
@@ -171,7 +171,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_LEAVETYPESET" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_LEAVETYPESET" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
@@ -186,7 +186,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_EMPLOYEELEVELDAYCOUNT" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_EMPLOYEELEVELDAYCOUNT" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
@@ -201,7 +201,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_ATTENDMONTHLYBATCHBALANCE" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_ATTENDMONTHLYBATCHBALANCE" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
@@ -216,7 +216,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_EMPLOYEEOVERTIMERECORD" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_EMPLOYEEOVERTIMERECORD" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
@@ -231,7 +231,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_VACATIONSET" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_VACATIONSET" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
@@ -246,7 +246,7 @@
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="T_HR_EMPLOYEEEVECTIONRECORD" Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel" />
+          <GenericParameter Name="T_HR_EMPLOYEEEVECTIONRECORD" Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>

@@ -473,10 +473,10 @@ namespace SMT.SaaS.Permission.UI.UserControls
                         role.POSTID = StrPositionID;
                         //修改成了公司ID。主要用来权限验证
                         role.EMPLOYEEPOSTID = StrCompanyID;
-                        role.T_SYS_ROLEReference=new EntityReferenceOfT_SYS_ROLECIR1sILv();
+                        role.T_SYS_ROLEReference=new EntityReferenceOfT_SYS_ROLENb42Hbcw();
                         role.T_SYS_ROLEReference.EntityKey = Role.EntityKey;
 
-                        role.T_SYS_USERReference=new EntityReferenceOfT_SYS_USERCIR1sILv();
+                        role.T_SYS_USERReference=new EntityReferenceOfT_SYS_USERNb42Hbcw();
                         role.T_SYS_USERReference.EntityKey = tmpUser.EntityKey;
                         role.CREATEUSER = Common.CurrentLoginUserInfo.SysUserID;
                         ViewInfosList.Add(role);//添加角色用户
