@@ -118,14 +118,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\HR\SMT.HRM.BLL\SMT.HRM.BLL.csproj">
-      <Project>{b35234a0-7bf1-49b6-bdf2-4041d0763d9b}</Project>
-      <Name>SMT.HRM.BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\HR\SMT.HRM.CustomModel\SMT.HRM.CustomModel.csproj">
-      <Project>{0e45b937-670f-49e1-8ef1-a4bd312b94da}</Project>
-      <Name>SMT.HRM.CustomModel</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\TM_SaaS_OA_EFModel\TM_SaaS_OA_EFModel.csproj">
       <Project>{7571bce6-3b80-41c1-af97-9118e7f41845}</Project>
       <Name>TM_SaaS_OA_EFModel</Name>

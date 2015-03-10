@@ -469,7 +469,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SMT.SaaS.FrameWorkUI\SMT.Controls.Toolkit.Windows\SMT.SAAS.Controls.Toolkit.Windows.csproj">
+    <ProjectReference Include="..\..\FrameWork\SMT.Controls.Toolkit.Windows\SMT.SAAS.Controls.Toolkit.Windows.csproj">
       <Project>{e0139d17-5b27-42c0-9f44-aa2a693a8442}</Project>
       <Name>SMT.SAAS.Controls.Toolkit.Windows</Name>
     </ProjectReference>
@@ -477,11 +477,11 @@
       <Project>{9a42135a-11f2-4210-a41b-3ac06ac0d835}</Project>
       <Name>SMT.SAAS.FrameworkUI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SMT.SaaS.FrameWorkUI\SMT.SAAS.Main.CurrentContext\SMT.SAAS.Main.CurrentContext.csproj">
+    <ProjectReference Include="..\..\FrameWork\SMT.SAAS.Main.CurrentContext\SMT.SAAS.Main.CurrentContext.csproj">
       <Project>{4B5991D6-D3C6-4BCF-B788-95AFC5323523}</Project>
       <Name>SMT.SAAS.Main.CurrentContext</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SMT.SaaS.FrameWorkUI\SMT.SaaS.Window\SMT.SaaS.Window.csproj">
+    <ProjectReference Include="..\..\FrameWork\SMT.SaaS.Window\SMT.SaaS.Window.csproj">
       <Project>{15406e6e-a265-4be9-afb3-e45433e7252c}</Project>
       <Name>SMT.SaaS.Window</Name>
     </ProjectReference>

@@ -43,7 +43,7 @@ namespace SMT.SaaS.Permission.BLL
             //} 
             if (outInterfaceClient == null)
             {
-                outInterfaceClient = new BLLCommonServices.WFPlatformWS.OutInterfaceClient();
+                //outInterfaceClient = new BLLCommonServices.WFPlatformWS.OutInterfaceClient();
 
             }       
         }

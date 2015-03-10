@@ -7,6 +7,7 @@ using SMT.SaaS.Permission.BLL;
 using System.Collections.Generic;
 using TM_SaaS_OA_EFModel;
 using SMT.SaaS.Permission.DAL;
+using SMT.HRM.Services;
 
 namespace SMT.SaaS.Permission.Services
 {

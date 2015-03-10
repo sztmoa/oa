@@ -12,7 +12,7 @@ namespace SMT.SAAS.Platform.DAL
     /// 封装访问数据库的的公共方法
     /// </summary>
     /// <typeparam name="TEntity">映射出的数据表类型</typeparam>
-    internal class CommonDAL<TEntity> : BaseDAL
+    public class CommonDAL<TEntity> : BaseDAL
     {
         //数据库连接字符串，需要在AppConfig配置文件中进行配置
         private static string _conn = string.Empty;

@@ -404,11 +404,11 @@ namespace SMT.HRM.BLL
 
         private void SetInferiorCompany(T_HR_EMPLOYEEPOST ep, ref string filterString, ref List<object> queryParas)
         {
-            var tempEnt = dal.GetObjects().Where(s => s.T_HR_COMPANY2.COMPANYID == ep.T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.COMPANYID);
+            var tempEnt = dal.GetObjects().Where(s => s.T_HR_COMPANY2.COMPANYID == ep.T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.COMPANYID).ToList();
             getAllCompany(ref filterString, ref queryParas, tempEnt);
         }
 
-        private void getAllCompany(ref string filterString, ref List<object> queryParas, IQueryable<T_HR_COMPANY> tempEnt)
+        private void getAllCompany(ref string filterString, ref List<object> queryParas, List<T_HR_COMPANY> tempEnt)
         {
             if (tempEnt != null)
             {
@@ -419,7 +419,7 @@ namespace SMT.HRM.BLL
 
                     filterString += "COMPANYID==@" + queryParas.Count().ToString();
                     queryParas.Add(ent.COMPANYID);
-                    var tempChildEnt = dal.GetObjects().Where(s => s.T_HR_COMPANY2.COMPANYID == ent.COMPANYID);
+                    var tempChildEnt = dal.GetObjects().Where(s => s.T_HR_COMPANY2.COMPANYID == ent.COMPANYID).ToList();
                     if (tempChildEnt.Count() > 0)
                     {
                         getAllCompany(ref filterString, ref queryParas, tempChildEnt);

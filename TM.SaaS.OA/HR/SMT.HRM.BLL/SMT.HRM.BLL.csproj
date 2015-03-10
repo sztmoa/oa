@@ -55,23 +55,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Enyim.Caching">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\Enyim.Caching.dll</HintPath>
+      <HintPath>..\..\..\SMT.SaaS.CommonDll\SMT\Server\Memcached\Enyim.Caching.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
-      <HintPath>..\..\..\OA\SMT.SaaS.CommonDll\MicroSoft Lib\Server\Microsoft.Office.Interop.Excel.dll</HintPath>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\SMT.SaaS.CommonDll\MicroSoft Lib\Server\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="SMT.Foundation.Core">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Core.dll</HintPath>
+      <HintPath>..\..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Core.dll</HintPath>
     </Reference>
     <Reference Include="SMT.Foundation.Log">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Log.dll</HintPath>
+      <HintPath>..\..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.Foundation.Log.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SaaS.Common">
-      <HintPath>..\..\Common\Reference\SMT.SaaS.Common.dll</HintPath>
+      <HintPath>..\..\..\..\SmtWorkSpace\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.Common.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SaaS.Globalization">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.Globalization.dll</HintPath>
+      <HintPath>..\..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.SaaS.Globalization.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SaaS.MoblieXml">
       <HintPath>..\..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SaaS.MoblieXml.dll</HintPath>
@@ -85,7 +87,7 @@
       <HintPath>..\..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.SaaS.Services.Model.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SaaS.SmtOlineEn">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.SmtOlineEn.dll</HintPath>
+      <HintPath>..\..\..\SMT.SaaS.CommonDll\SMT\Server\SMT.SaaS.SmtOlineEn.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

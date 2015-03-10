@@ -299,7 +299,7 @@ namespace SMT.SaaS.Permission.BLL
                         }
                         try
                         {
-                            bool flag = outInterfaceClient.UpdateFlowRole(ent.ROLEID, sourceEntity.ROLENAME, roleName, sourceEntity.UPDATEUSERNAME);
+                            bool flag = false;// outInterfaceClient.UpdateFlowRole(ent.ROLEID, sourceEntity.ROLENAME, roleName, sourceEntity.UPDATEUSERNAME);
                             if (!flag)
                             {
                                 Tracer.Debug(DateTime.Now.ToString() + "调用UpdateFlowRole方法返回false，角色ID:" + ent.ROLEID);
