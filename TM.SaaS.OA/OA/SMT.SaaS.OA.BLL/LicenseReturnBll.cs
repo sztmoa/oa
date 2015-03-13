@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.DAL.Views;
 using System.Linq.Dynamic;
 
@@ -12,7 +12,7 @@ namespace SMT.SaaS.OA.BLL
 {
     public class LicenseReturnBll : BaseBll<T_OA_LICENSEUSER>
     {
-        //SMT_OA_EFModelContext context = new SMT_OA_EFModelContext();
+        //TM_SaaS_OA_EFModelContext context = new TM_SaaS_OA_EFModelContext();
 
 
         public IQueryable<T_OA_LICENSEUSER> GetLicenseBorrowAppListQueryWithPaging(int pageIndex, int pageSize, string sort, string filterString, IList<object> paras, ref int pageCount, string lendFlag, string userID)

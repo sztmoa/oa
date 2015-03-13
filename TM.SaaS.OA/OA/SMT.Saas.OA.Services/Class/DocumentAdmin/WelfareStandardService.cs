@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.Collections.Generic;
 using System.Text;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.BLL;
 using SMT.SaaS.OA.DAL.Views;
 //using SMT.SaaS.OA.Services.FlowService;
@@ -153,8 +153,8 @@ namespace SMT.SaaS.OA.Services
                 }
                 else                    //通过工作流获取用户要审批的申请信息
                 {
-                    FLOW_FLOWRECORDDETAIL_T flowInfo = new FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "T_OA_WELFAREMASERT", loginUserInfo.companyID, loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowInfo = new SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "T_OA_WELFAREMASERT", loginUserInfo.companyID, loginUserInfo.userID);
                     if (flowList == null)
                     {
                         return null;
@@ -441,8 +441,8 @@ namespace SMT.SaaS.OA.Services
                 }
                 else                    //通过工作流获取用户要审批的申请信息
                 {
-                    FLOW_FLOWRECORDDETAIL_T flowInfo = new FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "T_OA_WELFAREDISTRIBUTEMASTER", loginUserInfo.companyID, loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowInfo = new SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "T_OA_WELFAREDISTRIBUTEMASTER", loginUserInfo.companyID, loginUserInfo.userID);
                     if (flowList == null)
                     {
                         return null;
@@ -519,8 +519,8 @@ namespace SMT.SaaS.OA.Services
                 }
                 else                    //通过工作流获取用户要审批的申请信息
                 {
-                    FLOW_FLOWRECORDDETAIL_T flowInfo = new FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "T_OA_WELFAREDISTRIBUTEUNDO", loginUserInfo.companyID, loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowInfo = new SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "T_OA_WELFAREDISTRIBUTEUNDO", loginUserInfo.companyID, loginUserInfo.userID);
                     if (flowList == null)
                     {
                         return null;

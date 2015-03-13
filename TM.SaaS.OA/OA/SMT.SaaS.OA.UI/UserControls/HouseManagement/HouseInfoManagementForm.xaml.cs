@@ -87,7 +87,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                         {
                             txtRemark.Text = houseObj.REMARK.ToString();
                         }
-                        txtNumber.Text = houseObj.Number.ToString();
+                        txtNumber.Text = houseObj.NUMBER.ToString();
                         txtContent.RichTextBoxContext = houseObj.CONTENT;
                         txtRentCost.Text = houseObj.RENTCOST.ToString();
                         txtManageCost.Text = houseObj.MANAGECOST.ToString();
@@ -221,7 +221,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                         houseObj.CONTENT = txtContent.RichTextBoxContext;
                         houseObj.SHAREDDEPOSIT = Convert.ToDecimal(txtSharedDeposit.Text);
                         houseObj.SHAREDRENTCOST = Convert.ToDecimal(txtSharedRentCost.Text);
-                        houseObj.Number = Convert.ToDecimal(txtNumber.Text);
+                        houseObj.NUMBER = Convert.ToDecimal(txtNumber.Text);
                         houseObj.REMARK = txtRemark.Text.ToString();
 
                         houseObj.CREATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
@@ -255,7 +255,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                         houseObj.SHAREDDEPOSIT = Convert.ToDecimal(txtSharedDeposit.Text);
                         houseObj.SHAREDRENTCOST = Convert.ToDecimal(txtSharedRentCost.Text);
                         
-                        houseObj.Number = Convert.ToDecimal(txtNumber.Text);
+                        houseObj.NUMBER = Convert.ToDecimal(txtNumber.Text);
                         houseObj.REMARK = txtRemark.Text.ToString();
 
                         houseObj.UPDATEDATE = DateTime.Now;

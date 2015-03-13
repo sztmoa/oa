@@ -49,18 +49,18 @@
     <MetadataSource Address="http://localhost:3938/SmtOADocumentAdmin.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SmtOADocumentAdmin8.xsd" MetadataType="Schema" ID="8aaa09d3-5294-48d3-bbfd-49a314f35ffe" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?xsd=xsd8" />
+    <MetadataFile FileName="SmtOADocumentAdmin1.wsdl" MetadataType="Wsdl" ID="c35a034c-fb80-4611-afda-f02be29aa09c" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SmtOADocumentAdmin3.xsd" MetadataType="Schema" ID="baca5a23-9e8f-48dd-89ac-5af2c9da26c0" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?xsd=xsd2" />
     <MetadataFile FileName="SmtOADocumentAdmin.xsd" MetadataType="Schema" ID="4c3e27e7-33ce-4375-9b85-3c2c63528edf" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?xsd=xsd1" />
     <MetadataFile FileName="SmtOADocumentAdmin1.xsd" MetadataType="Schema" ID="e61c5daa-e872-4272-819f-7ec7bb9e31eb" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?xsd=xsd0" />
     <MetadataFile FileName="SmtOADocumentAdmin2.xsd" MetadataType="Schema" ID="916c8702-d2b2-4afd-ba49-9d794f3b85b7" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?xsd=xsd3" />
-    <MetadataFile FileName="SmtOADocumentAdmin3.xsd" MetadataType="Schema" ID="baca5a23-9e8f-48dd-89ac-5af2c9da26c0" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?xsd=xsd2" />
-    <MetadataFile FileName="SmtOADocumentAdmin4.xsd" MetadataType="Schema" ID="4ce2f522-5c9d-4acf-970e-916f65a14a2a" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?xsd=xsd5" />
     <MetadataFile FileName="SmtOADocumentAdmin.wsdl" MetadataType="Wsdl" ID="150119c2-0eb7-4ef2-aa7f-1bdb54c9f69e" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?wsdl" />
-    <MetadataFile FileName="SmtOADocumentAdmin.disco" MetadataType="Disco" ID="b3d04e1a-233b-4bdf-8a9f-f047b3859eff" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?disco" />
-    <MetadataFile FileName="SmtOADocumentAdmin7.xsd" MetadataType="Schema" ID="6b8d8b47-9dbf-47f8-a135-74341010505b" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?xsd=xsd6" />
-    <MetadataFile FileName="SmtOADocumentAdmin1.wsdl" MetadataType="Wsdl" ID="c35a034c-fb80-4611-afda-f02be29aa09c" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SmtOADocumentAdmin4.xsd" MetadataType="Schema" ID="4ce2f522-5c9d-4acf-970e-916f65a14a2a" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?xsd=xsd5" />
     <MetadataFile FileName="SmtOADocumentAdmin5.xsd" MetadataType="Schema" ID="98bb9d8b-280e-4f07-b4c0-df02a7bce00d" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?xsd=xsd4" />
     <MetadataFile FileName="SmtOADocumentAdmin6.xsd" MetadataType="Schema" ID="2f2225c4-a917-4bfa-b7fd-28305da7e96a" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?xsd=xsd7" />
+    <MetadataFile FileName="SmtOADocumentAdmin7.xsd" MetadataType="Schema" ID="6b8d8b47-9dbf-47f8-a135-74341010505b" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?xsd=xsd6" />
+    <MetadataFile FileName="SmtOADocumentAdmin8.xsd" MetadataType="Schema" ID="8aaa09d3-5294-48d3-bbfd-49a314f35ffe" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?xsd=xsd8" />
+    <MetadataFile FileName="SmtOADocumentAdmin.disco" MetadataType="Disco" ID="b3d04e1a-233b-4bdf-8a9f-f047b3859eff" SourceId="1" SourceUrl="http://localhost:3938/SmtOADocumentAdmin.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

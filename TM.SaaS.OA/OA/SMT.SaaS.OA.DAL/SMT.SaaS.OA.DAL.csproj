@@ -69,9 +69,6 @@
     <Reference Include="SMT.SaaS.BLLCommonServices">
       <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
     </Reference>
-    <Reference Include="SMT_OA_EFModel">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT_OA_EFModel.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
@@ -218,6 +215,12 @@
     <None Include="Properties\DataSources\SMT_OA_EFModel.T_OA_SENDDOC.datasource" />
     <None Include="Properties\DataSources\SMT_OA_EFModel.T_OA_SENDDOCTEMPLATE.datasource" />
     <None Include="Properties\DataSources\SMT_OA_EFModel.T_OA_SENDDOCTYPE.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TM_SaaS_OA_EFModel\TM_SaaS_OA_EFModel.csproj">
+      <Project>{7571bce6-3b80-41c1-af97-9118e7f41845}</Project>
+      <Name>TM_SaaS_OA_EFModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

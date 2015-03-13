@@ -233,17 +233,17 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\HR\SMT.HRM.BLL\SMT.HRM.BLL.csproj">
-      <Project>{B35234A0-7BF1-49B6-BDF2-4041D0763D9B}</Project>
-      <Name>SMT.HRM.BLL</Name>
+    <ProjectReference Include="..\..\TM_SaaS_OA_EFModel\TM_SaaS_OA_EFModel.csproj">
+      <Project>{7571bce6-3b80-41c1-af97-9118e7f41845}</Project>
+      <Name>TM_SaaS_OA_EFModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMT.SaaS.OA.BLL\SMT.SaaS.OA.BLL.csproj">
+      <Project>{3aa2d961-12fa-4b92-ab37-e4a2556ad1b4}</Project>
+      <Name>SMT.SaaS.OA.BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\SMT.SaaS.OA.DAL\SMT.SaaS.OA.DAL.csproj">
       <Project>{4B906A26-7F19-4707-A3DA-61482FE72BA4}</Project>
       <Name>SMT.SaaS.OA.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SMT_OA_EFModel\SMT_OA_EFModel.csproj">
-      <Project>{30d6706d-a200-4ed0-bbaa-3574e09f54d1}</Project>
-      <Name>SMT_OA_EFModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

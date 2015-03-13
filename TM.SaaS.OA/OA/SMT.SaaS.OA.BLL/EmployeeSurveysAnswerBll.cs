@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.Foundation.Log;
 
 namespace SMT.SaaS.OA.BLL
@@ -13,8 +13,8 @@ namespace SMT.SaaS.OA.BLL
         public IQueryable<T_OA_REQUIREDETAIL> GetInfoListByMasterId(string requireId, decimal subjectId)
         {
             var q = from ent in dal.GetTable()
-                    where ent.REQUIREMASTERID == requireId && ent.SUBJECTID == subjectId
-                    orderby ent.CODE, ent.SUBJECTID
+                    where ent.REQUIREDETAILID == requireId && ent.CREATEPOSTID == subjectId.ToString()
+                    orderby ent.CODE
                     select ent;
             if (q.Count() > 0)
             {
@@ -25,7 +25,7 @@ namespace SMT.SaaS.OA.BLL
         public IQueryable<T_OA_REQUIREDETAIL> GetInfoByMasterId(string requireId)
         {
             var q = from ent in dal.GetTable()
-                    where ent.REQUIREMASTERID == requireId 
+                    where ent.REQUIREDETAILID == requireId 
                     select ent;
             if (q.Count() > 0)
             {

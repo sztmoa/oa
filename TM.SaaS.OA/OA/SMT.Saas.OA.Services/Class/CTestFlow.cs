@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 
 namespace SMT.SaaS.OA.Services.Class
 {

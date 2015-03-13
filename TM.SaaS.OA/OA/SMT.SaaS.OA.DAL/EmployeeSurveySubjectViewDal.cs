@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects;
 using SMT.Foundation.Core;
 using SMT.SaaS.OA.DAL.Views;
@@ -20,7 +20,7 @@ namespace SMT.SaaS.OA.DAL
             try
             {
                 if (requireSubjectView.SubjectInfo.T_OA_REQUIREMASTER.EntityKey == null)
-                    requireSubjectView.SubjectInfo.T_OA_REQUIREMASTER.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_REQUIREMASTER", "REQUIREMASTERID",  requireSubjectView.SubjectInfo.T_OA_REQUIREMASTER.REQUIREMASTERID);
+                    requireSubjectView.SubjectInfo.T_OA_REQUIREMASTER.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_REQUIREMASTER", "REQUIREMASTERID",  requireSubjectView.SubjectInfo.T_OA_REQUIREMASTER.REQUIREMASTERID);
                 requireSubjectView.SubjectInfo.T_OA_REQUIREMASTER = base.GetObjectByEntityKey(requireSubjectView.SubjectInfo.T_OA_REQUIREMASTER.EntityKey) as T_OA_REQUIREMASTER;
                 //objModelContext.AddObject("T_OA_REQUIREDETAIL2", requireSubjectView.SubjectInfo);
                 base.Add(requireSubjectView.SubjectInfo);
@@ -52,7 +52,7 @@ namespace SMT.SaaS.OA.DAL
             {
                 EmployeeSurveysAnswerDal esaDal = new EmployeeSurveysAnswerDal();
                 if (requireSubjectView.SubjectInfo.T_OA_REQUIREMASTER.EntityKey == null)
-                    requireSubjectView.SubjectInfo.T_OA_REQUIREMASTER.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_REQUIREMASTER", "REQUIREMASTERID", requireSubjectView.SubjectInfo.T_OA_REQUIREMASTER.REQUIREMASTERID);
+                    requireSubjectView.SubjectInfo.T_OA_REQUIREMASTER.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_REQUIREMASTER", "REQUIREMASTERID", requireSubjectView.SubjectInfo.T_OA_REQUIREMASTER.REQUIREMASTERID);
                 T_OA_REQUIREDETAIL2 tmpobj = base.GetObjectByEntityKey(requireSubjectView.SubjectInfo.EntityKey) as T_OA_REQUIREDETAIL2;
                 base.Update(requireSubjectView.SubjectInfo);
                 int i = SaveContextChanges();

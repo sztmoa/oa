@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using SMT.Foundation.Log;
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 
 namespace SMT.SaaS.OA.BLL
 {
     public class HouseListBll : BaseBll<T_OA_HOUSELIST>    
     {
         //新增
-        //private SMT_OA_EFModelContext context = new SMT_OA_EFModelContext();
+        //private TM_SaaS_OA_EFModelContext context = new TM_SaaS_OA_EFModelContext();
 
         public bool AddHouseList(T_OA_HOUSELIST houseListObj)
         {

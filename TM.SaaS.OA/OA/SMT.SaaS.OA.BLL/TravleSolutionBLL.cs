@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.DAL.Views;
 using System.Linq.Dynamic;
 using SMT.Foundation.Log;
@@ -40,7 +40,7 @@ namespace SMT.SaaS.OA.BLL
                     //EntObj.T_OA_TAKETHESTANDARDTRANSPORT.Add(item);
                     item.T_OA_TRAVELSOLUTIONS = null;
                     item.T_OA_TRAVELSOLUTIONSReference.EntityKey =
-                            new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntObj.TRAVELSOLUTIONSID);
+                            new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntObj.TRAVELSOLUTIONSID);
 
                     Utility.RefreshEntity(item);
                     dal.AddToContext(item);
@@ -66,7 +66,7 @@ namespace SMT.SaaS.OA.BLL
 
                             ent.PROGRAMAPPLICATIONSID = System.Guid.NewGuid().ToString();
                             ent.T_OA_TRAVELSOLUTIONSReference.EntityKey =
-                            new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntObj.TRAVELSOLUTIONSID);
+                            new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntObj.TRAVELSOLUTIONSID);
 
                             ent.COMPANYID = id;
                             ent.CREATEUSERID = EntObj.CREATEUSERID;
@@ -261,7 +261,7 @@ namespace SMT.SaaS.OA.BLL
                            {
                                Tracer.Debug("添加出差工具设置项目" + item.TYPEOFTRAVELTOOLS);
                                item.T_OA_TRAVELSOLUTIONSReference.EntityKey =
-                               new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntTravle.TRAVELSOLUTIONSID);
+                               new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntTravle.TRAVELSOLUTIONSID);
                                Utility.RefreshEntity(item);
                                dal.AddToContext(item);
                                item.CREATEDATE = DateTime.Now;
@@ -290,7 +290,7 @@ namespace SMT.SaaS.OA.BLL
                                 T_OA_PROGRAMAPPLICATIONS ent = new T_OA_PROGRAMAPPLICATIONS();
                                 ent.PROGRAMAPPLICATIONSID = System.Guid.NewGuid().ToString();
                                 ent.T_OA_TRAVELSOLUTIONSReference.EntityKey =
-                                new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntTravle.TRAVELSOLUTIONSID);
+                                new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntTravle.TRAVELSOLUTIONSID);
                                 ent.COMPANYID = id;
                                 ent.OWNERCOMPANYID = EntTravle.OWNERCOMPANYID;
                                 ent.OWNERDEPARTMENTID = EntTravle.OWNERDEPARTMENTID;
@@ -746,7 +746,7 @@ namespace SMT.SaaS.OA.BLL
 
                             tent.TAKETHESTANDARDTRANSPORTID = System.Guid.NewGuid().ToString();
                             tent.T_OA_TRAVELSOLUTIONSReference.EntityKey =
-                            new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntObj.TRAVELSOLUTIONSID);
+                            new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntObj.TRAVELSOLUTIONSID);
 
                             tent.ENDPOSTLEVEL = obj.ENDPOSTLEVEL;
                             tent.TYPEOFTRAVELTOOLS = obj.TYPEOFTRAVELTOOLS;
@@ -764,7 +764,7 @@ namespace SMT.SaaS.OA.BLL
 
                         pent.PROGRAMAPPLICATIONSID = System.Guid.NewGuid().ToString();
                         pent.T_OA_TRAVELSOLUTIONSReference.EntityKey =
-                        new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntObj.TRAVELSOLUTIONSID);
+                        new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntObj.TRAVELSOLUTIONSID);
                         pent.COMPANYID = EntObj.OWNERCOMPANYID;
                         pent.CREATEUSERID = EntObj.CREATEUSERID;
                         pent.OWNERCOMPANYID = EntObj.CREATECOMPANYID;
@@ -788,7 +788,7 @@ namespace SMT.SaaS.OA.BLL
 
                             //    aread.AREADIFFERENCEID = System.Guid.NewGuid().ToString();//城市分类ID
                             //    aread.T_OA_TRAVELSOLUTIONSReference.EntityKey =
-                            //    new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntObj.TRAVELSOLUTIONSID);//方案ID
+                            //    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntObj.TRAVELSOLUTIONSID);//方案ID
 
                             //    aread.AREACATEGORY = obj.AREACATEGORY;//城市分类名
                             //    aread.AREAINDEX = obj.AREAINDEX;//分类序号
@@ -819,9 +819,9 @@ namespace SMT.SaaS.OA.BLL
 
                                 areadce.AREAALLOWANCEID = System.Guid.NewGuid().ToString();//分类补贴ID
                                 areadce.T_OA_AREADIFFERENCEReference.EntityKey =
-                                new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_AREADIFFERENCE", "AREADIFFERENCEID", obj.AREADIFFERENCEID);//分类ID
+                                new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_AREADIFFERENCE", "AREADIFFERENCEID", obj.AREADIFFERENCEID);//分类ID
                                 areadce.T_OA_TRAVELSOLUTIONSReference.EntityKey =
-                                new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntObj.TRAVELSOLUTIONSID);//方案ID
+                                new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", EntObj.TRAVELSOLUTIONSID);//方案ID
                                 areadce.POSTLEVEL = obje.POSTLEVEL;//岗位等级
                                 areadce.ACCOMMODATION = obje.ACCOMMODATION;//住宿补贴
                                 areadce.TRANSPORTATIONSUBSIDIES = obje.TRANSPORTATIONSUBSIDIES;//交通伙食补贴
@@ -846,7 +846,7 @@ namespace SMT.SaaS.OA.BLL
 
                             //    arctiy.AREACITYID = System.Guid.NewGuid().ToString();//分类城市ID
                             //    arctiy.T_OA_AREADIFFERENCEReference.EntityKey =
-                            //    new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_AREADIFFERENCE", "AREADIFFERENCEID", aread.AREADIFFERENCEID);//分类ID
+                            //    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_AREADIFFERENCE", "AREADIFFERENCEID", aread.AREADIFFERENCEID);//分类ID
 
                             //    arctiy.CITY = objc.CITY;//所在地城市
                             //    arctiy.CREATEUSERID = EntObj.CREATEUSERID;//创建人
@@ -913,7 +913,7 @@ namespace SMT.SaaS.OA.BLL
                         //ent.T_OA_TRAVELSOLUTIONSReference.EntityKey.EntityKeyValues[0].Value = SolutionID;
                         ent.PROGRAMAPPLICATIONSID = System.Guid.NewGuid().ToString();
                         ent.T_OA_TRAVELSOLUTIONSReference.EntityKey =
-                        new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", SolutionID);
+                        new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", SolutionID);
                         //ent.T_OA_TRAVELSOLUTIONS = solution.FirstOrDefault();
                         //ent.T_OA_TRAVELSOLUTIONS.TRAVELSOLUTIONSID = SolutionID;
                         ent.COMPANYID = id;
@@ -974,7 +974,7 @@ namespace SMT.SaaS.OA.BLL
                         T_OA_PROGRAMAPPLICATIONS ent = new T_OA_PROGRAMAPPLICATIONS();
                         ent.PROGRAMAPPLICATIONSID = System.Guid.NewGuid().ToString();
                         ent.T_OA_TRAVELSOLUTIONSReference.EntityKey =
-                        new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", SolutionID);
+                        new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELSOLUTIONS", "TRAVELSOLUTIONSID", SolutionID);
 
                         ent.COMPANYID = id;
                         ent.OWNERCOMPANYID = ownercompanyid;

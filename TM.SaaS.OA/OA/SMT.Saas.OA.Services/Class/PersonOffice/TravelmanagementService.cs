@@ -6,7 +6,7 @@ using System.ServiceModel.Activation;
 using System.Collections.Generic;
 using System.Text;
 
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.BLL;
 using SMT.SaaS.OA.DAL.Views;
 using SMT.SaaS.BLLCommonServices.FlowWFService;
@@ -243,9 +243,9 @@ namespace SMT.SaaS.OA.Services
                 }
                 else                    //通过工作流获取用户要审批的申请信息
                 {
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "1", "0", "T_OA_BUSINESSTRIP", loginUserInfo.companyID, loginUserInfo.userID);
-                    FLOW_FLOWRECORDDETAIL_T[] ReportflowList = workFlowWS.GetFlowInfo("", "", "1", "0", "T_OA_BUSINESSREPORT", loginUserInfo.companyID, loginUserInfo.userID);
-                    FLOW_FLOWRECORDDETAIL_T[] ReimflowList = workFlowWS.GetFlowInfo("", "", "1", "0", "T_OA_TRAVELREIMBURSEMENT", loginUserInfo.companyID, loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "1", "0", "T_OA_BUSINESSTRIP", loginUserInfo.companyID, loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] ReportflowList = workFlowWS.GetFlowInfo("", "", "1", "0", "T_OA_BUSINESSREPORT", loginUserInfo.companyID, loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] ReimflowList = workFlowWS.GetFlowInfo("", "", "1", "0", "T_OA_TRAVELREIMBURSEMENT", loginUserInfo.companyID, loginUserInfo.userID);
                     List<V_FlowAPP> flowAppList = new List<V_FlowAPP>();
                     if (flowList != null)
                     {

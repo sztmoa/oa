@@ -6,7 +6,7 @@ using System.ServiceModel.Activation;
 using System.Collections.Generic;
 using System.Text;
 
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.BLL;
 
 namespace SMT.SaaS.OA.Services

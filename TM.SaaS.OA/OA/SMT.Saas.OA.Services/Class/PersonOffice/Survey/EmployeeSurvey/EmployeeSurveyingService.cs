@@ -3,7 +3,7 @@ using System.Linq;
 using System.ServiceModel;
 using SMT.SaaS.OA.BLL;
 using SMT.SaaS.OA.DAL.Views;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 
 namespace SMT.SaaS.OA.Services
 {

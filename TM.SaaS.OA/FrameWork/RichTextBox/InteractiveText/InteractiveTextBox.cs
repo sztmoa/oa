@@ -23,11 +23,11 @@ namespace SMT.SaaS.FrameworkUI.RichNotepad.InteractiveText
     {
         private const string PREFIX = "http://desperate/";
 
-        [Import]
-        public IDefineCommand _defineCommand { private get; set; }
+        //[Import]
+        //public IDefineCommand _defineCommand { private get; set; }
 
-        [Import]
-        public IPerformCommand _performCommand { get; set; }
+        //[Import]
+        //public IPerformCommand _performCommand { get; set; }
 
         public InteractiveTextBox()
             : base()
@@ -47,31 +47,31 @@ namespace SMT.SaaS.FrameworkUI.RichNotepad.InteractiveText
 
         public void DisplayActionDefinition()
         {
-            if (_defineCommand != null)
-            {
-                // try get current value of CommandParameter
-                string commandParameter = String.Empty;
-                XElement root = XElement.Parse(this.Selection.Xaml);
-                XNamespace ns = "http://schemas.microsoft.com/winfx/2006/xaml/presentation";
-                var linkElement = root.Element(ns + "Paragraph").Element(ns + "Hyperlink");
-                if (linkElement != null)
-                {
-                    XAttribute attr = linkElement.Attribute("CommandParameter");
-                    if (attr != null)
-                    {
-                        commandParameter = attr.Value;
-                    }
-                    else // delete this once CommandParameter is supported in TextSelection.Xaml
-                    {
-                        XAttribute attr1 = linkElement.Attribute("NavigateUri"); // abuse alert
-                        if (attr1 != null)
-                        {
-                            commandParameter = attr1.Value.Replace(PREFIX, String.Empty);
-                        }
-                    }
-                }
-                _defineCommand.Prompt(this.Selection.Text, commandParameter, ConsumeLinkDefinition);
-            }
+            //if (_defineCommand != null)
+            //{
+            //    // try get current value of CommandParameter
+            //    string commandParameter = String.Empty;
+            //    XElement root = XElement.Parse(this.Selection.Xaml);
+            //    XNamespace ns = "http://schemas.microsoft.com/winfx/2006/xaml/presentation";
+            //    var linkElement = root.Element(ns + "Paragraph").Element(ns + "Hyperlink");
+            //    if (linkElement != null)
+            //    {
+            //        XAttribute attr = linkElement.Attribute("CommandParameter");
+            //        if (attr != null)
+            //        {
+            //            commandParameter = attr.Value;
+            //        }
+            //        else // delete this once CommandParameter is supported in TextSelection.Xaml
+            //        {
+            //            XAttribute attr1 = linkElement.Attribute("NavigateUri"); // abuse alert
+            //            if (attr1 != null)
+            //            {
+            //                commandParameter = attr1.Value.Replace(PREFIX, String.Empty);
+            //            }
+            //        }
+            //    }
+            //    //_defineCommand.Prompt(this.Selection.Text, commandParameter, ConsumeLinkDefinition);
+            //}
         }
 
         public void ToggleReadOnly()
@@ -89,10 +89,10 @@ namespace SMT.SaaS.FrameworkUI.RichNotepad.InteractiveText
             set
             {
                 (this as RichTextBox).Xaml = value;
-                if (_performCommand != null)
-                {
-                    SetCommands(Blocks);
-                }
+                //if (_performCommand != null)
+                //{
+                  SetCommands(Blocks);
+                //}
             }
         }
 
@@ -116,7 +116,7 @@ namespace SMT.SaaS.FrameworkUI.RichNotepad.InteractiveText
                         if (uri.StartsWith(PREFIX))
                         {
                             // We have a CommandParameter
-                            hlink.Command = _performCommand;
+                            //hlink.Command = _performCommand;
                             // Delete the following once CommandParameter is supported in TextSelection.Xaml
                             hlink.CommandParameter = uri.Substring(PREFIX.Length);
                         }

@@ -59,6 +59,8 @@
     <MetadataFile FileName="SmtOACommonOffice8.xsd" MetadataType="Schema" ID="6a59a59a-5e43-4a08-bc45-2391526a73f8" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonOffice.svc?xsd=xsd7" />
     <MetadataFile FileName="SmtOACommonOffice5.xsd" MetadataType="Schema" ID="1f74e4cc-181d-4604-ae53-4b373aeea94a" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonOffice.svc?xsd=xsd0" />
     <MetadataFile FileName="SmtOACommonOffice6.xsd" MetadataType="Schema" ID="0388c490-4aba-4bb2-9a71-0e1cfc7e4285" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonOffice.svc?xsd=xsd5" />
+    <MetadataFile FileName="SmtOACommonOffice99.xsd" MetadataType="Schema" ID="8df6d3a5-d4d1-4fa4-9cb6-b4cff9299df9" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonOffice.svc?xsd=xsd10" />
+    <MetadataFile FileName="SmtOACommonOffice910.xsd" MetadataType="Schema" ID="b656e64e-b989-459d-b5b9-d65a7cd1dbf4" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonOffice.svc?xsd=xsd9" />
     <MetadataFile FileName="SmtOACommonOffice.disco" MetadataType="Disco" ID="9b84df57-087a-4c72-a10b-fe222650b220" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonOffice.svc?disco" />
     <MetadataFile FileName="SmtOACommonOffice.wsdl" MetadataType="Wsdl" ID="bd31cf66-2902-4f90-8bd9-207f9cc4ecf0" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonOffice.svc?wsdl=wsdl0" />
   </Metadata>

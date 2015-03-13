@@ -20,6 +20,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     [System.Runtime.Serialization.DataContractAttribute(Name="StructuralObject", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses", IsReference=true)]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
@@ -64,6 +66,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EntityObject", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses", IsReference=true)]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL))]
@@ -112,10 +116,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_TRAVELREIMBURSEMENT", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_TRAVELREIMBURSEMENT", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_TRAVELREIMBURSEMENT : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
-        
-        private string BUSINESSREPORTIDField;
         
         private string CHECKSTATEField;
         
@@ -161,6 +163,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private string OWNERPOSTNAMEField;
         
+        private string PAYINFOField;
+        
         private string POSTLEVELField;
         
         private System.Nullable<decimal> REIMBURSEMENTOFCOSTSField;
@@ -177,28 +181,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private string TRAVELREIMBURSEMENTIDField;
         
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT T_OA_BUSINESSREPORTField;
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw T_OA_BUSINESSREPORTReferenceField;
+        
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP T_OA_BUSINESSTRIPField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk T_OA_BUSINESSTRIPReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw T_OA_BUSINESSTRIPReferenceField;
         
         private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL> T_OA_REIMBURSEMENTDETAILField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
         private string UPDATEUSERIDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BUSINESSREPORTID {
-            get {
-                return this.BUSINESSREPORTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BUSINESSREPORTIDField, value) != true)) {
-                    this.BUSINESSREPORTIDField = value;
-                    this.RaisePropertyChanged("BUSINESSREPORTID");
-                }
-            }
-        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string CHECKSTATE {
@@ -487,6 +482,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PAYINFO {
+            get {
+                return this.PAYINFOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PAYINFOField, value) != true)) {
+                    this.PAYINFOField = value;
+                    this.RaisePropertyChanged("PAYINFO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string POSTLEVEL {
             get {
                 return this.POSTLEVELField;
@@ -591,6 +599,32 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT T_OA_BUSINESSREPORT {
+            get {
+                return this.T_OA_BUSINESSREPORTField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_BUSINESSREPORTField, value) != true)) {
+                    this.T_OA_BUSINESSREPORTField = value;
+                    this.RaisePropertyChanged("T_OA_BUSINESSREPORT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw T_OA_BUSINESSREPORTReference {
+            get {
+                return this.T_OA_BUSINESSREPORTReferenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_BUSINESSREPORTReferenceField, value) != true)) {
+                    this.T_OA_BUSINESSREPORTReferenceField = value;
+                    this.RaisePropertyChanged("T_OA_BUSINESSREPORTReference");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP T_OA_BUSINESSTRIP {
             get {
                 return this.T_OA_BUSINESSTRIPField;
@@ -604,7 +638,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk T_OA_BUSINESSTRIPReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw T_OA_BUSINESSTRIPReference {
             get {
                 return this.T_OA_BUSINESSTRIPReferenceField;
             }
@@ -658,7 +692,574 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_BUSINESSTRIP", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_BUSINESSREPORT", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    public partial class T_OA_BUSINESSREPORT : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
+        
+        private string BUSINESSREPORTIDField;
+        
+        private System.Nullable<decimal> CHARGEMONEYField;
+        
+        private string CHECKSTATEField;
+        
+        private string CONTENTField;
+        
+        private string CREATECOMPANYIDField;
+        
+        private System.Nullable<System.DateTime> CREATEDATEField;
+        
+        private string CREATEDEPARTMENTIDField;
+        
+        private string CREATEPOSTIDField;
+        
+        private string CREATEUSERIDField;
+        
+        private string CREATEUSERNAMEField;
+        
+        private string OWNERCOMPANYIDField;
+        
+        private string OWNERDEPARTMENTIDField;
+        
+        private string OWNERIDField;
+        
+        private string OWNERNAMEField;
+        
+        private string OWNERPOSTIDField;
+        
+        private string REMARKSField;
+        
+        private string TELField;
+        
+        private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL> T_OA_BUSINESSREPORTDETAILField;
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP T_OA_BUSINESSTRIPField;
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw T_OA_BUSINESSTRIPReferenceField;
+        
+        private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT> T_OA_TRAVELREIMBURSEMENTField;
+        
+        private System.Nullable<System.DateTime> UPDATEDATEField;
+        
+        private string UPDATEUSERIDField;
+        
+        private string UPDATEUSERNAMEField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BUSINESSREPORTID {
+            get {
+                return this.BUSINESSREPORTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BUSINESSREPORTIDField, value) != true)) {
+                    this.BUSINESSREPORTIDField = value;
+                    this.RaisePropertyChanged("BUSINESSREPORTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> CHARGEMONEY {
+            get {
+                return this.CHARGEMONEYField;
+            }
+            set {
+                if ((this.CHARGEMONEYField.Equals(value) != true)) {
+                    this.CHARGEMONEYField = value;
+                    this.RaisePropertyChanged("CHARGEMONEY");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CHECKSTATE {
+            get {
+                return this.CHECKSTATEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CHECKSTATEField, value) != true)) {
+                    this.CHECKSTATEField = value;
+                    this.RaisePropertyChanged("CHECKSTATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CONTENT {
+            get {
+                return this.CONTENTField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CONTENTField, value) != true)) {
+                    this.CONTENTField = value;
+                    this.RaisePropertyChanged("CONTENT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATECOMPANYID {
+            get {
+                return this.CREATECOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATECOMPANYIDField, value) != true)) {
+                    this.CREATECOMPANYIDField = value;
+                    this.RaisePropertyChanged("CREATECOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> CREATEDATE {
+            get {
+                return this.CREATEDATEField;
+            }
+            set {
+                if ((this.CREATEDATEField.Equals(value) != true)) {
+                    this.CREATEDATEField = value;
+                    this.RaisePropertyChanged("CREATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEDEPARTMENTID {
+            get {
+                return this.CREATEDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEDEPARTMENTIDField, value) != true)) {
+                    this.CREATEDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("CREATEDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEPOSTID {
+            get {
+                return this.CREATEPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEPOSTIDField, value) != true)) {
+                    this.CREATEPOSTIDField = value;
+                    this.RaisePropertyChanged("CREATEPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERID {
+            get {
+                return this.CREATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
+                    this.CREATEUSERIDField = value;
+                    this.RaisePropertyChanged("CREATEUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERNAME {
+            get {
+                return this.CREATEUSERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERNAMEField, value) != true)) {
+                    this.CREATEUSERNAMEField = value;
+                    this.RaisePropertyChanged("CREATEUSERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERCOMPANYID {
+            get {
+                return this.OWNERCOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERCOMPANYIDField, value) != true)) {
+                    this.OWNERCOMPANYIDField = value;
+                    this.RaisePropertyChanged("OWNERCOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERDEPARTMENTID {
+            get {
+                return this.OWNERDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERDEPARTMENTIDField, value) != true)) {
+                    this.OWNERDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("OWNERDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERID {
+            get {
+                return this.OWNERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERIDField, value) != true)) {
+                    this.OWNERIDField = value;
+                    this.RaisePropertyChanged("OWNERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERNAME {
+            get {
+                return this.OWNERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERNAMEField, value) != true)) {
+                    this.OWNERNAMEField = value;
+                    this.RaisePropertyChanged("OWNERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERPOSTID {
+            get {
+                return this.OWNERPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERPOSTIDField, value) != true)) {
+                    this.OWNERPOSTIDField = value;
+                    this.RaisePropertyChanged("OWNERPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string REMARKS {
+            get {
+                return this.REMARKSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.REMARKSField, value) != true)) {
+                    this.REMARKSField = value;
+                    this.RaisePropertyChanged("REMARKS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TEL {
+            get {
+                return this.TELField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TELField, value) != true)) {
+                    this.TELField = value;
+                    this.RaisePropertyChanged("TEL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL> T_OA_BUSINESSREPORTDETAIL {
+            get {
+                return this.T_OA_BUSINESSREPORTDETAILField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_BUSINESSREPORTDETAILField, value) != true)) {
+                    this.T_OA_BUSINESSREPORTDETAILField = value;
+                    this.RaisePropertyChanged("T_OA_BUSINESSREPORTDETAIL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP T_OA_BUSINESSTRIP {
+            get {
+                return this.T_OA_BUSINESSTRIPField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_BUSINESSTRIPField, value) != true)) {
+                    this.T_OA_BUSINESSTRIPField = value;
+                    this.RaisePropertyChanged("T_OA_BUSINESSTRIP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw T_OA_BUSINESSTRIPReference {
+            get {
+                return this.T_OA_BUSINESSTRIPReferenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_BUSINESSTRIPReferenceField, value) != true)) {
+                    this.T_OA_BUSINESSTRIPReferenceField = value;
+                    this.RaisePropertyChanged("T_OA_BUSINESSTRIPReference");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT> T_OA_TRAVELREIMBURSEMENT {
+            get {
+                return this.T_OA_TRAVELREIMBURSEMENTField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_TRAVELREIMBURSEMENTField, value) != true)) {
+                    this.T_OA_TRAVELREIMBURSEMENTField = value;
+                    this.RaisePropertyChanged("T_OA_TRAVELREIMBURSEMENT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> UPDATEDATE {
+            get {
+                return this.UPDATEDATEField;
+            }
+            set {
+                if ((this.UPDATEDATEField.Equals(value) != true)) {
+                    this.UPDATEDATEField = value;
+                    this.RaisePropertyChanged("UPDATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UPDATEUSERID {
+            get {
+                return this.UPDATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UPDATEUSERIDField, value) != true)) {
+                    this.UPDATEUSERIDField = value;
+                    this.RaisePropertyChanged("UPDATEUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UPDATEUSERNAME {
+            get {
+                return this.UPDATEUSERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UPDATEUSERNAMEField, value) != true)) {
+                    this.UPDATEUSERNAMEField = value;
+                    this.RaisePropertyChanged("UPDATEUSERNAME");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_BUSINESSREPORTDETAIL", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    public partial class T_OA_BUSINESSREPORTDETAIL : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
+        
+        private string BUSINESSDAYSField;
+        
+        private string BUSINESSREPORTDETAILIDField;
+        
+        private string COMPANYCARField;
+        
+        private string DEPCITYField;
+        
+        private string DESTCITYField;
+        
+        private System.Nullable<System.DateTime> ENDDATEField;
+        
+        private string GOOUTTOMEETField;
+        
+        private string PRIVATEAFFAIRField;
+        
+        private System.Nullable<System.DateTime> STARTDATEField;
+        
+        private string TAKETHETOOLLEVELField;
+        
+        private string TYPEOFTRAVELTOOLSField;
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT T_OA_BUSINESSREPORTField;
+        
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw T_OA_BUSINESSREPORTReferenceField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BUSINESSDAYS {
+            get {
+                return this.BUSINESSDAYSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BUSINESSDAYSField, value) != true)) {
+                    this.BUSINESSDAYSField = value;
+                    this.RaisePropertyChanged("BUSINESSDAYS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BUSINESSREPORTDETAILID {
+            get {
+                return this.BUSINESSREPORTDETAILIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BUSINESSREPORTDETAILIDField, value) != true)) {
+                    this.BUSINESSREPORTDETAILIDField = value;
+                    this.RaisePropertyChanged("BUSINESSREPORTDETAILID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string COMPANYCAR {
+            get {
+                return this.COMPANYCARField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.COMPANYCARField, value) != true)) {
+                    this.COMPANYCARField = value;
+                    this.RaisePropertyChanged("COMPANYCAR");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DEPCITY {
+            get {
+                return this.DEPCITYField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DEPCITYField, value) != true)) {
+                    this.DEPCITYField = value;
+                    this.RaisePropertyChanged("DEPCITY");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESTCITY {
+            get {
+                return this.DESTCITYField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESTCITYField, value) != true)) {
+                    this.DESTCITYField = value;
+                    this.RaisePropertyChanged("DESTCITY");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> ENDDATE {
+            get {
+                return this.ENDDATEField;
+            }
+            set {
+                if ((this.ENDDATEField.Equals(value) != true)) {
+                    this.ENDDATEField = value;
+                    this.RaisePropertyChanged("ENDDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GOOUTTOMEET {
+            get {
+                return this.GOOUTTOMEETField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GOOUTTOMEETField, value) != true)) {
+                    this.GOOUTTOMEETField = value;
+                    this.RaisePropertyChanged("GOOUTTOMEET");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PRIVATEAFFAIR {
+            get {
+                return this.PRIVATEAFFAIRField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PRIVATEAFFAIRField, value) != true)) {
+                    this.PRIVATEAFFAIRField = value;
+                    this.RaisePropertyChanged("PRIVATEAFFAIR");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> STARTDATE {
+            get {
+                return this.STARTDATEField;
+            }
+            set {
+                if ((this.STARTDATEField.Equals(value) != true)) {
+                    this.STARTDATEField = value;
+                    this.RaisePropertyChanged("STARTDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TAKETHETOOLLEVEL {
+            get {
+                return this.TAKETHETOOLLEVELField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TAKETHETOOLLEVELField, value) != true)) {
+                    this.TAKETHETOOLLEVELField = value;
+                    this.RaisePropertyChanged("TAKETHETOOLLEVEL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TYPEOFTRAVELTOOLS {
+            get {
+                return this.TYPEOFTRAVELTOOLSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TYPEOFTRAVELTOOLSField, value) != true)) {
+                    this.TYPEOFTRAVELTOOLSField = value;
+                    this.RaisePropertyChanged("TYPEOFTRAVELTOOLS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT T_OA_BUSINESSREPORT {
+            get {
+                return this.T_OA_BUSINESSREPORTField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_BUSINESSREPORTField, value) != true)) {
+                    this.T_OA_BUSINESSREPORTField = value;
+                    this.RaisePropertyChanged("T_OA_BUSINESSREPORT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw T_OA_BUSINESSREPORTReference {
+            get {
+                return this.T_OA_BUSINESSREPORTReferenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_BUSINESSREPORTReferenceField, value) != true)) {
+                    this.T_OA_BUSINESSREPORTReferenceField = value;
+                    this.RaisePropertyChanged("T_OA_BUSINESSREPORTReference");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_BUSINESSTRIP", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_BUSINESSTRIP : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string ALTERDETAILATFERField;
@@ -699,6 +1300,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private string ISALTERTRAVEField;
         
+        private string ISCHARGEField;
+        
         private string ISFROMWPField;
         
         private string OWNERCOMPANYIDField;
@@ -726,6 +1329,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         private System.Nullable<System.DateTime> STARTDATEField;
         
         private string TELField;
+        
+        private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT> T_OA_BUSINESSREPORTField;
         
         private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL> T_OA_BUSINESSTRIPDETAILField;
         
@@ -985,6 +1590,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ISCHARGE {
+            get {
+                return this.ISCHARGEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ISCHARGEField, value) != true)) {
+                    this.ISCHARGEField = value;
+                    this.RaisePropertyChanged("ISCHARGE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string ISFROMWP {
             get {
                 return this.ISFROMWPField;
@@ -1167,6 +1785,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT> T_OA_BUSINESSREPORT {
+            get {
+                return this.T_OA_BUSINESSREPORTField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_OA_BUSINESSREPORTField, value) != true)) {
+                    this.T_OA_BUSINESSREPORTField = value;
+                    this.RaisePropertyChanged("T_OA_BUSINESSREPORT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL> T_OA_BUSINESSTRIPDETAIL {
             get {
                 return this.T_OA_BUSINESSTRIPDETAILField;
@@ -1234,7 +1865,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_BUSINESSTRIPDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_BUSINESSTRIPDETAIL", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_BUSINESSTRIPDETAIL : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string BUSINESSDAYSField;
@@ -1265,7 +1896,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP T_OA_BUSINESSTRIPField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk T_OA_BUSINESSTRIPReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw T_OA_BUSINESSTRIPReferenceField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string BUSINESSDAYS {
@@ -1450,7 +2081,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk T_OA_BUSINESSTRIPReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw T_OA_BUSINESSTRIPReference {
             get {
                 return this.T_OA_BUSINESSTRIPReferenceField;
             }
@@ -1465,7 +2096,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REIMBURSEMENTDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REIMBURSEMENTDETAIL", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_REIMBURSEMENTDETAIL : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private System.Nullable<decimal> ACCOMMODATIONField;
@@ -1473,6 +2104,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         private string BUSINESSDAYSField;
         
         private string COMPANYCARField;
+        
+        private string COMPUTINGTIMEField;
         
         private System.DateTime CREATEDATEField;
         
@@ -1512,7 +2145,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT T_OA_TRAVELREIMBURSEMENTField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk T_OA_TRAVELREIMBURSEMENTReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw T_OA_TRAVELREIMBURSEMENTReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -1553,6 +2186,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 if ((object.ReferenceEquals(this.COMPANYCARField, value) != true)) {
                     this.COMPANYCARField = value;
                     this.RaisePropertyChanged("COMPANYCAR");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string COMPUTINGTIME {
+            get {
+                return this.COMPUTINGTIMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.COMPUTINGTIMEField, value) != true)) {
+                    this.COMPUTINGTIMEField = value;
+                    this.RaisePropertyChanged("COMPUTINGTIME");
                 }
             }
         }
@@ -1805,7 +2451,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk T_OA_TRAVELREIMBURSEMENTReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw T_OA_TRAVELREIMBURSEMENTReference {
             get {
                 return this.T_OA_TRAVELREIMBURSEMENTReferenceField;
             }
@@ -1846,7 +2492,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_WORKRECORD", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_WORKRECORD", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_WORKRECORD : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CONTENTField;
@@ -2122,7 +2768,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_SATISFACTIONMASTER", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_SATISFACTIONMASTER", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_SATISFACTIONMASTER : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CHECKSTATEField;
@@ -2428,7 +3074,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_SATISFACTIONDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_SATISFACTIONDETAIL", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_SATISFACTIONDETAIL : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CONTENTField;
@@ -2463,7 +3109,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER T_OA_SATISFACTIONMASTERField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk T_OA_SATISFACTIONMASTERReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw T_OA_SATISFACTIONMASTERReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -2680,7 +3326,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk T_OA_SATISFACTIONMASTERReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw T_OA_SATISFACTIONMASTERReference {
             get {
                 return this.T_OA_SATISFACTIONMASTERReferenceField;
             }
@@ -2734,7 +3380,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_SATISFACTIONREQUIRE", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_SATISFACTIONREQUIRE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_SATISFACTIONREQUIRE : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string ANSWERGROUPIDField;
@@ -2779,7 +3425,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONMASTER T_OA_SATISFACTIONMASTERField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk T_OA_SATISFACTIONMASTERReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw T_OA_SATISFACTIONMASTERReferenceField;
         
         private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONRESULT> T_OA_SATISFACTIONRESULTField;
         
@@ -3065,7 +3711,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk T_OA_SATISFACTIONMASTERReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw T_OA_SATISFACTIONMASTERReference {
             get {
                 return this.T_OA_SATISFACTIONMASTERReferenceField;
             }
@@ -3145,7 +3791,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_SATISFACTIONDISTRIBUTE", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_SATISFACTIONDISTRIBUTE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_SATISFACTIONDISTRIBUTE : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string ANSWERIDField;
@@ -3184,7 +3830,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONREQUIRE T_OA_SATISFACTIONREQUIREField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk T_OA_SATISFACTIONREQUIREReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw T_OA_SATISFACTIONREQUIREReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -3427,7 +4073,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk T_OA_SATISFACTIONREQUIREReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw T_OA_SATISFACTIONREQUIREReference {
             get {
                 return this.T_OA_SATISFACTIONREQUIREReferenceField;
             }
@@ -3481,7 +4127,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_SATISFACTIONRESULT", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_SATISFACTIONRESULT", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_SATISFACTIONRESULT : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CONTENTField;
@@ -3516,7 +4162,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_SATISFACTIONREQUIRE T_OA_SATISFACTIONREQUIREField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk T_OA_SATISFACTIONREQUIREReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw T_OA_SATISFACTIONREQUIREReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -3733,7 +4379,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk T_OA_SATISFACTIONREQUIREReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw T_OA_SATISFACTIONREQUIREReference {
             get {
                 return this.T_OA_SATISFACTIONREQUIREReferenceField;
             }
@@ -3787,7 +4433,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_DISTRIBUTEUSER", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_DISTRIBUTEUSER", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_DISTRIBUTEUSER : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CREATECOMPANYIDField;
@@ -4093,7 +4739,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIREDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIREDETAIL", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_REQUIREDETAIL : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CODEField;
@@ -4384,7 +5030,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIRERESULT", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIRERESULT", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_REQUIRERESULT : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CODEField;
@@ -4423,9 +5069,9 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER T_OA_REQUIREMASTERField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk T_OA_REQUIREMASTERReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw T_OA_REQUIREMASTERReferenceField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk T_OA_REQUIREReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw T_OA_REQUIREReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -4668,7 +5314,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk T_OA_REQUIREMASTERReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw T_OA_REQUIREMASTERReference {
             get {
                 return this.T_OA_REQUIREMASTERReferenceField;
             }
@@ -4681,7 +5327,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk T_OA_REQUIREReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw T_OA_REQUIREReference {
             get {
                 return this.T_OA_REQUIREReferenceField;
             }
@@ -4735,7 +5381,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIRE", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIRE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_REQUIRE : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string APPTITLEField;
@@ -4778,7 +5424,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER T_OA_REQUIREMASTERField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk T_OA_REQUIREMASTERReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw T_OA_REQUIREMASTERReferenceField;
         
         private System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRERESULT> T_OA_REQUIRERESULTField;
         
@@ -5051,7 +5697,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk T_OA_REQUIREMASTERReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw T_OA_REQUIREMASTERReference {
             get {
                 return this.T_OA_REQUIREMASTERReferenceField;
             }
@@ -5131,7 +5777,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIREDISTRIBUTE", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIREDISTRIBUTE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_REQUIREDISTRIBUTE : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CHECKSTATEField;
@@ -5166,7 +5812,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIRE T_OA_REQUIREField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk T_OA_REQUIREReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw T_OA_REQUIREReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -5383,7 +6029,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk T_OA_REQUIREReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw T_OA_REQUIREReference {
             get {
                 return this.T_OA_REQUIREReferenceField;
             }
@@ -5437,7 +6083,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIREMASTER", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIREMASTER", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_REQUIREMASTER : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CHECKSTATEField;
@@ -5758,7 +6404,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIREDETAIL2", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_REQUIREDETAIL2", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_REQUIREDETAIL2 : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CONTENTField;
@@ -5793,7 +6439,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REQUIREMASTER T_OA_REQUIREMASTERField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk T_OA_REQUIREMASTERReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw T_OA_REQUIREMASTERReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -6010,7 +6656,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk T_OA_REQUIREMASTERReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw T_OA_REQUIREMASTERReference {
             get {
                 return this.T_OA_REQUIREMASTERReferenceField;
             }
@@ -6064,7 +6710,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_APPROVALINFO", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_APPROVALINFO", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_APPROVALINFO : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string APPROVALCODEField;
@@ -6505,7 +7151,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_APPROVALTYPESET", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_APPROVALTYPESET", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_APPROVALTYPESET : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CREATECOMPANYIDField;
@@ -6751,7 +7397,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_APPROVALINFOTEMPLET", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_APPROVALINFOTEMPLET", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_APPROVALINFOTEMPLET : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string APPROVALIDField;
@@ -7132,7 +7778,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_AREAALLOWANCE", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_AREAALLOWANCE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_AREAALLOWANCE : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private System.Nullable<decimal> ACCOMMODATIONField;
@@ -7157,15 +7803,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private string POSTLEVELField;
         
+        private System.Nullable<decimal> TRAFFICMEALALLOWANCEField;
+        
         private System.Nullable<decimal> TRANSPORTATIONSUBSIDIESField;
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREADIFFERENCE T_OA_AREADIFFERENCEField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk T_OA_AREADIFFERENCEReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw T_OA_AREADIFFERENCEReferenceField;
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS T_OA_TRAVELSOLUTIONSField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk T_OA_TRAVELSOLUTIONSReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw T_OA_TRAVELSOLUTIONSReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -7315,6 +7963,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> TRAFFICMEALALLOWANCE {
+            get {
+                return this.TRAFFICMEALALLOWANCEField;
+            }
+            set {
+                if ((this.TRAFFICMEALALLOWANCEField.Equals(value) != true)) {
+                    this.TRAFFICMEALALLOWANCEField = value;
+                    this.RaisePropertyChanged("TRAFFICMEALALLOWANCE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> TRANSPORTATIONSUBSIDIES {
             get {
                 return this.TRANSPORTATIONSUBSIDIESField;
@@ -7341,7 +8002,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk T_OA_AREADIFFERENCEReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw T_OA_AREADIFFERENCEReference {
             get {
                 return this.T_OA_AREADIFFERENCEReferenceField;
             }
@@ -7367,7 +8028,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk T_OA_TRAVELSOLUTIONSReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw T_OA_TRAVELSOLUTIONSReference {
             get {
                 return this.T_OA_TRAVELSOLUTIONSReferenceField;
             }
@@ -7408,7 +8069,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_AREADIFFERENCE", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_AREADIFFERENCE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_AREADIFFERENCE : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string AREACATEGORYField;
@@ -7443,7 +8104,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS T_OA_TRAVELSOLUTIONSField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk T_OA_TRAVELSOLUTIONSReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw T_OA_TRAVELSOLUTIONSReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -7660,7 +8321,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk T_OA_TRAVELSOLUTIONSReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw T_OA_TRAVELSOLUTIONSReference {
             get {
                 return this.T_OA_TRAVELSOLUTIONSReferenceField;
             }
@@ -7714,7 +8375,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_AREACITY", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_AREACITY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_AREACITY : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string AREACITYIDField;
@@ -7727,7 +8388,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_AREADIFFERENCE T_OA_AREADIFFERENCEField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk T_OA_AREADIFFERENCEReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw T_OA_AREADIFFERENCEReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -7799,7 +8460,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk T_OA_AREADIFFERENCEReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw T_OA_AREADIFFERENCEReference {
             get {
                 return this.T_OA_AREADIFFERENCEReferenceField;
             }
@@ -7840,7 +8501,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_TRAVELSOLUTIONS", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_TRAVELSOLUTIONS", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_TRAVELSOLUTIONS : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string ANDFROMTHATDAYField;
@@ -7856,6 +8517,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         private string CREATEUSERIDField;
         
         private string CREATEUSERNAMEField;
+        
+        private string CUSTOMDAYField;
         
         private string CUSTOMHALFDAYField;
         
@@ -7986,6 +8649,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 if ((object.ReferenceEquals(this.CREATEUSERNAMEField, value) != true)) {
                     this.CREATEUSERNAMEField = value;
                     this.RaisePropertyChanged("CREATEUSERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CUSTOMDAY {
+            get {
+                return this.CUSTOMDAYField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CUSTOMDAYField, value) != true)) {
+                    this.CUSTOMDAYField = value;
+                    this.RaisePropertyChanged("CUSTOMDAY");
                 }
             }
         }
@@ -8266,7 +8942,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_CANTAKETHEPLANELINE", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_CANTAKETHEPLANELINE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_CANTAKETHEPLANELINE : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CANTAKETHEPLANELINEIDField;
@@ -8285,7 +8961,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS T_OA_TRAVELSOLUTIONSField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk T_OA_TRAVELSOLUTIONSReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw T_OA_TRAVELSOLUTIONSReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -8396,7 +9072,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk T_OA_TRAVELSOLUTIONSReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw T_OA_TRAVELSOLUTIONSReference {
             get {
                 return this.T_OA_TRAVELSOLUTIONSReferenceField;
             }
@@ -8437,7 +9113,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_PROGRAMAPPLICATIONS", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_PROGRAMAPPLICATIONS", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_PROGRAMAPPLICATIONS : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string COMPANYIDField;
@@ -8458,7 +9134,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS T_OA_TRAVELSOLUTIONSField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk T_OA_TRAVELSOLUTIONSReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw T_OA_TRAVELSOLUTIONSReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -8582,7 +9258,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk T_OA_TRAVELSOLUTIONSReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw T_OA_TRAVELSOLUTIONSReference {
             get {
                 return this.T_OA_TRAVELSOLUTIONSReferenceField;
             }
@@ -8623,7 +9299,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_TAKETHESTANDARDTRANSPORT", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_TAKETHESTANDARDTRANSPORT", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_TAKETHESTANDARDTRANSPORT : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private System.DateTime CREATEDATEField;
@@ -8631,6 +9307,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         private string CREATEUSERIDField;
         
         private string ENDPOSTLEVELField;
+        
+        private System.Nullable<decimal> LANDTIMEField;
         
         private string OWNERCOMPANYIDField;
         
@@ -8640,6 +9318,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private string OWNERPOSTIDField;
         
+        private string STARTPOSTLEVELField;
+        
         private string TAKETHESTANDARDTRANSPORTIDField;
         
         private string TAKETHETOOLLEVELField;
@@ -8648,7 +9328,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELSOLUTIONS T_OA_TRAVELSOLUTIONSField;
         
-        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk T_OA_TRAVELSOLUTIONSReferenceField;
+        private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw T_OA_TRAVELSOLUTIONSReferenceField;
         
         private System.Nullable<System.DateTime> UPDATEDATEField;
         
@@ -8689,6 +9369,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 if ((object.ReferenceEquals(this.ENDPOSTLEVELField, value) != true)) {
                     this.ENDPOSTLEVELField = value;
                     this.RaisePropertyChanged("ENDPOSTLEVEL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> LANDTIME {
+            get {
+                return this.LANDTIMEField;
+            }
+            set {
+                if ((this.LANDTIMEField.Equals(value) != true)) {
+                    this.LANDTIMEField = value;
+                    this.RaisePropertyChanged("LANDTIME");
                 }
             }
         }
@@ -8746,6 +9439,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string STARTPOSTLEVEL {
+            get {
+                return this.STARTPOSTLEVELField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.STARTPOSTLEVELField, value) != true)) {
+                    this.STARTPOSTLEVELField = value;
+                    this.RaisePropertyChanged("STARTPOSTLEVEL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TAKETHESTANDARDTRANSPORTID {
             get {
                 return this.TAKETHESTANDARDTRANSPORTIDField;
@@ -8798,7 +9504,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk T_OA_TRAVELSOLUTIONSReference {
+        public SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw T_OA_TRAVELSOLUTIONSReference {
             get {
                 return this.T_OA_TRAVELSOLUTIONSReferenceField;
             }
@@ -8839,7 +9545,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_CALENDAR", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_CALENDAR", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_CALENDAR : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CALENDARIDField;
@@ -9145,7 +9851,7 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_ORDERMEAL", Namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_OA_ORDERMEAL", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
     public partial class T_OA_ORDERMEAL : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject {
         
         private string CONTENTField;
@@ -9553,16 +10259,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<object>))]
@@ -9574,7 +10281,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -12228,6 +12939,8 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         
         private string APPROVALTYPENAMEField;
         
+        private string ApprovalTypeIDField;
+        
         private string COMPANYIDField;
         
         private string COMPANYNAMEField;
@@ -12268,6 +12981,19 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
                 if ((object.ReferenceEquals(this.APPROVALTYPENAMEField, value) != true)) {
                     this.APPROVALTYPENAMEField = value;
                     this.RaisePropertyChanged("APPROVALTYPENAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ApprovalTypeID {
+            get {
+                return this.ApprovalTypeIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ApprovalTypeIDField, value) != true)) {
+                    this.ApprovalTypeIDField = value;
+                    this.RaisePropertyChanged("ApprovalTypeID");
                 }
             }
         }
@@ -12506,21 +13232,22 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
-    public partial class EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    public partial class EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EntityReference", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
     public partial class EntityReference : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd {
         
         private SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey EntityKeyField;
@@ -12543,14 +13270,15 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="RelatedEnd", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
     public partial class RelatedEnd : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -12565,44 +13293,50 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
-    public partial class EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    public partial class EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
-    public partial class EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    public partial class EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
-    public partial class EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    public partial class EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_REQUIREUlJdEHjk", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
-    public partial class EntityReferenceOfT_OA_REQUIREUlJdEHjk : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    public partial class EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
-    public partial class EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_REQUIRENb42Hbcw", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    public partial class EntityReferenceOfT_OA_REQUIRENb42Hbcw : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
-    public partial class EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    public partial class EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
-    public partial class EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    public partial class EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    public partial class EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw : SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -12796,16 +13530,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -12818,7 +13553,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -12917,16 +13656,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -12939,7 +13679,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -13103,16 +13847,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -13125,7 +13870,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -13224,16 +13973,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -13246,7 +13996,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -13415,16 +14169,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -13437,7 +14192,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -13541,16 +14300,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -13563,7 +14323,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -13687,16 +14451,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -13709,7 +14474,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -13808,16 +14577,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -13830,7 +14600,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -13929,16 +14703,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -13951,7 +14726,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -14070,16 +14849,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -14092,7 +14872,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -14266,16 +15050,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -14288,7 +15073,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -14417,16 +15206,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -14439,7 +15229,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -14548,16 +15342,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -14570,7 +15365,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -14674,16 +15473,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -14696,7 +15496,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -14835,16 +15639,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -14857,7 +15662,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -14956,16 +15765,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -14978,7 +15788,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -15077,16 +15891,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -15099,7 +15914,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -15223,16 +16042,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -15245,7 +16065,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -15504,16 +16328,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -15526,7 +16351,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -15680,16 +16509,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -15702,7 +16532,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -15826,16 +16660,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -15848,7 +16683,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -15947,16 +16786,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -15969,7 +16809,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -16128,16 +16972,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -16150,7 +16995,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -16389,16 +17238,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -16411,7 +17261,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -16560,16 +17414,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -16582,7 +17437,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -16701,16 +17560,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -16723,7 +17583,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]
@@ -16867,16 +17731,17 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.V_SystemNotice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityObject))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.StructuralObject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSREPORTNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReference))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.RelatedEnd))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCEUlJdEHjk))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSUlJdEHjk))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_BUSINESSTRIPNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELREIMBURSEMENTNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_SATISFACTIONREQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIRENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_REQUIREMASTERNb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_AREADIFFERENCENb42Hbcw))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityReferenceOfT_OA_TRAVELSOLUTIONSNb42Hbcw))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKey))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.EntityKeyMember))]
@@ -16889,7 +17754,11 @@ namespace SMT.SaaS.OA.UI.SmtOAPersonOfficeService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_ORDERMEAL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_TRAVELREIMBURSEMENT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORTDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIP))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSREPORT>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_BUSINESSTRIPDETAIL))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<SMT.SaaS.OA.UI.SmtOAPersonOfficeService.T_OA_REIMBURSEMENTDETAIL>))]

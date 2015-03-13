@@ -8,7 +8,7 @@ using System.Text;
 using SMT.Foundation.Log;
 using SMT.SaaS.BLLCommonServices.EngineConfigWS;
 using SMT.SaaS.OA.DAL.Views;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 
 namespace SMT.SaaS.OA.BLL
 {

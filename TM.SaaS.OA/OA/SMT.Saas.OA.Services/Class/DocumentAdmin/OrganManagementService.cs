@@ -6,7 +6,7 @@ using System.ServiceModel.Activation;
 using System.Collections.Generic;
 using System.Text;
 
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.BLL;
 //using SMT.SaaS.OA.Services.FlowService;
 using SMT.SaaS.BLLCommonServices.FlowWFService;
@@ -54,7 +54,7 @@ namespace SMT.SaaS.OA.Services
                 }
                 else   //获取审批列表
                 {
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "Organization", loginUserInfo.companyID, loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "Organization", loginUserInfo.companyID, loginUserInfo.userID);
                     if (flowList == null)
                     {
                         return null;
@@ -177,7 +177,7 @@ namespace SMT.SaaS.OA.Services
 
         //提交审核
         //[OperationContract]
-        //public int SubmitFlow(T_OA_ORGANIZATION organObj, FLOW_FLOWRECORDDETAIL_T flowRecordInfo, string toUserId)
+        //public int SubmitFlow(T_OA_ORGANIZATION organObj, SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowRecordInfo, string toUserId)
         //{
         //    //if (workFlowWS.StartFlow(flowRecordInfo, "", toUserId, "Add") == "OK")
         //    //{
@@ -300,7 +300,7 @@ namespace SMT.SaaS.OA.Services
                 }
                 else
                 {
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "licenseBorrow", loginUserInfo.companyID, loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "licenseBorrow", loginUserInfo.companyID, loginUserInfo.userID);
                     if (flowList == null)
                     {
                         return null;
@@ -419,7 +419,7 @@ namespace SMT.SaaS.OA.Services
         /// <param name="toUserId"></param>
         /// <returns></returns>
         //[OperationContract]
-        //public int LicenseBorrowSubmitFlow(T_OA_LICENSEUSER licenseObj, FLOW_FLOWRECORDDETAIL_T flowRecordInfo, string toUserId)
+        //public int LicenseBorrowSubmitFlow(T_OA_LICENSEUSER licenseObj, SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowRecordInfo, string toUserId)
         //{
         //    if (workFlowWS.StartFlow(flowRecordInfo, "", toUserId, "Add") == "OK")
         //    {

@@ -6,7 +6,7 @@ using System.ServiceModel.Activation;
 using System.Collections.Generic;
 using System.Text;
 
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.BLL;
 using SMT.SaaS.BLLCommonServices.FlowWFService;
 using SMT.SaaS.OA.DAL.Views;
@@ -682,8 +682,8 @@ namespace SMT.SaaS.OA.Services
                     {
                         ServiceClient workFlowWS = new ServiceClient();
                         V_BumfCompanySendDoc a = new V_BumfCompanySendDoc();
-                        FLOW_FLOWRECORDDETAIL_T flowInfo = new FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
-                        FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "T_OA_SENDDOC", loginUserInfo.companyID, loginUserInfo.userID);
+                        SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowInfo = new SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
+                        SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "T_OA_SENDDOC", loginUserInfo.companyID, loginUserInfo.userID);
                         if (flowList == null)
                         {
                             return null;
@@ -739,8 +739,8 @@ namespace SMT.SaaS.OA.Services
                     {
                         ServiceClient workFlowWS = new ServiceClient();
                         V_BumfCompanySendDoc a = new V_BumfCompanySendDoc();
-                        FLOW_FLOWRECORDDETAIL_T flowInfo = new FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
-                        FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "T_OA_SENDDOC", loginUserInfo.companyID, loginUserInfo.userID);
+                        SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowInfo = new SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
+                        SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "T_OA_SENDDOC", loginUserInfo.companyID, loginUserInfo.userID);
                         if (flowList == null)
                         {
                             return null;
@@ -823,7 +823,7 @@ namespace SMT.SaaS.OA.Services
         #region 流程
 
         [OperationContract]
-        public int SubmitCompanyDocFlow(T_OA_SENDDOC obj, FLOW_FLOWRECORDDETAIL_T flowRecordInfo, string toUserId)
+        public int SubmitCompanyDocFlow(T_OA_SENDDOC obj, SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowRecordInfo, string toUserId)
         {
             using (BumfCompanySendDocManagementBll SendDocBll = new BumfCompanySendDocManagementBll())
             {
@@ -857,7 +857,7 @@ namespace SMT.SaaS.OA.Services
 
 
 
-        private List<string> GetGuidList(FLOW_FLOWRECORDDETAIL_T[] flowList)
+        private List<string> GetGuidList(SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList)
         {
             List<string> guidStringList = new List<string>();
             

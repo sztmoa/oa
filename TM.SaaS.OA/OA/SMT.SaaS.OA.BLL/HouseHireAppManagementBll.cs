@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using SMT.Foundation.Log;
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.DAL.Views;
 using System.Linq.Dynamic;
 
@@ -12,7 +12,7 @@ namespace SMT.SaaS.OA.BLL
 {
     public class HouseHireAppManagementBll : BaseBll<T_OA_HIREAPP>
     {
-        //private SMT_OA_EFModelContext hireAppContext = new SMT_OA_EFModelContext();
+        //private TM_SaaS_OA_EFModelContext hireAppContext = new TM_SaaS_OA_EFModelContext();
 
         public IQueryable<T_OA_HIREAPP> GetHireAppQueryWithPaging(int pageIndex, int pageSize, string sort, string filterString, IList<object> paras, ref int pageCount, List<V_FlowAPP> flowInfoList, string checkState, string userID)
         {
@@ -274,7 +274,7 @@ namespace SMT.SaaS.OA.BLL
                               select k;
                 if (listhouse.Count() > 0)
                 {
-                    if (listhouse.FirstOrDefault().Number == listapp.Count())
+                    if (listhouse.Count() == listapp.Count())
                     {
                         return true;
                     }
@@ -338,7 +338,7 @@ namespace SMT.SaaS.OA.BLL
             
             try
             {               
-                hireAppObj.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_HIREAPP", "HIREAPPID", hireAppObj.HIREAPPID);
+                hireAppObj.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_HIREAPP", "HIREAPPID", hireAppObj.HIREAPPID);
                 T_OA_HIREAPP tmp = dal.GetObjectByEntityKey(hireAppObj.EntityKey) as T_OA_HIREAPP;
                 //DataContext.ApplyPropertyChanges(hireAppObj.EntityKey.EntitySetName, hireAppObj);
                 int i = dal.Update(hireAppObj);

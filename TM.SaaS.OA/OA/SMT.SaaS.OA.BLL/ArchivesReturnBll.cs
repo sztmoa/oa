@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.DAL.Views;
 using System.Linq.Dynamic;
 
@@ -12,7 +12,7 @@ namespace SMT.SaaS.OA.BLL
 {
     public class ArchivesReturnBll : BaseBll<T_OA_LENDARCHIVES>
     {
-        //private SMT_OA_EFModelContext archivesContext = new SMT_OA_EFModelContext();
+        //private TM_SaaS_OA_EFModelContext archivesContext = new TM_SaaS_OA_EFModelContext();
         //private ArchivesLendingDal archivesLendingDal = new ArchivesLendingDal();
         //private ArchivesManagementDal archivesDal = new ArchivesManagementDal();
         /// <summary>

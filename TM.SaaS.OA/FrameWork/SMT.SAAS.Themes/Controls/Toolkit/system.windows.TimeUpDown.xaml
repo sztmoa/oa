@@ -129,7 +129,7 @@
         </Setter>
     </Style>
     <!--NumericUpDown-->
-    <Style TargetType="inputToolkit:NumericUpDown" x:Key="NumericUpDownStyle">
+    <!--<Style TargetType="inputToolkit:NumericUpDown" x:Key="NumericUpDownStyle">
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="FontSize" Value="11"/>
         <Setter Property="Padding" Value="2,3,2,3"/>
@@ -251,7 +251,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
+    </Style>-->
     <!--TimeUpDownStyle-->
     <Style x:Key="TimeUpDownStyle" TargetType="inputToolkit:TimeUpDown">
         <Setter Property="BorderThickness" Value="1"/>

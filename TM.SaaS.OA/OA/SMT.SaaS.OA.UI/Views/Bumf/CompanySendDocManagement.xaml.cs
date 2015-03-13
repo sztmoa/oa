@@ -42,7 +42,7 @@ namespace SMT.SaaS.OA.UI.Views.Bumf
         SMT.SaaS.FrameworkUI.AuditControl.AuditControl audit = new SMT.SaaS.FrameworkUI.AuditControl.AuditControl();
 
         private SMTLoading loadbar = new SMTLoading();
-        private T_SYS_ENTITYMENUCUSTOMPERM customerPermission;
+        private SMT.Saas.Tools.PermissionWS.T_SYS_ENTITYMENUCUSTOMPERM customerPermission;
         private V_BumfCompanySendDoc companysenddoc;
         private string SearchUserID=""; //当前登陆人ID
         public V_BumfCompanySendDoc Companysenddoc
@@ -101,7 +101,7 @@ namespace SMT.SaaS.OA.UI.Views.Bumf
             {
                 if (e.Result != null)
                 {
-                    customerPermission = new T_SYS_ENTITYMENUCUSTOMPERM();
+                    customerPermission = new SMT.Saas.Tools.PermissionWS.T_SYS_ENTITYMENUCUSTOMPERM();
                     customerPermission = e.Result;
 
                 }

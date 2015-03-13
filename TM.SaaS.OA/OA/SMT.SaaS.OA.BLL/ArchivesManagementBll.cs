@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 
 
 namespace SMT.SaaS.OA.BLL
@@ -12,7 +12,7 @@ namespace SMT.SaaS.OA.BLL
     public class ArchivesManagementBll : BaseBll<T_OA_ARCHIVES>
     {
         //private ArchivesManagementDal archivesDal = new ArchivesManagementDal();
-        //private SMT_OA_EFModelContext archivesContext = new SMT_OA_EFModelContext();
+        //private TM_SaaS_OA_EFModelContext archivesContext = new TM_SaaS_OA_EFModelContext();
         /// <summary>
         /// //获取所有的档案信息
         /// </summary>

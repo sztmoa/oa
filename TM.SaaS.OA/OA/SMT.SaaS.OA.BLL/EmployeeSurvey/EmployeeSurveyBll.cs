@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.Foundation.Log;
 using SMT.SaaS.OA.DAL.Views;
 using System.Data.Objects;
@@ -77,7 +77,7 @@ namespace SMT.SaaS.OA.BLL
                         {
                             Dictionary<string, object> dictonary = new Dictionary<string, object>() { { "REQUIREMASTERID", key.REQUIREMASTERID }, { "SUBJECTID", key.SUBJECTID } };
                             //联合主键(题号和方案号),传递字典集合
-                            key.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_REQUIREDETAIL2", dictonary);
+                            key.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_REQUIREDETAIL2", dictonary);
                             if (key.T_OA_REQUIREMASTERReference == null)
                             {
                                 key.T_OA_REQUIREMASTERReference.EntityKey = Utility.AddEntityKey("T_OA_REQUIREMASTER", "REQUIREMASTERID", _masterKey);

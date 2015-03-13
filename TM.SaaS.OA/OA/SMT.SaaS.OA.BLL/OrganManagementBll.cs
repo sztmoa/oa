@@ -5,7 +5,7 @@ using System.Text;
 
 using SMT.SaaS.OA.DAL;
 using SMT.SaaS.OA.DAL.Views;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects;
 using System.Linq.Dynamic;
 using SMT.SaaS.BLLCommonServices.FBServiceWS;
@@ -96,7 +96,7 @@ namespace SMT.SaaS.OA.BLL
                     CloneEntity(h, ent);
 
                     ent.T_OA_ORGANIZATION = null;
-                    ent.T_OA_ORGANIZATIONReference.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_ORGANIZATION", "ORGCODE", h.T_OA_ORGANIZATION.ORGCODE);
+                    ent.T_OA_ORGANIZATIONReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_ORGANIZATION", "ORGCODE", h.T_OA_ORGANIZATION.ORGCODE);
                     //h.T_OA_ORGANIZATION = OrganContext.GetObjectByKey(h.T_OA_ORGANIZATION.EntityKey) as T_OA_ORGANIZATION;                   
                     //OrganContext.AddObject("T_OA_LICENSEMASTER", ent);
                     //LicenseManagementBll.Add(ent);

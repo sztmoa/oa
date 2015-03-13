@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects;
 using System.Linq.Dynamic;
 using SMT.Foundation.Log;
@@ -15,7 +15,7 @@ namespace SMT.SaaS.OA.BLL
     /// </summary>
     public class VehicleDispatchManageBll : BaseBll<T_OA_VEHICLEDISPATCH>
     {
-        //private SMT_OA_EFModelContext BenefitsAdministration = new SMT_OA_EFModelContext();
+        //private TM_SaaS_OA_EFModelContext BenefitsAdministration = new TM_SaaS_OA_EFModelContext();
         //private VehicleDispatchManageDal VehicleDispatch = new VehicleDispatchManageDal();
         #region 派车管理
 
@@ -351,7 +351,7 @@ namespace SMT.SaaS.OA.BLL
                     d.ROUTE = info.ROUTE;
                     d.TEL = info.TEL;
                     d.FUEL = info.FUEL;
-                    d.RANGE = info.RANGE;
+                    //d.RANGE = info.RANGE;
                     d.CONTENT = info.CONTENT;
                     d.CHARGEMONEY = info.CHARGEMONEY;
                     d.ISCHARGE = info.ISCHARGE;

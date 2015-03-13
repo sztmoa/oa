@@ -152,7 +152,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             r.TEL = txtTel.Text;
             r.ROUTE = txtRoute.Text;
             r.FUEL = decimal.Parse(txtFuel.Text);
-            r.RANGE = decimal.Parse(txtRange2.Text);
+            r.RANGE = txtRange2.Text;
             r.ISCHARGE = (bool)ckbHasFee.IsChecked ? "1" : "0";
             r.CONTENT = txtREMARK.Text;
             r.CHARGEMONEY = decimal.Parse(txtFee.Text);
@@ -466,7 +466,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                         r.TEL = info.T_OA_VEHICLEDISPATCH.TEL;
 
                         r.FUEL = decimal.Parse("0.00");
-                        r.RANGE = decimal.Parse("0.00");
+                        r.RANGE = "0.00";
                         r.CONTENT = "";
                         //r.ISCHARGE = ckbHasFee.IsChecked == true ? "1" : "0";
                         //r.CHARGEMONEY = txtFee.Text == "" ? decimal.Parse("0.00") : decimal.Parse(txtFee.Text);

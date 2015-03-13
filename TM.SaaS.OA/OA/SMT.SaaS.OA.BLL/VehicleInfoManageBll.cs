@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects;
 using System.Net;
 using System.Linq.Dynamic;
@@ -14,7 +14,7 @@ namespace SMT.SaaS.OA.BLL
 {
     public class VehicleInfoManageBll : BaseBll<T_OA_VEHICLE>
     {
-        //private SMT_OA_EFModelContext vehicleContext = new SMT_OA_EFModelContext();
+        //private TM_SaaS_OA_EFModelContext vehicleContext = new TM_SaaS_OA_EFModelContext();
 
         SMT.SaaS.BLLCommonServices.Utility UtilityClass = new SMT.SaaS.BLLCommonServices.Utility();
         public IQueryable<T_OA_VEHICLE> GetVehicleInfoList(int pageIndex, int pageSize, string sort, string filterString, object[] paras, ref int pageCount, string userID)
@@ -220,7 +220,7 @@ namespace SMT.SaaS.OA.BLL
             }
             foreach (T_OA_VEHICLECARD info in vddList)
             {
-                info.T_OA_VEHICLE.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_VEHICLE", "ASSETID", info.T_OA_VEHICLE.ASSETID);
+                info.T_OA_VEHICLE.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_VEHICLE", "ASSETID", info.T_OA_VEHICLE.ASSETID);
                 info.T_OA_VEHICLE = dal.GetObjectByEntityKey(info.T_OA_VEHICLE.EntityKey) as T_OA_VEHICLE;
                 dal.AddToContext(info);
 
@@ -246,7 +246,7 @@ namespace SMT.SaaS.OA.BLL
             {
                 foreach (T_OA_VEHICLECARD obj in vddList)
                 {
-                    obj.T_OA_VEHICLE.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_VEHICLE", "ASSETID", obj.T_OA_VEHICLE.ASSETID);
+                    obj.T_OA_VEHICLE.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_VEHICLE", "ASSETID", obj.T_OA_VEHICLE.ASSETID);
                     obj.T_OA_VEHICLE = dal.GetObjectByEntityKey(obj.T_OA_VEHICLE.EntityKey) as T_OA_VEHICLE;
                     dal.AddToContext(obj);
                 }

@@ -208,7 +208,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             vehicleDispatchRecord.TEL = txtTel.Text;
             vehicleDispatchRecord.ROUTE = txtRoute.Text;
             vehicleDispatchRecord.FUEL = decimal.Parse(txtFuel.Text);
-            vehicleDispatchRecord.RANGE = decimal.Parse(txtRange2.Text);
+            vehicleDispatchRecord.RANGE = txtRange2.Text;
             vehicleDispatchRecord.ISCHARGE = (bool)ckbHasFee.IsChecked ? "1" : "0";
             vehicleDispatchRecord.CHARGEMONEY = decimal.Parse(txtFee.Text);
             vehicleDispatchRecord.CONTENT = txtREMARK.Text;

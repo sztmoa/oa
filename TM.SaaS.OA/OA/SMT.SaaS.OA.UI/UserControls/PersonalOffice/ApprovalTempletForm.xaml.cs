@@ -20,7 +20,6 @@ using SMT.SaaS.FrameworkUI.ChildWidow;
 using SMT.SAAS.ClientServices;
 using SMT.SAAS.ClientUtility;
 using SMT.SaaS.PublicControls;
-using Telerik.Windows.Documents.FormatProviders.Pdf;
 using SMT.SaaS.MobileXml;
 using SMT.Saas.Tools.PublicInterfaceWS;
 using SMT.SAAS.Platform.Logging;

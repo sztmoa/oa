@@ -5,7 +5,7 @@ using System.Text;
 using System.Linq.Dynamic;
 using System.Reflection;
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.DAL.Views;
 using SMT.Foundation.Log;
 using Enyim.Caching;
@@ -1947,7 +1947,7 @@ namespace SMT.SaaS.OA.BLL
         {
             try
             {
-                //SMT_OA_EFModel.SMT_OA_EFModelContext context = dal.lbc.GetDataContext() as SMT_OA_EFModel.SMT_OA_EFModelContext;
+                //TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext context = dal.lbc.GetDataContext() as TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext;
 
                 
 
@@ -2048,7 +2048,7 @@ namespace SMT.SaaS.OA.BLL
             string checkState, string userID,ref int recordsTotal)
         {
             try            {
-                //SMT_OA_EFModel.SMT_OA_EFModelContext context = dal.lbc.GetDataContext() as SMT_OA_EFModel.SMT_OA_EFModelContext;
+                //TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext context = dal.lbc.GetDataContext() as TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext;
 
 
 
@@ -2146,7 +2146,7 @@ namespace SMT.SaaS.OA.BLL
         {
             try
             {
-                //SMT_OA_EFModel.SMT_OA_EFModelContext context = dal.lbc.GetDataContext() as SMT_OA_EFModel.SMT_OA_EFModelContext;
+                //TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext context = dal.lbc.GetDataContext() as TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext;
 
                 //为空时默认
                 DateTime dt = DateTime.Parse("2011-01-01");
@@ -2205,7 +2205,7 @@ namespace SMT.SaaS.OA.BLL
         {
             try
             {
-                //SMT_OA_EFModel.SMT_OA_EFModelContext context = dal.lbc.GetDataContext() as SMT_OA_EFModel.SMT_OA_EFModelContext;
+                //TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext context = dal.lbc.GetDataContext() as TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext;
 
                 //为空时默认
                 DateTime dt = DateTime.Parse("2011-01-01");

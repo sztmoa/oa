@@ -566,7 +566,7 @@ namespace SMT.SaaS.FrameworkUI
                     //9是撤单状态
                     if ((state == Convert.ToInt32(CheckStates.UnSubmit).ToString() || state == "9") && (FormType == FormTypes.Edit || FormType == FormTypes.Audit) || FormType == FormTypes.Resubmit)
                     {
-                        if (ShowSubmitButtonWhenUnSubmit) return;
+                        //if (ShowSubmitButtonWhenUnSubmit) return;
                         //提交审核
                         //BtnSaveSubmit = new ImageButton();
                         BtnSaveSubmit.TextBlock.Text = UIHelper.GetResourceStr("SUBMITAUDIT");

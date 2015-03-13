@@ -7,7 +7,7 @@ using System.Globalization;
 using Smt.Global.IContract;
 using System.Xml.Linq;
 using System.IO;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using EngineWS = SMT.SaaS.BLLCommonServices.EngineConfigWS;
 using EmployeeWS = SMT.SaaS.BLLCommonServices.PersonnelWS;
 using CityName = SMT.SaaS.BLLCommonServices.PermissionWS;
@@ -335,7 +335,7 @@ namespace SMT.SaaS.OA.Services
                         }
                     }
 
-                    T_WF_TIMINGTRIGGERACTIVITY triggerEntity = new T_WF_TIMINGTRIGGERACTIVITY();
+                    SMT.SaaS.BLLCommonServices.EngineConfigWS.T_WF_TIMINGTRIGGERACTIVITY triggerEntity = new SMT.SaaS.BLLCommonServices.EngineConfigWS.T_WF_TIMINGTRIGGERACTIVITY();
                     triggerEntity.TRIGGERID = Guid.NewGuid().ToString();
                     triggerEntity.BUSINESSID = strBusinesStripId;
                     triggerEntity.TRIGGERNAME = strBusinesStripId;
@@ -1418,7 +1418,7 @@ namespace SMT.SaaS.OA.Services
             try
             {
                 CityName.PermissionServiceClient PS = new PermissionServiceClient();
-                List<T_SYS_DICTIONARY> ListDnary = PS.GetSysDictionaryByCategory("CITY").ToList();
+                List<SMT.SaaS.BLLCommonServices.PermissionWS.T_SYS_DICTIONARY> ListDnary = PS.GetSysDictionaryByCategory("CITY").ToList();
                 var ents = from a in ListDnary
                            where a.DICTIONARYVALUE == Convert.ToDecimal(cityvalue)
                            select new

@@ -259,7 +259,11 @@ namespace SMT.SaaS.FrameworkUI.FBControls
             }
             else
             {
-                ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), e.Error.Message.ToString(), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
+                List<string> messages = new List<string>();
+                //ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), e.Error.Message.ToString(), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
+                string msg = e.Error.Message.ToString();
+                messages.Add(msg);
+                InitDataComplete(this, new InitDataCompletedArgs(messages));
                 return;
             }
 

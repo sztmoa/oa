@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.SaaS.OA.DAL.Views;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.DAL;
 using System.Linq.Dynamic;
 using SMT.Foundation.Log;
@@ -237,7 +237,7 @@ namespace SMT.SaaS.OA.BLL
             try
             {
                 if (requireMasterInfo.EntityKey == null)
-                    requireMasterInfo.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_REQUIREMASTER", "SATISFACTIONMASTERID", requireMasterInfo.SATISFACTIONMASTERID);
+                    requireMasterInfo.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_REQUIREMASTER", "SATISFACTIONMASTERID", requireMasterInfo.SATISFACTIONMASTERID);
                 T_OA_SATISFACTIONMASTER tmpobj = dal.GetObjectByEntityKey(requireMasterInfo.EntityKey) as T_OA_SATISFACTIONMASTER;
                 n = Update(requireMasterInfo);
                 //n = SaveContextChanges();

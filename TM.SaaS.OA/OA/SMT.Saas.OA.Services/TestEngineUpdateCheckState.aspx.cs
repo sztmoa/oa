@@ -47,18 +47,18 @@ namespace SMT.SaaS.OA.Services
         private void Test()
         {
             SMT.SaaS.OA.Services.SmtOAPersonOffice sopo = new SmtOAPersonOffice();
-            SMT_OA_EFModel.T_OA_BUSINESSTRIP tob = new SMT_OA_EFModel.T_OA_BUSINESSTRIP();
+            TM_SaaS_OA_EFModel.T_OA_BUSINESSTRIP tob = new TM_SaaS_OA_EFModel.T_OA_BUSINESSTRIP();
             tob = sopo.GetTravelmanagementById("c4d642b3-f02e-48cd-8e43-7460cb775ebb");
             tob.BUSINESSTRIPID = System.Guid.NewGuid().ToString();
 
-            SMT_OA_EFModel.T_OA_BUSINESSTRIPDETAIL bd = new SMT_OA_EFModel.T_OA_BUSINESSTRIPDETAIL();
+            TM_SaaS_OA_EFModel.T_OA_BUSINESSTRIPDETAIL bd = new TM_SaaS_OA_EFModel.T_OA_BUSINESSTRIPDETAIL();
             bd.BUSINESSTRIPDETAILID = System.Guid.NewGuid().ToString();
             bd.T_OA_BUSINESSTRIP = tob;
             bd.T_OA_BUSINESSTRIP.BUSINESSTRIPID = tob.BUSINESSTRIPID;
             bd.DEPCITY = "0";
             bd.DESTCITY = "7";
             tob.T_OA_BUSINESSTRIPDETAIL.Add(bd);
-            List<SMT_OA_EFModel.T_OA_BUSINESSTRIPDETAIL> bdlist = new List<SMT_OA_EFModel.T_OA_BUSINESSTRIPDETAIL>();
+            List<TM_SaaS_OA_EFModel.T_OA_BUSINESSTRIPDETAIL> bdlist = new List<TM_SaaS_OA_EFModel.T_OA_BUSINESSTRIPDETAIL>();
             //bdlist.Add(bd);
             
             sopo.TravelmanagementAdd(tob,bdlist);

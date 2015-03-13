@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.DAL.Views;
 using System.Linq.Dynamic;
 using organClient=SMT.SaaS.BLLCommonServices.OrganizationWS;
@@ -176,7 +176,7 @@ namespace SMT.SaaS.OA.BLL
         public IQueryable<V_HouseHirer> HirerQueryWithPaging(int pageIndex, int pageSize, string sort, string filterString, IList<object> paras, ref int pageCount)
         {
 
-            //SMT_OA_EFModelContext context = new SMT_OA_EFModelContext();
+            //TM_SaaS_OA_EFModelContext context = new TM_SaaS_OA_EFModelContext();
             try
             {
                 string checkState = ((int)CheckStates.Approved).ToString();

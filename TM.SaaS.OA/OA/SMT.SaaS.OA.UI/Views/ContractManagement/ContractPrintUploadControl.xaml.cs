@@ -28,7 +28,6 @@ using SMT.Saas.Tools.PersonnelWS;
 using SMT.SAAS.CommonReportsModel;
 using SMT.SAAS.Application;
 using SMT.SaaS.FrameworkUI.ChildWidow;
-
 namespace SMT.SaaS.OA.UI.Views.ContractManagement
 {
     public partial class ContractPrintUploadControl : BaseForm, IClient, IEntityEditor, ICPOperate, IPrintPage<T_OA_CONTRACTAPP>

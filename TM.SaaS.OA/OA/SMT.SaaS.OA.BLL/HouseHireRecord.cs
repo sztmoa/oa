@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using SMT.Foundation.Log;
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.DAL.Views;
 using System.Linq.Dynamic;
 
@@ -13,7 +13,7 @@ namespace SMT.SaaS.OA.BLL
     #region 租房记录费用
     public class HouseHireRecord : BaseBll<T_OA_HIRERECORD>
     {
-        //private SMT_OA_EFModelContext hireRecordContext = new SMT_OA_EFModelContext();
+        //private TM_SaaS_OA_EFModelContext hireRecordContext = new TM_SaaS_OA_EFModelContext();
 
 
 

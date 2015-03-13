@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using SMT.SaaS.BLLCommonServices.PersonnelWS;
 using SMT.SaaS.OA.BLL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.Foundation.Log;
 using System.Configuration;
 
@@ -16,7 +16,7 @@ namespace SMT.SaaS.OA.Services
     public class AgentServices
     {
         [OperationContract]
-        public T_HR_EMPLOYEE GetQueryAgent(string UserId, string ModCode)
+        public SMT.SaaS.BLLCommonServices.PersonnelWS.T_HR_EMPLOYEE GetQueryAgent(string UserId, string ModCode)
         {
             ProxySettingsBLL psbll = new ProxySettingsBLL();
             PersonnelServiceClient psc = new PersonnelServiceClient();
@@ -25,18 +25,18 @@ namespace SMT.SaaS.OA.Services
             {
                 T_OA_AGENTSET AgentList = psbll.GetQueryAgent(UserId, ModCode);
 
-                T_HR_EMPLOYEE employee = null;
+                SMT.SaaS.BLLCommonServices.PersonnelWS.T_HR_EMPLOYEE employee = null;
 
                 if (AgentList != null)
                 {
-                    T_HR_EMPLOYEEPOST[] tmps = psc.GetEmployeePostByPostID(AgentList.AGENTPOSTID);
+                    SMT.SaaS.BLLCommonServices.PersonnelWS.T_HR_EMPLOYEEPOST[] tmps = psc.GetEmployeePostByPostID(AgentList.AGENTPOSTID);
                     if (tmps != null && tmps.Count() > 0)
                     {
                         employee = tmps[0].T_HR_EMPLOYEE;
                     }
                     else
                     {
-                        T_HR_EMPLOYEE[] tmp = psc.GetEmployeeLeader(UserId, 0);
+                        SMT.SaaS.BLLCommonServices.PersonnelWS.T_HR_EMPLOYEE[] tmp = psc.GetEmployeeLeader(UserId, 0);
                         if (tmp != null && tmp.Count() > 0)
                         {
                             employee = tmp[0];//返回该岗位员工的直接上级
@@ -45,7 +45,7 @@ namespace SMT.SaaS.OA.Services
                 }
                 else
                 {
-                    T_HR_EMPLOYEE[] tmp = psc.GetEmployeeLeader(UserId, 0);
+                    SMT.SaaS.BLLCommonServices.PersonnelWS.T_HR_EMPLOYEE[] tmp = psc.GetEmployeeLeader(UserId, 0);
                     if (tmp != null && tmp.Count() > 0)
                     {
                         employee = tmp[0];//返回该岗位员工的直接上级

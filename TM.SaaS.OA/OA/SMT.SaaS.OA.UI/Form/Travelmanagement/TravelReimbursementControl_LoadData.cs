@@ -35,14 +35,14 @@ namespace SMT.SaaS.OA.UI.UserControls
                 if (e.Error != null && !string.IsNullOrEmpty(e.Error.Message))
                 {
                     RefreshUI(RefreshedTypes.HideProgressBar);
-                    ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
+                    ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), "获取出差报销异常："+e.Error.Message, Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
                 }
                 else
                 {
                     if (e.Result == null)
                     {
                         RefreshUI(RefreshedTypes.HideProgressBar);
-                        ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
+                        ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), "获取出差异常"+e.Error.Message, Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
                         return;
                     }
                     isPageloadCompleted = true;
@@ -95,8 +95,11 @@ namespace SMT.SaaS.OA.UI.UserControls
                             {
                                 isFromWP = true;
                                 //不显示支付信息
-                                labPAYMENTINFO.Visibility = Visibility.Collapsed;
-                                txtPAYMENTINFO.Visibility = Visibility.Collapsed;
+                                //labPAYMENTINFO.Visibility = Visibility.Collapsed;
+                                if(!string.IsNullOrEmpty(TravelReimbursement_Golbal.PAYINFO))
+                                { 
+                                    txtPAYMENTINFO.Text = TravelReimbursement_Golbal.PAYINFO;
+                                }
                             }
                         }
                         InitFBControl(TravelReimbursement_Golbal,isFromWP);
@@ -153,7 +156,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             {
                 RefreshUI(RefreshedTypes.HideProgressBar);
                 Logger.Current.Log(ex.Message, Category.Debug, Priority.Low);
-                ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
+                ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), "获取出差报销错误："+ex.ToString(), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
             }
         }
         #endregion
@@ -209,7 +212,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             {
                 RefreshUI(RefreshedTypes.HideProgressBar);
                 Logger.Current.Log(ex.Message, Category.Debug, Priority.Low);
-                ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
+                ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), "获取出差方案异常："+ex.ToString(), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
             }
             finally
             {
@@ -265,7 +268,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             {
                 RefreshUI(RefreshedTypes.HideProgressBar);
                 Logger.Current.Log(ex.Message, Category.Debug, Priority.Low);
-                ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
+                ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), "获取出差补贴异常："+ex.ToString(), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
             }
             finally
             {
@@ -688,7 +691,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             catch (Exception ex)
             {
                 Logger.Current.Log(ex.Message, Category.Debug, Priority.Low);
-                ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), Utility.GetResourceStr("ERRORINFO"), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
+                ComfirmWindow.ConfirmationBoxs(Utility.GetResourceStr("TIPS"), "出差报销加载异常"+ex.ToString(), Utility.GetResourceStr("CONFIRM"), MessageIcon.Exclamation);
             }
         }
 

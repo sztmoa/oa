@@ -99,9 +99,6 @@
     <Reference Include="SMT.SAAS.Application">
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.Application.dll</HintPath>
     </Reference>
-    <Reference Include="SMT.SAAS.Behaviors">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.Behaviors.dll</HintPath>
-    </Reference>
     <Reference Include="SMT.SAAS.ClientServices, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.ClientServices.dll</HintPath>
     </Reference>
@@ -114,9 +111,6 @@
     </Reference>
     <Reference Include="SMT.SAAS.Extensions">
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="SMT.SaaS.FrameworkUI.RichNotepad">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SaaS.FrameworkUI.RichNotepad.dll</HintPath>
     </Reference>
     <Reference Include="SMT.SaaS.Globalization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -146,9 +140,7 @@
     <Reference Include="SMT.SaaS.PublicControls">
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SaaS.PublicControls.dll</HintPath>
     </Reference>
-    <Reference Include="SMT.SAAS.Themes">
-      <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.Themes.dll</HintPath>
-    </Reference>
+    <Reference Include="System.ComponentModel.Composition, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SMT.SaaS.CommonDll\MicroSoft Lib\Client\System.ComponentModel.DataAnnotations.dll</HintPath>
@@ -163,17 +155,17 @@
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
-    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SMT.SaaS.CommonDll\MicroSoft Lib\Client\System.Windows.Controls.Data.DataForm.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.DataVisualization.Toolkit">
       <HintPath>..\..\..\SMT.SaaS.CommonDll\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Controls.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Input.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SMT.SaaS.CommonDll\MicroSoft Lib\Client\System.Windows.Controls.Input.Toolkit.dll</HintPath>
@@ -182,7 +174,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SMT.SaaS.CommonDll\MicroSoft Lib\Client\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Controls.Navigation, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Navigation, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Theming.Toolkit">
       <HintPath>..\..\..\SMT.SaaS.CommonDll\System.Windows.Controls.Theming.Toolkit.dll</HintPath>
     </Reference>
@@ -190,71 +182,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SMT.SaaS.CommonDll\MicroSoft Lib\Client\System.Windows.Controls.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Windows.Browser" />
-    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Xml.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.Windows.Controls">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Controls.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.Data">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Controls.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.GridView">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Controls.GridView.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.Input">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Controls.Input.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.Navigation">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Controls.Navigation.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.RibbonBar">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Controls.RibbonBar.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.RichTextBoxUI">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Controls.RichTextBoxUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.Scheduler">
-      <HintPath>..\..\..\SMT.SaaS.CommonDll\RadConctrol\Telerik.Windows.Controls.Scheduler.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.ScheduleView">
-      <HintPath>..\..\..\SMT.SaaS.CommonDll\RadConctrol\Telerik.Windows.Controls.ScheduleView.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Data">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Documents.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.FormatProviders.Html">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Documents.FormatProviders.Html.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml">
-      <HintPath>..\..\..\SMT.SaaS.CommonDll\RadConctrol\Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.FormatProviders.OpenXml">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Documents.FormatProviders.OpenXml.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.FormatProviders.Pdf">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Documents.FormatProviders.Pdf.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.FormatProviders.Rtf">
-      <HintPath>..\..\..\SMT.SaaS.CommonDll\RadConctrol\Telerik.Windows.Documents.FormatProviders.Rtf.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.FormatProviders.Xaml">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Documents.FormatProviders.Xaml.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.Proofing.Dictionaries.En-US">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Documents.Proofing.Dictionaries.En-US.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Themes.Summer">
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Themes.Summer.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Serialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -1080,6 +1015,7 @@
     <Compile Include="Views\Travelmanagement\SolutionManagement.xaml.cs">
       <DependentUpon>SolutionManagement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Travelmanagement\SolutionManagement_Event.cs" />
     <Compile Include="Views\Travelmanagement\SolutionSetManagement.xaml.cs">
       <DependentUpon>SolutionSetManagement.xaml</DependentUpon>
     </Compile>
@@ -3130,15 +3066,87 @@
     <None Include="Service References\AgentChannel\AgentServices7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentChannel\SMT.SaaS.OA.UI.AgentChannel.T_HR_EMPLOYEE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\EngineDataSource\EngineDataModel.xsd" />
     <None Include="Service References\EngineDataSource\service.wsdl" />
     <None Include="Service References\EngineDataSource\service.xsd" />
     <None Include="Service References\EngineDataSource\service1.xsd" />
     <None Include="Service References\EngineDataSource\System.Data.Objects.DataClasses.xsd" />
     <None Include="Service References\EngineDataSource\System.Data.xsd" />
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_ACCIDENTRECORD1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_CONSERVATION1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_CONSERVATIONRECORD1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_COSTRECORD1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_DISTRIBUTEUSER1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_HIREAPP1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_HIRERECORD1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_HOUSEINFO1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_HOUSEINFOISSUANCE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_HOUSELIST1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_MAINTENANCEAPP1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_MAINTENANCERECORD1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_SENDDOC1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_VEHICLE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_VEHICLECARD1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_VEHICLEDISPATCH1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_VEHICLEDISPATCHDETAIL1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_VEHICLEDISPATCHRECORD1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.T_OA_VEHICLEUSEAPP1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.V_HireRecord1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.V_HouseHireApp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.V_HouseHireList1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.V_HouseHirer1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.V_HouseInfoTree1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonAdminService\SMT.SaaS.OA.UI.SmtOACommonAdminService.V_SystemNotice1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SmtOACommonAdminService\SmtOACommonAdmin.wsdl" />
     <None Include="Service References\SmtOACommonAdminService\SmtOACommonAdmin.xsd" />
     <None Include="Service References\SmtOACommonAdminService\SmtOACommonAdmin1.wsdl" />
@@ -3155,6 +3163,84 @@
     <None Include="Service References\SmtOACommonAdminService\SmtOACommonAdmin19.xsd" />
     <None Include="Service References\SmtOACommonAdminService\SmtOACommonAdmin2.wsdl" />
     <None Include="Service References\SmtOACommonAdminService\SmtOACommonAdmin21.wsdl" />
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_AGENTDATESET1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_AGENTSET1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_APPROVALINFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_DISTRIBUTEUSER1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_GRADED1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_MEETINGCONTENT1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_MEETINGINFO1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_MEETINGMESSAGE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_MEETINGROOM1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_MEETINGROOMAPP1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_MEETINGSTAFF1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_MEETINGTEMPLATE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_MEETINGTYPE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_PRIORITIES1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_SENDDOC1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_SENDDOCTEMPLATE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_SENDDOCTYPE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.T_OA_VIEWSENDDOC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.V_BrowseSendDoc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.V_BrowseSendDocEmployee.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.V_BumfCompanySendDoc1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.V_CompanyDocNum1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.V_MeetingInfo1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.V_MeetingRoomApp1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.V_MyMeetingInfosManagement1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOACommonOfficeService\SMT.SaaS.OA.UI.SmtOACommonOfficeService.V_SystemNotice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SmtOACommonOfficeService\SmtOACommonOffice.wsdl" />
     <None Include="Service References\SmtOACommonOfficeService\SmtOACommonOffice.xsd" />
     <None Include="Service References\SmtOACommonOfficeService\SmtOACommonOffice1.wsdl" />
@@ -3170,6 +3256,9 @@
     <None Include="Service References\SmtOACommonOfficeService\SmtOACommonOffice8.xsd" />
     <None Include="Service References\SmtOACommonOfficeService\SmtOACommonOffice9.xsd" />
     <None Include="Service References\SmtOACommonOfficeService\SmtOACommonOffice91.xsd" />
+    <None Include="Service References\SmtOACommonOfficeService\SmtOACommonOffice910.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\SmtOACommonOfficeService\SmtOACommonOffice92.xsd" />
     <None Include="Service References\SmtOACommonOfficeService\SmtOACommonOffice93.xsd" />
     <None Include="Service References\SmtOACommonOfficeService\SmtOACommonOffice94.xsd" />
@@ -3177,6 +3266,81 @@
     <None Include="Service References\SmtOACommonOfficeService\SmtOACommonOffice96.xsd" />
     <None Include="Service References\SmtOACommonOfficeService\SmtOACommonOffice97.xsd" />
     <None Include="Service References\SmtOACommonOfficeService\SmtOACommonOffice98.xsd" />
+    <None Include="Service References\SmtOACommonOfficeService\SmtOACommonOffice99.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_ARCHIVES1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_CONTRACTAPP1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_CONTRACTTEMPLATE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_CONTRACTTYPE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_CONTRACTVIEW1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_LENDARCHIVES.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_LICENSEDETAIL1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_LICENSEMASTER1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_LICENSEUSER1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_ORGANIZATION1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_WELFAREDETAIL1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_WELFAREDISTRIBUTEDETAIL1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_WELFAREDISTRIBUTEMASTER1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_WELFAREDISTRIBUTEUNDO1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.T_OA_WELFAREMASERT1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.V_ContractApplications1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.V_ContractPrint1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.V_ContractTemplate1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.V_ContractType1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.V_ContractView1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.V_WelfareDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.V_WelfarePaymentWithdrawal1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.V_WelfareProvision1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SmtOADocumentAdminService\SMT.SaaS.OA.UI.SmtOADocumentAdminService.V_WelfareStandard1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SmtOADocumentAdminService\SmtOADocumentAdmin.wsdl" />
     <None Include="Service References\SmtOADocumentAdminService\SmtOADocumentAdmin.xsd" />
     <None Include="Service References\SmtOADocumentAdminService\SmtOADocumentAdmin1.wsdl" />
@@ -3485,6 +3649,18 @@
     <WCFMetadataStorage Include="Service References\TravelExpApplyMaster\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\FrameWork\RichTextBox\SMT.SaaS.FrameworkUI.RichNotepad.csproj">
+      <Project>{52f76969-e7cd-414f-8e98-4ff90ee48b05}</Project>
+      <Name>SMT.SaaS.FrameworkUI.RichNotepad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FrameWork\SMT.SAAS.Behaviors\SMT.SAAS.Behaviors.csproj">
+      <Project>{7a6afd3c-4870-442c-9a77-d7f480ba8e26}</Project>
+      <Name>SMT.SAAS.Behaviors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FrameWork\SMT.SAAS.Themes\SMT.SAAS.Themes.csproj">
+      <Project>{2c6fffa6-6acd-4c24-add5-aceb431011e0}</Project>
+      <Name>SMT.SAAS.Themes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\FrameWork\SMT.Saas.Tools\SMT.Saas.Tools.csproj">
       <Project>{36e9d744-4747-4f92-8abe-d747adbc811a}</Project>
       <Name>SMT.Saas.Tools</Name>

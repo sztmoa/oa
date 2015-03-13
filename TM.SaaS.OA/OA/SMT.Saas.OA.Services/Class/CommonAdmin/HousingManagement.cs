@@ -6,7 +6,7 @@ using System.ServiceModel.Activation;
 using System.Collections.Generic;
 using System.Text;
 
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.BLL;
 using SMT.SaaS.BLLCommonServices.FlowWFService;
 
@@ -187,7 +187,7 @@ namespace SMT.SaaS.OA.Services
                 }
                 else
                 {
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "housingIssuance", loginUserInfo.companyID, loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "housingIssuance", loginUserInfo.companyID, loginUserInfo.userID);
                     if (flowList == null)
                     {
                         return null;
@@ -338,7 +338,7 @@ namespace SMT.SaaS.OA.Services
         }
 
         //[OperationContract]
-        //public int SubmitIssuanceFlow(T_OA_HOUSEINFOISSUANCE obj, FLOW_FLOWRECORDDETAIL_T flowRecordInfo, string toUserId)
+        //public int SubmitIssuanceFlow(T_OA_HOUSEINFOISSUANCE obj, SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowRecordInfo, string toUserId)
         //{
         //    if (workFlowWS.StartFlow(flowRecordInfo, "", toUserId, "Add") != "OK")
         //    {
@@ -377,7 +377,7 @@ namespace SMT.SaaS.OA.Services
                 }
                 else
                 {
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "houseHireApp", loginUserInfo.companyID, loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "houseHireApp", loginUserInfo.companyID, loginUserInfo.userID);
                     if (flowList == null)
                     {
                         return null;
@@ -432,7 +432,7 @@ namespace SMT.SaaS.OA.Services
                 }
                 else
                 {
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "houseHireApp", loginUserInfo.companyID, loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "houseHireApp", loginUserInfo.companyID, loginUserInfo.userID);
                     if (flowList == null)
                     {
                         return null;
@@ -597,7 +597,7 @@ namespace SMT.SaaS.OA.Services
             //}
             //else
             //{
-            //    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "0", "housingHireApp", loginUserInfo.companyID, loginUserInfo.userID);
+            //    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "0", "housingHireApp", loginUserInfo.companyID, loginUserInfo.userID);
             //    if (flowList == null)
             //    {
             //        return null;

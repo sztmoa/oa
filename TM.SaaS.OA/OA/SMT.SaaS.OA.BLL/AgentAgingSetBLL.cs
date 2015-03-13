@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 
 using SMT.SaaS.OA.DAL.Views;
 using System.Linq.Dynamic;
@@ -14,7 +14,7 @@ namespace SMT.SaaS.OA.BLL
     public class AgentAgingSetBLL : BaseBll<T_OA_AGENTDATESET>
     {
         public AgentAgingSet AAS = new AgentAgingSet();
-        //private SMT_OA_EFModelContext AgentManagement = new SMT_OA_EFModelContext();
+        //private TM_SaaS_OA_EFModelContext AgentManagement = new TM_SaaS_OA_EFModelContext();
 
 
         #region 新增使用代理时效设置

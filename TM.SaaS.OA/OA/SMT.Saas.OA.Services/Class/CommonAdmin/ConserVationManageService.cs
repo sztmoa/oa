@@ -6,7 +6,7 @@ using System.ServiceModel.Activation;
 using System.Collections.Generic;
 using System.Text;
 
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.BLL;
 //using SMT.SaaS.OA.Services.FlowService;
 using SMT.SaaS.BLLCommonServices.FlowWFService;
@@ -44,13 +44,13 @@ namespace SMT.SaaS.OA.Services
                 {
                     isView = "0";
                 }
-                FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", isView, "T_OA_CONSERVATION", companyId, userId);//ConserVationForm
+                SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", isView, "T_OA_CONSERVATION", companyId, userId);//ConserVationForm
                 if (flowList == null)
                 {
                     return null;
                 }
                 List<string> guidStringList = new List<string>();
-                foreach (FLOW_FLOWRECORDDETAIL_T f in flowList)
+                foreach (SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T f in flowList)
                 {
                     guidStringList.Add(f.FLOW_FLOWRECORDMASTER_T .FORMID);
                 }
@@ -160,13 +160,13 @@ namespace SMT.SaaS.OA.Services
                 {
                     isView = "0";
                 }
-                FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", isView, "T_OA_CONSERVATIONRECORD", loginUserInfo.companyID, loginUserInfo.userID);
+                SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", isView, "T_OA_CONSERVATIONRECORD", loginUserInfo.companyID, loginUserInfo.userID);
                 if (flowList == null)
                 {
                     return null;
                 }
                 List<string> guidStringList = new List<string>();
-                foreach (FLOW_FLOWRECORDDETAIL_T f in flowList)
+                foreach (SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T f in flowList)
                 {
                     guidStringList.Add(f.FLOW_FLOWRECORDMASTER_T.FORMID);
                 }

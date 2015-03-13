@@ -18,7 +18,6 @@ using SMT.SAAS.ClientServices;
 using SMT.SAAS.ClientUtility;
 using SMT.SaaS.MobileXml;
 using SMT.SaaS.PublicControls;
-using Telerik.Windows.Documents.FormatProviders.Pdf;
 using SMT.Saas.Tools.PublicInterfaceWS;
 using System.Windows.Media;
 using System.Text.RegularExpressions;

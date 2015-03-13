@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.DAL.Views;
 using System.Linq.Dynamic;
 using SMT.Foundation.Log; 
@@ -480,7 +480,7 @@ namespace SMT.SaaS.OA.BLL
             {
 
 
-                //SMT_OA_EFModel.SMT_OA_EFModelContext context = dal.lbc.GetDataContext() as SMT_OA_EFModel.SMT_OA_EFModelContext;
+                //TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext context = dal.lbc.GetDataContext() as TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext;
                 
                 //context.T_OA_MEETINGINFO.MergeOption = System.Data.Objects.MergeOption.NoTracking;
                     
@@ -597,7 +597,7 @@ namespace SMT.SaaS.OA.BLL
         //    try
         //    {
 
-        //        SMT_OA_EFModel.SMT_OA_EFModelContext context = dal.lbc.GetDataContext() as SMT_OA_EFModel.SMT_OA_EFModelContext;
+        //        TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext context = dal.lbc.GetDataContext() as TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext;
 
         //        if (context != null)
         //        {
@@ -700,7 +700,7 @@ namespace SMT.SaaS.OA.BLL
             try
             {
 
-                //SMT_OA_EFModel.SMT_OA_EFModelContext context = dal.lbc.GetDataContext() as SMT_OA_EFModel.SMT_OA_EFModelContext;
+                //TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext context = dal.lbc.GetDataContext() as TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext;
 
                 
                 var ents = from a in dal.GetObjects().Include("T_OA_MEETINGTYPE").Include("T_OA_MEETINGROOM")

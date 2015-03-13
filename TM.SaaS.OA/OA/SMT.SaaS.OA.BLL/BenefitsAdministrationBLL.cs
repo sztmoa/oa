@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.DAL.Views;
 using System.Linq.Dynamic;
 using SMT.Foundation.Log;
@@ -169,7 +169,7 @@ namespace SMT.SaaS.OA.BLL
                 {
                     Welfare.UPDATEDATE = Convert.ToDateTime(DateTime.Now.ToShortDateString());
                     Utility.CloneEntity(Welfare, entity);
-                    entity.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_WELFAREMASERT", "WELFAREID", entity.WELFAREID);
+                    entity.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_WELFAREMASERT", "WELFAREID", entity.WELFAREID);
                     int i = Update(entity);
                     if (i > 0)
                     {
@@ -207,7 +207,7 @@ namespace SMT.SaaS.OA.BLL
                     Utility.CloneEntity(updateDetails, welfareDetail);
                     welfareDetail.WELFAREDETAILID = Guid.NewGuid().ToString();
                     //entity.T_OA_WELFAREDETAIL.Add(welfareDetail);
-                    welfareDetail.T_OA_WELFAREMASERTReference.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_WELFAREMASERT", "WELFAREID", entity.WELFAREID);
+                    welfareDetail.T_OA_WELFAREMASERTReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_WELFAREMASERT", "WELFAREID", entity.WELFAREID);
                     int iResulto = dal.Add(welfareDetail);
                     if (iResulto > 0)
                     {
@@ -320,7 +320,7 @@ namespace SMT.SaaS.OA.BLL
         /// <returns></returns>
         public bool IsExistWelfare(string WelfareproId, string CompanyId, List<T_OA_WELFAREDETAIL> WelfaredDetails)//检查主表
         {
-            //SMT_OA_EFModelContext context = new SMT_OA_EFModelContext();
+            //TM_SaaS_OA_EFModelContext context = new TM_SaaS_OA_EFModelContext();
             bool IsExist = false;
             var ents = from a in dal.GetObjects<T_OA_WELFAREMASERT>()
                        where a.WELFAREPROID == WelfareproId && a.COMPANYID == CompanyId
@@ -340,7 +340,7 @@ namespace SMT.SaaS.OA.BLL
         }
         //private bool IsExistWelfareDetails(T_OA_WELFAREDETAIL DetailsWelfare)//检查子表
         //{
-        //    SMT_OA_EFModelContext context = new SMT_OA_EFModelContext();
+        //    TM_SaaS_OA_EFModelContext context = new TM_SaaS_OA_EFModelContext();
         //    bool IsExist = false;
         //    var ents = from a in context.T_OA_WELFAREDETAIL
         //               where ((a.ISLEVEL == DetailsWelfare.ISLEVEL && a.POSTLEVELA == DetailsWelfare.POSTLEVELA && a.POSTLEVELB == DetailsWelfare.POSTLEVELB) ||

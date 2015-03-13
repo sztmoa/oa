@@ -1,4 +1,5 @@
-﻿<smtLocal:BaseForm xmlns:smtLocal="clr-namespace:SMT.SaaS.OA.UI"  
+﻿<smtLocal:BaseForm 
+    xmlns:smtLocal="clr-namespace:SMT.SaaS.OA.UI"  
     xmlns:inputToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"  
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
@@ -45,9 +46,9 @@
                 <TextBlock HorizontalAlignment="Left" x:Name="txtFile" Grid.Row="7" Grid.Column="0" Text="{Binding Converter={StaticResource ResourceConveter}, Source=FileUpload}" TextWrapping="Wrap" Height="22" VerticalAlignment="Top"/>
 				<TextBlock VerticalAlignment="Top" Text="{Binding Converter={StaticResource ResourceConveter}, Source=CONTRACTNUMBER}" TextWrapping="Wrap" d:LayoutOverrides="Width"/>
                 <richtext:RichMainPage Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" x:Name="ContractText" Margin="1,5,20,0" MinHeight="200">
-                        <validator:ValidatorService.Validator>
+                        <!--<validator:ValidatorService.Validator>
                             <validator:RequiredValidator ManagerName="Group1" ErrorMessage="REQUIRED" ErrorMessageParameter="THECONTRACT" ></validator:RequiredValidator>
-                        </validator:ValidatorService.Validator>
+                        </validator:ValidatorService.Validator>-->
                 </richtext:RichMainPage>
                 <!--<TextBox x:Name="ContractText" AcceptsReturn="True"  TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" MinHeight="150" Height="100" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="6" Style="{StaticResource TextBoxStyle}" Margin="1,5,20,0" VerticalAlignment="Top">
                     <validator:ValidatorService.Validator>

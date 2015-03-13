@@ -325,7 +325,8 @@ namespace SMT.SaaS.OA.UI.UserControls
                 CountMoney();
 
                 if (!string.IsNullOrEmpty(txtPAYMENTINFO.Text))
-                {
+                {                    
+                    TravelReimbursement_Golbal.PAYINFO=txtPAYMENTINFO.Text;
                     fbCtr.ExtensionalOrder.PAYMENTINFO = txtPAYMENTINFO.Text;//支付信息
                     StrPayInfo = txtPAYMENTINFO.Text;
                 }
@@ -362,6 +363,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                 {
                     TravelReimbursement_Golbal.OWNERCOMPANYID = Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;
                     TravelReimbursement_Golbal.OWNERCOMPANYNAME = Common.CurrentLoginUserInfo.UserPosts[0].CompanyName;
+                    //TravelReimbursement_Golbal.PAYINFO = "";
                 }
             }
             catch (Exception ex)

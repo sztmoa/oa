@@ -164,9 +164,9 @@ namespace SMT.SaaS.OA.UI.UserControls
             this.nuqujianbili.IsEnabled = false;
             this.nuqujianmax.IsEnabled = false;
             this.nuqujiaomindays.IsEnabled = false;
-            this.txtSolutionName.IsEnabled = false;            
-            
-            this.DGVechileStandard.IsEnabled = false;
+            this.txtSolutionName.IsEnabled = false;
+
+            this.DGVechileStandard.IsReadOnly = true;
             
             ToolBar_Vechile.IsEnabled = false;
             this.nubaoxiaomindays.IsEnabled = false;
@@ -277,7 +277,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             this.nuqujianmax.IsEnabled = true;
             this.nuqujiaomindays.IsEnabled = true;
             this.txtSolutionName.IsEnabled = true;
-            this.DGVechileStandard.IsEnabled = true;
+            this.DGVechileStandard.IsReadOnly = false;
 
             ToolBar_Vechile.IsEnabled = true;
             this.nubaoxiaomindays.IsEnabled = true;

@@ -47,15 +47,15 @@
     <MetadataSource Address="http://localhost:3938/SmtOACommonAdmin.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SmtOACommonAdmin11.xsd" MetadataType="Schema" ID="e5aa359c-a168-4c73-a7a4-1c4b134ed86e" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?xsd=xsd5" />
-    <MetadataFile FileName="SmtOACommonAdmin.xsd" MetadataType="Schema" ID="16fac461-8443-412b-a579-d00cd297f6f1" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?xsd=xsd0" />
-    <MetadataFile FileName="SmtOACommonAdmin16.xsd" MetadataType="Schema" ID="d1596ad5-4b38-409c-a1d1-bcbdc9e64a81" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?xsd=xsd6" />
     <MetadataFile FileName="SmtOACommonAdmin17.xsd" MetadataType="Schema" ID="2db046f7-22af-4955-b5ef-dfefa46e40a3" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?xsd=xsd7" />
+    <MetadataFile FileName="SmtOACommonAdmin.xsd" MetadataType="Schema" ID="16fac461-8443-412b-a579-d00cd297f6f1" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?xsd=xsd0" />
+    <MetadataFile FileName="SmtOACommonAdmin12.xsd" MetadataType="Schema" ID="e7940c4e-b08d-404b-90a3-e1875748982a" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?xsd=xsd4" />
+    <MetadataFile FileName="SmtOACommonAdmin11.xsd" MetadataType="Schema" ID="e5aa359c-a168-4c73-a7a4-1c4b134ed86e" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?xsd=xsd5" />
     <MetadataFile FileName="SmtOACommonAdmin1.wsdl" MetadataType="Wsdl" ID="2c38d673-7f4b-4e0d-b91f-70d8ec103d92" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?wsdl" />
     <MetadataFile FileName="SmtOACommonAdmin.disco" MetadataType="Disco" ID="1065098c-06c5-4a2d-83e1-6badfcfa436e" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?disco" />
     <MetadataFile FileName="SmtOACommonAdmin15.xsd" MetadataType="Schema" ID="b585dc69-e722-4fa5-bf8d-2fc9c1ab1024" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?xsd=xsd3" />
     <MetadataFile FileName="SmtOACommonAdmin110.xsd" MetadataType="Schema" ID="badad7f3-ecad-4e14-a7d2-b90bd2b1eb33" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?xsd=xsd8" />
-    <MetadataFile FileName="SmtOACommonAdmin12.xsd" MetadataType="Schema" ID="e7940c4e-b08d-404b-90a3-e1875748982a" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?xsd=xsd4" />
+    <MetadataFile FileName="SmtOACommonAdmin16.xsd" MetadataType="Schema" ID="d1596ad5-4b38-409c-a1d1-bcbdc9e64a81" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?xsd=xsd6" />
     <MetadataFile FileName="SmtOACommonAdmin14.xsd" MetadataType="Schema" ID="3d2b4218-8ebf-465a-b1a7-c4ee19c3259b" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?xsd=xsd2" />
     <MetadataFile FileName="SmtOACommonAdmin.wsdl" MetadataType="Wsdl" ID="8dd80c80-730b-453b-a1a0-7d42ad3579c1" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?wsdl=wsdl0" />
     <MetadataFile FileName="SmtOACommonAdmin13.xsd" MetadataType="Schema" ID="1b7eda5f-7dda-44b0-9634-232b1c003b27" SourceId="1" SourceUrl="http://localhost:3938/SmtOACommonAdmin.svc?xsd=xsd1" />

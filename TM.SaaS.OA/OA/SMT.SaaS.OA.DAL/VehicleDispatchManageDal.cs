@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.Foundation.Core;
 using System.Data.Objects;
 namespace SMT.SaaS.OA.DAL
@@ -66,7 +66,7 @@ namespace SMT.SaaS.OA.DAL
         {
             try
             {
-                vehicleDispatchInfo.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_VEHICLEDISPATCH", "VEHICLEDISPATCHID", vehicleDispatchInfo.VEHICLEDISPATCHID);
+                vehicleDispatchInfo.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_VEHICLEDISPATCH", "VEHICLEDISPATCHID", vehicleDispatchInfo.VEHICLEDISPATCHID);
 
                 T_OA_VEHICLEDISPATCH tmpobj = base.GetObjectByEntityKey(vehicleDispatchInfo.EntityKey) as T_OA_VEHICLEDISPATCH;
                 tmpobj.T_OA_VEHICLE = base.GetObjectByEntityKey(vehicleDispatchInfo.T_OA_VEHICLE.EntityKey) as T_OA_VEHICLE;

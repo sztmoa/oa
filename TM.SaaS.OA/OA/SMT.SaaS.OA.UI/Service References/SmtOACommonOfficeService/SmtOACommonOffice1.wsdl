@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SmtOACommonOffice" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SmtOACommonOffice" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsp:Policy wsu:Id="CustomBinding_SmtOACommonOffice_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -13,807 +13,6 @@
   <wsdl:binding name="CustomBinding_SmtOACommonOffice" type="SmtOACommonOffice">
     <wsp:PolicyReference URI="#CustomBinding_SmtOACommonOffice_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetSendDocSingleInfoById">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetSendDocSingleInfoById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetSendDocInfos">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetSendDocInfos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDistrbutedSendDocInfos">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDistrbutedSendDocInfos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetSavedSendDocInfos">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetSavedSendDocInfos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetSendDocInfosListBySearch">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetSendDocInfosListBySearch" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDistrbutedSendDoc">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDistrbutedSendDoc" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetSendDocInfosListByWorkFlow">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetSendDocInfosListByWorkFlow" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetBumfDocInfo">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetBumfDocInfo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetMYSendDocInfosList">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMYSendDocInfosList" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SubmitCompanyDocFlow">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/SubmitCompanyDocFlow" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SubmitUpdateFlowComment1">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/SubmitUpdateFlowComment1" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DocDistrbuteAdd">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DocDistrbuteAdd" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DocDistrbuteBatchAdd">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DocDistrbuteBatchAdd" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="BatchAddCompanyDocDistrbute">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/BatchAddCompanyDocDistrbute" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="BatchAddCompanyDocDistrbuteForNew">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/BatchAddCompanyDocDistrbuteForNew" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CloseDocTask">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/CloseDocTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DocDistrbuteBatchDel">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DocDistrbuteBatchDel" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DocDistrbuteInfoUpdate">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DocDistrbuteInfoUpdate" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DocDistrbuteInfoUpdateByBatch">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DocDistrbuteInfoUpdateByBatch" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocDistrbuteSingleInfoById">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocDistrbuteSingleInfoById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocDistrbuteInfos">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocDistrbuteInfos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocDistrbuteInfosByFormID">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocDistrbuteInfosByFormID" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetCompanyDocNumsByUserid">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetCompanyDocNumsByUserid" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="BatchDelMeetingTypeTemplateInfos">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/BatchDelMeetingTypeTemplateInfos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetMeetingTypeTemplateNameInfosByMeetingType">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetingTypeTemplateNameInfosByMeetingType" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetMeetintTypeTemplateInfosListBySearch">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetintTypeTemplateInfosListBySearch" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MeetingTypeTemplateAdd">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/MeetingTypeTemplateAdd" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IsExistMeetingTypeTemplate">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistMeetingTypeTemplate" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MeetingTypeTemplateDel">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/MeetingTypeTemplateDel" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MeetingTypeTemplateUpdate">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/MeetingTypeTemplateUpdate" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetMeetingTypeTemplateSingleInfoById">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetingTypeTemplateSingleInfoById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetMeetingTypeTemplateContentInfoByMeetingTypeAndTemplateName">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetingTypeTemplateContentInfoByMeetingTypeAndTemplateName" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MeetingContentAdd">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/MeetingContentAdd" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="BatchAddMeetingContentInfos">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/BatchAddMeetingContentInfos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IsExistMeetingContentInfo">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistMeetingContentInfo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MeetingContentDel">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/MeetingContentDel" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MeetingContentInfoUpdate">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/MeetingContentInfoUpdate" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetMeetingContentSingleInfoById">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetingContentSingleInfoById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetMeetingContentInfosByMeetngInfoID">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetingContentInfosByMeetngInfoID" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DoWork">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DoWork" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AgentSetAdd">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/AgentSetAdd" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteAgentSet">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DeleteAgentSet" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateAgentSet">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/UpdateAgentSet" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAgentSetListById">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetAgentSetListById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAgentSetBysId">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetAgentSetBysId" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AgentDataSetAdd">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/AgentDataSetAdd" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IsExistAgent">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistAgent" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteAgentDataSet">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DeleteAgentDataSet" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateAgentDataSet">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/UpdateAgentDataSet" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAgentDataSetListById">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetAgentDataSetListById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAgentDataSetBysId">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetAgentDataSetBysId" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DocTypeAdd">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DocTypeAdd" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IsExistDocTypeInfo">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistDocTypeInfo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DocTypeBatchDel">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DocTypeBatchDel" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DocTypeInfoUpdate">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DocTypeInfoUpdate" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocTypeSingleInfoById">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeSingleInfoById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocTypeInfos">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeInfos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocTypeInfosListBySearch">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeInfosListBySearch" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocTypeNameInfosToCombox">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeNameInfosToCombox" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DocPriorityAdd">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DocPriorityAdd" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IsExistDocPriorityInfo">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistDocPriorityInfo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DocPriorityBatchDel">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DocPriorityBatchDel" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DocPriorityInfoUpdate">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DocPriorityInfoUpdate" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocPrioritySingleInfoById">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocPrioritySingleInfoById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocPrioritiesInfos">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocPrioritiesInfos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocPriorityInfosListBySearch">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocPriorityInfosListBySearch" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetProritityNameInfosToCombox">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetProritityNameInfosToCombox" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GradeAdd">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GradeAdd" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IsExistGradeInfo">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistGradeInfo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GradeBatchDel">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GradeBatchDel" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GradeInfoUpdate">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GradeInfoUpdate" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetGradeSingleInfoById">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetGradeSingleInfoById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetGradeInfos">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetGradeInfos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetGradeInfosListBySearch">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetGradeInfosListBySearch" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocGradeNameInfosToCombox">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocGradeNameInfosToCombox" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DocTypeTemplateAdd">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DocTypeTemplateAdd" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IsExistDocTypeTemplateInfo">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistDocTypeTemplateInfo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DocTypeTemplateBatchDel">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DocTypeTemplateBatchDel" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DocTypeTemplateInfoUpdate">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/DocTypeTemplateInfoUpdate" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocTypeTemplateSingleInfoById">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeTemplateSingleInfoById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocTypeTemplateContentByDocType">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeTemplateContentByDocType" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocTypeTemplateInfos">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeTemplateInfos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDocTypeTemplateInfosListBySearch">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeTemplateInfosListBySearch" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SendDocAdd">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/SendDocAdd" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IsExistSendDocInfo">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistSendDocInfo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SendDocBatchDel">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/SendDocBatchDel" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SendDocInfoUpdate">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/SendDocInfoUpdate" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetMeetingRoomInfoByID">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetingRoomInfoByID" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetMeetingRoomInfos">
-      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetingRoomInfos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="MeetingRoomdAdd">
       <soap12:operation soapAction="urn:SmtOACommonOffice/MeetingRoomdAdd" style="document" />
       <wsdl:input>
@@ -1365,6 +564,906 @@
     </wsdl:operation>
     <wsdl:operation name="GetTypeTemplateInfos">
       <soap12:operation soapAction="urn:SmtOACommonOffice/GetTypeTemplateInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchDelMeetingTypeTemplateInfos">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/BatchDelMeetingTypeTemplateInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeetingTypeTemplateNameInfosByMeetingType">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetingTypeTemplateNameInfosByMeetingType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeetintTypeTemplateInfosListBySearch">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetintTypeTemplateInfosListBySearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MeetingTypeTemplateAdd">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/MeetingTypeTemplateAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistMeetingTypeTemplate">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistMeetingTypeTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MeetingTypeTemplateDel">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/MeetingTypeTemplateDel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MeetingTypeTemplateUpdate">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/MeetingTypeTemplateUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeetingTypeTemplateSingleInfoById">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetingTypeTemplateSingleInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeetingTypeTemplateContentInfoByMeetingTypeAndTemplateName">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetingTypeTemplateContentInfoByMeetingTypeAndTemplateName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MeetingContentAdd">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/MeetingContentAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchAddMeetingContentInfos">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/BatchAddMeetingContentInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistMeetingContentInfo">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistMeetingContentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MeetingContentDel">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/MeetingContentDel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MeetingContentInfoUpdate">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/MeetingContentInfoUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeetingContentSingleInfoById">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetingContentSingleInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeetingContentInfosByMeetngInfoID">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetingContentInfosByMeetngInfoID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoWork">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DoWork" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgentSetAdd">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/AgentSetAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAgentSet">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DeleteAgentSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAgentSet">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/UpdateAgentSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentSetListById">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetAgentSetListById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentSetBysId">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetAgentSetBysId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgentDataSetAdd">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/AgentDataSetAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistAgent">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistAgent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAgentDataSet">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DeleteAgentDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAgentDataSet">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/UpdateAgentDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentDataSetListById">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetAgentDataSetListById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentDataSetBysId">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetAgentDataSetBysId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocTypeAdd">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DocTypeAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistDocTypeInfo">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistDocTypeInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocTypeBatchDel">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DocTypeBatchDel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocTypeInfoUpdate">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DocTypeInfoUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTypeSingleInfoById">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeSingleInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTypeInfos">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTypeInfosListBySearch">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeInfosListBySearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTypeNameInfosToCombox">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeNameInfosToCombox" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocGradeOrPriority">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocGradeOrPriority" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocPriorityAdd">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DocPriorityAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistDocPriorityInfo">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistDocPriorityInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocPriorityBatchDel">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DocPriorityBatchDel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocPriorityInfoUpdate">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DocPriorityInfoUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocPrioritySingleInfoById">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocPrioritySingleInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocPrioritiesInfos">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocPrioritiesInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocPriorityInfosListBySearch">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocPriorityInfosListBySearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProritityNameInfosToCombox">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetProritityNameInfosToCombox" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GradeAdd">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GradeAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistGradeInfo">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistGradeInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GradeBatchDel">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GradeBatchDel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GradeInfoUpdate">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GradeInfoUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGradeSingleInfoById">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetGradeSingleInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGradeInfos">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetGradeInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGradeInfosListBySearch">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetGradeInfosListBySearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocGradeNameInfosToCombox">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocGradeNameInfosToCombox" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocTypeTemplateAdd">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DocTypeTemplateAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistDocTypeTemplateInfo">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistDocTypeTemplateInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocTypeTemplateBatchDel">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DocTypeTemplateBatchDel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocTypeTemplateInfoUpdate">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DocTypeTemplateInfoUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTypeTemplateSingleInfoById">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeTemplateSingleInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTypeTemplateContentByDocType">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeTemplateContentByDocType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTypeTemplateInfos">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeTemplateInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTypeTemplateInfosListBySearch">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocTypeTemplateInfosListBySearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendDocAdd">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/SendDocAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSendDocInfo">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/IsExistSendDocInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendDocBatchDel">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/SendDocBatchDel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendDocInfoUpdate">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/SendDocInfoUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelSendDocPublish">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/CancelSendDocPublish" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSendDocSingleInfoById">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetSendDocSingleInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSendDocInfos">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetSendDocInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrbutedSendDocInfos">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDistrbutedSendDocInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSavedSendDocInfos">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetSavedSendDocInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSendDocInfosListBySearch">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetSendDocInfosListBySearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrbutedSendDoc">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDistrbutedSendDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSendDocInfosListByWorkFlowForMVC">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetSendDocInfosListByWorkFlowForMVC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSendDocInfosListByWorkFlow">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetSendDocInfosListByWorkFlow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBumfDocInfo">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetBumfDocInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMYSendDocInfosList">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMYSendDocInfosList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMYSendDocInfosListForMVC">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMYSendDocInfosListForMVC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchAddDocDistrbuteInfoOnlyDocForMVC">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/BatchAddDocDistrbuteInfoOnlyDocForMVC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitCompanyDocFlow">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/SubmitCompanyDocFlow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitUpdateFlowComment1">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/SubmitUpdateFlowComment1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocDistrbuteAdd">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DocDistrbuteAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocDistrbuteBatchAdd">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DocDistrbuteBatchAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchAddCompanyDocDistrbute">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/BatchAddCompanyDocDistrbute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchAddCompanyDocDistrbuteForNew">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/BatchAddCompanyDocDistrbuteForNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseDocTask">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/CloseDocTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocDistrbuteBatchDel">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DocDistrbuteBatchDel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocDistrbuteInfoUpdate">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DocDistrbuteInfoUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocDistrbuteInfoUpdateByBatch">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/DocDistrbuteInfoUpdateByBatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocDistrbuteSingleInfoById">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocDistrbuteSingleInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocDistrbuteInfos">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocDistrbuteInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocDistrbuteInfosByFormID">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetDocDistrbuteInfosByFormID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyDocNumsByUserid">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetCompanyDocNumsByUserid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshSendDocData1">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/RefreshSendDocData1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateViewSenddoc">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/UpdateViewSenddoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViewSendDoc">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetViewSendDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApporvalListforMVCForReimbursement">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetApporvalListforMVCForReimbursement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSendDocInfosListToBrowse">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetSendDocInfosListToBrowse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViewEmployees">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetViewEmployees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeetingRoomInfoByID">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetingRoomInfoByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeetingRoomInfos">
+      <soap12:operation soapAction="urn:SmtOACommonOffice/GetMeetingRoomInfos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

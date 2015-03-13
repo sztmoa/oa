@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects;
 using SMT.Foundation.Core;
 using SMT.SaaS.OA.DAL.Views;
@@ -12,7 +12,7 @@ namespace SMT.SaaS.OA.DAL
 {
     public class EmployeeSurveyViewDal : CommDaL<T_OA_REQUIREMASTER>
     {
-        //SMT_OA_EFModelContext objModelContext = new SMT_OA_EFModelContext();
+        //TM_SaaS_OA_EFModelContext objModelContext = new TM_SaaS_OA_EFModelContext();
         public ObjectQuery<T_OA_REQUIREMASTER> GetMasterList()
         {
             return GetObjects<T_OA_REQUIREMASTER>();
@@ -109,7 +109,7 @@ namespace SMT.SaaS.OA.DAL
             {
                 if (surveySubjectInfo.EntityKey == null)
                     surveySubjectInfo.EntityKey = new EntityKey
-                        ("SMT_OA_EFModelContext" + ".T_OA_REQUIREDETAIL2", new Dictionary<string, object>  
+                        ("TM_SaaS_OA_EFModelContext" + ".T_OA_REQUIREDETAIL2", new Dictionary<string, object>  
                         { { "REQUIREMASTERID", surveySubjectInfo.REQUIREMASTERID }, 
                         { "SUBJECTID", surveySubjectInfo.SUBJECTID } });
 
@@ -120,7 +120,7 @@ namespace SMT.SaaS.OA.DAL
                     if (surveySubjectInfo.T_OA_REQUIREMASTER.EntityKey == null)
                     {
                         surveySubjectInfo.T_OA_REQUIREMASTER.EntityKey = new
-                            System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_REQUIREMASTER", "REQUIREMASTERID", surveySubjectInfo.T_OA_REQUIREMASTER.REQUIREMASTERID);
+                            System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_REQUIREMASTER", "REQUIREMASTERID", surveySubjectInfo.T_OA_REQUIREMASTER.REQUIREMASTERID);
                     }
                 }
                 if (tmpobj.T_OA_REQUIREMASTER != null)
@@ -159,7 +159,7 @@ namespace SMT.SaaS.OA.DAL
             try
             {
                 if (requireMasterInfo.EntityKey == null)
-                    requireMasterInfo.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_REQUIREMASTER", "REQUIREMASTERID", requireMasterInfo.REQUIREMASTERID);
+                    requireMasterInfo.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_REQUIREMASTER", "REQUIREMASTERID", requireMasterInfo.REQUIREMASTERID);
                 T_OA_REQUIREMASTER tmpobj = base.GetObjectByEntityKey(requireMasterInfo.EntityKey) as T_OA_REQUIREMASTER;
 
                 base.UpdateFromContext(requireMasterInfo);

@@ -246,7 +246,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                 MeetingTimeT.MEETINGTIMECHANGEID = System.Guid.NewGuid().ToString();
                 //MeetingTimeT.T_OA_MEETINGINFO = tmpMeetintInfoT;
                 //MeetingTimeT.T_OA_MEETINGINFO.MEETINGINFOID = tmpMeetintInfoT.MEETINGINFOID;
-                MeetingTimeT.MEETINGINFOID = tmpMeetintInfoT.MEETINGINFOID;
+                MeetingTimeT.T_OA_MEETINGINFO.MEETINGINFOID = tmpMeetintInfoT.MEETINGINFOID;
 
                 MeetingTimeT.STARTTIME = Convert.ToDateTime(tmpMeetintInfoT.STARTTIME);
                 MeetingTimeT.ENDTIME = Convert.ToDateTime(tmpMeetintInfoT.ENDTIME);

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Linq.Dynamic;
 
 namespace SMT.SaaS.OA.BLL
@@ -380,7 +380,7 @@ namespace SMT.SaaS.OA.BLL
 
                     int i = dal.Add(TemplateInfo);
 
-                    //SMT_OA_EFModel
+                    //TM_SaaS_OA_EFModel
                     if (!(i > 0))
                     {
                         StrReturn = "SAVEFAILED";//保存失败

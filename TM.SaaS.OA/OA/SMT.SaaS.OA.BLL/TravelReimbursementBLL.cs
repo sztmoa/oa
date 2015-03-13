@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.DAL.Views;
 using System.Linq.Dynamic;
 using SMT.Foundation.Log;
@@ -111,7 +111,7 @@ namespace SMT.SaaS.OA.BLL
                     //再添加子表数据
                     foreach (var addDetails in portDetail)
                     {
-                        addDetails.T_OA_TRAVELREIMBURSEMENTReference.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELREIMBURSEMENT", "TRAVELREIMBURSEMENTID", AddTravelReimbursement.TRAVELREIMBURSEMENTID);
+                        addDetails.T_OA_TRAVELREIMBURSEMENTReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELREIMBURSEMENT", "TRAVELREIMBURSEMENTID", AddTravelReimbursement.TRAVELREIMBURSEMENTID);
                         dal.AddToContext(addDetails);
                     }
                     int i = dal.SaveContextChanges();
@@ -209,7 +209,7 @@ namespace SMT.SaaS.OA.BLL
                 {
                     TravelNoClaims.UPDATEDATE = DateTime.Now;
                     Utility.CloneEntity(TravelNoClaims, entity);
-                    entity.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELREIMBURSEMENT", "TRAVELREIMBURSEMENTID", entity.TRAVELREIMBURSEMENTID);
+                    entity.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELREIMBURSEMENT", "TRAVELREIMBURSEMENTID", entity.TRAVELREIMBURSEMENTID);
                     int i = Update(entity);
                     if (i > 0)
                     {
@@ -239,7 +239,7 @@ namespace SMT.SaaS.OA.BLL
                         T_OA_REIMBURSEMENTDETAIL detail = new T_OA_REIMBURSEMENTDETAIL();
                         Utility.CloneEntity(updateDetails, detail);
                         detail.REIMBURSEMENTDETAILID = Guid.NewGuid().ToString();
-                        detail.T_OA_TRAVELREIMBURSEMENTReference.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELREIMBURSEMENT", "TRAVELREIMBURSEMENTID", entity.TRAVELREIMBURSEMENTID);
+                        detail.T_OA_TRAVELREIMBURSEMENTReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELREIMBURSEMENT", "TRAVELREIMBURSEMENTID", entity.TRAVELREIMBURSEMENTID);
                         dal.AddToContext(detail);
                         int iResulto = dal.SaveContextChanges();
                         if (iResulto > 0)
@@ -305,7 +305,7 @@ namespace SMT.SaaS.OA.BLL
                 {
                     TravelReimbursementUpdate.UPDATEDATE = DateTime.Now;
                     Utility.CloneEntity(TravelReimbursementUpdate, entity);
-                    entity.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELREIMBURSEMENT", "TRAVELREIMBURSEMENTID", entity.TRAVELREIMBURSEMENTID);
+                    entity.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELREIMBURSEMENT", "TRAVELREIMBURSEMENTID", entity.TRAVELREIMBURSEMENTID);
                     int i = Update(entity);
                     if (i > 0)
                     {
@@ -335,7 +335,7 @@ namespace SMT.SaaS.OA.BLL
                         T_OA_REIMBURSEMENTDETAIL detail = new T_OA_REIMBURSEMENTDETAIL();
                         Utility.CloneEntity(updateDetails, detail);
                         detail.REIMBURSEMENTDETAILID = Guid.NewGuid().ToString();
-                        detail.T_OA_TRAVELREIMBURSEMENTReference.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_TRAVELREIMBURSEMENT", "TRAVELREIMBURSEMENTID", entity.TRAVELREIMBURSEMENTID);
+                        detail.T_OA_TRAVELREIMBURSEMENTReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_TRAVELREIMBURSEMENT", "TRAVELREIMBURSEMENTID", entity.TRAVELREIMBURSEMENTID);
                         dal.AddToContext(detail);
                     }
                     int iResulto = dal.SaveContextChanges();

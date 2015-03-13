@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.DAL.Views;
 using System.Linq.Dynamic;
 using SMT.Foundation.Log;
@@ -284,7 +284,7 @@ namespace SMT.SaaS.OA.BLL
                     //更新整个实体及明细
                     TravelmanagementUpdate.UPDATEDATE = DateTime.Now;
                     Utility.CloneEntity(TravelmanagementUpdate, entity);
-                    entity.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_BUSINESSTRIP", "BUSINESSTRIPID", entity.BUSINESSTRIPID);
+                    entity.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_BUSINESSTRIP", "BUSINESSTRIPID", entity.BUSINESSTRIPID);
                     if (FormType == "isAlterTrave")
                     {
                         entity.ISALTERTRAVE = "1";                       
@@ -327,7 +327,7 @@ namespace SMT.SaaS.OA.BLL
                         T_OA_BUSINESSTRIPDETAIL detail = new T_OA_BUSINESSTRIPDETAIL();
                         Utility.CloneEntity(updateDetails, detail);
                         detail.BUSINESSTRIPDETAILID = Guid.NewGuid().ToString();
-                        detail.T_OA_BUSINESSTRIPReference.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_BUSINESSTRIP", "BUSINESSTRIPID", entity.BUSINESSTRIPID);
+                        detail.T_OA_BUSINESSTRIPReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_BUSINESSTRIP", "BUSINESSTRIPID", entity.BUSINESSTRIPID);
                         dal.AddToContext(detail);
                         int iResulto = dal.SaveContextChanges();
                         if (iResulto > 0)
@@ -375,7 +375,7 @@ namespace SMT.SaaS.OA.BLL
             }
             return returnStr;
         }
-        private List<T_HR_VACATIONSET> sets;
+        private List<SMT.SaaS.OA.BLL.AttendanceWS.T_HR_VACATIONSET> sets;
         /// <summary>
         /// 判断是否是假期
         /// </summary>
@@ -408,7 +408,7 @@ namespace SMT.SaaS.OA.BLL
                 {
                     //公共假期返回1
                     string dtNow = dt.ToString("yyyy-MM-dd");
-                    List<T_HR_OUTPLANDAYS> publicDate =
+                    List<SMT.SaaS.OA.BLL.AttendanceWS.T_HR_OUTPLANDAYS> publicDate =
                         set.T_HR_OUTPLANDAYS.Where(
                             t => t.STARTDATE <= DateTime.Parse(dtNow) && t.ENDDATE >= DateTime.Parse(dtNow) && t.DAYTYPE == "1"
                             && t.ISHALFDAY != "1")
@@ -418,7 +418,7 @@ namespace SMT.SaaS.OA.BLL
                         return true;
                     }
                     //工作日返回2
-                    List<T_HR_OUTPLANDAYS> workDate =
+                    List<SMT.SaaS.OA.BLL.AttendanceWS.T_HR_OUTPLANDAYS> workDate =
                         set.T_HR_OUTPLANDAYS.Where(
                             t => t.STARTDATE <= DateTime.Parse(dtNow) && t.ENDDATE >= DateTime.Parse(dtNow) && t.DAYTYPE == "2")
                             .ToList();

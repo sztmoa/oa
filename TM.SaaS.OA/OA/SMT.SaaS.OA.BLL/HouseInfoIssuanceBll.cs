@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Linq.Dynamic;
 using SMT.SaaS.OA.DAL.Views;
 using SMT.Foundation.Log;
@@ -14,7 +14,7 @@ namespace SMT.SaaS.OA.BLL
 {
     public class HouseInfoIssuanceBll : BaseBll<T_OA_HOUSEINFOISSUANCE>
     {
-        //private SMT_OA_EFModelContext context = new SMT_OA_EFModelContext();
+        //private TM_SaaS_OA_EFModelContext context = new TM_SaaS_OA_EFModelContext();
         //private HouseListBll houseListBll = new HouseListBll();
         //private DistributeUserBll distributeBll = new DistributeUserBll();
         
@@ -164,8 +164,8 @@ namespace SMT.SaaS.OA.BLL
                     T_OA_HOUSELIST houseListObjEnt = new T_OA_HOUSELIST();                   
                     Utility.CloneEntity(h, houseListObjEnt);
 
-                    houseListObjEnt.T_OA_HOUSEINFOISSUANCEReference.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_HOUSEINFOISSUANCE","ISSUANCEID",h.T_OA_HOUSEINFOISSUANCE.ISSUANCEID);
-                    houseListObjEnt.T_OA_HOUSEINFOReference.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_HOUSEINFO", "HOUSEID", h.T_OA_HOUSEINFO.HOUSEID);
+                    houseListObjEnt.T_OA_HOUSEINFOISSUANCEReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_HOUSEINFOISSUANCE","ISSUANCEID",h.T_OA_HOUSEINFOISSUANCE.ISSUANCEID);
+                    houseListObjEnt.T_OA_HOUSEINFOReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_HOUSEINFO", "HOUSEID", h.T_OA_HOUSEINFO.HOUSEID);
                     //context.AddObject("T_OA_HOUSELIST", houseListObjEnt);
                     dal.AddToContext(houseListObjEnt);
                     
@@ -242,8 +242,8 @@ namespace SMT.SaaS.OA.BLL
                         T_OA_HOUSELIST houseListObjEnt = new T_OA_HOUSELIST();
                         Utility.CloneEntity(h, houseListObjEnt);
                         houseListObjEnt.HOUSELISTID = h.HOUSELISTID;
-                        houseListObjEnt.T_OA_HOUSEINFOISSUANCEReference.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_HOUSEINFOISSUANCE", "ISSUANCEID", h.T_OA_HOUSEINFOISSUANCE.ISSUANCEID);
-                        houseListObjEnt.T_OA_HOUSEINFOReference.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_HOUSEINFO", "HOUSEID", h.T_OA_HOUSEINFO.HOUSEID);
+                        houseListObjEnt.T_OA_HOUSEINFOISSUANCEReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_HOUSEINFOISSUANCE", "ISSUANCEID", h.T_OA_HOUSEINFOISSUANCE.ISSUANCEID);
+                        houseListObjEnt.T_OA_HOUSEINFOReference.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_HOUSEINFO", "HOUSEID", h.T_OA_HOUSEINFO.HOUSEID);
                         //context.AddObject("T_OA_HOUSELIST", houseListObjEnt);
                         //dal.Add(houseListObjEnt);
                         dal.AddToContext(houseListObjEnt);

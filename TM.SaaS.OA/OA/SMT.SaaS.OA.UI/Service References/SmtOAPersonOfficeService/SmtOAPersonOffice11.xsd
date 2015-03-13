@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SMT.SaaS.OA.DAL.Views" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.OA.DAL.Views" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:3938/SmtOAPersonOffice.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" />
+  <xs:import schemaLocation="http://localhost:3938/SmtOAPersonOffice.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
   <xs:complexType name="ArrayOfV_TravelReimbursement">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="V_TravelReimbursement" nillable="true" type="tns:V_TravelReimbursement" />
@@ -19,20 +19,20 @@
       <xs:element minOccurs="0" name="OWNERID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Startdate" nillable="true" type="xs:string" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="TravelReimbursement" nillable="true" type="q1:T_OA_TRAVELREIMBURSEMENT" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="TravelReimbursement" nillable="true" type="q1:T_OA_TRAVELREIMBURSEMENT" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="V_TravelReimbursement" nillable="true" type="tns:V_TravelReimbursement" />
   <xs:complexType name="V_Satisfaction">
     <xs:sequence>
       <xs:element minOccurs="0" name="CREATEUSERID" nillable="true" type="xs:string" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="Detail" nillable="true" type="q2:T_OA_SATISFACTIONDETAIL" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="Detail" nillable="true" type="q2:T_OA_SATISFACTIONDETAIL" />
       <xs:element minOccurs="0" name="OWNERCOMPANYID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OWNERDEPARTMENTID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OWNERID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="RequireMaster" nillable="true" type="q3:T_OA_SATISFACTIONMASTER" />
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="SubjectViewList" nillable="true" type="q4:ArrayOfT_OA_SATISFACTIONDETAIL" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="RequireMaster" nillable="true" type="q3:T_OA_SATISFACTIONMASTER" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="SubjectViewList" nillable="true" type="q4:ArrayOfT_OA_SATISFACTIONDETAIL" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="V_Satisfaction" nillable="true" type="tns:V_Satisfaction" />
@@ -51,14 +51,14 @@
   <xs:complexType name="V_MyStaticfaction">
     <xs:sequence>
       <xs:element minOccurs="0" name="CREATEUSERID" nillable="true" type="xs:string" />
-      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="OAMaster" nillable="true" type="q5:T_OA_SATISFACTIONMASTER" />
-      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="OARequire" nillable="true" type="q6:T_OA_SATISFACTIONREQUIRE" />
-      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="OAResult" nillable="true" type="q7:T_OA_SATISFACTIONRESULT" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="OAMaster" nillable="true" type="q5:T_OA_SATISFACTIONMASTER" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="OARequire" nillable="true" type="q6:T_OA_SATISFACTIONREQUIRE" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="OAResult" nillable="true" type="q7:T_OA_SATISFACTIONRESULT" />
       <xs:element minOccurs="0" name="OWNERCOMPANYID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OWNERDEPARTMENTID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OWNERID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
-      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="distrbuteuser" nillable="true" type="q8:T_OA_DISTRIBUTEUSER" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="distrbuteuser" nillable="true" type="q8:T_OA_DISTRIBUTEUSER" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="V_MyStaticfaction" nillable="true" type="tns:V_MyStaticfaction" />
@@ -107,11 +107,11 @@
   <xs:element name="V_EmployeeID" nillable="true" type="tns:V_EmployeeID" />
   <xs:complexType name="V_EmployeeSurveysModel">
     <xs:sequence>
-      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="T_OA_REQUIRE" nillable="true" type="q9:T_OA_REQUIRE" />
-      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="T_OA_REQUIREDETAIL" nillable="true" type="q10:ArrayOfT_OA_REQUIREDETAIL" />
-      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="T_OA_REQUIREDETAIL2" nillable="true" type="q11:ArrayOfT_OA_REQUIREDETAIL2" />
-      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="T_OA_REQUIREMASTER" nillable="true" type="q12:T_OA_REQUIREMASTER" />
-      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="T_OA_REQUIRERESULT" nillable="true" type="q13:ArrayOfT_OA_REQUIRERESULT" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="T_OA_REQUIRE" nillable="true" type="q9:T_OA_REQUIRE" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="T_OA_REQUIREDETAIL" nillable="true" type="q10:ArrayOfT_OA_REQUIREDETAIL" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="T_OA_REQUIREDETAIL2" nillable="true" type="q11:ArrayOfT_OA_REQUIREDETAIL2" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="T_OA_REQUIREMASTER" nillable="true" type="q12:T_OA_REQUIREMASTER" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="T_OA_REQUIRERESULT" nillable="true" type="q13:ArrayOfT_OA_REQUIRERESULT" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="V_EmployeeSurveysModel" nillable="true" type="tns:V_EmployeeSurveysModel" />
@@ -124,8 +124,8 @@
   <xs:complexType name="V_REQUIRERESULTMODE">
     <xs:sequence>
       <xs:element minOccurs="0" name="RESULT" type="xs:boolean" />
-      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="T_OA_REQUIREDETAIL" nillable="true" type="q14:T_OA_REQUIREDETAIL" />
-      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="T_OA_REQUIRERESULT" nillable="true" type="q15:T_OA_REQUIRERESULT" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="T_OA_REQUIREDETAIL" nillable="true" type="q14:T_OA_REQUIREDETAIL" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="T_OA_REQUIRERESULT" nillable="true" type="q15:T_OA_REQUIRERESULT" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="V_REQUIRERESULTMODE" nillable="true" type="tns:V_REQUIRERESULTMODE" />
@@ -143,8 +143,8 @@
       <xs:element minOccurs="0" name="SubjectId" type="xs:decimal" />
       <xs:element minOccurs="0" name="SubjectList" nillable="true" type="tns:ArrayOfV_EmployeeSurveyInformation" />
       <xs:element minOccurs="0" name="SurveyTitle" nillable="true" type="xs:string" />
-      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="answerList" nillable="true" type="q16:ArrayOfT_OA_REQUIREDETAIL" />
-      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="masterEntity" nillable="true" type="q17:T_OA_REQUIREMASTER" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="answerList" nillable="true" type="q16:ArrayOfT_OA_REQUIREDETAIL" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="masterEntity" nillable="true" type="q17:T_OA_REQUIREMASTER" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="V_EmployeeSurveyMaster" nillable="true" type="tns:V_EmployeeSurveyMaster" />
@@ -156,8 +156,8 @@
   <xs:element name="ArrayOfV_EmployeeSurveyInformation" nillable="true" type="tns:ArrayOfV_EmployeeSurveyInformation" />
   <xs:complexType name="V_EmployeeSurveyInformation">
     <xs:sequence>
-      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="AnswerList" nillable="true" type="q18:ArrayOfT_OA_REQUIREDETAIL" />
-      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="Subject" nillable="true" type="q19:T_OA_REQUIREDETAIL2" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="AnswerList" nillable="true" type="q18:ArrayOfT_OA_REQUIREDETAIL" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="Subject" nillable="true" type="q19:T_OA_REQUIREDETAIL2" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="V_EmployeeSurveyInformation" nillable="true" type="tns:V_EmployeeSurveyInformation" />
@@ -168,7 +168,7 @@
       <xs:element minOccurs="0" name="OWNERDEPARTMENTID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OWNERID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
-      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="RequireMaster" nillable="true" type="q20:T_OA_REQUIREMASTER" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="RequireMaster" nillable="true" type="q20:T_OA_REQUIREMASTER" />
       <xs:element minOccurs="0" name="SubjectViewList" nillable="true" type="tns:ArrayOfV_EmployeeSurveySubject" />
     </xs:sequence>
   </xs:complexType>
@@ -181,12 +181,12 @@
   <xs:element name="ArrayOfV_EmployeeSurveySubject" nillable="true" type="tns:ArrayOfV_EmployeeSurveySubject" />
   <xs:complexType name="V_EmployeeSurveySubject">
     <xs:sequence>
-      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="Answer" nillable="true" type="q21:T_OA_REQUIREDETAIL" />
-      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="AnswerList" nillable="true" type="q22:ArrayOfT_OA_REQUIREDETAIL" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="Answer" nillable="true" type="q21:T_OA_REQUIREDETAIL" />
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="AnswerList" nillable="true" type="q22:ArrayOfT_OA_REQUIREDETAIL" />
       <xs:element minOccurs="0" name="IsAdd" type="xs:boolean" />
-      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="Master" nillable="true" type="q23:T_OA_REQUIREMASTER" />
-      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="Question" nillable="true" type="q24:T_OA_REQUIREDETAIL2" />
-      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="SubjectInfo" nillable="true" type="q25:T_OA_REQUIREDETAIL2" />
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="Master" nillable="true" type="q23:T_OA_REQUIREMASTER" />
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="Question" nillable="true" type="q24:T_OA_REQUIREDETAIL2" />
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="SubjectInfo" nillable="true" type="q25:T_OA_REQUIREDETAIL2" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="V_EmployeeSurveySubject" nillable="true" type="tns:V_EmployeeSurveySubject" />
@@ -205,15 +205,15 @@
   <xs:complexType name="V_MyEusurvey">
     <xs:sequence>
       <xs:element minOccurs="0" name="CREATEUSERID" nillable="true" type="xs:string" />
-      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="OADetail" nillable="true" type="q26:T_OA_REQUIREDETAIL" />
-      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="OAMaster" nillable="true" type="q27:T_OA_REQUIREMASTER" />
-      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="OARequire" nillable="true" type="q28:T_OA_REQUIRE" />
-      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="OAResult" nillable="true" type="q29:ArrayOfT_OA_REQUIRERESULT" />
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="OADetail" nillable="true" type="q26:T_OA_REQUIREDETAIL" />
+      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="OAMaster" nillable="true" type="q27:T_OA_REQUIREMASTER" />
+      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="OARequire" nillable="true" type="q28:T_OA_REQUIRE" />
+      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="OAResult" nillable="true" type="q29:ArrayOfT_OA_REQUIRERESULT" />
       <xs:element minOccurs="0" name="OWNERCOMPANYID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OWNERDEPARTMENTID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OWNERID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
-      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="distrbuteuser" nillable="true" type="q30:T_OA_DISTRIBUTEUSER" />
+      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="distrbuteuser" nillable="true" type="q30:T_OA_DISTRIBUTEUSER" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="V_MyEusurvey" nillable="true" type="tns:V_MyEusurvey" />
@@ -228,12 +228,12 @@
       <xs:element minOccurs="0" name="RequireContent" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RequireId" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RequireresultId" nillable="true" type="xs:string" />
-      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="ResultList" nillable="true" type="q31:ArrayOfT_OA_REQUIRERESULT" />
+      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="ResultList" nillable="true" type="q31:ArrayOfT_OA_REQUIRERESULT" />
       <xs:element minOccurs="0" name="SurveyTitle" nillable="true" type="xs:string" />
-      <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="distributeuserList" nillable="true" type="q32:ArrayOfT_OA_DISTRIBUTEUSER" />
-      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="masterEntity" nillable="true" type="q33:T_OA_REQUIREMASTER" />
-      <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="oldDistributeuserList" nillable="true" type="q34:ArrayOfT_OA_DISTRIBUTEUSER" />
-      <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="requireEntity" nillable="true" type="q35:T_OA_REQUIRE" />
+      <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="distributeuserList" nillable="true" type="q32:ArrayOfT_OA_DISTRIBUTEUSER" />
+      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="masterEntity" nillable="true" type="q33:T_OA_REQUIREMASTER" />
+      <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="oldDistributeuserList" nillable="true" type="q34:ArrayOfT_OA_DISTRIBUTEUSER" />
+      <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="requireEntity" nillable="true" type="q35:T_OA_REQUIRE" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="V_EmployeeSurveyApp" nillable="true" type="tns:V_EmployeeSurveyApp" />
@@ -248,7 +248,7 @@
       <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MasterID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RequireID" nillable="true" type="xs:string" />
-      <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="ResultList" nillable="true" type="q36:ArrayOfT_OA_REQUIRERESULT" />
+      <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="ResultList" nillable="true" type="q36:ArrayOfT_OA_REQUIRERESULT" />
       <xs:element minOccurs="0" name="SubjectList" nillable="true" type="tns:ArrayOfV_EmployeeSurveyInformation" />
       <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -258,9 +258,9 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="RequireDistributeId" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RequireId" nillable="true" type="xs:string" />
-      <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="distributeuserList" nillable="true" type="q37:ArrayOfT_OA_DISTRIBUTEUSER" />
-      <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="oldDistributeuserList" nillable="true" type="q38:ArrayOfT_OA_DISTRIBUTEUSER" />
-      <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="requiredistributeEntity" nillable="true" type="q39:T_OA_REQUIREDISTRIBUTE" />
+      <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="distributeuserList" nillable="true" type="q37:ArrayOfT_OA_DISTRIBUTEUSER" />
+      <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="oldDistributeuserList" nillable="true" type="q38:ArrayOfT_OA_DISTRIBUTEUSER" />
+      <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="requiredistributeEntity" nillable="true" type="q39:T_OA_REQUIREDISTRIBUTE" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="V_EmployeeSurveyRequireDistribute" nillable="true" type="tns:V_EmployeeSurveyRequireDistribute" />
@@ -282,12 +282,12 @@
       <xs:element minOccurs="0" name="Satisfactionmasterid" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Satisfactionrequireid" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SurveyTitle" nillable="true" type="xs:string" />
-      <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="disibuteEntity" nillable="true" type="q40:T_OA_SATISFACTIONDISTRIBUTE" />
-      <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="distributeuserList" nillable="true" type="q41:ArrayOfT_OA_DISTRIBUTEUSER" />
-      <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="masterEntity" nillable="true" type="q42:T_OA_REQUIREMASTER" />
-      <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="oldDistributeuserList" nillable="true" type="q43:ArrayOfT_OA_DISTRIBUTEUSER" />
-      <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="requireEntity" nillable="true" type="q44:T_OA_SATISFACTIONREQUIRE" />
-      <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="resultList" nillable="true" type="q45:ArrayOfT_OA_SATISFACTIONRESULT" />
+      <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="disibuteEntity" nillable="true" type="q40:T_OA_SATISFACTIONDISTRIBUTE" />
+      <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="distributeuserList" nillable="true" type="q41:ArrayOfT_OA_DISTRIBUTEUSER" />
+      <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="masterEntity" nillable="true" type="q42:T_OA_REQUIREMASTER" />
+      <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="oldDistributeuserList" nillable="true" type="q43:ArrayOfT_OA_DISTRIBUTEUSER" />
+      <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="requireEntity" nillable="true" type="q44:T_OA_SATISFACTIONREQUIRE" />
+      <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="resultList" nillable="true" type="q45:ArrayOfT_OA_SATISFACTIONRESULT" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="V_Satisfactions" nillable="true" type="tns:V_Satisfactions" />
@@ -317,7 +317,7 @@
       <xs:element minOccurs="0" name="TrCheckState" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TrId" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TraveAppCheckState" nillable="true" type="xs:string" />
-      <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/SMT_OA_EFModel" minOccurs="0" name="Travelmanagement" nillable="true" type="q46:T_OA_BUSINESSTRIP" />
+      <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="Travelmanagement" nillable="true" type="q46:T_OA_BUSINESSTRIP" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="V_Travelmanagement" nillable="true" type="tns:V_Travelmanagement" />
@@ -353,6 +353,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="APPROVALTYPE" type="xs:decimal" />
       <xs:element minOccurs="0" name="APPROVALTYPENAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApprovalTypeID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="COMPANYID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="COMPANYNAME" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DEPARTMENTID" nillable="true" type="xs:string" />

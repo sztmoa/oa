@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects;
 using SMT.Foundation.Core;
 using SMT.SaaS.OA.DAL.Views;
@@ -57,7 +57,7 @@ namespace SMT.SaaS.OA.DAL
             try
             {
                 if (requireMasterInfo.EntityKey == null)
-                    requireMasterInfo.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_REQUIREMASTER", "SATISFACTIONMASTERID", requireMasterInfo.SATISFACTIONMASTERID);
+                    requireMasterInfo.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_REQUIREMASTER", "SATISFACTIONMASTERID", requireMasterInfo.SATISFACTIONMASTERID);
                 T_OA_SATISFACTIONMASTER tmpobj = base.GetObjectByEntityKey(requireMasterInfo.EntityKey) as T_OA_SATISFACTIONMASTER;
                 base.Update(requireMasterInfo);
                 n = SaveContextChanges();
@@ -80,10 +80,10 @@ namespace SMT.SaaS.OA.DAL
             try
             {
                 if (surveySubjectInfo.EntityKey == null)
-                    surveySubjectInfo.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_SATISFACTIONDETAIL", "SATISFACTIONDETAILID", surveySubjectInfo.SATISFACTIONDETAILID);
+                    surveySubjectInfo.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_SATISFACTIONDETAIL", "SATISFACTIONDETAILID", surveySubjectInfo.SATISFACTIONDETAILID);
                 T_OA_SATISFACTIONDETAIL tmpobj = base.GetObjectByEntityKey(surveySubjectInfo.EntityKey) as T_OA_SATISFACTIONDETAIL;
                 if (surveySubjectInfo.T_OA_SATISFACTIONMASTERReference.EntityKey == null)
-                    surveySubjectInfo.T_OA_SATISFACTIONMASTERReference.EntityKey = new EntityKey("SMT_OA_EFModelContext.T_OA_SATISFACTIONMASTER", "SATISFACTIONMASTERID", surveySubjectInfo.T_OA_SATISFACTIONMASTER.SATISFACTIONMASTERID);
+                    surveySubjectInfo.T_OA_SATISFACTIONMASTERReference.EntityKey = new EntityKey("TM_SaaS_OA_EFModelContext.T_OA_SATISFACTIONMASTER", "SATISFACTIONMASTERID", surveySubjectInfo.T_OA_SATISFACTIONMASTER.SATISFACTIONMASTERID);
                 tmpobj.T_OA_SATISFACTIONMASTER = base.GetObjectByEntityKey(surveySubjectInfo.T_OA_SATISFACTIONMASTERReference.EntityKey) as T_OA_SATISFACTIONMASTER;
                 base.UpdateFromContext(surveySubjectInfo);
 
@@ -111,7 +111,7 @@ namespace SMT.SaaS.OA.DAL
             {
                 if (surveySubjectInfo.EntityKey == null)
                 {
-                    surveySubjectInfo.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_SATISFACTIONREQUIRE", "SATISFACTIONREQUIREID", surveySubjectInfo.SATISFACTIONREQUIREID);
+                    surveySubjectInfo.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_SATISFACTIONREQUIRE", "SATISFACTIONREQUIREID", surveySubjectInfo.SATISFACTIONREQUIREID);
                     surveySubjectInfo.T_OA_SATISFACTIONMASTER = base.GetObjectByEntityKey(surveySubjectInfo.T_OA_SATISFACTIONMASTER.EntityKey) as T_OA_SATISFACTIONMASTER;
                     base.Add(surveySubjectInfo);
                 }
@@ -143,7 +143,7 @@ namespace SMT.SaaS.OA.DAL
             {
                 if (surveySubjectInfo.EntityKey == null)  //添加界面 修改时报错，只会在此出现这种情况
                 {
-                    surveySubjectInfo.EntityKey = new System.Data.EntityKey("SMT_OA_EFModelContext.T_OA_SATISFACTIONDISTRIBUTE", "SATISFACTIONDISTRIBUTEID", surveySubjectInfo.SATISFACTIONDISTRIBUTEID);
+                    surveySubjectInfo.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_OA_SATISFACTIONDISTRIBUTE", "SATISFACTIONDISTRIBUTEID", surveySubjectInfo.SATISFACTIONDISTRIBUTEID);
                     surveySubjectInfo.T_OA_SATISFACTIONREQUIRE = base.GetObjectByEntityKey(surveySubjectInfo.T_OA_SATISFACTIONREQUIRE.EntityKey) as T_OA_SATISFACTIONREQUIRE;
                     base.Add(surveySubjectInfo);
                 }

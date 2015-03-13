@@ -158,7 +158,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             _lstRecord[0].TEL = txtTel.Text;
             _lstRecord[0].ROUTE = txtRoute.Text;
             _lstRecord[0].FUEL = decimal.Parse(txtFuel.Text);
-            _lstRecord[0].RANGE = decimal.Parse(txtRange2.Text);
+            _lstRecord[0].RANGE = txtRange2.Text;
             _lstRecord[0].ISCHARGE = (bool)ckbHasFee.IsChecked ? "1" : "0";
             _lstRecord[0].CHARGEMONEY = decimal.Parse(txtFee.Text);
             _lstRecord[0].CONTENT = txtREMARK.Text;

@@ -16,7 +16,6 @@ using SMT.SAAS.Main.CurrentContext;
 using SMT.SaaS.FrameworkUI;
 using System.Runtime.Serialization;
 using SMT.SaaS.PublicControls;
-using Telerik.Windows.Documents.FormatProviders.Pdf;
 using SMT.Saas.Tools.PublicInterfaceWS;
 
 namespace SMT.SaaS.OA.UI.UserControls

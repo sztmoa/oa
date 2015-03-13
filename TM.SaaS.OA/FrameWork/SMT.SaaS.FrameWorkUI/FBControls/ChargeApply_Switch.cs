@@ -81,6 +81,7 @@ namespace SMT.SaaS.FrameworkUI.FBControls
 
         private void OnQueryCompleted(FBEntity queryEntity)
         {
+            try { 
             if (queryEntity == null) // 新增
             {
                 this.ExtensionalOrder.EXTENSIONALORDERID = Guid.NewGuid().ToString();
@@ -167,6 +168,10 @@ namespace SMT.SaaS.FrameworkUI.FBControls
                 }
                 InitDataComplete(this, new InitDataCompletedArgs(messages));
             }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("工作计划出差单OnQueryCompleted err:" + ex.ToString());
+            }
         }
         #endregion
 
@@ -200,17 +205,7 @@ namespace SMT.SaaS.FrameworkUI.FBControls
                 });
             }
 
-            var items = from item in ExtensionalOrderDetailFBEntityList
-                        group item by new
-                        {
-
-                            (item.Entity as T_FB_EXTENSIONORDERDETAIL).T_FB_SUBJECT.SUBJECTNAME,
-                            (item.Entity as T_FB_EXTENSIONORDERDETAIL).CHARGETYPE,
-                            (item.Entity as T_FB_EXTENSIONORDERDETAIL).USABLEMONEY
-                        } into g
-                        where g.Sum(item => (item.Entity as T_FB_EXTENSIONORDERDETAIL).APPLIEDMONEY) > g.Key.USABLEMONEY
-                        select new { g.Key, totalCharge = g.Sum(item => (item.Entity as T_FB_EXTENSIONORDERDETAIL).APPLIEDMONEY) };
-
+         
             if (this.TravelSubject != null)
             {
                 if (this.TravelSubject.SpecialListDetail.Count == 0)
@@ -221,8 +216,18 @@ namespace SMT.SaaS.FrameworkUI.FBControls
                 {
                     listReslut.Add(string.Format("科目:{2} 的" + msgBiggerError, "申请金额", "可用金额", TravelSubject.subject.SUBJECTNAME));
                 }
-
+                return listReslut;
             }
+            var items = from item in ExtensionalOrderDetailFBEntityList
+                        group item by new
+                        {
+
+                            (item.Entity as T_FB_EXTENSIONORDERDETAIL).T_FB_SUBJECT.SUBJECTNAME,
+                            (item.Entity as T_FB_EXTENSIONORDERDETAIL).CHARGETYPE,
+                            (item.Entity as T_FB_EXTENSIONORDERDETAIL).USABLEMONEY
+                        } into g
+                        where g.Sum(item => (item.Entity as T_FB_EXTENSIONORDERDETAIL).APPLIEDMONEY) > g.Key.USABLEMONEY
+                        select new { g.Key, totalCharge = g.Sum(item => (item.Entity as T_FB_EXTENSIONORDERDETAIL).APPLIEDMONEY) };
 
             foreach (var item in items)
             {

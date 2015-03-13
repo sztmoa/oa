@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using SMT.Foundation.Log;
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects;
 using SMT.SaaS.OA.DAL.Views;
 using System.Data.Objects.DataClasses;
@@ -14,7 +14,7 @@ namespace SMT.SaaS.OA.BLL
 {
     public class LicenseBorrowBll : BaseBll<T_OA_LICENSEUSER>, ILookupEntity
     {
-        //SMT_OA_EFModelContext context = new SMT_OA_EFModelContext();
+        //TM_SaaS_OA_EFModelContext context = new TM_SaaS_OA_EFModelContext();
         /// <summary>
         /// 获取证照外借记录
         /// </summary>
@@ -67,7 +67,7 @@ namespace SMT.SaaS.OA.BLL
         {
             try
             {
-                //SMT_OA_EFModelContext<T_OA_LICENSEUSER> context = new SMT_OA_EFModelContext<T_OA_LICENSEUSER>();
+                //TM_SaaS_OA_EFModelContext<T_OA_LICENSEUSER> context = new TM_SaaS_OA_EFModelContext<T_OA_LICENSEUSER>();
                 var entity = (from q in dal.GetObjects().Include("T_OA_LICENSEMASTER")
                               select q).FirstOrDefault(s => s.LICENSEUSERID == licenseID);
                 //var entity = dal.GetTable().FirstOrDefault(s => s.LICENSEUSERID == licenseID);

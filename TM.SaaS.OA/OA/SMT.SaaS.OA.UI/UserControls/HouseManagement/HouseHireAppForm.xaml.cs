@@ -920,7 +920,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             if (addFrm.selectHouseInfoObj != null)
             {
                 HouseListInfo = addFrm.selectHouseInfoObj;
-                this.txtManageCost.Text = ((int)(HouseListInfo.houseInfoObj.MANAGECOST / HouseListInfo.houseInfoObj.Number)).ToString();//获取管理费的平均值
+                this.txtManageCost.Text = ((int)(HouseListInfo.houseInfoObj.MANAGECOST / HouseListInfo.houseInfoObj.NUMBER)).ToString();//获取管理费的平均值
             }
         }
 

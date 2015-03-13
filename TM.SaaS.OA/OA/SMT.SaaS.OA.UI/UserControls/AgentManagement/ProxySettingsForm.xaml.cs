@@ -42,9 +42,9 @@ namespace SMT.SaaS.OA.UI.UserControls.AgentManagement
         private string AgentSetID = "";
         private string UserId = string.Empty;
         private SMT.Saas.Tools.PersonnelWS.V_EMPLOYEEPOST employeepost;
-        private List<FLOW_MODELDEFINE_T> ModelDefineList;
+        private List<SMT.Saas.Tools.FlowDesignerWS.FLOW_MODELDEFINE_T> ModelDefineList;
         public event EventHandler InitModelCode;
-        private FLOW_MODELDEFINE_T MODELDEFINE;
+        private SMT.Saas.Tools.FlowDesignerWS.FLOW_MODELDEFINE_T MODELDEFINE;
         #endregion
 
         #region 查看申请构造
@@ -168,7 +168,7 @@ namespace SMT.SaaS.OA.UI.UserControls.AgentManagement
                         }
                         //if (!string.IsNullOrEmpty(AgentSetInfo.MODELCODE.ToString()))//模块代码
                         //{
-                        //    foreach (FLOW_MODELDEFINE_T Region in cbModelCode.Items)
+                        //    foreach (SMT.Saas.Tools.FlowDesignerWS.FLOW_MODELDEFINE_T Region in cbModelCode.Items)
                         //    {
                         //        if (Region.MODELCODE == AgentSetInfo.MODELCODE)
                         //        {
@@ -303,7 +303,7 @@ namespace SMT.SaaS.OA.UI.UserControls.AgentManagement
                     agentSetInfo.SYSCODE = (cbSYSTEMTYPE.SelectedItem as T_SYS_DICTIONARY).DICTIONARYVALUE.ToString(); //系统代码
                     //agentSetInfo.SYSCODE = StrSYSTEMTYPE.DICTIONARYNAME.ToString();//系统代码
                     //agentSetInfo.MODELCODE = txtAGENTMODULE.Text;//代理模块
-                    agentSetInfo.MODELCODE = (cbModelCode.SelectedItem as FLOW_MODELDEFINE_T).MODELCODE; //代理模块
+                    agentSetInfo.MODELCODE = (cbModelCode.SelectedItem as SMT.Saas.Tools.FlowDesignerWS.FLOW_MODELDEFINE_T).MODELCODE; //代理模块
                     agentSetInfo.OWNERID = Common.CurrentLoginUserInfo.EmployeeID;//所属用户ID
                     agentSetInfo.OWNERNAME = Common.CurrentLoginUserInfo.EmployeeName;//所属用户名
                     agentSetInfo.OWNERCOMPANYID = Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;//所属公司ID
@@ -533,8 +533,8 @@ namespace SMT.SaaS.OA.UI.UserControls.AgentManagement
             cbModelCode.ItemsSource = null;
             if (AgentSetInfo != null && DICTIONARY != null && ModelDefineList != null)
             {
-                List<FLOW_MODELDEFINE_T> tmpModelDefine = ModelDefineList.Where(c => c.SYSTEMCODE == ((T_SYS_DICTIONARY)cbSYSTEMTYPE.SelectedItem).SYSTEMCODE).ToList();
-                FLOW_MODELDEFINE_T tmp = new FLOW_MODELDEFINE_T();
+                List<SMT.Saas.Tools.FlowDesignerWS.FLOW_MODELDEFINE_T> tmpModelDefine = ModelDefineList.Where(c => c.SYSTEMCODE == ((T_SYS_DICTIONARY)cbSYSTEMTYPE.SelectedItem).SYSTEMCODE).ToList();
+                SMT.Saas.Tools.FlowDesignerWS.FLOW_MODELDEFINE_T tmp = new SMT.Saas.Tools.FlowDesignerWS.FLOW_MODELDEFINE_T();
                 tmp.DESCRIPTION = Utility.GetResourceStr("PLEASESELECTL");
                 tmpModelDefine.Insert(0, tmp);
 

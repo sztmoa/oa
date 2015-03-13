@@ -14,7 +14,7 @@ using System.Linq;
 
 namespace SMT.SaaS.FrameworkUI.RichNotepad.ActionLink.Implementation
 {
-    public class DefineActionLink : ChildWindow, IDefineCommand
+    public class DefineActionLink : ChildWindow//, IDefineCommand
     {
         private TextBox _commandInput = null;
 

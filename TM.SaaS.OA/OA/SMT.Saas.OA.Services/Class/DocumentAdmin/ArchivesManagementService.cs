@@ -11,7 +11,7 @@ using System.ServiceModel.Activation;
 using System.Collections.Generic;
 using System.Text;
 
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.BLL;
 using SMT.SaaS.OA.DAL.Views;
 using SMT.SaaS.BLLCommonServices.FlowWFService;
@@ -244,9 +244,9 @@ namespace SMT.SaaS.OA.Services
                 else                    //通过工作流获取用户要审批的借阅信息
                 {
                     V_ArchivesLending a = new V_ArchivesLending();
-                    FLOW_FLOWRECORDDETAIL_T flowInfo = new FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
-                    //FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "0", "archivesLending", loginUserInfo.companyID, loginUserInfo.userID);
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "archivesLending", "", loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowInfo = new SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
+                    //SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "0", "archivesLending", loginUserInfo.companyID, loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "archivesLending", "", loginUserInfo.userID);
                     if (flowList == null)
                     {
                         return null;

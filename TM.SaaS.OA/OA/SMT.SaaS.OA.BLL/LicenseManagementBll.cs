@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using SMT.SaaS.OA.DAL;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects;
 using System.Linq.Dynamic;
 
@@ -12,7 +12,7 @@ namespace SMT.SaaS.OA.BLL
 {
     public class LicenseManagementBll : BaseBll<T_OA_LICENSEMASTER>
     {
-        //private SMT_OA_EFModelContext context = new SMT_OA_EFModelContext();
+        //private TM_SaaS_OA_EFModelContext context = new TM_SaaS_OA_EFModelContext();
 
         /// <summary>
         /// 查询证照主表

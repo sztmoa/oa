@@ -908,7 +908,7 @@ namespace SMT.SaaS.OA.UI.UserControls
             houseListTmp.SHAREDRENTCOST = houseObj.SHAREDRENTCOST;//合租押金
             houseListTmp.RENTCOST = houseObj.RENTCOST;//整套押金
             houseListTmp.DEPOSIT = houseObj.DEPOSIT;//整套租金
-            houseListTmp.MANAGECOST = (int)(houseObj.MANAGECOST/houseObj.Number); //管理费
+            houseListTmp.MANAGECOST = (int)(houseObj.MANAGECOST/houseObj.NUMBER); //管理费
 
             houseListTmp.CREATEUSERID = Common.CurrentLoginUserInfo.EmployeeID;
             houseListTmp.CREATEUSERNAME = Common.CurrentLoginUserInfo.EmployeeName;

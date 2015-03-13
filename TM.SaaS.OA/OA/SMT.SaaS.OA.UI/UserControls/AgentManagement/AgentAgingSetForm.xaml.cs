@@ -31,7 +31,7 @@ namespace SMT.SaaS.OA.UI.UserControls.AgentManagement
             get { return agentSetInfo; }
             set { this.DataContext = value; agentSetInfo = value; }
         }
-        private List<FLOW_MODELDEFINE_T> ModelDefineList;
+        private List<SMT.Saas.Tools.FlowDesignerWS.FLOW_MODELDEFINE_T> ModelDefineList;
         private RefreshedTypes refreshType = RefreshedTypes.CloseAndReloadData;
         private List<SMT.Saas.Tools.PersonnelWS.T_HR_EMPLOYEE> vemployeeObj = new List<SMT.Saas.Tools.PersonnelWS.T_HR_EMPLOYEE>();
         private ObservableCollection<string> Party = new ObservableCollection<string>();
@@ -43,7 +43,7 @@ namespace SMT.SaaS.OA.UI.UserControls.AgentManagement
         private string AgentSetID = "";
         private string UserId = string.Empty;
         public event EventHandler InitModelCode;
-        private FLOW_MODELDEFINE_T MODELDEFINE;
+        private SMT.Saas.Tools.FlowDesignerWS.FLOW_MODELDEFINE_T MODELDEFINE;
         private SMT.Saas.Tools.PersonnelWS.V_EMPLOYEEPOST employeepost;
         #endregion
 
@@ -311,7 +311,7 @@ namespace SMT.SaaS.OA.UI.UserControls.AgentManagement
                             agentSetInfo.PLANEXPIRATIONDATE = Convert.ToDateTime(dPLANEXPIRATIONDATE.Text);//计划失效日期
                         }
                         agentSetInfo.USERID = Common.CurrentLoginUserInfo.EmployeeID;
-                        agentSetInfo.MODELCODE = (cbModelCode.SelectedItem as FLOW_MODELDEFINE_T).MODELCODE; //代理模块
+                        agentSetInfo.MODELCODE = (cbModelCode.SelectedItem as SMT.Saas.Tools.FlowDesignerWS.FLOW_MODELDEFINE_T).MODELCODE; //代理模块
                         agentSetInfo.CREATECOMPANYID = Common.CurrentLoginUserInfo.UserPosts[0].CompanyID;//创建公司ID
                         agentSetInfo.CREATEDEPARTMENTID = Common.CurrentLoginUserInfo.UserPosts[0].DepartmentID;//创建部门ID
                         agentSetInfo.CREATEPOSTID = Common.CurrentLoginUserInfo.UserPosts[0].PostID;//创建岗位ID
@@ -638,8 +638,8 @@ namespace SMT.SaaS.OA.UI.UserControls.AgentManagement
             cbModelCode.ItemsSource = null;
             if (AgentSetInfo != null && DICTIONARY != null && ModelDefineList != null)
             {
-                List<FLOW_MODELDEFINE_T> tmpModelDefine = ModelDefineList.Where(c => c.SYSTEMCODE == ((T_SYS_DICTIONARY)cbSYSTEMTYPE.SelectedItem).SYSTEMCODE).ToList();
-                FLOW_MODELDEFINE_T tmp = new FLOW_MODELDEFINE_T();
+                List<SMT.Saas.Tools.FlowDesignerWS.FLOW_MODELDEFINE_T> tmpModelDefine = ModelDefineList.Where(c => c.SYSTEMCODE == ((T_SYS_DICTIONARY)cbSYSTEMTYPE.SelectedItem).SYSTEMCODE).ToList();
+                SMT.Saas.Tools.FlowDesignerWS.FLOW_MODELDEFINE_T tmp = new SMT.Saas.Tools.FlowDesignerWS.FLOW_MODELDEFINE_T();
                 tmp.DESCRIPTION = Utility.GetResourceStr("PLEASESELECTL");
                 tmpModelDefine.Insert(0, tmp);
 

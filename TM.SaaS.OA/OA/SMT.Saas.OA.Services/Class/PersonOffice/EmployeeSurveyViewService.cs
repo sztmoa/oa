@@ -8,7 +8,7 @@ using System.Text;
 
 using SMT.SaaS.OA.BLL;
 using SMT.SaaS.OA.DAL.Views;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 //using SMT.SaaS.OA.Services.FlowService;
 using SMT.SaaS.BLLCommonServices.FlowWFService;
 using SMT.SaaS.OA.DAL;
@@ -47,13 +47,13 @@ namespace SMT.SaaS.OA.Services
                         isView = "0";
                     }
                     ServiceClient workFlowWS = new ServiceClient();
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", isView, "T_OA_REQUIREMASTER", companyId, userId);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", isView, "T_OA_REQUIREMASTER", companyId, userId);
                     if (flowList == null)
                     {
                         return null;
                     }
                     List<string> guidStringList = new List<string>();
-                    foreach (FLOW_FLOWRECORDDETAIL_T f in flowList)
+                    foreach (SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T f in flowList)
                     {
                         guidStringList.Add(f.FLOW_FLOWRECORDMASTER_T.FORMID);
                     }
@@ -203,13 +203,13 @@ namespace SMT.SaaS.OA.Services
                         isView = "0";
                     }
                     ServiceClient workFlowWS = new ServiceClient();
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", isView, "T_OA_REQUIRE", companyId, userId);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", isView, "T_OA_REQUIRE", companyId, userId);
                     if (flowList == null)
                     {
                         return null;
                     }
                     List<string> guidStringList = new List<string>();
-                    foreach (FLOW_FLOWRECORDDETAIL_T f in flowList)
+                    foreach (SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T f in flowList)
                     {
                         guidStringList.Add(f.FLOW_FLOWRECORDMASTER_T.FORMID);
                     }
@@ -327,13 +327,13 @@ namespace SMT.SaaS.OA.Services
                         isView = "0";
                     }
                     ServiceClient workFlowWS = new ServiceClient();
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", isView, "T_OA_REQUIREDISTRIBUTE", companyId, userId);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", isView, "T_OA_REQUIREDISTRIBUTE", companyId, userId);
                     if (flowList == null)
                     {
                         return null;
                     }
                     List<string> guidStringList = new List<string>();
-                    foreach (FLOW_FLOWRECORDDETAIL_T f in flowList)
+                    foreach (SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T f in flowList)
                     {
                         guidStringList.Add(f.FLOW_FLOWRECORDMASTER_T.FORMID);
                     }

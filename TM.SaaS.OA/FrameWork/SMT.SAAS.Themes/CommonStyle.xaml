@@ -70,7 +70,7 @@
     <Style TargetType="controls:DatePicker" x:Key="DatePickerStyle"/>
     <Style TargetType="controlsToolkit:Expander" x:Key="ExpanderStyle"/>
     <Style x:Key="TimePickerStyle" TargetType="inputToolkit:TimePicker"/>
-    <Style TargetType="inputToolkit:NumericUpDown" x:Key="NumericUpDownStyle"/>
+    <!--<Style TargetType="inputToolkit:NumericUpDown" x:Key="NumericUpDownStyle"/>-->
     <Style x:Key="TimeUpDownStyle" TargetType="inputToolkit:TimeUpDown"/>
     <Style TargetType="data:DataGrid" x:Key="DataGridStyle"/>
     <Style x:Key="DataGridStyle1" TargetType="data:DataGrid"/>

@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.Collections.Generic;
 using System.Text;
-using SMT_OA_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.SaaS.OA.BLL;
 //using SMT.SaaS.OA.Services.FlowService;
 using SMT.SaaS.BLLCommonServices.FlowWFService;
@@ -435,9 +435,9 @@ namespace SMT.SaaS.OA.Services
                 {
                     ServiceClient workFlowWS = new ServiceClient();
                     V_MeetingRoomApp a = new V_MeetingRoomApp();
-                    FLOW_FLOWRECORDDETAIL_T flowInfo = new FLOW_FLOWRECORDDETAIL_T();   //审核人 操作
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowInfo = new SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T();   //审核人 操作
 
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "MeetingRoomApp", loginUserInfo.companyID, loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "MeetingRoomApp", loginUserInfo.companyID, loginUserInfo.userID);
                     if (flowList == null)
                     {
                         return null;
@@ -657,7 +657,7 @@ namespace SMT.SaaS.OA.Services
         [OperationContract]
         public string GetFlowIdByKey(string masterID, string userId, string flagStatus)//T 待审  F 审完
         {
-            //FLOW_FLOWRECORDDETAIL_T flowInfo = new FLOW_FLOWRECORDDETAIL_T();
+            //SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowInfo = new SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T();
             //flowInfo.EditUserID = userId;
             //flowInfo.Flag = flagStatus;     //审批标志，0为待审批,1为已审批完成
             //flowInfo.CompanyID = "";
@@ -671,7 +671,7 @@ namespace SMT.SaaS.OA.Services
             //flowInfo.CreateUserID = "";     //创建流程用户ID
             //flowInfo.StateCode = "";        //状态代码
             //flowInfo.ParentStateCode = "";  //父状态代码
-            //FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo(flowInfo);
+            //SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo(flowInfo);
             //if (flowList != null && flowList.Count() > 0)
             //{
             //    return flowList[0].GUID;
@@ -690,7 +690,7 @@ namespace SMT.SaaS.OA.Services
         
         //public List<T_OA_MEETINGINFO> GetInfoListByFlow(string userId, string isChecked)
         //{
-        //    //FLOW_FLOWRECORDDETAIL_T flowInfo = new FLOW_FLOWRECORDDETAIL_T();   //审核人 操作
+        //    //SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowInfo = new SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T();   //审核人 操作
         //    //flowInfo.EditUserID = userId;
         //    //flowInfo.Flag = isChecked;                              //审批标志，0为待审批,1为已审批完成
         //    //flowInfo.CompanyID = "";
@@ -704,7 +704,7 @@ namespace SMT.SaaS.OA.Services
         //    //flowInfo.CreateUserID = "";                             //创建流程用户ID
         //    //flowInfo.StateCode = "";                                //状态代码
         //    //flowInfo.ParentStateCode = "";                          //父状态代码
-        //    //FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo(flowInfo);
+        //    //SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo(flowInfo);
         //    //if (flowList == null)
         //    //{
         //    //    return null;
@@ -716,7 +716,7 @@ namespace SMT.SaaS.OA.Services
         //    //    if (flowList.Count() > 0)
         //    //    {
 
-        //    //        foreach (FLOW_FLOWRECORDDETAIL_T f in flowList)
+        //    //        foreach (SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T f in flowList)
         //    //        {
         //    //            guidStringList.Add(f.FormID);
         //    //        }
@@ -759,8 +759,8 @@ namespace SMT.SaaS.OA.Services
                 {
                     ServiceClient workFlowWS = new ServiceClient();
                     V_MeetingInfo a = new V_MeetingInfo();
-                    FLOW_FLOWRECORDDETAIL_T flowInfo = new FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
-                    FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "MeetingInfo", loginUserInfo.companyID, loginUserInfo.userID);
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowInfo = new SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T();   //审核人 操作              
+                    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList = workFlowWS.GetFlowInfo("", "", "", "0", "MeetingInfo", loginUserInfo.companyID, loginUserInfo.userID);
                     if (flowList == null)
                     {
                         return null;
@@ -787,7 +787,7 @@ namespace SMT.SaaS.OA.Services
         #region 流程
 
         [OperationContract]
-        public int SubmitFlow(T_OA_MEETINGINFO obj, FLOW_FLOWRECORDDETAIL_T flowRecordInfo, string toUserId)
+        public int SubmitFlow(T_OA_MEETINGINFO obj, SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowRecordInfo, string toUserId)
         {
             using (MeetingManagementBll MeetingInfoBLL = new MeetingManagementBll())
             {
@@ -810,10 +810,10 @@ namespace SMT.SaaS.OA.Services
         }
 
         [OperationContract]
-        public int SubmitComment(FLOW_FLOWRECORDDETAIL_T flowRecordInfo, string toUserId, string empComment)
+        public int SubmitComment(SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowRecordInfo, string toUserId, string empComment)
         {
 
-            //FLOW_FLOWRECORDDETAIL_T[] result = workFlowWS.GetFlowInfo(flowRecordInfo);
+            //SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] result = workFlowWS.GetFlowInfo(flowRecordInfo);
             //flowRecordInfo = result[0];
             //flowRecordInfo.Content = empComment;
             //if (workFlowWS.StartFlow(flowRecordInfo, "", toUserId, "Update") == "OK")
@@ -827,9 +827,9 @@ namespace SMT.SaaS.OA.Services
             return 1;
         }
 
-        //private FLOW_FLOWRECORDDETAIL_T[] GetFlowListByUser(string userId, string flagStatus)
+        //private SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] GetFlowListByUser(string userId, string flagStatus)
         //{
-        //    FLOW_FLOWRECORDDETAIL_T flowInfo = new FLOW_FLOWRECORDDETAIL_T();
+        //    SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T flowInfo = new SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T();
         //    flowInfo.EditUserID = userId;
         //    flowInfo.Flag = flagStatus;     //审批标志，0为待审批,1为已审批完成
         //    flowInfo.CompanyID = "";
@@ -846,10 +846,10 @@ namespace SMT.SaaS.OA.Services
         //    //return workFlowWS.GetFlowInfo(flowInfo);
         //    return flowInfo;
         //}
-        //private List<string> GetGuidList(FLOW_FLOWRECORDDETAIL_T[] flowList)
+        //private List<string> GetGuidList(SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T[] flowList)
         //{
         //    List<string> guidStringList = new List<string>();
-        //    foreach (FLOW_FLOWRECORDDETAIL_T f in flowList)
+        //    foreach (SMT.SaaS.BLLCommonServices.FlowWFService.FLOW_FLOWRECORDDETAIL_T f in flowList)
         //    {
         //        guidStringList.Add(f.GUID);
         //    }
