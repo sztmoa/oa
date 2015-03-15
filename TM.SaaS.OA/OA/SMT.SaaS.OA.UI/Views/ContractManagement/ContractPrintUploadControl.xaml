@@ -7,13 +7,13 @@
     xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
     xmlns:audit="clr-namespace:SMT.SaaS.FrameworkUI.AuditControl;assembly=SMT.SaaS.FrameworkUI" 
     xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-    xmlns:richtext="clr-namespace:SMT.SaaS.FrameworkUI.RichNotepad;assembly=SMT.SaaS.FrameworkUI.RichNotepad"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"     
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Class="SMT.SaaS.OA.UI.Views.ContractManagement.ContractPrintUploadControl"
     mc:Ignorable="d">
     <controls:TabControl x:Name="tbcContainer" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="2" Style="{StaticResource TabControlStyle}">
         <controls:TabItem Header="{Binding Converter={StaticResource ResourceConveter}, Source=CONTRACTINFORMATION}" Style="{StaticResource TabItemStyle}">
+            <!--xmlns:richtext="clr-namespace:SMT.SaaS.FrameworkUI.RichNotepad;assembly=SMT.SaaS.FrameworkUI.RichNotepad"-->
             <Grid x:Name="LayoutRoot" Loaded="LayoutRoot_Loaded" SizeChanged="LayoutRoot_SizeChanged" Background="Transparent" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
@@ -45,11 +45,11 @@
                 <TextBlock Grid.Row="6"  VerticalAlignment="Top" Text="{Binding Converter={StaticResource ResourceConveter}, Source=THECONTRACT}" TextWrapping="Wrap" d:LayoutOverrides="Width"/>
                 <TextBlock HorizontalAlignment="Left" x:Name="txtFile" Grid.Row="7" Grid.Column="0" Text="{Binding Converter={StaticResource ResourceConveter}, Source=FileUpload}" TextWrapping="Wrap" Height="22" VerticalAlignment="Top"/>
 				<TextBlock VerticalAlignment="Top" Text="{Binding Converter={StaticResource ResourceConveter}, Source=CONTRACTNUMBER}" TextWrapping="Wrap" d:LayoutOverrides="Width"/>
-                <richtext:RichMainPage Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" x:Name="ContractText" Margin="1,5,20,0" MinHeight="200">
-                        <!--<validator:ValidatorService.Validator>
+                <!--<richtext:RichMainPage Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" x:Name="ContractText" Margin="1,5,20,0" MinHeight="200">
+                        --><!--<validator:ValidatorService.Validator>
                             <validator:RequiredValidator ManagerName="Group1" ErrorMessage="REQUIRED" ErrorMessageParameter="THECONTRACT" ></validator:RequiredValidator>
-                        </validator:ValidatorService.Validator>-->
-                </richtext:RichMainPage>
+                        </validator:ValidatorService.Validator>--><!--
+                </richtext:RichMainPage>-->
                 <!--<TextBox x:Name="ContractText" AcceptsReturn="True"  TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" MinHeight="150" Height="100" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="6" Style="{StaticResource TextBoxStyle}" Margin="1,5,20,0" VerticalAlignment="Top">
                     <validator:ValidatorService.Validator>
                         <validator:RequiredValidator ManagerName="Group1" ErrorMessage="REQUIRED" ErrorMessageParameter="THECONTRACT"/>
@@ -107,7 +107,7 @@
 				<TextBlock  VerticalAlignment="Top" x:Name="txtDateSigned" Text="{Binding Converter={StaticResource ResourceConveter}, Source=DATESIGNED}" TextWrapping="Wrap" Grid.Column="0" Grid.Row="4"/>
 				<controls:DatePicker x:Name="DateSigned" Style="{StaticResource DatePickerStyle}" Grid.Row="4" Grid.Column="1" Height="25" Margin="0,1,20,4"/>
 				<TextBlock  VerticalAlignment="Top" x:Name="txtPrintCopies" Text="{Binding Converter={StaticResource ResourceConveter}, Source=PRINTCOPIES}" TextWrapping="Wrap" Grid.Column="2" Grid.Row="4"/>
-                <inputToolkit:NumericUpDown x:Name="nudBalanceMonth" Grid.Column="3" Grid.Row="4" Maximum="12" Margin="0,1,20,4" Height="25" Style="{StaticResource NumericUpDownStyle}"/>
+                <inputToolkit:NumericUpDown x:Name="nudBalanceMonth" Grid.Column="3" Grid.Row="4" Maximum="12" Margin="0,1,20,4" Height="25" />
 			</Grid>
         </controls:TabItem>
         <!--<controls:TabItem Header="{Binding Converter={StaticResource ResourceConveter}, Source=AUDITTAB}">

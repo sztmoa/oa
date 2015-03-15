@@ -329,7 +329,7 @@ namespace SMT.SaaS.OA.UI
             dicts.Add(new KeyValuePair<Type, List<string>>(typeof(ApplicationsForContractsPages), new List<string> { "CONTRACTLEVEL", "CHECKSTATE" }));
 
             dicts.Add(new KeyValuePair<Type, List<string>>(typeof(ContractPrintingPage), new List<string> { "CONTRACTLEVEL" }));
-            dicts.Add(new KeyValuePair<Type, List<string>>(typeof(ContractPrintUploadControl), new List<string> { "CONTRACTLEVEL" }));
+            //dicts.Add(new KeyValuePair<Type, List<string>>(typeof(ContractPrintUploadControl), new List<string> { "CONTRACTLEVEL" }));
             dicts.Add(new KeyValuePair<Type, List<string>>(typeof(ViewContractApplicationPage), new List<string> { "CONTRACTLEVEL" }));
 
             dicts.Add(new KeyValuePair<Type, List<string>>(typeof(BenefitsAdministrationPage), new List<string> { "WELFAREPROID" }));

@@ -71,26 +71,26 @@ namespace SMT.SaaS.OA.UI.Views.ContractManagement
         #region 添加打印
         void btnNew_Click(object sender, RoutedEventArgs e)
         {
-            ContractPrintUploadControl AddWin = new ContractPrintUploadControl(Action.Print, null);
-            EntityBrowser browser = new EntityBrowser(AddWin);
-            browser.MinWidth = 580;
-            browser.MinHeight = 460;
-            browser.ReloadDataEvent += new EntityBrowser.refreshGridView(browser_ReloadDataEvent);
-            browser.Show<string>(DialogMode.Default, Common.ParentLayoutRoot, "", (result) => { });
+            //ContractPrintUploadControl AddWin = new ContractPrintUploadControl(Action.Print, null);
+            //EntityBrowser browser = new EntityBrowser(AddWin);
+            //browser.MinWidth = 580;
+            //browser.MinHeight = 460;
+            //browser.ReloadDataEvent += new EntityBrowser.refreshGridView(browser_ReloadDataEvent);
+            //browser.Show<string>(DialogMode.Default, Common.ParentLayoutRoot, "", (result) => { });
         }
         #endregion
        
         #region 查看
         void BtnView_Click(object sender, RoutedEventArgs e)
         {
-            V_ContractPrint contractApplications = DaGr.SelectedItem as V_ContractPrint;
-            ContractPrintUploadControl AddWin = new ContractPrintUploadControl(Action.Read, contractApplications);
-            EntityBrowser browser = new EntityBrowser(AddWin);
-            browser.FormType = FormTypes.Browse;
-            browser.MinWidth = 580;
-            browser.MinHeight = 460;
-            browser.ReloadDataEvent += new EntityBrowser.refreshGridView(browser_ReloadDataEvent);
-            browser.Show<string>(DialogMode.Default, Common.ParentLayoutRoot, "", (result) => { });
+            //V_ContractPrint contractApplications = DaGr.SelectedItem as V_ContractPrint;
+            //ContractPrintUploadControl AddWin = new ContractPrintUploadControl(Action.Read, contractApplications);
+            //EntityBrowser browser = new EntityBrowser(AddWin);
+            //browser.FormType = FormTypes.Browse;
+            //browser.MinWidth = 580;
+            //browser.MinHeight = 460;
+            //browser.ReloadDataEvent += new EntityBrowser.refreshGridView(browser_ReloadDataEvent);
+            //browser.Show<string>(DialogMode.Default, Common.ParentLayoutRoot, "", (result) => { });
         }
         #endregion
 
@@ -215,13 +215,13 @@ namespace SMT.SaaS.OA.UI.Views.ContractManagement
         #region 选择上传记录
         private void myBtn_Click(object sender, RoutedEventArgs e)
         {
-            V_ContractPrint contractApplications = DaGr.SelectedItem as V_ContractPrint;
-            ContractPrintUploadControl AddWin = new ContractPrintUploadControl(Action.FromAnnex, contractApplications);
-            EntityBrowser browser = new EntityBrowser(AddWin);
-            browser.MinWidth = 580;
-            browser.MinHeight = 480;
-            browser.ReloadDataEvent += new EntityBrowser.refreshGridView(browser_ReloadDataEvent);
-            browser.Show<string>(DialogMode.Default, Common.ParentLayoutRoot, "", (result) => { });
+            //V_ContractPrint contractApplications = DaGr.SelectedItem as V_ContractPrint;
+            //ContractPrintUploadControl AddWin = new ContractPrintUploadControl(Action.FromAnnex, contractApplications);
+            //EntityBrowser browser = new EntityBrowser(AddWin);
+            //browser.MinWidth = 580;
+            //browser.MinHeight = 480;
+            //browser.ReloadDataEvent += new EntityBrowser.refreshGridView(browser_ReloadDataEvent);
+            //browser.Show<string>(DialogMode.Default, Common.ParentLayoutRoot, "", (result) => { });
         }
         #endregion
 

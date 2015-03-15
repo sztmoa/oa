@@ -105,10 +105,10 @@ namespace SMT.SaaS.OA.UI.Views.ContractManagement
         void btnPrint_Click(object sender, RoutedEventArgs e)
         {
             ApprovalInfo = new V_ContractApplications();
-            ContractPrintUploadControl AddWin = new ContractPrintUploadControl(Action.Print, null);
-            EntityBrowser browser = new EntityBrowser(AddWin);
-            browser.ReloadDataEvent += new EntityBrowser.refreshGridView(browser_ReloadDataEvent);
-            browser.Show<string>(DialogMode.Default, Common.ParentLayoutRoot, "", (result) => { });
+            //ContractPrintUploadControl AddWin = new ContractPrintUploadControl(Action.Print, null);
+            //EntityBrowser browser = new EntityBrowser(AddWin);
+            //browser.ReloadDataEvent += new EntityBrowser.refreshGridView(browser_ReloadDataEvent);
+            //browser.Show<string>(DialogMode.Default, Common.ParentLayoutRoot, "", (result) => { });
         }
         #endregion
 

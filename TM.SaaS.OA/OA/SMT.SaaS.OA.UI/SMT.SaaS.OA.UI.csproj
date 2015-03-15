@@ -773,9 +773,6 @@
     <Compile Include="Views\ContractManagement\ContractPrintingPage.xaml.cs">
       <DependentUpon>ContractPrintingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ContractManagement\ContractPrintUploadControl.xaml.cs">
-      <DependentUpon>ContractPrintUploadControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ContractManagement\ContractTemplateDetailInfos.xaml.cs">
       <DependentUpon>ContractTemplateDetailInfos.xaml</DependentUpon>
     </Compile>
@@ -2319,14 +2316,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\ContractManagement\ContractPrintUploadControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:MarkupCompilePass1</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\ContractManagement\ContractTemplateDetailInfos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
@@ -3656,10 +3645,6 @@
     <ProjectReference Include="..\..\FrameWork\SMT.SAAS.Behaviors\SMT.SAAS.Behaviors.csproj">
       <Project>{7a6afd3c-4870-442c-9a77-d7f480ba8e26}</Project>
       <Name>SMT.SAAS.Behaviors</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\FrameWork\SMT.SAAS.Themes\SMT.SAAS.Themes.csproj">
-      <Project>{2c6fffa6-6acd-4c24-add5-aceb431011e0}</Project>
-      <Name>SMT.SAAS.Themes</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\FrameWork\SMT.Saas.Tools\SMT.Saas.Tools.csproj">
       <Project>{36e9d744-4747-4f92-8abe-d747adbc811a}</Project>

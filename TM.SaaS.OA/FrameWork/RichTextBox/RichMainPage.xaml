@@ -265,7 +265,6 @@
                         <ComboBox x:Name="cmbFontSizes"
                               SelectionChanged="cmbFontSizes_SelectionChanged"
                               Width="54"
-                              Style="{StaticResource ComboBoxStyleNoColor}"
                               FontSize="14"
                               HorizontalAlignment="Right"
                               Margin="0,0,7,0"

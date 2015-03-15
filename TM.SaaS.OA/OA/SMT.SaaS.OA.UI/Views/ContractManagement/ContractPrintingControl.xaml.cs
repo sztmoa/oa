@@ -212,12 +212,12 @@ namespace SMT.SaaS.OA.UI.Views.ContractManagement
             V_ContractPrint contractApplications = new V_ContractPrint();
             contractApplications.contractApp = DaGr.SelectedItem as V_ContractApplications;
             contractApplications.contractPrint = null;
-            ContractPrintUploadControl AddWin = new ContractPrintUploadControl(Action.Print, contractApplications);
-            EntityBrowser browser = new EntityBrowser(AddWin);
-            browser.MinWidth = 550;
-            browser.MinHeight = 430;
-            browser.ReloadDataEvent += new EntityBrowser.refreshGridView(browser_ReloadDataEvent);
-            browser.Show<string>(DialogMode.Default, Common.ParentLayoutRoot, "", (result) => { });
+            //ContractPrintUploadControl AddWin = new ContractPrintUploadControl(Action.Print, contractApplications);
+            //EntityBrowser browser = new EntityBrowser(AddWin);
+            //browser.MinWidth = 550;
+            //browser.MinHeight = 430;
+            //browser.ReloadDataEvent += new EntityBrowser.refreshGridView(browser_ReloadDataEvent);
+            //browser.Show<string>(DialogMode.Default, Common.ParentLayoutRoot, "", (result) => { });
 
             RefreshUI(RefreshedTypes.Close);
         }

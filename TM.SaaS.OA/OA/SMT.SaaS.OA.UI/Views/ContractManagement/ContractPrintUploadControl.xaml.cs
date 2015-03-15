@@ -128,10 +128,10 @@ namespace SMT.SaaS.OA.UI.Views.ContractManagement
             HasChosenTemplate.IsEnabled = false;
             RbtNo.IsEnabled = false;
             rbtYes.IsEnabled = false;
-            ContractText.IsEnabled = false;
+            //ContractText.IsEnabled = false;
             btnLookUpPartya.IsEnabled = false;
             btnLookUpPartyb.IsEnabled = false;
-            this.ContractText.GetRichTextbox().IsEnabled = false;
+            //this.ContractText.GetRichTextbox().IsEnabled = false;
             this.txtDateSigned.Visibility = Visibility.Collapsed;//签订时间
             this.DateSigned.Visibility = Visibility.Collapsed;
             this.txtFile.Visibility = Visibility.Collapsed;
@@ -153,11 +153,11 @@ namespace SMT.SaaS.OA.UI.Views.ContractManagement
             HasChosenTemplate.IsEnabled = false;
             RbtNo.IsEnabled = false;
             rbtYes.IsEnabled = false;
-            ContractText.IsEnabled = false;
+            //ContractText.IsEnabled = false;
             btnLookUpPartya.IsEnabled = false;
             btnLookUpPartyb.IsEnabled = false;
             nudBalanceMonth.IsEnabled = false;
-            this.ContractText.GetRichTextbox().IsEnabled = false;
+            //this.ContractText.GetRichTextbox().IsEnabled = false;
         }
         #endregion
 
@@ -258,7 +258,7 @@ namespace SMT.SaaS.OA.UI.Views.ContractManagement
                 EndTime.Text = cprintingContract.contractApp.contractApp.ENDDATE.ToString();//结束时间
 
 
-                ContractText.RichTextBoxContext = cprintingContract.contractApp.contractApp.CONTENT;
+                //ContractText.RichTextBoxContext = cprintingContract.contractApp.contractApp.CONTENT;
                 Party.Add(cprintingContract.contractApp.contractApp.PARTYA);//甲方
                 Party.Add(cprintingContract.contractApp.contractApp.PARTYB);//乙方
                 personclient.GetEmployeeByIDsAsync(Party);
@@ -296,7 +296,7 @@ namespace SMT.SaaS.OA.UI.Views.ContractManagement
                 EndTime.Text = contractApp.contractApp.ENDDATE.ToString();//结束时间
                 //ContractText.Text = contractApp.contractApp.CONTENT;//正文
 
-                ContractText.RichTextBoxContext = contractApp.contractApp.CONTENT;
+                //ContractText.RichTextBoxContext = contractApp.contractApp.CONTENT;
                 Party.Add(contractApp.contractApp.PARTYA);//甲方
                 Party.Add(contractApp.contractApp.PARTYB);//乙方
                 personclient.GetEmployeeByIDsAsync(Party);
@@ -505,14 +505,14 @@ namespace SMT.SaaS.OA.UI.Views.ContractManagement
             TemplageText = (T_OA_CONTRACTTEMPLATE)HasChosenTemplate.SelectedItem;
             //ContractText.Text = TemplageText.CONTENT;
 
-            ContractText.RichTextBoxContext = TemplageText.CONTENT;
+            //ContractText.RichTextBoxContext = TemplageText.CONTENT;
         }
         #endregion
 
         #region LayoutRoot_SizeChanged
         private void LayoutRoot_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            ContractText.Height = ((Grid)sender).ActualHeight * 0.35;
+            //ContractText.Height = ((Grid)sender).ActualHeight * 0.35;
         }
         #endregion
 
