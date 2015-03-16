@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using SMT.FBAnalysis.BLL;
 using System.ServiceModel;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FBAnalysis.CustomModel;
 using System.Text;
 using System.Collections;

@@ -118,6 +118,10 @@
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\TM_SaaS_OA_EFModel\TM_SaaS_OA_EFModel.csproj">
+      <Project>{7571bce6-3b80-41c1-af97-9118e7f41845}</Project>
+      <Name>TM_SaaS_OA_EFModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SMT.FBAnalysis.CustomModel\SMT.FBAnalysis.CustomModel.csproj">
       <Project>{84CCC052-4DD1-4153-9A04-27A43BEEE4F7}</Project>
       <Name>SMT.FBAnalysis.CustomModel</Name>
@@ -125,10 +129,6 @@
     <ProjectReference Include="..\SMT.FBAnalysis.DAL\SMT.FBAnalysis.DAL.csproj">
       <Project>{F44EE046-87BE-45C8-9F9C-17A8B26DE720}</Project>
       <Name>SMT.FBAnalysis.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SMT_FB_EFModel\SMT_FB_EFModel.csproj">
-      <Project>{764CEDC0-CAC5-4252-AE43-D2F2E9763F5F}</Project>
-      <Name>SMT_FB_EFModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

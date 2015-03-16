@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using SMT.FBAnalysis.BLL;
 using System.ServiceModel;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FBAnalysis.CustomModel;
 using System.IO;
 using System.Text;
@@ -99,11 +99,11 @@ namespace SMT.FBAnalysis.Service
                     #endregion
                     #region  发送待办
                   
-                    List<T_WF_DOTASK> tasks = new List<T_WF_DOTASK>();
+                    List<SMT.SaaS.BLLCommonServices.EngineConfigWS.T_WF_DOTASK> tasks = new List<SMT.SaaS.BLLCommonServices.EngineConfigWS.T_WF_DOTASK>();
                       
                     foreach (var v in savedListNeedSend)
                     {
-                         T_WF_DOTASK task = new T_WF_DOTASK();
+                         SMT.SaaS.BLLCommonServices.EngineConfigWS.T_WF_DOTASK task = new SMT.SaaS.BLLCommonServices.EngineConfigWS.T_WF_DOTASK();
                         task.DOTASKID = Guid.NewGuid().ToString();
                         task.COMPANYID = v.Value.OWNERCOMPANYID;
                         task.ORDERID = v.Key;

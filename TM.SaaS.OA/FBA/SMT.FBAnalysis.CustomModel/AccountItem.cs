@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 
 namespace SMT.FBAnalysis.CustomModel
 {

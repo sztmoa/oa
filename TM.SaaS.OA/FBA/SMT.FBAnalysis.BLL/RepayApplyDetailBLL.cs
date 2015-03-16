@@ -20,7 +20,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FBAnalysis.DAL;
 using SMT.Foundation.Log;
 
@@ -294,16 +294,16 @@ namespace SMT.FBAnalysis.BLL
                     {
                         item.T_FB_REPAYAPPLYMASTER = entMaster;
                     }
-                    item.T_FB_REPAYAPPLYMASTER.EntityKey = new System.Data.EntityKey("SMT_FB_EFModelContext.T_FB_REPAYAPPLYMASTER", "REPAYAPPLYMASTERID", item.T_FB_REPAYAPPLYMASTER.REPAYAPPLYMASTERID);
+                    item.T_FB_REPAYAPPLYMASTER.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_FB_REPAYAPPLYMASTER", "REPAYAPPLYMASTERID", item.T_FB_REPAYAPPLYMASTER.REPAYAPPLYMASTERID);
                     
                     if (item.T_FB_SUBJECT != null)
                     {
-                        item.T_FB_SUBJECT.EntityKey = new System.Data.EntityKey("SMT_FB_EFModelContext.T_FB_SUBJECT", "SUBJECTID", item.T_FB_SUBJECT.SUBJECTID);
+                        item.T_FB_SUBJECT.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_FB_SUBJECT", "SUBJECTID", item.T_FB_SUBJECT.SUBJECTID);
                     }
 
                     if (item.T_FB_BORROWAPPLYDETAIL != null)
                     {
-                        item.T_FB_BORROWAPPLYDETAIL.EntityKey = new System.Data.EntityKey("SMT_FB_EFModelContext.T_FB_BORROWAPPLYDETAIL", "BORROWAPPLYDETAILID", item.T_FB_BORROWAPPLYDETAIL.BORROWAPPLYDETAILID);
+                        item.T_FB_BORROWAPPLYDETAIL.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_FB_BORROWAPPLYDETAIL", "BORROWAPPLYDETAILID", item.T_FB_BORROWAPPLYDETAIL.BORROWAPPLYDETAILID);
                     }
 
                     Add(item);

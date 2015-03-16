@@ -18,7 +18,7 @@ using System.Collections;
 using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FBAnalysis.CustomModel;
 using SMT.Foundation.Log;
 using SMT.SaaS.BLLCommonServices;
@@ -40,7 +40,7 @@ namespace SMT.FBAnalysis.DAL
             bool IsReturn = true;
             if (masterList != null && masterList.Count() > 0)
             {
-                using (SMT_FB_EFModelContext ex = new SMT_FB_EFModel.SMT_FB_EFModelContext())
+                using (TM_SaaS_OA_EFModelContext ex = new TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext())
                 {
                     foreach (var x in masterList)
                     {
@@ -71,7 +71,7 @@ namespace SMT.FBAnalysis.DAL
         /// <returns></returns>
         public IQueryable<T_FB_BORROWAPPLYMASTER> GetMasterData(string userId)
         {
-            using (SMT_FB_EFModelContext ex = new SMT_FB_EFModel.SMT_FB_EFModelContext())
+            using (TM_SaaS_OA_EFModelContext ex = new TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext())
             {
                 var q = from i in ex.T_FB_BORROWAPPLYMASTER
                         where i.OWNERID == userId

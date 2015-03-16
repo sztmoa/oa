@@ -20,7 +20,7 @@ using System.Linq.Dynamic;
 using System.Linq.Expressions;
 using System.Transactions;
 using SMT.Foundation.Core;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FBAnalysis.DAL;
 using SMT.FBAnalysis.CustomModel;
 using SMT.Foundation.Log;
@@ -43,7 +43,7 @@ namespace SMT.FBAnalysis.BLL
             {
                 try
                 {
-                    using (SMT_FB_EFModelContext ex = new SMT_FB_EFModel.SMT_FB_EFModelContext())
+                    using (TM_SaaS_OA_EFModelContext ex = new TM_SaaS_OA_EFModel.TM_SaaS_OA_EFModelContext())
                     {
                         foreach (var x in masterList)
                         {
@@ -750,7 +750,7 @@ namespace SMT.FBAnalysis.BLL
                 if (entity.T_FB_EXTENSIONALORDER != null)
                 {
                     entUpt.T_FB_EXTENSIONALORDER.EntityKey =
-                        new System.Data.EntityKey("SMT_FB_EFModelContext.T_FB_EXTENSIONALORDER", "RESUMEID", entity.T_FB_EXTENSIONALORDER.EXTENSIONALORDERID);
+                        new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_FB_EXTENSIONALORDER", "RESUMEID", entity.T_FB_EXTENSIONALORDER.EXTENSIONALORDERID);
                 }
 
                 if (entUpt.T_FB_BORROWAPPLYDETAIL != null)
@@ -1083,7 +1083,7 @@ namespace SMT.FBAnalysis.BLL
             string sResult = string.Empty;
             T_FB_BORROWAPPLYMASTER Master = new T_FB_BORROWAPPLYMASTER();
             Master = GetChildData(BorrowID);
-            Master.CHECKSTATES = System.Convert.ToDecimal(StrCheckState);
+            Master.CHECKSTATES = Convert.ToInt32(StrCheckState);
             List<object> objmaster = new List<object>();
             objmaster.Add(BorrowID);
             List<T_FB_BORROWAPPLYDETAIL> entRdlist = new List<T_FB_BORROWAPPLYDETAIL>();
@@ -1226,7 +1226,7 @@ namespace SMT.FBAnalysis.BLL
                     strMsg = "获取申请人岗位信息时为空!";
                 }
 
-                T_HR_EMPLOYEEPOST employeePost = entPost.FirstOrDefault();
+                SMT.SaaS.BLLCommonServices.PersonnelWS.T_HR_EMPLOYEEPOST employeePost = entPost.FirstOrDefault();
                 entity.OWNERNAME = employee.T_HR_EMPLOYEE.EMPLOYEECNAME;
 
                 if (employeePost.T_HR_POST != null)

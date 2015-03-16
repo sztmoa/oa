@@ -18,7 +18,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 
 namespace SMT.FBAnalysis.DAL
 {

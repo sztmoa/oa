@@ -6,7 +6,7 @@ using System.Linq.Dynamic;
 using System.Collections;
 using System.Data.Objects.DataClasses;
 using System.Linq.Expressions;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FBAnalysis.CustomModel;
 using SMT.Foundation.Log;
 using System.Data;
@@ -2249,17 +2249,16 @@ namespace SMT.FBAnalysis.DAL
                 {
                     foreach (T_FB_CHARGEAPPLYMASTER CsItem in crs)
                     {
-                        if (!CsItem.T_FB_CHARGEAPPLYREPAYDETAIL.IsLoaded)
-                        {
-                            CsItem.T_FB_CHARGEAPPLYREPAYDETAIL.Load();
-                        }
+                        var items = (from ent in GetObjects<T_FB_CHARGEAPPLYREPAYDETAIL>()
+                                    where ent.T_FB_CHARGEAPPLYMASTER.CHARGEAPPLYMASTERID == CsItem.CHARGEAPPLYMASTERID
+                                    select ent).ToList();
 
-                        if (CsItem.T_FB_CHARGEAPPLYREPAYDETAIL == null)
+                        if (CsItem == null)
                         {
                             continue;
                         }
 
-                        foreach (T_FB_CHARGEAPPLYREPAYDETAIL CdItem in CsItem.T_FB_CHARGEAPPLYREPAYDETAIL)
+                        foreach (T_FB_CHARGEAPPLYREPAYDETAIL CdItem in items)
                         {
                             V_ContactDetail entCs = new V_ContactDetail();
                             bool bIsExists = false;
@@ -2735,12 +2734,12 @@ namespace SMT.FBAnalysis.DAL
                 {
                     foreach (T_FB_CHARGEAPPLYMASTER CsItem in crs)
                     {
-                        if (!CsItem.T_FB_CHARGEAPPLYREPAYDETAIL.IsLoaded)
-                        {
-                            CsItem.T_FB_CHARGEAPPLYREPAYDETAIL.Load();
-                        }
+                        var rePayItems = (from ent in GetObjects<T_FB_CHARGEAPPLYREPAYDETAIL>()
+                                     where ent.T_FB_CHARGEAPPLYMASTER.CHARGEAPPLYMASTERID == CsItem.CHARGEAPPLYMASTERID
+                                     select ent).ToList();
 
-                        if (CsItem.T_FB_CHARGEAPPLYREPAYDETAIL == null)
+
+                        if (rePayItems == null)
                         {
                             continue;
                         }
@@ -2763,7 +2762,7 @@ namespace SMT.FBAnalysis.DAL
                             continue;
                         }
 
-                        foreach (T_FB_CHARGEAPPLYREPAYDETAIL CdItem in CsItem.T_FB_CHARGEAPPLYREPAYDETAIL)
+                        foreach (T_FB_CHARGEAPPLYREPAYDETAIL CdItem in rePayItems)
                         {
                             if (CdItem.REPAYMONEY == 0)
                             {

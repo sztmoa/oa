@@ -20,7 +20,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FBAnalysis.DAL;
 using SMT.FBAnalysis.CustomModel;
 using SMT.Foundation.Log;
@@ -1468,7 +1468,7 @@ namespace SMT.FBAnalysis.BLL
         {
             T_FB_CHARGEAPPLYMASTER master = new T_FB_CHARGEAPPLYMASTER();
             master = GetChargeApplyMasterByID(Chargeid);
-            master.CHECKSTATES = System.Convert.ToDecimal(StrCheckState);
+            master.CHECKSTATES = Convert.ToInt32(StrCheckState);
             List<object> masterids = new List<object>();
             masterids.Add(Chargeid);
             List<T_FB_CHARGEAPPLYDETAIL> entRdlist = new List<T_FB_CHARGEAPPLYDETAIL>();

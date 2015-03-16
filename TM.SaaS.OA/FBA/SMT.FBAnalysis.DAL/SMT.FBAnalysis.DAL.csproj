@@ -41,9 +41,6 @@
     <Reference Include="SMT.Foundation.Log">
       <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.Foundation.Log.dll</HintPath>
     </Reference>
-    <Reference Include="SMT.SaaS.BLLCommonServices">
-      <HintPath>..\..\CommonDLL\Lib\SMTLib1.1V\Lib\SMT\Server\SMT.SaaS.BLLCommonServices.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -106,13 +103,17 @@
     <Compile Include="TravelexpApplyMasterDAL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\FrameWork\SMT.SaaS.BLLCommonServices\SMT.SAAS.BLLCommonServices.csproj">
+      <Project>{6673751a-d03d-4d7a-acf3-f363469b73ae}</Project>
+      <Name>SMT.SAAS.BLLCommonServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TM_SaaS_OA_EFModel\TM_SaaS_OA_EFModel.csproj">
+      <Project>{7571bce6-3b80-41c1-af97-9118e7f41845}</Project>
+      <Name>TM_SaaS_OA_EFModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SMT.FBAnalysis.CustomModel\SMT.FBAnalysis.CustomModel.csproj">
       <Project>{84CCC052-4DD1-4153-9A04-27A43BEEE4F7}</Project>
       <Name>SMT.FBAnalysis.CustomModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SMT_FB_EFModel\SMT_FB_EFModel.csproj">
-      <Project>{764CEDC0-CAC5-4252-AE43-D2F2E9763F5F}</Project>
-      <Name>SMT_FB_EFModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

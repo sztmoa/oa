@@ -12,7 +12,7 @@ using SMT.Foundation.Log;
 //using SMT.SaaS.OA.BLL;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FBAnalysis.BLL;
 
 namespace SMT.FBAnalysis.Service

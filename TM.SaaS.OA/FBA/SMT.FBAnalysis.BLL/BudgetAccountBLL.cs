@@ -20,7 +20,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FBAnalysis.DAL;
 using SMT.FBAnalysis.CustomModel;
 using System.Reflection;
@@ -612,7 +612,7 @@ namespace SMT.FBAnalysis.BLL
 
                 budgetAccountItem.T_FB_SUBJECT = accountItem.T_FB_SUBJECT;
                 budgetAccountItem.BUDGETACCOUNTID = Guid.NewGuid().ToString();
-                budgetAccountItem.ACCOUNTOBJECTTYPE = Convert.ToDecimal((int)accountItem.AccountType);
+                budgetAccountItem.ACCOUNTOBJECTTYPE = Convert.ToInt32(accountItem.AccountType);
                 budgetAccountItem.OWNERCOMPANYID = accountItem.OwnerCompanyID;
                 budgetAccountItem.OWNERDEPARTMENTID = accountItem.OwnerDepartmentID;
                 budgetAccountItem.OWNERID = accountItem.OwnerID;
@@ -627,8 +627,8 @@ namespace SMT.FBAnalysis.BLL
                 budgetAccountItem.USABLEMONEY = 0;
                 budgetAccountItem.PAIEDMONEY = 0;
 
-                budgetAccountItem.BUDGETYEAR = accountItem.BudgetYear;//  DateTime.Now.Year;
-                budgetAccountItem.BUDGETMONTH = accountItem.BudgetMonth; // DateTime.Now.Month;
+                budgetAccountItem.BUDGETYEAR = Convert.ToInt32(accountItem.BudgetYear);//  DateTime.Now.Year;
+                budgetAccountItem.BUDGETMONTH = Convert.ToInt32(accountItem.BudgetMonth); // DateTime.Now.Month;
             }
             return budgetAccountItem;
         }

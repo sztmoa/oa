@@ -15,7 +15,7 @@ using System.ServiceModel;
 using System.Text;
 using SMT.FBAnalysis.BLL;
 using System.ServiceModel.Activation;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 
 namespace SMT.FBAnalysis.Service
 {

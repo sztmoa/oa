@@ -16,7 +16,7 @@ using System.Data;
 using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FBAnalysis.DAL;
 using SMT.Foundation.Log;
 
@@ -196,7 +196,7 @@ namespace SMT.FBAnalysis.BLL
                         item.T_FB_CHARGEAPPLYMASTER = entMaster;
                     }
 
-                    item.T_FB_CHARGEAPPLYMASTER.EntityKey = new System.Data.EntityKey("SMT_FB_EFModelContext.T_FB_CHARGEAPPLYMASTER", "CHARGEAPPLYMASTERID", entMaster.CHARGEAPPLYMASTERID);
+                    item.T_FB_CHARGEAPPLYMASTER.EntityKey = new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_FB_CHARGEAPPLYMASTER", "CHARGEAPPLYMASTERID", entMaster.CHARGEAPPLYMASTERID);
                     Add(item);
                 }
                 bRes = true;

@@ -65,9 +65,9 @@
     <Compile Include="V_YearlyBudgetAnalysis.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SMT_FB_EFModel\SMT_FB_EFModel.csproj">
-      <Project>{764CEDC0-CAC5-4252-AE43-D2F2E9763F5F}</Project>
-      <Name>SMT_FB_EFModel</Name>
+    <ProjectReference Include="..\..\TM_SaaS_OA_EFModel\TM_SaaS_OA_EFModel.csproj">
+      <Project>{7571bce6-3b80-41c1-af97-9118e7f41845}</Project>
+      <Name>TM_SaaS_OA_EFModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

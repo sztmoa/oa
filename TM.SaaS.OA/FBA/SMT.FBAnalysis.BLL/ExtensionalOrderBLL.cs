@@ -20,7 +20,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FBAnalysis.DAL;
 
 namespace SMT.FBAnalysis.BLL
@@ -308,8 +308,8 @@ namespace SMT.FBAnalysis.BLL
                 BudgetAccountBLL bllAccount = new BudgetAccountBLL();
                 foreach (T_FB_CHARGEAPPLYMASTER item in ents)
                 {
-                    item.CHECKSTATES = dCheckState;
-                    item.EDITSTATES = dEditState;
+                    item.CHECKSTATES = Convert.ToInt32(dCheckState);
+                    item.EDITSTATES = Convert.ToInt32(dEditState);
                     item.UPDATEDATE = DateTime.Now;
 
                     bllCharge.Update(item);

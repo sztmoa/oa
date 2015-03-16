@@ -20,7 +20,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FBAnalysis.DAL;
 using SMT.SaaS.BLLCommonServices.FlowWFService;
 using SMT.Foundation.Log;
@@ -567,7 +567,7 @@ namespace SMT.FBAnalysis.BLL
             string sResult = string.Empty;
             T_FB_REPAYAPPLYMASTER master = new T_FB_REPAYAPPLYMASTER();
             master = GetRepayApplyMasterByID(Repayid);
-            master.CHECKSTATES = System.Convert.ToDecimal(StrCheckState);
+            master.CHECKSTATES = Convert.ToInt32(StrCheckState);
 
             RepayApplyDetailBLL bllRepayApplyDetail = new RepayApplyDetailBLL();
             List<T_FB_REPAYAPPLYDETAIL> entRds = bllRepayApplyDetail.GetRepayApplyDetailByMasterID(Repayid);
@@ -688,7 +688,7 @@ namespace SMT.FBAnalysis.BLL
             {
                 strMsg = "获取申请人岗位信息时为空!";
             }            
-            T_HR_EMPLOYEEPOST employeePost = entPost.FirstOrDefault();
+            SMT.SaaS.BLLCommonServices.PersonnelWS.T_HR_EMPLOYEEPOST employeePost = entPost.FirstOrDefault();
             entity.OWNERNAME = employee.T_HR_EMPLOYEE.EMPLOYEECNAME;            
             if (employeePost.T_HR_POST != null)
             {
