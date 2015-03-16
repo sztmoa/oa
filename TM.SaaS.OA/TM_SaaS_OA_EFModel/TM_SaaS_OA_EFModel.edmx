@@ -1261,8 +1261,8 @@
             <PropertyRef Name="PERSONTRANSFERDETAILID" />
           </Key>
           <Property Name="PERSONTRANSFERDETAILID" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="DEPTTRANSFERDETAILID" Type="varchar" MaxLength="50" />
           <Property Name="SUBJECTID" Type="varchar" MaxLength="50" />
+          <Property Name="DEPTTRANSFERDETAILID" Type="varchar" MaxLength="50" />
           <Property Name="BUDGETMONEY" Type="decimal" Precision="8" Scale="0" />
           <Property Name="LIMITBUDGETMONEY" Type="decimal" Precision="8" Scale="0" />
           <Property Name="USABLEMONEY" Type="decimal" Precision="8" Scale="0" />
@@ -2319,22 +2319,6 @@
           <Property Name="ATTENDANCESET" Type="varchar" MaxLength="1" />
           <Property Name="SALARYSET" Type="varchar" MaxLength="1" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6013: 表/视图“def.tmoa.T_HR_BASICTABLE”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
-        <EntityType Name="T_HR_BASICTABLE">
-          <Property Name="REMARK" Type="varchar" MaxLength="2000" />
-          <Property Name="OWNERID" Type="varchar" MaxLength="50" />
-          <Property Name="OWNERPOSTID" Type="varchar" MaxLength="50" />
-          <Property Name="OWNERDEPARTMENTID" Type="varchar" MaxLength="50" />
-          <Property Name="OWNERCOMPANYID" Type="varchar" MaxLength="50" />
-          <Property Name="CREATEPOSTID" Type="varchar" MaxLength="50" />
-          <Property Name="CREATEDEPARTMENTID" Type="varchar" MaxLength="50" />
-          <Property Name="CREATECOMPANYID" Type="varchar" MaxLength="50" />
-          <Property Name="CREATEUSERID" Type="varchar" MaxLength="50" />
-          <Property Name="CREATEDATE" Type="datetime" Precision="0" />
-          <Property Name="UPDATEUSERID" Type="varchar" MaxLength="50" />
-          <Property Name="UPDATEDATE" Type="datetime" Precision="0" />
-        </EntityType>-->
         <EntityType Name="T_HR_BLACKLIST">
           <Key>
             <PropertyRef Name="BLACKLISTID" />
@@ -9369,25 +9353,6 @@
           <Property Name="RECEIVERUSERNAME" Type="varchar" MaxLength="1000" />
           <Property Name="RECEIVETYPE" Type="decimal" Precision="8" Scale="0" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6013: 表/视图“def.tmoa.T_WF_MESSAGECONFIG”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
-        <EntityType Name="T_WF_MESSAGECONFIG">
-          <Property Name="MESSAGEID" Type="varchar" MaxLength="50" />
-          <Property Name="SYSTEMCODE" Type="varchar" MaxLength="50" />
-          <Property Name="SYSTEMNAME" Type="varchar" MaxLength="100" />
-          <Property Name="MODELCODE" Type="varchar" MaxLength="50" />
-          <Property Name="MODELNAME" Type="varchar" MaxLength="200" />
-          <Property Name="ISADMINPAGE" Type="decimal" Precision="38" Scale="0" />
-          <Property Name="MESSAGETYPE" Type="decimal" Precision="38" Scale="0" />
-        </EntityType>-->
-        <!--生成过程中发现错误:
-警告 6013: 表/视图“def.tmoa.T_WF_MESSAGECONFIG_DETAIL”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
-        <EntityType Name="T_WF_MESSAGECONFIG_DETAIL">
-          <Property Name="SYSTEMCODE" Type="varchar" MaxLength="50" />
-          <Property Name="MODELCODE" Type="varchar" MaxLength="50" />
-          <Property Name="FIELDNAME" Type="varchar" MaxLength="50" />
-          <Property Name="FIELDTYPE" Type="decimal" Precision="38" Scale="0" />
-        </EntityType>-->
         <EntityType Name="T_WF_MESSAGEDEFINE">
           <Key>
             <PropertyRef Name="MESSAGEDEFINEID" />
@@ -9452,22 +9417,6 @@
           <Property Name="CREATEDATE" Type="datetime" Precision="0" />
           <Property Name="UPDATEDATE" Type="datetime" Precision="0" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6013: 表/视图“def.tmoa.T_WF_PORTALSETTING”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
-        <EntityType Name="T_WF_PORTALSETTING">
-          <Property Name="SYSTEMCODE" Type="varchar" MaxLength="50" />
-          <Property Name="MODELCODE" Type="varchar" MaxLength="50" />
-          <Property Name="PORTALTYPE" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--生成过程中发现错误:
-警告 6013: 表/视图“def.tmoa.T_WF_PROCEDUREEXCEPTION”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
-        <EntityType Name="T_WF_PROCEDUREEXCEPTION">
-          <Property Name="PCNAME" Type="varchar" MaxLength="100" />
-          <Property Name="SQLCODE" Type="varchar" MaxLength="100" />
-          <Property Name="SQLERRM" Type="varchar" MaxLength="500" />
-          <Property Name="CREATERDATA" Type="datetime" Precision="0" />
-          <Property Name="PCSQL" Type="varchar" MaxLength="2000" />
-        </EntityType>-->
         <EntityType Name="T_WF_SMSRECORD">
           <Key>
             <PropertyRef Name="SMSRECORD" />
@@ -10095,6 +10044,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_REFERENCE_17">
+          <End Role="T_FB_SUBJECT" Type="Self.T_FB_SUBJECT" Multiplicity="0..1" />
+          <End Role="T_FB_PERSONTRANSFERDETAIL" Type="Self.T_FB_PERSONTRANSFERDETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_FB_SUBJECT">
+              <PropertyRef Name="SUBJECTID" />
+            </Principal>
+            <Dependent Role="T_FB_PERSONTRANSFERDETAIL">
+              <PropertyRef Name="SUBJECTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_REFERENCE_171">
           <End Role="T_HR_SALARYSOLUTION" Type="Self.T_HR_SALARYSOLUTION" Multiplicity="0..1" />
           <End Role="T_HR_SALARYSOLUTIONSTANDARD" Type="Self.T_HR_SALARYSOLUTIONSTANDARD" Multiplicity="*" />
@@ -10152,6 +10113,18 @@
             </Principal>
             <Dependent Role="T_HR_KPIRECORDCOMPLAIN">
               <PropertyRef Name="KPIRECORDID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REFERENCE_18">
+          <End Role="T_FB_DEPTTRANSFERDETAIL" Type="Self.T_FB_DEPTTRANSFERDETAIL" Multiplicity="0..1" />
+          <End Role="T_FB_PERSONTRANSFERDETAIL" Type="Self.T_FB_PERSONTRANSFERDETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_FB_DEPTTRANSFERDETAIL">
+              <PropertyRef Name="DEPTTRANSFERDETAILID" />
+            </Principal>
+            <Dependent Role="T_FB_PERSONTRANSFERDETAIL">
+              <PropertyRef Name="DEPTTRANSFERDETAILID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -13379,6 +13352,10 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <End Role="T_SYS_FBADMIN" EntitySet="T_SYS_FBADMIN" />
             <End Role="T_SYS_FBADMINROLE" EntitySet="T_SYS_FBADMINROLE" />
           </AssociationSet>
+          <AssociationSet Name="FK_REFERENCE_17" Association="Self.FK_REFERENCE_17">
+            <End Role="T_FB_SUBJECT" EntitySet="T_FB_SUBJECT" />
+            <End Role="T_FB_PERSONTRANSFERDETAIL" EntitySet="T_FB_PERSONTRANSFERDETAIL" />
+          </AssociationSet>
           <AssociationSet Name="FK_REFERENCE_171" Association="Self.FK_REFERENCE_171">
             <End Role="T_HR_SALARYSOLUTION" EntitySet="T_HR_SALARYSOLUTION" />
             <End Role="T_HR_SALARYSOLUTIONSTANDARD" EntitySet="T_HR_SALARYSOLUTIONSTANDARD" />
@@ -13398,6 +13375,10 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <AssociationSet Name="FK_REFERENCE_175" Association="Self.FK_REFERENCE_175">
             <End Role="T_HR_KPIRECORD" EntitySet="T_HR_KPIRECORD" />
             <End Role="T_HR_KPIRECORDCOMPLAIN" EntitySet="T_HR_KPIRECORDCOMPLAIN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REFERENCE_18" Association="Self.FK_REFERENCE_18">
+            <End Role="T_FB_DEPTTRANSFERDETAIL" EntitySet="T_FB_DEPTTRANSFERDETAIL" />
+            <End Role="T_FB_PERSONTRANSFERDETAIL" EntitySet="T_FB_PERSONTRANSFERDETAIL" />
           </AssociationSet>
           <AssociationSet Name="FK_REFERENCE_2" Association="Self.FK_REFERENCE_2">
             <End Role="T_FB_TRAVELEXPAPPLYMASTER" EntitySet="T_FB_TRAVELEXPAPPLYMASTER" />
@@ -15119,6 +15100,7 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <Property Name="REMARK" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="T_FB_DEPTTRANSFERMASTER" Relationship="Self.FK_T_FB_DEP_REFERENCE_T_FC_222" FromRole="T_FB_DEPTTRANSFERDETAIL" ToRole="T_FB_DEPTTRANSFERMASTER" />
           <NavigationProperty Name="T_FB_SUBJECT" Relationship="Self.FK_T_FB_DEP_REFERENCE_T_FC_S11" FromRole="T_FB_DEPTTRANSFERDETAIL" ToRole="T_FB_SUBJECT" />
+          <NavigationProperty Name="T_FB_PERSONTRANSFERDETAIL" Relationship="tmoaModel.FK_REFERENCE_18" FromRole="T_FB_DEPTTRANSFERDETAIL" ToRole="T_FB_PERSONTRANSFERDETAIL" />
         </EntityType>
         <EntityType Name="T_FB_DEPTTRANSFERMASTER">
           <Key>
@@ -15430,6 +15412,8 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <Property Name="OWNERPOSTID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="OWNERPOSTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="REMARK" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="T_FB_DEPTTRANSFERDETAIL" Relationship="tmoaModel.FK_REFERENCE_18" FromRole="T_FB_PERSONTRANSFERDETAIL" ToRole="T_FB_DEPTTRANSFERDETAIL" />
+          <NavigationProperty Name="T_FB_SUBJECT" Relationship="tmoaModel.FK_REFERENCE_17" FromRole="T_FB_PERSONTRANSFERDETAIL" ToRole="T_FB_SUBJECT" />
         </EntityType>
         <EntityType Name="T_FB_REPAYAPPLYDETAIL">
           <Key>
@@ -15564,6 +15548,7 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
           <NavigationProperty Name="T_FB_SUBJECTDEPTMENT" Relationship="Self.FK_T_FB_SUB_REFERENCE_T_FB_S01" FromRole="T_FB_SUBJECT" ToRole="T_FB_SUBJECTDEPTMENT" />
           <NavigationProperty Name="T_FB_SUBJECTPOST" Relationship="Self.FK_T_FB_SUB_REFERENCE_T_FB_S02" FromRole="T_FB_SUBJECT" ToRole="T_FB_SUBJECTPOST" />
           <NavigationProperty Name="T_FB_SUBJECTTYPE" Relationship="Self.FK_T_FB_SUB_REFERENCE_T_FB_SU4" FromRole="T_FB_SUBJECT" ToRole="T_FB_SUBJECTTYPE" />
+          <NavigationProperty Name="T_FB_PERSONTRANSFERDETAIL" Relationship="tmoaModel.FK_REFERENCE_17" FromRole="T_FB_SUBJECT" ToRole="T_FB_PERSONTRANSFERDETAIL" />
         </EntityType>
         <EntityType Name="T_FB_SUBJECTCOMPANY">
           <Key>
@@ -26203,7 +26188,23 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <End Role="T_WF_DOTASKRULE" EntitySet="T_WF_DOTASKRULE" />
             <End Role="T_WF_DOTASKRULEDETAIL" EntitySet="T_WF_DOTASKRULEDETAIL" />
           </AssociationSet>
+          <AssociationSet Name="FK_REFERENCE_18" Association="tmoaModel.FK_REFERENCE_18">
+            <End Role="T_FB_DEPTTRANSFERDETAIL" EntitySet="T_FB_DEPTTRANSFERDETAIL" />
+            <End Role="T_FB_PERSONTRANSFERDETAIL" EntitySet="T_FB_PERSONTRANSFERDETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REFERENCE_17" Association="tmoaModel.FK_REFERENCE_17">
+            <End Role="T_FB_SUBJECT" EntitySet="T_FB_SUBJECT" />
+            <End Role="T_FB_PERSONTRANSFERDETAIL" EntitySet="T_FB_PERSONTRANSFERDETAIL" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_REFERENCE_18">
+          <End Type="tmoaModel.T_FB_DEPTTRANSFERDETAIL" Role="T_FB_DEPTTRANSFERDETAIL" Multiplicity="0..1" />
+          <End Type="tmoaModel.T_FB_PERSONTRANSFERDETAIL" Role="T_FB_PERSONTRANSFERDETAIL" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_REFERENCE_17">
+          <End Type="tmoaModel.T_FB_SUBJECT" Role="T_FB_SUBJECT" Multiplicity="0..1" />
+          <End Type="tmoaModel.T_FB_PERSONTRANSFERDETAIL" Role="T_FB_PERSONTRANSFERDETAIL" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -37887,6 +37888,24 @@ FROM `T_WF_PERSONALRECORD0801` AS `T_WF_PERSONALRECORD0801`</DefiningQuery>
             <EndProperty Name="T_WF_DOTASKRULEDETAIL">
               <ScalarProperty Name="DOTASKRULEDETAILID" ColumnName="DOTASKRULEDETAILID" />
             </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_REFERENCE_18" TypeName="tmoaModel.FK_REFERENCE_18" StoreEntitySet="T_FB_PERSONTRANSFERDETAIL">
+            <EndProperty Name="T_FB_PERSONTRANSFERDETAIL">
+              <ScalarProperty Name="PERSONTRANSFERDETAILID" ColumnName="PERSONTRANSFERDETAILID" />
+            </EndProperty>
+            <EndProperty Name="T_FB_DEPTTRANSFERDETAIL">
+              <ScalarProperty Name="DEPTTRANSFERDETAILID" ColumnName="DEPTTRANSFERDETAILID" />
+            </EndProperty>
+            <Condition ColumnName="DEPTTRANSFERDETAILID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_REFERENCE_17" TypeName="tmoaModel.FK_REFERENCE_17" StoreEntitySet="T_FB_PERSONTRANSFERDETAIL">
+            <EndProperty Name="T_FB_PERSONTRANSFERDETAIL">
+              <ScalarProperty Name="PERSONTRANSFERDETAILID" ColumnName="PERSONTRANSFERDETAILID" />
+            </EndProperty>
+            <EndProperty Name="T_FB_SUBJECT">
+              <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+            </EndProperty>
+            <Condition ColumnName="SUBJECTID" IsNull="false" />
           </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>

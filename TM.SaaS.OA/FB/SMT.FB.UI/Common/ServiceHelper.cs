@@ -175,7 +175,13 @@ namespace SMT.FB.UI.Common
         public void Save(FBEntity fbEntity)
         {
             SetVisitUser(fbEntity);
-            FBService.SaveAsync(fbEntity);
+            CurrentUserPost user = new CurrentUserPost();
+            user.EmployeeName = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeName;
+            user.EmployeeID = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID;
+            user.PostName = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.UserPosts[0].PostName;
+            user.DepartmentName = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName;
+            user.CompanyName = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.UserPosts[0].CompanyName;
+            FBService.SaveAsync(fbEntity, user);
 
          
         }
@@ -197,7 +203,14 @@ namespace SMT.FB.UI.Common
             //{
             //    fbService.SaveAsync(listOfFBEntity[i]);
             //}
-            FBService.SaveListAsync(listOfFBEntity);
+            CurrentUserPost user = new CurrentUserPost();
+            user.EmployeeName = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeName;
+            user.EmployeeID = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID;
+            user.PostName = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.UserPosts[0].PostName;
+            user.DepartmentName = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName;
+            user.CompanyName = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.UserPosts[0].CompanyName;
+
+            FBService.SaveListAsync(listOfFBEntity, user);
         }
 
         public event EventHandler<ActionCompletedEventArgs<List<OrderEntity>>> GetEntitiesCompleted;

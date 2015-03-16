@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using System.Threading;
 using SMT.FBEntityBLL.BLL;
@@ -113,7 +113,7 @@ namespace SMT.FB.BLL
                 string strDate = orderCode.CURRENTDATE.Value.ToString("yyyyMMdd");
                 string code = shortName + "_" + strDate + curNumber.ToString().PadLeft(6, '0');
 
-                orderCode.RUNNINGNUMBER = curNumber + 1;
+                orderCode.RUNNINGNUMBER = Convert.ToInt32(curNumber + 1);
                 using (FBEntityBLL bll = new FBEntityBLL())
                 {
                     bll.BassBllSave(orderCode, FBEntityState.Modified);

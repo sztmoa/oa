@@ -20,7 +20,7 @@ using System.Data.Objects.DataClasses;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FB.BLL;
 using SMT.FB.DAL;
 using SMT.Foundation.Log;
@@ -103,7 +103,7 @@ namespace SMT.FBEntityBLL.BLL
                     string strDate = orderCode.CURRENTDATE.Value.ToString("yyyyMMdd");
                     string code = shortName + "_" + strDate + curNumber.ToString().PadLeft(6, '0');
                     Tracer.Debug("生成单号：" + code);
-                    orderCode.RUNNINGNUMBER = curNumber + 1;
+                    orderCode.RUNNINGNUMBER =Convert.ToInt32(curNumber + 1);
                     Update(orderCode);
                     return code;
                 }

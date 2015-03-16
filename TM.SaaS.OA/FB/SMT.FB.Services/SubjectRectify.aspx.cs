@@ -10,7 +10,7 @@ using System.Data;
 using System.IO;
 using SMT.Foundation.Core;
 using System.Configuration;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FB.BLL;
 
 namespace SMT.FB.Services
@@ -97,7 +97,10 @@ namespace SMT.FB.Services
            {
                if (dtOrder.Rows[i][2].ToString() == "审核通过")
                {
+                   string oldstring=um.ToString();
                    um += Decimal.Parse(dtOrder.Rows[i][6].ToString());
+
+                   txtResult.Text = txtResult.Text + System.Environment.NewLine + oldstring + " + " + dtOrder.Rows[i][6].ToString() + "=" + um.ToString();
                    am += Decimal.Parse(dtOrder.Rows[i][6].ToString());
                }
                if (dtOrder.Rows[i][2].ToString() == "审核中" || dtOrder.Rows[i][2].ToString() == "审核中或未汇总")
@@ -548,7 +551,7 @@ namespace SMT.FB.Services
         protected void btnCompany_Click(object sender, EventArgs e)
         {
             OracleDAO dao = new OracleDAO(conn);
-            string strSql = @"select t.cname from smthrm.t_hr_company t
+            string strSql = @"select t.briefname from smthrm.t_hr_company t
                             where t.cname like '%" + TextBox2.Text + "%'";
             DataTable dt = new DataTable();
             dt = GetDataTable(strSql,dao);
@@ -640,7 +643,7 @@ namespace SMT.FB.Services
 
         protected void btnCloseBudget_Click(object sender, EventArgs e)
         {
-            //using (SMT_FB_EFModelContext dbcontext = new SMT_FB_EFModelContext())
+            //using (TM_SaaS_OA_EFModelContext dbcontext = new TM_SaaS_OA_EFModelContext())
             //{
             //    
             //}

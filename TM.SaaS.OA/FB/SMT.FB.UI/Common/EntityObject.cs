@@ -974,8 +974,8 @@ namespace SMT.FB.UI.FBCommonWS
     /// </summary>
     public partial class AuditResult : SaveResult
     {
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.Saas.Tools.FlowWFService.DataResult DataResult { get; set; }
+        //[global::System.Runtime.Serialization.DataMemberAttribute()]
+        //public SMT.Saas.Tools.FlowWFService.DataResult DataResult { get; set; }
     }
 
     [System.Runtime.Serialization.DataContractAttribute(Name = "VirtualAudit", Namespace = "SMT.FB.BLL", IsReference = true)]

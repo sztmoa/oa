@@ -810,6 +810,74 @@ namespace SMT.FB.UI.Common
             }
             return new Nullable<decimal>(a.Value - b.Value);
         }
+
+
+        #region int
+        public static CompareResult Compare(this Nullable<int> a, Nullable<int> b)
+        {
+            if (a == null)
+            {
+                a = new Nullable<int>(0);
+            }
+            if (b == null)
+            {
+                b = new Nullable<int>(0);
+            }
+            if (a.Value > b.Value)
+            {
+                return CompareResult.Bigger;
+            }
+            else if (a.Value == b.Value)
+            {
+                return CompareResult.Equal;
+            }
+            else
+            {
+                return CompareResult.Less;
+            }
+        }
+
+        public static bool Equal(this Nullable<int> a, Nullable<int> b)
+        {
+            return a.Compare(b) == CompareResult.Equal;
+        }
+
+        public static bool BiggerThan(this Nullable<int> a, Nullable<int> b)
+        {
+            return a.Compare(b) == CompareResult.Bigger;
+        }
+
+        public static bool LessThan(this Nullable<int> a, Nullable<int> b)
+        {
+            return a.Compare(b) == CompareResult.Less;
+        }
+
+        public static Nullable<int> Add(this Nullable<int> a, Nullable<int> b)
+        {
+            if (a == null)
+            {
+                a = new Nullable<int>(0);
+            }
+            if (b == null)
+            {
+                b = new Nullable<int>(0);
+            }
+            return new Nullable<int>(a.Value + b.Value);
+        }
+
+        public static Nullable<int> Subtract(this Nullable<int> a, Nullable<int> b)
+        {
+            if (a == null)
+            {
+                a = new Nullable<int>(0);
+            }
+            if (b == null)
+            {
+                b = new Nullable<int>(0);
+            }
+            return new Nullable<int>(a.Value - b.Value);
+        }
+        #endregion
     }
 
     public static class StyleExtenstion

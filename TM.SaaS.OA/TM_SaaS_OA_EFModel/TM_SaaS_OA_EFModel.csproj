@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="FBCustomEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TM_SaaS_OA_EFModel.Designer.cs">
       <AutoGen>True</AutoGen>

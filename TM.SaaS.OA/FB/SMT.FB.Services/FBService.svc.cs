@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.Collections.Generic;
 using System.Text;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FB.BLL;
 using System.Data.Objects.DataClasses;
 using System.Reflection;
@@ -616,7 +616,7 @@ namespace SMT.FB.Services
 
         #region 6.  HR人事调动后修改活动经费
         [OperationContract]
-        public bool HRPersonPostChanged(T_HR_EMPLOYEEPOSTCHANGE personChange, ref string message)
+        public bool HRPersonPostChanged(SMT.SaaS.BLLCommonServices.PersonnelWS.T_HR_EMPLOYEEPOSTCHANGE personChange, ref string message)
         {
             try
             {

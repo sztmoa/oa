@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Zpc38bEkBabb/cN2+aGL+dhpF0o=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="8YH6OHsu7C1nuJZht3ATXNWl7As=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_FBService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_FBService" contract="FBServiceWS.FBService" bindingType="basicHttpBinding" address="http://localhost:23938/FBService.svc" bindingConfiguration="BasicHttpBinding_FBService">
+    <endpoint name="BasicHttpBinding_FBService" contract="FBServiceWS.FBService" bindingType="basicHttpBinding" address="http://10.10.0.93:8080/New/Services/FB/FBService.svc" bindingConfiguration="BasicHttpBinding_FBService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:23938/FBService.svc</serializedValue>
+          <serializedValue>http://10.10.0.93:8080/New/Services/FB/FBService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

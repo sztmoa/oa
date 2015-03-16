@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using SMT.FB.DAL;
 using System.Data;
@@ -16,6 +16,7 @@ using System.Data.Objects;
 using System.Xml.Linq;
 using SMT.Foundation.Log;
 using System.Configuration;
+using SMT.FB.DAL;
 
 namespace SMT.FB.BLL
 {
@@ -304,7 +305,7 @@ namespace SMT.FB.BLL
                 //}
                 budgetAccountItem.T_FB_SUBJECT = accountItem.T_FB_SUBJECT;
                 budgetAccountItem.BUDGETACCOUNTID = Guid.NewGuid().ToString();
-                budgetAccountItem.ACCOUNTOBJECTTYPE = Convert.ToDecimal((int)accountItem.AccountType);
+                budgetAccountItem.ACCOUNTOBJECTTYPE = (int)accountItem.AccountType;
                 budgetAccountItem.OWNERCOMPANYID = accountItem.OwnerCompanyID;
                 budgetAccountItem.OWNERDEPARTMENTID = accountItem.OwnerDepartmentID;
                 budgetAccountItem.OWNERID = accountItem.OwnerID;
@@ -319,8 +320,8 @@ namespace SMT.FB.BLL
                 budgetAccountItem.USABLEMONEY = 0;
                 budgetAccountItem.PAIEDMONEY = 0;
 
-                budgetAccountItem.BUDGETYEAR = accountItem.BudgetYear;//  DateTime.Now.Year;
-                budgetAccountItem.BUDGETMONTH = accountItem.BudgetMonth; // DateTime.Now.Month;
+                budgetAccountItem.BUDGETYEAR = Convert.ToInt32(accountItem.BudgetYear);//  DateTime.Now.Year;
+                budgetAccountItem.BUDGETMONTH = Convert.ToInt32(accountItem.BudgetMonth); // DateTime.Now.Month;
 
                 // budgetAccountItem.T_FB_SUBJECTReference.EntityKey = accountItem.T_FB_SUBJECT.EntityKey;
 
@@ -436,11 +437,15 @@ namespace SMT.FB.BLL
                     QueryExpression qeSumEdits = QueryExpression.Equal(FieldName.EditStates, "1");
                     QueryExpression qeSumID = QueryExpression.Equal("SUMSETTINGSMASTERID", masterset.SUMSETTINGSMASTERID);
                     QueryExpression qeSumMonth = QueryExpression.Equal("BUDGETARYMONTH", budgetMonth);
-                    QueryExpression qeSumLevel = QueryExpression.Equal("SUMLEVEL", "1");  
+                    QueryExpression qeSumLevel = QueryExpression.Equal("SUMLEVEL", "1");
+
+                    QueryExpression qeCheckState = QueryExpression.NotEqual("CHECKSTATES", "3");  
+
                     qeSumMonth.RelatedExpression = qeSumLevel;
                     qeSumID.RelatedExpression = qeSumMonth;
                     qeSumEdits.RelatedExpression = qeSumID;
-                    qe.RelatedExpression = qeSumEdits;
+                    qeCheckState.RelatedExpression = qeSumEdits;
+                    qe.RelatedExpression = qeCheckState;
 
                     T_FB_DEPTBUDGETSUMMASTER master = GetEntities<T_FB_DEPTBUDGETSUMMASTER>(qe).FirstOrDefault();
 
@@ -1931,12 +1936,12 @@ namespace SMT.FB.BLL
 
             T_FB_CHARGEAPPLYMASTER master = entity;
 
-            if (!master.T_FB_CHARGEAPPLYREPAYDETAIL.IsLoaded) { master.T_FB_CHARGEAPPLYREPAYDETAIL.Load(); }
+            //if (!master.T_FB_CHARGEAPPLYREPAYDETAIL.IsLoaded) { master.T_FB_CHARGEAPPLYREPAYDETAIL.Load(); }
 
-            if (master.T_FB_CHARGEAPPLYREPAYDETAIL.Count == 0)
-            {
-                return resultList;
-            }
+            //if (master.T_FB_CHARGEAPPLYREPAYDETAIL.Count == 0)
+            //{
+            //    return resultList;
+            //}
 
             result.OwnerID = master.OWNERID;
             result.OwnerCompanyID = master.OWNERCOMPANYID;
@@ -1947,24 +1952,24 @@ namespace SMT.FB.BLL
             string detailID = "";
             decimal opmoney = 0;
 
-            master.T_FB_CHARGEAPPLYREPAYDETAIL.ForEach(item =>
-            {
-                // 1现金还普通借款 2现金还备用金借款 3现金还专项借款
-                detailID = item.CHARGEAPPLYREPAYDETAILID;
-                opmoney = item.REPAYMONEY;
-                if (item.REPAYTYPE == 1)
-                {
-                    result.SIMPLEBORROWMONEY = item.REPAYMONEY;
-                }
-                else if (item.REPAYTYPE == 2)
-                {
-                    result.BACKUPBORROWMONEY = item.REPAYMONEY;
-                }
-                else if (item.REPAYTYPE == 3)
-                {
-                    result.SPECIALBORROWMONEY = item.REPAYMONEY;
-                }
-            });
+            //master.T_FB_CHARGEAPPLYREPAYDETAIL.ForEach(item =>
+            //{
+            //    // 1现金还普通借款 2现金还备用金借款 3现金还专项借款
+            //    detailID = item.CHARGEAPPLYREPAYDETAILID;
+            //    opmoney = item.REPAYMONEY;
+            //    if (item.REPAYTYPE == 1)
+            //    {
+            //        result.SIMPLEBORROWMONEY = item.REPAYMONEY;
+            //    }
+            //    else if (item.REPAYTYPE == 2)
+            //    {
+            //        result.BACKUPBORROWMONEY = item.REPAYMONEY;
+            //    }
+            //    else if (item.REPAYTYPE == 3)
+            //    {
+            //        result.SPECIALBORROWMONEY = item.REPAYMONEY;
+            //    }
+            //});
 
             result.orderDetailID = detailID;
             result.OPERATIONMONEY = opmoney;
@@ -5109,25 +5114,25 @@ namespace SMT.FB.BLL
                     entity1.PAYTYPE = master.PAYTYPE;
                     List<FBEntity> listNewDetail = new List<FBEntity>();
                     decimal repayMoney = 0;
-                    master.T_FB_CHARGEAPPLYREPAYDETAIL.ForEach(item =>
-                    {
-                        var detailBorrow = new T_FB_CHARGEAPPLYREPAYDETAIL();
-                        detailBorrow.CHARGEAPPLYREPAYDETAILID = Guid.NewGuid().ToString();
-                        detailBorrow.T_FB_CHARGEAPPLYMASTER = entity1;
-                        detailBorrow.REPAYTYPE = item.REPAYTYPE;
-                        detailBorrow.REMARK = item.REMARK;
-                        detailBorrow.BORROWMONEY = item.BORROWMONEY;
-                        detailBorrow.REPAYMONEY = item.REPAYMONEY;
-                        detailBorrow.CREATEUSERID = entityExtensionalOrder.CREATEUSERID;
-                        detailBorrow.CREATEDATE = System.DateTime.Now;
-                        detailBorrow.UPDATEUSERID = entityExtensionalOrder.UPDATEUSERID;
-                        detailBorrow.UPDATEDATE = System.DateTime.Now;
-                        FBEntity fbEntityDetailBorrow = detailBorrow.ToFBEntity();
-                        fbEntityDetailBorrow.FBEntityState = FBEntityState.Added;
-                        listNewDetail.Add(fbEntityDetailBorrow);
+                    //master.T_FB_CHARGEAPPLYREPAYDETAIL.ForEach(item =>
+                    //{
+                    //    var detailBorrow = new T_FB_CHARGEAPPLYREPAYDETAIL();
+                    //    detailBorrow.CHARGEAPPLYREPAYDETAILID = Guid.NewGuid().ToString();
+                    //    detailBorrow.T_FB_CHARGEAPPLYMASTER = entity1;
+                    //    detailBorrow.REPAYTYPE = item.REPAYTYPE;
+                    //    detailBorrow.REMARK = item.REMARK;
+                    //    detailBorrow.BORROWMONEY = item.BORROWMONEY;
+                    //    detailBorrow.REPAYMONEY = item.REPAYMONEY;
+                    //    detailBorrow.CREATEUSERID = entityExtensionalOrder.CREATEUSERID;
+                    //    detailBorrow.CREATEDATE = System.DateTime.Now;
+                    //    detailBorrow.UPDATEUSERID = entityExtensionalOrder.UPDATEUSERID;
+                    //    detailBorrow.UPDATEDATE = System.DateTime.Now;
+                    //    FBEntity fbEntityDetailBorrow = detailBorrow.ToFBEntity();
+                    //    fbEntityDetailBorrow.FBEntityState = FBEntityState.Added;
+                    //    listNewDetail.Add(fbEntityDetailBorrow);
 
-                        repayMoney += detailBorrow.REPAYMONEY;
-                    });
+                    //    repayMoney += detailBorrow.REPAYMONEY;
+                    //});
 
                     entity1.REPAYMENT = repayMoney;
                     fbEntityNew.AddFBEntities<T_FB_CHARGEAPPLYDETAIL>(listNewDetail);

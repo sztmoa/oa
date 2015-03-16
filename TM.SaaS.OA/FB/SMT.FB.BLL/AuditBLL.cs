@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using FlowWFService = SMT.SaaS.BLLCommonServices.FlowWFService;
 using System.Runtime.Serialization;
@@ -12,6 +12,7 @@ using System.Linq.Expressions;
 using SMT.Foundation.Log;
 using System.Collections;
 using SMT.FB.DAL;
+using TM_SaaS_OA_EFModel;
 
 namespace SMT.FB.BLL
 {
@@ -500,7 +501,7 @@ namespace SMT.FB.BLL
                 {
                     tempEntity.ForEach(item =>
                     {
-                        SMT_FB_EFModel.T_FB_DEPTBUDGETADDDETAIL depDetail = item.Entity as T_FB_DEPTBUDGETADDDETAIL;
+                        TM_SaaS_OA_EFModel.T_FB_DEPTBUDGETADDDETAIL depDetail = item.Entity as T_FB_DEPTBUDGETADDDETAIL;
                         QueryEntityBLL bll = new QueryEntityBLL();
                         QueryExpression qeDetail = QueryExpression.Equal("DEPTBUDGETADDDETAILID", depDetail.DEPTBUDGETADDDETAILID);
                         qeDetail.QueryType = "T_FB_DEPTBUDGETADDDETAIL";
@@ -509,7 +510,7 @@ namespace SMT.FB.BLL
                         depDetail.T_FB_SUBJECT = new T_FB_SUBJECT();
                         depDetail.T_FB_SUBJECT.SUBJECTCODE = dept.T_FB_SUBJECT.SUBJECTCODE;
                         depDetail.T_FB_SUBJECT.SUBJECTNAME = dept.T_FB_SUBJECT.SUBJECTNAME;
-                        ((SMT_FB_EFModel.T_FB_DEPTBUDGETADDMASTER)(ent)).T_FB_DEPTBUDGETADDDETAIL.Add(depDetail);
+                        ((TM_SaaS_OA_EFModel.T_FB_DEPTBUDGETADDMASTER)(ent)).T_FB_DEPTBUDGETADDDETAIL.Add(depDetail);
                     });
                 }
                 #endregion
@@ -522,7 +523,7 @@ namespace SMT.FB.BLL
                 {
                     tempEntity.ForEach(item =>
                     {
-                        SMT_FB_EFModel.T_FB_COMPANYBUDGETMODDETAIL depDetail = item.Entity as T_FB_COMPANYBUDGETMODDETAIL;
+                        TM_SaaS_OA_EFModel.T_FB_COMPANYBUDGETMODDETAIL depDetail = item.Entity as T_FB_COMPANYBUDGETMODDETAIL;
                         QueryEntityBLL bll = new QueryEntityBLL();
                         QueryExpression qeDetail = QueryExpression.Equal("COMPANYBUDGETMODDETAILID", depDetail.COMPANYBUDGETMODDETAILID);
                         qeDetail.QueryType = "T_FB_COMPANYBUDGETMODDETAIL";
@@ -531,7 +532,7 @@ namespace SMT.FB.BLL
                         depDetail.T_FB_SUBJECT = new T_FB_SUBJECT();
                         depDetail.T_FB_SUBJECT.SUBJECTCODE = dept.T_FB_SUBJECT.SUBJECTCODE;
                         depDetail.T_FB_SUBJECT.SUBJECTNAME = dept.T_FB_SUBJECT.SUBJECTNAME;
-                        ((SMT_FB_EFModel.T_FB_COMPANYBUDGETMODMASTER)(ent)).T_FB_COMPANYBUDGETMODDETAIL.Add(depDetail);
+                        ((TM_SaaS_OA_EFModel.T_FB_COMPANYBUDGETMODMASTER)(ent)).T_FB_COMPANYBUDGETMODDETAIL.Add(depDetail);
                     });
                 }
                 #endregion
@@ -753,7 +754,7 @@ namespace SMT.FB.BLL
                 //年度汇总
                 if (entityInfo.EntityCode == "T_FB_COMPANYBUDGETSUMMASTER")
                 {
-                    string strCompanyID = ((SMT_FB_EFModel.T_FB_COMPANYBUDGETSUMMASTER)(ent)).OWNERCOMPANYID;
+                    string strCompanyID = ((TM_SaaS_OA_EFModel.T_FB_COMPANYBUDGETSUMMASTER)(ent)).OWNERCOMPANYID;
                     if (strCompanyID != "7a613fc2-4431-4a46-ae01-232222e9fcb5")//物流公司
                     {
                         //填充二级节点
@@ -770,7 +771,7 @@ namespace SMT.FB.BLL
                 //月度汇总
                 else if (entityInfo.EntityCode == "T_FB_DEPTBUDGETSUMMASTER")
                 {
-                    string strCompanyID = ((SMT_FB_EFModel.T_FB_DEPTBUDGETSUMMASTER)(ent)).OWNERCOMPANYID;
+                    string strCompanyID = ((TM_SaaS_OA_EFModel.T_FB_DEPTBUDGETSUMMASTER)(ent)).OWNERCOMPANYID;
                     if (strCompanyID != "7a613fc2-4431-4a46-ae01-232222e9fcb5")//物流公司
                     {
                         //填充二级节点
@@ -928,7 +929,7 @@ namespace SMT.FB.BLL
                 List<EntityObject> listTemp = new List<EntityObject>();
                 switch (listChildEnts.FirstOrDefault().GetType().ToString())
                 {
-                    case "SMT_FB_EFModel.T_FB_COMPANYBUDGETAPPLYDETAIL"://年度预算申请明细
+                    case "TM_SaaS_OA_EFModel.T_FB_COMPANYBUDGETAPPLYDETAIL"://年度预算申请明细
                         #region
                         listChildEnts.ForEach(it =>
                         {
@@ -941,7 +942,7 @@ namespace SMT.FB.BLL
                         listChildEnts = listTemp.OrderBy(item => ((T_FB_COMPANYBUDGETAPPLYDETAIL)(item)).T_FB_SUBJECT.SUBJECTCODE).ToList();
                         #endregion
                         break;
-                    case "SMT_FB_EFModel.T_FB_COMPANYBUDGETMODDETAIL"://年度增补明细
+                    case "TM_SaaS_OA_EFModel.T_FB_COMPANYBUDGETMODDETAIL"://年度增补明细
                         #region
                         QueryEntityBLL bll = new QueryEntityBLL();
                         listChildEnts.ForEach(it =>
@@ -1003,7 +1004,7 @@ namespace SMT.FB.BLL
                         });
                         listChildEnts = listTemp;
                         break;
-                    case "SMT_FB_EFModel.T_FB_DEPTBUDGETAPPLYDETAIL": //部门预算申请明细
+                    case "TM_SaaS_OA_EFModel.T_FB_DEPTBUDGETAPPLYDETAIL": //部门预算申请明细
                         listChildEnts = listChildEnts.OrderBy(item => ((T_FB_DEPTBUDGETAPPLYDETAIL)(item)).T_FB_SUBJECT.SUBJECTCODE).ToList();
                         listChildEnts.ForEach(it =>
                         {
@@ -1015,7 +1016,7 @@ namespace SMT.FB.BLL
                         });
                         listChildEnts = listTemp;
                         break;
-                    case "SMT_FB_EFModel.T_FB_DEPTBUDGETADDDETAIL"://部门预算增补明细
+                    case "TM_SaaS_OA_EFModel.T_FB_DEPTBUDGETADDDETAIL"://部门预算增补明细
                         listChildEnts.ForEach(it =>
                         {
                             var entity = it as T_FB_DEPTBUDGETADDDETAIL;
@@ -1026,7 +1027,7 @@ namespace SMT.FB.BLL
                         });
                         listChildEnts = listTemp.OrderBy(item => ((T_FB_DEPTBUDGETADDDETAIL)(item)).T_FB_SUBJECT.SUBJECTCODE).ToList();
                         break;
-                    case "SMT_FB_EFModel.T_FB_DEPTTRANSFERDETAIL"://部门预算增补明细
+                    case "TM_SaaS_OA_EFModel.T_FB_DEPTTRANSFERDETAIL"://部门预算增补明细
                         
                         listChildEnts.ForEach(it =>
                         {
@@ -1144,7 +1145,7 @@ namespace SMT.FB.BLL
                         }
                         List<EntityObject> listTemp = new List<EntityObject>();
                         //如果是月度预算申请中分配的人员分配则排除掉分配为0的数据
-                        if (listGrandSonEnts != null && listGrandSonEnts.Count > 0 && listGrandSonEnts.FirstOrDefault().GetType().ToString() == "SMT_FB_EFModel.T_FB_PERSONBUDGETAPPLYDETAIL")
+                        if (listGrandSonEnts != null && listGrandSonEnts.Count > 0 && listGrandSonEnts.FirstOrDefault().GetType().ToString() == "TM_SaaS_OA_EFModel.T_FB_PERSONBUDGETAPPLYDETAIL")
                         {
                             listGrandSonEnts.ForEach(it =>
                                 {
@@ -1184,7 +1185,7 @@ namespace SMT.FB.BLL
 
                             listGrandSonEnts = listTemp;
                         }
-                        else if (listGrandSonEnts != null && listGrandSonEnts.Count > 0 && listGrandSonEnts.FirstOrDefault().GetType().ToString() == "SMT_FB_EFModel.T_FB_PERSONBUDGETADDDETAIL")
+                        else if (listGrandSonEnts != null && listGrandSonEnts.Count > 0 && listGrandSonEnts.FirstOrDefault().GetType().ToString() == "TM_SaaS_OA_EFModel.T_FB_PERSONBUDGETADDDETAIL")
                         {
                             listGrandSonEnts.ForEach(it =>
                             {
@@ -1222,7 +1223,7 @@ namespace SMT.FB.BLL
 
                             listGrandSonEnts = listTemp;
                         }
-                        else if (listGrandSonEnts != null && listGrandSonEnts.Count > 0 && listGrandSonEnts.FirstOrDefault().GetType().ToString() == "SMT_FB_EFModel.T_FB_PERSONTRANSFERDETAIL")
+                        else if (listGrandSonEnts != null && listGrandSonEnts.Count > 0 && listGrandSonEnts.FirstOrDefault().GetType().ToString() == "TM_SaaS_OA_EFModel.T_FB_PERSONTRANSFERDETAIL")
                         {
                             
                             listGrandSonEnts.ForEach(it =>

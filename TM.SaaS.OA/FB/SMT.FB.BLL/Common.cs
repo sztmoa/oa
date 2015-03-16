@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using SMT.FB.BLL;
 using System.Data.Objects.DataClasses;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Linq.Expressions;
 using System.ComponentModel;
 using System.Reflection;
@@ -426,8 +426,8 @@ namespace SMT.FB.BLL
 
     public static class NullableExtension
     {
-        
-         public static CompareResult Compare(this Nullable<decimal> a, Nullable<decimal> b)
+        #region decimal
+        public static CompareResult Compare(this Nullable<decimal> a, Nullable<decimal> b)
          {
              if (a == null)
              {
@@ -491,6 +491,74 @@ namespace SMT.FB.BLL
              }
              return new Nullable<decimal>(a.Value - b.Value);
          }
+        #endregion
+
+        #region int
+         public static CompareResult Compare(this Nullable<int> a, Nullable<int> b)
+         {
+             if (a == null)
+             {
+                 a = new Nullable<int>(0);
+             }
+             if (b == null)
+             {
+                 b = new Nullable<int>(0);
+             }
+             if (a.Value > b.Value)
+             {
+                 return CompareResult.Bigger;
+             }
+             else if (a.Value == b.Value)
+             {
+                 return CompareResult.Equal;
+             }
+             else
+             {
+                 return CompareResult.Less;
+             }
+         }
+
+         public static bool Equal(this Nullable<int> a, Nullable<int> b)
+         {
+             return a.Compare(b) == CompareResult.Equal;
+         }
+
+         public static bool BiggerThan(this Nullable<int> a, Nullable<int> b)
+         {
+             return a.Compare(b) == CompareResult.Bigger;
+         }
+
+         public static bool LessThan(this Nullable<int> a, Nullable<int> b)
+         {
+             return a.Compare(b) == CompareResult.Less;
+         }
+
+         public static Nullable<int> Add(this Nullable<int> a, Nullable<int> b)
+         {
+             if (a == null)
+             {
+                 a = new Nullable<int>(0);
+             }
+             if (b == null)
+             {
+                 b = new Nullable<int>(0);
+             }
+             return new Nullable<int>(a.Value + b.Value);
+         }
+
+         public static Nullable<int> Subtract(this Nullable<int> a, Nullable<int> b)
+         {
+             if (a == null)
+             {
+                 a = new Nullable<int>(0);
+             }
+             if (b == null)
+             {
+                 b = new Nullable<int>(0);
+             }
+             return new Nullable<int>(a.Value - b.Value);
+         }
+        #endregion
     }
 
 

@@ -765,6 +765,23 @@ namespace SMT.FB.UI.Common
                     }
                     OrderSource.SaveList(list);
                 };
+            if (this.DefaultEntity.OrderType == typeof(T_FB_SUMSETTINGSMASTER))
+            {
+                for (int i = 0; i < this.ADtGrid.SelectedItems.Count; i++)
+                {
+                    OrderEntity order = this.ADtGrid.SelectedItems[i] as OrderEntity;
+                    string ownerCompanyid = order.GetOwnerInfo().Company.Value.ToString();
+                    var q=from ent in SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.UserPosts
+                          where ent.CompanyID == ownerCompanyid
+                          select ent;
+                    if (q.FirstOrDefault()==null)
+                    {
+                        MessageBox.Show("你没有权限删除此单据！");
+                        return;
+                    }
+                }
+            }
+
             CommonFunction.AskDelete(string.Empty, action);
         }
 
@@ -774,6 +791,22 @@ namespace SMT.FB.UI.Common
             if (!CheckSelectedRow(true))
             {
                 return;
+            }
+            if (this.DefaultEntity.OrderType == typeof(T_FB_SUMSETTINGSMASTER))
+            {
+                for (int i = 0; i < this.ADtGrid.SelectedItems.Count; i++)
+                {
+                    OrderEntity order = this.ADtGrid.SelectedItems[i] as OrderEntity;
+                    string ownerCompanyid = order.GetOwnerInfo().Company.Value.ToString();
+                    var q = from ent in SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.UserPosts
+                            where ent.CompanyID == ownerCompanyid
+                            select ent;
+                    if (q.FirstOrDefault() == null)
+                    {
+                        MessageBox.Show("你没有权限修改此单据！");
+                        return;
+                    }
+                }
             }
 
             OrderEntity orderEntity = this.ADtGrid.SelectedItems[0] as OrderEntity;

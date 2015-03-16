@@ -7,7 +7,7 @@ using System.Text;
 using System.ServiceModel.Activation;
 using SMT.FB.BLL;
 using System.Data.Objects.DataClasses;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Reflection;
 using System.Collections;
 using System.Configuration;
@@ -18,6 +18,8 @@ using System.Web.Services.Description;
 using System.Xml.Linq;
 using System.IO;
 using SMT.Foundation.Log;
+using SMT.FB.DAL;
+using SMT.SAAS.BLLCommonServices;
 
 
 namespace SMT.FB.Services
@@ -106,13 +108,14 @@ namespace SMT.FB.Services
         }
 
         [OperationContract]
-        public SaveResult Save(FBEntity fbEntity)
+        public SaveResult Save(FBEntity fbEntity,CurrentUserPost user)
         {
             SaveResult result = new SaveResult();
             try
             {
                 using (FBCommonBLL fbCommonBLL = new FBCommonBLL())
                 {
+                    fbCommonBLL.user = user;
                     fbCommonBLL.BeginTransaction();
                     result = fbCommonBLL.FBCommSaveEntity(fbEntity);
                     if (result.Successful)
@@ -132,12 +135,13 @@ namespace SMT.FB.Services
 
 
         [OperationContract]
-        public bool SaveList(List<FBEntity> fbEntityList)
+        public bool SaveList(List<FBEntity> fbEntityList,CurrentUserPost user)
         {
             try
             {
                 using (FBCommonBLL fbCommonBLL = new FBCommonBLL())
                 {
+                    fbCommonBLL.user = user;
                     return fbCommonBLL.FBcommonBllSaveList(fbEntityList);
                 }
             }

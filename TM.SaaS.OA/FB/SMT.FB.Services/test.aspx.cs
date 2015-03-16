@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using SMT.FB.BLL;
 using SMT.SaaS.BLLCommonServices.PersonnelWS;
 
@@ -15,7 +15,7 @@ namespace SMT.FB.Services
         protected List<EntityInfo> EntityInfoList { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            return;
+            //return;
             FBCommonService fbCommonService = new FBCommonService();
             EntityInfoList = fbCommonService.GetEntityInfoList();
             if (!IsPostBack)

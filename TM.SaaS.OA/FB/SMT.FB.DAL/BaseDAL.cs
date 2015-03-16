@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Objects.DataClasses;
 
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Reflection;
 using System.Data.Objects;
 using System.Linq.Expressions;
@@ -18,14 +18,14 @@ namespace SMT.FB.DAL
 {
     public class BaseDAL : IDAL
     {
-        private SMT_FB_EFModelContext _lbc = null;
-        public SMT_FB_EFModelContext lbc
+        private TM_SaaS_OA_EFModelContext _lbc = null;
+        public TM_SaaS_OA_EFModelContext lbc
         {
             get
             {
                 if (_lbc == null)
                 {
-                    _lbc =new SMT_FB_EFModelContext();
+                    _lbc =new TM_SaaS_OA_EFModelContext();
                 }
                 return _lbc;
                 // return DBContext.GetObjectContext(this);
@@ -40,7 +40,7 @@ namespace SMT.FB.DAL
 
         public BaseDAL(bool isSolo)
         {
-            _lbc = new SMT_FB_EFModelContext();
+            _lbc = new TM_SaaS_OA_EFModelContext();
         }
 
         private ObjectQuery<TEntity> GetQueryTable<TEntity>(QueryExpression queryExpression)

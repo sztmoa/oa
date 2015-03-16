@@ -1744,29 +1744,29 @@ namespace SMT.HRM.BLL
     }
 
 
-    [global::System.Runtime.Serialization.DataContractAttribute(IsReference = true)]
-    [global::System.Serializable()]
-    public class VirtualAudit : VirtualEntityObject
-    {
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public int Result { get; set; }
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string Content { get; set; }
+    //[global::System.Runtime.Serialization.DataContractAttribute(IsReference = true)]
+    //[global::System.Serializable()]
+    //public class VirtualAudit : VirtualEntityObject
+    //{
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public int Result { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string Content { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string ModelCode { get; set; }
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string FormID { get; set; }
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string GUID { get; set; }
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string NextStateCode { get; set; }
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string Op { get; set; }
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public int FlowSelectType { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string ModelCode { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string FormID { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string GUID { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string NextStateCode { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string Op { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public int FlowSelectType { get; set; }
 
-    }
+    //}
 
 
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference = true)]

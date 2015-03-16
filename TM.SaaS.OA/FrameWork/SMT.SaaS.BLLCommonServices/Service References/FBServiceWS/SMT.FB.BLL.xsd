@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="SMT.FB.BLL" elementFormDefault="qualified" targetNamespace="SMT.FB.BLL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/SMT.FlowWFService" />
-  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/SMT_FB_EFModel" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SMT.FlowWFService" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SMT_FB_EFModel" />
   <xs:complexType name="AuditResult">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SMT_FB_EFModel" base="q1:SaveResult">

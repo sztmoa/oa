@@ -136,7 +136,15 @@ namespace SMT.FB.UI.Form.BudgetApply
                                     }
                                 };
                                 this.ShowProcess();
-                                fbs.FBService.SaveAsync(saveEntity);
+
+                                CurrentUserPost user = new CurrentUserPost();
+                                user.EmployeeName = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeName;
+                                user.EmployeeID = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.EmployeeID;
+                                user.PostName = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.UserPosts[0].PostName;
+                                user.DepartmentName = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.UserPosts[0].DepartmentName;
+                                user.CompanyName = SMT.SAAS.Main.CurrentContext.Common.CurrentLoginUserInfo.UserPosts[0].CompanyName;
+                              
+                                fbs.FBService.SaveAsync(saveEntity,user);
                                 // none;
                             };
                             var personName = entity.GetObjValue("Entity.T_FB_DEPTBUDGETAPPLYMASTER.OWNERDEPARTMENTNAME");

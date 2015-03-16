@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using SMT.FB.BLL;
 using System.Data.Objects.DataClasses;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Reflection;
 using System.Xml.Linq;
 using SMT.Foundation.Log;
@@ -20,7 +20,7 @@ namespace SMT.FB.Services
             //// Add any types to include here.
 
             //return knownTypes;
-            Type[] types = Assembly.Load("SMT_FB_EFModel").GetTypes();
+            Type[] types = Assembly.Load("TM_SaaS_OA_EFModel").GetTypes();
 
             for (int i = 0; i < types.Length; i++)
             {

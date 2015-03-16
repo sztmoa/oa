@@ -5,16 +5,20 @@ using System.Text;
 using SMT.FB.DAL;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data;
 using System.Reflection;
 using System.Collections;
+using SMT.Foundation.Log;
+using SMT.SAAS.BLLCommonServices;
 
 namespace SMT.FB.BLL
 {
 
     public class BaseBLL : IDisposable
     {
+        public CurrentUserPost user;
+
         private IDAL _baseDal;
         public IDAL baseDal
         {
@@ -97,7 +101,7 @@ namespace SMT.FB.BLL
                         PropertyName = FieldName.UpdateDate
                     };
                 }
-                Type gType = Type.GetType("SMT_FB_EFModel." + queryExpression.QueryType + ",SMT_FB_EFModel");
+                Type gType = Type.GetType("TM_SaaS_OA_EFModel." + queryExpression.QueryType + ",TM_SaaS_OA_EFModel");
                 MethodInfo myMethod = baseDal.GetType().GetMethods().First(m => m.Name.Equals("QueryTable") && m.IsGenericMethod);
 
                 object result = myMethod.MakeGenericMethod(gType).Invoke(baseDal, new object[] { queryExpression });
@@ -323,6 +327,12 @@ namespace SMT.FB.BLL
                     return;
                 }
                 string type = entity.GetType().Name;
+                if (user != null)
+                {
+                    Tracer.Debug("操作数据库->" + "单据类型: " + entity.GetType().Name
+                        + "操作类型: " + Enum.GetName(typeof(FBEntityState), entityState)
+                        + "操作人"+user.EmployeeName+"-"+user.PostName+"-"+user.DepartmentName+"-"+user.CompanyName);
+                }
                 switch (entityState)
                 {
                     case FBEntityState.Added:

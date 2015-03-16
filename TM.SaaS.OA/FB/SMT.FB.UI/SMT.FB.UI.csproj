@@ -157,7 +157,7 @@
     <Reference Include="SMT.SaaS.Window">
       <HintPath>..\..\CommonDll\Lib\SMTLib1.1V\Lib\SMT\Client\SMT.SaaS.Window.dll</HintPath>
     </Reference>
-    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows" />
@@ -165,21 +165,21 @@
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
-    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
-    <Reference Include="System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Controls.Data.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Controls.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Controls.Navigation, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Navigation, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Windows.Browser" />
-    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Xml.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Serialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -607,79 +607,39 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\FBCommonWS\FBCommonService1.disco" />
+    <None Include="Service References\FBCommonWS\FBCommonService.disco" />
+    <None Include="Service References\FBCommonWS\configuration91.svcinfo" />
+    <None Include="Service References\FBCommonWS\configuration.svcinfo" />
+    <None Include="Service References\FBCommonWS\FBCommonService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\FBCommonService111.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBCommonWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="XMLFile1.xml" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\DataSources\SMT.SaaS.FrameworkUI.AuditService.CompositeType.datasource" />
     <None Include="Properties\DataSources\SMT.SaaS.FrameworkUI.AuditService.Flow_FlowRecord_T.datasource" />
     <None Include="Properties\DataSources\SMT.SaaS.FrameworkUI.AuditService.Flow_ModelFlowRelation_T.datasource" />
     <None Include="Properties\OutOfBrowserSettings.xml" />
+    <Content Include="正式- ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Service References\FBCommonWS\FBCommonService.wsdl" />
     <None Include="Service References\FBCommonWS\FBCommonService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBCommonWS\FBCommonService1.wsdl" />
     <None Include="Service References\FBCommonWS\FBCommonService1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FBCommonWS\FBCommonService10.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBCommonWS\FBCommonService11.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService12.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService13.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService14.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService15.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService16.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService17.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService18.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService19.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\FBCommonWS\FBCommonService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService20.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService21.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService22.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService23.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService24.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService25.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService26.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService27.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\FBCommonService28.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FBCommonWS\FBCommonService3.xsd">
@@ -700,9 +660,9 @@
     <None Include="Service References\FBCommonWS\FBCommonService8.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="正式- ServiceReferences.ClientConfig">
+    <None Include="Service References\FBCommonWS\FBCommonService9.xsd">
       <SubType>Designer</SubType>
-    </Content>
+    </None>
     <None Include="Service References\FBCommonWS\SMT.FB.UI.FBCommonWS.AuditResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -723,16 +683,6 @@
     <Resource Include="Images\I_CmbBox.png" />
     <Resource Include="Images\Collapsed.png" />
     <Resource Include="Images\Expend.png" />
-    <None Include="Service References\FBCommonWS\FBCommonService.disco" />
-    <None Include="Service References\FBCommonWS\configuration91.svcinfo" />
-    <None Include="Service References\FBCommonWS\configuration.svcinfo" />
-    <None Include="Service References\FBCommonWS\FBCommonService9.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FBCommonWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="ServiceReferences.ClientConfig">
       <SubType>Designer</SubType>
     </Content>

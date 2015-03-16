@@ -612,6 +612,8 @@
         <AssociationConnector Association="tmoaModel.FK_T_SYS_RO_ROLEENTITYMENU" ManuallyRouted="false" />
         <AssociationConnector Association="tmoaModel.FK_REFERENCE_162" ManuallyRouted="false" />
         <AssociationConnector Association="tmoaModel.FK_T_WF_DOT_REFERENCE_T_WF_DOT" ManuallyRouted="false" />
+        <AssociationConnector Association="tmoaModel.FK_REFERENCE_18" />
+        <AssociationConnector Association="tmoaModel.FK_REFERENCE_17" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

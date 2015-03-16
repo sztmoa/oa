@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SMT.FB.DAL;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using System.Reflection;
 using System.Xml.Linq;
@@ -2432,17 +2432,17 @@ namespace SMT.FB.BLL
                 // 1现金还普通借款 2现金还备用金借款 3现金还专项借款
                 if (!itemBorrowInfo.SIMPLEBORROWMONEY.Equal(0))
                 {
-                    master.T_FB_CHARGEAPPLYREPAYDETAIL.Add(CreateDetail(1, itemBorrowInfo.SIMPLEBORROWMONEY));
+                    //master.T_FB_CHARGEAPPLYREPAYDETAIL.Add(CreateDetail(1, itemBorrowInfo.SIMPLEBORROWMONEY));
                 }
 
                 if (!itemBorrowInfo.BACKUPBORROWMONEY.Equal(0))
                 {
-                    master.T_FB_CHARGEAPPLYREPAYDETAIL.Add(CreateDetail(2, itemBorrowInfo.BACKUPBORROWMONEY));
+                    //master.T_FB_CHARGEAPPLYREPAYDETAIL.Add(CreateDetail(2, itemBorrowInfo.BACKUPBORROWMONEY));
                 }
 
                 if (!itemBorrowInfo.SPECIALBORROWMONEY.Equal(0))
                 {
-                    master.T_FB_CHARGEAPPLYREPAYDETAIL.Add(CreateDetail(3, itemBorrowInfo.SPECIALBORROWMONEY));
+                    //master.T_FB_CHARGEAPPLYREPAYDETAIL.Add(CreateDetail(3, itemBorrowInfo.SPECIALBORROWMONEY));
                 }
             };
 
@@ -2487,7 +2487,7 @@ namespace SMT.FB.BLL
                         detail.CREATEDATE = Convert.ToDateTime(item.Element("CREATEDATE").Value);
                         detail.UPDATEUSERID = item.Element("UPDATEUSERID").Value;
                         detail.UPDATEDATE = Convert.ToDateTime(item.Element("UPDATEDATE").Value);
-                        master.T_FB_CHARGEAPPLYREPAYDETAIL.Add(detail);
+                        //master.T_FB_CHARGEAPPLYREPAYDETAIL.Add(detail);
                     });
                 }
 
@@ -2529,21 +2529,21 @@ namespace SMT.FB.BLL
                     T_FB_CHARGEAPPLYMASTER master = masterFBEntity.Entity as T_FB_CHARGEAPPLYMASTER;
                     masterXml.Add(new XElement("PAYTYPE", master.PAYTYPE));
 
-                    master.T_FB_CHARGEAPPLYREPAYDETAIL.ForEach(detail =>
-                    {
-                        var detailXml = new XElement("T_FB_CHARGEAPPLYREPAYDETAIL",
-                            new XElement("CHARGEAPPLYREPAYDETAILID", detail.CHARGEAPPLYREPAYDETAILID),
-                            new XElement("REPAYTYPE", detail.REPAYTYPE),
-                            new XElement("BORROWMONEY", detail.BORROWMONEY),
-                            new XElement("REPAYMONEY", detail.REPAYMONEY),
-                            new XElement("REMARK", detail.REMARK),
-                            new XElement("CREATEUSERID", detail.CREATEUSERID),
-                            new XElement("CREATEDATE", detail.CREATEDATE),
-                            new XElement("UPDATEUSERID", detail.UPDATEUSERID),
-                            new XElement("UPDATEDATE", detail.UPDATEDATE));
+                    //master.T_FB_CHARGEAPPLYREPAYDETAIL.ForEach(detail =>
+                    //{
+                    //    var detailXml = new XElement("T_FB_CHARGEAPPLYREPAYDETAIL",
+                    //        new XElement("CHARGEAPPLYREPAYDETAILID", detail.CHARGEAPPLYREPAYDETAILID),
+                    //        new XElement("REPAYTYPE", detail.REPAYTYPE),
+                    //        new XElement("BORROWMONEY", detail.BORROWMONEY),
+                    //        new XElement("REPAYMONEY", detail.REPAYMONEY),
+                    //        new XElement("REMARK", detail.REMARK),
+                    //        new XElement("CREATEUSERID", detail.CREATEUSERID),
+                    //        new XElement("CREATEDATE", detail.CREATEDATE),
+                    //        new XElement("UPDATEUSERID", detail.UPDATEUSERID),
+                    //        new XElement("UPDATEDATE", detail.UPDATEDATE));
 
-                        masterXml.Add(detailXml);
-                    });
+                    //    masterXml.Add(detailXml);
+                    //});
 
                     xElement.Add(masterXml);
                 }

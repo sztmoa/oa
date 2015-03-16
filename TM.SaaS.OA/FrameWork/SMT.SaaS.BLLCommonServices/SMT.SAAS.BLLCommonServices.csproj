@@ -262,6 +262,7 @@
     </Compile>
     <Compile Include="SubmitFlow\Flow_FlowRecord_T.cs" />
     <Compile Include="SubmitFlow\SubmitFlowHelper.cs" />
+    <Compile Include="UserPost.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -506,15 +507,15 @@
     <None Include="Service References\FbDailyUpdateCheckStateWS\DailyUpdateCheckStateService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBServiceWS\Arrays4.xsd">
+    <None Include="Service References\FBServiceWS\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBServiceWS\service2.wsdl" />
-    <None Include="Service References\FBServiceWS\service5.wsdl" />
-    <None Include="Service References\FBServiceWS\service7.xsd">
+    <None Include="Service References\FBServiceWS\service.wsdl" />
+    <None Include="Service References\FBServiceWS\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBServiceWS\service8.xsd">
+    <None Include="Service References\FBServiceWS\service1.wsdl" />
+    <None Include="Service References\FBServiceWS\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FBServiceWS\SMT.EntityFlowSys.xsd">
@@ -523,10 +524,13 @@
     <None Include="Service References\FBServiceWS\SMT.FB.BLL.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBServiceWS\SMT.FB.Services1.xsd">
+    <None Include="Service References\FBServiceWS\SMT.FB.Services.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBServiceWS\SMT.FlowWFService4.xsd">
+    <None Include="Service References\FBServiceWS\SMT.FlowWFService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBServiceWS\SMT.HRM.CustomModel.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FBServiceWS\SMT.SaaS.BLLCommonServices.FBServiceWS.DebtInfo.datasource">
@@ -544,19 +548,22 @@
     <None Include="Service References\FBServiceWS\SMT.SaaS.BLLCommonServices.FBServiceWS.T_FB_EXTENSIONALORDER.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\FBServiceWS\SMT_FB_EFModel1.xsd">
+    <None Include="Service References\FBServiceWS\SMT.Workflow.Common.Model.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBServiceWS\SMT_HRM_EFModel13.xsd">
+    <None Include="Service References\FBServiceWS\SMT_FB_EFModel.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBServiceWS\SMT_System_EFModel1.xsd">
+    <None Include="Service References\FBServiceWS\SMT_HRM_EFModel.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBServiceWS\System.Data.Objects.DataClasses4.xsd">
+    <None Include="Service References\FBServiceWS\SMT_System_EFModel.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FBServiceWS\System.Data4.xsd">
+    <None Include="Service References\FBServiceWS\System.Data.Objects.DataClasses.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FBServiceWS\System.Data.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FileUploadWS\FileUpLoad.xsd">
@@ -2021,18 +2028,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\FBServiceWS\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FBServiceWS\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FBServiceWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\BllCommonUserPermissionWS\BllCommonPermissionServices.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -2181,6 +2176,12 @@
     <None Include="Service References\TKServicesWS\TKServices.disco" />
     <None Include="Service References\FlowWFService\SMT.disco" />
     <None Include="Service References\PersonnelWS\PersonnelService1.disco" />
+    <None Include="Service References\FBServiceWS\configuration91.svcinfo" />
+    <None Include="Service References\FBServiceWS\configuration.svcinfo" />
+    <None Include="Service References\FBServiceWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Service References\WFPlatformWS\configuration.svcinfo" />
     <Content Include="Service References\WFPlatformWS\configuration91.svcinfo" />
     <Content Include="Service References\WFPlatformWS\PlatformServices.disco" />

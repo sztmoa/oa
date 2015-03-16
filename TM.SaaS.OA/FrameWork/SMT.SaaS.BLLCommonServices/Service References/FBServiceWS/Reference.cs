@@ -383,10 +383,10 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_FB_WFPERSONACCOUNT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_FB_WFSUBJECTSETTING))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualEntityObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualUser))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualPost))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualCompany))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualDepartment))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualUser))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualAudit))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_ROLE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_ENTITYMENUCUSTOMPERM))]
@@ -396,12 +396,12 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_ROLEENTITYMENU))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_USERROLE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_USER))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELDEFINE_T))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWDEFINE_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_CONSULTATION_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWRECORDDETAIL_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWRECORDMASTER_T))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWDEFINE_T))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELDEFINE_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOSTCHANGE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_ASSESSMENTFORMMASTER))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_ASSESSMENTFORMDETAIL))]
@@ -432,6 +432,11 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_RESUME))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EDUCATEHISTORY))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EXPERIENCE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_IMPORTSETMASTER))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_IMPORTSETDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_BLACKLIST))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_PENSIONALARMSET))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.V_EMPLOYEEPOST))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_FB_BUDGETACCOUNT))]
     public partial class StructuralObject : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -516,10 +521,10 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_FB_WFPERSONACCOUNT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_FB_WFSUBJECTSETTING))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualEntityObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualUser))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualPost))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualCompany))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualDepartment))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualUser))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualAudit))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_ROLE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_ENTITYMENUCUSTOMPERM))]
@@ -529,12 +534,12 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_ROLEENTITYMENU))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_USERROLE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_USER))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELDEFINE_T))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWDEFINE_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_CONSULTATION_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWRECORDDETAIL_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWRECORDMASTER_T))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWDEFINE_T))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELDEFINE_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOSTCHANGE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_ASSESSMENTFORMMASTER))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_ASSESSMENTFORMDETAIL))]
@@ -565,6 +570,11 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_RESUME))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EDUCATEHISTORY))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EXPERIENCE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_IMPORTSETMASTER))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_IMPORTSETDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_BLACKLIST))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_PENSIONALARMSET))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.V_EMPLOYEEPOST))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_FB_BUDGETACCOUNT))]
     public partial class EntityObject : SMT.SaaS.BLLCommonServices.FBServiceWS.StructuralObject {
         
@@ -4863,6 +4873,9 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     public partial class T_FB_COMPANYBUDGETSUMDETAIL : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> CHECKSTATESField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string COMPANYBUDGETSUMDETAILIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4888,6 +4901,19 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UPDATEUSERIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> CHECKSTATES {
+            get {
+                return this.CHECKSTATESField;
+            }
+            set {
+                if ((this.CHECKSTATESField.Equals(value) != true)) {
+                    this.CHECKSTATESField = value;
+                    this.RaisePropertyChanged("CHECKSTATES");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string COMPANYBUDGETSUMDETAILID {
@@ -8972,6 +8998,9 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     public partial class T_FB_DEPTBUDGETSUMDETAIL : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> CHECKSTATESField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CREATEDATEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -8997,6 +9026,19 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UPDATEUSERIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> CHECKSTATES {
+            get {
+                return this.CHECKSTATESField;
+            }
+            set {
+                if ((this.CHECKSTATESField.Equals(value) != true)) {
+                    this.CHECKSTATESField = value;
+                    this.RaisePropertyChanged("CHECKSTATES");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime CREATEDATE {
@@ -20610,10 +20652,10 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="VirtualEntityObject", Namespace="http://schemas.datacontract.org/2004/07/SMT_FB_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualUser))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualPost))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualCompany))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualDepartment))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualUser))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualAudit))]
     public partial class VirtualEntityObject : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -20956,29 +20998,6 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VirtualUser", Namespace="http://schemas.datacontract.org/2004/07/SMT_FB_EFModel", IsReference=true)]
-    [System.SerializableAttribute()]
-    public partial class VirtualUser : SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualEntityObject {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualPost VirtualPostField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualPost VirtualPost {
-            get {
-                return this.VirtualPostField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.VirtualPostField, value) != true)) {
-                    this.VirtualPostField = value;
-                    this.RaisePropertyChanged("VirtualPost");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="VirtualPost", Namespace="http://schemas.datacontract.org/2004/07/SMT_FB_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class VirtualPost : SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualEntityObject {
@@ -21073,6 +21092,29 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
                 if ((object.ReferenceEquals(this.VirtualCompanyField, value) != true)) {
                     this.VirtualCompanyField = value;
                     this.RaisePropertyChanged("VirtualCompany");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VirtualUser", Namespace="http://schemas.datacontract.org/2004/07/SMT_FB_EFModel", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class VirtualUser : SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualEntityObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualPost VirtualPostField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualPost VirtualPost {
+            get {
+                return this.VirtualPostField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VirtualPostField, value) != true)) {
+                    this.VirtualPostField = value;
+                    this.RaisePropertyChanged("VirtualPost");
                 }
             }
         }
@@ -23415,827 +23457,6 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FLOW_MODELDEFINE_T", Namespace="http://schemas.datacontract.org/2004/07/SMT.EntityFlowSys", IsReference=true)]
-    [System.SerializableAttribute()]
-    public partial class FLOW_MODELDEFINE_T : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATECOMPANYIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CREATEDATEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATEDEPARTMENTIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATEPOSTIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATEUSERIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATEUSERNAMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DESCRIPTIONField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> EDITDATEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EDITUSERIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EDITUSERNAMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T[] FLOW_MODELFLOWRELATION_TField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MODELCODEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MODELDEFINEIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PARENTMODELCODEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SYSTEMCODEField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATECOMPANYID {
-            get {
-                return this.CREATECOMPANYIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATECOMPANYIDField, value) != true)) {
-                    this.CREATECOMPANYIDField = value;
-                    this.RaisePropertyChanged("CREATECOMPANYID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CREATEDATE {
-            get {
-                return this.CREATEDATEField;
-            }
-            set {
-                if ((this.CREATEDATEField.Equals(value) != true)) {
-                    this.CREATEDATEField = value;
-                    this.RaisePropertyChanged("CREATEDATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEDEPARTMENTID {
-            get {
-                return this.CREATEDEPARTMENTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEDEPARTMENTIDField, value) != true)) {
-                    this.CREATEDEPARTMENTIDField = value;
-                    this.RaisePropertyChanged("CREATEDEPARTMENTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEPOSTID {
-            get {
-                return this.CREATEPOSTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEPOSTIDField, value) != true)) {
-                    this.CREATEPOSTIDField = value;
-                    this.RaisePropertyChanged("CREATEPOSTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEUSERID {
-            get {
-                return this.CREATEUSERIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
-                    this.CREATEUSERIDField = value;
-                    this.RaisePropertyChanged("CREATEUSERID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEUSERNAME {
-            get {
-                return this.CREATEUSERNAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEUSERNAMEField, value) != true)) {
-                    this.CREATEUSERNAMEField = value;
-                    this.RaisePropertyChanged("CREATEUSERNAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DESCRIPTION {
-            get {
-                return this.DESCRIPTIONField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DESCRIPTIONField, value) != true)) {
-                    this.DESCRIPTIONField = value;
-                    this.RaisePropertyChanged("DESCRIPTION");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> EDITDATE {
-            get {
-                return this.EDITDATEField;
-            }
-            set {
-                if ((this.EDITDATEField.Equals(value) != true)) {
-                    this.EDITDATEField = value;
-                    this.RaisePropertyChanged("EDITDATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EDITUSERID {
-            get {
-                return this.EDITUSERIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EDITUSERIDField, value) != true)) {
-                    this.EDITUSERIDField = value;
-                    this.RaisePropertyChanged("EDITUSERID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EDITUSERNAME {
-            get {
-                return this.EDITUSERNAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EDITUSERNAMEField, value) != true)) {
-                    this.EDITUSERNAMEField = value;
-                    this.RaisePropertyChanged("EDITUSERNAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T[] FLOW_MODELFLOWRELATION_T {
-            get {
-                return this.FLOW_MODELFLOWRELATION_TField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FLOW_MODELFLOWRELATION_TField, value) != true)) {
-                    this.FLOW_MODELFLOWRELATION_TField = value;
-                    this.RaisePropertyChanged("FLOW_MODELFLOWRELATION_T");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MODELCODE {
-            get {
-                return this.MODELCODEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MODELCODEField, value) != true)) {
-                    this.MODELCODEField = value;
-                    this.RaisePropertyChanged("MODELCODE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MODELDEFINEID {
-            get {
-                return this.MODELDEFINEIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MODELDEFINEIDField, value) != true)) {
-                    this.MODELDEFINEIDField = value;
-                    this.RaisePropertyChanged("MODELDEFINEID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PARENTMODELCODE {
-            get {
-                return this.PARENTMODELCODEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PARENTMODELCODEField, value) != true)) {
-                    this.PARENTMODELCODEField = value;
-                    this.RaisePropertyChanged("PARENTMODELCODE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SYSTEMCODE {
-            get {
-                return this.SYSTEMCODEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SYSTEMCODEField, value) != true)) {
-                    this.SYSTEMCODEField = value;
-                    this.RaisePropertyChanged("SYSTEMCODE");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FLOW_MODELFLOWRELATION_T", Namespace="http://schemas.datacontract.org/2004/07/SMT.EntityFlowSys", IsReference=true)]
-    [System.SerializableAttribute()]
-    public partial class FLOW_MODELFLOWRELATION_T : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string COMPANYIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATECOMPANYIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CREATEDATEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATEDEPARTMENTIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATEPOSTIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATEUSERIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATEUSERNAMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DEPARTMENTIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> EDITDATEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EDITUSERIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EDITUSERNAMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FLAGField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FLOWTYPEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWDEFINE_T FLOW_FLOWDEFINE_TField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWDEFINE_TgZ_PhGfiK FLOW_FLOWDEFINE_TReferenceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELDEFINE_T FLOW_MODELDEFINE_TField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK FLOW_MODELDEFINE_TReferenceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MODELFLOWRELATIONIDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string COMPANYID {
-            get {
-                return this.COMPANYIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.COMPANYIDField, value) != true)) {
-                    this.COMPANYIDField = value;
-                    this.RaisePropertyChanged("COMPANYID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATECOMPANYID {
-            get {
-                return this.CREATECOMPANYIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATECOMPANYIDField, value) != true)) {
-                    this.CREATECOMPANYIDField = value;
-                    this.RaisePropertyChanged("CREATECOMPANYID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CREATEDATE {
-            get {
-                return this.CREATEDATEField;
-            }
-            set {
-                if ((this.CREATEDATEField.Equals(value) != true)) {
-                    this.CREATEDATEField = value;
-                    this.RaisePropertyChanged("CREATEDATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEDEPARTMENTID {
-            get {
-                return this.CREATEDEPARTMENTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEDEPARTMENTIDField, value) != true)) {
-                    this.CREATEDEPARTMENTIDField = value;
-                    this.RaisePropertyChanged("CREATEDEPARTMENTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEPOSTID {
-            get {
-                return this.CREATEPOSTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEPOSTIDField, value) != true)) {
-                    this.CREATEPOSTIDField = value;
-                    this.RaisePropertyChanged("CREATEPOSTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEUSERID {
-            get {
-                return this.CREATEUSERIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
-                    this.CREATEUSERIDField = value;
-                    this.RaisePropertyChanged("CREATEUSERID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEUSERNAME {
-            get {
-                return this.CREATEUSERNAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEUSERNAMEField, value) != true)) {
-                    this.CREATEUSERNAMEField = value;
-                    this.RaisePropertyChanged("CREATEUSERNAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DEPARTMENTID {
-            get {
-                return this.DEPARTMENTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DEPARTMENTIDField, value) != true)) {
-                    this.DEPARTMENTIDField = value;
-                    this.RaisePropertyChanged("DEPARTMENTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> EDITDATE {
-            get {
-                return this.EDITDATEField;
-            }
-            set {
-                if ((this.EDITDATEField.Equals(value) != true)) {
-                    this.EDITDATEField = value;
-                    this.RaisePropertyChanged("EDITDATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EDITUSERID {
-            get {
-                return this.EDITUSERIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EDITUSERIDField, value) != true)) {
-                    this.EDITUSERIDField = value;
-                    this.RaisePropertyChanged("EDITUSERID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EDITUSERNAME {
-            get {
-                return this.EDITUSERNAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EDITUSERNAMEField, value) != true)) {
-                    this.EDITUSERNAMEField = value;
-                    this.RaisePropertyChanged("EDITUSERNAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FLAG {
-            get {
-                return this.FLAGField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FLAGField, value) != true)) {
-                    this.FLAGField = value;
-                    this.RaisePropertyChanged("FLAG");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FLOWTYPE {
-            get {
-                return this.FLOWTYPEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FLOWTYPEField, value) != true)) {
-                    this.FLOWTYPEField = value;
-                    this.RaisePropertyChanged("FLOWTYPE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWDEFINE_T FLOW_FLOWDEFINE_T {
-            get {
-                return this.FLOW_FLOWDEFINE_TField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FLOW_FLOWDEFINE_TField, value) != true)) {
-                    this.FLOW_FLOWDEFINE_TField = value;
-                    this.RaisePropertyChanged("FLOW_FLOWDEFINE_T");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWDEFINE_TgZ_PhGfiK FLOW_FLOWDEFINE_TReference {
-            get {
-                return this.FLOW_FLOWDEFINE_TReferenceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FLOW_FLOWDEFINE_TReferenceField, value) != true)) {
-                    this.FLOW_FLOWDEFINE_TReferenceField = value;
-                    this.RaisePropertyChanged("FLOW_FLOWDEFINE_TReference");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELDEFINE_T FLOW_MODELDEFINE_T {
-            get {
-                return this.FLOW_MODELDEFINE_TField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FLOW_MODELDEFINE_TField, value) != true)) {
-                    this.FLOW_MODELDEFINE_TField = value;
-                    this.RaisePropertyChanged("FLOW_MODELDEFINE_T");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK FLOW_MODELDEFINE_TReference {
-            get {
-                return this.FLOW_MODELDEFINE_TReferenceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FLOW_MODELDEFINE_TReferenceField, value) != true)) {
-                    this.FLOW_MODELDEFINE_TReferenceField = value;
-                    this.RaisePropertyChanged("FLOW_MODELDEFINE_TReference");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MODELFLOWRELATIONID {
-            get {
-                return this.MODELFLOWRELATIONIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MODELFLOWRELATIONIDField, value) != true)) {
-                    this.MODELFLOWRELATIONIDField = value;
-                    this.RaisePropertyChanged("MODELFLOWRELATIONID");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FLOW_FLOWDEFINE_T", Namespace="http://schemas.datacontract.org/2004/07/SMT.EntityFlowSys", IsReference=true)]
-    [System.SerializableAttribute()]
-    public partial class FLOW_FLOWDEFINE_T : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATECOMPANYIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CREATEDATEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATEDEPARTMENTIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATEPOSTIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATEUSERIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATEUSERNAMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DESCRIPTIONField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> EDITDATEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EDITUSERIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EDITUSERNAMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FLOWCODEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FLOWDEFINEIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FLOWTYPEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T[] FLOW_MODELFLOWRELATION_TField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LAYOUTField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RULESField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string XOMLField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATECOMPANYID {
-            get {
-                return this.CREATECOMPANYIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATECOMPANYIDField, value) != true)) {
-                    this.CREATECOMPANYIDField = value;
-                    this.RaisePropertyChanged("CREATECOMPANYID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CREATEDATE {
-            get {
-                return this.CREATEDATEField;
-            }
-            set {
-                if ((this.CREATEDATEField.Equals(value) != true)) {
-                    this.CREATEDATEField = value;
-                    this.RaisePropertyChanged("CREATEDATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEDEPARTMENTID {
-            get {
-                return this.CREATEDEPARTMENTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEDEPARTMENTIDField, value) != true)) {
-                    this.CREATEDEPARTMENTIDField = value;
-                    this.RaisePropertyChanged("CREATEDEPARTMENTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEPOSTID {
-            get {
-                return this.CREATEPOSTIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEPOSTIDField, value) != true)) {
-                    this.CREATEPOSTIDField = value;
-                    this.RaisePropertyChanged("CREATEPOSTID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEUSERID {
-            get {
-                return this.CREATEUSERIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
-                    this.CREATEUSERIDField = value;
-                    this.RaisePropertyChanged("CREATEUSERID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEUSERNAME {
-            get {
-                return this.CREATEUSERNAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATEUSERNAMEField, value) != true)) {
-                    this.CREATEUSERNAMEField = value;
-                    this.RaisePropertyChanged("CREATEUSERNAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DESCRIPTION {
-            get {
-                return this.DESCRIPTIONField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DESCRIPTIONField, value) != true)) {
-                    this.DESCRIPTIONField = value;
-                    this.RaisePropertyChanged("DESCRIPTION");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> EDITDATE {
-            get {
-                return this.EDITDATEField;
-            }
-            set {
-                if ((this.EDITDATEField.Equals(value) != true)) {
-                    this.EDITDATEField = value;
-                    this.RaisePropertyChanged("EDITDATE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EDITUSERID {
-            get {
-                return this.EDITUSERIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EDITUSERIDField, value) != true)) {
-                    this.EDITUSERIDField = value;
-                    this.RaisePropertyChanged("EDITUSERID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EDITUSERNAME {
-            get {
-                return this.EDITUSERNAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EDITUSERNAMEField, value) != true)) {
-                    this.EDITUSERNAMEField = value;
-                    this.RaisePropertyChanged("EDITUSERNAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FLOWCODE {
-            get {
-                return this.FLOWCODEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FLOWCODEField, value) != true)) {
-                    this.FLOWCODEField = value;
-                    this.RaisePropertyChanged("FLOWCODE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FLOWDEFINEID {
-            get {
-                return this.FLOWDEFINEIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FLOWDEFINEIDField, value) != true)) {
-                    this.FLOWDEFINEIDField = value;
-                    this.RaisePropertyChanged("FLOWDEFINEID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FLOWTYPE {
-            get {
-                return this.FLOWTYPEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FLOWTYPEField, value) != true)) {
-                    this.FLOWTYPEField = value;
-                    this.RaisePropertyChanged("FLOWTYPE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T[] FLOW_MODELFLOWRELATION_T {
-            get {
-                return this.FLOW_MODELFLOWRELATION_TField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FLOW_MODELFLOWRELATION_TField, value) != true)) {
-                    this.FLOW_MODELFLOWRELATION_TField = value;
-                    this.RaisePropertyChanged("FLOW_MODELFLOWRELATION_T");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LAYOUT {
-            get {
-                return this.LAYOUTField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LAYOUTField, value) != true)) {
-                    this.LAYOUTField = value;
-                    this.RaisePropertyChanged("LAYOUT");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RULES {
-            get {
-                return this.RULESField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RULESField, value) != true)) {
-                    this.RULESField = value;
-                    this.RaisePropertyChanged("RULES");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string XOML {
-            get {
-                return this.XOMLField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.XOMLField, value) != true)) {
-                    this.XOMLField = value;
-                    this.RaisePropertyChanged("XOML");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="FLOW_CONSULTATION_T", Namespace="http://schemas.datacontract.org/2004/07/SMT.EntityFlowSys", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class FLOW_CONSULTATION_T : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
@@ -25169,7 +24390,828 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEPOSTCHANGE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FLOW_MODELFLOWRELATION_T", Namespace="http://schemas.datacontract.org/2004/07/SMT.EntityFlowSys", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class FLOW_MODELFLOWRELATION_T : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string COMPANYIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATECOMPANYIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CREATEDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEDEPARTMENTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEPOSTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEUSERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEUSERNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DEPARTMENTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> EDITDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EDITUSERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EDITUSERNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FLAGField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FLOWTYPEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWDEFINE_T FLOW_FLOWDEFINE_TField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWDEFINE_TgZ_PhGfiK FLOW_FLOWDEFINE_TReferenceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELDEFINE_T FLOW_MODELDEFINE_TField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK FLOW_MODELDEFINE_TReferenceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MODELFLOWRELATIONIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string COMPANYID {
+            get {
+                return this.COMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.COMPANYIDField, value) != true)) {
+                    this.COMPANYIDField = value;
+                    this.RaisePropertyChanged("COMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATECOMPANYID {
+            get {
+                return this.CREATECOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATECOMPANYIDField, value) != true)) {
+                    this.CREATECOMPANYIDField = value;
+                    this.RaisePropertyChanged("CREATECOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CREATEDATE {
+            get {
+                return this.CREATEDATEField;
+            }
+            set {
+                if ((this.CREATEDATEField.Equals(value) != true)) {
+                    this.CREATEDATEField = value;
+                    this.RaisePropertyChanged("CREATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEDEPARTMENTID {
+            get {
+                return this.CREATEDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEDEPARTMENTIDField, value) != true)) {
+                    this.CREATEDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("CREATEDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEPOSTID {
+            get {
+                return this.CREATEPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEPOSTIDField, value) != true)) {
+                    this.CREATEPOSTIDField = value;
+                    this.RaisePropertyChanged("CREATEPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERID {
+            get {
+                return this.CREATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
+                    this.CREATEUSERIDField = value;
+                    this.RaisePropertyChanged("CREATEUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERNAME {
+            get {
+                return this.CREATEUSERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERNAMEField, value) != true)) {
+                    this.CREATEUSERNAMEField = value;
+                    this.RaisePropertyChanged("CREATEUSERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DEPARTMENTID {
+            get {
+                return this.DEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DEPARTMENTIDField, value) != true)) {
+                    this.DEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("DEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> EDITDATE {
+            get {
+                return this.EDITDATEField;
+            }
+            set {
+                if ((this.EDITDATEField.Equals(value) != true)) {
+                    this.EDITDATEField = value;
+                    this.RaisePropertyChanged("EDITDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EDITUSERID {
+            get {
+                return this.EDITUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EDITUSERIDField, value) != true)) {
+                    this.EDITUSERIDField = value;
+                    this.RaisePropertyChanged("EDITUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EDITUSERNAME {
+            get {
+                return this.EDITUSERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EDITUSERNAMEField, value) != true)) {
+                    this.EDITUSERNAMEField = value;
+                    this.RaisePropertyChanged("EDITUSERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FLAG {
+            get {
+                return this.FLAGField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FLAGField, value) != true)) {
+                    this.FLAGField = value;
+                    this.RaisePropertyChanged("FLAG");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FLOWTYPE {
+            get {
+                return this.FLOWTYPEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FLOWTYPEField, value) != true)) {
+                    this.FLOWTYPEField = value;
+                    this.RaisePropertyChanged("FLOWTYPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWDEFINE_T FLOW_FLOWDEFINE_T {
+            get {
+                return this.FLOW_FLOWDEFINE_TField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FLOW_FLOWDEFINE_TField, value) != true)) {
+                    this.FLOW_FLOWDEFINE_TField = value;
+                    this.RaisePropertyChanged("FLOW_FLOWDEFINE_T");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWDEFINE_TgZ_PhGfiK FLOW_FLOWDEFINE_TReference {
+            get {
+                return this.FLOW_FLOWDEFINE_TReferenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FLOW_FLOWDEFINE_TReferenceField, value) != true)) {
+                    this.FLOW_FLOWDEFINE_TReferenceField = value;
+                    this.RaisePropertyChanged("FLOW_FLOWDEFINE_TReference");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELDEFINE_T FLOW_MODELDEFINE_T {
+            get {
+                return this.FLOW_MODELDEFINE_TField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FLOW_MODELDEFINE_TField, value) != true)) {
+                    this.FLOW_MODELDEFINE_TField = value;
+                    this.RaisePropertyChanged("FLOW_MODELDEFINE_T");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK FLOW_MODELDEFINE_TReference {
+            get {
+                return this.FLOW_MODELDEFINE_TReferenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FLOW_MODELDEFINE_TReferenceField, value) != true)) {
+                    this.FLOW_MODELDEFINE_TReferenceField = value;
+                    this.RaisePropertyChanged("FLOW_MODELDEFINE_TReference");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MODELFLOWRELATIONID {
+            get {
+                return this.MODELFLOWRELATIONIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MODELFLOWRELATIONIDField, value) != true)) {
+                    this.MODELFLOWRELATIONIDField = value;
+                    this.RaisePropertyChanged("MODELFLOWRELATIONID");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FLOW_FLOWDEFINE_T", Namespace="http://schemas.datacontract.org/2004/07/SMT.EntityFlowSys", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class FLOW_FLOWDEFINE_T : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATECOMPANYIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CREATEDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEDEPARTMENTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEPOSTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEUSERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEUSERNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESCRIPTIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> EDITDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EDITUSERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EDITUSERNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FLOWCODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FLOWDEFINEIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FLOWTYPEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T[] FLOW_MODELFLOWRELATION_TField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LAYOUTField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RULESField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string XOMLField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATECOMPANYID {
+            get {
+                return this.CREATECOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATECOMPANYIDField, value) != true)) {
+                    this.CREATECOMPANYIDField = value;
+                    this.RaisePropertyChanged("CREATECOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CREATEDATE {
+            get {
+                return this.CREATEDATEField;
+            }
+            set {
+                if ((this.CREATEDATEField.Equals(value) != true)) {
+                    this.CREATEDATEField = value;
+                    this.RaisePropertyChanged("CREATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEDEPARTMENTID {
+            get {
+                return this.CREATEDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEDEPARTMENTIDField, value) != true)) {
+                    this.CREATEDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("CREATEDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEPOSTID {
+            get {
+                return this.CREATEPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEPOSTIDField, value) != true)) {
+                    this.CREATEPOSTIDField = value;
+                    this.RaisePropertyChanged("CREATEPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERID {
+            get {
+                return this.CREATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
+                    this.CREATEUSERIDField = value;
+                    this.RaisePropertyChanged("CREATEUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERNAME {
+            get {
+                return this.CREATEUSERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERNAMEField, value) != true)) {
+                    this.CREATEUSERNAMEField = value;
+                    this.RaisePropertyChanged("CREATEUSERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESCRIPTION {
+            get {
+                return this.DESCRIPTIONField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESCRIPTIONField, value) != true)) {
+                    this.DESCRIPTIONField = value;
+                    this.RaisePropertyChanged("DESCRIPTION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> EDITDATE {
+            get {
+                return this.EDITDATEField;
+            }
+            set {
+                if ((this.EDITDATEField.Equals(value) != true)) {
+                    this.EDITDATEField = value;
+                    this.RaisePropertyChanged("EDITDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EDITUSERID {
+            get {
+                return this.EDITUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EDITUSERIDField, value) != true)) {
+                    this.EDITUSERIDField = value;
+                    this.RaisePropertyChanged("EDITUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EDITUSERNAME {
+            get {
+                return this.EDITUSERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EDITUSERNAMEField, value) != true)) {
+                    this.EDITUSERNAMEField = value;
+                    this.RaisePropertyChanged("EDITUSERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FLOWCODE {
+            get {
+                return this.FLOWCODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FLOWCODEField, value) != true)) {
+                    this.FLOWCODEField = value;
+                    this.RaisePropertyChanged("FLOWCODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FLOWDEFINEID {
+            get {
+                return this.FLOWDEFINEIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FLOWDEFINEIDField, value) != true)) {
+                    this.FLOWDEFINEIDField = value;
+                    this.RaisePropertyChanged("FLOWDEFINEID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FLOWTYPE {
+            get {
+                return this.FLOWTYPEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FLOWTYPEField, value) != true)) {
+                    this.FLOWTYPEField = value;
+                    this.RaisePropertyChanged("FLOWTYPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T[] FLOW_MODELFLOWRELATION_T {
+            get {
+                return this.FLOW_MODELFLOWRELATION_TField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FLOW_MODELFLOWRELATION_TField, value) != true)) {
+                    this.FLOW_MODELFLOWRELATION_TField = value;
+                    this.RaisePropertyChanged("FLOW_MODELFLOWRELATION_T");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LAYOUT {
+            get {
+                return this.LAYOUTField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LAYOUTField, value) != true)) {
+                    this.LAYOUTField = value;
+                    this.RaisePropertyChanged("LAYOUT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RULES {
+            get {
+                return this.RULESField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RULESField, value) != true)) {
+                    this.RULESField = value;
+                    this.RaisePropertyChanged("RULES");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string XOML {
+            get {
+                return this.XOMLField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.XOMLField, value) != true)) {
+                    this.XOMLField = value;
+                    this.RaisePropertyChanged("XOML");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FLOW_MODELDEFINE_T", Namespace="http://schemas.datacontract.org/2004/07/SMT.EntityFlowSys", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class FLOW_MODELDEFINE_T : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATECOMPANYIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CREATEDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEDEPARTMENTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEPOSTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEUSERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEUSERNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESCRIPTIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> EDITDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EDITUSERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EDITUSERNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T[] FLOW_MODELFLOWRELATION_TField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MODELCODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MODELDEFINEIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PARENTMODELCODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SYSTEMCODEField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATECOMPANYID {
+            get {
+                return this.CREATECOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATECOMPANYIDField, value) != true)) {
+                    this.CREATECOMPANYIDField = value;
+                    this.RaisePropertyChanged("CREATECOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CREATEDATE {
+            get {
+                return this.CREATEDATEField;
+            }
+            set {
+                if ((this.CREATEDATEField.Equals(value) != true)) {
+                    this.CREATEDATEField = value;
+                    this.RaisePropertyChanged("CREATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEDEPARTMENTID {
+            get {
+                return this.CREATEDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEDEPARTMENTIDField, value) != true)) {
+                    this.CREATEDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("CREATEDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEPOSTID {
+            get {
+                return this.CREATEPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEPOSTIDField, value) != true)) {
+                    this.CREATEPOSTIDField = value;
+                    this.RaisePropertyChanged("CREATEPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERID {
+            get {
+                return this.CREATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
+                    this.CREATEUSERIDField = value;
+                    this.RaisePropertyChanged("CREATEUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERNAME {
+            get {
+                return this.CREATEUSERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERNAMEField, value) != true)) {
+                    this.CREATEUSERNAMEField = value;
+                    this.RaisePropertyChanged("CREATEUSERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESCRIPTION {
+            get {
+                return this.DESCRIPTIONField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESCRIPTIONField, value) != true)) {
+                    this.DESCRIPTIONField = value;
+                    this.RaisePropertyChanged("DESCRIPTION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> EDITDATE {
+            get {
+                return this.EDITDATEField;
+            }
+            set {
+                if ((this.EDITDATEField.Equals(value) != true)) {
+                    this.EDITDATEField = value;
+                    this.RaisePropertyChanged("EDITDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EDITUSERID {
+            get {
+                return this.EDITUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EDITUSERIDField, value) != true)) {
+                    this.EDITUSERIDField = value;
+                    this.RaisePropertyChanged("EDITUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EDITUSERNAME {
+            get {
+                return this.EDITUSERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EDITUSERNAMEField, value) != true)) {
+                    this.EDITUSERNAMEField = value;
+                    this.RaisePropertyChanged("EDITUSERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T[] FLOW_MODELFLOWRELATION_T {
+            get {
+                return this.FLOW_MODELFLOWRELATION_TField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FLOW_MODELFLOWRELATION_TField, value) != true)) {
+                    this.FLOW_MODELFLOWRELATION_TField = value;
+                    this.RaisePropertyChanged("FLOW_MODELFLOWRELATION_T");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MODELCODE {
+            get {
+                return this.MODELCODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MODELCODEField, value) != true)) {
+                    this.MODELCODEField = value;
+                    this.RaisePropertyChanged("MODELCODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MODELDEFINEID {
+            get {
+                return this.MODELDEFINEIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MODELDEFINEIDField, value) != true)) {
+                    this.MODELDEFINEIDField = value;
+                    this.RaisePropertyChanged("MODELDEFINEID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PARENTMODELCODE {
+            get {
+                return this.PARENTMODELCODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PARENTMODELCODEField, value) != true)) {
+                    this.PARENTMODELCODEField = value;
+                    this.RaisePropertyChanged("PARENTMODELCODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SYSTEMCODE {
+            get {
+                return this.SYSTEMCODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SYSTEMCODEField, value) != true)) {
+                    this.SYSTEMCODEField = value;
+                    this.RaisePropertyChanged("SYSTEMCODE");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEPOSTCHANGE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEEPOSTCHANGE : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -25752,7 +25794,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ASSESSMENTFORMMASTER", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ASSESSMENTFORMMASTER", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_ASSESSMENTFORMMASTER : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -26431,7 +26473,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ASSESSMENTFORMDETAIL", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_ASSESSMENTFORMDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_ASSESSMENTFORMDETAIL : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -26678,7 +26720,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_CHECKPOINTSET", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_CHECKPOINTSET", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_CHECKPOINTSET : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -26909,7 +26951,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_CHECKPOINTLEVELSET", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_CHECKPOINTLEVELSET", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_CHECKPOINTLEVELSET : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -27076,7 +27118,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_CHECKPROJECTSET", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_CHECKPROJECTSET", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_CHECKPROJECTSET : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -27227,7 +27269,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECHECK", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECHECK", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEECHECK : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -27682,7 +27724,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEE : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -27697,6 +27739,9 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string BLOODTYPEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CADREINFORMATIONField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CREATECOMPANYIDField;
@@ -27753,6 +27798,9 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         private string FAMILYZIPCODEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FATHEREMPLOYEEIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FINGERPRINTIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -27769,6 +27817,12 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string INTERESTCONTENTField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string JOBCATEGORYField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> JOINDATEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MARRIAGEField;
@@ -27801,6 +27855,9 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         private byte[] PHOTOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PLATFORMField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string POLITICSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -27808,6 +27865,9 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PROVINCEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RECRUITMENTSOURCEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string REGRESIDENCEField;
@@ -27829,6 +27889,9 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SEXField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SILINGField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SOCIALSERVICEYEARField;
@@ -27935,6 +27998,19 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
                 if ((object.ReferenceEquals(this.BLOODTYPEField, value) != true)) {
                     this.BLOODTYPEField = value;
                     this.RaisePropertyChanged("BLOODTYPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CADREINFORMATION {
+            get {
+                return this.CADREINFORMATIONField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CADREINFORMATIONField, value) != true)) {
+                    this.CADREINFORMATIONField = value;
+                    this.RaisePropertyChanged("CADREINFORMATION");
                 }
             }
         }
@@ -28174,6 +28250,19 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FATHEREMPLOYEEID {
+            get {
+                return this.FATHEREMPLOYEEIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FATHEREMPLOYEEIDField, value) != true)) {
+                    this.FATHEREMPLOYEEIDField = value;
+                    this.RaisePropertyChanged("FATHEREMPLOYEEID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string FINGERPRINTID {
             get {
                 return this.FINGERPRINTIDField;
@@ -28247,6 +28336,32 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
                 if ((object.ReferenceEquals(this.INTERESTCONTENTField, value) != true)) {
                     this.INTERESTCONTENTField = value;
                     this.RaisePropertyChanged("INTERESTCONTENT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string JOBCATEGORY {
+            get {
+                return this.JOBCATEGORYField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.JOBCATEGORYField, value) != true)) {
+                    this.JOBCATEGORYField = value;
+                    this.RaisePropertyChanged("JOBCATEGORY");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> JOINDATE {
+            get {
+                return this.JOINDATEField;
+            }
+            set {
+                if ((this.JOINDATEField.Equals(value) != true)) {
+                    this.JOINDATEField = value;
+                    this.RaisePropertyChanged("JOINDATE");
                 }
             }
         }
@@ -28382,6 +28497,19 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PLATFORM {
+            get {
+                return this.PLATFORMField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PLATFORMField, value) != true)) {
+                    this.PLATFORMField = value;
+                    this.RaisePropertyChanged("PLATFORM");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string POLITICS {
             get {
                 return this.POLITICSField;
@@ -28416,6 +28544,19 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
                 if ((object.ReferenceEquals(this.PROVINCEField, value) != true)) {
                     this.PROVINCEField = value;
                     this.RaisePropertyChanged("PROVINCE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RECRUITMENTSOURCE {
+            get {
+                return this.RECRUITMENTSOURCEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RECRUITMENTSOURCEField, value) != true)) {
+                    this.RECRUITMENTSOURCEField = value;
+                    this.RaisePropertyChanged("RECRUITMENTSOURCE");
                 }
             }
         }
@@ -28507,6 +28648,19 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
                 if ((object.ReferenceEquals(this.SEXField, value) != true)) {
                     this.SEXField = value;
                     this.RaisePropertyChanged("SEX");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SILING {
+            get {
+                return this.SILINGField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SILINGField, value) != true)) {
+                    this.SILINGField = value;
+                    this.RaisePropertyChanged("SILING");
                 }
             }
         }
@@ -28761,7 +28915,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECHANGEHISTORY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECHANGEHISTORY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEECHANGEHISTORY : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -29312,7 +29466,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECONTRACT", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEECONTRACT", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEECONTRACT : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -29767,7 +29921,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEENTRY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEENTRY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEEENTRY : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -30110,7 +30264,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEINSURANCE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEINSURANCE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEEINSURANCE : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -30549,7 +30703,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEPOST", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EMPLOYEEPOST", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EMPLOYEEPOST : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -30573,6 +30727,12 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> POSTLEVELField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string REPORTEMPField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string REPORTEMPNAMEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> SALARYLEVELField;
@@ -30690,6 +30850,32 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string REPORTEMP {
+            get {
+                return this.REPORTEMPField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.REPORTEMPField, value) != true)) {
+                    this.REPORTEMPField = value;
+                    this.RaisePropertyChanged("REPORTEMP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string REPORTEMPNAME {
+            get {
+                return this.REPORTEMPNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.REPORTEMPNAMEField, value) != true)) {
+                    this.REPORTEMPNAMEField = value;
+                    this.RaisePropertyChanged("REPORTEMPNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<decimal> SALARYLEVEL {
             get {
                 return this.SALARYLEVELField;
@@ -30796,7 +30982,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_LEFTOFFICE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_LEFTOFFICE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_LEFTOFFICE : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -31219,7 +31405,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_LEFTOFFICECONFIRM", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_LEFTOFFICECONFIRM", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_LEFTOFFICECONFIRM : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -31626,7 +31812,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_POST", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_POST", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_POST : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -31668,6 +31854,9 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ISCOREPERSONNELField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string JOBCATEGORYField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OWNERCOMPANYIDField;
@@ -31906,6 +32095,19 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
                 if ((object.ReferenceEquals(this.ISCOREPERSONNELField, value) != true)) {
                     this.ISCOREPERSONNELField = value;
                     this.RaisePropertyChanged("ISCOREPERSONNEL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string JOBCATEGORY {
+            get {
+                return this.JOBCATEGORYField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.JOBCATEGORYField, value) != true)) {
+                    this.JOBCATEGORYField = value;
+                    this.RaisePropertyChanged("JOBCATEGORY");
                 }
             }
         }
@@ -32225,7 +32427,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_DEPARTMENT", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_DEPARTMENT", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_DEPARTMENT : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -32648,7 +32850,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_COMPANY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_COMPANY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_COMPANY : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -33359,7 +33561,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_COMPANYHISTORY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_COMPANYHISTORY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_COMPANYHISTORY : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -33990,7 +34192,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_DEPARTMENTDICTIONARY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_DEPARTMENTDICTIONARY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_DEPARTMENTDICTIONARY : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -34301,7 +34503,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_DEPARTMENTHISTORY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_DEPARTMENTHISTORY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_DEPARTMENTHISTORY : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -34692,7 +34894,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_POSTDICTIONARY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_POSTDICTIONARY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_POSTDICTIONARY : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -35051,7 +35253,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_POSTHISTORY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_POSTHISTORY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_POSTHISTORY : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -35570,7 +35772,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_RELATIONPOST", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_RELATIONPOST", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_RELATIONPOST : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -35705,7 +35907,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_FAMILYMEMBER", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_FAMILYMEMBER", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_FAMILYMEMBER : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -35920,7 +36122,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_PENSIONMASTER", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_PENSIONMASTER", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_PENSIONMASTER : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -36359,7 +36561,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_PENSIONDETAIL", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_PENSIONDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_PENSIONDETAIL : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -37390,7 +37592,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_RESUME", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_RESUME", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_RESUME : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -38069,7 +38271,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EDUCATEHISTORY", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EDUCATEHISTORY", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EDUCATEHISTORY : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -38316,7 +38518,7 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EXPERIENCE", Namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_EXPERIENCE", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class T_HR_EXPERIENCE : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
         
@@ -38547,6 +38749,1161 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_IMPORTSETMASTER", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class T_HR_IMPORTSETMASTER : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CITYField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATECOMPANYIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> CREATEDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEDEPARTMENTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEPOSTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEUSERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> ENDROWField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ENTITYCODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ENTITYNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MASTERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERCOMPANYIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERDEPARTMENTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERPOSTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string REMARKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string STARTCOLUMNField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> STARTROWField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_IMPORTSETDETAIL[] T_HR_IMPORTSETDETAILField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> UPDATEDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UPDATEUSERIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CITY {
+            get {
+                return this.CITYField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CITYField, value) != true)) {
+                    this.CITYField = value;
+                    this.RaisePropertyChanged("CITY");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATECOMPANYID {
+            get {
+                return this.CREATECOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATECOMPANYIDField, value) != true)) {
+                    this.CREATECOMPANYIDField = value;
+                    this.RaisePropertyChanged("CREATECOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> CREATEDATE {
+            get {
+                return this.CREATEDATEField;
+            }
+            set {
+                if ((this.CREATEDATEField.Equals(value) != true)) {
+                    this.CREATEDATEField = value;
+                    this.RaisePropertyChanged("CREATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEDEPARTMENTID {
+            get {
+                return this.CREATEDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEDEPARTMENTIDField, value) != true)) {
+                    this.CREATEDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("CREATEDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEPOSTID {
+            get {
+                return this.CREATEPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEPOSTIDField, value) != true)) {
+                    this.CREATEPOSTIDField = value;
+                    this.RaisePropertyChanged("CREATEPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERID {
+            get {
+                return this.CREATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
+                    this.CREATEUSERIDField = value;
+                    this.RaisePropertyChanged("CREATEUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> ENDROW {
+            get {
+                return this.ENDROWField;
+            }
+            set {
+                if ((this.ENDROWField.Equals(value) != true)) {
+                    this.ENDROWField = value;
+                    this.RaisePropertyChanged("ENDROW");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ENTITYCODE {
+            get {
+                return this.ENTITYCODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ENTITYCODEField, value) != true)) {
+                    this.ENTITYCODEField = value;
+                    this.RaisePropertyChanged("ENTITYCODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ENTITYNAME {
+            get {
+                return this.ENTITYNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ENTITYNAMEField, value) != true)) {
+                    this.ENTITYNAMEField = value;
+                    this.RaisePropertyChanged("ENTITYNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MASTERID {
+            get {
+                return this.MASTERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MASTERIDField, value) != true)) {
+                    this.MASTERIDField = value;
+                    this.RaisePropertyChanged("MASTERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERCOMPANYID {
+            get {
+                return this.OWNERCOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERCOMPANYIDField, value) != true)) {
+                    this.OWNERCOMPANYIDField = value;
+                    this.RaisePropertyChanged("OWNERCOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERDEPARTMENTID {
+            get {
+                return this.OWNERDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERDEPARTMENTIDField, value) != true)) {
+                    this.OWNERDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("OWNERDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERID {
+            get {
+                return this.OWNERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERIDField, value) != true)) {
+                    this.OWNERIDField = value;
+                    this.RaisePropertyChanged("OWNERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERPOSTID {
+            get {
+                return this.OWNERPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERPOSTIDField, value) != true)) {
+                    this.OWNERPOSTIDField = value;
+                    this.RaisePropertyChanged("OWNERPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string REMARK {
+            get {
+                return this.REMARKField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.REMARKField, value) != true)) {
+                    this.REMARKField = value;
+                    this.RaisePropertyChanged("REMARK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string STARTCOLUMN {
+            get {
+                return this.STARTCOLUMNField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.STARTCOLUMNField, value) != true)) {
+                    this.STARTCOLUMNField = value;
+                    this.RaisePropertyChanged("STARTCOLUMN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> STARTROW {
+            get {
+                return this.STARTROWField;
+            }
+            set {
+                if ((this.STARTROWField.Equals(value) != true)) {
+                    this.STARTROWField = value;
+                    this.RaisePropertyChanged("STARTROW");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_IMPORTSETDETAIL[] T_HR_IMPORTSETDETAIL {
+            get {
+                return this.T_HR_IMPORTSETDETAILField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_HR_IMPORTSETDETAILField, value) != true)) {
+                    this.T_HR_IMPORTSETDETAILField = value;
+                    this.RaisePropertyChanged("T_HR_IMPORTSETDETAIL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> UPDATEDATE {
+            get {
+                return this.UPDATEDATEField;
+            }
+            set {
+                if ((this.UPDATEDATEField.Equals(value) != true)) {
+                    this.UPDATEDATEField = value;
+                    this.RaisePropertyChanged("UPDATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UPDATEUSERID {
+            get {
+                return this.UPDATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UPDATEUSERIDField, value) != true)) {
+                    this.UPDATEUSERIDField = value;
+                    this.RaisePropertyChanged("UPDATEUSERID");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_IMPORTSETDETAIL", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class T_HR_IMPORTSETDETAIL : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> CREATEDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEUSERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DETAILIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ENTITYCOLUMNCODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ENTITYCOLUMNNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EXECELCOLUMNField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> EXECELROWField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string REMARKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_IMPORTSETMASTER T_HR_IMPORTSETMASTERField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_IMPORTSETMASTERLmi1kWPo T_HR_IMPORTSETMASTERReferenceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> UPDATEDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UPDATEUSERIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> CREATEDATE {
+            get {
+                return this.CREATEDATEField;
+            }
+            set {
+                if ((this.CREATEDATEField.Equals(value) != true)) {
+                    this.CREATEDATEField = value;
+                    this.RaisePropertyChanged("CREATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERID {
+            get {
+                return this.CREATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
+                    this.CREATEUSERIDField = value;
+                    this.RaisePropertyChanged("CREATEUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DETAILID {
+            get {
+                return this.DETAILIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DETAILIDField, value) != true)) {
+                    this.DETAILIDField = value;
+                    this.RaisePropertyChanged("DETAILID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ENTITYCOLUMNCODE {
+            get {
+                return this.ENTITYCOLUMNCODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ENTITYCOLUMNCODEField, value) != true)) {
+                    this.ENTITYCOLUMNCODEField = value;
+                    this.RaisePropertyChanged("ENTITYCOLUMNCODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ENTITYCOLUMNNAME {
+            get {
+                return this.ENTITYCOLUMNNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ENTITYCOLUMNNAMEField, value) != true)) {
+                    this.ENTITYCOLUMNNAMEField = value;
+                    this.RaisePropertyChanged("ENTITYCOLUMNNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EXECELCOLUMN {
+            get {
+                return this.EXECELCOLUMNField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EXECELCOLUMNField, value) != true)) {
+                    this.EXECELCOLUMNField = value;
+                    this.RaisePropertyChanged("EXECELCOLUMN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> EXECELROW {
+            get {
+                return this.EXECELROWField;
+            }
+            set {
+                if ((this.EXECELROWField.Equals(value) != true)) {
+                    this.EXECELROWField = value;
+                    this.RaisePropertyChanged("EXECELROW");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string REMARK {
+            get {
+                return this.REMARKField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.REMARKField, value) != true)) {
+                    this.REMARKField = value;
+                    this.RaisePropertyChanged("REMARK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_IMPORTSETMASTER T_HR_IMPORTSETMASTER {
+            get {
+                return this.T_HR_IMPORTSETMASTERField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_HR_IMPORTSETMASTERField, value) != true)) {
+                    this.T_HR_IMPORTSETMASTERField = value;
+                    this.RaisePropertyChanged("T_HR_IMPORTSETMASTER");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_IMPORTSETMASTERLmi1kWPo T_HR_IMPORTSETMASTERReference {
+            get {
+                return this.T_HR_IMPORTSETMASTERReferenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_HR_IMPORTSETMASTERReferenceField, value) != true)) {
+                    this.T_HR_IMPORTSETMASTERReferenceField = value;
+                    this.RaisePropertyChanged("T_HR_IMPORTSETMASTERReference");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> UPDATEDATE {
+            get {
+                return this.UPDATEDATEField;
+            }
+            set {
+                if ((this.UPDATEDATEField.Equals(value) != true)) {
+                    this.UPDATEDATEField = value;
+                    this.RaisePropertyChanged("UPDATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UPDATEUSERID {
+            get {
+                return this.UPDATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UPDATEUSERIDField, value) != true)) {
+                    this.UPDATEUSERIDField = value;
+                    this.RaisePropertyChanged("UPDATEUSERID");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_BLACKLIST", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class T_HR_BLACKLIST : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BEGINDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BLACKLISTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CHECKSTATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATECOMPANYIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> CREATEDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEDEPARTMENTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEPOSTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEUSERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EDITSTATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> EFFECTIVETIMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IDCARDNUMBERField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERCOMPANYIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERDEPARTMENTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERPOSTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string REASONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string REMARKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> UPDATEDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UPDATEUSERIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BEGINDATE {
+            get {
+                return this.BEGINDATEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BEGINDATEField, value) != true)) {
+                    this.BEGINDATEField = value;
+                    this.RaisePropertyChanged("BEGINDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BLACKLISTID {
+            get {
+                return this.BLACKLISTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BLACKLISTIDField, value) != true)) {
+                    this.BLACKLISTIDField = value;
+                    this.RaisePropertyChanged("BLACKLISTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CHECKSTATE {
+            get {
+                return this.CHECKSTATEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CHECKSTATEField, value) != true)) {
+                    this.CHECKSTATEField = value;
+                    this.RaisePropertyChanged("CHECKSTATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATECOMPANYID {
+            get {
+                return this.CREATECOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATECOMPANYIDField, value) != true)) {
+                    this.CREATECOMPANYIDField = value;
+                    this.RaisePropertyChanged("CREATECOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> CREATEDATE {
+            get {
+                return this.CREATEDATEField;
+            }
+            set {
+                if ((this.CREATEDATEField.Equals(value) != true)) {
+                    this.CREATEDATEField = value;
+                    this.RaisePropertyChanged("CREATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEDEPARTMENTID {
+            get {
+                return this.CREATEDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEDEPARTMENTIDField, value) != true)) {
+                    this.CREATEDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("CREATEDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEPOSTID {
+            get {
+                return this.CREATEPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEPOSTIDField, value) != true)) {
+                    this.CREATEPOSTIDField = value;
+                    this.RaisePropertyChanged("CREATEPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERID {
+            get {
+                return this.CREATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
+                    this.CREATEUSERIDField = value;
+                    this.RaisePropertyChanged("CREATEUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EDITSTATE {
+            get {
+                return this.EDITSTATEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EDITSTATEField, value) != true)) {
+                    this.EDITSTATEField = value;
+                    this.RaisePropertyChanged("EDITSTATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> EFFECTIVETIME {
+            get {
+                return this.EFFECTIVETIMEField;
+            }
+            set {
+                if ((this.EFFECTIVETIMEField.Equals(value) != true)) {
+                    this.EFFECTIVETIMEField = value;
+                    this.RaisePropertyChanged("EFFECTIVETIME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IDCARDNUMBER {
+            get {
+                return this.IDCARDNUMBERField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IDCARDNUMBERField, value) != true)) {
+                    this.IDCARDNUMBERField = value;
+                    this.RaisePropertyChanged("IDCARDNUMBER");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NAME {
+            get {
+                return this.NAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NAMEField, value) != true)) {
+                    this.NAMEField = value;
+                    this.RaisePropertyChanged("NAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERCOMPANYID {
+            get {
+                return this.OWNERCOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERCOMPANYIDField, value) != true)) {
+                    this.OWNERCOMPANYIDField = value;
+                    this.RaisePropertyChanged("OWNERCOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERDEPARTMENTID {
+            get {
+                return this.OWNERDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERDEPARTMENTIDField, value) != true)) {
+                    this.OWNERDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("OWNERDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERID {
+            get {
+                return this.OWNERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERIDField, value) != true)) {
+                    this.OWNERIDField = value;
+                    this.RaisePropertyChanged("OWNERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERPOSTID {
+            get {
+                return this.OWNERPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERPOSTIDField, value) != true)) {
+                    this.OWNERPOSTIDField = value;
+                    this.RaisePropertyChanged("OWNERPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string REASON {
+            get {
+                return this.REASONField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.REASONField, value) != true)) {
+                    this.REASONField = value;
+                    this.RaisePropertyChanged("REASON");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string REMARK {
+            get {
+                return this.REMARKField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.REMARKField, value) != true)) {
+                    this.REMARKField = value;
+                    this.RaisePropertyChanged("REMARK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> UPDATEDATE {
+            get {
+                return this.UPDATEDATEField;
+            }
+            set {
+                if ((this.UPDATEDATEField.Equals(value) != true)) {
+                    this.UPDATEDATEField = value;
+                    this.RaisePropertyChanged("UPDATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UPDATEUSERID {
+            get {
+                return this.UPDATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UPDATEUSERIDField, value) != true)) {
+                    this.UPDATEUSERIDField = value;
+                    this.RaisePropertyChanged("UPDATEUSERID");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_HR_PENSIONALARMSET", Namespace="http://schemas.datacontract.org/2004/07/SMT_HRM_EFModel", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class T_HR_PENSIONALARMSET : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> ALARMDOWNField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> ALARMPAYField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string COMPANYIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATECOMPANYIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> CREATEDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEDEPARTMENTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEPOSTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CREATEUSERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERCOMPANYIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERDEPARTMENTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OWNERPOSTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PENSIONSETIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string REMARKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> UPDATEDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UPDATEUSERIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> ALARMDOWN {
+            get {
+                return this.ALARMDOWNField;
+            }
+            set {
+                if ((this.ALARMDOWNField.Equals(value) != true)) {
+                    this.ALARMDOWNField = value;
+                    this.RaisePropertyChanged("ALARMDOWN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> ALARMPAY {
+            get {
+                return this.ALARMPAYField;
+            }
+            set {
+                if ((this.ALARMPAYField.Equals(value) != true)) {
+                    this.ALARMPAYField = value;
+                    this.RaisePropertyChanged("ALARMPAY");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string COMPANYID {
+            get {
+                return this.COMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.COMPANYIDField, value) != true)) {
+                    this.COMPANYIDField = value;
+                    this.RaisePropertyChanged("COMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATECOMPANYID {
+            get {
+                return this.CREATECOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATECOMPANYIDField, value) != true)) {
+                    this.CREATECOMPANYIDField = value;
+                    this.RaisePropertyChanged("CREATECOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> CREATEDATE {
+            get {
+                return this.CREATEDATEField;
+            }
+            set {
+                if ((this.CREATEDATEField.Equals(value) != true)) {
+                    this.CREATEDATEField = value;
+                    this.RaisePropertyChanged("CREATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEDEPARTMENTID {
+            get {
+                return this.CREATEDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEDEPARTMENTIDField, value) != true)) {
+                    this.CREATEDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("CREATEDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEPOSTID {
+            get {
+                return this.CREATEPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEPOSTIDField, value) != true)) {
+                    this.CREATEPOSTIDField = value;
+                    this.RaisePropertyChanged("CREATEPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CREATEUSERID {
+            get {
+                return this.CREATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CREATEUSERIDField, value) != true)) {
+                    this.CREATEUSERIDField = value;
+                    this.RaisePropertyChanged("CREATEUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERCOMPANYID {
+            get {
+                return this.OWNERCOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERCOMPANYIDField, value) != true)) {
+                    this.OWNERCOMPANYIDField = value;
+                    this.RaisePropertyChanged("OWNERCOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERDEPARTMENTID {
+            get {
+                return this.OWNERDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERDEPARTMENTIDField, value) != true)) {
+                    this.OWNERDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("OWNERDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERID {
+            get {
+                return this.OWNERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERIDField, value) != true)) {
+                    this.OWNERIDField = value;
+                    this.RaisePropertyChanged("OWNERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OWNERPOSTID {
+            get {
+                return this.OWNERPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OWNERPOSTIDField, value) != true)) {
+                    this.OWNERPOSTIDField = value;
+                    this.RaisePropertyChanged("OWNERPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PENSIONSETID {
+            get {
+                return this.PENSIONSETIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PENSIONSETIDField, value) != true)) {
+                    this.PENSIONSETIDField = value;
+                    this.RaisePropertyChanged("PENSIONSETID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string REMARK {
+            get {
+                return this.REMARKField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.REMARKField, value) != true)) {
+                    this.REMARKField = value;
+                    this.RaisePropertyChanged("REMARK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> UPDATEDATE {
+            get {
+                return this.UPDATEDATEField;
+            }
+            set {
+                if ((this.UPDATEDATEField.Equals(value) != true)) {
+                    this.UPDATEDATEField = value;
+                    this.RaisePropertyChanged("UPDATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UPDATEUSERID {
+            get {
+                return this.UPDATEUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UPDATEUSERIDField, value) != true)) {
+                    this.UPDATEUSERIDField = value;
+                    this.RaisePropertyChanged("UPDATEUSERID");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="V_EMPLOYEEPOST", Namespace="http://schemas.datacontract.org/2004/07/SMT.HRM.CustomModel", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class V_EMPLOYEEPOST : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOST[] EMPLOYEEPOSTSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEE T_HR_EMPLOYEEField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOST[] EMPLOYEEPOSTS {
+            get {
+                return this.EMPLOYEEPOSTSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EMPLOYEEPOSTSField, value) != true)) {
+                    this.EMPLOYEEPOSTSField = value;
+                    this.RaisePropertyChanged("EMPLOYEEPOSTS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEE T_HR_EMPLOYEE {
+            get {
+                return this.T_HR_EMPLOYEEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_HR_EMPLOYEEField, value) != true)) {
+                    this.T_HR_EMPLOYEEField = value;
+                    this.RaisePropertyChanged("T_HR_EMPLOYEE");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EntityKey", Namespace="http://schemas.datacontract.org/2004/07/System.Data", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class EntityKey : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -38731,12 +40088,12 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_FB_WFPERSONACCOUNT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_FB_WFSUBJECTSETTING))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualEntityObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualUser))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualPost))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualCompany))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualDepartment[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualDepartment))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualPost[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualUser))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.SaveResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.ServiceResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.DebtInfo[]))]
@@ -38772,20 +40129,22 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_FB_SUMSETTINGSMASTERZ5CrhPbu))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ENTITYMENUCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWRECORDDETAIL_TgZ_PhGfiK))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWRECORDMASTER_TgZ_PhGfiK))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_PERMISSIONCIR1sILv))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ROLEENTITYMENUCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ROLECIR1sILv))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWRECORDMASTER_TgZ_PhGfiK))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ROLEENTITYMENUCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_USERCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWDEFINE_TgZ_PhGfiK))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_ASSESSMENTFORMMASTERLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_COMPANYLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_IMPORTSETMASTERLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEELmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTCHANGELmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_CHECKPOINTSETLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_CHECKPROJECTSETLmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEELmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_LEFTOFFICELmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_COMPANYLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_DEPARTMENTDICTIONARYLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_POSTDICTIONARYLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_DEPARTMENTLmi1kWPo))]
@@ -38793,7 +40152,6 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_PENSIONMASTERLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_RESUMELmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEECHECKLmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTCHANGELmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityKey))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityKeyMember[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
@@ -38827,15 +40185,17 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_USER))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_USERROLE[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_ROLEENTITYMENU[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELDEFINE_T))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWDEFINE_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_CONSULTATION_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWRECORDDETAIL_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_CONSULTATION_T[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWRECORDMASTER_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWRECORDDETAIL_T[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWDEFINE_T))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELDEFINE_T))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FREEFLOWEMPLOYEE[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FREEFLOWEMPLOYEE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FBServiceRepayType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOSTCHANGE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_ASSESSMENTFORMMASTER[]))]
@@ -38845,55 +40205,61 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_CHECKPOINTSET))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_CHECKPOINTLEVELSET[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_CHECKPOINTLEVELSET))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_CHECKPROJECTSET))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_CHECKPOINTSET[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECHECK))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOST[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOST))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECHANGEHISTORY[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECHANGEHISTORY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECHECK[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECONTRACT[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECONTRACT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEENTRY[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEENTRY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEINSURANCE[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEINSURANCE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOST[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOST))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_LEFTOFFICE[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_LEFTOFFICECONFIRM))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_LEFTOFFICE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_LEFTOFFICECONFIRM[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_LEFTOFFICECONFIRM))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POST))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANY[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANYHISTORY[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANYHISTORY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENT[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENTDICTIONARY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENTHISTORY[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENTHISTORY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTDICTIONARY[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTDICTIONARY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POST[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTHISTORY[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTHISTORY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_RELATIONPOST[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_RELATIONPOST))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOSTCHANGE[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_FAMILYMEMBER[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECHECK))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_CHECKPROJECTSET))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_CHECKPOINTSET[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECONTRACT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEENTRY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEINSURANCE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_FAMILYMEMBER))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_PENSIONMASTER[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_PENSIONMASTER))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_PENSIONDETAIL[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_PENSIONDETAIL))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_RESUME))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EDUCATEHISTORY[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EDUCATEHISTORY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EXPERIENCE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POST))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANY[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANYHISTORY[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANYHISTORY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENTDICTIONARY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENT[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENTHISTORY[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENTHISTORY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTDICTIONARY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POST[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTHISTORY[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTHISTORY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_RELATIONPOST))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_IMPORTSETMASTER))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_IMPORTSETDETAIL[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_IMPORTSETDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_BLACKLIST))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_PENSIONALARMSET))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTDICTIONARY[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_RELATIONPOST[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEE[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EXPERIENCE[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EXPERIENCE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECHECK[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECONTRACT[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEENTRY[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEINSURANCE[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOSTCHANGE[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_FAMILYMEMBER[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_LEFTOFFICE[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_PENSIONMASTER[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.V_EMPLOYEEPOST))]
     public partial class EntityKeyMember : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -39170,12 +40536,12 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_FB_WFPERSONACCOUNT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_FB_WFSUBJECTSETTING))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualEntityObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualUser))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualPost))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualCompany))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualDepartment[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualDepartment))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualPost[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.VirtualUser))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.SaveResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.ServiceResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.DebtInfo[]))]
@@ -39211,20 +40577,22 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_FB_SUMSETTINGSMASTERZ5CrhPbu))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ENTITYMENUCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWRECORDDETAIL_TgZ_PhGfiK))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWRECORDMASTER_TgZ_PhGfiK))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_PERMISSIONCIR1sILv))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ROLEENTITYMENUCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ROLECIR1sILv))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWRECORDMASTER_TgZ_PhGfiK))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ROLEENTITYMENUCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_USERCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWDEFINE_TgZ_PhGfiK))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_ASSESSMENTFORMMASTERLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_COMPANYLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_IMPORTSETMASTERLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEELmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTCHANGELmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_CHECKPOINTSETLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_CHECKPROJECTSETLmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEELmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_LEFTOFFICELmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_COMPANYLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_DEPARTMENTDICTIONARYLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_POSTDICTIONARYLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_DEPARTMENTLmi1kWPo))]
@@ -39232,7 +40600,6 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_PENSIONMASTERLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_RESUMELmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEECHECKLmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTCHANGELmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityKey))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityKeyMember[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityKeyMember))]
@@ -39267,15 +40634,17 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_USER))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_USERROLE[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_SYS_ROLEENTITYMENU[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELDEFINE_T))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWDEFINE_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_CONSULTATION_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWRECORDDETAIL_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_CONSULTATION_T[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWRECORDMASTER_T))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWRECORDDETAIL_T[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FLOWDEFINE_T))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELFLOWRELATION_T[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_MODELDEFINE_T))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FREEFLOWEMPLOYEE[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FREEFLOWEMPLOYEE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.FBServiceRepayType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOSTCHANGE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_ASSESSMENTFORMMASTER[]))]
@@ -39285,55 +40654,61 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_CHECKPOINTSET))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_CHECKPOINTLEVELSET[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_CHECKPOINTLEVELSET))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_CHECKPROJECTSET))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_CHECKPOINTSET[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECHECK))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOST[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOST))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECHANGEHISTORY[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECHANGEHISTORY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECHECK[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECONTRACT[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECONTRACT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEENTRY[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEENTRY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEINSURANCE[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEINSURANCE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOST[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOST))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_LEFTOFFICE[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_LEFTOFFICECONFIRM))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_LEFTOFFICE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_LEFTOFFICECONFIRM[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_LEFTOFFICECONFIRM))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POST))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANY[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANYHISTORY[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANYHISTORY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENT[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENTDICTIONARY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENTHISTORY[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENTHISTORY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTDICTIONARY[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTDICTIONARY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POST[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTHISTORY[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTHISTORY))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_RELATIONPOST[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_RELATIONPOST))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOSTCHANGE[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_FAMILYMEMBER[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECHECK))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_CHECKPROJECTSET))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_CHECKPOINTSET[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECONTRACT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEENTRY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEINSURANCE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_FAMILYMEMBER))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_PENSIONMASTER[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_PENSIONMASTER))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_PENSIONDETAIL[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_PENSIONDETAIL))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_RESUME))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EDUCATEHISTORY[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EDUCATEHISTORY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EXPERIENCE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POST))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANY[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANYHISTORY[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_COMPANYHISTORY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENTDICTIONARY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENT[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENTHISTORY[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_DEPARTMENTHISTORY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTDICTIONARY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POST[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTHISTORY[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTHISTORY))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_RELATIONPOST))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_IMPORTSETMASTER))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_IMPORTSETDETAIL[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_IMPORTSETDETAIL))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_BLACKLIST))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_PENSIONALARMSET))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_POSTDICTIONARY[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_RELATIONPOST[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEE[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EXPERIENCE[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EXPERIENCE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECHECK[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEECONTRACT[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEENTRY[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEINSURANCE[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_EMPLOYEEPOSTCHANGE[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_FAMILYMEMBER[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_LEFTOFFICE[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.T_HR_PENSIONMASTER[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.V_EMPLOYEEPOST))]
     public partial class QueryExpression : SMT.SaaS.BLLCommonServices.FBServiceWS.VisitUserBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -40188,20 +41563,22 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_FB_SUMSETTINGSMASTERZ5CrhPbu))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ENTITYMENUCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWRECORDDETAIL_TgZ_PhGfiK))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWRECORDMASTER_TgZ_PhGfiK))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_PERMISSIONCIR1sILv))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ROLEENTITYMENUCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ROLECIR1sILv))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWRECORDMASTER_TgZ_PhGfiK))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ROLEENTITYMENUCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_USERCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWDEFINE_TgZ_PhGfiK))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_ASSESSMENTFORMMASTERLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_COMPANYLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_IMPORTSETMASTERLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEELmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTCHANGELmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_CHECKPOINTSETLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_CHECKPROJECTSETLmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEELmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_LEFTOFFICELmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_COMPANYLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_DEPARTMENTDICTIONARYLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_POSTDICTIONARYLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_DEPARTMENTLmi1kWPo))]
@@ -40209,7 +41586,6 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_PENSIONMASTERLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_RESUMELmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEECHECKLmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTCHANGELmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_FB_BORROWAPPLYMASTERZ5CrhPbu))]
     public partial class EntityReference : SMT.SaaS.BLLCommonServices.FBServiceWS.RelatedEnd {
         
@@ -40260,20 +41636,22 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_FB_SUMSETTINGSMASTERZ5CrhPbu))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ENTITYMENUCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWRECORDDETAIL_TgZ_PhGfiK))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWRECORDMASTER_TgZ_PhGfiK))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_PERMISSIONCIR1sILv))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ROLEENTITYMENUCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ROLECIR1sILv))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWRECORDMASTER_TgZ_PhGfiK))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_ROLEENTITYMENUCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_SYS_USERCIR1sILv))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_FLOWDEFINE_TgZ_PhGfiK))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_ASSESSMENTFORMMASTERLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_COMPANYLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_IMPORTSETMASTERLmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEELmi1kWPo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTCHANGELmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_CHECKPOINTSETLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_CHECKPROJECTSETLmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEELmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_LEFTOFFICELmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_COMPANYLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_DEPARTMENTDICTIONARYLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_POSTDICTIONARYLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_DEPARTMENTLmi1kWPo))]
@@ -40281,7 +41659,6 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_PENSIONMASTERLmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_RESUMELmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEECHECKLmi1kWPo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_HR_EMPLOYEEPOSTCHANGELmi1kWPo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReferenceOfT_FB_BORROWAPPLYMASTERZ5CrhPbu))]
     public partial class RelatedEnd : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -40478,13 +41855,6 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfFLOW_FLOWRECORDMASTER_TgZ_PhGfiK", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
-    [System.SerializableAttribute()]
-    public partial class EntityReferenceOfFLOW_FLOWRECORDMASTER_TgZ_PhGfiK : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_SYS_PERMISSIONCIR1sILv", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
     [System.SerializableAttribute()]
     public partial class EntityReferenceOfT_SYS_PERMISSIONCIR1sILv : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
@@ -40492,16 +41862,30 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_SYS_ROLEENTITYMENUCIR1sILv", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_SYS_ROLECIR1sILv", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
     [System.SerializableAttribute()]
-    public partial class EntityReferenceOfT_SYS_ROLEENTITYMENUCIR1sILv : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
+    public partial class EntityReferenceOfT_SYS_ROLECIR1sILv : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_SYS_ROLECIR1sILv", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
     [System.SerializableAttribute()]
-    public partial class EntityReferenceOfT_SYS_ROLECIR1sILv : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
+    public partial class EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfFLOW_FLOWRECORDMASTER_TgZ_PhGfiK", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    [System.SerializableAttribute()]
+    public partial class EntityReferenceOfFLOW_FLOWRECORDMASTER_TgZ_PhGfiK : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_SYS_ROLEENTITYMENUCIR1sILv", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    [System.SerializableAttribute()]
+    public partial class EntityReferenceOfT_SYS_ROLEENTITYMENUCIR1sILv : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -40520,16 +41904,44 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_HR_ASSESSMENTFORMMASTERLmi1kWPo", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
     [System.SerializableAttribute()]
-    public partial class EntityReferenceOfFLOW_MODELDEFINE_TgZ_PhGfiK : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
+    public partial class EntityReferenceOfT_HR_ASSESSMENTFORMMASTERLmi1kWPo : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_HR_ASSESSMENTFORMMASTERLmi1kWPo", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_HR_EMPLOYEEPOSTLmi1kWPo", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
     [System.SerializableAttribute()]
-    public partial class EntityReferenceOfT_HR_ASSESSMENTFORMMASTERLmi1kWPo : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
+    public partial class EntityReferenceOfT_HR_EMPLOYEEPOSTLmi1kWPo : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_HR_COMPANYLmi1kWPo", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    [System.SerializableAttribute()]
+    public partial class EntityReferenceOfT_HR_COMPANYLmi1kWPo : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_HR_IMPORTSETMASTERLmi1kWPo", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    [System.SerializableAttribute()]
+    public partial class EntityReferenceOfT_HR_IMPORTSETMASTERLmi1kWPo : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_HR_EMPLOYEELmi1kWPo", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    [System.SerializableAttribute()]
+    public partial class EntityReferenceOfT_HR_EMPLOYEELmi1kWPo : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_HR_EMPLOYEEPOSTCHANGELmi1kWPo", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
+    [System.SerializableAttribute()]
+    public partial class EntityReferenceOfT_HR_EMPLOYEEPOSTCHANGELmi1kWPo : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -40548,30 +41960,9 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_HR_EMPLOYEELmi1kWPo", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
-    [System.SerializableAttribute()]
-    public partial class EntityReferenceOfT_HR_EMPLOYEELmi1kWPo : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_HR_EMPLOYEEPOSTLmi1kWPo", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
-    [System.SerializableAttribute()]
-    public partial class EntityReferenceOfT_HR_EMPLOYEEPOSTLmi1kWPo : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_HR_LEFTOFFICELmi1kWPo", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
     [System.SerializableAttribute()]
     public partial class EntityReferenceOfT_HR_LEFTOFFICELmi1kWPo : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_HR_COMPANYLmi1kWPo", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
-    [System.SerializableAttribute()]
-    public partial class EntityReferenceOfT_HR_COMPANYLmi1kWPo : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -40621,13 +42012,6 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
     [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_HR_EMPLOYEECHECKLmi1kWPo", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
     [System.SerializableAttribute()]
     public partial class EntityReferenceOfT_HR_EMPLOYEECHECKLmi1kWPo : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityReferenceOfT_HR_EMPLOYEEPOSTCHANGELmi1kWPo", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses")]
-    [System.SerializableAttribute()]
-    public partial class EntityReferenceOfT_HR_EMPLOYEEPOSTCHANGELmi1kWPo : SMT.SaaS.BLLCommonServices.FBServiceWS.EntityReference {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -41299,6 +42683,9 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         Approval = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        End = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         Cancel = 5,
     }
     
@@ -41333,13 +42720,28 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         private string FormIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FREEFLOWEMPLOYEE[] FreeFlowEmployeeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ModelCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModelCodeTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModelCodeTypeNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private SMT.SaaS.BLLCommonServices.FBServiceWS.UserInfo NextApprovalUserField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NextStateCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OwnerIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OwnerNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private SMT.SaaS.BLLCommonServices.FBServiceWS.SubmitFlag SubmitFlagField;
@@ -41464,6 +42866,19 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public SMT.SaaS.BLLCommonServices.FBServiceWS.FLOW_FREEFLOWEMPLOYEE[] FreeFlowEmployee {
+            get {
+                return this.FreeFlowEmployeeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FreeFlowEmployeeField, value) != true)) {
+                    this.FreeFlowEmployeeField = value;
+                    this.RaisePropertyChanged("FreeFlowEmployee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string ModelCode {
             get {
                 return this.ModelCodeField;
@@ -41472,6 +42887,32 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
                 if ((object.ReferenceEquals(this.ModelCodeField, value) != true)) {
                     this.ModelCodeField = value;
                     this.RaisePropertyChanged("ModelCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModelCodeType {
+            get {
+                return this.ModelCodeTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModelCodeTypeField, value) != true)) {
+                    this.ModelCodeTypeField = value;
+                    this.RaisePropertyChanged("ModelCodeType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModelCodeTypeName {
+            get {
+                return this.ModelCodeTypeNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModelCodeTypeNameField, value) != true)) {
+                    this.ModelCodeTypeNameField = value;
+                    this.RaisePropertyChanged("ModelCodeTypeName");
                 }
             }
         }
@@ -41498,6 +42939,32 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
                 if ((object.ReferenceEquals(this.NextStateCodeField, value) != true)) {
                     this.NextStateCodeField = value;
                     this.RaisePropertyChanged("NextStateCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OwnerID {
+            get {
+                return this.OwnerIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OwnerIDField, value) != true)) {
+                    this.OwnerIDField = value;
+                    this.RaisePropertyChanged("OwnerID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OwnerName {
+            get {
+                return this.OwnerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OwnerNameField, value) != true)) {
+                    this.OwnerNameField = value;
+                    this.RaisePropertyChanged("OwnerName");
                 }
             }
         }
@@ -41623,6 +43090,9 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         FreeFlow = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FreeFlowAll = 2,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -41637,6 +43107,371 @@ namespace SMT.SaaS.BLLCommonServices.FBServiceWS {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Pending = 2,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FLOW_FREEFLOWEMPLOYEE", Namespace="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model")]
+    [System.SerializableAttribute()]
+    public partial class FLOW_FREEFLOWEMPLOYEE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BATCHField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string COMPANYNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string COUNTERSIGNTYPEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CREATEDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DEPARTMENTNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EDITCOMPANYIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EDITDEPARTMENTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EDITPOSTIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EDITUSERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EDITUSERNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FLOWRECORDMASTERIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FLOWTYPEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FORMIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FREEFLOWIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NEXTEDITUSEIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NEXTEDITUSERNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PASSRATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string POSTNAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ROLENAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SEQUENCEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string STATEField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BATCH {
+            get {
+                return this.BATCHField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BATCHField, value) != true)) {
+                    this.BATCHField = value;
+                    this.RaisePropertyChanged("BATCH");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string COMPANYNAME {
+            get {
+                return this.COMPANYNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.COMPANYNAMEField, value) != true)) {
+                    this.COMPANYNAMEField = value;
+                    this.RaisePropertyChanged("COMPANYNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string COUNTERSIGNTYPE {
+            get {
+                return this.COUNTERSIGNTYPEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.COUNTERSIGNTYPEField, value) != true)) {
+                    this.COUNTERSIGNTYPEField = value;
+                    this.RaisePropertyChanged("COUNTERSIGNTYPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CREATEDATE {
+            get {
+                return this.CREATEDATEField;
+            }
+            set {
+                if ((this.CREATEDATEField.Equals(value) != true)) {
+                    this.CREATEDATEField = value;
+                    this.RaisePropertyChanged("CREATEDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DEPARTMENTNAME {
+            get {
+                return this.DEPARTMENTNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DEPARTMENTNAMEField, value) != true)) {
+                    this.DEPARTMENTNAMEField = value;
+                    this.RaisePropertyChanged("DEPARTMENTNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EDITCOMPANYID {
+            get {
+                return this.EDITCOMPANYIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EDITCOMPANYIDField, value) != true)) {
+                    this.EDITCOMPANYIDField = value;
+                    this.RaisePropertyChanged("EDITCOMPANYID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EDITDEPARTMENTID {
+            get {
+                return this.EDITDEPARTMENTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EDITDEPARTMENTIDField, value) != true)) {
+                    this.EDITDEPARTMENTIDField = value;
+                    this.RaisePropertyChanged("EDITDEPARTMENTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EDITPOSTID {
+            get {
+                return this.EDITPOSTIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EDITPOSTIDField, value) != true)) {
+                    this.EDITPOSTIDField = value;
+                    this.RaisePropertyChanged("EDITPOSTID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EDITUSERID {
+            get {
+                return this.EDITUSERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EDITUSERIDField, value) != true)) {
+                    this.EDITUSERIDField = value;
+                    this.RaisePropertyChanged("EDITUSERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EDITUSERNAME {
+            get {
+                return this.EDITUSERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EDITUSERNAMEField, value) != true)) {
+                    this.EDITUSERNAMEField = value;
+                    this.RaisePropertyChanged("EDITUSERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FLOWRECORDMASTERID {
+            get {
+                return this.FLOWRECORDMASTERIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FLOWRECORDMASTERIDField, value) != true)) {
+                    this.FLOWRECORDMASTERIDField = value;
+                    this.RaisePropertyChanged("FLOWRECORDMASTERID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FLOWTYPE {
+            get {
+                return this.FLOWTYPEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FLOWTYPEField, value) != true)) {
+                    this.FLOWTYPEField = value;
+                    this.RaisePropertyChanged("FLOWTYPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FORMID {
+            get {
+                return this.FORMIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FORMIDField, value) != true)) {
+                    this.FORMIDField = value;
+                    this.RaisePropertyChanged("FORMID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FREEFLOWID {
+            get {
+                return this.FREEFLOWIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FREEFLOWIDField, value) != true)) {
+                    this.FREEFLOWIDField = value;
+                    this.RaisePropertyChanged("FREEFLOWID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NEXTEDITUSEID {
+            get {
+                return this.NEXTEDITUSEIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NEXTEDITUSEIDField, value) != true)) {
+                    this.NEXTEDITUSEIDField = value;
+                    this.RaisePropertyChanged("NEXTEDITUSEID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NEXTEDITUSERNAME {
+            get {
+                return this.NEXTEDITUSERNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NEXTEDITUSERNAMEField, value) != true)) {
+                    this.NEXTEDITUSERNAMEField = value;
+                    this.RaisePropertyChanged("NEXTEDITUSERNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal PASSRATE {
+            get {
+                return this.PASSRATEField;
+            }
+            set {
+                if ((this.PASSRATEField.Equals(value) != true)) {
+                    this.PASSRATEField = value;
+                    this.RaisePropertyChanged("PASSRATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string POSTNAME {
+            get {
+                return this.POSTNAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.POSTNAMEField, value) != true)) {
+                    this.POSTNAMEField = value;
+                    this.RaisePropertyChanged("POSTNAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ROLENAME {
+            get {
+                return this.ROLENAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ROLENAMEField, value) != true)) {
+                    this.ROLENAMEField = value;
+                    this.RaisePropertyChanged("ROLENAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SEQUENCE {
+            get {
+                return this.SEQUENCEField;
+            }
+            set {
+                if ((this.SEQUENCEField.Equals(value) != true)) {
+                    this.SEQUENCEField = value;
+                    this.RaisePropertyChanged("SEQUENCE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string STATE {
+            get {
+                return this.STATEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.STATEField, value) != true)) {
+                    this.STATEField = value;
+                    this.RaisePropertyChanged("STATE");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]

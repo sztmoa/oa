@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Objects.DataClasses;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Data.Objects;
 using System.Linq.Expressions;
 using System.ComponentModel;
@@ -11,6 +11,7 @@ using System.Collections;
 using System.Data;
 using SMT.FB.DAL;
 using System.Reflection;
+using SMT.FB.DAL;
 
 
 namespace SMT.FB.BLL
@@ -211,9 +212,10 @@ namespace SMT.FB.BLL
             
         }
 
+
         internal void InnerSave(FBEntity fbEntity)
         {
-           
+
             List<FBEntity> listSave = new List<FBEntity>();
             if (fbEntity != null)
             {

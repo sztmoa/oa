@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 using System.Data.EntityClient;
-using SMT_FB_EFModel;
+using TM_SaaS_OA_EFModel;
 using System.Threading;
 using System.Data.Common;
 using System.Linq;
@@ -13,24 +13,24 @@ namespace SMT.FB.DAL
     {
         //static DBContext()
         //{
-        //    contenxtCache = new Dictionary<string, SMT_FB_EFModelContext>();
+        //    contenxtCache = new Dictionary<string, TM_SaaS_OA_EFModelContext>();
         //    dictionaryThread = new Dictionary<string, List<object>>();
         //    dictionaryThread_Te = new Dictionary<object, string>();
         //    transactionList = new List<string>();
         //}
-        ////public static Dictionary<string, SMT_FB_EFModelContext> contenxtCache;
+        ////public static Dictionary<string, TM_SaaS_OA_EFModelContext> contenxtCache;
         //public static Dictionary<string, List<object>> dictionaryThread;
         //public static Dictionary<object, string> dictionaryThread_Te;
         //public static List<string> transactionList;
         //private static object lockObj = new object();
 
-        //public static SMT_FB_EFModelContext CreateObjectContext()
+        //public static TM_SaaS_OA_EFModelContext CreateObjectContext()
         //{
-        //    return new SMT_FB_EFModelContext();
+        //    return new TM_SaaS_OA_EFModelContext();
         //}
-        //public static SMT_FB_EFModelContext GetObjectContext(object obj)
+        //public static TM_SaaS_OA_EFModelContext GetObjectContext(object obj)
         //{
-        //    SMT_FB_EFModelContext dbinstance = new SMT_FB_EFModelContext();
+        //    TM_SaaS_OA_EFModelContext dbinstance = new TM_SaaS_OA_EFModelContext();
         //    //string threadName = Thread.CurrentThread.Name;
         //    //if (threadName!= null &&  contenxtCache.ContainsKey(threadName))
         //    //{
@@ -43,7 +43,7 @@ namespace SMT.FB.DAL
         //    //        threadName = Guid.NewGuid().ToString();
         //    //        Thread.CurrentThread.Name = threadName;
         //    //    }
-        //    //    dbinstance = new SMT_FB_EFModelContext();
+        //    //    dbinstance = new TM_SaaS_OA_EFModelContext();
         //    //    dbinstance.CommandTimeout = 180;
         //    //    //db.Log = Console.Out;
         //    //    //dbinstance.Log = Console.Out;
@@ -55,7 +55,7 @@ namespace SMT.FB.DAL
         //    return dbinstance;
         //}
 
-        //public static SMT_FB_EFModelContext GetObjectContext()
+        //public static TM_SaaS_OA_EFModelContext GetObjectContext()
         //{
         //    //string threadName = Thread.CurrentThread.Name;
         //    //if (threadName != null)
@@ -64,7 +64,7 @@ namespace SMT.FB.DAL
         //    //}
         //    //else
         //    //{
-        //        return new SMT_FB_EFModelContext();
+        //        return new TM_SaaS_OA_EFModelContext();
         //    //}
         //}
 
@@ -98,7 +98,7 @@ namespace SMT.FB.DAL
         //    if (list.Count == 0)
         //    {
         //        dictionaryThread.Remove(threadName);
-        //        SMT_FB_EFModelContext tempDC = contenxtCache[threadName];
+        //        TM_SaaS_OA_EFModelContext tempDC = contenxtCache[threadName];
         //        tempDC.Dispose();
         //        GC.SuppressFinalize(tempDC);
         //        tempDC = null;
@@ -122,7 +122,7 @@ namespace SMT.FB.DAL
 
         //        if (!contenxtCache.ContainsKey(threadName))
         //        {
-        //            SMT_FB_EFModelContext dbinstance = new SMT_FB_EFModelContext();
+        //            TM_SaaS_OA_EFModelContext dbinstance = new TM_SaaS_OA_EFModelContext();
         //            dbinstance.CommandTimeout = 180;
         //            contenxtCache.Add(threadName, dbinstance);
         //        }
@@ -137,7 +137,7 @@ namespace SMT.FB.DAL
         //    {
         //        if (contenxtCache.ContainsKey(threadName))
         //        {
-        //            SMT_FB_EFModelContext tempDC = contenxtCache[threadName];
+        //            TM_SaaS_OA_EFModelContext tempDC = contenxtCache[threadName];
         //            //if (tempDC.Connection.State == System.Data.ConnectionState.Open)
         //            //{
         //            //    tempDC.Connection.Close();
@@ -151,7 +151,7 @@ namespace SMT.FB.DAL
         //}
 
         #region 事务中不嵌套事务
-        public static DbTransaction BeginTransaction(SMT_FB_EFModelContext mc)
+        public static DbTransaction BeginTransaction(TM_SaaS_OA_EFModelContext mc)
         {
             //string threadName = Thread.CurrentThread.Name;
             //if (transactionList.Contains(threadName))
