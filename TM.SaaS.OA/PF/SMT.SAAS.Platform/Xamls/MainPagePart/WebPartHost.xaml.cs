@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using Telerik.Windows.Controls;
 using System;
 using System.Linq;
 
@@ -22,7 +21,7 @@ namespace SMT.SAAS.Platform.Xamls.MainPagePart
     public partial class WebPartHost : UserControl,IWebpart
     {
 
-        RadTileView radtileview;
+        TabControl radtileview;
         /// <summary>
         /// 创建一个WebPartHost的新实例。
         /// </summary>
@@ -51,9 +50,9 @@ namespace SMT.SAAS.Platform.Xamls.MainPagePart
         {
             if (radtileview == null)
             {
-                radtileview = new RadTileView();
+                radtileview = new  TabControl();
 
-                radtileview.MinimizedColumnWidth = new GridLength(310);
+                //radtileview.MinimizedColumnWidth = new GridLength(310);
 
                 //RadTileViewItem item1 = new RadTileViewItem();
                 //item1.TileState = TileViewItemState.Minimized;
@@ -61,14 +60,14 @@ namespace SMT.SAAS.Platform.Xamls.MainPagePart
                 //item1.Content = new SystemLogger();
                 //radtileview.Items.Add(item1);
 
-                RadTileViewItem item2 = new RadTileViewItem();
-                item2.TileState = TileViewItemState.Maximized;
+                TabItem item2 = new TabItem();
+                //item2.TileState = TileViewItemState.Maximized;
                 item2.Header = "待办任务";
                 item2.Content = new SMT.SAAS.Platform.WebParts.Views.PendingTask();
                 radtileview.Items.Add(item2);
 
-                RadTileViewItem item5 = new RadTileViewItem();
-                item5.TileState = TileViewItemState.Minimized;
+                TabItem item5 = new TabItem();
+                //item5.TileState = Panel.Minimized;
                 item5.Header = "我的单据";
                 item5.Content = new SMT.SAAS.Platform.WebParts.Views.MyRecord();
                 radtileview.Items.Add(item5);
@@ -79,15 +78,15 @@ namespace SMT.SAAS.Platform.Xamls.MainPagePart
                 //item3.Content = new SMT.SAAS.Platform.WebParts.Views.NoteRemind();
                 //radtileview.Items.Add(item3);
 
-                RadTileViewItem item4 = new RadTileViewItem();
-                item4.TileState = TileViewItemState.Minimized;
+                TabItem item4 = new TabItem();
+                //item4.TileState = TileViewItemState.Minimized;
                 item4.Header = "新闻动态";
                 item4.Content = new SMT.SAAS.Platform.WebParts.Views.News();
                 radtileview.Items.Add(item4);
 
                 //CheckeDepends("SMT.SaaS.OA.UI");
-                RadTileViewItem item6 = new RadTileViewItem();
-                item6.TileState = TileViewItemState.Minimized;
+                TabItem item6 = new TabItem();
+                //item6.TileState = TileViewItemState.Minimized;
                 item6.Header = "公司发文";
                 item6.Content = new SMT.SAAS.Platform.WebParts.Views.OAWebPart();
                 radtileview.Items.Add(item6);
@@ -96,7 +95,7 @@ namespace SMT.SAAS.Platform.Xamls.MainPagePart
             }
             else
             {
-                foreach (RadTileViewItem item in radtileview.Items)
+                foreach (TabItem item in radtileview.Items)
                 {
                     IWebpart webPart = item.Content as IWebpart;
                     if (webPart != null)
@@ -114,7 +113,7 @@ namespace SMT.SAAS.Platform.Xamls.MainPagePart
             {
                 foreach (var item in radtileview.Items)
                 {
-                    var radItem = item as RadTileViewItem;
+                    var radItem = item as TabItem;
                     if (radItem != null)
                     {
                         ICleanup clearup = radItem.Content as ICleanup;
@@ -137,7 +136,7 @@ namespace SMT.SAAS.Platform.Xamls.MainPagePart
             {
                 foreach (var item in radtileview.Items)
                 {
-                    var radItem = item as RadTileViewItem;
+                    var radItem = item as TabItem;
                     if (radItem != null)
                     {
                         IWebpart clearup = radItem.Content as IWebpart;
@@ -155,7 +154,7 @@ namespace SMT.SAAS.Platform.Xamls.MainPagePart
             {
                 foreach (var item in radtileview.Items)
                 {
-                    var radItem = item as RadTileViewItem;
+                    var radItem = item as TabItem;
                     if (radItem != null)
                     {
                         IWebpart clearup = radItem.Content as IWebpart;
@@ -191,8 +190,8 @@ namespace SMT.SAAS.Platform.Xamls.MainPagePart
             if (OAWebPaer != null)
             {
 
-                RadTileViewItem item6 = new RadTileViewItem();
-                item6.TileState = TileViewItemState.Minimized;
+                TabItem item6 = new TabItem();
+                //item6.TileState = TileViewItemState.Minimized;
                 item6.Header = "公司发文";
                 item6.Content = OAWebPaer;
                 radtileview.Items.Add(item6);

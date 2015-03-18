@@ -17,7 +17,7 @@ using SMT.SAAS.Main.CurrentContext;
 
 namespace SMT.SAAS.Platform.Xamls.MainPagePart
 {
-    public partial class MVCCraeteNewForm : Page
+    public partial class MVCCraeteNewForm : UserControl
     {
         public ModuleInfo info;
         public MVCCraeteNewForm()
@@ -26,9 +26,9 @@ namespace SMT.SAAS.Platform.Xamls.MainPagePart
         }
 
         // 当用户导航到此页面时执行。
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-        }
+        //protected override void OnNavigatedTo(NavigationEventArgs e)
+        //{
+        //}
 
         private void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
         {
