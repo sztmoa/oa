@@ -5,15 +5,7 @@ using SMT.SAAS.Platform.Core.Modularity;
 using System.Collections.ObjectModel;
 using SMT.SAAS.Platform.ViewModel.Menu;
 
-//------------------------------------------------------------------------------
-// 版权所有: 版权所有(C)2011 SMT-Online
 // 内容摘要: 上下文环境，存储平台中使用的共享数据。
-// 完成日期：2011-04-21 
-// 版    本：V1.0 
-// 作    者：GaoY 
-// 修 改 人：
-// 修改时间： 
-//------------------------------------------------------------------------------
       
 namespace SMT.SAAS.Platform.ViewModel
 {

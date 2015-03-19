@@ -9,7 +9,7 @@ namespace SMT.SAAS.ClientServices
 {
     public class BuildClient
     {
-        private static string serviceAddress = "http://prreits.smt-online.net/new/Services/Platform/PlatformServices.svc";
+        private static string serviceAddress = "http://"+SMT.SAAS.Main.CurrentContext.Common.HostIP+@"/Services/Platform/PlatformServices.svc";
 
         private const string PERMISSION_SVC_NAME = "/System/PermissionService.svc";
 

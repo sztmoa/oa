@@ -156,8 +156,8 @@
                 
             </Grid>
             <StackPanel Orientation="Horizontal" Grid.Row="1" x:Name="payInfoC" Margin="0,3,0,0">
-                <RadioButton GroupName="gmCompany" Content="神州通在线支付" x:Name="rbPayFromA" Margin="0,0,0,0" Visibility="Collapsed"  ></RadioButton>
-                <RadioButton GroupName="gmCompany" Content="诺亚软杰支付" x:Name="rbPayFromB" Margin="5,0,0,0"  Visibility="Collapsed"></RadioButton>
+                <RadioButton GroupName="gmCompany" Content="在线支付" x:Name="rbPayFromA" Margin="0,0,0,0" Visibility="Collapsed"  ></RadioButton>
+                <RadioButton GroupName="gmCompany" Content="诺亚支付" x:Name="rbPayFromB" Margin="5,0,0,0"  Visibility="Collapsed"></RadioButton>
             </StackPanel>
         </Grid>
        

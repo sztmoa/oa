@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("SMT.SaaS.BLLCommonServices")]
 [assembly: AssemblyDescription("权限修改、没有权限就返回了所有值")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("神州通在线")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SMT.SaaS.BLLCommonServices")]
-[assembly: AssemblyCopyright("Copyright © 神州通在线 2010")]
+[assembly: AssemblyCopyright("Copyright ©  2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

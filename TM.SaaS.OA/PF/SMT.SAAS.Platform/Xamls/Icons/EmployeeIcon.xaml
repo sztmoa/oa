@@ -153,7 +153,7 @@
                            VerticalAlignment="Center"
                            FontFamily="Arial,SimSun"
                            Foreground="{StaticResource BlueColor11}"
-                           Text="姓 名 : 神州通在线科技有限责任公司" />
+                           Text="姓 名 : 科技有限责任公司" />
                 <TextBlock x:Name="txDdeptName"
                            Grid.Row="2"
                            Grid.Column="1"
@@ -163,7 +163,7 @@
                            VerticalAlignment="Center"
                            FontFamily="Arial,SimSun"
                            Foreground="{StaticResource BlueColor11}"
-                           Text="姓 名 : 神州通在线科技有限责任公司" />
+                           Text="姓 名 : 科技有限责任公司" />
                 <TextBlock x:Name="txbPostName"
                            Grid.Row="3"
                            Grid.Column="1"
@@ -173,7 +173,7 @@
                            VerticalAlignment="Center"
                            FontFamily="Arial,SimSun"
                            Foreground="{StaticResource BlueColor11}"
-                           Text="姓 名 : 神州通在线科技有限责任公司" />
+                           Text="姓 名 : 科技有限责任公司" />
 
                 <StackPanel x:Name="userLevel"
                             Grid.Row="4"

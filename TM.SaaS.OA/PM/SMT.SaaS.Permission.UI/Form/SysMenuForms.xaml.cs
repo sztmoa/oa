@@ -344,7 +344,7 @@ namespace SMT.SaaS.Permission.UI.Form
             {
                 MenuCode = MenuCode.Trim();
             }
-            strUrl = "http://demo.smt-online.net/New/Services/ckeditor/Default2.aspx?menucode="+MenuCode;
+            strUrl = "http://"+SMT.SAAS.Main.CurrentContext.Common.HostIP+@"/Services/ckeditor/Default2.aspx?menucode="+MenuCode;
             Uri uri = new Uri(strUrl);
             //wd.Navigate(uri, "_bank");
             HtmlPopupWindowOptions options = new HtmlPopupWindowOptions();

@@ -177,7 +177,7 @@
                                  Margin="10,5,260,0"
                                  HorizontalAlignment="Right"
                                  Click="hyIMClient_Click"
-                                 Content="神州通IM"
+                                 Content="IM"
                                  Cursor="Hand"
                                  FontFamily="Arial,SimSun"
                                  FontSize="12"

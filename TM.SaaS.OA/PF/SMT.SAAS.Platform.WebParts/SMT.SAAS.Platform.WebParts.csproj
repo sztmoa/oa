@@ -97,77 +97,21 @@
     <Reference Include="SMT.SaaS.Window, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SaaS.Window.dll</HintPath>
     </Reference>
-    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.Extensions, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.Extensions, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.ServiceModel.PollingDuplex, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
     <Reference Include="System.Windows.Browser" />
-    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.Windows.Controls, Version=2011.1.329.1040, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Controls.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.Data, Version=2011.1.329.1040, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Controls.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.GridView, Version=2011.1.329.1040, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Controls.GridView.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.Input, Version=2011.1.329.1040, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Controls.Input.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2011.1.329.1040, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Controls.Navigation.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.RibbonBar, Version=2011.1.329.1040, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Controls.RibbonBar.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.RichTextBoxUI, Version=2010.3.1613.1040, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Controls.RichTextBoxUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Data, Version=2011.1.329.1040, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents, Version=2010.3.1613.1040, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Documents.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.FormatProviders.Html, Version=2010.3.1613.1040, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Documents.FormatProviders.Html.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.FormatProviders.OpenXml, Version=2010.3.1613.1040, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Documents.FormatProviders.OpenXml.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.FormatProviders.Pdf, Version=2010.3.1613.1040, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Documents.FormatProviders.Pdf.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.FormatProviders.Xaml, Version=2010.3.1613.1040, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Documents.FormatProviders.Xaml.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.Proofing.Dictionaries.En-US, Version=2010.3.1613.1040, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SMT.SaaS.CommonDll\Telerik\Telerik.Windows.Documents.Proofing.Dictionaries.En-US.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsyncTools.cs" />

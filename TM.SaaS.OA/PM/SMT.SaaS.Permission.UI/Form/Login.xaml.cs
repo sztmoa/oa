@@ -56,7 +56,7 @@ namespace SMT.SaaS.Permission.UI.Form
             //client.GetDictionaryByCategoryArrayAsync(ListDict);
             //this.OKButton.IsEnabled = false;
             //fileclient.DownloadCompleted += new EventHandler<DownloadCompletedEventArgs>(fileclient_DownloadCompleted);
-            //fileclient.DownloadAsync(@"http://portal.smt-online.net/Services/System\UpLoadFiles\集团本部\Platform\News\胡主席与黄总等企业家合影（胡锦涛主席右后方第二人为黄文辉董事长）.jpg");
+            //fileclient.DownloadAsync(@".jpg");
             //client.GetUserPermissionByUserToUICompleted += new EventHandler<GetUserPermissionByUserToUICompletedEventArgs>(client_GetUserPermissionByUserToUICompleted);
             //client.GetUserPermissionByUserToUIAsync("2ec631ed-0fc0-4b7f-a86c-28581eeab068");
             //client.GetSysLeftMenuFilterPermissionToNewFrameAsync("d532b00b-b199-46e8-9c39-2e0d2fcd2a02");

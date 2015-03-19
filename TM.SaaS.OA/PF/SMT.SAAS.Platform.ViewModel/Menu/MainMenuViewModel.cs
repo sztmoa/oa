@@ -6,15 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Diagnostics;
 
-//------------------------------------------------------------------------------
-// 版权所有: 版权所有(C)2011 SMT-Online
 // 内容摘要: 主菜单VIEWMODEL,用户菜单数据在首次读取后将会被缓存。
-// 完成日期：2011-04-21  
-// 版    本：V1.0 
-// 作    者：GaoY
-// 修 改 人：
-// 修改时间： 
-//------------------------------------------------------------------------------
 
 namespace SMT.SAAS.Platform.ViewModel.Menu
 {

@@ -134,7 +134,7 @@ namespace SMT.SaaS.OA.UI.UserControls
                                select a.CNAME;
                     if (objc.FirstOrDefault() == "集团本部")
                     {
-                        this.tbltitlecompany.Text = "深圳市神州通投资集团有限公司";
+                        this.tbltitlecompany.Text = "集团有限公司";
                     }
                     else
                     {

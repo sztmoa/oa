@@ -2,15 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Browser;
 using System.Windows;
-//------------------------------------------------------------------------------
-// 版权所有: 版权所有(C)2011 SMT-Online
 // 内容摘要: 提供界面实现的宿主,主外壳。承载MainPage
-// 完成日期：2011-05-16 
-// 版    本：V1.0 
-// 作    者：王玲 
-// 修 改 人：
-// 修改时间： 
-//------------------------------------------------------------------------------
 namespace SMT.SAAS.Main.CurrentContext
 {
     /// <summary>

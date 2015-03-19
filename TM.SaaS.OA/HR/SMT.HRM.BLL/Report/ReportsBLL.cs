@@ -89,7 +89,7 @@ namespace SMT.HRM.BLL
                         }
                         else
                         {
-                            //report.ORGANIZENAME = "神州通集团";
+                            //report.ORGANIZENAME = "集团";
                             report.ORGANIZENAME = SingleCompany.FirstOrDefault().CNAME;
                         }
                     }
@@ -1835,7 +1835,7 @@ namespace SMT.HRM.BLL
                             }
                             else
                             {
-                                item.ORGANIZENAME = "神州通集团";
+                                item.ORGANIZENAME = "集团";
                             }
                             SMT.Foundation.Log.Tracer.Debug("SingleCompany 记录数为：" + item.ORGANIZENAME);
                         }
@@ -2731,7 +2731,7 @@ namespace SMT.HRM.BLL
                                 }
                                 else
                                 {
-                                    //item.ORGANIZENAME = "神州通集团";
+                                    //item.ORGANIZENAME = "集团";
                                     item.ORGANIZENAME = SingleCompany.FirstOrDefault().CNAME;
                                 }
                             }

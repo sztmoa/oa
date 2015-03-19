@@ -211,7 +211,7 @@ namespace SMT.FB.BLL
             }
             List<string> CompanyIds = new List<string>();
             //在公司科目维护中去掉以下2个公司
-            CompanyIds.Add("427eb67d-35b4-47a9-9609-baf5355d2ed5");//深圳市神州通投资集团有限公司
+            CompanyIds.Add("427eb67d-35b4-47a9-9609-baf5355d2ed5");//深圳市集团有限公司
             CompanyIds.Add("7cd6c0a4-9735-476a-9184-103b962d3383");//初始化公司
             List<OrganizationWS.T_HR_COMPANY> comList = organizationService.GetCompanyByEntityPerm(qe.VisitUserID, action, ModuleCode).ToList();
 

@@ -41,7 +41,7 @@ namespace SMT.FBAnalysis.UI.Form
         private string strOwnerPostName = ""; //所属人岗位Name
         private string strOwnerID = ""; //所属人ID
         private string strOwnerName = ""; //所属人Name
-        string smtonlineID = "bac05c76-0f5b-40ae-b73b-8be541ed35ed";//神州通在线科技有限公司ID，实际上不想这样做
+        string smtonlineID = "bac05c76-0f5b-40ae-b73b-8be541ed35ed";//科技有限公司ID，实际上不想这样做
 
         private FormTypes FormTypesAction;//操作定义 增加、修改、审核、查看、重新提交
         private RefreshedTypes saveType = RefreshedTypes.All;//保存的类型默认为ALL
@@ -59,7 +59,7 @@ namespace SMT.FBAnalysis.UI.Form
         public bool needsubmit = false;
 
         private string PayMySelf = "汇本人账户, ";
-        private string PayFromA = "神州通在线支付, ";
+        private string PayFromA = "在线支付, ";
         private string PayFromB = "诺亚软杰支付, ";
 
         PersonnelServiceClient personclient = new PersonnelServiceClient();

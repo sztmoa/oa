@@ -5,18 +5,10 @@ using System.ServiceModel.Channels;
 using System.Collections.Generic;
 using SMT.Saas.Tools.PermissionWS;
 
-//------------------------------------------------------------------------------
-// 版权所有: 版权所有(C)2011 SMT-Online
 // 内容摘要: 为提供创建WCF客户端提供支持，
 //           后期将对其进行托管处理 :
 //           1. 网络状态检测、服务端状态检测与处理 
 //           2. 实现wcf client pool概念
-// 完成日期：2011-04-21 
-// 版    本：V1.0 
-// 作    者：GaoY 
-// 修 改 人：
-// 修改时间： 
-//------------------------------------------------------------------------------
 
 namespace SMT.SAAS.Platform.Client
 {
@@ -95,8 +87,6 @@ namespace SMT.SAAS.Platform.Client
 
         private static UserLoginWS.MainUIServicesClient CreateUserLoginClient()
         {
-            //http://portal.smt-online.net/Services/System/MainUIServices.svc
-
             //EndpointAddress address = new EndpointAddress("http://172.30.50.13/SmtOnline/Develop/Services/System/MainUIServices.svc");
             //UserLoginWS.MainUIServicesClient client = new UserLoginWS.MainUIServicesClient(CreateCustomBinding(), CreateAddress(USERLOGIN_SVC_NAME));
             return new UserLoginWS.MainUIServicesClient();

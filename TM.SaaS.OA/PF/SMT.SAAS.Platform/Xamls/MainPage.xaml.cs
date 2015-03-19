@@ -19,15 +19,7 @@ using SMT.SAAS.Main.CurrentContext;
 using SMT.SaaS.LocalData.ViewModel;
 using SMT.SaaS.LocalData.Tables;
 
-//------------------------------------------------------------------------------
-// 版权所有: 版权所有(C)2011 SMT-Online
 // 内容摘要: 主页面，用于承载主窗口相关元素
-// 完成日期：2011-04-21 
-// 版    本：V1.0 
-// 作    者：GaoY 
-// 修 改 人：
-// 修改时间： 
-//------------------------------------------------------------------------------
 
 namespace SMT.SAAS.Platform.Xamls
 {
@@ -863,7 +855,7 @@ namespace SMT.SAAS.Platform.Xamls
                 if(document.body.clientWidth-event.clientX< 170&&event.clientY< 0||event.altKey) 
                 {
                 var msg=' 已 注 销 用 户 信 息。\n\n 点  确认 或 关闭  自 动 退 出 系 统！'
-                window.event.returnValue = '点击确认退出神州通集团协同办公平台.';
+                window.event.returnValue = '点击确认退出协同办公平台.';
                 }
                 }}"
             );

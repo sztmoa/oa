@@ -284,7 +284,7 @@ namespace SMT.SaaS.OA.BLL
                             };
                 //System.Text.Encoding  en = new en
                 //19上乱码的问题
-                //string str = "神州通";
+                //string str = "";
                 //System.Text.Encoding stren = Encoding.GetEncoding("gb2312");
                 //byte[] bytes = stren.GetBytes(str);
                 ////服务器端按照gb2312正确解码
@@ -425,7 +425,7 @@ namespace SMT.SaaS.OA.BLL
                                  select new  V_SystemNotice
                                  {
                                      FormId = ent.doc.SENDDOCID,
-                                     //FormTitle = "神州通" + c.NUM.Trim() + "－" + c.SENDDOCTITLE.Trim(),
+                                     //FormTitle = "" + c.NUM.Trim() + "－" + c.SENDDOCTITLE.Trim(),
                                      FormTitle = ent.doc.NUM.Trim().Length > 0 ? ent.doc.NUM.Trim() + "－" + ent.doc.SENDDOCTITLE.Trim() : ent.doc.SENDDOCTITLE.Trim(),
                                      Formtype = ent.doc.T_OA_SENDDOCTYPE.SENDDOCTYPE,
                                      FormDate = (DateTime)ent.doc.PUBLISHDATE
@@ -471,7 +471,7 @@ namespace SMT.SaaS.OA.BLL
                                      select new V_SystemNotice
                                      {
                                          FormId = ent.topdoc.SENDDOCID,
-                                         //FormTitle = "神州通" + c.NUM.Trim() + "－" + c.SENDDOCTITLE.Trim(),
+                                         //FormTitle = "" + c.NUM.Trim() + "－" + c.SENDDOCTITLE.Trim(),
                                          FormTitle = ent.topdoc.NUM.Trim().Length > 0 ? "【置顶】" + ent.topdoc.NUM.Trim() + "－" + ent.topdoc.SENDDOCTITLE.Trim() : "【置顶】"  + ent.topdoc.SENDDOCTITLE.Trim(),
                                          Formtype = ent.topdoc.T_OA_SENDDOCTYPE.SENDDOCTYPE,
                                          FormDate = (DateTime)ent.topdoc.PUBLISHDATE,
@@ -576,7 +576,7 @@ namespace SMT.SaaS.OA.BLL
                                  select new V_SystemNotice
                                  {
                                      FormId = ent.doc.SENDDOCID,
-                                     //FormTitle = "神州通" + c.NUM.Trim() + "－" + c.SENDDOCTITLE.Trim(),
+                                     //FormTitle = "" + c.NUM.Trim() + "－" + c.SENDDOCTITLE.Trim(),
                                      FormTitle = ent.doc.NUM.Trim() + "－" + ent.doc.SENDDOCTITLE.Trim(),
                                      Formtype = ent.doc.T_OA_SENDDOCTYPE.SENDDOCTYPE,
                                      FormDate = (DateTime)ent.doc.PUBLISHDATE
@@ -666,7 +666,7 @@ namespace SMT.SaaS.OA.BLL
                                  select new V_SystemNotice
                                  {
                                      FormId = c.SENDDOCID,
-                                     //FormTitle = "神州通" + c.NUM.Trim() + "－" + c.SENDDOCTITLE.Trim(),
+                                     //FormTitle = "" + c.NUM.Trim() + "－" + c.SENDDOCTITLE.Trim(),
                                      FormTitle = c.NUM.Trim() + "－" + c.SENDDOCTITLE.Trim(),
                                      Formtype = c.T_OA_SENDDOCTYPE.SENDDOCTYPE,
                                      FormDate = (DateTime)c.PUBLISHDATE

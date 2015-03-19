@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("SMT.FB.BLL")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("神州通在线")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("预算管理系统")]
-[assembly: AssemblyCopyright("Copyright © 神州通在线 2010")]
+[assembly: AssemblyCopyright("Copyright ©  2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

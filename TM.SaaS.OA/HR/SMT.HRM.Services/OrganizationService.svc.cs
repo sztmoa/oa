@@ -589,7 +589,7 @@ namespace SMT.HRM.Services
         }
 
         /// <summary>
-        /// 判断根公司是否是神州通集团
+        /// 判断根公司是否是
         /// </summary>
         /// <param name="?"></param>
         /// <returns></returns>

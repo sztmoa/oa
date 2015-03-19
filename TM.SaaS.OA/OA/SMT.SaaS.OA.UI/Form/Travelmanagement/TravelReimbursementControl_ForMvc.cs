@@ -79,7 +79,7 @@ namespace SMT.SaaS.OA.UI.UserControls
 //                if(document.body.clientWidth-event.clientX< 170&&event.clientY< 0||event.altKey) 
 //                {
 //                var msg=' 已 注 销 用 户 信 息。\n\n 点  确认 或 关闭  自 动 退 出 系 统！'
-//                window.event.returnValue = '点击确认退出神州通集团协同办公平台.';
+//                window.event.returnValue = '点击确认退出协同办公平台.';
 //                }
 //                }}"
 //            );

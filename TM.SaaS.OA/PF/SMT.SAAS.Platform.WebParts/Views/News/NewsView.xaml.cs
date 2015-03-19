@@ -12,7 +12,6 @@ using System.Windows.Shapes;
 using SMT.SAAS.Platform.WebParts.ViewModels;
 using SMT.SAAS.Platform.WebParts.NewsWS;
 using SMT.SAAS.Platform.WebParts.Models;
-using Telerik.Windows.Documents.FormatProviders.Pdf;
 using SMT.SAAS.Main.CurrentContext;
 using SMT.SaaS.FrameworkUI.Common;
 using SMT.SaaS.FrameworkUI;

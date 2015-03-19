@@ -6,15 +6,7 @@ using SMT.SAAS.Platform.Core;
 using SMT.SAAS.Platform.Logging;
 using SMT.SAAS.Platform.Core.Modularity;
 
-//------------------------------------------------------------------------------
-// 版权所有: 版权所有(C)2011 SMT-Online
 // 内容摘要: 托管管理，统一处理系统、模块、页面的请求以及处理其依赖关系。
-// 完成日期：2011-04-21 
-// 版    本：V1.0 
-// 作    者：GaoY 
-// 修 改 人：
-// 修改时间： 
-//------------------------------------------------------------------------------
 
 namespace SMT.SAAS.Platform.ViewModel
 {

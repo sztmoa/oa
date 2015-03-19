@@ -802,7 +802,7 @@ namespace SMT.HRM.BLL
         //            {
         //                if (i == colName.Count / 2)
         //                {
-        //                    sb.Append("神州通在线离职员工报表");
+        //                    sb.Append("离职员工报表");
         //                }
         //                else
         //                {

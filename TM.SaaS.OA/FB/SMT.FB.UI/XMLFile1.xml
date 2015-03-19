@@ -11,7 +11,7 @@
   <Attribute Name="CREATEDATE" LableResourceID="CREATEDATE" Description="创建时间" DataType="DateTime" DataValue="2013/6/27 9:43:08" DataText="" />
   <Attribute Name="OWNERID" LableResourceID="OWNERID" Description="申请人ID" DataType="string" DataValue="b6e4fc6e-781c-4a12-91f6-dabedbf3e2f8" DataText="" />
   <Attribute Name="OWNERDEPARTMENTNAME" LableResourceID="ApplicationDepartment" Description="申请部门" DataType="string" DataValue="人力行政部" DataText="" />
-  <Attribute Name="OWNERCOMPANYNAME" LableResourceID="APPLYCOMPANYNAME" Description="申请公司" DataType="string" DataValue="深圳市神州通在线科技有限公司" DataText="" />
+  <Attribute Name="OWNERCOMPANYNAME" LableResourceID="APPLYCOMPANYNAME" Description="申请公司" DataType="string" DataValue="深圳市科技有限公司" DataText="" />
   <Attribute Name="REMARK" LableResourceID="REMARK" Description="备注" DataType="string" DataValue="" DataText="" />
   <Attribute Name="ISVALID" LableResourceID="ISVALID" Description="生效状态" DataType="string" DataValue="0" DataText="未汇总" />
   <Attribute Name="AttachMent" LableResourceID="AttachMent" Description="附件" DataType="attachmentlist" DataValue="" DataText="" />

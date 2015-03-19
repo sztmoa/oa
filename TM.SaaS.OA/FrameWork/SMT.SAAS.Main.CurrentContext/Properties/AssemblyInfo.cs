@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("SMT.SAAS.Main.CurrentContext")]
 [assembly: AssemblyDescription("用户信息及权限信息、子系统密码错误提示、岗位验证")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("深圳市神州通在线科技有限公司")]
+[assembly: AssemblyCompany("深圳市科技有限公司")]
 [assembly: AssemblyProduct("SMT.SAAS.Main.CurrentContext")]
 [assembly: AssemblyCopyright("Copyright ©  2010")]
 [assembly: AssemblyTrademark("")]

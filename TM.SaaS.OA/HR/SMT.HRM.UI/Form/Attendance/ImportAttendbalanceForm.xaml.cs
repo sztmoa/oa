@@ -398,11 +398,11 @@ namespace SMT.HRM.UI.Form.Attendance
             if (HtmlPage.IsPopupWindowAllowed)
             {
                 //一定要有三个参数
-                HtmlPage.PopupWindow(new System.Uri("http://newportal.smt-online.net/download/月度考勤结算批量导入模板.csv"), "_blank", null);
+                HtmlPage.PopupWindow(new System.Uri("http://" + SMT.SAAS.Main.CurrentContext.Common.HostIP + @"/download/月度考勤结算批量导入模板.csv"), "_blank", null);
             }
             else
             {
-                HtmlPage.Window.Navigate(new System.Uri("http://newportal.smt-online.net/download/月度考勤结算批量导入模板.csv"), "_blank");
+                HtmlPage.Window.Navigate(new System.Uri("http://"+SMT.SAAS.Main.CurrentContext.Common.HostIP+@"/download/月度考勤结算批量导入模板.csv"), "_blank");
             }
         }
 

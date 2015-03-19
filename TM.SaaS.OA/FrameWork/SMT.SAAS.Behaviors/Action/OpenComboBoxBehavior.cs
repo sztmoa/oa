@@ -1,9 +1,4 @@
-﻿/******************************
- * 功  能：行为加载Combobox移动显示内容事件
- * 时  间：2010年8月1日
- * 编辑者：高雁
- * ***************************/
-using System;
+﻿using System;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;

@@ -186,9 +186,9 @@ namespace SMT.SaaS.OA.UI.UserControls
                     var objc = from a in ListCompany
                                where a.COMPANYID == StrCompanyID
                                select a.CNAME;
-                    if (objc.FirstOrDefault() == "集团本部")
+                    if (objc.FirstOrDefault() == "本部")
                     {
-                        this.tbltitlecompany.Text = "深圳市神州通投资集团有限公司";
+                        this.tbltitlecompany.Text = "集团有限公司";
                     }
                     else
                     {

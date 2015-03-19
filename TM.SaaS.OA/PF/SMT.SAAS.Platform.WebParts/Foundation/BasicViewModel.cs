@@ -5,18 +5,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.Collections;
 
-//------------------------------------------------------------------------------
-// 版权所有: 版权所有(C)2011 SMT-Online
 // 内容摘要: ViewModel基类
 //           1.实现 INotifyPropertyChanged接口，用于向客户端（通常是执行绑定的客户端）发出某一属性值已更改的通知。
 //           2.实现 INotifyDataErrorInfo接口，定义数据实体类可以实现以提供自定义异步验证支持的成员。
 //           3.封装调用ValidationScope，实现VM的属性验证。
-// 完成日期：2011-04-21 
-// 版    本：V1.0 
-// 作    者：GaoY 
-// 修 改 人：
-// 修改时间： 
-//------------------------------------------------------------------------------
 
 namespace SMT.SAAS.Platform.WebParts.ViewModels.Foundation
 {

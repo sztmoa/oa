@@ -20,7 +20,7 @@ namespace SMT.SaaS.FrameworkUI
         {
             InitializeComponent();
            
-            footer.Text = string.Format("版权所有：神州通投资集团有限公司   当前时间：{0}", System.DateTime.Now.ToString("d"));
+            footer.Text = string.Format("版权所有：向寒咏   当前时间：{0}", System.DateTime.Now.ToString("d"));
         }
 		
     }

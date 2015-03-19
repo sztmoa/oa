@@ -1805,7 +1805,7 @@ namespace SMT.HRM.BLL
         #endregion
 
         /// <summary>
-        /// 获取最高层的ID，如神州通集团
+        /// 获取最高层的ID，
         /// </summary>
         /// <param name="companyid"></param>
         /// <returns></returns>
@@ -1841,7 +1841,7 @@ namespace SMT.HRM.BLL
         }
 
         /// <summary>
-        /// 验证某公司的根公司是否是神州通集团
+        /// 验证某公司的根公司是否是
         /// </summary>
         /// <param name="companyid"></param>
         /// <returns></returns>
@@ -1850,7 +1850,7 @@ namespace SMT.HRM.BLL
             try
             {
                 string topCompanyId = GetTopCompany(companyid);
-                //神州通集团公司ID：
+                //
                 if (topCompanyId == "427eb67d-35b4-47a9-9609-baf5355d2ed5") return true;
                 else return false;
             }

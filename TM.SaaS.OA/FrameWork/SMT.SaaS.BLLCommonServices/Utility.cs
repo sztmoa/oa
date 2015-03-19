@@ -2044,7 +2044,7 @@ namespace SMT.SaaS.BLLCommonServices
         /// <returns></returns>
         public static bool IsLogin()
         {
-            string token = GetHeaderValue("Token", "http://portal.smt-online.net");
+            string token = GetHeaderValue("Token", "http://"+SMT.SAAS.Main.CurrentContext.Common.HostIP);
             if (string.IsNullOrEmpty(token))
                 return false;
             return IsLogin(token);

@@ -6,16 +6,6 @@ using System.Windows.Resources;
 using System.Xml;
 using System.Diagnostics;
 
-//------------------------------------------------------------------------------
-// 版权所有: 版权所有(C)2011 SMT-Online
-// 内容摘要: XAP文件流的核心解析组件。
-//           用于解析XAP文件并将其包含的DLL加载到当前AppDomain中。
-// 完成日期：2011-04-21 
-// 版    本：V1.0 
-// 作    者：GaoY 
-// 修 改 人：
-// 修改时间： 
-//------------------------------------------------------------------------------
 
 namespace SMT.SAAS.Platform.Core.Modularity
 {

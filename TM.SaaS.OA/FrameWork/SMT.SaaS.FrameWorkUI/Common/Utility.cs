@@ -2492,7 +2492,7 @@ namespace SMT.SaaS.FrameworkUI.Common
         public static void DoChannel(IClientChannel cs, string LoginToken)
         {
             OperationContextScope scope = new OperationContextScope(cs);
-            var myNamespace = "http://portal.smt-online.net";
+            var myNamespace = "http://"+SMT.SAAS.Main.CurrentContext.Common.HostIP;
 
             // 注意Header的名字中不能出现空格，因为要作为Xml节点名。  
 

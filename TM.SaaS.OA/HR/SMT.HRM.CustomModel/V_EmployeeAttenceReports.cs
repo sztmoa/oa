@@ -8,7 +8,7 @@ namespace SMT.HRM.CustomModel
     public class V_EmployeeAttenceReports
     {
         /// <summary>
-        /// 由总公司名称  没有则填写神州通集团
+        /// 由总公司名称  没有则填写集团
         /// </summary>
         public string ORGANIZENAME { get; set; }
         /// <summary>
