@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Web;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace URLTOOL
 {
@@ -23,9 +24,12 @@ namespace URLTOOL
             string yearStr = DateTime.Now.Year.ToString()+"-";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                System.IO.StreamReader sr = new
-                   System.IO.StreamReader(openFileDialog1.FileName);
+                //System.IO.StreamReader sr = new
+                //   System.IO.StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("utf-8"));
+
                 //MessageBox.Show(sr.ReadToEnd());
+                System.IO.StreamReader sr = new
+                 System.IO.StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("GBK"));
 
 
                 List<URLString> listAll = new List<URLString>();
@@ -34,6 +38,7 @@ namespace URLTOOL
 
                     URLString obj = new URLString();
                     string valuer = sr.ReadLine();
+                    txtUrl.Text = txtUrl.Text + valuer;
                     if (valuer.Contains(yearStr))
                     {
                         int start = valuer.IndexOf(yearStr);
@@ -47,6 +52,9 @@ namespace URLTOOL
 
                         if (valuer.Contains("访问网址:"))
                         {
+                            string[] names = valuer.Split('名');
+                            string strName = names[1].Substring(1, 10);
+                            obj.strName = strName;
                             string[] urlall = valuer.Split('问');
                             if (urlall.Length > 1)
                             {
@@ -85,6 +93,9 @@ namespace URLTOOL
                     }
                    
                 }
+                listAll = (from ent in listAll
+                           orderby ent.strName, ent.Index
+                           select ent).ToList();
                 dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridView1.DataSource = listAll;
                 sr.Close();
@@ -96,6 +107,14 @@ namespace URLTOOL
             private int index;
             private string dtstr;
             private string urlstr;
+            private string strname;
+
+
+            public string strName
+            {
+                get { return strname; }
+                set { strname = value; }
+            }
             
             public int Index
             {
@@ -124,6 +143,8 @@ namespace URLTOOL
 
                 string urlstr=HttpUtility.UrlDecode(urlstring);
                 txtUrl.Text = urlstr;
+
+              
                 webBrowser1.Navigate(urlstring);
                 labelMsg.Text = "开始加载中......";
             }
@@ -133,6 +154,11 @@ namespace URLTOOL
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             labelMsg.Text = "已加载完成！";
+
+            if (webBrowser1.DocumentText.ToUpper().Contains("WEBPVP8"))
+            {
+                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe", txtUrl.Text);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
