@@ -24,7 +24,7 @@ using SMT.HRM.CustomModel.Request;
 using SMT.HRM.CustomModel.Response;
 using SMT.HRM.CustomModel.Common;
 using SMT.HRM.BLL.Common;
-using SMT.SaaS.Permission.CustomerModel;
+using SMT.HRM.CustomModel.Permission;
 
 namespace SMT.HRM.Services
 {

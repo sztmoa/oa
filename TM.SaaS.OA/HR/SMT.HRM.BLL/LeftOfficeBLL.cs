@@ -9,7 +9,7 @@ using System.Linq.Dynamic;
 using SMT.HRM.CustomModel;
 using SMT.HRM.IMServices.IMServiceWS;
 using SMT.SaaS.BLLCommonServices.PermissionWS;
-using SMT.SaaS.Permission.BLL;
+using SMT.HRM.BLL.Permission;
 namespace SMT.HRM.BLL
 {
     public class LeftOfficeBLL : BaseBll<T_HR_LEFTOFFICE>, IOperate

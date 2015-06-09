@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
 using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using System.Collections;
 using System.Linq.Dynamic;
 using System.Linq.Expressions;
 using SMT.Foundation.Log;
+using SMT.HRM.BLL;
+using SMT.HRM.CustomModel.Permission;
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
     public class provinceBll : BaseBll<T_SYS_PROVINCECITY>
     {

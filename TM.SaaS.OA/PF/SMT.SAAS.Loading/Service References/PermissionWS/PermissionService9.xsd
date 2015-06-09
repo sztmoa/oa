@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT_System_EFModel" />
-  <xs:import schemaLocation="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL.views" />
+  <xs:import schemaLocation="http://www.oa12.com/Services/System/PermissionService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT_System_EFModel" />
+  <xs:import schemaLocation="http://www.oa12.com/Services/System/PermissionService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL.views" />
   <xs:complexType name="ArrayOfV_Dictionary">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="V_Dictionary" nillable="true" type="tns:V_Dictionary" />

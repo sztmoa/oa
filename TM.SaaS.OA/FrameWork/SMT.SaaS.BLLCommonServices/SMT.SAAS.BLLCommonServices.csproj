@@ -100,6 +100,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CacheHelper.cs" />
     <Compile Include="CacheManager.cs" />
     <Compile Include="Dynamic.cs" />
     <Compile Include="EntityFormResource.Designer.cs">

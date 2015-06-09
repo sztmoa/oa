@@ -10,16 +10,16 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT_System_EFModel" />
-      <xsd:import schemaLocation="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
-      <xsd:import schemaLocation="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
-      <xsd:import schemaLocation="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL" />
-      <xsd:import schemaLocation="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.Services" />
-      <xsd:import schemaLocation="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL.views" />
-      <xsd:import schemaLocation="http://portal.smt-online.net/New/Services/System/PermissionService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.BLL" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/System/PermissionService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/System/PermissionService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/System/PermissionService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT_System_EFModel" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/System/PermissionService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/System/PermissionService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/System/PermissionService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/System/PermissionService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/System/PermissionService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.Services" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/System/PermissionService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL.views" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/System/PermissionService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.BLL" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="PermissionService_GetRoleEntityPermissionByRoleEntityID_InputMessage">
@@ -2937,9 +2937,9 @@
   </wsdl:binding>
   <wsdl:service name="PermissionService">
     <wsdl:port name="CustomBinding_PermissionService" binding="tns:CustomBinding_PermissionService">
-      <soap12:address location="http://portal.smt-online.net/New/Services/System/PermissionService.svc" />
+      <soap12:address location="http://www.oa12.com/Services/System/PermissionService.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://portal.smt-online.net/New/Services/System/PermissionService.svc</wsa10:Address>
+        <wsa10:Address>http://www.oa12.com/Services/System/PermissionService.svc</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

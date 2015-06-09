@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SMT.Foundation.Log;
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
 using TM_SaaS_OA_EFModel;
+using SMT.HRM.BLL;
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
     public class SysRoleMenuPermBLL : BaseBll<T_SYS_ROLEMENUPERMISSION>
     {
@@ -221,10 +222,10 @@ namespace SMT.SaaS.Permission.BLL
                     //    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_SYS_ROLE", "ROLEID", sourceEntity.T_SYS_ROLE.ROLEID);
                     //ent.T_SYS_PERMISSIONReference.EntityKey =
                     //    new System.Data.EntityKey("TM_SaaS_OA_EFModelContext.T_SYS_PERMISSION", "PERMISSIONID", sourceEntity.T_SYS_PERMISSION.PERMISSIONID);
-                    bool i = Update(ent);
+                    int i = Update(ent);
                     //int i = 1;
                     //dal.UpdateFromContext(ent);
-                    if (i )
+                    if (i>0 )
                     {
                         return true;
                     }

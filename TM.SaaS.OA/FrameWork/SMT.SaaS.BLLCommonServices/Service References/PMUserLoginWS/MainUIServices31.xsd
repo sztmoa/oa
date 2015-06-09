@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://portal.smt-online.net/New/Services/System/MainUIServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL" />
+  <xs:import schemaLocation="http://www.oa12.com/Services/System/MainUIServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL" />
   <xs:element name="UserLogin">
     <xs:complexType>
       <xs:sequence>

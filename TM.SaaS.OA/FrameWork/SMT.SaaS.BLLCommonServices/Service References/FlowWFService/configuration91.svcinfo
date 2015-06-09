@@ -127,10 +127,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WSHttpBinding_IService" contract="FlowWFService.IService" bindingType="wsHttpBinding" address="http://portal.smt-online.net/New/Services/SMTFlow/SMT.FlowWFService.Service.svc" bindingConfiguration="WSHttpBinding_IService">
+    <endpoint name="WSHttpBinding_IService" contract="FlowWFService.IService" bindingType="wsHttpBinding" address="http://www.oa12.com/Services/SMTFlow/SMT.FlowWFService.Service.svc" bindingConfiguration="WSHttpBinding_IService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://portal.smt-online.net/New/Services/SMTFlow/SMT.FlowWFService.Service.svc</serializedValue>
+          <serializedValue>http://www.oa12.com/Services/SMTFlow/SMT.FlowWFService.Service.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

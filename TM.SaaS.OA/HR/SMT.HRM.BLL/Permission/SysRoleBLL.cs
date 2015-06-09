@@ -2,20 +2,20 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Text;
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
 using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using System.Collections;
 using System.Linq.Dynamic;
 using SMT.Foundation.Log;
-using SMT.SaaS.Permission.CustomerModel;
+using SMT.HRM.CustomModel.Permission;
 using System.Configuration;
 using SMT.HRM.BLL;
 using SMT.HRM.CustomModel;
 
 
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
 
     #region 系统角色
@@ -332,7 +332,12 @@ namespace SMT.SaaS.Permission.BLL
         {
             try
             {
-               return base.Update(sourceEntity);
+                int i=base.Update(sourceEntity);
+                if(i>0)
+                {
+                    return true;
+                }
+                return false;
             }
             catch (Exception ex)
             {
@@ -352,8 +357,8 @@ namespace SMT.SaaS.Permission.BLL
         {
             try
             {
-                bool IsResult = base.Update(sourceEntity);
-                if (IsResult)
+                int IsResult = base.Update(sourceEntity);
+                if (IsResult>0)
                 {
                     SaveMyRecord(sourceEntity);
                     return true;
@@ -1038,12 +1043,12 @@ namespace SMT.SaaS.Permission.BLL
                     //    maxPerm = custPerm;
 
                     //看整个集团的
-                    if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.SaaS.Permission.BLL.Utility.PermissionRange.Organize))
+                    if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.BLL.Permission.Utility.PermissionRange.Organize))
                     {
                         return;
                     }
                     //看整个公司的
-                    if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.SaaS.Permission.BLL.Utility.PermissionRange.Company))
+                    if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.BLL.Permission.Utility.PermissionRange.Company))
                     {
                         if (!string.IsNullOrEmpty(filterString))
                             filterString += " AND ";
@@ -1067,7 +1072,7 @@ namespace SMT.SaaS.Permission.BLL
 
                     }
                     //看部门的
-                    if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.SaaS.Permission.BLL.Utility.PermissionRange.Department))
+                    if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.BLL.Permission.Utility.PermissionRange.Department))
                     {
                         if (!string.IsNullOrEmpty(filterString))
                             filterString += " AND ";
@@ -1091,7 +1096,7 @@ namespace SMT.SaaS.Permission.BLL
                         queryParas.Add(employeeID);
                     }
                     //看岗位的
-                    if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.SaaS.Permission.BLL.Utility.PermissionRange.Post))
+                    if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.BLL.Permission.Utility.PermissionRange.Post))
                     {
                         if (!string.IsNullOrEmpty(filterString))
                             filterString += " AND ";
@@ -1114,7 +1119,7 @@ namespace SMT.SaaS.Permission.BLL
                         queryParas.Add(employeeID);
                     }
                     //看员工
-                    if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.SaaS.Permission.BLL.Utility.PermissionRange.Employee) || maxPerm == -1)
+                    if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.BLL.Permission.Utility.PermissionRange.Employee) || maxPerm == -1)
                     {
                         if (!string.IsNullOrEmpty(filterString))
                             filterString += " AND ";

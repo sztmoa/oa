@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 
-namespace SMT.SaaS.Permission.CustomerModel
+namespace SMT.HRM.CustomModel.Permission
 {
     [DataContract]
     [Serializable]

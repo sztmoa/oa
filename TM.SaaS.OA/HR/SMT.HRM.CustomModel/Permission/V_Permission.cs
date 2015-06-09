@@ -5,7 +5,7 @@ using System.Text;
 
 using TM_SaaS_OA_EFModel;
 
-namespace SMT.SaaS.Permission.DAL
+namespace SMT.HRM.CustomModel.Permission
 {
     public class V_Permission
     {
@@ -17,5 +17,18 @@ namespace SMT.SaaS.Permission.DAL
         public T_SYS_USER SysUser { get; set; }
         public int Flag { get; set; }
 
+    }
+
+
+    public enum Permissions
+    {
+        Add,// 0 
+        Edit,// 1
+        Delete,//2
+        Browse,// 3
+        Export,
+        Report,
+        Audit,
+        Import,
     }
 }

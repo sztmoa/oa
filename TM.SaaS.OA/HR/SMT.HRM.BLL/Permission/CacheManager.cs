@@ -13,7 +13,7 @@ using System.Linq;
 using System.Collections;
 using System.Runtime.Caching;
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
     public class CacheManager
     {

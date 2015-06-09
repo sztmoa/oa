@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 
 using TM_SaaS_OA_EFModel;
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
+using SMT.HRM.BLL;
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
     public class FileUploadManagementBll : BaseBll<T_SYS_FILEUPLOAD>
     {

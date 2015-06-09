@@ -8,7 +8,7 @@ using System.Data.Objects;
 using System.Configuration.Assemblies;
 using System.Configuration;
 
-namespace SMT.SaaS.Permission.DAL
+namespace SMT.HRM.DAL.Permission
 {
     public class CommDAL<TEntity> : BaseDAL
     {

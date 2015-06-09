@@ -8,7 +8,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsdl:import namespace="" location="http://portal.smt-online.net/New/Services/System/MainUIServices.svc?wsdl=wsdl0" />
+  <wsdl:import namespace="" location="http://www.oa12.com/Services/System/MainUIServices.svc?wsdl=wsdl0" />
   <wsdl:types />
   <wsdl:binding name="CustomBinding_MainUIServices" type="MainUIServices">
     <wsp:PolicyReference URI="#CustomBinding_MainUIServices_policy" />
@@ -52,9 +52,9 @@
   </wsdl:binding>
   <wsdl:service name="MainUIServices">
     <wsdl:port name="CustomBinding_MainUIServices" binding="tns:CustomBinding_MainUIServices">
-      <soap12:address location="http://portal.smt-online.net/New/Services/System/MainUIServices.svc" />
+      <soap12:address location="http://www.oa12.com/Services/System/MainUIServices.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://portal.smt-online.net/New/Services/System/MainUIServices.svc</wsa10:Address>
+        <wsa10:Address>http://www.oa12.com/Services/System/MainUIServices.svc</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

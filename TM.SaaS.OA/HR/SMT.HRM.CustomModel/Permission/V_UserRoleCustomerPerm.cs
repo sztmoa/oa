@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using TM_SaaS_OA_EFModel;
 
-namespace SMT.SaaS.Permission.DAL
+namespace SMT.HRM.CustomModel.Permission
 {
     /// <summary>
     /// 用户对应的自定义权限，主要用于获取用户自定义权限

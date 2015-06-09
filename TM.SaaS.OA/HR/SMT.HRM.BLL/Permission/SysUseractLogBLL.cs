@@ -5,11 +5,12 @@ using System.Text;
 using SMT.Foundation.Core;
 using TM_SaaS_OA_EFModel;
 using System.Linq.Dynamic;
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
 using SMT.Foundation.Log;
+using SMT.HRM.BLL;
 
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
     public class SysUseractLogBLL : BaseBll<T_SYS_USERACTLOG>
     {

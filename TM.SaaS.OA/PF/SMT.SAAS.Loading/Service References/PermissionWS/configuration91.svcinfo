@@ -154,10 +154,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CustomBinding_PermissionService2" contract="PermissionWS.PermissionService" bindingType="customBinding" address="http://portal.smt-online.net/New/Services/System/PermissionService.svc" bindingConfiguration="CustomBinding_PermissionService2">
+    <endpoint name="CustomBinding_PermissionService2" contract="PermissionWS.PermissionService" bindingType="customBinding" address="http://www.oa12.com/Services/System/PermissionService.svc" bindingConfiguration="CustomBinding_PermissionService2">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://portal.smt-online.net/New/Services/System/PermissionService.svc</serializedValue>
+          <serializedValue>http://www.oa12.com/Services/System/PermissionService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

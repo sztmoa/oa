@@ -4,13 +4,14 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.Collections.Generic;
-using SMT.SaaS.Permission.BLL;
+using SMT.HRM.BLL.Permission;
 using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using System.Collections;
-using SMT.SaaS.Permission.DAL;
-using SMT.SaaS.Permission.DAL.views;
+using SMT.HRM.DAL.Permission;
+using SMT.HRM.CustomModel.Permission;
 using SMT.Foundation.Log;
+using SMT.HRM.BLL.Permission;
 
 namespace SMT.SaaS.Permission.Services
 {
@@ -41,31 +42,11 @@ namespace SMT.SaaS.Permission.Services
                 using (SysUserBLL bll = new SysUserBLL())
                 {
                     List<V_BllCommonUserPermission> plist;
-                    string keyString = "BllCommonUserMenuPermsstring" + menuCode + userID;
-                    string Companykey = "BllOwnerCompanyIDs" + menuCode + userID;
-                    string Departmentkey = "BllOwnerDepartmentIDs" + menuCode + userID;
-                    string Positionkey = "BllOwnerPositionIDs" + menuCode + userID;
-                    if (WCFCache.Current[keyString] == null)
-                    {
                         
                         IQueryable<V_BllCommonUserPermission> IQlist = bll.GetUserMenuPermsByUserPermisionBllCommon(menuCode, userID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs);
                         //if(IQlist != null)
                         plist = IQlist !=null ? IQlist.ToList() : null;
-                        WCFCache.Current.Insert(keyString, plist, DateTime.Now.AddMinutes(1));
-                        WCFCache.Current.Insert(Companykey, OwnerCompanyIDs, DateTime.Now.AddMinutes(1));
-                        WCFCache.Current.Insert(Departmentkey, OwnerDepartmentIDs, DateTime.Now.AddMinutes(1));
-                        WCFCache.Current.Insert(Positionkey, OwnerPositionIDs, DateTime.Now.AddMinutes(1));
-
-
-                    }
-                    else
-                    {
-                        plist = (List<V_BllCommonUserPermission>)WCFCache.Current[keyString];
-                        OwnerCompanyIDs = (string)WCFCache.Current[Companykey];
-                        OwnerDepartmentIDs = (string)WCFCache.Current[Departmentkey];
-                        OwnerPositionIDs = (string)WCFCache.Current[Positionkey];
-
-                    }
+                      
 
                     return plist == null ? null : plist;
                 }
@@ -93,41 +74,13 @@ namespace SMT.SaaS.Permission.Services
         [OperationContract]
         public List<V_BllCommonUserPermission> GetUserMenuPermsByUserPermissionBllCommonAddPermissionValue(string menuCode, string userID, ref string OwnerCompanyIDs, ref string OwnerDepartmentIDs, ref string OwnerPositionIDs,string StrPermissionValue)
         {
-
-            //SysUserBLL bll = new SysUserBLL();
-            //IQueryable<V_Permission> plist = bll.GetUserMenuPerms(menuCode, userID);
-            #region 使用缓存
             try
             {
                 using (SysUserBLL bll = new SysUserBLL())
                 {
                     List<V_BllCommonUserPermission> plist;
-                    string keyString = "BllCommonUserMenuPermsstring" + menuCode + StrPermissionValue + userID;
-                    string Companykey = "BllOwnerCompanyIDs" + menuCode + StrPermissionValue + userID;
-                    string Departmentkey = "BllOwnerDepartmentIDs" + menuCode + StrPermissionValue + userID;
-                    string Positionkey = "BllOwnerPositionIDs" + menuCode + StrPermissionValue + userID;
-                    if (WCFCache.Current[keyString] == null)
-                    {
-
-                        IQueryable<V_BllCommonUserPermission> IQlist = bll.GetUserMenuPermsByUserPermisionBllCommonAddPermissionValue(menuCode, userID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs, StrPermissionValue);
-                        //if(IQlist != null)
-                        plist = IQlist != null ? IQlist.ToList() : null;
-                        WCFCache.Current.Insert(keyString, plist, DateTime.Now.AddMinutes(1));
-                        WCFCache.Current.Insert(Companykey, OwnerCompanyIDs, DateTime.Now.AddMinutes(1));
-                        WCFCache.Current.Insert(Departmentkey, OwnerDepartmentIDs, DateTime.Now.AddMinutes(1));
-                        WCFCache.Current.Insert(Positionkey, OwnerPositionIDs, DateTime.Now.AddMinutes(1));
-
-
-                    }
-                    else
-                    {
-                        plist = (List<V_BllCommonUserPermission>)WCFCache.Current[keyString];
-                        OwnerCompanyIDs = (string)WCFCache.Current[Companykey];
-                        OwnerDepartmentIDs = (string)WCFCache.Current[Departmentkey];
-                        OwnerPositionIDs = (string)WCFCache.Current[Positionkey];
-
-                    }
-
+                    IQueryable<V_BllCommonUserPermission> IQlist = bll.GetUserMenuPermsByUserPermisionBllCommonAddPermissionValue(menuCode, userID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs, StrPermissionValue);
+                    plist = IQlist != null ? IQlist.ToList() : null;
                     return plist == null ? null : plist;
                 }
             }
@@ -136,7 +89,6 @@ namespace SMT.SaaS.Permission.Services
                 Tracer.Debug("GetUserMenuPermsByUserPermissionBllCommonAddPermissionValue出现错误：" + menuCode + System.DateTime.Now.ToString("d") + " " + ex.ToString());
                 return null;
             }
-            #endregion
         }
         
 

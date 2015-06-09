@@ -6,16 +6,16 @@ using System.ServiceModel.Activation;
 using System.Collections.Generic;
 using System.Text;
 
-using SMT.SaaS.Permission.BLL;
+using SMT.HRM.BLL.Permission;
 using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using System.Collections;
-using SMT.SaaS.Permission.DAL;
-using SMT.SaaS.Permission.DAL.views;
+using SMT.HRM.DAL.Permission;
+using SMT.HRM.CustomModel.Permission;
 using SMT.Foundation.Log;
 using InterActiveDirectory;
 //using SMT.SaaS.BLLCommonServices.FlowWFService;
-using SMT.SaaS.Permission.CustomerModel;
+using SMT.HRM.CustomModel.Permission;
 
 
 
@@ -2257,21 +2257,8 @@ namespace SMT.SaaS.Permission.Services
         {
             using (EntityMenuCustomPermBLL bll = new EntityMenuCustomPermBLL())
             {
-                #region 
                 IQueryable<T_SYS_ENTITYMENUCUSTOMPERM> perms;
-                string keyString = "GetCustomPostMenuPerms" + menuCode + postID;
-                if (WCFCache.Current[keyString] == null)
-                {
-
-                    perms = bll.GetCustomPostMenuPerms(menuCode, postID);
-                    WCFCache.Current.Insert(keyString, perms, DateTime.Now.AddMinutes(15));
-
-                }
-                else
-                {
-                    perms = (IQueryable<T_SYS_ENTITYMENUCUSTOMPERM>)WCFCache.Current[keyString];
-                }
-                #endregion
+                perms = bll.GetCustomPostMenuPerms(menuCode, postID);
                 return perms.Count() > 0 ? perms.ToList() : null;
             }
         }
@@ -2315,21 +2302,9 @@ namespace SMT.SaaS.Permission.Services
         {
             using (EntityMenuCustomPermBLL bll = new EntityMenuCustomPermBLL())
             {
-                #region 
                 List<T_SYS_ENTITYMENUCUSTOMPERM> perms;
-                string keyString = "GetCustomCompanyMenuPerms" + menuCode + companyID;
-                if (WCFCache.Current[keyString] == null)
-                {
-                    IQueryable<T_SYS_ENTITYMENUCUSTOMPERM> IQList = bll.GetCustomCompanyMenuPerms(menuCode, companyID);
-                    perms = IQList == null ? null : IQList.ToList();
-                    WCFCache.Current.Insert(keyString, perms, DateTime.Now.AddMinutes(15));
-
-                }
-                else
-                {
-                    perms = (List<T_SYS_ENTITYMENUCUSTOMPERM>)WCFCache.Current[keyString];
-                }
-                #endregion
+                IQueryable<T_SYS_ENTITYMENUCUSTOMPERM> IQList = bll.GetCustomCompanyMenuPerms(menuCode, companyID);
+                perms = IQList == null ? null : IQList.ToList();
                 return perms.Count() > 0 ? perms : null;
             }
         }

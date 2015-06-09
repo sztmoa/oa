@@ -1458,10 +1458,10 @@ namespace SMT.HRM.BLL
                 return "非法用户，不能录入考勤记录！";
             }
 
-            if (CheckUser(strUserId, strPwd) == false)
-            {
-                return "非法用户，不能录入考勤记录！";
-            }
+            //if (CheckUser(strUserId, strPwd) == false)
+            //{
+            //    return "非法用户，不能录入考勤记录！";
+            //}
 
             if (string.IsNullOrEmpty(strFingerPrintID))
             {

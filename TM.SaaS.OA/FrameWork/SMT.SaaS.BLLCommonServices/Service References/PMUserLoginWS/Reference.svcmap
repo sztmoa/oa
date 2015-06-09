@@ -18,15 +18,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://portal.smt-online.net/New/Services/System/MainUIServices.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://www.oa12.com/Services/System/MainUIServices.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MainUIServices1.disco" MetadataType="Disco" ID="d5791116-ff7f-4a5b-b673-cb0e6ed47a50" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/MainUIServices.svc?disco" />
-    <MetadataFile FileName="MainUIServices3.xsd" MetadataType="Schema" ID="d00ce064-c2e0-4d71-92d5-be5e2f0a680a" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/MainUIServices.svc?xsd=xsd2" />
-    <MetadataFile FileName="MainUIServices2.wsdl" MetadataType="Wsdl" ID="206b2f7b-0877-490a-8171-9300aa034a6b" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/MainUIServices.svc?wsdl" />
-    <MetadataFile FileName="MainUIServices21.wsdl" MetadataType="Wsdl" ID="a8ef779f-2bf8-4416-a375-582d57e8e86d" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/MainUIServices.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="MainUIServices31.xsd" MetadataType="Schema" ID="109d4684-f5a3-4526-88e2-15682e4821b4" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/MainUIServices.svc?xsd=xsd0" />
-    <MetadataFile FileName="MainUIServices32.xsd" MetadataType="Schema" ID="5213c254-1c8d-416b-a1f7-b4b9baa60c11" SourceId="1" SourceUrl="http://portal.smt-online.net/New/Services/System/MainUIServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="MainUIServices1.disco" MetadataType="Disco" ID="d5791116-ff7f-4a5b-b673-cb0e6ed47a50" SourceId="1" SourceUrl="http://www.oa12.com/Services/System/MainUIServices.svc?disco" />
+    <MetadataFile FileName="MainUIServices3.xsd" MetadataType="Schema" ID="d00ce064-c2e0-4d71-92d5-be5e2f0a680a" SourceId="1" SourceUrl="http://www.oa12.com/Services/System/MainUIServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="MainUIServices2.wsdl" MetadataType="Wsdl" ID="206b2f7b-0877-490a-8171-9300aa034a6b" SourceId="1" SourceUrl="http://www.oa12.com/Services/System/MainUIServices.svc?wsdl" />
+    <MetadataFile FileName="MainUIServices21.wsdl" MetadataType="Wsdl" ID="a8ef779f-2bf8-4416-a375-582d57e8e86d" SourceId="1" SourceUrl="http://www.oa12.com/Services/System/MainUIServices.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="MainUIServices31.xsd" MetadataType="Schema" ID="109d4684-f5a3-4526-88e2-15682e4821b4" SourceId="1" SourceUrl="http://www.oa12.com/Services/System/MainUIServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="MainUIServices32.xsd" MetadataType="Schema" ID="5213c254-1c8d-416b-a1f7-b4b9baa60c11" SourceId="1" SourceUrl="http://www.oa12.com/Services/System/MainUIServices.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

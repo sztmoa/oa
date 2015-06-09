@@ -164,51 +164,6 @@
     <Content Include="ClientBin\System.Xml.Linq.zip" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Controls.Data.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Controls.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Controls.GridView.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Controls.Input.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Controls.Navigation.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Controls.RibbonBar.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Controls.RichTextBoxUI.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Data.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Documents.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Documents.FormatProviders.Html.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Documents.FormatProviders.OpenXml.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Documents.FormatProviders.Pdf.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Documents.FormatProviders.Xaml.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Documents.Proofing.Dictionaries.En-US.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ClientBin\Telerik.Windows.Themes.Summer.zip" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="ClientBin\SMT.SAAS.ClientUtility.zip" />
   </ItemGroup>
   <ItemGroup>

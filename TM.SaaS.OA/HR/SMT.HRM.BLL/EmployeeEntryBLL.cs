@@ -20,7 +20,7 @@ using Enyim.Caching;
 using System.Data;
 using System.Data.Objects;
 using System.Collections.ObjectModel;
-using SMT.SaaS.Permission.BLL;
+using SMT.HRM.BLL.Permission;
 namespace SMT.HRM.BLL
 {
     public class EmployeeEntryBLL : BaseBll<T_HR_EMPLOYEEENTRY>, IOperate

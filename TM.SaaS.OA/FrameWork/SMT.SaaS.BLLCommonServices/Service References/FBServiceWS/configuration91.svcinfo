@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_FBService" contract="FBServiceWS.FBService" bindingType="basicHttpBinding" address="http://10.10.0.93:8080/New/Services/FB/FBService.svc" bindingConfiguration="BasicHttpBinding_FBService">
+    <endpoint name="BasicHttpBinding_FBService" contract="FBServiceWS.FBService" bindingType="basicHttpBinding" address="http://www.oa12.com/Services/FB/FBService.svc" bindingConfiguration="BasicHttpBinding_FBService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://10.10.0.93:8080/New/Services/FB/FBService.svc</serializedValue>
+          <serializedValue>http://www.oa12.com/Services/FB/FBService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

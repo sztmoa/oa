@@ -13,6 +13,7 @@ using SMT.HRM.BLL.Report;
 using SMT.HRM.IMServices.IMServiceWS;
 using System.Web.Caching;
 using SMT.HRM.IMServices.MailService;
+using SMT.HRM.BLL.Permission;
 namespace SMT.HRM.BLL
 {
     public class EmployeePostChangeBLL : BaseBll<T_HR_EMPLOYEEPOSTCHANGE>, IOperate
@@ -1081,7 +1082,8 @@ namespace SMT.HRM.BLL
                         MailServiceClient mailClient = new MailServiceClient();
                         List<MailParams> mailList = new List<MailParams>();
                         string mailStr = string.Empty;
-                        var sysManagers = PermClient.GetManagers(new string[] {ownerCompanyId});
+                        SysPermissionBLL bll = new SysPermissionBLL();
+                        var sysManagers = bll.GetManagers(new List<string>{ ownerCompanyId });
                         foreach (var sysManager in sysManagers)
                         {
                             MailParams mParams = new MailParams();

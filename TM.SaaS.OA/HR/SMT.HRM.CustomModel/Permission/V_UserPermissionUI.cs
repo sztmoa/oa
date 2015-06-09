@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TM_SaaS_OA_EFModel;
-using SMT.SaaS.Permission.DAL.views;
+using SMT.HRM.CustomModel.Permission;
 
-namespace SMT.SaaS.Permission.DAL
+namespace SMT.HRM.CustomModel.Permission
 {
     /// <summary>
     /// 用来处理各个项目的UI中的权限的获取

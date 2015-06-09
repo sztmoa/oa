@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SMT.SaaS.Permission.CustomerModel
+namespace SMT.HRM.CustomModel.Permission
 {
     
     public class V_RoleUserInfo

@@ -1392,7 +1392,7 @@ namespace SMT.HRM.BLL
                 decimal? stateValue = Convert.ToDecimal("1");
                 string checkState = string.Empty;
                 string checkStateDict
-                    = PermClient.GetDictionaryByCategoryArray(new string[] { "CHECKSTATE" }).Where(p => p.DICTIONARYVALUE == stateValue).FirstOrDefault().DICTIONARYNAME;
+                    = sysDicbll.GetSysDictionaryByCategoryArray(new string[] { "CHECKSTATE" }).Where(p => p.DICTIONARYVALUE == stateValue).FirstOrDefault().DICTIONARYNAME;
                 checkState = checkStateDict == null ? "" : checkStateDict;
 
                 SMT.SaaS.BLLCommonServices.PersonnelWS.V_EMPLOYEEPOST employee
@@ -1400,7 +1400,7 @@ namespace SMT.HRM.BLL
                 decimal? postlevelValue = Convert.ToDecimal(employee.EMPLOYEEPOSTS[0].POSTLEVEL.ToString());
                 string postLevelName = string.Empty;
                 string postLevelDict
-                     = PermClient.GetDictionaryByCategoryArray(new string[] { "CHECKSTATE" }).Where(p => p.DICTIONARYVALUE == stateValue).FirstOrDefault().DICTIONARYNAME;
+                     = sysDicbll.GetSysDictionaryByCategoryArray(new string[] { "CHECKSTATE" }).Where(p => p.DICTIONARYVALUE == stateValue).FirstOrDefault().DICTIONARYNAME;
                 postLevelName = postLevelDict == null ? "" : postLevelDict;
 
                 SMT.SaaS.MobileXml.MobileXml mx = new SMT.SaaS.MobileXml.MobileXml();

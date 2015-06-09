@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace SMT.SaaS.Permission.CustomerModel
+namespace SMT.HRM.CustomModel.Permission
 {
     [DataContract]
     public class UploadFileModel

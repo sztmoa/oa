@@ -115,10 +115,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CustomBinding_MainUIServices" contract="PMUserLoginWS.MainUIServices" bindingType="customBinding" address="http://portal.smt-online.net/New/Services/System/MainUIServices.svc" bindingConfiguration="CustomBinding_MainUIServices">
+    <endpoint name="CustomBinding_MainUIServices" contract="PMUserLoginWS.MainUIServices" bindingType="customBinding" address="http://www.oa12.com/Services/System/MainUIServices.svc" bindingConfiguration="CustomBinding_MainUIServices">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://portal.smt-online.net/New/Services/System/MainUIServices.svc</serializedValue>
+          <serializedValue>http://www.oa12.com/Services/System/MainUIServices.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

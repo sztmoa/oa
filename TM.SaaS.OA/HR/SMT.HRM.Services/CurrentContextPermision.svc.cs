@@ -3,11 +3,12 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
-using SMT.SaaS.Permission.BLL;
+using SMT.HRM.BLL.Permission;
 using System.Collections.Generic;
 using TM_SaaS_OA_EFModel;
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
 using SMT.HRM.Services;
+using SMT.HRM.CustomModel.Permission;
 
 namespace SMT.SaaS.Permission.Services
 {

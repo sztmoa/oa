@@ -10,12 +10,12 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT.FileUpLoad.Service" />
-      <xsd:import schemaLocation="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMT_FU_EFModel" />
-      <xsd:import schemaLocation="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
-      <xsd:import schemaLocation="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/FileUploadService/FileUpLoad.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/FileUploadService/FileUpLoad.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/FileUploadService/FileUpLoad.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT.FileUpLoad.Service" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/FileUploadService/FileUpLoad.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMT_FU_EFModel" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/FileUploadService/FileUpLoad.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+      <xsd:import schemaLocation="http://www.oa12.com/Services/FileUploadService/FileUpLoad.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IUploadService_GetCompanyFileSetInfo_InputMessage">
@@ -425,9 +425,9 @@
   </wsdl:binding>
   <wsdl:service name="UploadService">
     <wsdl:port name="CustomBinding_IUploadService" binding="tns:CustomBinding_IUploadService">
-      <soap12:address location="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc" />
+      <soap12:address location="http://www.oa12.com/Services/FileUploadService/FileUpLoad.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc</wsa10:Address>
+        <wsa10:Address>http://www.oa12.com/Services/FileUploadService/FileUpLoad.svc</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

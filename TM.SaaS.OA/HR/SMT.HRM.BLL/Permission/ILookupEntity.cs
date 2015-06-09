@@ -6,7 +6,7 @@ using System.Text;
 using System.Data.Objects.DataClasses;
 using System.Collections;
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
     public interface ILookupEntity
     {

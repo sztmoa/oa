@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
 using TM_SaaS_OA_EFModel;
-using SMT.SaaS.Permission.DAL.views;
+using SMT.HRM.CustomModel.Permission;
 using System.Linq.Dynamic;
 using SMT.Foundation.Log;
+using SMT.HRM.BLL;
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
 
 

@@ -384,8 +384,6 @@ namespace SMT.HRM.BLL
         {
             try
             {
-                using (dal = new CommDal<T_HR_VACATIONSET>())
-                {
                     var q = from ent in dal.GetObjects<T_HR_VACATIONSET>().Include("T_HR_OUTPLANDAYS")
                             where ent.VACATIONID == VACATIONID
                             select ent;
@@ -461,7 +459,6 @@ namespace SMT.HRM.BLL
                         }
                         Tracer.Debug("====================================新增假期设置工作日初始化整个公司考勤记录完毕");
                     }
-                }
             }
             catch (Exception ex)
             {

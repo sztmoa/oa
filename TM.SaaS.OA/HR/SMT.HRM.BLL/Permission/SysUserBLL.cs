@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
 using SMT.Foundation.Log;
 using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using System.Collections;
 using System.Linq.Dynamic;
 using System.Data.Objects;
-using SMT.SaaS.Permission.DAL.views;
+using SMT.HRM.CustomModel.Permission;
 using System.Threading;
 using SMT.SaaS.SmtOlineEn;
-using SMT.SaaS.Permission.CustomerModel;
+using SMT.HRM.CustomModel.Permission;
 using SMT.HRM.CustomModel;
 using SMT.HRM.BLL;
+using SMT.SaaS.BLLCommonServices;
 
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
     #region 系统用户
     public class SysUserBLL : BaseBll<T_SYS_USER>, ILookupEntity
@@ -1663,151 +1664,148 @@ namespace SMT.SaaS.Permission.BLL
         {
             try
             {
-                var emenu = from item in dal.GetObjects<T_SYS_ENTITYMENU>().Include("T_SYS_ENTITYMENU2")
-                            where item.MENUCODE == menuCode
-                            select item;
-                if (emenu.Count() == 0)
-                {
-                    return null;
-                }
-
-                var ents = from p in dal.GetObjects<T_SYS_ROLEMENUPERMISSION>().Include("T_SYS_ROLEENTITYMENU")//.Include("T_SYS_ROLEENTITYMENU.T_SYS_ENTITYMENU")
-                           join e in dal.GetObjects<T_SYS_ROLEENTITYMENU>() on p.T_SYS_ROLEENTITYMENU.ROLEENTITYMENUID equals e.ROLEENTITYMENUID
-                           join n in dal.GetObjects<T_SYS_PERMISSION>() on p.T_SYS_PERMISSION.PERMISSIONID equals n.PERMISSIONID
-                           join m in emenu on e.T_SYS_ENTITYMENU.ENTITYMENUID equals m.ENTITYMENUID
-                           join r in dal.GetObjects<T_SYS_ROLE>() on e.T_SYS_ROLE.ROLEID equals r.ROLEID
-                           join ur in dal.GetObjects<T_SYS_USERROLE>() on r.ROLEID equals ur.T_SYS_ROLE.ROLEID
-                           where ur.T_SYS_USER.SYSUSERID == userID && m.MENUCODE == menuCode
-                           select new V_BllCommonUserPermission
-                           {
-                               PermissionDataRange = n.PERMISSIONVALUE,
-                               RoleMenuPermissionValue = p.DATARANGE,
-                               OwnerCompanyID = r.OWNERCOMPANYID,
-                               OwnerPostID = ur.EMPLOYEEPOSTID,
-                               OwnerDepartmentID = r.OWNERDEPARTMENTID
-
-                           };
-                
-                SysUserRoleBLL UserRole = new SysUserRoleBLL();
-                List<T_SYS_USERROLE> ListUserRole = new List<T_SYS_USERROLE>();
-                IQueryable<T_SYS_USERROLE> IListUserRole = UserRole.GetSysUserRoleByUser(userID);
-                if (IListUserRole != null)
-                {
-                    ListUserRole = IListUserRole.ToList();
-                }
-                string StrUserRole = "";
-                if (ListUserRole.Count() > 0)
-                {
-                    //ListUserRole = UserRole.GetSysUserRoleByUser(userID).ToList();
-                    foreach (var User in ListUserRole)
+                  List<V_BllCommonUserPermission> plist;
+                    string keyString = "BllCommonUserMenuPermsstring" + menuCode + userID;
+                    string Companykey = "BllOwnerCompanyIDs" + menuCode + userID;
+                    string Departmentkey = "BllOwnerDepartmentIDs" + menuCode + userID;
+                    string Positionkey = "BllOwnerPositionIDs" + menuCode + userID;
+                    if (WCFCache.Current[keyString] != null)
                     {
-                        if (User.T_SYS_ROLE != null)
-                            StrUserRole += User.T_SYS_ROLE.ROLEID.ToString() + ",";
+                        plist = (List<V_BllCommonUserPermission>)WCFCache.Current[keyString];
+                        OwnerCompanyIDs = (string)WCFCache.Current[Companykey];
+                        OwnerDepartmentIDs = (string)WCFCache.Current[Departmentkey];
+                        OwnerPositionIDs = (string)WCFCache.Current[Positionkey];
+                        return plist.AsQueryable();
                     }
-                    if (!string.IsNullOrEmpty(StrUserRole))
+                    else
                     {
-                        StrUserRole = StrUserRole.Substring(0, StrUserRole.Length - 1);
 
-                        //var CustomerEnts = from ent in dal.GetObjects<T_SYS_ENTITYMENUCUSTOMPERM>().Include("T_SYS_PERMISSION")
-                        //                    .Include("T_SYS_ROLE").Include("T_SYS_ENTITYMENU")
-                        //                 //  join e in dal.GetObjects<T_SYS_ROLE>() on ent.T_SYS_ROLE.ROLEID equals e.ROLEID
-                        //                   join m in dal.GetObjects<T_SYS_ENTITYMENU>() on ent.T_SYS_ENTITYMENU.ENTITYMENUID equals m.ENTITYMENUID
-                        //                   where m.MENUCODE == menuCode && ent.T_SYS_PERMISSION.PERMISSIONVALUE == "3" //默认是查看的自定义权限
-                        //                   select new
-                        //                   {
-                        //                       ENTITYMENUCUSTOMPERM = ent,
-                        //                       ROLE = ent.T_SYS_ROLE
-                        //                   };
-                        var Customer = from ent in dal.GetObjects<T_SYS_ENTITYMENUCUSTOMPERM>().Include("T_SYS_PERMISSION")
-                                          .Include("T_SYS_ROLE").Include("T_SYS_ENTITYMENU")
-                                       join m in dal.GetObjects<T_SYS_ENTITYMENU>() on ent.T_SYS_ENTITYMENU.ENTITYMENUID equals m.ENTITYMENUID
-                                       join ur in dal.GetObjects<T_SYS_USERROLE>() on ent.T_SYS_ROLE.ROLEID equals ur.T_SYS_ROLE.ROLEID
-                                       join USER in dal.GetObjects<T_SYS_USER>() on ur.T_SYS_USER.SYSUSERID equals USER.SYSUSERID
-                                       where m.MENUCODE == menuCode && ent.T_SYS_PERMISSION.PERMISSIONVALUE == "3"
-                                       && USER.SYSUSERID == userID//默认是查看的自定义权限
-                                       select new V_UserRoleCustomerPerm
-                                       {
-                                           ENTITYMENUCUSTOMPERM = ent,
-                                           ROLE = ent.T_SYS_ROLE
-                                       };
 
-                        //ObjectQuery<T_SYS_USERROLE> aa = dal.GetObjects<T_SYS_USERROLE>();
-                        List<T_SYS_ENTITYMENUCUSTOMPERM> CustomerEnts = new List<T_SYS_ENTITYMENUCUSTOMPERM>();
-                        if (Customer.Count() > 0)
+
+                        var emenu = from item in dal.GetObjects<T_SYS_ENTITYMENU>().Include("T_SYS_ENTITYMENU2")
+                                    where item.MENUCODE == menuCode
+                                    select item;
+                        if (emenu.Count() == 0)
                         {
-                            List<V_UserRoleCustomerPerm> ListPerm = new List<V_UserRoleCustomerPerm>();
-                            ListPerm = Customer.ToList();
-                            
-                            //去掉Contains函数的使用
-
-                            for (int i = 0; i < ListPerm.Count(); i++)
-                            {
-                                if (StrUserRole.IndexOf(ListPerm[i].ROLE.ROLEID) > -1)
-                                {
-                                    CustomerEnts.Add(ListPerm[i].ENTITYMENUCUSTOMPERM);
-                                }
-                            }
-                               
+                            return null;
                         }
-                            
 
-                        if (CustomerEnts.Count() > 0)
+                        var ents = from p in dal.GetObjects<T_SYS_ROLEMENUPERMISSION>().Include("T_SYS_ROLEENTITYMENU")//.Include("T_SYS_ROLEENTITYMENU.T_SYS_ENTITYMENU")
+                                   join e in dal.GetObjects<T_SYS_ROLEENTITYMENU>() on p.T_SYS_ROLEENTITYMENU.ROLEENTITYMENUID equals e.ROLEENTITYMENUID
+                                   join n in dal.GetObjects<T_SYS_PERMISSION>() on p.T_SYS_PERMISSION.PERMISSIONID equals n.PERMISSIONID
+                                   join m in emenu on e.T_SYS_ENTITYMENU.ENTITYMENUID equals m.ENTITYMENUID
+                                   join r in dal.GetObjects<T_SYS_ROLE>() on e.T_SYS_ROLE.ROLEID equals r.ROLEID
+                                   join ur in dal.GetObjects<T_SYS_USERROLE>() on r.ROLEID equals ur.T_SYS_ROLE.ROLEID
+                                   where ur.T_SYS_USER.SYSUSERID == userID && m.MENUCODE == menuCode
+                                   select new V_BllCommonUserPermission
+                                   {
+                                       PermissionDataRange = n.PERMISSIONVALUE,
+                                       RoleMenuPermissionValue = p.DATARANGE,
+                                       OwnerCompanyID = r.OWNERCOMPANYID,
+                                       OwnerPostID = ur.EMPLOYEEPOSTID,
+                                       OwnerDepartmentID = r.OWNERDEPARTMENTID
+
+                                   };
+
+                        SysUserRoleBLL UserRole = new SysUserRoleBLL();
+                        List<T_SYS_USERROLE> ListUserRole = new List<T_SYS_USERROLE>();
+                        IQueryable<T_SYS_USERROLE> IListUserRole = UserRole.GetSysUserRoleByUser(userID);
+                        if (IListUserRole != null)
                         {
-                            foreach (var ent in CustomerEnts)
+                            ListUserRole = IListUserRole.ToList();
+                        }
+                        string StrUserRole = "";
+                        if (ListUserRole.Count() > 0)
+                        {
+                            //ListUserRole = UserRole.GetSysUserRoleByUser(userID).ToList();
+                            foreach (var User in ListUserRole)
                             {
-                                if (ent == null)
-                                    continue;
-                                if (!(string.IsNullOrEmpty(ent.COMPANYID)))
+                                if (User.T_SYS_ROLE != null)
+                                    StrUserRole += User.T_SYS_ROLE.ROLEID.ToString() + ",";
+                            }
+                            if (!string.IsNullOrEmpty(StrUserRole))
+                            {
+                                StrUserRole = StrUserRole.Substring(0, StrUserRole.Length - 1);
+
+                                var Customer = from ent in dal.GetObjects<T_SYS_ENTITYMENUCUSTOMPERM>().Include("T_SYS_PERMISSION")
+                                                  .Include("T_SYS_ROLE").Include("T_SYS_ENTITYMENU")
+                                               join m in dal.GetObjects<T_SYS_ENTITYMENU>() on ent.T_SYS_ENTITYMENU.ENTITYMENUID equals m.ENTITYMENUID
+                                               join ur in dal.GetObjects<T_SYS_USERROLE>() on ent.T_SYS_ROLE.ROLEID equals ur.T_SYS_ROLE.ROLEID
+                                               join USER in dal.GetObjects<T_SYS_USER>() on ur.T_SYS_USER.SYSUSERID equals USER.SYSUSERID
+                                               where m.MENUCODE == menuCode && ent.T_SYS_PERMISSION.PERMISSIONVALUE == "3"
+                                               && USER.SYSUSERID == userID//默认是查看的自定义权限
+                                               select new V_UserRoleCustomerPerm
+                                               {
+                                                   ENTITYMENUCUSTOMPERM = ent,
+                                                   ROLE = ent.T_SYS_ROLE
+                                               };
+
+                                //ObjectQuery<T_SYS_USERROLE> aa = dal.GetObjects<T_SYS_USERROLE>();
+                                List<T_SYS_ENTITYMENUCUSTOMPERM> CustomerEnts = new List<T_SYS_ENTITYMENUCUSTOMPERM>();
+                                if (Customer.Count() > 0)
                                 {
-                                    if (!(OwnerCompanyIDs.IndexOf(ent.COMPANYID) > -1))
-                                        OwnerCompanyIDs += ent.COMPANYID.ToString() + ",";
-                                }
-                                else if (!(string.IsNullOrEmpty(ent.DEPARTMENTID)))
-                                {
-                                    if (!(OwnerDepartmentIDs.IndexOf(ent.DEPARTMENTID) > -1))
-                                        OwnerDepartmentIDs += ent.DEPARTMENTID.ToString() + ",";
-                                }
-                                else
-                                {
-                                    if (!(string.IsNullOrEmpty(ent.POSTID)))
+                                    List<V_UserRoleCustomerPerm> ListPerm = new List<V_UserRoleCustomerPerm>();
+                                    ListPerm = Customer.ToList();
+
+                                    //去掉Contains函数的使用
+
+                                    for (int i = 0; i < ListPerm.Count(); i++)
                                     {
-                                        if (!(OwnerPositionIDs.IndexOf(ent.POSTID) > -1))
-                                            OwnerPositionIDs += ent.POSTID.ToString() + ",";
+                                        if (StrUserRole.IndexOf(ListPerm[i].ROLE.ROLEID) > -1)
+                                        {
+                                            CustomerEnts.Add(ListPerm[i].ENTITYMENUCUSTOMPERM);
+                                        }
                                     }
-                                }
-                            }
-                            ///将相应的字符串截取掉最后的,
-                            if (!(string.IsNullOrEmpty(OwnerCompanyIDs)))
-                                OwnerCompanyIDs = OwnerCompanyIDs.Substring(0, OwnerCompanyIDs.Length - 1);
-                            if (!(string.IsNullOrEmpty(OwnerDepartmentIDs)))
-                                OwnerDepartmentIDs = OwnerDepartmentIDs.Substring(0, OwnerDepartmentIDs.Length - 1);
-                            if (!(string.IsNullOrEmpty(OwnerPositionIDs)))
-                                OwnerPositionIDs = OwnerPositionIDs.Substring(0, OwnerPositionIDs.Length - 1);
 
+                                }
+
+
+                                if (CustomerEnts.Count() > 0)
+                                {
+                                    foreach (var ent in CustomerEnts)
+                                    {
+                                        if (ent == null)
+                                            continue;
+                                        if (!(string.IsNullOrEmpty(ent.COMPANYID)))
+                                        {
+                                            if (!(OwnerCompanyIDs.IndexOf(ent.COMPANYID) > -1))
+                                                OwnerCompanyIDs += ent.COMPANYID.ToString() + ",";
+                                        }
+                                        else if (!(string.IsNullOrEmpty(ent.DEPARTMENTID)))
+                                        {
+                                            if (!(OwnerDepartmentIDs.IndexOf(ent.DEPARTMENTID) > -1))
+                                                OwnerDepartmentIDs += ent.DEPARTMENTID.ToString() + ",";
+                                        }
+                                        else
+                                        {
+                                            if (!(string.IsNullOrEmpty(ent.POSTID)))
+                                            {
+                                                if (!(OwnerPositionIDs.IndexOf(ent.POSTID) > -1))
+                                                    OwnerPositionIDs += ent.POSTID.ToString() + ",";
+                                            }
+                                        }
+                                    }
+                                    ///将相应的字符串截取掉最后的,
+                                    if (!(string.IsNullOrEmpty(OwnerCompanyIDs)))
+                                        OwnerCompanyIDs = OwnerCompanyIDs.Substring(0, OwnerCompanyIDs.Length - 1);
+                                    if (!(string.IsNullOrEmpty(OwnerDepartmentIDs)))
+                                        OwnerDepartmentIDs = OwnerDepartmentIDs.Substring(0, OwnerDepartmentIDs.Length - 1);
+                                    if (!(string.IsNullOrEmpty(OwnerPositionIDs)))
+                                        OwnerPositionIDs = OwnerPositionIDs.Substring(0, OwnerPositionIDs.Length - 1);
+
+                                }
+
+                            }
                         }
 
+                        plist = ents.ToList();
+                        WCFCache.Current.Insert(keyString, plist, DateTime.Now.AddMinutes(1));
+                        WCFCache.Current.Insert(Companykey, OwnerCompanyIDs, DateTime.Now.AddMinutes(1));
+                        WCFCache.Current.Insert(Departmentkey, OwnerDepartmentIDs, DateTime.Now.AddMinutes(1));
+                        WCFCache.Current.Insert(Positionkey, OwnerPositionIDs, DateTime.Now.AddMinutes(1));
+
+                        return ents;
                     }
-                }
-
-                //var CustomerEnts = from ent in DataContext.T_SYS_ENTITYMENUCUSTOMPERM.Include("T_SYS_ROLE")
-                //                   join e in DataContext.T_SYS_ROLE on ent.T_SYS_ROLE.ROLEID equals e.ROLEID
-                //                   join m in DataContext.T_SYS_ENTITYMENU on ent.T_SYS_ENTITYMENU.ENTITYMENUID equals m.ENTITYMENUID
-                //                   join ur in DataContext.T_SYS_USERROLE on e.ROLEID equals ur.T_SYS_ROLE.ROLEID
-                //                   join k in DataContext.T_SYS_USER on ur.T_SYS_USER.SYSUSERID equals k.SYSUSERID 
-                //                   where m.MENUCODE == menuCode 
-                //                   select ent;
-                //var CustomerEnts1 = from ent in dal.GetObjects<T_SYS_ENTITYMENUCUSTOMPERM>().Include("T_SYS_ROLE")
-                //                    join e in dal.GetObjects<T_SYS_ROLE>() on ent.T_SYS_ROLE.ROLEID equals e.ROLEID
-                //                    join m in dal.GetObjects<T_SYS_ENTITYMENU>() on ent.T_SYS_ENTITYMENU.ENTITYMENUID equals m.ENTITYMENUID
-                //                    join ur in dal.GetObjects<T_SYS_USERROLE>() on e.ROLEID equals ur.T_SYS_ROLE.ROLEID
-                //                    join k in dal.GetObjects<T_SYS_USER>() on ur.T_SYS_USER.SYSUSERID equals k.SYSUSERID
-                //                    where k.SYSUSERID == userID
-                //                    select ent;
-
-
-                List<V_BllCommonUserPermission> rl = ents.ToList();
-
-                return ents;
             }
             catch (Exception ex)
             {
@@ -1828,114 +1826,141 @@ namespace SMT.SaaS.Permission.BLL
         /// <param name="OwnerDepartmentIDs"></param>
         /// <param name="OwnerPositionIDs"></param>
         /// <returns></returns>
-        public IQueryable<V_BllCommonUserPermission> GetUserMenuPermsByUserPermisionBllCommonAddPermissionValue(string menuCode, string userID, ref string OwnerCompanyIDs, ref string OwnerDepartmentIDs, ref string OwnerPositionIDs, string PermissionValue)
+        public IQueryable<V_BllCommonUserPermission> GetUserMenuPermsByUserPermisionBllCommonAddPermissionValue(string menuCode, string userID, ref string OwnerCompanyIDs, ref string OwnerDepartmentIDs, ref string OwnerPositionIDs, string StrPermissionValue)
         {
             try
             {
-                var emenu = from item in dal.GetObjects<T_SYS_ENTITYMENU>()
-                            where item.MENUCODE == menuCode
-                            select item;
-                if (emenu.Count() == 0)
+                List<V_BllCommonUserPermission> plist;
+                string keyString = "BllCommonUserMenuPermsstring" + menuCode + StrPermissionValue + userID;
+                string Companykey = "BllOwnerCompanyIDs" + menuCode + StrPermissionValue + userID;
+                string Departmentkey = "BllOwnerDepartmentIDs" + menuCode + StrPermissionValue + userID;
+                string Positionkey = "BllOwnerPositionIDs" + menuCode + StrPermissionValue + userID;
+                if (WCFCache.Current[keyString] != null)
                 {
-                    return null;
-                }
-                if (string.IsNullOrEmpty(PermissionValue))
-                {
-                    return null;
-                }
-                var ents = from p in dal.GetObjects<T_SYS_ROLEMENUPERMISSION>().Include("T_SYS_ROLEENTITYMENU")//.Include("T_SYS_ROLEENTITYMENU.T_SYS_ENTITYMENU")
-                           join e in dal.GetObjects<T_SYS_ROLEENTITYMENU>() on p.T_SYS_ROLEENTITYMENU.ROLEENTITYMENUID equals e.ROLEENTITYMENUID
-                           join n in dal.GetObjects<T_SYS_PERMISSION>() on p.T_SYS_PERMISSION.PERMISSIONID equals n.PERMISSIONID
-                           join m in emenu on e.T_SYS_ENTITYMENU.ENTITYMENUID equals m.ENTITYMENUID
-                           join r in dal.GetObjects<T_SYS_ROLE>() on e.T_SYS_ROLE.ROLEID equals r.ROLEID
-                           join ur in dal.GetObjects<T_SYS_USERROLE>() on r.ROLEID equals ur.T_SYS_ROLE.ROLEID
-                           where ur.T_SYS_USER.SYSUSERID == userID && m.MENUCODE == menuCode
-                           select new V_BllCommonUserPermission
-                           {
-                               PermissionDataRange = n.PERMISSIONVALUE,
-                               RoleMenuPermissionValue = p.DATARANGE,
-                               OwnerCompanyID = r.OWNERCOMPANYID,
-                               OwnerDepartmentID = r.OWNERDEPARTMENTID,
-                               OwnerPostID = r.OWNERPOSTID
 
-                           };
-                SysUserRoleBLL UserRole = new SysUserRoleBLL();
-                List<T_SYS_USERROLE> ListUserRole = new List<T_SYS_USERROLE>();
-                IQueryable<T_SYS_USERROLE> IListUserRole = UserRole.GetSysUserRoleByUser(userID);
-                if(IListUserRole != null)
-                {
-                    ListUserRole = IListUserRole.ToList();
+                    plist = (List<V_BllCommonUserPermission>)WCFCache.Current[keyString];
+                    OwnerCompanyIDs = (string)WCFCache.Current[Companykey];
+                    OwnerDepartmentIDs = (string)WCFCache.Current[Departmentkey];
+                    OwnerPositionIDs = (string)WCFCache.Current[Positionkey];
+
+                    return plist.AsQueryable();
+
                 }
-                string StrUserRole = "";
-                if (ListUserRole.Count() > 0)
+                else
                 {
-                    
-                    foreach (var User in ListUserRole)
+
+
+
+                    var emenu = from item in dal.GetObjects<T_SYS_ENTITYMENU>()
+                                where item.MENUCODE == menuCode
+                                select item;
+                    if (emenu.Count() == 0)
                     {
-                        if (User.T_SYS_ROLE != null)
-                            StrUserRole += User.T_SYS_ROLE.ROLEID.ToString() + ",";
+                        return null;
                     }
-                    if (!string.IsNullOrEmpty(StrUserRole))
+                    if (string.IsNullOrEmpty(StrPermissionValue))
                     {
-                        StrUserRole = StrUserRole.Substring(0, StrUserRole.Length - 1);
+                        return null;
+                    }
+                    var ents = from p in dal.GetObjects<T_SYS_ROLEMENUPERMISSION>().Include("T_SYS_ROLEENTITYMENU")//.Include("T_SYS_ROLEENTITYMENU.T_SYS_ENTITYMENU")
+                               join e in dal.GetObjects<T_SYS_ROLEENTITYMENU>() on p.T_SYS_ROLEENTITYMENU.ROLEENTITYMENUID equals e.ROLEENTITYMENUID
+                               join n in dal.GetObjects<T_SYS_PERMISSION>() on p.T_SYS_PERMISSION.PERMISSIONID equals n.PERMISSIONID
+                               join m in emenu on e.T_SYS_ENTITYMENU.ENTITYMENUID equals m.ENTITYMENUID
+                               join r in dal.GetObjects<T_SYS_ROLE>() on e.T_SYS_ROLE.ROLEID equals r.ROLEID
+                               join ur in dal.GetObjects<T_SYS_USERROLE>() on r.ROLEID equals ur.T_SYS_ROLE.ROLEID
+                               where ur.T_SYS_USER.SYSUSERID == userID && m.MENUCODE == menuCode
+                               select new V_BllCommonUserPermission
+                               {
+                                   PermissionDataRange = n.PERMISSIONVALUE,
+                                   RoleMenuPermissionValue = p.DATARANGE,
+                                   OwnerCompanyID = r.OWNERCOMPANYID,
+                                   OwnerDepartmentID = r.OWNERDEPARTMENTID,
+                                   OwnerPostID = r.OWNERPOSTID
 
-                        var CustomerEnts = from ent in dal.GetObjects<T_SYS_ENTITYMENUCUSTOMPERM>().Include("T_SYS_PERMISSION")
-                                            .Include("T_SYS_ROLE").Include("T_SYS_ENTITYMENU")
-                                           join e in dal.GetObjects<T_SYS_ROLE>() on ent.T_SYS_ROLE.ROLEID equals e.ROLEID
-                                           join m in dal.GetObjects<T_SYS_ENTITYMENU>() on ent.T_SYS_ENTITYMENU.ENTITYMENUID equals m.ENTITYMENUID
-                                           where m.MENUCODE == menuCode && ent.T_SYS_PERMISSION.PERMISSIONVALUE == PermissionValue
-                                           select ent;
+                               };
+                    SysUserRoleBLL UserRole = new SysUserRoleBLL();
+                    List<T_SYS_USERROLE> ListUserRole = new List<T_SYS_USERROLE>();
+                    IQueryable<T_SYS_USERROLE> IListUserRole = UserRole.GetSysUserRoleByUser(userID);
+                    if (IListUserRole != null)
+                    {
+                        ListUserRole = IListUserRole.ToList();
+                    }
+                    string StrUserRole = "";
+                    if (ListUserRole.Count() > 0)
+                    {
 
-                        //ObjectQuery<T_SYS_USERROLE> aa = dal.GetObjects<T_SYS_USERROLE>();
-
-                        if (CustomerEnts.Count() > 0)
-                            //CustomerEnts = CustomerEnts.Where(p => StrUserRole.Contains(p.T_SYS_ROLE.ROLEID));
-                            CustomerEnts = CustomerEnts.Where(p => p.T_SYS_ROLE.ROLEID.Contains(StrUserRole));
-
-
-                        if (CustomerEnts.Count() > 0)
+                        foreach (var User in ListUserRole)
                         {
-                            foreach (var ent in CustomerEnts)
+                            if (User.T_SYS_ROLE != null)
+                                StrUserRole += User.T_SYS_ROLE.ROLEID.ToString() + ",";
+                        }
+                        if (!string.IsNullOrEmpty(StrUserRole))
+                        {
+                            StrUserRole = StrUserRole.Substring(0, StrUserRole.Length - 1);
+
+                            var CustomerEnts = from ent in dal.GetObjects<T_SYS_ENTITYMENUCUSTOMPERM>().Include("T_SYS_PERMISSION")
+                                                .Include("T_SYS_ROLE").Include("T_SYS_ENTITYMENU")
+                                               join e in dal.GetObjects<T_SYS_ROLE>() on ent.T_SYS_ROLE.ROLEID equals e.ROLEID
+                                               join m in dal.GetObjects<T_SYS_ENTITYMENU>() on ent.T_SYS_ENTITYMENU.ENTITYMENUID equals m.ENTITYMENUID
+                                               where m.MENUCODE == menuCode && ent.T_SYS_PERMISSION.PERMISSIONVALUE == StrPermissionValue
+                                               select ent;
+
+                            //ObjectQuery<T_SYS_USERROLE> aa = dal.GetObjects<T_SYS_USERROLE>();
+
+                            if (CustomerEnts.Count() > 0)
+                                //CustomerEnts = CustomerEnts.Where(p => StrUserRole.Contains(p.T_SYS_ROLE.ROLEID));
+                                CustomerEnts = CustomerEnts.Where(p => p.T_SYS_ROLE.ROLEID.Contains(StrUserRole));
+
+
+                            if (CustomerEnts.Count() > 0)
                             {
-                                if (ent == null)
-                                    continue;
-                                if (!(string.IsNullOrEmpty(ent.COMPANYID)))
+                                foreach (var ent in CustomerEnts)
                                 {
-                                    if (!(OwnerCompanyIDs.IndexOf(ent.COMPANYID) > -1))
-                                        OwnerCompanyIDs += ent.COMPANYID.ToString() + ",";
-                                }
-                                else if (!(string.IsNullOrEmpty(ent.DEPARTMENTID)))
-                                {
-                                    if (!(OwnerDepartmentIDs.IndexOf(ent.DEPARTMENTID) > -1))
-                                        OwnerDepartmentIDs += ent.DEPARTMENTID.ToString() + ",";
-                                }
-                                else
-                                {
-                                    if (!(string.IsNullOrEmpty(ent.POSTID)))
+                                    if (ent == null)
+                                        continue;
+                                    if (!(string.IsNullOrEmpty(ent.COMPANYID)))
                                     {
-                                        if (!(OwnerPositionIDs.IndexOf(ent.POSTID) > -1))
-                                            OwnerPositionIDs += ent.POSTID.ToString() + ",";
+                                        if (!(OwnerCompanyIDs.IndexOf(ent.COMPANYID) > -1))
+                                            OwnerCompanyIDs += ent.COMPANYID.ToString() + ",";
+                                    }
+                                    else if (!(string.IsNullOrEmpty(ent.DEPARTMENTID)))
+                                    {
+                                        if (!(OwnerDepartmentIDs.IndexOf(ent.DEPARTMENTID) > -1))
+                                            OwnerDepartmentIDs += ent.DEPARTMENTID.ToString() + ",";
+                                    }
+                                    else
+                                    {
+                                        if (!(string.IsNullOrEmpty(ent.POSTID)))
+                                        {
+                                            if (!(OwnerPositionIDs.IndexOf(ent.POSTID) > -1))
+                                                OwnerPositionIDs += ent.POSTID.ToString() + ",";
+                                        }
                                     }
                                 }
+                                ///将相应的字符串截取掉最后的,
+                                if (!(string.IsNullOrEmpty(OwnerCompanyIDs)))
+                                    OwnerCompanyIDs = OwnerCompanyIDs.Substring(0, OwnerCompanyIDs.Length - 1);
+                                if (!(string.IsNullOrEmpty(OwnerDepartmentIDs)))
+                                    OwnerDepartmentIDs = OwnerDepartmentIDs.Substring(0, OwnerDepartmentIDs.Length - 1);
+                                if (!(string.IsNullOrEmpty(OwnerPositionIDs)))
+                                    OwnerPositionIDs = OwnerPositionIDs.Substring(0, OwnerPositionIDs.Length - 1);
+
                             }
-                            ///将相应的字符串截取掉最后的,
-                            if (!(string.IsNullOrEmpty(OwnerCompanyIDs)))
-                                OwnerCompanyIDs = OwnerCompanyIDs.Substring(0, OwnerCompanyIDs.Length - 1);
-                            if (!(string.IsNullOrEmpty(OwnerDepartmentIDs)))
-                                OwnerDepartmentIDs = OwnerDepartmentIDs.Substring(0, OwnerDepartmentIDs.Length - 1);
-                            if (!(string.IsNullOrEmpty(OwnerPositionIDs)))
-                                OwnerPositionIDs = OwnerPositionIDs.Substring(0, OwnerPositionIDs.Length - 1);
 
                         }
-
                     }
+
+
+
+                    plist = ents.ToList();
+                   
+                    WCFCache.Current.Insert(keyString, plist, DateTime.Now.AddMinutes(1));
+                    WCFCache.Current.Insert(Companykey, OwnerCompanyIDs, DateTime.Now.AddMinutes(1));
+                    WCFCache.Current.Insert(Departmentkey, OwnerDepartmentIDs, DateTime.Now.AddMinutes(1));
+                    WCFCache.Current.Insert(Positionkey, OwnerPositionIDs, DateTime.Now.AddMinutes(1));
+
+                    return ents;
                 }
-
-
-
-                List<V_BllCommonUserPermission> rl = ents.ToList();
-
-                return ents;
             }
             catch (Exception ex)
             {
@@ -2129,7 +2154,7 @@ namespace SMT.SaaS.Permission.BLL
         /// <param name="UserName"></param>
         /// <param name="Pwd"></param>
         /// <returns></returns>
-        public SMT.SaaS.Permission.DAL.V_UserLogin AddUserLoginHis(string UserName, string Pwd, string Ip)
+        public SMT.HRM.CustomModel.Permission.V_UserLogin AddUserLoginHis(string UserName, string Pwd, string Ip)
         {
             try
             {
@@ -2176,7 +2201,7 @@ namespace SMT.SaaS.Permission.BLL
                     if (UserLoginBll.AddUserLoginInfo(loginrecord))
                     {
                         //string Ismanage = ents.FirstOrDefault().ISMANGER.ToString();
-                        var users = new SMT.SaaS.Permission.DAL.V_UserLogin();
+                        var users = new SMT.HRM.CustomModel.Permission.V_UserLogin();
                         return users;
                     }
                     else
@@ -2204,7 +2229,7 @@ namespace SMT.SaaS.Permission.BLL
         /// <param name="UserName"></param>
         /// <param name="Pwd"></param>
         /// <returns>0：登录失败，1：管理员登录成功，2：普通用户登录成功</returns>
-        public SMT.SaaS.Permission.DAL.V_UserLogin systemUserLogin(string UserName, string Pwd)
+        public SMT.HRM.CustomModel.Permission.V_UserLogin systemUserLogin(string UserName, string Pwd)
         {
             string Ip = System.Web.HttpContext.Current.Request.UserHostAddress.ToString();
             try
@@ -2215,7 +2240,7 @@ namespace SMT.SaaS.Permission.BLL
                 if (ents.Count() > 0)
                 {
                     T_SYS_USER user = ents.FirstOrDefault();
-                    SMT.SaaS.Permission.DAL.V_UserLogin vur = new SMT.SaaS.Permission.DAL.V_UserLogin();
+                    SMT.HRM.CustomModel.Permission.V_UserLogin vur = new SMT.HRM.CustomModel.Permission.V_UserLogin();
                     vur.SYSUSERID = user.SYSUSERID;
                     vur.EMPLOYEEID = user.EMPLOYEEID;
                     vur.ISMANAGER = user.ISMANGER.ToString();
@@ -2270,7 +2295,7 @@ namespace SMT.SaaS.Permission.BLL
         /// <param name="UserName"></param>
         /// <param name="Pwd"></param>
         /// <returns></returns>
-        public SMT.SaaS.Permission.DAL.V_UserLogin GetUserInfoByLoginToTaken(string UserName, string Pwd, string Ip, string StrTaken)
+        public SMT.HRM.CustomModel.Permission.V_UserLogin GetUserInfoByLoginToTaken(string UserName, string Pwd, string Ip, string StrTaken)
         {
             try
             {
@@ -2294,7 +2319,7 @@ namespace SMT.SaaS.Permission.BLL
                     {
                         string Ismanage = ents.FirstOrDefault().ISMANGER.ToString();
                         var users = from user in ents
-                                    select new SMT.SaaS.Permission.DAL.V_UserLogin
+                                    select new SMT.HRM.CustomModel.Permission.V_UserLogin
                                     {
                                         SYSUSERID = user.SYSUSERID,
                                         EMPLOYEEID = user.EMPLOYEEID,

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SMT.SaaS.Permission.DAL
+namespace SMT.HRM.CustomModel.Permission
 {
     /// <summary>
     /// 主要用来处理新框架中获取操作的权限

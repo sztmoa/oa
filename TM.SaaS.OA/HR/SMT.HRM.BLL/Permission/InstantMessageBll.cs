@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
 using SMT.Foundation.Log;
 using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
@@ -10,11 +10,12 @@ using System.Collections;
 using System.Linq.Dynamic;
 using System.Data.Objects;
 
-using SMT.SaaS.Permission.DAL.views;
+using SMT.HRM.CustomModel.Permission;
 using System.Xml;
 using SMT.SaaS.SmtOlineEn;
+using SMT.HRM.BLL;
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
     public class InstantMessageBll : BaseBll<T_SYS_USER>
     {

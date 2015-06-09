@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Linq.Dynamic;
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
 using TM_SaaS_OA_EFModel;
 using SMT.Foundation.Log;
+using SMT.HRM.BLL;
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
     public class SysPermissionBLL:BaseBll<T_SYS_PERMISSION>
     {

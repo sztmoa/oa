@@ -1,248 +1,415 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" />
-  <xs:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL.views" />
-  <xs:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:complexType name="ArrayOfV_Permission">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:12168/PermissionService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+  <xs:complexType name="T_SYS_USER">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CREATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CREATEUSER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EMPLOYEECODE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EMPLOYEEID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EMPLOYEENAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ISENGINEMANAGER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ISFLOWMANAGER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ISMANGER" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="OWNERCOMPANYID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERDEPARTMENTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PASSWORD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SYSUSERID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="T_SYS_USERROLE" nillable="true" type="tns:ArrayOfT_SYS_USERROLE" />
+          <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UPDATEUSER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="USERNAME" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_SYS_USER" nillable="true" type="tns:T_SYS_USER" />
+  <xs:complexType name="ArrayOfT_SYS_USERROLE">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_Permission" nillable="true" type="tns:V_Permission" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_USERROLE" nillable="true" type="tns:T_SYS_USERROLE" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfV_Permission" nillable="true" type="tns:ArrayOfV_Permission" />
-  <xs:complexType name="V_Permission">
+  <xs:element name="ArrayOfT_SYS_USERROLE" nillable="true" type="tns:ArrayOfT_SYS_USERROLE" />
+  <xs:complexType name="T_SYS_USERROLE">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q2:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CREATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CREATEUSER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EMPLOYEEPOSTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERCOMPANYID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="POSTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="T_SYS_ROLE" nillable="true" type="tns:T_SYS_ROLE" />
+          <xs:element minOccurs="0" name="T_SYS_ROLEReference" nillable="true" type="q2:EntityReferenceOfT_SYS_ROLENb42Hbcw" />
+          <xs:element minOccurs="0" name="T_SYS_USER" nillable="true" type="tns:T_SYS_USER" />
+          <xs:element minOccurs="0" name="T_SYS_USERReference" nillable="true" type="q2:EntityReferenceOfT_SYS_USERNb42Hbcw" />
+          <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UPDATEUSER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="USERROLEID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_SYS_USERROLE" nillable="true" type="tns:T_SYS_USERROLE" />
+  <xs:complexType name="T_SYS_ROLE">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q3:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CHECKSTATE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREATECOMPANYID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CREATEDEPARTMENTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREATEPOSTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREATEUSER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREATEUSERNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ISAUTHORY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERCOMPANYID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERDEPARTMENTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ROLEID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ROLENAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SYSTEMTYPE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="T_SYS_ENTITYMENUCUSTOMPERM" nillable="true" type="tns:ArrayOfT_SYS_ENTITYMENUCUSTOMPERM" />
+          <xs:element minOccurs="0" name="T_SYS_ROLEENTITYMENU" nillable="true" type="tns:ArrayOfT_SYS_ROLEENTITYMENU" />
+          <xs:element minOccurs="0" name="T_SYS_USERROLE" nillable="true" type="tns:ArrayOfT_SYS_USERROLE" />
+          <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UPDATEUSER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UPDATEUSERNAME" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_SYS_ROLE" nillable="true" type="tns:T_SYS_ROLE" />
+  <xs:complexType name="ArrayOfT_SYS_ENTITYMENUCUSTOMPERM">
     <xs:sequence>
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="EntityMenu" nillable="true" type="q1:T_SYS_ENTITYMENU" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="EntityRole" nillable="true" type="q2:T_SYS_ROLEENTITYMENU" />
-      <xs:element minOccurs="0" name="Flag" type="xs:int" />
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="Permission" nillable="true" type="q3:T_SYS_PERMISSION" />
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="Role" nillable="true" type="q4:T_SYS_ROLE" />
-      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="RoleMenuPermission" nillable="true" type="q5:T_SYS_ROLEMENUPERMISSION" />
-      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/TM_SaaS_OA_EFModel" minOccurs="0" name="SysUser" nillable="true" type="q6:T_SYS_USER" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_ENTITYMENUCUSTOMPERM" nillable="true" type="tns:T_SYS_ENTITYMENUCUSTOMPERM" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="V_Permission" nillable="true" type="tns:V_Permission" />
-  <xs:complexType name="ArrayOfV_UserPermissionUI">
+  <xs:element name="ArrayOfT_SYS_ENTITYMENUCUSTOMPERM" nillable="true" type="tns:ArrayOfT_SYS_ENTITYMENUCUSTOMPERM" />
+  <xs:complexType name="T_SYS_ENTITYMENUCUSTOMPERM">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q4:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="COMPANYID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="COMPANYNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CREATEUSER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DEPARTMENTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DEPARTMENTNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ENDDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ENTITYMENUCUSTOMPERMID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="POSTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="POSTNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="STARTDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="T_SYS_ENTITYMENU" nillable="true" type="tns:T_SYS_ENTITYMENU" />
+          <xs:element minOccurs="0" name="T_SYS_ENTITYMENUReference" nillable="true" type="q4:EntityReferenceOfT_SYS_ENTITYMENUNb42Hbcw" />
+          <xs:element minOccurs="0" name="T_SYS_PERMISSION" nillable="true" type="tns:T_SYS_PERMISSION" />
+          <xs:element minOccurs="0" name="T_SYS_PERMISSIONReference" nillable="true" type="q4:EntityReferenceOfT_SYS_PERMISSIONNb42Hbcw" />
+          <xs:element minOccurs="0" name="T_SYS_ROLE" nillable="true" type="tns:T_SYS_ROLE" />
+          <xs:element minOccurs="0" name="T_SYS_ROLEReference" nillable="true" type="q4:EntityReferenceOfT_SYS_ROLENb42Hbcw" />
+          <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UPDATEUSER" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_SYS_ENTITYMENUCUSTOMPERM" nillable="true" type="tns:T_SYS_ENTITYMENUCUSTOMPERM" />
+  <xs:complexType name="T_SYS_ENTITYMENU">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q5:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CHILDSYSTEMNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CREATEUSER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ENTITYCODE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ENTITYMENUID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ENTITYNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HASSYSTEMMENU" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HELPFILEPATH" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HELPTITLE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ISAUTHORITY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MENUCODE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MENUICONPATH" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MENUNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ORDERNUMBER" type="xs:decimal" />
+          <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SYSTEMTYPE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="T_SYS_ENTITYMENU1" nillable="true" type="tns:ArrayOfT_SYS_ENTITYMENU" />
+          <xs:element minOccurs="0" name="T_SYS_ENTITYMENU2" nillable="true" type="tns:T_SYS_ENTITYMENU" />
+          <xs:element minOccurs="0" name="T_SYS_ENTITYMENU2Reference" nillable="true" type="q5:EntityReferenceOfT_SYS_ENTITYMENUNb42Hbcw" />
+          <xs:element minOccurs="0" name="T_SYS_ENTITYMENUCUSTOMPERM" nillable="true" type="tns:ArrayOfT_SYS_ENTITYMENUCUSTOMPERM" />
+          <xs:element minOccurs="0" name="T_SYS_PERMISSION" nillable="true" type="tns:ArrayOfT_SYS_PERMISSION" />
+          <xs:element minOccurs="0" name="T_SYS_ROLEENTITYMENU" nillable="true" type="tns:ArrayOfT_SYS_ROLEENTITYMENU" />
+          <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UPDATEUSER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URLADDRESS" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_SYS_ENTITYMENU" nillable="true" type="tns:T_SYS_ENTITYMENU" />
+  <xs:complexType name="ArrayOfT_SYS_ENTITYMENU">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_UserPermissionUI" nillable="true" type="tns:V_UserPermissionUI" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_ENTITYMENU" nillable="true" type="tns:T_SYS_ENTITYMENU" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfV_UserPermissionUI" nillable="true" type="tns:ArrayOfV_UserPermissionUI" />
-  <xs:complexType name="V_UserPermissionUI">
+  <xs:element name="ArrayOfT_SYS_ENTITYMENU" nillable="true" type="tns:ArrayOfT_SYS_ENTITYMENU" />
+  <xs:complexType name="ArrayOfT_SYS_PERMISSION">
     <xs:sequence>
-      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SMT.SaaS.Permission.DAL.views" minOccurs="0" name="CustomerPermission" nillable="true" type="q7:CustomerPermission" />
-      <xs:element minOccurs="0" name="DataRange" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EntityMenuID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MenuCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PermissionValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_PERMISSION" nillable="true" type="tns:T_SYS_PERMISSION" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="V_UserPermissionUI" nillable="true" type="tns:V_UserPermissionUI" />
-  <xs:complexType name="ArrayOfV_UserPermission">
+  <xs:element name="ArrayOfT_SYS_PERMISSION" nillable="true" type="tns:ArrayOfT_SYS_PERMISSION" />
+  <xs:complexType name="T_SYS_PERMISSION">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q6:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CREATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CREATEUSER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ISCOMMOM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PERMISSIONCODE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PERMISSIONID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PERMISSIONNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PERMISSIONVALUE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="T_SYS_ENTITYMENU" nillable="true" type="tns:T_SYS_ENTITYMENU" />
+          <xs:element minOccurs="0" name="T_SYS_ENTITYMENUCUSTOMPERM" nillable="true" type="tns:ArrayOfT_SYS_ENTITYMENUCUSTOMPERM" />
+          <xs:element minOccurs="0" name="T_SYS_ENTITYMENUReference" nillable="true" type="q6:EntityReferenceOfT_SYS_ENTITYMENUNb42Hbcw" />
+          <xs:element minOccurs="0" name="T_SYS_ROLEMENUPERMISSION" nillable="true" type="tns:ArrayOfT_SYS_ROLEMENUPERMISSION" />
+          <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UPDATEUSER" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_SYS_PERMISSION" nillable="true" type="tns:T_SYS_PERMISSION" />
+  <xs:complexType name="ArrayOfT_SYS_ROLEMENUPERMISSION">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_UserPermission" nillable="true" type="tns:V_UserPermission" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_ROLEMENUPERMISSION" nillable="true" type="tns:T_SYS_ROLEMENUPERMISSION" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfV_UserPermission" nillable="true" type="tns:ArrayOfV_UserPermission" />
-  <xs:complexType name="V_UserPermission">
+  <xs:element name="ArrayOfT_SYS_ROLEMENUPERMISSION" nillable="true" type="tns:ArrayOfT_SYS_ROLEMENUPERMISSION" />
+  <xs:complexType name="T_SYS_ROLEMENUPERMISSION">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q7:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CREATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CREATEUSER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DATARANGE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EXTENDVALUE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ROLEMENUPERMID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="T_SYS_PERMISSION" nillable="true" type="tns:T_SYS_PERMISSION" />
+          <xs:element minOccurs="0" name="T_SYS_PERMISSIONReference" nillable="true" type="q7:EntityReferenceOfT_SYS_PERMISSIONNb42Hbcw" />
+          <xs:element minOccurs="0" name="T_SYS_ROLEENTITYMENU" nillable="true" type="tns:T_SYS_ROLEENTITYMENU" />
+          <xs:element minOccurs="0" name="T_SYS_ROLEENTITYMENUReference" nillable="true" type="q7:EntityReferenceOfT_SYS_ROLEENTITYMENUNb42Hbcw" />
+          <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UPDATEUSER" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_SYS_ROLEMENUPERMISSION" nillable="true" type="tns:T_SYS_ROLEMENUPERMISSION" />
+  <xs:complexType name="T_SYS_ROLEENTITYMENU">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q8:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CREATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CREATEUSER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ROLEENTITYMENUID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="T_SYS_ENTITYMENU" nillable="true" type="tns:T_SYS_ENTITYMENU" />
+          <xs:element minOccurs="0" name="T_SYS_ENTITYMENUReference" nillable="true" type="q8:EntityReferenceOfT_SYS_ENTITYMENUNb42Hbcw" />
+          <xs:element minOccurs="0" name="T_SYS_ROLE" nillable="true" type="tns:T_SYS_ROLE" />
+          <xs:element minOccurs="0" name="T_SYS_ROLEMENUPERMISSION" nillable="true" type="tns:ArrayOfT_SYS_ROLEMENUPERMISSION" />
+          <xs:element minOccurs="0" name="T_SYS_ROLEReference" nillable="true" type="q8:EntityReferenceOfT_SYS_ROLENb42Hbcw" />
+          <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UPDATEUSER" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_SYS_ROLEENTITYMENU" nillable="true" type="tns:T_SYS_ROLEENTITYMENU" />
+  <xs:complexType name="ArrayOfT_SYS_ROLEENTITYMENU">
     <xs:sequence>
-      <xs:element minOccurs="0" name="EntityMenuID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EntityRoleID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PermissionDataRange" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RoleID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RoleMenuPermissionValue" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SysUserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_ROLEENTITYMENU" nillable="true" type="tns:T_SYS_ROLEENTITYMENU" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="V_UserPermission" nillable="true" type="tns:V_UserPermission" />
-  <xs:complexType name="ArrayOfV_UserPermissionRoleID">
+  <xs:element name="ArrayOfT_SYS_ROLEENTITYMENU" nillable="true" type="tns:ArrayOfT_SYS_ROLEENTITYMENU" />
+  <xs:complexType name="T_SYS_USERLOGINRECORD">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q9:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LOGINDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LOGINIP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LOGINMONTH" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LOGINRECORDID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LOGINTIME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LOGINYEAR" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ONLINESTATE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERCOMPANYID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERCOMPANYNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERDEPARTMENTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERDEPARTMENTNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERPOSTNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="USERNAME" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_SYS_USERLOGINRECORD" nillable="true" type="tns:T_SYS_USERLOGINRECORD" />
+  <xs:complexType name="ArrayOfT_SYS_USERLOGINRECORD">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_UserPermissionRoleID" nillable="true" type="tns:V_UserPermissionRoleID" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_USERLOGINRECORD" nillable="true" type="tns:T_SYS_USERLOGINRECORD" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfV_UserPermissionRoleID" nillable="true" type="tns:ArrayOfV_UserPermissionRoleID" />
-  <xs:complexType name="V_UserPermissionRoleID">
+  <xs:element name="ArrayOfT_SYS_USERLOGINRECORD" nillable="true" type="tns:ArrayOfT_SYS_USERLOGINRECORD" />
+  <xs:complexType name="T_SYS_USERLOGINRECORDHIS">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q10:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LOGINDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LOGINIP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LOGINRECORDHISID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LOGINTIME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ONLINESTATE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="USERNAME" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_SYS_USERLOGINRECORDHIS" nillable="true" type="tns:T_SYS_USERLOGINRECORDHIS" />
+  <xs:complexType name="ArrayOfT_SYS_ROLE">
     <xs:sequence>
-      <xs:element minOccurs="0" name="EntityMenuID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PermissionDataRange" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PermissionID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RoleEntityMenuID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RoleEntityPermissionID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RoleID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SysUserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_ROLE" nillable="true" type="tns:T_SYS_ROLE" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="V_UserPermissionRoleID" nillable="true" type="tns:V_UserPermissionRoleID" />
-  <xs:complexType name="ArrayOfV_OnlineUser">
+  <xs:element name="ArrayOfT_SYS_ROLE" nillable="true" type="tns:ArrayOfT_SYS_ROLE" />
+  <xs:complexType name="ArrayOfT_SYS_COUNTRY">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_OnlineUser" nillable="true" type="tns:V_OnlineUser" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_COUNTRY" nillable="true" type="tns:T_SYS_COUNTRY" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfV_OnlineUser" nillable="true" type="tns:ArrayOfV_OnlineUser" />
-  <xs:complexType name="V_OnlineUser">
+  <xs:element name="ArrayOfT_SYS_COUNTRY" nillable="true" type="tns:ArrayOfT_SYS_COUNTRY" />
+  <xs:complexType name="T_SYS_COUNTRY">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q11:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="COUNTRYID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="COUNTRYNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CREATEUSERID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UPDATEUSER" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_SYS_COUNTRY" nillable="true" type="tns:T_SYS_COUNTRY" />
+  <xs:complexType name="ArrayOfT_SYS_FBADMIN">
     <xs:sequence>
-      <xs:element minOccurs="0" name="EMPLOYEECODE" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EMPLOYEEID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EMPLOYEENAME" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LOGINDATE" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="LOGINIP" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ONLINESTATE" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SYSUSERID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="USERNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_FBADMIN" nillable="true" type="tns:T_SYS_FBADMIN" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="V_OnlineUser" nillable="true" type="tns:V_OnlineUser" />
-  <xs:complexType name="ArrayOfV_Dictionary">
+  <xs:element name="ArrayOfT_SYS_FBADMIN" nillable="true" type="tns:ArrayOfT_SYS_FBADMIN" />
+  <xs:complexType name="T_SYS_FBADMIN">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q12:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ADDUSERNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CREATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CREATEUSERID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EMPLOYEECOMPANYID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EMPLOYEEDEPARTMENTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EMPLOYEEID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EMPLOYEEPOSTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FBADMINID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ISCOMPANYADMIN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ISSUPPERADMIN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERCOMPANYID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERDEPARTMENTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ROLENAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SYSUSERID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="T_SYS_FBADMINROLE" nillable="true" type="tns:ArrayOfT_SYS_FBADMINROLE" />
+          <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UPDATEUSERID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UPDATEUSERNAME" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_SYS_FBADMIN" nillable="true" type="tns:T_SYS_FBADMIN" />
+  <xs:complexType name="ArrayOfT_SYS_FBADMINROLE">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_Dictionary" nillable="true" type="tns:V_Dictionary" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_FBADMINROLE" nillable="true" type="tns:T_SYS_FBADMINROLE" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfV_Dictionary" nillable="true" type="tns:ArrayOfV_Dictionary" />
-  <xs:complexType name="V_Dictionary">
+  <xs:element name="ArrayOfT_SYS_FBADMINROLE" nillable="true" type="tns:ArrayOfT_SYS_FBADMINROLE" />
+  <xs:complexType name="T_SYS_FBADMINROLE">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q13:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ADDDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FBADMINROLEID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ROLEID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="T_SYS_FBADMIN" nillable="true" type="tns:T_SYS_FBADMIN" />
+          <xs:element minOccurs="0" name="T_SYS_FBADMINReference" nillable="true" type="q13:EntityReferenceOfT_SYS_FBADMINNb42Hbcw" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_SYS_FBADMINROLE" nillable="true" type="tns:T_SYS_FBADMINROLE" />
+  <xs:complexType name="ArrayOfT_SYS_USER">
     <xs:sequence>
-      <xs:element minOccurs="0" name="DICTIONARYID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DICTIONARYNAME" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DICTIONARYVALUE" type="xs:decimal" />
-      <xs:element minOccurs="0" name="DICTIONCATEGORY" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FATHERID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ORDERNUMBER" nillable="true" type="xs:decimal" />
-      <xs:element minOccurs="0" name="SYSTEMCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_USER" nillable="true" type="tns:T_SYS_USER" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="V_Dictionary" nillable="true" type="tns:V_Dictionary" />
-  <xs:complexType name="EntityPermission">
+  <xs:element name="ArrayOfT_SYS_USER" nillable="true" type="tns:ArrayOfT_SYS_USER" />
+  <xs:complexType name="ArrayOfT_SYS_DICTIONARY">
     <xs:sequence>
-      <xs:element minOccurs="0" name="CREATEUSERID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EMPLOYEEID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ENTITYID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MENUCODE" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OPERATIONVALUE" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OWNERCOMPANYID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OWNERDEPARTMENTID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OWNERID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SYSTEMCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SYS_DICTIONARY" nillable="true" type="tns:T_SYS_DICTIONARY" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="EntityPermission" nillable="true" type="tns:EntityPermission" />
-  <xs:complexType name="ArrayOfV_ProvinceCity">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_ProvinceCity" nillable="true" type="tns:V_ProvinceCity" />
-    </xs:sequence>
+  <xs:element name="ArrayOfT_SYS_DICTIONARY" nillable="true" type="tns:ArrayOfT_SYS_DICTIONARY" />
+  <xs:complexType name="T_SYS_DICTIONARY">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q14:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CREATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CREATEUSER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DICTIONARYID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DICTIONARYNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DICTIONARYVALUE" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DICTIONCATEGORY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DICTIONCATEGORYNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ORDERNUMBER" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SYSTEMCODE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SYSTEMNAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SYSTEMNEED" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="T_SYS_DICTIONARY1" nillable="true" type="tns:ArrayOfT_SYS_DICTIONARY" />
+          <xs:element minOccurs="0" name="T_SYS_DICTIONARY2" nillable="true" type="tns:T_SYS_DICTIONARY" />
+          <xs:element minOccurs="0" name="T_SYS_DICTIONARY2Reference" nillable="true" type="q14:EntityReferenceOfT_SYS_DICTIONARYNb42Hbcw" />
+          <xs:element minOccurs="0" name="UPDATEDATE" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UPDATEUSER" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
-  <xs:element name="ArrayOfV_ProvinceCity" nillable="true" type="tns:ArrayOfV_ProvinceCity" />
-  <xs:complexType name="V_ProvinceCity">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AREANAME" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="AREAVALUE" nillable="true" type="xs:decimal" />
-      <xs:element minOccurs="0" name="COUNTRYID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FATHERID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ISCITY" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ISCOUNTRYTOWN" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ISPROVINCE" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PROVINCEID" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="V_ProvinceCity" nillable="true" type="tns:V_ProvinceCity" />
-  <xs:complexType name="ArrayOfV_FBAdmin">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_FBAdmin" nillable="true" type="tns:V_FBAdmin" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfV_FBAdmin" nillable="true" type="tns:ArrayOfV_FBAdmin" />
-  <xs:complexType name="V_FBAdmin">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ADDUSERID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="AddDate" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="EMPLOYEECOMPANYID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EMPLOYEEDEPARTMENTID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EMPLOYEEID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EMPLOYEENAME" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EMPLOYEEPOSTID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FBADMINID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OWNERCOMPANYID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OWNERCOMPANYNAME" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OWNERDEPARTMENTID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OWNERDEPARTMENTNAME" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OWNERPOSTID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OWNERPOSTNAME" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="V_FBAdmin" nillable="true" type="tns:V_FBAdmin" />
-  <xs:complexType name="V_PermissionUpdateState">
-    <xs:sequence>
-      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Counter" nillable="true" type="q8:ArrayOfKeyValueOfstringint" />
-      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Timer" nillable="true" type="q9:ArrayOfKeyValueOfstringNullableOfdateTimeU6ho3Bhd" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="V_PermissionUpdateState" nillable="true" type="tns:V_PermissionUpdateState" />
-  <xs:complexType name="ArrayOfV_UserMenuPermission">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_UserMenuPermission" nillable="true" type="tns:V_UserMenuPermission" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfV_UserMenuPermission" nillable="true" type="tns:ArrayOfV_UserMenuPermission" />
-  <xs:complexType name="V_UserMenuPermission">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CHILDSYSTEMNAME" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ENTITYMENUID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EntityMenuFatherID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MENUCODE" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MENUICONPATH" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MENUNAME" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ORDERNUMBER" type="xs:decimal" />
-      <xs:element minOccurs="0" name="SYSTEMTYPE" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="URLADDRESS" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="V_UserMenuPermission" nillable="true" type="tns:V_UserMenuPermission" />
-  <xs:complexType name="ArrayOfV_EntityMenu">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_EntityMenu" nillable="true" type="tns:V_EntityMenu" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfV_EntityMenu" nillable="true" type="tns:ArrayOfV_EntityMenu" />
-  <xs:complexType name="V_EntityMenu">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CHILDSYSTEMNAME" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CanRead" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ENTITYMENUID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EntityMenuFatherID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MENUCODE" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MENUICONPATH" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MENUNAME" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ORDERNUMBER" type="xs:decimal" />
-      <xs:element minOccurs="0" name="SYSTEMTYPE" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="URLADDRESS" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="V_EntityMenu" nillable="true" type="tns:V_EntityMenu" />
-  <xs:complexType name="ArrayOfV_MenuSetRole">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_MenuSetRole" nillable="true" type="tns:V_MenuSetRole" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfV_MenuSetRole" nillable="true" type="tns:ArrayOfV_MenuSetRole" />
-  <xs:complexType name="V_MenuSetRole">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ENTITYMENUID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MENUNAME" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ORDERNUMBER" type="xs:decimal" />
-      <xs:element minOccurs="0" name="PARENTMENUID" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="V_MenuSetRole" nillable="true" type="tns:V_MenuSetRole" />
-  <xs:complexType name="ArrayOfV_RoleEntity">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_RoleEntity" nillable="true" type="tns:V_RoleEntity" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfV_RoleEntity" nillable="true" type="tns:ArrayOfV_RoleEntity" />
-  <xs:complexType name="V_RoleEntity">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ENTITYMENUID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ROLEENTITYMENUID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ROLEID" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="V_RoleEntity" nillable="true" type="tns:V_RoleEntity" />
+  <xs:element name="T_SYS_DICTIONARY" nillable="true" type="tns:T_SYS_DICTIONARY" />
 </xs:schema>

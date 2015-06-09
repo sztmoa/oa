@@ -4,12 +4,12 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
 
-using SMT.SaaS.Permission.BLL;
+using SMT.HRM.BLL.Permission;
 using TM_SaaS_OA_EFModel;
 using System.Data.Objects.DataClasses;
 using System.Collections;
-using SMT.SaaS.Permission.DAL;
-using SMT.SaaS.Permission.DAL.views;
+using SMT.HRM.DAL.Permission;
+using SMT.HRM.CustomModel.Permission;
 using SMT.Foundation.Log;
 using System.Collections.Generic;
 using System.Text;

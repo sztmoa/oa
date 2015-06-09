@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using TM_SaaS_OA_EFModel;
 using System.ServiceModel.Activation;
-using SMT.SaaS.Permission.BLL;
+using SMT.HRM.BLL.Permission;
 
 namespace SMT.SaaS.Permission.Services
 {

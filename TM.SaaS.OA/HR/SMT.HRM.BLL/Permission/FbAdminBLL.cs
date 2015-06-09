@@ -7,9 +7,11 @@ using System.Data.Objects.DataClasses;
 using System.Collections;
 using System.Linq.Dynamic;
 using SMT.Foundation.Log;
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
+using SMT.HRM.BLL;
+using SMT.HRM.CustomModel.Permission;
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
     public class FbAdminBLL:BaseBll<T_SYS_ROLE>
     {

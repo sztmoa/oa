@@ -17,7 +17,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
-using SMT.SaaS.Permission.BLL;
+using SMT.HRM.BLL.Permission;
 using SMT.Foundation.Log;
 using TM_SaaS_OA_EFModel;
 using System.Collections.Generic;
@@ -82,7 +82,7 @@ namespace SMT.SaaS.Permission.Services
         /// <Error ErrorMsg=" " />
         /// </BizRegReq>
         [OperationContract]
-        public string UpdateEmployeeInfo(SMT.SaaS.Permission.DAL.views.EmployeeInfo employeeInfo)
+        public string UpdateEmployeeInfo(SMT.HRM.CustomModel.Permission.EmployeeInfo employeeInfo)
         {
             using (InstantMessageBll bll = new InstantMessageBll())
             {

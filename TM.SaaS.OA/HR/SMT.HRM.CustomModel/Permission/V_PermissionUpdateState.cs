@@ -3,7 +3,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace SMT.SaaS.Permission.DAL
+namespace SMT.HRM.CustomModel.Permission
 {
     using System;
     using System.Collections.Generic;

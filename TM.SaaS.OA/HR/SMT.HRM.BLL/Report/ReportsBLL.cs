@@ -55,7 +55,7 @@ namespace SMT.HRM.BLL
                 List<string> StrEductions = new List<string>();
                 StrEductions.Add("TOPEDUCATION");//最高学历
                 StrEductions.Add("PROVINCE");//籍贯
-                SMT.SaaS.BLLCommonServices.PermissionWS.V_Dictionary[] ListDicts = PermClient.GetDictionaryByCategoryArray(StrEductions.ToArray());
+                IQueryable<SMT.HRM.CustomModel.Permission.V_Dictionary> ListDicts = sysDicbll.GetSysDictionaryByCategoryArray(StrEductions.ToArray());
                 //获取员工记录
                 var Employees = from ent in dal.GetObjects<T_HR_EMPLOYEE>()
                                 where companyids.Contains(ent.OWNERCOMPANYID)
@@ -1749,7 +1749,7 @@ namespace SMT.HRM.BLL
                 List<string> StrEductions = new List<string>();
                 StrEductions.Add("TOPEDUCATION");//最高学历
                 StrEductions.Add("PROVINCE");//籍贯
-                SMT.SaaS.BLLCommonServices.PermissionWS.V_Dictionary[] ListDicts = PermClient.GetDictionaryByCategoryArray(StrEductions.ToArray());
+                IQueryable<SMT.HRM.CustomModel.Permission.V_Dictionary> ListDicts = sysDicbll.GetSysDictionaryByCategoryArray(StrEductions.ToArray());
                 //获取公司信息
                 var Companys = from ent in dal.GetObjects<T_HR_COMPANY>().Include("T_HR_COMPANY2")
                                select ent;
@@ -2712,7 +2712,7 @@ namespace SMT.HRM.BLL
                 List<string> StrEductions = new List<string>();
                 StrEductions.Add("LEFTOFFICECATEGORY");//离职类型
 
-                SMT.SaaS.BLLCommonServices.PermissionWS.V_Dictionary[] ListDicts = PermClient.GetDictionaryByCategoryArray(StrEductions.ToArray());
+                IQueryable<SMT.HRM.CustomModel.Permission.V_Dictionary> ListDicts = sysDicbll.GetSysDictionaryByCategoryArray(StrEductions.ToArray());
                 Lstents = Lstents.OrderBy(sort);
                 //获取公司信息
                 var Companys = from ent in dal.GetObjects<T_HR_COMPANY>().Include("T_HR_COMPANY2")
@@ -3050,7 +3050,7 @@ namespace SMT.HRM.BLL
                 List<string> StrEductions = new List<string>();
                 StrEductions.Add("SALARYLEVEL");//工资级别
                 StrEductions.Add("POSTCHANGCATEGORY");//异动类型
-                SMT.SaaS.BLLCommonServices.PermissionWS.V_Dictionary[] ListDicts = PermClient.GetDictionaryByCategoryArray(StrEductions.ToArray());
+                IQueryable<SMT.HRM.CustomModel.Permission.V_Dictionary> ListDicts = sysDicbll.GetSysDictionaryByCategoryArray(StrEductions.ToArray());
                 //获取公司信息
                 var Companys = from ent in dal.GetObjects<T_HR_COMPANY>().Include("T_HR_COMPANY2")
                                select ent;

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SMT.SaaS.Permission.DAL;
 using TM_SaaS_OA_EFModel;
 
-namespace SMT.SaaS.Permission.DAL.views
+namespace SMT.HRM.CustomModel.Permission
 {
     public class V_UserLoginRecord
     {

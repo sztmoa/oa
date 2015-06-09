@@ -20,7 +20,7 @@ using System.Configuration;
 using System.Web;
 using SMT.Foundation.Log;
 using SMT.HRM.BLL.Common;
-using SMT.SaaS.Permission.CustomerModel;
+using SMT.HRM.CustomModel.Permission;
 
 namespace SMT.HRM.Services
 {

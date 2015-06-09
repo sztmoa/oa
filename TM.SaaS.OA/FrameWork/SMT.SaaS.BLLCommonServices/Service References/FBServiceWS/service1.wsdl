@@ -142,7 +142,7 @@
   </wsdl:binding>
   <wsdl:service name="FBService">
     <wsdl:port name="BasicHttpBinding_FBService" binding="tns:BasicHttpBinding_FBService">
-      <soap:address location="http://10.10.0.93:8080/New/Services/FB/FBService.svc" />
+      <soap:address location="http://www.oa12.com/Services/FB/FBService.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

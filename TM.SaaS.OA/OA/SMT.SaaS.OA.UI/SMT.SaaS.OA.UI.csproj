@@ -25,7 +25,7 @@
     <TestPageFileName>TestPage.html</TestPageFileName>
     <CreateTestPage>true</CreateTestPage>
     <ValidateXaml>true</ValidateXaml>
-    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <EnableOutOfBrowser>true</EnableOutOfBrowser>
     <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
     <UsePlatformExtensions>false</UsePlatformExtensions>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
@@ -139,6 +139,9 @@
     </Reference>
     <Reference Include="SMT.SaaS.PublicControls">
       <HintPath>..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SaaS.PublicControls.dll</HintPath>
+    </Reference>
+    <Reference Include="SMT.SAAS.Themes">
+      <HintPath>..\..\..\SMT.SaaS.CommonDll\SMT\Client\SMT.SAAS.Themes.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL">
@@ -3665,11 +3668,6 @@
     <ProjectReference Include="..\..\FrameWork\SMT.SaaS.Window\SMT.SaaS.Window.csproj">
       <Project>{15406e6e-a265-4be9-afb3-e45433e7252c}</Project>
       <Name>SMT.SaaS.Window</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\SMT.SAAS.FrameWork\SMT.SAAS.Themes\SMT.SAAS.Themes.csproj" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
-      <Project>{2C6FFFA6-6ACD-4C24-ADD5-ACEB431011E0}</Project>
-      <Name>SMT.SAAS.Themes</Name>
-      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

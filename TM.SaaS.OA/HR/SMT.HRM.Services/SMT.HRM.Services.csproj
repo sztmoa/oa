@@ -295,6 +295,10 @@
       <Project>{0E45B937-670F-49E1-8EF1-A4BD312B94DA}</Project>
       <Name>SMT.HRM.CustomModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SMT.HRM.DAL\SMT.HRM.DAL.csproj">
+      <Project>{d7d1b61b-cd35-46ea-8575-3cf42d8f4f9d}</Project>
+      <Name>SMT.HRM.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="EngineService.svc" />

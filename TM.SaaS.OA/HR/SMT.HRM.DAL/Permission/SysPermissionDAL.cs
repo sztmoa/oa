@@ -6,7 +6,7 @@ using System.Text;
 using SMT.Foundation.Core;
 using TM_SaaS_OA_EFModel;
 
-namespace SMT.SaaS.Permission.DAL
+namespace SMT.HRM.DAL.Permission
 {
     public class SysPermissionDAL:BaseDAL
     {

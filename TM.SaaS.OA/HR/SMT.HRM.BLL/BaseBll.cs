@@ -16,53 +16,127 @@ using System.Reflection;
 using System.Resources;
 using BLLCommonServices = SMT.SaaS.BLLCommonServices;
 using SMT.SaaS.BLLCommonServices.PermissionWS;
-using SMT.SaaS.BLLCommonServices.FlowWFService;
+using SMT.HRM.DAL.Permission;
 using SMT.SaaS.BLLCommonServices.BllCommonUserPermissionWS;
 using SMT.Foundation.Log;
 using SMT.HRM.CustomModel;
 using SMT.SaaS.MobileXml;
 using SMT.SaaS.BLLCommonServices.PublicInterfaceWS;
+using SMT.HRM.BLL.Permission;
 
 namespace SMT.HRM.BLL
 {
     public class BaseBll<TEntity> : IDisposable where TEntity : class
     {
-        //public SubmitData AuditSubmitData { set; get; }
-        public CommDal<TEntity> dal;
+        #region 属性
         public static string qualifiedEntitySetName = ConfigurationManager.AppSettings["DBContextName"] + ".";
-        protected static PermissionWS.PermissionServiceClient PermClient;
-        protected static BllCommonPermissionServicesClient BllPermClient;
-        protected static ServiceClient flowSeriviceClient;
         protected static PublicServiceClient PublicInterfaceClient;
         public static string isHuNanHangXingSalary = ConfigurationManager.AppSettings["isForHuNanHangXingSalary"];
-        
+        private CommDal<TEntity> dalCore;
+        public CommDal<TEntity> dal
+        {
+            get
+            {
+                if (dalCore == null)
+                {
+                    dalCore = new CommDal<TEntity>();
+                    return dalCore;
+                }
+                else
+                {
+                    return dalCore;
+                }
+            }
+
+        }
+        public SysDictionaryBLL sysDicbll
+        {
+            get
+            {
+                var privateSysdicbll = new SysDictionaryBLL();
+                return privateSysdicbll;
+            }
+
+        }
+        public EmployeeBLL employeeBll
+        {
+            get
+            {
+                var priEmployeeBll = new EmployeeBLL();
+                return priEmployeeBll;
+            }
+
+        }
+        public EmployeePostBLL empPostbll
+        {
+            get
+            {
+                var priEmpPostbll = new EmployeePostBLL();
+                return priEmpPostbll;
+            }
+
+        }
+        protected static ServiceClient priFlowSeriviceClient;
+        public ServiceClient flowSeriviceClient
+        {
+            get
+            {
+                if (priFlowSeriviceClient == null)
+                {
+                    priFlowSeriviceClient = new ServiceClient();
+                    return priFlowSeriviceClient;
+                }else
+                {
+                    return priFlowSeriviceClient;
+                }
+            }
+
+        }
+        #endregion
         public BaseBll()
         {
             if (!string.IsNullOrEmpty(CommonUserInfo.EmployeeID))
             {
                 //dal.CurrentUserID = CommonUserInfo.EmployeeID;
             }
-            if (PermClient == null)
-            {
-                PermClient = new SMT.SaaS.BLLCommonServices.PermissionWS.PermissionServiceClient();
-            }
-            if (BllPermClient == null)
-            {
-                BllPermClient = new SMT.SaaS.BLLCommonServices.BllCommonUserPermissionWS.BllCommonPermissionServicesClient();
-            }
-            if (flowSeriviceClient==null)
-            {
-                flowSeriviceClient = new FlowServiceWS.ServiceClient();
-            }
-           
-            if (dal == null)
-            {
-                dal = new CommDal<TEntity>();
-                //dal.LogNewDal(typeof(TEntity).Name);
+        }
 
+
+        public static string GetCompanNameByid(string id)
+        {
+            CompanyBLL bll = new CompanyBLL();
+            var company = bll.GetCompanyById(id);
+            if (company == null)
+            {
+                return string.Empty;
+            }
+            if (!string.IsNullOrEmpty(company.CNAME))
+            {
+                return company.CNAME;
+            }
+            else
+            {
+                return string.Empty;
             }
         }
 
+        public static string GetDepartMentNameByid(string id)
+        {
+            DepartmentBLL bll = new DepartmentBLL();
+            var department = bll.GetDepartmentById(id);
+            if (department == null)
+            {
+                return string.Empty;
+            }
+            if (!string.IsNullOrEmpty(department.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTNAME))
+            {
+                return department.T_HR_DEPARTMENTDICTIONARY.DEPARTMENTNAME;
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
         public bool Add(TEntity entity)
         {
             try
@@ -464,19 +538,21 @@ namespace SMT.HRM.BLL
                     ep.T_HR_POST.T_HR_DEPARTMENTReference.Load();
                 if (ep.T_HR_POST != null && ep.T_HR_POST.T_HR_DEPARTMENT != null && ep.T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANYReference.IsLoaded == false)
                     ep.T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANYReference.Load();
-                SMT.SaaS.BLLCommonServices.PermissionWS.T_SYS_ENTITYMENUCUSTOMPERM[] custPerms;
+                IQueryable<TM_SaaS_OA_EFModel.T_SYS_ENTITYMENUCUSTOMPERM>  custPerms;
                 //查看有没有岗位的特别权限
-                custPerms = PermClient.GetCustomPostMenuPerms(menuCode, ep.T_HR_POST.POSTID);
+                EntityMenuCustomPermBLL bll = new EntityMenuCustomPermBLL();
+                
+                custPerms = bll.GetCustomPostMenuPerms(menuCode, ep.T_HR_POST.POSTID);
                 if (custPerms != null && custPerms.Count() > 0)
-                    perm = Convert.ToInt32(AssignObjectType.Post);
+                    perm = Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Post);
                 //查看有没有部门的特别权限
-                custPerms = PermClient.GetCustomDepartMenuPerms(menuCode, ep.T_HR_POST.T_HR_DEPARTMENT.DEPARTMENTID);
+                custPerms = bll.GetCustomDepartMenuPerms(menuCode, ep.T_HR_POST.T_HR_DEPARTMENT.DEPARTMENTID);
                 if (custPerms != null && custPerms.Count() > 0)
-                    perm = Convert.ToInt32(AssignObjectType.Department);
+                    perm = Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Department);
                 //查看有没有公司的特别权限
-                custPerms = PermClient.GetCustomCompanyMenuPerms(menuCode, ep.T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.COMPANYID);
+                custPerms = bll.GetCustomCompanyMenuPerms(menuCode, ep.T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.COMPANYID);
                 if (custPerms != null && custPerms.Count() > 0)
-                    perm = Convert.ToInt32(AssignObjectType.Company);
+                    perm = Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Company);
             }
             return perm;
         }
@@ -496,15 +572,15 @@ namespace SMT.HRM.BLL
                 int maxPerm = -1;
                 //获取用户
                 List<string> DepartmentPermissions = new List<string>();//具有权限的部门ID集合
-                foreach (var op in PermClient.Endpoint.Contract.Operations)
-                {
-                    var dataContractBehavior = op.Behaviors[typeof(DataContractSerializerOperationBehavior)] as DataContractSerializerOperationBehavior;
+                //foreach (var op in PermClient.Endpoint.Contract.Operations)
+                //{
+                //    var dataContractBehavior = op.Behaviors[typeof(DataContractSerializerOperationBehavior)] as DataContractSerializerOperationBehavior;
 
-                    if (dataContractBehavior != null)
-                    {
-                        dataContractBehavior.MaxItemsInObjectGraph = Int32.MaxValue; //int.MaxValue;
-                    }
-                }
+                //    if (dataContractBehavior != null)
+                //    {
+                //        dataContractBehavior.MaxItemsInObjectGraph = Int32.MaxValue; //int.MaxValue;
+                //    }
+                //}
 
                 string OwnerCompanyIDs = "";
                 string OwnerDepartmentIDs = "";
@@ -519,16 +595,25 @@ namespace SMT.HRM.BLL
                 //    filterString += " and ( ";
                 //}
                 //bool HasPermsValue = true;//是否有传入的perm的权限。
-                SMT.SaaS.BLLCommonServices.PermissionWS.T_SYS_USER user = PermClient.GetUserByEmployeeID(employeeID);
-                SMT.SaaS.BLLCommonServices.BllCommonUserPermissionWS.V_BllCommonUserPermission[] perms = null;
-                if (perm == "3")
-                {
-                    perms = BllPermClient.GetUserMenuPermsByUserPermissionBllCommon(entityName, user.SYSUSERID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs);
-                }
-                else
-                {
-                    perms = BllPermClient.GetUserMenuPermsByUserPermissionBllCommonAddPermissionValue(entityName, user.SYSUSERID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs, perm);
-                }
+                TM_SaaS_OA_EFModel.T_SYS_USER user = (from ent in dal.GetObjects<TM_SaaS_OA_EFModel.T_SYS_USER>()
+                                                      where ent.EMPLOYEEID == employeeID
+                                                      select ent).FirstOrDefault();
+                    ;
+                 List<SMT.HRM.CustomModel.Permission.V_BllCommonUserPermission> perms = null;
+                 SysUserBLL bll = new SysUserBLL();
+                 
+                     if (perm == "3")
+                     {
+                         IQueryable<SMT.HRM.CustomModel.Permission.V_BllCommonUserPermission> IQlist = bll.GetUserMenuPermsByUserPermisionBllCommon(entityName, user.SYSUSERID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs);
+                         perms = IQlist != null ? IQlist.ToList() : null;
+
+                     }
+                     else
+                     {
+                          IQueryable<SMT.HRM.CustomModel.Permission.V_BllCommonUserPermission> IQlist = bll.GetUserMenuPermsByUserPermisionBllCommonAddPermissionValue(entityName, user.SYSUSERID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs, perm);
+                          perms = IQlist != null ? IQlist.ToList() : null;
+                     }
+                 
                 #region 没权限的情况
 
                 if ((perms == null || perms.Count() <= 0) && string.IsNullOrEmpty(OwnerCompanyIDs) && string.IsNullOrEmpty(OwnerDepartmentIDs) && string.IsNullOrEmpty(OwnerPositionIDs))
@@ -632,7 +717,7 @@ namespace SMT.HRM.BLL
                                         }
                                         #region 公司级别
                                         var entcompanys = tmpperms.Where(p => p.OwnerCompanyID == ep.T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.COMPANYID);
-                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Company))
+                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Company))
                                         {
                                             if (entcompanys.Count() > 0)
                                             {
@@ -645,7 +730,7 @@ namespace SMT.HRM.BLL
                                         #region 部门级别、大部门可以看到小部门的信息
                                         var entdepartments = tmpperms.Where(p => p.OwnerDepartmentID == ep.T_HR_POST.T_HR_DEPARTMENT.DEPARTMENTID);
 
-                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Department))
+                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Department))
                                         {
 
                                             LstDepartments.Clear();
@@ -684,7 +769,7 @@ namespace SMT.HRM.BLL
 
                                         #region 岗位级别信息
 
-                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Post))
+                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Post))
                                         {
                                             filterString += "OWNERPOSTID==@" + queryParas.Count().ToString();
                                             queryParas.Add(ep.T_HR_POST.POSTID);
@@ -692,7 +777,7 @@ namespace SMT.HRM.BLL
                                         #endregion
 
                                         #region 查看个人信息
-                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Employee) || maxPerm == -1)
+                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Employee) || maxPerm == -1)
                                         {
                                             filterString += " ( OWNERID==@" + queryParas.Count().ToString();
                                             queryParas.Add(employeeID);
@@ -716,15 +801,15 @@ namespace SMT.HRM.BLL
                         {
                             //考虑没获取权限的情况下有自定义权限
                             //HasPermsValue = false;//没有权限
-                            if (string.IsNullOrEmpty(filterString))
-                            {
-                                filterString += " ( ";
-                            }
-                            else
-                            {
+                            //if (string.IsNullOrEmpty(filterString))
+                            //{
+                            //    filterString += " ( ";
+                            //}
+                            //else
+                            //{
 
-                                filterString += " and (";
-                            }
+                            //    filterString += " and (";
+                            //}
                         }
                     }
                     #endregion
@@ -732,7 +817,7 @@ namespace SMT.HRM.BLL
                 }
 
                 //看整个集团的
-                if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Organize))
+                if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Organize))
                 {
                     return;
                 }
@@ -825,29 +910,37 @@ namespace SMT.HRM.BLL
                 int maxPerm = -1;
                 //获取用户
                 List<string> DepartmentPermissions = new List<string>();//具有权限的部门ID集合
-                foreach (var op in PermClient.Endpoint.Contract.Operations)
-                {
-                    var dataContractBehavior = op.Behaviors[typeof(DataContractSerializerOperationBehavior)] as DataContractSerializerOperationBehavior;
+                //foreach (var op in PermClient.Endpoint.Contract.Operations)
+                //{
+                //    var dataContractBehavior = op.Behaviors[typeof(DataContractSerializerOperationBehavior)] as DataContractSerializerOperationBehavior;
 
-                    if (dataContractBehavior != null)
-                    {
-                        dataContractBehavior.MaxItemsInObjectGraph = Int32.MaxValue; //int.MaxValue;
-                    }
-                }
+                //    if (dataContractBehavior != null)
+                //    {
+                //        dataContractBehavior.MaxItemsInObjectGraph = Int32.MaxValue; //int.MaxValue;
+                //    }
+                //}
 
                 string OwnerCompanyIDs = "";
                 string OwnerDepartmentIDs = "";
                 string OwnerPositionIDs = "";
-                SMT.SaaS.BLLCommonServices.PermissionWS.T_SYS_USER user = PermClient.GetUserByEmployeeID(employeeID);
-                SMT.SaaS.BLLCommonServices.BllCommonUserPermissionWS.V_BllCommonUserPermission[] perms = null;
-                if (perm == "3")
-                {
-                    perms = BllPermClient.GetUserMenuPermsByUserPermissionBllCommon(entityName, user.SYSUSERID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs);
-                }
-                else
-                {
-                    perms = BllPermClient.GetUserMenuPermsByUserPermissionBllCommonAddPermissionValue(entityName, user.SYSUSERID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs, perm);
-                }
+                TM_SaaS_OA_EFModel.T_SYS_USER user = (from ent in dal.GetObjects<TM_SaaS_OA_EFModel.T_SYS_USER>()
+                                                      where ent.EMPLOYEEID == employeeID
+                                                      select ent).FirstOrDefault();
+                List<SMT.HRM.CustomModel.Permission.V_BllCommonUserPermission> perms = null;
+                SysUserBLL bll = new SysUserBLL();
+                
+                    if (perm == "3")
+                    {
+                        IQueryable<SMT.HRM.CustomModel.Permission.V_BllCommonUserPermission> IQlist = bll.GetUserMenuPermsByUserPermisionBllCommon(entityName, user.SYSUSERID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs);
+                        perms = IQlist != null ? IQlist.ToList() : null;
+
+                    }
+                    else
+                    {
+                        IQueryable<SMT.HRM.CustomModel.Permission.V_BllCommonUserPermission> IQlist = bll.GetUserMenuPermsByUserPermisionBllCommonAddPermissionValue(entityName, user.SYSUSERID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs, perm);
+                        perms = IQlist != null ? IQlist.ToList() : null;
+                    }
+                
                 #region 没权限的情况
 
                 if ((perms == null || perms.Count() <= 0) && string.IsNullOrEmpty(OwnerCompanyIDs) && string.IsNullOrEmpty(OwnerDepartmentIDs) && string.IsNullOrEmpty(OwnerPositionIDs))
@@ -939,7 +1032,7 @@ namespace SMT.HRM.BLL
                                         }
                                         #region 公司级别
                                         var entcompanys = tmpperms.Where(p => p.OwnerCompanyID == ep.T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.COMPANYID);
-                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Company))
+                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Company))
                                         {
                                             if (entcompanys.Count() > 0)
                                             {
@@ -952,7 +1045,7 @@ namespace SMT.HRM.BLL
                                         #region 部门级别、大部门可以看到小部门的信息
                                         var entdepartments = tmpperms.Where(p => p.OwnerDepartmentID == ep.T_HR_POST.T_HR_DEPARTMENT.DEPARTMENTID);
 
-                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Department))
+                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Department))
                                         {
 
                                             LstDepartments.Clear();
@@ -991,7 +1084,7 @@ namespace SMT.HRM.BLL
 
                                         #region 岗位级别信息
 
-                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Post))
+                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Post))
                                         {
                                             filterString += "OWNERPOSTID==@" + queryParas.Count().ToString();
                                             queryParas.Add(ep.T_HR_POST.POSTID);
@@ -999,7 +1092,7 @@ namespace SMT.HRM.BLL
                                         #endregion
 
                                         #region 查看个人信息
-                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Employee) || maxPerm == -1)
+                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Employee) || maxPerm == -1)
                                         {
                                             if (maxPerm == -1)
                                             {
@@ -1046,7 +1139,7 @@ namespace SMT.HRM.BLL
                 }
 
                 //看整个集团的
-                if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Organize))
+                if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Organize))
                 {
                     return;
                 }
@@ -1139,29 +1232,38 @@ namespace SMT.HRM.BLL
                 int maxPerm = -1;
                 //获取用户
                 List<string> DepartmentPermissions = new List<string>();//具有权限的部门ID集合
-                foreach (var op in PermClient.Endpoint.Contract.Operations)
-                {
-                    var dataContractBehavior = op.Behaviors[typeof(DataContractSerializerOperationBehavior)] as DataContractSerializerOperationBehavior;
+                //foreach (var op in PermClient.Endpoint.Contract.Operations)
+                //{
+                //    var dataContractBehavior = op.Behaviors[typeof(DataContractSerializerOperationBehavior)] as DataContractSerializerOperationBehavior;
 
-                    if (dataContractBehavior != null)
-                    {
-                        dataContractBehavior.MaxItemsInObjectGraph = Int32.MaxValue; //int.MaxValue;
-                    }
-                }
+                //    if (dataContractBehavior != null)
+                //    {
+                //        dataContractBehavior.MaxItemsInObjectGraph = Int32.MaxValue; //int.MaxValue;
+                //    }
+                //}
 
                 string OwnerCompanyIDs = "";
                 string OwnerDepartmentIDs = "";
                 string OwnerPositionIDs = "";
-                SMT.SaaS.BLLCommonServices.PermissionWS.T_SYS_USER user = PermClient.GetUserByEmployeeID(employeeID);
-                SMT.SaaS.BLLCommonServices.BllCommonUserPermissionWS.V_BllCommonUserPermission[] perms = null;
-                if (perm == "3")
-                {
-                    perms = BllPermClient.GetUserMenuPermsByUserPermissionBllCommon(entityName, user.SYSUSERID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs);
-                }
-                else
-                {
-                    perms = BllPermClient.GetUserMenuPermsByUserPermissionBllCommonAddPermissionValue(entityName, user.SYSUSERID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs, perm);
-                }
+                TM_SaaS_OA_EFModel.T_SYS_USER user = (from ent in dal.GetObjects<TM_SaaS_OA_EFModel.T_SYS_USER>()
+                                                      where ent.EMPLOYEEID == employeeID
+                                                      select ent).FirstOrDefault();
+                ;
+                List<SMT.HRM.CustomModel.Permission.V_BllCommonUserPermission> perms = null;
+                SysUserBLL bll = new SysUserBLL();
+                
+                    if (perm == "3")
+                    {
+                        IQueryable<SMT.HRM.CustomModel.Permission.V_BllCommonUserPermission> IQlist = bll.GetUserMenuPermsByUserPermisionBllCommon(entityName, user.SYSUSERID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs);
+                        perms = IQlist != null ? IQlist.ToList() : null;
+
+                    }
+                    else
+                    {
+                        IQueryable<SMT.HRM.CustomModel.Permission.V_BllCommonUserPermission> IQlist = bll.GetUserMenuPermsByUserPermisionBllCommonAddPermissionValue(entityName, user.SYSUSERID, ref OwnerCompanyIDs, ref OwnerDepartmentIDs, ref OwnerPositionIDs, perm);
+                        perms = IQlist != null ? IQlist.ToList() : null;
+                    }
+                
                 #region 没权限的情况
 
                 if ((perms == null || perms.Count() <= 0) && string.IsNullOrEmpty(OwnerCompanyIDs) && string.IsNullOrEmpty(OwnerDepartmentIDs) && string.IsNullOrEmpty(OwnerPositionIDs))
@@ -1256,7 +1358,7 @@ namespace SMT.HRM.BLL
                                         }
                                         #region 公司级别
                                         var entcompanys = tmpperms.Where(p => p.OwnerCompanyID == ep.T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.COMPANYID);
-                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Company))
+                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Company))
                                         {
                                             if (entcompanys.Count() > 0)
                                             {
@@ -1269,7 +1371,7 @@ namespace SMT.HRM.BLL
                                         #region 部门级别、大部门可以看到小部门的信息
                                         var entdepartments = tmpperms.Where(p => p.OwnerDepartmentID == ep.T_HR_POST.T_HR_DEPARTMENT.DEPARTMENTID);
 
-                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Department))
+                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Department))
                                         {
 
                                             LstDepartments.Clear();
@@ -1311,7 +1413,7 @@ namespace SMT.HRM.BLL
 
                                         #region 岗位级别信息
 
-                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Post))
+                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Post))
                                         {
                                             filterString += "OWNERPOSTID==@" + queryParas.Count().ToString();
                                             queryParas.Add(ep.T_HR_POST.POSTID);
@@ -1319,7 +1421,7 @@ namespace SMT.HRM.BLL
                                         #endregion
 
                                         #region 查看个人信息
-                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Employee) || maxPerm == -1)
+                                        if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Employee) || maxPerm == -1)
                                         {
                                             if (maxPerm == -1)
                                             {
@@ -1366,7 +1468,7 @@ namespace SMT.HRM.BLL
                 }
 
                 //看整个集团的
-                if (Convert.ToInt32(maxPerm) == Convert.ToInt32(AssignObjectType.Organize))
+                if (Convert.ToInt32(maxPerm) == Convert.ToInt32(SMT.HRM.DAL.AssignObjectType.Organize))
                 {
                     return;
                 }
@@ -1595,23 +1697,23 @@ namespace SMT.HRM.BLL
             }
         }
 
-        public static bool CheckUser(string strUserId, string strPwd)
-        {
-            bool bTemp = false;
-            try
-            {
-                SMT.SaaS.BLLCommonServices.PermissionWS.T_SYS_USER entUserLogin = PermClient.UserLogin(strUserId, strPwd);
-                if (entUserLogin != null)
-                {
-                    return true;
-                }
-            }
-            catch
-            {
-                bTemp = false;
-            }
-            return bTemp;
-        }
+        //public static bool CheckUser(string strUserId, string strPwd)
+        //{
+        //    bool bTemp = false;
+        //    try
+        //    {
+        //        SMT.SaaS.BLLCommonServices.PermissionWS.T_SYS_USER entUserLogin = PermClient.UserLogin(strUserId, strPwd);
+        //        if (entUserLogin != null)
+        //        {
+        //            return true;
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        bTemp = false;
+        //    }
+        //    return bTemp;
+        //}
 
         #region 提交审核
 
@@ -1733,6 +1835,15 @@ namespace SMT.HRM.BLL
         
         #endregion
 
+
+        //public IQueryable<TEntity> GetTable()
+        //{
+        //    return dal.GetTable();
+        //}
+        public ObjectQuery<TEntity> GetObjects()
+        {
+            return dal.GetObjects();
+        }
         #region IDisposable 成员
 
         public void Dispose()
@@ -1769,71 +1880,71 @@ namespace SMT.HRM.BLL
     //}
 
 
-    [global::System.Runtime.Serialization.DataContractAttribute(IsReference = true)]
-    [global::System.Serializable()]
-    public class VirtualEntityObject : System.Data.Objects.DataClasses.EntityObject
-    {
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public virtual string ID { get; set; }
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public virtual string Name { get; set; }
+    //[global::System.Runtime.Serialization.DataContractAttribute(IsReference = true)]
+    //[global::System.Serializable()]
+    //public class VirtualEntityObject : System.Data.Objects.DataClasses.EntityObject
+    //{
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public virtual string ID { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public virtual string Name { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATECOMPANYID { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string CREATECOMPANYID { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATECOMPANYNAME { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string CREATECOMPANYNAME { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEDEPARTMENTID { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string CREATEDEPARTMENTID { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEDEPARTMENTNAME { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string CREATEDEPARTMENTNAME { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEPOSTID { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string CREATEPOSTID { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEPOSTNAME { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string CREATEPOSTNAME { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEUSERID { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string CREATEUSERID { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string CREATEUSERNAME { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string CREATEUSERNAME { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERCOMPANYID { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string OWNERCOMPANYID { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERCOMPANYNAME { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string OWNERCOMPANYNAME { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERDEPARTMENTID { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string OWNERDEPARTMENTID { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERDEPARTMENTNAME { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string OWNERDEPARTMENTNAME { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERPOSTID { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string OWNERPOSTID { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERPOSTNAME { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string OWNERPOSTNAME { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERID { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string OWNERID { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string OWNERNAME { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string OWNERNAME { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string UPDATEUSERID { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string UPDATEUSERID { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string UPDATEUSERNAME { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public string UPDATEUSERNAME { get; set; }
 
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal EDITSTATES { get; set; }
+    //    [global::System.Runtime.Serialization.DataMemberAttribute()]
+    //    public decimal EDITSTATES { get; set; }
 
-    }
+    //}
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace SMT.SaaS.Permission.DAL
+namespace SMT.HRM.CustomModel.Permission
 {
     public class V_RoleEntity
     {

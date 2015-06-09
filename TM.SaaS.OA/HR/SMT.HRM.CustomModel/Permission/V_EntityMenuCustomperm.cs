@@ -6,7 +6,7 @@ using TM_SaaS_OA_EFModel;
 
 
 
-namespace SMT.SaaS.Permission.DAL.views
+namespace SMT.HRM.CustomModel.Permission
 {
     public class V_EntityMenuCustomperm
     {

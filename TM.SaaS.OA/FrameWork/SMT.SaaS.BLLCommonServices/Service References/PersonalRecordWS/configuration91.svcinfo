@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IPersonalRecordService" contract="PersonalRecordWS.IPersonalRecordService" bindingType="basicHttpBinding" address="http://portal.smt-online.net/New/Services/MyRecord/PersonalRecordService.svc" bindingConfiguration="BasicHttpBinding_IPersonalRecordService">
+    <endpoint name="BasicHttpBinding_IPersonalRecordService" contract="PersonalRecordWS.IPersonalRecordService" bindingType="basicHttpBinding" address="http://www.oa12.com/Services/MyRecord/PersonalRecordService.svc" bindingConfiguration="BasicHttpBinding_IPersonalRecordService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://portal.smt-online.net/New/Services/MyRecord/PersonalRecordService.svc</serializedValue>
+          <serializedValue>http://www.oa12.com/Services/MyRecord/PersonalRecordService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

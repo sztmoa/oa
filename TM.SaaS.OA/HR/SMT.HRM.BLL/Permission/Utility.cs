@@ -12,7 +12,7 @@ using System.Runtime.Serialization.Json;
 using System.Reflection;
 using System.Data;
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
 
     public class Utility
@@ -21,7 +21,7 @@ namespace SMT.SaaS.Permission.BLL
         //public static EntityObject[] GetLookupData(EntityNames entity, Dictionary<string, string> args)
         //{
         //    EntityObject[] ents = null;
-        //    Type type = Type.GetType("SMT.SaaS.Permission.BLL." + entity.ToString() + "BLL");
+        //    Type type = Type.GetType("SMT.HRM.BLL.Permission." + entity.ToString() + "BLL");
 
         //    if (type != null)
         //    {
@@ -33,7 +33,7 @@ namespace SMT.SaaS.Permission.BLL
         public static EntityObject[] GetLookupData(EntityNames entity, Dictionary<string, string> args, int pageIndex, int pageSize, string sort, string filterString, IList<object> paras, ref int pageCount)
         {
             EntityObject[] ents = null;
-            Type type = Type.GetType("SMT.SaaS.Permission.BLL." + entity.ToString() + "BLL");
+            Type type = Type.GetType("SMT.HRM.BLL.Permission." + entity.ToString() + "BLL");
 
             if (type != null)
             {

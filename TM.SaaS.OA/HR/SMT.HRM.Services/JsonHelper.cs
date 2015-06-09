@@ -6,8 +6,8 @@ using System.Runtime.Serialization.Json;
 using System.IO;
 using System.Text;
 using System.Runtime.Serialization;
-using SMT.SaaS.Permission.DAL;
-using SMT.SaaS.Permission.DAL.views;
+using SMT.HRM.DAL.Permission;
+using SMT.HRM.CustomModel.Permission;
 
 namespace SMT.SaaS.Permission.Services
 {

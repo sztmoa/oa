@@ -12,12 +12,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SMT.Foundation.Log;
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
 using TM_SaaS_OA_EFModel;
-using SMT.SaaS.Permission.DAL.views;
+using SMT.HRM.CustomModel.Permission;
+using SMT.SaaS.BLLCommonServices;
+using SMT.HRM.BLL;
 
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
     public class EntityMenuCustomPermBLL : BaseBll<T_SYS_ENTITYMENUCUSTOMPERM>
     {
@@ -75,11 +77,11 @@ namespace SMT.SaaS.Permission.BLL
 
                         //if (EntityID == MenuCompanyID)
                         //{
-                        //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.COMPANYID, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company,SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+                        //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.COMPANYID, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company,SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
                         //}
                         //if (EntityID == MenuDepartmentID)
                         //{
-                        //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.COMPANYID, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+                        //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.COMPANYID, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
                         //}
                     }
                 }
@@ -101,11 +103,11 @@ namespace SMT.SaaS.Permission.BLL
 
                         //if (EntityID == MenuCompanyID)
                         //{
-                        //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.DEPARTMENTID, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Deaprtment, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+                        //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.DEPARTMENTID, SMT.HRM.BLL.Permission.Utility.IMOrganize.Deaprtment, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
                         //}
                         //if (EntityID == MenuDepartmentID)
                         //{
-                        //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.DEPARTMENTID, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Deaprtment, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+                        //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.DEPARTMENTID, SMT.HRM.BLL.Permission.Utility.IMOrganize.Deaprtment, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
                         //}
                     }
                 }
@@ -423,11 +425,26 @@ namespace SMT.SaaS.Permission.BLL
         {
             try
             {
-                var ents = from a in GetObjects().Include("T_SYS_ENTITYMENU").Include("T_SYS_PERMISSION")
-                           where (string.IsNullOrEmpty(menuCode) || a.T_SYS_ENTITYMENU.MENUCODE == menuCode) 
-                           && a.POSTID == postID
-                           select a;
-                return ents;
+                #region
+                IQueryable<T_SYS_ENTITYMENUCUSTOMPERM> perms;
+                string keyString = "GetCustomPostMenuPerms" + menuCode + postID;
+                if (WCFCache.Current[keyString] == null)
+                {
+                    var ents = from a in GetObjects().Include("T_SYS_ENTITYMENU").Include("T_SYS_PERMISSION")
+                               where (string.IsNullOrEmpty(menuCode) || a.T_SYS_ENTITYMENU.MENUCODE == menuCode)
+                               && a.POSTID == postID
+                               select a;
+                    perms = ents;
+                    WCFCache.Current.Insert(keyString, perms, DateTime.Now.AddMinutes(15));
+
+                }
+                else
+                {
+                    perms = (IQueryable<T_SYS_ENTITYMENUCUSTOMPERM>)WCFCache.Current[keyString];
+                }
+                #endregion
+
+                return perms;
             }
             catch (Exception ex)
             {
@@ -445,11 +462,27 @@ namespace SMT.SaaS.Permission.BLL
         {
             try
             {
-                var ents = from a in GetObjects().Include("T_SYS_ENTITYMENU").Include("T_SYS_PERMISSION")
-                           where (string.IsNullOrEmpty(menuCode) || a.T_SYS_ENTITYMENU.MENUCODE == menuCode) 
-                           && a.DEPARTMENTID == departID
-                           select a;
-                return ents;
+                #region
+                List<T_SYS_ENTITYMENUCUSTOMPERM> perms;
+                string keyString = "GetCustomDepartMenuPerms" + menuCode + departID;
+                if (WCFCache.Current[keyString] == null)
+                {
+                    var ents = from a in GetObjects().Include("T_SYS_ENTITYMENU").Include("T_SYS_PERMISSION")
+                               where (string.IsNullOrEmpty(menuCode) || a.T_SYS_ENTITYMENU.MENUCODE == menuCode)
+                               && a.DEPARTMENTID == departID
+                               select a;
+                    IQueryable<T_SYS_ENTITYMENUCUSTOMPERM> IQList = ents;
+                    perms = IQList == null ? null : IQList.ToList();
+                    WCFCache.Current.Insert(keyString, perms, DateTime.Now.AddMinutes(15));
+
+                }
+                else
+                {
+                    perms = (List<T_SYS_ENTITYMENUCUSTOMPERM>)WCFCache.Current[keyString];
+                }
+                #endregion
+
+                return perms.AsQueryable();
             }
             catch (Exception ex)
             {
@@ -467,11 +500,28 @@ namespace SMT.SaaS.Permission.BLL
         {
             try
             {
-                var ents = from a in GetObjects().Include("T_SYS_ENTITYMENU").Include("T_SYS_PERMISSION")
-                           where (string.IsNullOrEmpty(menuCode) || a.T_SYS_ENTITYMENU.MENUCODE == menuCode) 
-                           && a.COMPANYID == companyID
-                           select a;
-                return ents;
+                #region
+                List<T_SYS_ENTITYMENUCUSTOMPERM> perms;
+                string keyString = "GetCustomCompanyMenuPerms" + menuCode + companyID;
+                if (WCFCache.Current[keyString] == null)
+                {
+
+                    var ents = from a in GetObjects().Include("T_SYS_ENTITYMENU").Include("T_SYS_PERMISSION")
+                               where (string.IsNullOrEmpty(menuCode) || a.T_SYS_ENTITYMENU.MENUCODE == menuCode)
+                               && a.COMPANYID == companyID
+                               select a;
+
+                    IQueryable<T_SYS_ENTITYMENUCUSTOMPERM> IQList = ents;
+                    perms = IQList == null ? null : IQList.ToList();
+                    WCFCache.Current.Insert(keyString, perms, DateTime.Now.AddMinutes(15));
+
+                }
+                else
+                {
+                    perms = (List<T_SYS_ENTITYMENUCUSTOMPERM>)WCFCache.Current[keyString];
+                }
+                #endregion
+                return perms.AsQueryable();
             }
             catch (Exception ex)
             {
@@ -1123,11 +1173,11 @@ namespace SMT.SaaS.Permission.BLL
                                 dal.AddToContext(ent);
                                 //if (EntityID == MenuCompanyID)
                                 //{
-                                //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.COMPANYID, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+                                //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.COMPANYID, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
                                 //}
                                 //if (EntityID == MenuDepartmentID)
                                 //{
-                                //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.COMPANYID, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+                                //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.COMPANYID, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
                                 //}
                             }
                         }
@@ -1149,11 +1199,11 @@ namespace SMT.SaaS.Permission.BLL
                                 dal.AddToContext(ent);
                                 //if (EntityID == MenuCompanyID)
                                 //{
-                                //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.DEPARTMENTID, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Deaprtment, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+                                //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.DEPARTMENTID, SMT.HRM.BLL.Permission.Utility.IMOrganize.Deaprtment, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
                                 //}
                                 //if (EntityID == MenuDepartmentID)
                                 //{
-                                //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.DEPARTMENTID, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Deaprtment, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+                                //    Rolebll.AddCustomerPermissionUpdateUserDepart(StrRoleID, ent.DEPARTMENTID, SMT.HRM.BLL.Permission.Utility.IMOrganize.Deaprtment, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
                                 //}
                             }
                         }

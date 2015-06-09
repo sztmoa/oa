@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model" />
-  <xs:import schemaLocation="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.Views" />
-  <xs:import schemaLocation="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:import schemaLocation="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" />
-  <xs:import schemaLocation="http://10.10.0.93:8080/New/Services/WFServices/PlatformServices.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowXml" />
+  <xs:import schemaLocation="http://www.oa12.com/Services/WFServices/PlatformServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model" />
+  <xs:import schemaLocation="http://www.oa12.com/Services/WFServices/PlatformServices.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.Views" />
+  <xs:import schemaLocation="http://www.oa12.com/Services/WFServices/PlatformServices.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://www.oa12.com/Services/WFServices/PlatformServices.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowEngine" />
+  <xs:import schemaLocation="http://www.oa12.com/Services/WFServices/PlatformServices.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SMT.Workflow.Common.Model.FlowXml" />
   <xs:element name="GetFlowDefineList">
     <xs:complexType>
       <xs:sequence>

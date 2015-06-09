@@ -1140,9 +1140,6 @@
     <None Include="Service References\PermissionWS\PermissionService10.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PermissionWS\PermissionService11.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\PermissionWS\PermissionService12.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1168,9 +1165,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\PermissionWS\PermissionService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PermissionWS\PermissionService20.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\PermissionWS\PermissionService3.xsd">

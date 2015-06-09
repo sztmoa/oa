@@ -93,16 +93,19 @@
       </customBinding>
     </bindings>
     <client>
-      <endpoint address="http://localhost:12168/PermissionService.svc"
+      <!--<endpoint address="http://localhost:12168/PermissionService.svc"
    binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PermissionService"
-   contract="PermissionWS.PermissionService" name="BasicHttpBinding_PermissionService" />
-      
-      
-      
+   contract="PermissionWS.PermissionService" name="BasicHttpBinding_PermissionService" />-->
+
+      <endpoint address="http://localhost:12168/PermissionService.svc"
+  binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PermissionService"
+  contract="PermissionWS.PermissionService" name="BasicHttpBinding_PermissionService" />
+
+
       <endpoint address="http://localhost:12168/AttendanceService.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_AttendanceService"
         contract="AttendanceWS.AttendanceService" name="BasicHttpBinding_AttendanceService" />
-      <endpoint address="http://10.10.0.93:8080/New/Services/FileUploadService/FileUpLoad.svc"
+      <endpoint address="http://localhost:12168/Services/FileUploadService/FileUpLoad.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_IUploadService"
         contract="NewFileUploadWS.IUploadService" name="CustomBinding_IUploadService" />
       <endpoint address="http://localhost:12168/PersonnelService.svc"
@@ -114,11 +117,11 @@
       <endpoint address="http://localhost:12168/OrganizationService.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_OrganizationService"
         contract="OrganizationWS.OrganizationService" name="CustomBinding_OrganizationService" />
-      <endpoint address="http://10.10.0.93:8080/New/Services/smtflow/SMT.FlowWFService.Service.svc"
+      <endpoint address="http://localhost:12168/Services/smtflow/SMT.FlowWFService.Service.svc"
         binding="customBinding" bindingConfiguration="WSHttpBinding_IService"
         contract="FlowWFService.IService" name="WSHttpBinding_IService" />
-      
-      <endpoint address="http://10.10.0.93:8080/New/Services/OA/ContractManagementServiceFrom.svc"
+
+      <endpoint address="http://localhost:12168/Services/OA/ContractManagementServiceFrom.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_ContractManagementServiceFrom"
         contract="ContractAppWS.ContractManagementServiceFrom" name="CustomBinding_ContractManagementServiceFrom" />
       <endpoint address="http://localhost:12168/HrCommonService.svc"
@@ -130,19 +133,19 @@
       <endpoint address="http://localhost:12168/FileUploadManager.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_FileUploadManager"
         contract="FileUploadWS.FileUploadManager" name="BasicHttpBinding_FileUploadManager" />
-      <endpoint address="http://10.10.0.93:8080/New/Services/SMTFlowDesigner/Service.svc"
+      <endpoint address="http://localhost:12168/Services/SMTFlowDesigner/Service.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_Service"
         contract="FlowDesignerWS.Service" name="CustomBinding_Service" />
-      <endpoint address="http://10.10.0.93:8080/New/Services/FB/FBService.svc"
+      <endpoint address="http://localhost:12168/Services/FB/FBService.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_FBService"
         contract="FBServiceWS.FBService" name="BasicHttpBinding_FBService" />
-      <endpoint address="http://10.10.0.93:8080/New/Services/SMTEngine/EngineWcfGlobalFunction.svc"
+      <endpoint address="http://localhost:12168/Services/SMTEngine/EngineWcfGlobalFunction.svc"
         binding="customBinding" bindingConfiguration="WSHttpBinding_IEngineWcfGlobalFunction"
         contract="EngineWS.IEngineWcfGlobalFunction" name="WSHttpBinding_IEngineWcfGlobalFunction" />
-      <endpoint address="http://10.10.0.93:8080/New/Services/SMTEngine/PersonalRecordService.svc"
+      <endpoint address="http://localhost:12168/Services/SMTEngine/PersonalRecordService.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPersonalRecordService"
         contract="PersonalRecordWS.IPersonalRecordService" name="BasicHttpBinding_IPersonalRecordService" />
-      <endpoint address="http://10.10.0.93:8080/New/Services/PublicInterface/PublicService.svc"
+      <endpoint address="http://localhost:12168/Services/PublicInterface/PublicService.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPublicService"
         contract="PublicInterfaceWS.IPublicService" name="BasicHttpBinding_IPublicService" />
       <endpoint address="http://localhost:12168/Report/ChartReportService.svc"
@@ -151,12 +154,81 @@
       <endpoint address="http://localhost:12168/Report/ReportChartService.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ReportChartService"
         contract="ReportChartServiceWS.ReportChartService" name="BasicHttpBinding_ReportChartService" />
-      <endpoint address="http://10.10.0.93:8080/New/Services/SMTFBAService/DailyManagementServices.svc"
+      <endpoint address="http://localhost:12168/Services/SMTFBAService/DailyManagementServices.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_DailyManagementServices"
         contract="DailyManagementWS.DailyManagementServices" name="CustomBinding_DailyManagementServices" />
       <endpoint address="http://localhost:12168/OutAppliecrecordService.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_OutAppliecrecordService"
         contract="OutApplyWS.OutAppliecrecordService" name="BasicHttpBinding_OutAppliecrecordService" />
+      
+      
+      
+      
+      
+      
+      <!--<endpoint address="http://www.oa12.com/Services/hr/PermissionService.svc"
+   binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PermissionService"
+   contract="PermissionWS.PermissionService" name="BasicHttpBinding_PermissionService" />
+      
+      
+      <endpoint address="http://www.oa12.com/Services/hr/AttendanceService.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_AttendanceService"
+        contract="AttendanceWS.AttendanceService" name="BasicHttpBinding_AttendanceService" />
+      <endpoint address="http://www.oa12.com/Services/FileUploadService/FileUpLoad.svc"
+        binding="customBinding" bindingConfiguration="CustomBinding_IUploadService"
+        contract="NewFileUploadWS.IUploadService" name="CustomBinding_IUploadService" />
+      <endpoint address="http://www.oa12.com/Services/hr/PersonnelService.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PersonnelService"
+        contract="PersonnelWS.PersonnelService" name="BasicHttpBinding_PersonnelService" />
+      <endpoint address="http://www.oa12.com/Services/hr/SalaryService.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_SalaryService"
+        contract="SalaryWS.SalaryService" name="BasicHttpBinding_SalaryService" />
+      <endpoint address="http://www.oa12.com/Services/hr/OrganizationService.svc"
+        binding="customBinding" bindingConfiguration="CustomBinding_OrganizationService"
+        contract="OrganizationWS.OrganizationService" name="CustomBinding_OrganizationService" />
+      <endpoint address="http://www.oa12.com/Services/smtflow/SMT.FlowWFService.Service.svc"
+        binding="customBinding" bindingConfiguration="WSHttpBinding_IService"
+        contract="FlowWFService.IService" name="WSHttpBinding_IService" />
+      
+      <endpoint address="http://www.oa12.com/Services/OA/ContractManagementServiceFrom.svc"
+        binding="customBinding" bindingConfiguration="CustomBinding_ContractManagementServiceFrom"
+        contract="ContractAppWS.ContractManagementServiceFrom" name="CustomBinding_ContractManagementServiceFrom" />
+      <endpoint address="http://www.oa12.com/Services/hr/HrCommonService.svc"
+        binding="customBinding" bindingConfiguration="CustomBinding_HrCommonService"
+        contract="HrCommonServiceWS.HrCommonService" name="CustomBinding_HrCommonService" />
+      <endpoint address="http://www.oa12.com/Services/hr/PerformanceService.svc"
+        binding="customBinding" bindingConfiguration="CustomBinding_PerformanceService"
+        contract="PerformanceWS.PerformanceService" name="CustomBinding_PerformanceService" />
+      <endpoint address="http://www.oa12.com/Services/hr/FileUploadManager.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_FileUploadManager"
+        contract="FileUploadWS.FileUploadManager" name="BasicHttpBinding_FileUploadManager" />
+      <endpoint address="http://www.oa12.com/Services/SMTFlowDesigner/Service.svc"
+        binding="customBinding" bindingConfiguration="CustomBinding_Service"
+        contract="FlowDesignerWS.Service" name="CustomBinding_Service" />
+      <endpoint address="http://www.oa12.com/Services/FB/FBService.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_FBService"
+        contract="FBServiceWS.FBService" name="BasicHttpBinding_FBService" />
+      <endpoint address="http://www.oa12.com/Services/SMTEngine/EngineWcfGlobalFunction.svc"
+        binding="customBinding" bindingConfiguration="WSHttpBinding_IEngineWcfGlobalFunction"
+        contract="EngineWS.IEngineWcfGlobalFunction" name="WSHttpBinding_IEngineWcfGlobalFunction" />
+      <endpoint address="http://www.oa12.com/Services/SMTEngine/PersonalRecordService.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPersonalRecordService"
+        contract="PersonalRecordWS.IPersonalRecordService" name="BasicHttpBinding_IPersonalRecordService" />
+      <endpoint address="http://www.oa12.com/Services/PublicInterface/PublicService.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPublicService"
+        contract="PublicInterfaceWS.IPublicService" name="BasicHttpBinding_IPublicService" />
+      <endpoint address="http://www.oa12.com/Services/hr/Report/ChartReportService.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ChartReportService"
+        contract="ChartReportsServiceWS.ChartReportService" name="BasicHttpBinding_ChartReportService" />
+      <endpoint address="http://www.oa12.com/Services/hr/Report/ReportChartService.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ReportChartService"
+        contract="ReportChartServiceWS.ReportChartService" name="BasicHttpBinding_ReportChartService" />
+      <endpoint address="http://www.oa12.com/Services/SMTFBAService/DailyManagementServices.svc"
+        binding="customBinding" bindingConfiguration="CustomBinding_DailyManagementServices"
+        contract="DailyManagementWS.DailyManagementServices" name="CustomBinding_DailyManagementServices" />
+      <endpoint address="http://www.oa12.com/Services/hr/OutAppliecrecordService.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_OutAppliecrecordService"
+        contract="OutApplyWS.OutAppliecrecordService" name="BasicHttpBinding_OutAppliecrecordService" />-->
     </client>
 <!--http://172.30.50.83:5102/New/Services/PublicInterface/PublicService.svc-->
   </system.serviceModel>

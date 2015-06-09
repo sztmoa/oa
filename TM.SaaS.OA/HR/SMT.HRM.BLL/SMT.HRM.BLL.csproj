@@ -206,7 +206,6 @@
     <Compile Include="PerformanceRecordBll.cs" />
     <Compile Include="PerformanceRewardRecordBLL.cs" />
     <Compile Include="PerformanceRewardSetBLL.cs" />
-    <Compile Include="Permission\BaseBLL.cs" />
     <Compile Include="Permission\CacheManager.cs" />
     <Compile Include="Permission\EntityMenuCustomPermBLL.cs" />
     <Compile Include="Permission\EntityNames.cs" />

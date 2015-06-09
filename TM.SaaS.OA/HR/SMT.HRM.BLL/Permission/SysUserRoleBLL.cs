@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
 using TM_SaaS_OA_EFModel;
 using SMT.Foundation.Log;
 using SMT.HRM.CustomModel;
 using SMT.HRM.BLL;
+using SMT.HRM.CustomModel.Permission;
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
     public class SysUserRoleBLL : BaseBll<T_SYS_USERROLE>
     {
@@ -733,7 +734,7 @@ namespace SMT.SaaS.Permission.BLL
         //                {
         //                    StrDataRange = PermCompanyValue.FirstOrDefault().DATARANGE;
         //                    //SMT.Foundation.Log.Tracer.Debug("用户授权公司信息开始调用即时通讯接口");
-        //                    //StrMessage =RoleEntity.AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+        //                    //StrMessage =RoleEntity.AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
         //                    //SMT.Foundation.Log.Tracer.Debug("用户授权公司查看信息调用即时通讯接口完成结果：" + StrMessage);
         //                }
                         
@@ -748,7 +749,7 @@ namespace SMT.SaaS.Permission.BLL
         //                {
         //                    //StrDataRange = PermDepartmentValue.FirstOrDefault().DATARANGE;
         //                    //SMT.Foundation.Log.Tracer.Debug("用户授权部门查看信息开始调用即时通讯接口");
-        //                    //StrMessage = RoleEntity.AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Deaprtment);
+        //                    //StrMessage = RoleEntity.AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.HRM.BLL.Permission.Utility.IMOrganize.Deaprtment);
         //                    //SMT.Foundation.Log.Tracer.Debug("用户授权部门查看授权信息调用即时通讯接口完成结果：" + StrMessage);
         //                }
                         
@@ -783,7 +784,7 @@ namespace SMT.SaaS.Permission.BLL
         //                        StrOrgId = itemcopany.DEPARTMENTID;
         //                    }
         //                    //SMT.Foundation.Log.Tracer.Debug("用户自定义授权公司查看信息开始调用即时通讯接口");
-        //                    //StrMessage = RoleEntity.AddCustomerPermissionUpdateUserDepart(StrRoleID, StrOrgId, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+        //                    //StrMessage = RoleEntity.AddCustomerPermissionUpdateUserDepart(StrRoleID, StrOrgId, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
         //                    //SMT.Foundation.Log.Tracer.Debug("用户自定义授权公司查看授权信息调用即时通讯接口完成结果：" + StrMessage);
         //                });
                                                 
@@ -801,7 +802,7 @@ namespace SMT.SaaS.Permission.BLL
         //                        StrOrgId = itemdepartment.DEPARTMENTID;
         //                    }
         //                    //SMT.Foundation.Log.Tracer.Debug("用户自定义授权部门查看信息开始调用即时通讯接口");
-        //                    //RoleEntity.AddCustomerPermissionUpdateUserDepart(StrRoleID, CustomerDepartmentPerms.FirstOrDefault().DEPARTMENTID, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+        //                    //RoleEntity.AddCustomerPermissionUpdateUserDepart(StrRoleID, CustomerDepartmentPerms.FirstOrDefault().DEPARTMENTID, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
         //                    //SMT.Foundation.Log.Tracer.Debug("用户自定义授权部门查看授权信息调用即时通讯接口完成结果：" + StrMessage);
         //                });
                         

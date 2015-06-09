@@ -102,7 +102,7 @@ namespace SMT.HRM.UI
                 {
                     if (e.Error != null && e.Error.Message != "")
                     {
-                        Utility.ShowCustomMessage(MessageTypes.Error, Utility.GetResourceStr("ERROR"), Utility.GetResourceStr(e.Error.Message));
+                     MessageBox.Show(Utility.GetResourceStr(e.Error.Message));
                     }
                     else
                     {
@@ -116,7 +116,7 @@ namespace SMT.HRM.UI
             }
             catch (Exception ex)
             {
-                Utility.ShowCustomMessage(MessageTypes.Error, Utility.GetResourceStr("ERROR"), Utility.GetResourceStr(ex.Message));
+                MessageBox.Show(Utility.GetResourceStr(ex.Message));
             }
         }
 

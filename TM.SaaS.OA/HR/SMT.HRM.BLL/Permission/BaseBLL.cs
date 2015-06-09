@@ -22,7 +22,7 @@ namespace SMT.SaaS.Permission.BLL
         public CommDAL<TEntity> dal ;
         //protected PermissionWS.PermissionServiceClient permissionclient = new PermissionWS.PermissionServiceClient();
         public static EmployeeBLL employeeBll;
-        public EmployeePostBLL empPostbll = new EmployeePostBLL();
+        public EmployeePostBLL empPostbll;
         //public static OrganizationService Orgclinet;
         //protected static SMT.SaaS.BLLCommonServices.WFPlatformWS.OutInterfaceClient outInterfaceClient;
         public static OutInterfaceClient outInterfaceClient;
@@ -36,6 +36,10 @@ namespace SMT.SaaS.Permission.BLL
             if(employeeBll ==null)
             {
                 employeeBll = new EmployeeBLL();                
+            }
+            if(empPostbll==null)
+            {
+                empPostbll=new EmployeePostBLL();
             }
             //if (Orgclinet == null)
             //{
@@ -436,20 +440,6 @@ namespace SMT.SaaS.Permission.BLL
             }
             return strTemp;
         }
-
-        public enum Permissions
-        {
-            Add,// 0 
-            Edit,// 1
-            Delete,//2
-            Browse,// 3
-            Export,
-            Report,
-            Audit,
-            Import,
-        }
-        
-
         
         #region IDisposable 成员
 

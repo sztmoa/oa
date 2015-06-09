@@ -6,7 +6,7 @@ using SMT.Foundation.Core;
 using TM_SaaS_OA_EFModel;
 using System.Data.Objects;
 
-namespace SMT.SaaS.Permission.DAL
+namespace SMT.HRM.DAL.Permission
 {
     public class SysRoleDAL : CommDAL<T_SYS_ROLE>
     {

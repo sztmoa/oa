@@ -76,34 +76,34 @@
       
     </bindings>
     <client>
-      <endpoint address="http://portal.smt-online.net/New/Services/HR/SalaryService.svc"
+      <endpoint address="http://www.oa12.com/Services/HR/SalaryService.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_SalaryService"
         contract="SalaryWS.SalaryService" name="BasicHttpBinding_SalaryService" />
 
-      <endpoint address="http://portal.smt-online.net/New/Services/HR/PersonnelService.svc"
+      <endpoint address="http://www.oa12.com/Services/HR/PersonnelService.svc"
        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PersonnelService"
        contract="PersonnelWS.PersonnelService" name="BasicHttpBinding_PersonnelService" />
       
-      <endpoint address="http://portal.smt-online.net/New/Services/SMTEngine/EngineWcfGlobalFunction.svc"
+      <endpoint address="http://www.oa12.com/Services/SMTEngine/EngineWcfGlobalFunction.svc"
        binding="wsHttpBinding" bindingConfiguration="WSHttpBinding_IEngineWcfGlobalFunction" 
        contract="EngineConfigWS.IEngineWcfGlobalFunction" name="WSHttpBinding_IEngineWcfGlobalFunction" />
-      <endpoint address="http://portal.smt-online.net/New/Services/HR/HrCommonService.svc"
+      <endpoint address="http://www.oa12.com/Services/HR/HrCommonService.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_HrCommonService"
         contract="HrCommonServiceWS.HrCommonService" name="CustomBinding_HrCommonService" />
-      <endpoint address="http://portal.smt-online.net/New/Services/HR/OrganizationService.svc"
+      <endpoint address="http://www.oa12.com/Services/HR/OrganizationService.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_OrganizationService"
         contract="OrganizationWS.OrganizationService" name="CustomBinding_OrganizationService" />
      
-      <endpoint address="http://portal.smt-online.net/New/Services/SMTFlow/SMT.FlowWFService.Service.svc"
+      <endpoint address="http://www.oa12.com/Services/SMTFlow/SMT.FlowWFService.Service.svc"
         binding="customBinding" bindingConfiguration="WSHttpBinding_IService1"
         contract="FlowWFService.IService" name="WSHttpBinding_IService" />
-      <endpoint address="http://portal.smt-online.net/New/Services/System/PermissionService.svc"
+      <endpoint address="http://www.oa12.com/Services/System/PermissionService.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_PermissionService"
         contract="PermissionWS.PermissionService" name="CustomBinding_PermissionService" />
-      <endpoint address="http://portal.smt-online.net/New/Services/HR/PerformanceService.svc"
+      <endpoint address="http://www.oa12.com/Services/HR/PerformanceService.svc"
         binding="customBinding" bindingConfiguration="CustomBinding_PerformanceService"
         contract="PerformanceWS.PerformanceService" name="CustomBinding_PerformanceService" />
-      <endpoint address="http://portal.smt-online.net/New/Services/Main/PersonalRecordService.svc"
+      <endpoint address="http://www.oa12.com/Services/Main/PersonalRecordService.svc"
         binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPersonalRecordService"
         contract="PersonalRecordWS.IPersonalRecordService" name="BasicHttpBinding_IPersonalRecordService" />
       <endpoint address="http://fileserver.smt-online.net:9000/FileUpLoad.svc"

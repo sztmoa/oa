@@ -18,7 +18,7 @@ using SMT.HRM.CustomModel;
 using System.Configuration;
 using System.Web;
 using SMT.Foundation.Log;
-using SMT.SaaS.Permission.CustomerModel;
+using SMT.HRM.CustomModel.Permission;
 
 namespace SMT.HRM.Services
 {

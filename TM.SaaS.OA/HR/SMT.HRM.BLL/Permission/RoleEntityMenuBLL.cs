@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 
 using System.Collections.ObjectModel;
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
 using TM_SaaS_OA_EFModel;
 using SMT.Foundation.Log;
 //添加即时通讯接口引用
 using SMT.HRM.IMServices.IMServiceWS;
 using SMT.HRM.BLL;
+using SMT.HRM.CustomModel.Permission;
 
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
     public class RoleEntityMenuBLL: BaseBll<T_SYS_ROLEENTITYMENU>
     {
@@ -575,7 +576,7 @@ namespace SMT.SaaS.Permission.BLL
             if (IsReturn)
             {
                 dal.CommitTransaction();
-                BLLCommonServices.Utility.SubmitMyRecord<T_SYS_ROLE>(RoleInfo);
+                //SaveMyRecord(RoleInfo);
             }
             else
             {
@@ -689,11 +690,11 @@ namespace SMT.SaaS.Permission.BLL
                             //string MenuDepartmentID = "04F86C10-02E3-4874-A198-4EC986C288CC";//部门菜单ID
                             //if (rolemenu.T_SYS_ENTITYMENU.ENTITYMENUID == MenuCompanyID) 
                             //{
-                            //    AddUpdateUserDepart(rolemenu.T_SYS_ROLE.ROLEID, StrDataRange,SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+                            //    AddUpdateUserDepart(rolemenu.T_SYS_ROLE.ROLEID, StrDataRange,SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
                             //}
                             //if (rolemenu.T_SYS_ENTITYMENU.ENTITYMENUID == MenuDepartmentID)
                             //{
-                            //    AddUpdateUserDepart(rolemenu.T_SYS_ROLE.ROLEID, StrDataRange, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Deaprtment);
+                            //    AddUpdateUserDepart(rolemenu.T_SYS_ROLE.ROLEID, StrDataRange, SMT.HRM.BLL.Permission.Utility.IMOrganize.Deaprtment);
                             //}
                         }
                         #endregion
@@ -936,11 +937,11 @@ namespace SMT.SaaS.Permission.BLL
                                     //string MenuDepartmentID = "04F86C10-02E3-4874-A198-4EC986C288CC";//部门菜单ID
                                     //if (EntityID == MenuCompanyID)
                                     //{
-                                    //    AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+                                    //    AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
                                     //}
                                     //if (EntityID == MenuDepartmentID)
                                     //{
-                                    //    AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Deaprtment);
+                                    //    AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.HRM.BLL.Permission.Utility.IMOrganize.Deaprtment);
                                     //}
                                 }                                
                                 #endregion
@@ -1007,11 +1008,11 @@ namespace SMT.SaaS.Permission.BLL
                                         //string MenuDepartmentID = "04F86C10-02E3-4874-A198-4EC986C288CC";//部门菜单ID
                                         //if (EntityID == MenuCompanyID)
                                         //{
-                                        //    AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+                                        //    AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
                                         //}
                                         //if (EntityID == MenuDepartmentID)
                                         //{
-                                        //    AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Deaprtment);
+                                        //    AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.HRM.BLL.Permission.Utility.IMOrganize.Deaprtment);
                                         //}
                                         
                                         #endregion
@@ -1037,11 +1038,11 @@ namespace SMT.SaaS.Permission.BLL
                                         //string MenuDepartmentID = "04F86C10-02E3-4874-A198-4EC986C288CC";//部门菜单ID
                                         //if (EntityID == MenuCompanyID)
                                         //{
-                                        //    DelUserDepart(StrRoleID, StrDataRange, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+                                        //    DelUserDepart(StrRoleID, StrDataRange, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
                                         //}
                                         //if (EntityID == MenuDepartmentID)
                                         //{
-                                        //    DelUserDepart(StrRoleID, StrDataRange, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Deaprtment);
+                                        //    DelUserDepart(StrRoleID, StrDataRange, SMT.HRM.BLL.Permission.Utility.IMOrganize.Deaprtment);
                                         //}
                                         
                                         #endregion
@@ -1079,11 +1080,11 @@ namespace SMT.SaaS.Permission.BLL
                                     //string MenuDepartmentID = "04F86C10-02E3-4874-A198-4EC986C288CC";//部门菜单ID
                                     //if (EntityID == MenuCompanyID)
                                     //{
-                                    //    AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company);
+                                    //    AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.HRM.BLL.Permission.Utility.IMOrganize.Company);
                                     //}
                                     //if (EntityID == MenuDepartmentID)
                                     //{
-                                    //    AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.SaaS.Permission.BLL.Utility.IMOrganize.Deaprtment);
+                                    //    AddUpdateUserDepart(StrRoleID, StrDataRange, SMT.HRM.BLL.Permission.Utility.IMOrganize.Deaprtment);
                                     //}
                                     //dal.Add(PermRole);
 
@@ -1149,7 +1150,7 @@ namespace SMT.SaaS.Permission.BLL
         /// <param name="StrDataRange">范围大小</param>
         /// <param name="StrType">1 表示公司 2 部门</param>
         /// <returns></returns>
-        //public string AddUpdateUserDepart(string  RoleId,string StrDataRange,SMT.SaaS.Permission.BLL.Utility.IMOrganize OrgType)
+        //public string AddUpdateUserDepart(string  RoleId,string StrDataRange,SMT.HRM.BLL.Permission.Utility.IMOrganize OrgType)
         //{
         //    string StrMessage = "";
         //    try
@@ -1203,7 +1204,7 @@ namespace SMT.SaaS.Permission.BLL
         /// <param name="StrDataRange">权限范围：0公司 1 部门</param>
         /// <param name="OrgType">类型：公司、部门</param>
         /// <returns></returns>
-        //public string AddCustomerPermissionUpdateUserDepart(string RoleId, string OrganizeID, SMT.SaaS.Permission.BLL.Utility.IMOrganize StrDataRange, SMT.SaaS.Permission.BLL.Utility.IMOrganize OrgType)
+        //public string AddCustomerPermissionUpdateUserDepart(string RoleId, string OrganizeID, SMT.HRM.BLL.Permission.Utility.IMOrganize StrDataRange, SMT.HRM.BLL.Permission.Utility.IMOrganize OrgType)
         //{
         //    string StrMessage = "";
         //    try
@@ -1256,7 +1257,7 @@ namespace SMT.SaaS.Permission.BLL
         /// <param name="OrgDataRange"></param>
         /// <param name="UserIDs"></param>
         /// <returns></returns>
-        //private string InsertCustomerPermissionDataToImServices(SMT.SaaS.Permission.BLL.Utility.IMOrganize OrgType, string OrganizeId,SMT.SaaS.Permission.BLL.Utility.IMOrganize OrgDataRange, string UserIDs)
+        //private string InsertCustomerPermissionDataToImServices(SMT.HRM.BLL.Permission.Utility.IMOrganize OrgType, string OrganizeId,SMT.HRM.BLL.Permission.Utility.IMOrganize OrgDataRange, string UserIDs)
         //{
         //    string StrMessage = "";
 
@@ -1264,14 +1265,14 @@ namespace SMT.SaaS.Permission.BLL
 
             
         //    List<string> StrDepartIds = new List<string>();
-        //    if (OrgType == SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company)
+        //    if (OrgType == SMT.HRM.BLL.Permission.Utility.IMOrganize.Company)
         //    {                
         //        StrDepartIds.Add(OrganizeId);
         //    }
-        //    if (OrgType == SMT.SaaS.Permission.BLL.Utility.IMOrganize.Deaprtment)
+        //    if (OrgType == SMT.HRM.BLL.Permission.Utility.IMOrganize.Deaprtment)
         //    {
         //        //公司级别   
-        //        if (OrgDataRange == SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company)
+        //        if (OrgDataRange == SMT.HRM.BLL.Permission.Utility.IMOrganize.Company)
         //        {
         //            StrDepartIds = GetDepartmentIDs(OrganizeId);
         //        }
@@ -1323,7 +1324,7 @@ namespace SMT.SaaS.Permission.BLL
         /// <param name="OrgType">组织架构类型</param>
         /// <param name="UserIDs">员工ID</param>
         /// <returns></returns>
-        //private  string InsertDataToImServices(SMT.SaaS.Permission.BLL.Utility.IMOrganize OrgType,string StrDataRang, string UserIDs)
+        //private  string InsertDataToImServices(SMT.HRM.BLL.Permission.Utility.IMOrganize OrgType,string StrDataRang, string UserIDs)
         //{
         //    string StrMessage = "";
             
@@ -1345,12 +1346,12 @@ namespace SMT.SaaS.Permission.BLL
         //            {
         //                string StrOrganizeId = "";
         //                List<string> StrDepartIds = new List<string>();
-        //                if (OrgType == SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company)
+        //                if (OrgType == SMT.HRM.BLL.Permission.Utility.IMOrganize.Company)
         //                {                            
         //                    StrOrganizeId = emppost[i].EMPLOYEEPOSTS[k].T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.COMPANYID;
         //                    StrDepartIds.Add(StrOrganizeId);
         //                }
-        //                if (OrgType == SMT.SaaS.Permission.BLL.Utility.IMOrganize.Deaprtment)
+        //                if (OrgType == SMT.HRM.BLL.Permission.Utility.IMOrganize.Deaprtment)
         //                {
         //                    //公司级别
         //                    if (StrDataRang == "1")
@@ -1439,7 +1440,7 @@ namespace SMT.SaaS.Permission.BLL
         /// <param name="StrDataRange"></param>
         /// <param name="OrgType"></param>
         /// <returns></returns>
-        //public string DelUserDepart(string RoleId, string StrDataRange, SMT.SaaS.Permission.BLL.Utility.IMOrganize OrgType)
+        //public string DelUserDepart(string RoleId, string StrDataRange, SMT.HRM.BLL.Permission.Utility.IMOrganize OrgType)
         //{
         //    string StrMessage = "";
         //    try
@@ -1492,7 +1493,7 @@ namespace SMT.SaaS.Permission.BLL
         /// <param name="OrgType">组织架构类型</param>
         /// <param name="UserIDs">员工ID</param>
         /// <returns></returns>
-        //private string DelDataFromImServices(SMT.SaaS.Permission.BLL.Utility.IMOrganize OrgType,string StrDataRange, string UserIDs)
+        //private string DelDataFromImServices(SMT.HRM.BLL.Permission.Utility.IMOrganize OrgType,string StrDataRange, string UserIDs)
         //{
         //    string StrMessage = "";
 
@@ -1512,12 +1513,12 @@ namespace SMT.SaaS.Permission.BLL
         //            {
         //                string StrOrganizeId = "";
         //                List<string> StrDepartIds = new List<string>();
-        //                if (OrgType == SMT.SaaS.Permission.BLL.Utility.IMOrganize.Company)
+        //                if (OrgType == SMT.HRM.BLL.Permission.Utility.IMOrganize.Company)
         //                {
         //                    StrOrganizeId = emppost[i].EMPLOYEEPOSTS[k].T_HR_POST.T_HR_DEPARTMENT.T_HR_COMPANY.COMPANYID;
 
         //                }
-        //                if (OrgType == SMT.SaaS.Permission.BLL.Utility.IMOrganize.Deaprtment)
+        //                if (OrgType == SMT.HRM.BLL.Permission.Utility.IMOrganize.Deaprtment)
         //                {
         //                    //公司级别
         //                    if (StrDataRange == "1")

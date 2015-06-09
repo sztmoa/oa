@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using TM_SaaS_OA_EFModel;
 
-namespace SMT.SaaS.Permission.DAL.views
+namespace SMT.HRM.CustomModel.Permission
 {
     /// <summary>
     /// 供流程、引擎调用

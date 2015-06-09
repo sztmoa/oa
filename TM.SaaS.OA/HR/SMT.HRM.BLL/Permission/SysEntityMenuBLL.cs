@@ -11,18 +11,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SMT.SaaS.Permission.DAL;
+using SMT.HRM.DAL.Permission;
 using TM_SaaS_OA_EFModel;
 using System.Linq.Dynamic;
 using System.Data;
 using SMT.Foundation.Log;
 using System.Configuration.Assemblies;
 using System.Configuration;
-using SMT.SaaS.Permission.CustomerModel;
+using SMT.HRM.CustomModel.Permission;
 using System.Web.Hosting;
 using System.Xml.Linq;
+using SMT.HRM.BLL;
 
-namespace SMT.SaaS.Permission.BLL
+namespace SMT.HRM.BLL.Permission
 {
     public class SysEntityMenuBLL : BaseBll<T_SYS_ENTITYMENU>
     {
@@ -922,7 +923,7 @@ namespace SMT.SaaS.Permission.BLL
                                 var fbents = SystemEnts.Where(p => p.MENUCODE == "T_SYS_FBADMIN");//预算管理员设置
                                 var fbsubject = entspermissionAll.Where(p => p.EntityMenu.MENUCODE == "T_FB_SUBJECTTYPE");//系统科目字典维护
                                 var fbSubjectSet = entspermissionAll.Where(p => p.EntityMenu.MENUCODE == "T_FB_SUBJECTCOMPANYSET");//公司科目设置
-                                SMT.SaaS.BLLCommonServices.PersonnelWS.PersonnelServiceClient bb = new BLLCommonServices.PersonnelWS.PersonnelServiceClient();
+                                //SMT.SaaS.BLLCommonServices.PersonnelWS.PersonnelServiceClient bb = new BLLCommonServices.PersonnelWS.PersonnelServiceClient();
                                 //判断当前登陆人是否有下级子公司
                                 //bool IsChildCompany = bb.CheckChildCompanyByUserID(UserEnt.FirstOrDefault().EMPLOYEEID);
 
@@ -1225,7 +1226,7 @@ namespace SMT.SaaS.Permission.BLL
                                 var fbents = SystemEnts.Where(p => p.MENUCODE == "T_SYS_FBADMIN");//预算管理员设置
                                 var fbsubject = entspermission.Where(p => p.EntityMenu.MENUCODE == "T_FB_SUBJECTTYPE");//系统科目字典维护
                                 var fbSubjectSet = entspermission.Where(p => p.EntityMenu.MENUCODE == "T_FB_SUBJECTCOMPANYSET");//公司科目设置
-                                SMT.SaaS.BLLCommonServices.PersonnelWS.PersonnelServiceClient bb = new BLLCommonServices.PersonnelWS.PersonnelServiceClient();
+                                //SMT.SaaS.BLLCommonServices.PersonnelWS.PersonnelServiceClient bb = new BLLCommonServices.PersonnelWS.PersonnelServiceClient();
                                 //判断当前登陆人是否有下级子公司
                                 //bool IsChildCompany = bb.CheckChildCompanyByUserID(UserEnt.FirstOrDefault().EMPLOYEEID);
 
